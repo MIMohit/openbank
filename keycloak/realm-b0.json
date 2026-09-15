@@ -1,0 +1,44 @@
+{
+  "realm": "openbanking-b0",
+  "displayName": "Open Banking B0 (weak baseline)",
+  "enabled": true,
+  "accessTokenLifespan": 300,
+  "refreshTokenMaxReuse": 0,
+  "clients": [
+    {
+      "clientId": "zt-client-b0",
+      "name": "ZT Test Client B0",
+      "enabled": true,
+      "publicClient": true,
+      "redirectUris": ["http://localhost:*", "http://zt-controller:*"],
+      "webOrigins": ["*"],
+      "standardFlowEnabled": true,
+      "directAccessGrantsEnabled": true,
+      "attributes": {
+        "pkce.code.challenge.method": "S256"
+      },
+      "defaultClientScopes": ["openid", "profile", "email"],
+      "optionalClientScopes": ["accounts:read", "transactions:read"]
+    }
+  ],
+  "clientScopes": [
+    {
+      "name": "accounts:read",
+      "protocol": "openid-connect",
+      "attributes": {"include.in.token.scope": "true"}
+    },
+    {
+      "name": "transactions:read",
+      "protocol": "openid-connect",
+      "attributes": {"include.in.token.scope": "true"}
+    }
+  ],
+  "users": [
+    {
+      "username": "testuser",
+      "email": "testuser@synthetic.local",
+      "enabled": true,
+      "credentials": [{"type": "password", "value": "testpass", "temporary": false}]
+    }
+  ]
+}

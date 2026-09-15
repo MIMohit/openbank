@@ -1,0 +1,86 @@
+{
+  "realm": "openbanking-fapi2",
+  "displayName": "Open Banking FAPI2 (B1/P — DPoP+PKCE+PAR)",
+  "enabled": true,
+  "accessTokenLifespan": 300,
+  "refreshTokenMaxReuse": 0,
+  "ssoSessionMaxLifespan": 43200,
+  "attributes": {
+    "parRequestUriLifespan": "60"
+  },
+  "clientPolicies": {
+    "policies": [
+      {
+        "name": "fapi2-dpop-policy",
+        "enabled": true,
+        "conditions": [
+          {
+            "condition": "client-roles",
+            "configuration": {}
+          }
+        ],
+        "profiles": ["fapi-2-security-profile"]
+      }
+    ],
+    "globalPolicies": []
+  },
+  "clientProfiles": {
+    "profiles": [
+      {
+        "name": "fapi-2-security-profile",
+        "executors": [
+          {
+            "executor": "dpop-bind-enforcer",
+            "configuration": {}
+          },
+          {
+            "executor": "pkce-enforcer",
+            "configuration": {"code-challenge-method": "S256"}
+          }
+        ]
+      }
+    ],
+    "globalProfiles": []
+  },
+  "clients": [
+    {
+      "clientId": "zt-client",
+      "name": "ZT Test Client FAPI2",
+      "enabled": true,
+      "publicClient": false,
+      "secret": "zt-client-secret-local",
+      "redirectUris": ["http://localhost:*", "http://zt-controller:*"],
+      "webOrigins": ["*"],
+      "standardFlowEnabled": true,
+      "directAccessGrantsEnabled": false,
+      "attributes": {
+        "pkce.code.challenge.method": "S256",
+        "require.pushed.authorization.requests": "true",
+        "dpop.bound.access.tokens": "true",
+        "access.token.lifespan": "300"
+      },
+      "defaultClientScopes": ["openid", "profile", "email"],
+      "optionalClientScopes": ["accounts:read", "transactions:read"]
+    }
+  ],
+  "clientScopes": [
+    {
+      "name": "accounts:read",
+      "protocol": "openid-connect",
+      "attributes": {"include.in.token.scope": "true"}
+    },
+    {
+      "name": "transactions:read",
+      "protocol": "openid-connect",
+      "attributes": {"include.in.token.scope": "true"}
+    }
+  ],
+  "users": [
+    {
+      "username": "testuser",
+      "email": "testuser@synthetic.local",
+      "enabled": true,
+      "credentials": [{"type": "password", "value": "testpass", "temporary": false}]
+    }
+  ]
+}

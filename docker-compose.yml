@@ -1,0 +1,123 @@
+version: "3.9"
+
+# Zero Trust Open Banking Testbed
+# Bring up: docker compose up --build
+# All services are LOCAL/SYNTHETIC — no real banking endpoints.
+
+x-logging: &default-logging
+  driver: "json-file"
+  options:
+    max-size: "10m"
+    max-file: "3"
+
+services:
+
+  # ─── Identity Provider ───────────────────────────────────────────────────────
+  keycloak:
+    image: quay.io/keycloak/keycloak:26.4.4
+    command: start-dev --import-realm
+    environment:
+      KC_BOOTSTRAP_ADMIN_USERNAME: ${KC_ADMIN_USER:-admin}
+      KC_BOOTSTRAP_ADMIN_PASSWORD: ${KC_ADMIN_PASSWORD:-admin_secret_local}
+      KC_DB: dev-mem
+      KC_HTTP_PORT: 8080
+      KC_FEATURES: preview
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./keycloak/realm-b0.json:/opt/keycloak/data/import/realm-b0.json:ro
+      - ./keycloak/realm-fapi2.json:/opt/keycloak/data/import/realm-fapi2.json:ro
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:8080/health/ready || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 20
+      start_period: 60s
+    networks:
+      - internal
+    logging: *default-logging
+
+  # ─── Policy Engine ───────────────────────────────────────────────────────────
+  opa:
+    image: openpolicyagent/opa:0.70.0
+    command: run --server --addr 0.0.0.0:8181 /policies
+    volumes:
+      - ./opa/policies:/policies:ro
+    ports:
+      - "8181:8181"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:8181/health || exit 1"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    networks:
+      - internal
+    logging: *default-logging
+
+  # ─── Mock Resource Server ────────────────────────────────────────────────────
+  mock-adr-api:
+    build:
+      context: ./mock-adr-api
+      dockerfile: Dockerfile
+    environment:
+      MOCK_ADR_SEED: ${MOCK_ADR_SEED:-42}
+      MOCK_ADR_NUM_USERS: ${MOCK_ADR_NUM_USERS:-100}
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
+    expose:
+      - "8000"
+    # Not exposed to host — only accessible via ZT Controller (except B0 mode)
+    networks:
+      - internal
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:8000/health || exit 1"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    logging: *default-logging
+
+  # ─── Zero Trust Controller (PEP+PDP) ─────────────────────────────────────────
+  zt-controller:
+    build:
+      context: ./zt-controller
+      dockerfile: Dockerfile
+    env_file:
+      - .env.example
+    environment:
+      ZT_MODE: ${ZT_MODE:-P}
+      KEYCLOAK_URL: http://keycloak:8080
+      OPA_URL: http://opa:8181
+      MOCK_ADR_URL: http://mock-adr-api:8000
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
+      ZT_ENFORCE_DPOP: ${ZT_ENFORCE_DPOP:-true}
+      ZT_CHECK_DEVICE_BINDING: ${ZT_CHECK_DEVICE_BINDING:-true}
+      ZT_ENABLE_TELEMETRY: ${ZT_ENABLE_TELEMETRY:-true}
+      ZT_ENABLE_RISK_POLICY: ${ZT_ENABLE_RISK_POLICY:-true}
+      ZT_ENABLE_VELOCITY: ${ZT_ENABLE_VELOCITY:-true}
+      ZT_PROXY_PASSTHROUGH: ${ZT_PROXY_PASSTHROUGH:-false}
+      ZT_RISK_THRESHOLD_ALLOW: ${ZT_RISK_THRESHOLD_ALLOW:-0.4}
+      ZT_RISK_THRESHOLD_DENY: ${ZT_RISK_THRESHOLD_DENY:-0.7}
+      DPOP_SKEW_SECONDS: ${DPOP_SKEW_SECONDS:-60}
+      JTI_CACHE_TTL_SECONDS: ${JTI_CACHE_TTL_SECONDS:-120}
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./data:/app/data
+    depends_on:
+      keycloak:
+        condition: service_healthy
+      opa:
+        condition: service_healthy
+      mock-adr-api:
+        condition: service_healthy
+    networks:
+      - internal
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:9000/health || exit 1"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    logging: *default-logging
+
+networks:
+  internal:
+    driver: bridge
