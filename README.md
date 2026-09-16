@@ -26,8 +26,19 @@ The key result is **P − B1**: what Zero Trust adds beyond a well-implemented s
 cp .env.example .env
 make up        # starts Keycloak, OPA, Mock ADR API, ZT Controller
 make test-unit # unit tests (no Docker needed)
-make attacks   # run A1–A6 attack suite
+make attacks   # run A1–A6 attack suite (organic detection — the primary numbers)
 make analysis  # generate figures and tables
+```
+
+Full measurement run, in the order the paper reports it:
+
+```bash
+make attacks         # A1–A6 against B0 / B1 / P
+make experiments     # legitimate workload + CPU/memory sampling, per config
+make scaling         # latency and throughput at 5/10/20/40 concurrent users
+make attacks-oracle  # detection-ceiling run (see "Oracle tag" below)
+make ablation        # P, P−device-binding, P−context, P−velocity, B1
+make analysis        # every table and figure in paper/paper.md
 ```
 
 ## Architecture
@@ -63,19 +74,53 @@ ZT_MODE=B1 docker compose up -d zt-controller
 ZT_MODE=P  docker compose up -d zt-controller
 ```
 
-Individual feature flags for ablations:
+Individual feature flags for ablations. Each maps to one enforcement
+component, so an observed change is attributable to it:
+
+| Flag | Removes |
+|------|---------|
+| `ZT_CHECK_DEVICE_BINDING=false` | the `cnf.jkt` binding check and risk rules R1/R2 |
+| `ZT_ENABLE_TELEMETRY=false` | the telemetry PIP, and with it R3 (geo velocity), R5 (session continuity), R6 (DPoP-failure history) |
+| `ZT_ENABLE_VELOCITY=false` | the call-rate rule R4 only |
 
 ```bash
-ZT_ENABLE_TELEMETRY=false ZT_ENABLE_RISK_POLICY=false docker compose up -d zt-controller
+ZT_MODE=P ZT_ENABLE_VELOCITY=false docker compose up -d zt-controller
 ```
+
+Leave a flag unset (not empty-string, not `true`) to keep `ZT_MODE`'s own
+coherent default for it. `make ablation` drives all five cells for you.
 
 ## Experiment matrix
 
-| Experiment | Command |
-|------------|---------|
-| E1 Security (attacks) | `make attacks` |
-| E3/E4 Performance | `make experiments` |
-| Analysis | `make analysis` |
+| Experiment | Command | Outputs |
+|------------|---------|---------|
+| E1 Security (attacks) | `make attacks` | `table1_taxonomy.csv`, `fig2_attack_success_rate.png` |
+| E2 False challenge / deny | `make experiments` | `table2_false_challenge.csv` |
+| E3/E4 Performance | `make experiments` | `table3_latency.csv`, `table4_resource_overhead.csv`, `fig3_latency.png` |
+| E4b Load scaling | `make scaling` | `table8_scaling.csv`, `fig4_scaling.png` |
+| E5 Ablation | `make ablation` | `table5_ablation.csv`, `fig5_ablation.png` |
+| Detection ceiling | `make attacks-oracle` | `table1b_oracle_ceiling.csv` |
+| Analysis | `make analysis` | all of the above, plus `table6_threshold_sensitivity.csv`, `table7_risk_components.csv`, `table_effect_sizes.csv` |
+
+### Oracle tag — read this before interpreting any attack number
+
+Risk rule R7 scores any request carrying `x-attack-context: true` at 0.90,
+just under the 0.70 deny threshold. That header is sent by the attack
+harness, so a run with it enabled measures what the enforcement pipeline
+would block *given a perfect detector* — a detection ceiling — not what it
+detects. It is **off by default**, in the controller
+(`ZT_ORACLE_ATTACK_CONTEXT`) and in the suite (`attacks.runner --oracle-tag`),
+and `make attacks` never enables it. `make attacks-oracle` is the ceiling run
+and is reported separately in the paper. `data/tables/table7_risk_components.csv`
+audits this: the `attack_context` column must read 0.0 on every primary row.
+
+### Harness control plane
+
+The controller exposes `POST /admin/reset-state` (guarded by the internal
+service secret) which drops telemetry history, the per-subject device-key
+registry and the DPoP `jti` cache. The attack runner calls it before each
+attack so that, for example, A6's call-rate signal does not inherit A3's
+burst. It is not part of the measured data path.
 
 ## Reproducibility
 
@@ -86,8 +131,14 @@ ZT_ENABLE_TELEMETRY=false ZT_ENABLE_RISK_POLICY=false docker compose up -d zt-co
 
 ## Output
 
-- `data/raw/*.jsonl` — per-request records (§14 schema)
-- `data/raw/attacks/*.jsonl` — attack outcomes
+- `data/raw/<run_id>.jsonl` — per-request records (§14 schema). The `run_id`
+  prefix names the workload: `exp_` (legitimate load), `scale_` (scaling
+  sweep), `atk_` (attack suite), `orc_` (oracle ceiling), `abl_` (ablation);
+  `run_label` names the experiment cell, which distinguishes ablations that
+  share `ZT_MODE=P`.
+- `data/raw/attacks/summary.jsonl` — attack outcomes (the primary sweep);
+  `attacks_oracle/` and `attacks_ablation/` hold the other two sweeps
+- `data/raw/resources*/` — `docker stats` samples taken during each workload
 - `data/figures/` — matplotlib figures
 - `data/tables/` — CSV tables
 
