@@ -22,13 +22,14 @@ services:
       KC_DB: dev-mem
       KC_HTTP_PORT: 8080
       KC_FEATURES: preview
+      KC_HEALTH_ENABLED: "true"
     ports:
       - "8080:8080"
     volumes:
       - ./keycloak/realm-b0.json:/opt/keycloak/data/import/realm-b0.json:ro
       - ./keycloak/realm-fapi2.json:/opt/keycloak/data/import/realm-fapi2.json:ro
     healthcheck:
-      test: ["CMD-SHELL", "curl -sf http://localhost:8080/health/ready || exit 1"]
+      test: ["CMD-SHELL", "exec 3<>/dev/tcp/localhost/9000 && echo -e 'GET /health/ready HTTP/1.1\\r\\nHost: localhost\\r\\nConnection: close\\r\\n\\r\\n' >&3 && cat <&3 | grep -q '\"status\": \"UP\"'"]
       interval: 10s
       timeout: 5s
       retries: 20
@@ -39,7 +40,7 @@ services:
 
   # ─── Policy Engine ───────────────────────────────────────────────────────────
   opa:
-    image: openpolicyagent/opa:0.70.0
+    image: openpolicyagent/opa:0.70.0-debug
     command: run --server --addr 0.0.0.0:8181 /policies
     volumes:
       - ./opa/policies:/policies:ro
@@ -69,7 +70,7 @@ services:
     networks:
       - internal
     healthcheck:
-      test: ["CMD-SHELL", "curl -sf http://localhost:8000/health || exit 1"]
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
       interval: 5s
       timeout: 3s
       retries: 10
@@ -112,7 +113,7 @@ services:
     networks:
       - internal
     healthcheck:
-      test: ["CMD-SHELL", "curl -sf http://localhost:9000/health || exit 1"]
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:9000/health')"]
       interval: 5s
       timeout: 3s
       retries: 10

@@ -19,7 +19,7 @@
             "configuration": {}
           }
         ],
-        "profiles": ["fapi-2-security-profile"]
+        "profiles": ["zt-fapi2-security-profile"]
       }
     ],
     "globalPolicies": []
@@ -27,7 +27,7 @@
   "clientProfiles": {
     "profiles": [
       {
-        "name": "fapi-2-security-profile",
+        "name": "zt-fapi2-security-profile",
         "executors": [
           {
             "executor": "dpop-bind-enforcer",
