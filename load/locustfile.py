@@ -8,6 +8,7 @@ Run:
 Context drift profile: simulates a user who occasionally changes network/geo
 (e.g., switches from office to mobile).  Used for E2 false-challenge measurement.
 """
+import asyncio
 import os
 import random
 import sys
@@ -19,18 +20,49 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from locust import HttpUser, task, between, events
 from client_sim.device import Device
+from client_sim.flows import OAuthSession
 
 CONTROLLER_URL = os.getenv("CONTROLLER_URL", "http://localhost:9000")
+KEYCLOAK_URL = os.getenv("KEYCLOAK_URL", "http://localhost:8080")
+ZT_MODE = os.getenv("ZT_MODE", "P").upper()
 DRIFT_PROBABILITY = float(os.getenv("DRIFT_PROBABILITY", "0.05"))  # 5% drift requests
 GLOBAL_SEED = int(os.getenv("GLOBAL_SEED", "42"))
 
-# Pre-generate a pool of synthetic access tokens (mocked for load test)
 _rng = random.Random(GLOBAL_SEED)
 
 
-def _mock_token(device_id: str) -> str:
-    """Placeholder token for load testing (controller must be in test mode)."""
-    return f"LOAD_TOKEN_{device_id}_{uuid.uuid4().hex}"
+def _authenticate(device: Device) -> str:
+    """
+    Obtain a real, Keycloak-signed access token bound to `device`'s key.
+    B0 uses the openbanking-b0 realm's public client (no DPoP); B1/P use the
+    openbanking-fapi2 realm's harness-only direct-grant client (see
+    keycloak/realm-fapi2.json: zt-harness-client) so the load test can get
+    real cnf.jkt-bound tokens without a browser PAR+PKCE redirect. Tokens are
+    verified by the ZT Controller exactly like any other request.
+    """
+    if ZT_MODE == "B0":
+        session = OAuthSession(
+            device=device,
+            keycloak_url=KEYCLOAK_URL,
+            realm=os.getenv("KC_REALM_B0", "openbanking-b0"),
+            client_id="zt-client-b0",
+            client_secret="",
+            username="testuser",
+            password="testpass",
+            use_dpop=False,
+        )
+    else:
+        session = OAuthSession(
+            device=device,
+            keycloak_url=KEYCLOAK_URL,
+            realm=os.getenv("KC_REALM_FAPI2", "openbanking-fapi2"),
+            client_id="zt-harness-client",
+            client_secret="zt-harness-client-secret-local",
+            username="testuser",
+            password="testpass",
+            use_dpop=True,
+        )
+    return asyncio.run(session.authenticate())
 
 
 class OpenBankingUser(HttpUser):
@@ -42,7 +74,7 @@ class OpenBankingUser(HttpUser):
             geo="AU",
             source_ip=f"10.{_rng.randint(0,255)}.{_rng.randint(0,255)}.{_rng.randint(1,254)}",
         )
-        self.access_token = _mock_token(self.device.device_id)
+        self.access_token = _authenticate(self.device)
         self.request_count = 0
 
     def _build_headers(self, method: str, path: str, drift: bool = False) -> dict:

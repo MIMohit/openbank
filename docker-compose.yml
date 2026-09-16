@@ -23,6 +23,15 @@ services:
       KC_HTTP_PORT: 8080
       KC_FEATURES: preview
       KC_HEALTH_ENABLED: "true"
+      # Fixed hostname so issued tokens always carry the same `iss` claim
+      # (http://keycloak:8080/realms/...) regardless of whether a client
+      # reaches Keycloak via the internal Docker network (zt-controller) or
+      # via localhost:8080 (host-run harness scripts, browser). Without this,
+      # Keycloak derives `iss` from each request's Host header, and tokens
+      # obtained via localhost fail token_verify.py's issuer check.
+      KC_HOSTNAME: keycloak
+      KC_HOSTNAME_PORT: "8080"
+      KC_HOSTNAME_STRICT: "false"
     ports:
       - "8080:8080"
     volumes:
@@ -82,19 +91,27 @@ services:
       context: ./zt-controller
       dockerfile: Dockerfile
     env_file:
-      - .env.example
+      - .env
     environment:
+      # NOTE: ZT_ENFORCE_DPOP / CHECK_DEVICE_BINDING / ENABLE_TELEMETRY /
+      # ENABLE_RISK_POLICY / ENABLE_VELOCITY / PROXY_PASSTHROUGH are
+      # intentionally passed through *bare* (no ":-default") below. Each
+      # ZT_MODE (B0/B1/P) has its own coherent defaults for these in
+      # app/config.py; a concrete default here would silently override that
+      # per-mode selection for every mode (B0 would never actually become
+      # the weak baseline). Only set them on the host/.env when deliberately
+      # running an ablation (see README "Mode switching").
       ZT_MODE: ${ZT_MODE:-P}
       KEYCLOAK_URL: http://keycloak:8080
       OPA_URL: http://opa:8181
       MOCK_ADR_URL: http://mock-adr-api:8000
       LOG_LEVEL: ${LOG_LEVEL:-INFO}
-      ZT_ENFORCE_DPOP: ${ZT_ENFORCE_DPOP:-true}
-      ZT_CHECK_DEVICE_BINDING: ${ZT_CHECK_DEVICE_BINDING:-true}
-      ZT_ENABLE_TELEMETRY: ${ZT_ENABLE_TELEMETRY:-true}
-      ZT_ENABLE_RISK_POLICY: ${ZT_ENABLE_RISK_POLICY:-true}
-      ZT_ENABLE_VELOCITY: ${ZT_ENABLE_VELOCITY:-true}
-      ZT_PROXY_PASSTHROUGH: ${ZT_PROXY_PASSTHROUGH:-false}
+      ZT_ENFORCE_DPOP:
+      ZT_CHECK_DEVICE_BINDING:
+      ZT_ENABLE_TELEMETRY:
+      ZT_ENABLE_RISK_POLICY:
+      ZT_ENABLE_VELOCITY:
+      ZT_PROXY_PASSTHROUGH:
       ZT_RISK_THRESHOLD_ALLOW: ${ZT_RISK_THRESHOLD_ALLOW:-0.4}
       ZT_RISK_THRESHOLD_DENY: ${ZT_RISK_THRESHOLD_DENY:-0.7}
       DPOP_SKEW_SECONDS: ${DPOP_SKEW_SECONDS:-60}

@@ -2,6 +2,7 @@
   "realm": "openbanking-fapi2",
   "displayName": "Open Banking FAPI2 (B1/P — DPoP+PKCE+PAR)",
   "enabled": true,
+  "sslRequired": "none",
   "accessTokenLifespan": 300,
   "refreshTokenMaxReuse": 0,
   "ssoSessionMaxLifespan": 43200,
@@ -60,7 +61,58 @@
         "access.token.lifespan": "300"
       },
       "defaultClientScopes": ["openid", "profile", "email"],
-      "optionalClientScopes": ["accounts:read", "transactions:read"]
+      "optionalClientScopes": ["accounts:read", "transactions:read"],
+      "protocolMappers": [
+        {
+          "name": "sub",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-hardcoded-claim-mapper",
+          "consentRequired": false,
+          "config": {
+            "claim.name": "sub",
+            "claim.value": "u_2e27504b-af56-5f43-98dd-42aa25d5a406",
+            "jsonType.label": "String",
+            "id.token.claim": "true",
+            "access.token.claim": "true",
+            "userinfo.token.claim": "true",
+            "introspection.token.claim": "true"
+          }
+        }
+      ]
+    },
+    {
+      "clientId": "zt-harness-client",
+      "name": "ZT Test Harness Client (attacks/experiments runner only)",
+      "description": "Direct-grant twin of zt-client, used only by the attacks/experiments harness to get real DPoP-bound tokens without a browser redirect. Not a verifier bypass.",
+      "enabled": true,
+      "publicClient": false,
+      "secret": "zt-harness-client-secret-local",
+      "standardFlowEnabled": false,
+      "directAccessGrantsEnabled": true,
+      "attributes": {
+        "dpop.bound.access.tokens": "true",
+        "access.token.lifespan": "300",
+        "always.use.lightweight.access.token": "false"
+      },
+      "defaultClientScopes": ["openid", "profile", "email"],
+      "optionalClientScopes": ["accounts:read", "transactions:read"],
+      "protocolMappers": [
+        {
+          "name": "sub",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-hardcoded-claim-mapper",
+          "consentRequired": false,
+          "config": {
+            "claim.name": "sub",
+            "claim.value": "u_2e27504b-af56-5f43-98dd-42aa25d5a406",
+            "jsonType.label": "String",
+            "id.token.claim": "true",
+            "access.token.claim": "true",
+            "userinfo.token.claim": "true",
+            "introspection.token.claim": "true"
+          }
+        }
+      ]
     }
   ],
   "clientScopes": [
@@ -75,11 +127,24 @@
       "attributes": {"include.in.token.scope": "true"}
     }
   ],
+  "requiredActions": [
+    {
+      "alias": "VERIFY_PROFILE",
+      "name": "Verify Profile",
+      "providerId": "VERIFY_PROFILE",
+      "enabled": false,
+      "defaultAction": false,
+      "priority": 90,
+      "config": {}
+    }
+  ],
   "users": [
     {
       "username": "testuser",
       "email": "testuser@synthetic.local",
+      "emailVerified": true,
       "enabled": true,
+      "requiredActions": [],
       "credentials": [{"type": "password", "value": "testpass", "temporary": false}]
     }
   ]

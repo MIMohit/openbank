@@ -32,7 +32,7 @@ provision:
 ## ─── Unit Tests (no Docker needed) ───────────────────────────────────────
 test-unit:
 	@echo "==> Installing test dependencies..."
-	pip install -q -r client_sim/requirements.txt \
+	python3 -m pip install -q -r client_sim/requirements.txt \
 	               -r zt-controller/requirements.txt \
 	               -r mock-adr-api/requirements.txt
 	@echo "==> Running unit tests..."
@@ -45,7 +45,7 @@ test-unit:
 ## ─── Integration Tests (requires Docker services) ─────────────────────────
 test-integration: up
 	@echo "==> Running integration tests (requires running services)..."
-	PYTHONPATH=. pytest integration_tests/ -v --tb=short 2>&1 | tee data/test_integration.log
+	PYTHONPATH=. python3 -m pytest integration_tests/ -v --tb=short 2>&1 | tee data/test_integration.log
 
 ## ─── Full test suite ──────────────────────────────────────────────────────
 test: test-unit
@@ -58,7 +58,7 @@ experiments: up
 	  echo "==> Running experiments for mode $$MODE..."; \
 	  ZT_MODE=$$MODE $(COMPOSE) up -d zt-controller; \
 	  sleep 5; \
-	  ZT_RUN_ID=exp_$$MODE locust -f load/locustfile.py \
+	  ZT_MODE=$$MODE ZT_RUN_ID=exp_$$MODE KEYCLOAK_URL=http://localhost:8080 python3 -m locust -f load/locustfile.py \
 	      --host $(CONTROLLER_URL) \
 	      --users 20 --spawn-rate 5 --run-time 30s \
 	      --headless --only-summary \
@@ -67,22 +67,32 @@ experiments: up
 	@echo "==> Experiments complete. Raw data in $(OUT_DIR)/"
 
 ## ─── Attack suite ─────────────────────────────────────────────────────────
+# The testbed runs a single ZT Controller instance, so each config (B0/B1/P)
+# is tested by restarting the controller with a different ZT_MODE and running
+# the attack suite against it, rather than by hitting three separate ports.
 attacks: up
 	mkdir -p $(OUT_DIR)/attacks
+	@rm -f $(OUT_DIR)/attacks/summary.jsonl
 	@echo "==> Running attack suite..."
-	PYTHONPATH=. python -m attacks.runner \
-	    --controller-b0 $(CONTROLLER_URL) \
-	    --controller-b1 $(CONTROLLER_URL) \
-	    --controller-p  $(CONTROLLER_URL) \
-	    --out-dir $(OUT_DIR)/attacks \
-	    --repetitions $(REPETITIONS)
+	@for MODE in B0 B1 P; do \
+	  echo "==> Attacks: config $$MODE..."; \
+	  ZT_MODE=$$MODE $(COMPOSE) up -d zt-controller; \
+	  sleep 5; \
+	  PYTHONPATH=. KEYCLOAK_URL=http://localhost:8080 python3 -m attacks.runner \
+	      --controller-b0 $(CONTROLLER_URL) \
+	      --controller-b1 $(CONTROLLER_URL) \
+	      --controller-p  $(CONTROLLER_URL) \
+	      --out-dir $(OUT_DIR)/attacks \
+	      --repetitions $(REPETITIONS) \
+	      --modes $$MODE; \
+	done
 	@echo "==> Attacks complete. Results in $(OUT_DIR)/attacks/"
 
 ## ─── Analysis ─────────────────────────────────────────────────────────────
 analysis:
 	@echo "==> Running analysis pipeline..."
-	pip install -q -r analysis/requirements.txt
-	PYTHONPATH=. python analysis/make_figures.py
+	python3 -m pip install -q -r analysis/requirements.txt
+	PYTHONPATH=. python3 analysis/make_figures.py
 	@echo "==> Figures in data/figures/, tables in data/tables/"
 
 ## ─── Full pipeline ─────────────────────────────────────────────────────────

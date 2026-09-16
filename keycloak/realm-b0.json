@@ -2,6 +2,7 @@
   "realm": "openbanking-b0",
   "displayName": "Open Banking B0 (weak baseline)",
   "enabled": true,
+  "sslRequired": "none",
   "accessTokenLifespan": 300,
   "refreshTokenMaxReuse": 0,
   "clients": [
@@ -18,7 +19,24 @@
         "pkce.code.challenge.method": "S256"
       },
       "defaultClientScopes": ["openid", "profile", "email"],
-      "optionalClientScopes": ["accounts:read", "transactions:read"]
+      "optionalClientScopes": ["accounts:read", "transactions:read"],
+      "protocolMappers": [
+        {
+          "name": "sub",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-hardcoded-claim-mapper",
+          "consentRequired": false,
+          "config": {
+            "claim.name": "sub",
+            "claim.value": "u_2e27504b-af56-5f43-98dd-42aa25d5a406",
+            "jsonType.label": "String",
+            "id.token.claim": "true",
+            "access.token.claim": "true",
+            "userinfo.token.claim": "true",
+            "introspection.token.claim": "true"
+          }
+        }
+      ]
     }
   ],
   "clientScopes": [
@@ -33,11 +51,24 @@
       "attributes": {"include.in.token.scope": "true"}
     }
   ],
+  "requiredActions": [
+    {
+      "alias": "VERIFY_PROFILE",
+      "name": "Verify Profile",
+      "providerId": "VERIFY_PROFILE",
+      "enabled": false,
+      "defaultAction": false,
+      "priority": 90,
+      "config": {}
+    }
+  ],
   "users": [
     {
       "username": "testuser",
       "email": "testuser@synthetic.local",
+      "emailVerified": true,
       "enabled": true,
+      "requiredActions": [],
       "credentials": [{"type": "password", "value": "testpass", "temporary": false}]
     }
   ]

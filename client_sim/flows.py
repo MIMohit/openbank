@@ -71,11 +71,13 @@ class OAuthSession:
         data = {
             "grant_type": "password",
             "client_id": self.client_id,
-            "client_secret": self.client_secret,
             "username": self.username,
             "password": self.password,
             "scope": "openid accounts:read transactions:read",
         }
+        if self.client_secret:
+            # Public clients (e.g. B0's zt-client-b0) have no secret.
+            data["client_secret"] = self.client_secret
         if self.use_dpop:
             dpop_proof = self.device.sign_dpop_proof(
                 method="POST",
