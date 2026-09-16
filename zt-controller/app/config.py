@@ -7,7 +7,15 @@ import os
 
 
 def _bool(key: str, default: str = "true") -> bool:
-    return os.getenv(key, default).lower() in ("1", "true", "yes")
+    # An empty value counts as unset. docker-compose passes a bare `VAR:` entry
+    # through as an empty string when the host sets it to nothing, and the
+    # ablation harness does exactly that for the flags a given cell is not
+    # ablating — treating "" as false would silently disable device binding in
+    # every cell that was only meant to disable telemetry.
+    val = os.getenv(key)
+    if val is None or val == "":
+        val = default
+    return val.lower() in ("1", "true", "yes")
 
 
 def _float(key: str, default: float) -> float:
@@ -75,7 +83,7 @@ ORACLE_ATTACK_CONTEXT: bool = _bool("ZT_ORACLE_ATTACK_CONTEXT", "false")
 # RUN_LABEL distinguishes runs that share a ZT_MODE but differ in ablation
 # flags (e.g. "P" vs "P-minus-velocity"), so the analysis pipeline can group
 # JSONL records by experiment cell rather than by mode alone.
-RUN_LABEL: str = os.getenv("ZT_RUN_LABEL", ZT_MODE)
+RUN_LABEL: str = os.getenv("ZT_RUN_LABEL") or ZT_MODE
 
 # ─── Risk thresholds ─────────────────────────────────────────────────────────
 # risk < ALLOW_THRESHOLD → ALLOW

@@ -1,0 +1,9 @@
+population,n,cnf_jkt_mismatch,device_fp_changed,impossible_velocity,high_call_rate,low_session_continuity,dpop_failure_elevated,attack_context,mean_risk,mean_risk_scored_only
+attack A1,30,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+attack A2,30,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+attack A3,30,0.0,0.0,0.0,0.3,0.0,0.0,0.0,0.075,0.075
+attack A4,30,0.0,1.0,0.0333,0.3,0.3333,0.0,0.0,0.5067,0.5067
+attack A5,30,0.0,0.0,0.0,0.3,0.0,0.0,0.0,0.075,0.075
+attack A6,30,0.0,0.0,0.0,0.3,0.0,0.0,0.0,0.075,0.075
+legitimate (stable),1970,0.0,0.0,0.0391,0.9863,0.0,0.0,0.0,0.27,0.27
+legitimate (drift),80,0.0,0.0,0.975,0.95,0.0,0.0,0.0,0.8225,0.8225

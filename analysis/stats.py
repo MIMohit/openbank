@@ -57,7 +57,37 @@ def cliffs_delta(x: np.ndarray, y: np.ndarray) -> float:
     """
     Cliff's delta effect size (non-parametric, ordinal).
     Range [-1, 1]; |d| < 0.147 negligible, < 0.33 small, < 0.474 medium, else large.
+
+    Computed from the Mann-Whitney U statistic rather than by enumerating every
+    pair. The identity is delta = 2U/(n_x*n_y) - 1, where U counts pairs with
+    x > y and scores ties as 0.5 — exactly the dominance sum in the definition.
+    The pairwise form is O(n_x*n_y); a latency comparison here runs to a few
+    thousand observations per configuration, i.e. tens of millions of Python-level
+    comparisons per cell, which is why the effect size was never actually
+    reported. `test_stats.py` checks the two agree on small samples.
     """
+    n_x, n_y = len(x), len(y)
+    if n_x == 0 or n_y == 0:
+        return 0.0
+    from scipy.stats import mannwhitneyu
+    u_stat = mannwhitneyu(x, y, alternative="two-sided", method="asymptotic").statistic
+    return float(2.0 * u_stat / (n_x * n_y) - 1.0)
+
+
+def cliffs_delta_magnitude(delta: float) -> str:
+    """Romano et al.'s conventional thresholds for |delta|."""
+    d = abs(delta)
+    if d < 0.147:
+        return "negligible"
+    if d < 0.330:
+        return "small"
+    if d < 0.474:
+        return "medium"
+    return "large"
+
+
+def _cliffs_delta_pairwise(x, y) -> float:
+    """Reference O(n*m) definition, kept for the agreement test."""
     n_x, n_y = len(x), len(y)
     if n_x == 0 or n_y == 0:
         return 0.0

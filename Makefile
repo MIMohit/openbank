@@ -1,14 +1,27 @@
 # Zero Trust Open Banking Testbed — Makefile
 # One-command workflows as required by §2 Definition of Done
 
-.PHONY: up down build test test-unit test-integration \
-        provision experiments attacks analysis clean help
+.PHONY: up down build test test-unit test-integration reset-state \
+        provision experiments attacks attacks-oracle ablation analysis clean help
 
 SHELL := /bin/bash
 COMPOSE := docker compose
 CONTROLLER_URL ?= http://localhost:9000
+KEYCLOAK_URL ?= http://localhost:8080
 REPETITIONS ?= 30
 OUT_DIR ?= data/raw
+LOAD_USERS ?= 20
+LOAD_SPAWN_RATE ?= 5
+LOAD_RUN_TIME ?= 60s
+ZT_CONTROLLER_CONTAINER ?= open-bank-zt-controller-1
+INTERNAL_SECRET ?= zt-internal-only
+
+# Analysis needs numpy >= 2.1, which needs Python >= 3.10; the system python3
+# on the reference host is 3.9. Build an isolated venv from the newest
+# interpreter available rather than fighting PEP 668 on a Homebrew python.
+ANALYSIS_VENV ?= analysis/.venv
+ANALYSIS_PY := $(ANALYSIS_VENV)/bin/python3
+PYTHON310 := $(shell command -v python3.13 || command -v python3.12 || command -v python3.11 || command -v python3.10 || command -v python3)
 
 ## ─── Bring-up ─────────────────────────────────────────────────────────────
 up:
@@ -24,6 +37,13 @@ down:
 build:
 	$(COMPOSE) build
 
+## ─── Harness control plane ────────────────────────────────────────────────
+# Drops the controller's in-memory continuous-trust state so one workload does
+# not inherit the previous one's device, geo and rate history.
+reset-state:
+	@curl -sf -X POST -H "x-zt-admin: $(INTERNAL_SECRET)" \
+	    $(CONTROLLER_URL)/admin/reset-state > /dev/null || true
+
 ## ─── Provisioning ─────────────────────────────────────────────────────────
 provision:
 	@echo "==> Running Keycloak provisioning..."
@@ -36,6 +56,7 @@ test-unit:
 	               -r zt-controller/requirements.txt \
 	               -r mock-adr-api/requirements.txt
 	@echo "==> Running unit tests..."
+	@mkdir -p data
 	# Run each component in isolation to avoid 'app' package name collision
 	PYTHONPATH=. python3 -m pytest client_sim/tests/ -v --tb=short 2>&1 | tee data/test_unit_client_sim.log
 	PYTHONPATH=.:zt-controller python3 -m pytest zt-controller/tests/ -v --tb=short 2>&1 | tee data/test_unit_zt_controller.log
@@ -51,18 +72,28 @@ test-integration: up
 test: test-unit
 
 ## ─── Experiment matrix ────────────────────────────────────────────────────
-# Runs E3/E4 performance experiments in each mode via Locust headless
+# E3/E4 performance + E2 false-challenge, one Locust run per configuration.
+# A background docker-stats sampler runs alongside each workload so Table 4's
+# CPU/memory overhead is measured rather than asserted.
 experiments: up
-	mkdir -p $(OUT_DIR)
+	@mkdir -p $(OUT_DIR) data/raw/resources
+	# The controller appends to data/raw/<run_id>.jsonl across container
+	# restarts, so a re-run would silently mix this run's records with the
+	# previous one's. Clear this target's own outputs only.
+	@rm -f data/raw/resources/*.csv $(OUT_DIR)/exp_*.jsonl
 	@for MODE in B0 B1 P; do \
 	  echo "==> Running experiments for mode $$MODE..."; \
-	  ZT_MODE=$$MODE $(COMPOSE) up -d zt-controller; \
-	  sleep 5; \
-	  ZT_MODE=$$MODE ZT_RUN_ID=exp_$$MODE KEYCLOAK_URL=http://localhost:8080 python3 -m locust -f load/locustfile.py \
+	  ZT_MODE=$$MODE ZT_RUN_ID=exp_$$MODE ZT_RUN_LABEL=$$MODE $(COMPOSE) up -d zt-controller; \
+	  sleep 6; \
+	  $(MAKE) --no-print-directory reset-state; \
+	  ./scripts/sample_resources.sh $$MODE data/raw/resources/$$MODE.csv $(ZT_CONTROLLER_CONTAINER) & \
+	  SAMPLER=$$!; \
+	  ZT_MODE=$$MODE KEYCLOAK_URL=$(KEYCLOAK_URL) python3 -m locust -f load/locustfile.py \
 	      --host $(CONTROLLER_URL) \
-	      --users 20 --spawn-rate 5 --run-time 30s \
+	      --users $(LOAD_USERS) --spawn-rate $(LOAD_SPAWN_RATE) --run-time $(LOAD_RUN_TIME) \
 	      --headless --only-summary \
 	      2>&1 | tee $(OUT_DIR)/locust_$$MODE.log; \
+	  kill -TERM $$SAMPLER 2>/dev/null || true; wait $$SAMPLER 2>/dev/null || true; \
 	done
 	@echo "==> Experiments complete. Raw data in $(OUT_DIR)/"
 
@@ -71,14 +102,16 @@ experiments: up
 # is tested by restarting the controller with a different ZT_MODE and running
 # the attack suite against it, rather than by hitting three separate ports.
 attacks: up
-	mkdir -p $(OUT_DIR)/attacks
-	@rm -f $(OUT_DIR)/attacks/summary.jsonl
-	@echo "==> Running attack suite..."
+	@mkdir -p $(OUT_DIR)/attacks
+	@rm -f $(OUT_DIR)/attacks/summary.jsonl $(OUT_DIR)/attacks/A*_B0.jsonl \
+	       $(OUT_DIR)/attacks/A*_B1.jsonl $(OUT_DIR)/attacks/A*_P.jsonl \
+	       $(OUT_DIR)/atk_*.jsonl
+	@echo "==> Running attack suite (organic — no oracle tag)..."
 	@for MODE in B0 B1 P; do \
 	  echo "==> Attacks: config $$MODE..."; \
-	  ZT_MODE=$$MODE $(COMPOSE) up -d zt-controller; \
-	  sleep 5; \
-	  PYTHONPATH=. KEYCLOAK_URL=http://localhost:8080 python3 -m attacks.runner \
+	  ZT_MODE=$$MODE ZT_RUN_ID=atk_$$MODE ZT_RUN_LABEL=$$MODE $(COMPOSE) up -d zt-controller; \
+	  sleep 6; \
+	  PYTHONPATH=. KEYCLOAK_URL=$(KEYCLOAK_URL) python3 -m attacks.runner \
 	      --controller-b0 $(CONTROLLER_URL) \
 	      --controller-b1 $(CONTROLLER_URL) \
 	      --controller-p  $(CONTROLLER_URL) \
@@ -88,15 +121,100 @@ attacks: up
 	done
 	@echo "==> Attacks complete. Results in $(OUT_DIR)/attacks/"
 
+## ─── Attack suite, oracle ceiling (secondary measurement) ─────────────────
+# Re-runs the suite with `x-attack-context: true` and risk rule R7 enabled, so
+# every attack request tells the risk engine it is an attack. That is an oracle
+# supplied by the adversary, not detection; it bounds how much the enforcement
+# pipeline could block if detection were perfect. Reported separately and never
+# mixed into the primary tables.
+attacks-oracle: up
+	@mkdir -p $(OUT_DIR)/attacks_oracle
+	@rm -f $(OUT_DIR)/attacks_oracle/*.jsonl $(OUT_DIR)/orc_*.jsonl
+	@for MODE in B1 P; do \
+	  echo "==> Oracle-ceiling attacks: config $$MODE..."; \
+	  ZT_MODE=$$MODE ZT_RUN_ID=orc_$$MODE ZT_RUN_LABEL=$$MODE-oracle \
+	  ZT_ORACLE_ATTACK_CONTEXT=true $(COMPOSE) up -d zt-controller; \
+	  sleep 6; \
+	  PYTHONPATH=. KEYCLOAK_URL=$(KEYCLOAK_URL) python3 -m attacks.runner \
+	      --controller-b0 $(CONTROLLER_URL) \
+	      --controller-b1 $(CONTROLLER_URL) \
+	      --controller-p  $(CONTROLLER_URL) \
+	      --out-dir $(OUT_DIR)/attacks_oracle \
+	      --repetitions $(REPETITIONS) \
+	      --oracle-tag \
+	      --modes $$MODE; \
+	done
+	@echo "==> Oracle-ceiling attacks complete."
+
+## ─── Ablation matrix (§7.4, RQ3) ──────────────────────────────────────────
+# Each cell restarts the controller with one enforcement component removed and
+# runs both the attack suite and the drifting legitimate workload against it,
+# so Table 5 carries a security column and a usability column per component.
+#   P                       full continuous enforcement
+#   P-minus-device-binding  ZT_CHECK_DEVICE_BINDING=false — drops the cnf.jkt
+#                           binding check and risk rules R1/R2
+#   P-minus-context         ZT_ENABLE_TELEMETRY=false — drops the telemetry PIP
+#                           and with it geo/velocity (R3), session continuity
+#                           (R5) and DPoP-failure history (R6). Device binding
+#                           is deliberately NOT part of "context": it is keyed
+#                           on the token's cnf.jkt rather than on the PIP, so
+#                           the two components stay separable.
+#   P-minus-velocity        ZT_ENABLE_VELOCITY=false — drops call-rate rule R4
+#                           only (a strict subset of P-minus-context)
+#   B1                      FAPI 2.0 baseline, for reference in the same sweep
+ABLATION_CELLS := P P-minus-device-binding P-minus-context P-minus-velocity B1
+
+ablation: up
+	@mkdir -p $(OUT_DIR)/attacks_ablation data/raw/resources_ablation
+	@rm -f $(OUT_DIR)/attacks_ablation/*.jsonl data/raw/resources_ablation/*.csv \
+	       $(OUT_DIR)/abl_*.jsonl
+	@for CELL in $(ABLATION_CELLS); do \
+	  echo "==> Ablation cell: $$CELL"; \
+	  MODE=P; DEVBIND=; TELEM=; VELO=; \
+	  case $$CELL in \
+	    P) ;; \
+	    P-minus-device-binding) DEVBIND=false ;; \
+	    P-minus-context)        TELEM=false ;; \
+	    P-minus-velocity)       VELO=false ;; \
+	    B1)                     MODE=B1 ;; \
+	  esac; \
+	  ZT_MODE=$$MODE ZT_RUN_ID=abl_$$CELL ZT_RUN_LABEL=$$CELL \
+	  ZT_CHECK_DEVICE_BINDING=$$DEVBIND ZT_ENABLE_TELEMETRY=$$TELEM \
+	  ZT_ENABLE_VELOCITY=$$VELO $(COMPOSE) up -d zt-controller; \
+	  sleep 6; \
+	  PYTHONPATH=. KEYCLOAK_URL=$(KEYCLOAK_URL) python3 -m attacks.runner \
+	      --controller-b0 $(CONTROLLER_URL) \
+	      --controller-b1 $(CONTROLLER_URL) \
+	      --controller-p  $(CONTROLLER_URL) \
+	      --out-dir $(OUT_DIR)/attacks_ablation \
+	      --repetitions $(REPETITIONS) \
+	      --modes $$MODE --label $$CELL; \
+	  $(MAKE) --no-print-directory reset-state; \
+	  ./scripts/sample_resources.sh $$CELL data/raw/resources_ablation/$$CELL.csv $(ZT_CONTROLLER_CONTAINER) & \
+	  SAMPLER=$$!; \
+	  ZT_MODE=$$MODE KEYCLOAK_URL=$(KEYCLOAK_URL) python3 -m locust -f load/locustfile.py \
+	      --host $(CONTROLLER_URL) \
+	      --users $(LOAD_USERS) --spawn-rate $(LOAD_SPAWN_RATE) --run-time $(LOAD_RUN_TIME) \
+	      --headless --only-summary \
+	      2>&1 | tee $(OUT_DIR)/locust_abl_$$CELL.log; \
+	  kill -TERM $$SAMPLER 2>/dev/null || true; wait $$SAMPLER 2>/dev/null || true; \
+	done
+	@echo "==> Ablation complete. Results in $(OUT_DIR)/attacks_ablation/"
+
 ## ─── Analysis ─────────────────────────────────────────────────────────────
-analysis:
+$(ANALYSIS_PY):
+	@echo "==> Creating analysis venv with $(PYTHON310)..."
+	$(PYTHON310) -m venv $(ANALYSIS_VENV)
+	$(ANALYSIS_PY) -m pip install -q --upgrade pip
+	$(ANALYSIS_PY) -m pip install -q -r analysis/requirements.txt
+
+analysis: $(ANALYSIS_PY)
 	@echo "==> Running analysis pipeline..."
-	python3 -m pip install -q -r analysis/requirements.txt
-	PYTHONPATH=. python3 analysis/make_figures.py
+	PYTHONPATH=. $(ANALYSIS_PY) analysis/make_figures.py
 	@echo "==> Figures in data/figures/, tables in data/tables/"
 
 ## ─── Full pipeline ─────────────────────────────────────────────────────────
-all: up test experiments attacks analysis
+all: up test experiments attacks attacks-oracle ablation analysis
 	@echo "==> Full pipeline complete."
 
 ## ─── Clean ────────────────────────────────────────────────────────────────
@@ -104,7 +222,10 @@ clean:
 	$(COMPOSE) down -v
 	find . -name "__pycache__" -exec rm -rf {} + 2>/dev/null || true
 	find . -name "*.pyc" -delete 2>/dev/null || true
-	rm -rf data/raw/*.jsonl data/raw/attacks/*.jsonl
+	rm -rf data/raw/*.jsonl data/raw/attacks/*.jsonl \
+	       data/raw/attacks_oracle/*.jsonl data/raw/attacks_ablation/*.jsonl \
+	       data/raw/resources/*.csv data/raw/resources_ablation/*.csv
 
 help:
-	@echo "Targets: up, down, build, provision, test-unit, test, experiments, attacks, analysis, all, clean"
+	@echo "Targets: up, down, build, provision, test-unit, test, experiments,"
+	@echo "         attacks, attacks-oracle, ablation, analysis, all, clean"
