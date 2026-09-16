@@ -714,7 +714,7 @@ def fig7_latency():
     legit = legit[legit["_ts"] >= start + pd.Timedelta(seconds=5)]
 
     fig, axes = plt.subplots(1, 3, figsize=(COL2, 2.15),
-                             gridspec_kw={"width_ratios": [1.0, 1.15, 1.0]})
+                             gridspec_kw={"width_ratios": [1.0, 1.10, 0.92]})
 
     ax = axes[0]
     for cfg in CONFIGS:
@@ -760,15 +760,15 @@ def fig7_latency():
         bottoms += vals
     ax.set_ylabel("mean stage latency (ms)")
     ax.set_ylim(0, 22.5)
-    ax.legend(loc="upper left", bbox_to_anchor=(-0.02, 0.86), fontsize=5.7,
-              labelspacing=0.30, handlelength=1.1, handleheight=0.9)
+    ax.legend(loc="center left", bbox_to_anchor=(1.02, 0.5), fontsize=5.9,
+              labelspacing=0.45, handlelength=1.1, handleheight=0.9)
     ax.grid(axis="y", alpha=0.35)
     ax.set_title("(c)  where the time goes", loc="left", fontsize=7.0, weight="bold")
     pol = float(t3.at["P", "mean_policy_ms"])
     dpop = float(t3.at["P", "mean_dpop_verify_ms"])
     ax.annotate(f"one HTTP round trip to the\npolicy engine: {pol:.2f} ms\n"
                 f"(DPoP verification: {dpop:.2f} ms)",
-                xy=(1.78, 5.0), xytext=(-0.42, 19.6), fontsize=5.7,
+                xy=(1.76, 5.0), xytext=(-0.26, 22.1), fontsize=5.7,
                 color=C_ACCENT, ha="left", va="top", linespacing=1.35,
                 arrowprops=dict(arrowstyle="-|>", color=C_ACCENT, lw=0.6,
                                 shrinkA=2, shrinkB=2,
