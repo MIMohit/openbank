@@ -1209,11 +1209,11 @@ def fig12_friction_anatomy():
     above = float((rate > 30).mean())
     med = float(np.median(rate))
     ax.annotate("R4 threshold\n30 req/min", xy=(30, ax.get_ylim()[1] * 0.16),
-                xytext=(2.4, ax.get_ylim()[1] * 0.30), fontsize=5.9,
+                xytext=(4.5, ax.get_ylim()[1] * 0.30), fontsize=5.9,
                 color=C_ACCENT, ha="left", va="center", linespacing=1.25,
                 arrowprops=dict(arrowstyle="-|>", color=C_ACCENT, lw=0.6,
                                 shrinkA=2, shrinkB=2))
-    ax.text(0.02, 0.97, f"{above:.1%} of legitimate requests\n"
+    ax.text(0.04, 0.97, f"{above:.1%} of legitimate requests\n"
                         f"exceed the threshold; the median\n"
                         f"is {med:.0f} req/min, {med / 30:.0f}× the threshold",
             transform=ax.transAxes, ha="left", va="top", fontsize=5.7,

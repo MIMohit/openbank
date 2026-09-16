@@ -77,7 +77,9 @@ The mechanisms are standard integration. The novelty is in the measurement desig
 
 ### 2.8 Writing concerns
 
-The rewrite addresses the ones that applied to the prior draft: version-status notes, change logs, appendices containing instructions to the author, and "[FILL]"-era scaffolding are gone. Remaining watch items: §9 is long and the reader must be kept oriented (the RQ tags in the section headings do this); §11.4's four failure modes risk reading as a list rather than an argument; the abstract is at the upper bound of acceptable length for the venue and should be trimmed if the template requires it.
+The rewrite addresses the ones that applied to the prior draft: version-status notes, change logs, appendices containing instructions to the author, and "[FILL]"-era scaffolding are gone. The abstract has been cut from about 600 words to 261 and a five-bullet highlights list added, both within the venue's conventions.
+
+Remaining watch items. The manuscript runs to roughly 19 000 words including tables, captions, references and appendices — on the long side for the venue, though not out of range for a measurement paper with eleven tables. If it must be cut, §9.10 (scaling) and Appendix B are the least load-bearing, and §2 could lose a further paragraph. §9 is long and the reader must be kept oriented; the RQ tags in the subsection headings do this and should be kept through copy-editing. §11.4's four failure modes risk reading as a list rather than an argument.
 
 ---
 
@@ -95,7 +97,7 @@ Sufficient to support the paper's claims as now written, which are deliberately 
 
 **3. What additional experiments should I run?**
 
-E-1 and E-2 are required; E-3 and E-4 are strongly recommended. See §4.
+E-1 and E-2 are required; E-3, E-4, E-5 and E-6 are strongly recommended. See §4.
 
 **4. Does the system itself need modification?**
 
@@ -201,14 +203,23 @@ For each: why it is needed, the research question it answers, what to implement,
 - *Strengthening result.* It would let the paper quote a friction number that means something outside the testbed. The structural finding — two refusals per excursion — should survive, and showing that it does would be valuable.
 - *Affects the core contribution.* No; it affects how quotable the usability numbers are.
 
+**E-6. Consent-scope enforcement at the policy decision point.**
+- *Why.* A5 is refused identically in all three configurations because ownership is enforced downstream, so the taxonomy currently contains no authorization attack that the enforcement layer can act on (§9.1, §12). The synthetic dataset already carries a consent object per user, listing the accounts the consent covers; the policy never reads it.
+- *Question.* Does moving an authorization decision into the PDP change the outcome of an attack that object-level ownership cannot catch — specifically, a request within the subject's own objects but outside its consent scope?
+- *Implement.* Pass the subject's active consent into the policy input document and add a scope rule to `zt.rego`; add an attack that reads an account the subject owns but whose consent does not cover.
+- *Metrics.* Attack success rate by configuration; added policy-stage latency.
+- *Baseline.* B1, which has no policy engine and would allow it.
+- *Strengthening result.* It would give the taxonomy one authorization attack that discriminates between B1 and P, which the current six do not, and it would exercise the PDP on something other than a risk threshold.
+- *Affects the core contribution.* It broadens it: the paper currently measures the contextual layer only, not the policy layer's authorization capability.
+
 ### C. Optional
 
-**E-6. Colocated or cached policy decision point.** The cost decomposition asserts that an in-process PDP or a decision cache removes most of the 9.39 ms. Measuring it converts an assertion into a result and gives deployers a number. Low effort, since the rule set is deterministic with a small input space.
+**E-7. Colocated or cached policy decision point.** The cost decomposition asserts that an in-process PDP or a decision cache removes most of the 9.39 ms. Measuring it converts an assertion into a result and gives deployers a number. Low effort, since the rule set is deterministic with a small input space.
 
-**E-7. Mutual TLS between controller and resource server.** Closes the M6 irony and lets the paper state a trust boundary it actually enforces rather than assumes.
+**E-8. Mutual TLS between controller and resource server.** Closes the M6 irony and lets the paper state a trust boundary it actually enforces rather than assumes.
 
-**E-8. mTLS-based sender-constraining as a second baseline arm.** Completes the FAPI 2.0 comparison and would show whether the "cryptography is cheap" result holds when the crypto is a TLS handshake rather than a signature check.
+**E-9. mTLS-based sender-constraining as a second baseline arm.** Completes the FAPI 2.0 comparison and would show whether the "cryptography is cheap" result holds when the crypto is a TLS handshake rather than a signature check.
 
-**E-9. Adversary strategies beyond A7.** A drifting adversary who moves once and then stays (defeating the geo rule by remaining consistent); an adversary who lowers a subject's legitimate rate before acting; an enrolment-time adversary. Each is a few dozen lines against the existing harness.
+**E-10. Adversary strategies beyond A7.** A drifting adversary who moves once and then stays (defeating the geo rule by remaining consistent); an adversary who lowers a subject's legitimate rate before acting; an enrolment-time adversary. Each is a few dozen lines against the existing harness.
 
 We deliberately do not recommend: more attack repetitions (30 per cell already gives intervals narrower than the effects being measured), more concurrency levels (the four measured already establish the fixed-tax shape), or additional statistical testing (the comparisons that matter are deterministic recomputations or have effect sizes reported).
