@@ -2,17 +2,23 @@
 A1 — Network token replay.
 Captures a valid request (token + DPoP proof) and resends it verbatim.
 
+The captured request is one the victim actually made, so the proof's `jti` has
+already been consumed by the time the adversary replays it: `run()` therefore
+issues the original request once (uncounted) before replaying it.  Counting the
+first replay as an attempt, as this used to, credited the adversary with one
+"success" per run that is really just the victim's own legitimate call.
+
 Expected:
   B0: vulnerable (no replay protection)
   B1: blocked (jti replay cache + iat skew)
-  P:  blocked (same as B1, plus risk flags)
+  P:  blocked (same as B1)
 """
 import asyncio
 import time
 
 import httpx
 
-from attacks.base import AttackResult, write_attack_result
+from attacks.base import AttackResult, attack_headers, write_attack_result
 
 ATTACK_ID = "A1"
 
@@ -24,19 +30,27 @@ async def run(
     target_path: str = "/accounts",
     num_attempts: int = 30,
     out_dir: str = "data/raw/attacks",
+    oracle_tag: bool = False,
 ) -> AttackResult:
     """
     Replay `captured_headers` (which include a valid Authorization + DPoP
     from a prior legitimate request) `num_attempts` times.
     """
-    result = AttackResult(attack_id=ATTACK_ID, config=config)
-    t_start = time.perf_counter()
+    result = AttackResult(attack_id=ATTACK_ID, config=config, oracle_tag=oracle_tag)
 
     replay_headers = dict(captured_headers)
-    replay_headers["x-attack-id"] = ATTACK_ID
-    replay_headers["x-attack-context"] = "true"
+    replay_headers.update(attack_headers(ATTACK_ID, oracle_tag))
 
     async with httpx.AsyncClient(base_url=controller_url, timeout=5) as client:
+        # The victim's own use of the captured request (not an attack attempt).
+        original = dict(captured_headers)
+        original["x-context-profile"] = "warmup"
+        try:
+            await client.get(target_path, headers=original)
+        except Exception as exc:
+            result.notes += f"capture_error: {exc}; "
+
+        t_start = time.perf_counter()
         for _ in range(num_attempts):
             result.attempts += 1
             try:
@@ -63,8 +77,8 @@ def _infer_stage(resp) -> str:
     body = resp.text.lower()
     if "replay" in body or "jti" in body:
         return "dpop_verify"
-    if "401" in str(resp.status_code):
+    if resp.status_code == 401:
         return "token_verify"
-    if "403" in str(resp.status_code):
+    if resp.status_code == 403:
         return "policy"
     return "unknown"

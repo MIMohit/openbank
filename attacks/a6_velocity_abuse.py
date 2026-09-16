@@ -11,7 +11,7 @@ import time
 
 import httpx
 
-from attacks.base import AttackResult, write_attack_result
+from attacks.base import AttackResult, attack_headers, write_attack_result
 from client_sim.device import Device
 
 ATTACK_ID = "A6"
@@ -25,8 +25,9 @@ async def run(
     device: Device,
     num_attempts: int = 60,
     out_dir: str = "data/raw/attacks",
+    oracle_tag: bool = False,
 ) -> AttackResult:
-    result = AttackResult(attack_id=ATTACK_ID, config=config)
+    result = AttackResult(attack_id=ATTACK_ID, config=config, oracle_tag=oracle_tag)
     t_start = time.perf_counter()
 
     async with httpx.AsyncClient(base_url=controller_url, timeout=5) as client:
@@ -34,17 +35,18 @@ async def run(
             result.attempts += 1
             path = "/accounts"
             full_url = f"{controller_url}{path}"
-            headers = {
-                "Authorization": f"Bearer {access_token}",
-                "x-attack-id": ATTACK_ID,
-                "x-attack-context": "false",  # legitimate key — only rate is anomalous
-            }
+            # The key and the context are the victim's own; only the request
+            # rate is anomalous. A6 is therefore the attack that has always
+            # been measured organically — the others now are too.
+            headers = {"Authorization": f"Bearer {access_token}"}
+            headers.update(attack_headers(ATTACK_ID, oracle_tag))
             headers.update(device.context_headers())
-            headers["DPoP"] = device.sign_dpop_proof(
-                method="GET",
-                url=full_url,
-                access_token=access_token,
-            )
+            if config != "B0":
+                headers["DPoP"] = device.sign_dpop_proof(
+                    method="GET",
+                    url=full_url,
+                    access_token=access_token,
+                )
 
             try:
                 resp = await client.get(path, headers=headers)

@@ -30,6 +30,22 @@ GLOBAL_SEED = int(os.getenv("GLOBAL_SEED", "42"))
 
 _rng = random.Random(GLOBAL_SEED)
 
+# One enrolled device, shared by every simulated user.
+#
+# The realm provides a single test identity (`testuser`), and the controller
+# keys continuous-trust state on the token subject, so giving each virtual user
+# its own freshly generated keypair would model one account presenting twenty
+# unknown device keys at once — every request would trip the new-device rule and
+# the "legitimate traffic" baseline would not be legitimate. One subject with
+# one enrolled device driving concurrent calls is the faithful reading of this
+# workload; context drift (below) is then the only thing that varies.
+_ENROLLED_DEVICE = Device(
+    device_id=f"load_{ZT_MODE}",
+    geo="AU",
+    source_ip="10.0.0.1",
+    seed=GLOBAL_SEED,
+)
+
 
 def _authenticate(device: Device) -> str:
     """
@@ -75,39 +91,46 @@ class OpenBankingUser(HttpUser):
     wait_time = between(0.1, 1.0)
 
     def on_start(self):
-        self.device = Device(
-            device_id=f"load_{self.environment.runner.user_count}_{uuid.uuid4().hex[:4]}",
-            geo="AU",
-            source_ip=f"10.{_rng.randint(0,255)}.{_rng.randint(0,255)}.{_rng.randint(1,254)}",
-        )
+        self.device = _ENROLLED_DEVICE
         self.access_token = _authenticate(self.device)
         self.request_count = 0
 
-    def _build_headers(self, method: str, path: str, drift: bool = False) -> dict:
+    def _build_headers(self, method: str, path: str) -> dict:
+        """
+        Build one request's headers, drawing the context profile for it.
+
+        Every request is labelled `stable` or `drift` via `x-context-profile`
+        and the controller records that label in its JSONL record, so §7.2's
+        false-challenge and false-deny rates can be split by context profile
+        after the fact. Without the label the two populations are
+        indistinguishable in the logs and Table 2 cannot be computed.
+        """
         url = f"{CONTROLLER_URL}{path}"
+        drift = _rng.random() < DRIFT_PROBABILITY
         headers = {
             "Authorization": f"Bearer {self.access_token}",
+            "x-context-profile": "drift" if drift else "stable",
         }
         if drift:
-            # Simulate geo/IP change
+            # Simulate a network/geo change mid-session (travel, mobile handover)
             headers.update(self.device.context_headers(
-                geo=_rng.choice(["AU", "NZ", "SG"]),
+                geo=_rng.choice(["NZ", "SG"]),
                 source_ip=f"192.168.{_rng.randint(0,255)}.{_rng.randint(1,254)}",
             ))
         else:
             headers.update(self.device.context_headers())
 
-        headers["DPoP"] = self.device.sign_dpop_proof(
-            method=method,
-            url=url,
-            access_token=self.access_token,
-        )
+        if ZT_MODE != "B0":
+            headers["DPoP"] = self.device.sign_dpop_proof(
+                method=method,
+                url=url,
+                access_token=self.access_token,
+            )
         return headers
 
     @task(5)
     def list_accounts(self):
-        drift = _rng.random() < DRIFT_PROBABILITY
-        headers = self._build_headers("GET", "/accounts", drift=drift)
+        headers = self._build_headers("GET", "/accounts")
         with self.client.get("/accounts", headers=headers, catch_response=True) as resp:
             if resp.status_code == 200:
                 resp.success()

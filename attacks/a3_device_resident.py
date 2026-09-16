@@ -17,7 +17,7 @@ import time
 
 import httpx
 
-from attacks.base import AttackResult, write_attack_result
+from attacks.base import AttackResult, attack_headers, write_attack_result
 from client_sim.device import Device
 
 ATTACK_ID = "A3"
@@ -35,12 +35,13 @@ async def run(
     target_paths: list | None = None,
     num_attempts: int = 30,
     out_dir: str = "data/raw/attacks",
+    oracle_tag: bool = False,
 ) -> AttackResult:
     """
     Simulates session-riding: attacker uses the legitimate device's key
     but drives abnormal call patterns (burst + mixed endpoint access).
     """
-    result = AttackResult(attack_id=ATTACK_ID, config=config)
+    result = AttackResult(attack_id=ATTACK_ID, config=config, oracle_tag=oracle_tag)
     if target_paths is None:
         target_paths = ["/accounts", "/transactions?account_id=acct_test"]
     t_start = time.perf_counter()
@@ -51,11 +52,8 @@ async def run(
             path = target_paths[attempt_idx % len(target_paths)]
             full_url = f"{controller_url}{path}"
 
-            headers = {
-                "Authorization": f"Bearer {access_token}",
-                "x-attack-id": ATTACK_ID,
-                "x-attack-context": "true",
-            }
+            headers = {"Authorization": f"Bearer {access_token}"}
+            headers.update(attack_headers(ATTACK_ID, oracle_tag))
             # Legitimate device context (key is valid) — telemetry sees abnormal rate
             headers.update(legitimate_device.context_headers())
             headers["DPoP"] = legitimate_device.sign_dpop_proof(

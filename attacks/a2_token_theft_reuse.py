@@ -14,7 +14,7 @@ import time
 
 import httpx
 
-from attacks.base import AttackResult, write_attack_result
+from attacks.base import AttackResult, attack_headers, write_attack_result
 from client_sim.device import Device
 
 ATTACK_ID = "A2"
@@ -27,24 +27,22 @@ async def run(
     target_path: str = "/accounts",
     num_attempts: int = 30,
     out_dir: str = "data/raw/attacks",
+    oracle_tag: bool = False,
 ) -> AttackResult:
     """
     Attempt to use stolen_access_token from a fresh device (different keypair).
     In B0 mode the token has no cnf.jkt so no DPoP is needed.
     In B1/P mode, a new device's DPoP proof will fail cnf.jkt check.
     """
-    result = AttackResult(attack_id=ATTACK_ID, config=config)
+    result = AttackResult(attack_id=ATTACK_ID, config=config, oracle_tag=oracle_tag)
     attacker_device = Device(device_id="attacker_a2", geo="CN", source_ip="1.2.3.4")
     t_start = time.perf_counter()
 
     async with httpx.AsyncClient(base_url=controller_url, timeout=5) as client:
         for _ in range(num_attempts):
             result.attempts += 1
-            headers = {
-                "Authorization": f"Bearer {stolen_access_token}",
-                "x-attack-id": ATTACK_ID,
-                "x-attack-context": "true",
-            }
+            headers = {"Authorization": f"Bearer {stolen_access_token}"}
+            headers.update(attack_headers(ATTACK_ID, oracle_tag))
             headers.update(attacker_device.context_headers())
 
             # Attacker signs a fresh DPoP proof with THEIR key (won't match cnf.jkt)
