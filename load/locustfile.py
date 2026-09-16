@@ -8,7 +8,6 @@ Run:
 Context drift profile: simulates a user who occasionally changes network/geo
 (e.g., switches from office to mobile).  Used for E2 false-challenge measurement.
 """
-import asyncio
 import os
 import random
 import sys
@@ -16,11 +15,12 @@ import time
 import uuid
 from pathlib import Path
 
+import requests
+
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from locust import HttpUser, task, between, events
 from client_sim.device import Device
-from client_sim.flows import OAuthSession
 
 CONTROLLER_URL = os.getenv("CONTROLLER_URL", "http://localhost:9000")
 KEYCLOAK_URL = os.getenv("KEYCLOAK_URL", "http://localhost:8080")
@@ -33,7 +33,12 @@ _rng = random.Random(GLOBAL_SEED)
 
 def _authenticate(device: Device) -> str:
     """
-    Obtain a real, Keycloak-signed access token bound to `device`'s key.
+    Obtain a real, Keycloak-signed access token bound to `device`'s key, via
+    a plain synchronous request (Locust runs on gevent-patched sockets;
+    asyncio.run() inside a greenlet is unreliable and silently drops most
+    simulated users, so this avoids asyncio/httpx entirely rather than
+    reusing client_sim.flows.OAuthSession).
+
     B0 uses the openbanking-b0 realm's public client (no DPoP); B1/P use the
     openbanking-fapi2 realm's harness-only direct-grant client (see
     keycloak/realm-fapi2.json: zt-harness-client) so the load test can get
@@ -41,28 +46,29 @@ def _authenticate(device: Device) -> str:
     verified by the ZT Controller exactly like any other request.
     """
     if ZT_MODE == "B0":
-        session = OAuthSession(
-            device=device,
-            keycloak_url=KEYCLOAK_URL,
-            realm=os.getenv("KC_REALM_B0", "openbanking-b0"),
-            client_id="zt-client-b0",
-            client_secret="",
-            username="testuser",
-            password="testpass",
-            use_dpop=False,
-        )
+        realm = os.getenv("KC_REALM_B0", "openbanking-b0")
+        client_id, client_secret, use_dpop = "zt-client-b0", "", False
     else:
-        session = OAuthSession(
-            device=device,
-            keycloak_url=KEYCLOAK_URL,
-            realm=os.getenv("KC_REALM_FAPI2", "openbanking-fapi2"),
-            client_id="zt-harness-client",
-            client_secret="zt-harness-client-secret-local",
-            username="testuser",
-            password="testpass",
-            use_dpop=True,
-        )
-    return asyncio.run(session.authenticate())
+        realm = os.getenv("KC_REALM_FAPI2", "openbanking-fapi2")
+        client_id, client_secret, use_dpop = "zt-harness-client", "zt-harness-client-secret-local", True
+
+    token_endpoint = f"{KEYCLOAK_URL}/realms/{realm}/protocol/openid-connect/token"
+    data = {
+        "grant_type": "password",
+        "client_id": client_id,
+        "username": "testuser",
+        "password": "testpass",
+        "scope": "openid accounts:read transactions:read",
+    }
+    if client_secret:
+        data["client_secret"] = client_secret
+    headers = {"Content-Type": "application/x-www-form-urlencoded"}
+    if use_dpop:
+        headers["DPoP"] = device.sign_dpop_proof(method="POST", url=token_endpoint)
+
+    resp = requests.post(token_endpoint, data=data, headers=headers, timeout=10)
+    resp.raise_for_status()
+    return resp.json()["access_token"]
 
 
 class OpenBankingUser(HttpUser):
