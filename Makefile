@@ -2,7 +2,7 @@
 # One-command workflows as required by §2 Definition of Done
 
 .PHONY: up down build test test-unit test-integration reset-state \
-        provision experiments attacks attacks-oracle ablation analysis clean help
+        provision experiments scaling attacks attacks-oracle ablation analysis clean help
 
 SHELL := /bin/bash
 COMPOSE := docker compose
@@ -96,6 +96,33 @@ experiments: up
 	  kill -TERM $$SAMPLER 2>/dev/null || true; wait $$SAMPLER 2>/dev/null || true; \
 	done
 	@echo "==> Experiments complete. Raw data in $(OUT_DIR)/"
+
+## ─── Load scaling sweep (RQ2: "across increasing load") ───────────────────
+# `experiments` measures one concurrency level; RQ2 asks how the overhead moves
+# as load rises, which needs several. Each cell is a short Locust run at a fixed
+# user count; achieved throughput is recomputed from the controller's own
+# records in analysis rather than scraped from Locust's summary.
+SCALING_USERS ?= 5 10 20 40
+SCALING_RUN_TIME ?= 30s
+
+scaling: up
+	@mkdir -p $(OUT_DIR)
+	@rm -f $(OUT_DIR)/scale_*.jsonl
+	@for MODE in B0 B1 P; do \
+	  for U in $(SCALING_USERS); do \
+	    echo "==> Scaling: mode $$MODE, $$U users..."; \
+	    ZT_MODE=$$MODE ZT_RUN_ID=scale_$${MODE}_$${U} ZT_RUN_LABEL=$$MODE \
+	      $(COMPOSE) up -d zt-controller; \
+	    sleep 6; \
+	    $(MAKE) --no-print-directory reset-state; \
+	    ZT_MODE=$$MODE KEYCLOAK_URL=$(KEYCLOAK_URL) python3 -m locust -f load/locustfile.py \
+	        --host $(CONTROLLER_URL) \
+	        --users $$U --spawn-rate $$U --run-time $(SCALING_RUN_TIME) \
+	        --headless --only-summary \
+	        2>&1 | tail -20; \
+	  done; \
+	done
+	@echo "==> Scaling sweep complete."
 
 ## ─── Attack suite ─────────────────────────────────────────────────────────
 # The testbed runs a single ZT Controller instance, so each config (B0/B1/P)
@@ -214,7 +241,7 @@ analysis: $(ANALYSIS_PY)
 	@echo "==> Figures in data/figures/, tables in data/tables/"
 
 ## ─── Full pipeline ─────────────────────────────────────────────────────────
-all: up test experiments attacks attacks-oracle ablation analysis
+all: up test experiments scaling attacks attacks-oracle ablation analysis
 	@echo "==> Full pipeline complete."
 
 ## ─── Clean ────────────────────────────────────────────────────────────────
@@ -228,4 +255,4 @@ clean:
 
 help:
 	@echo "Targets: up, down, build, provision, test-unit, test, experiments,"
-	@echo "         attacks, attacks-oracle, ablation, analysis, all, clean"
+	@echo "         scaling, attacks, attacks-oracle, ablation, analysis, all, clean"

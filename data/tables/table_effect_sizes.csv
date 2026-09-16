@@ -1,7 +1,7 @@
 comparison,metric,n_a,n_b,estimate_a,estimate_b,effect_size,effect_value,effect_magnitude,ci_lo,ci_hi,odds_ratio
-latency B1 vs B0,total latency (ms),2087,2054,6.893,7.475,Cliff's delta,0.111,negligible,,,
-latency P vs B1,total latency (ms),2054,2050,7.475,13.768,Cliff's delta,0.5729,large,,,
-latency P vs B0,total latency (ms),2087,2050,6.893,13.768,Cliff's delta,0.6384,large,,,
+latency B1 vs B0,total latency (ms),1938,1912,6.827,7.423,Cliff's delta,0.1152,negligible,,,
+latency P vs B1,total latency (ms),1912,1920,7.423,13.641,Cliff's delta,0.5804,large,,,
+latency P vs B0,total latency (ms),1938,1920,6.827,13.641,Cliff's delta,0.6457,large,,,
 attack success B1 vs B0,A1,30,30,1.0,0.0,risk difference (b - a),-1.0,,-1.0,-1.0,0.0003
 attack success B1 vs B0,A2,30,30,1.0,0.0,risk difference (b - a),-1.0,,-1.0,-1.0,0.0003
 attack success B1 vs B0,A3,30,30,1.0,1.0,risk difference (b - a),0.0,,0.0,0.0,1.0

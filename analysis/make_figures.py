@@ -109,13 +109,37 @@ def _load_attack_summary(directory: Path) -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
-def _legit(df: pd.DataFrame, run_prefix: str = "") -> pd.DataFrame:
+WARMUP_SECONDS = 5.0
+
+
+def _drop_warmup_window(df: pd.DataFrame, seconds: float = WARMUP_SECONDS) -> pd.DataFrame:
+    """
+    Drop each run's first `seconds` of traffic.
+
+    §8 states that warm-up is excluded and nothing implemented it. It is not a
+    cosmetic exclusion: every workload starts against a freshly restarted
+    container, and the cold-start cost is large enough to dominate a short run
+    (the 5-user B0 scaling cell reports a 53 ms median over the whole run
+    against ~7 ms once the first seconds are dropped), which would make the
+    lowest-concurrency cell look like the slowest.
+    """
+    if df.empty or "ts" not in df.columns:
+        return df
+    out = df.copy()
+    out["_ts"] = pd.to_datetime(out["ts"], format="ISO8601", utc=True, errors="coerce")
+    start = out.groupby("run_id")["_ts"].transform("min")
+    out = out[out["_ts"] >= start + pd.Timedelta(seconds=seconds)]
+    return out.drop(columns=["_ts"])
+
+
+def _legit(df: pd.DataFrame, run_prefix: str = "", drop_warmup: bool = True) -> pd.DataFrame:
     """
     Legitimate workload requests only.
 
-    Excludes attack traffic and the harness warm-up requests that establish a
-    subject's baseline — the warm-up is instrumentation, not workload, and
-    counting it would dilute every rate reported per context profile.
+    Excludes attack traffic, the harness warm-up requests that establish a
+    subject's baseline (instrumentation, not workload — counting them would
+    dilute every rate reported per context profile), and each run's opening
+    warm-up window.
     """
     if df.empty:
         return df
@@ -123,6 +147,8 @@ def _legit(df: pd.DataFrame, run_prefix: str = "") -> pd.DataFrame:
              (df["request.context_profile"].isin(["stable", "drift"]))]
     if run_prefix:
         out = out[out["run_id"].astype(str).str.startswith(run_prefix)]
+    if drop_warmup:
+        out = _drop_warmup_window(out)
     return out
 
 
@@ -718,6 +744,75 @@ def table_risk_components(raw_df: pd.DataFrame):
         print("[OK] table7_risk_components.csv")
 
 
+# ─── Table 8 + figure: latency and throughput vs concurrency (RQ2) ──────────
+
+def table_scaling(raw_df: pd.DataFrame):
+    """
+    Table 8 — how the enforcement overhead moves as offered load rises.
+
+    RQ2 asks for the overhead "across increasing load" and a single
+    concurrency level cannot answer it. Achieved throughput is recomputed from
+    the controller's own timestamps rather than scraped from the load
+    generator's summary, so it counts the same requests the latency figures do.
+    """
+    if raw_df.empty:
+        return
+    scale = raw_df[raw_df["run_id"].astype(str).str.startswith("scale_")]
+    legit = _legit(scale)
+    if legit.empty:
+        print("[WARN] No scaling data for table8")
+        return
+    legit = legit.copy()
+    legit["_ts"] = pd.to_datetime(legit["ts"], format="ISO8601", utc=True, errors="coerce")
+    legit["users"] = legit["run_id"].astype(str).str.split("_").str[-1].astype(int)
+
+    rows = []
+    for (cfg, users), sub in legit.groupby(["run_label", "users"]):
+        vals = sub["latency_ms.total"].dropna()
+        if vals.empty:
+            continue
+        span = (sub["_ts"].max() - sub["_ts"].min()).total_seconds()
+        rows.append({
+            "Config": cfg,
+            "users": int(users),
+            "n": len(vals),
+            "achieved_rps": round(len(vals) / span, 2) if span > 0 else "",
+            "p50_ms": round(float(np.percentile(vals, 50)), 3),
+            "p95_ms": round(float(np.percentile(vals, 95)), 3),
+            "p99_ms": round(float(np.percentile(vals, 99)), 3),
+            "mean_ms": round(float(vals.mean()), 3),
+        })
+    if not rows:
+        return
+    df = pd.DataFrame(rows).sort_values(["Config", "users"])
+    df.to_csv(TBL_DIR / "table8_scaling.csv", index=False)
+    print("[OK] table8_scaling.csv")
+
+    fig, axes = plt.subplots(1, 2, figsize=(12, 5))
+    for cfg in CONFIGS:
+        sub = df[df["Config"] == cfg]
+        if sub.empty:
+            continue
+        axes[0].plot(sub["users"], sub["p50_ms"], "o-", label=f"{cfg} p50")
+        axes[0].plot(sub["users"], sub["p95_ms"], "s--", alpha=0.6, label=f"{cfg} p95")
+        axes[1].plot(sub["users"], pd.to_numeric(sub["achieved_rps"], errors="coerce"),
+                     "o-", label=cfg)
+    axes[0].set_xlabel("Concurrent users")
+    axes[0].set_ylabel("Latency (ms)")
+    axes[0].set_title("Latency vs concurrency")
+    axes[0].legend(fontsize=7)
+    axes[0].grid(alpha=0.3)
+    axes[1].set_xlabel("Concurrent users")
+    axes[1].set_ylabel("Achieved throughput (req/s)")
+    axes[1].set_title("Throughput vs concurrency")
+    axes[1].legend()
+    axes[1].grid(alpha=0.3)
+    fig.tight_layout()
+    fig.savefig(FIG_DIR / "fig4_scaling.png", dpi=150)
+    plt.close(fig)
+    print("[OK] fig4_scaling.png")
+
+
 # ─── Main ────────────────────────────────────────────────────────────────────
 
 def main():
@@ -737,6 +832,7 @@ def main():
     table_latency(raw_df)
     fig_latency(raw_df)
     table_resources()
+    table_scaling(raw_df)
     table_ablation(abl_df, raw_df)
     fig_ablation(abl_df, raw_df)
     table_effect_sizes(raw_df, atk_df)
