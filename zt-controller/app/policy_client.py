@@ -27,6 +27,15 @@ async def decide(risk: float, telemetry: dict, checks: dict) -> str:
             "risk": risk,
             "telemetry": telemetry,
             "checks": checks,
+            # Which enforcement components are active. The hard-deny rules in
+            # zt.rego mirror controller-side checks, so an ablated check must
+            # also be ablated in the policy — otherwise "P - device-binding"
+            # would still be denied by OPA on the same condition and the
+            # ablation would measure nothing.
+            "flags": {
+                "check_device_binding": config.CHECK_DEVICE_BINDING,
+                "enforce_dpop": config.ENFORCE_DPOP,
+            },
             "thresholds": {
                 "allow": config.RISK_THRESHOLD_ALLOW,
                 "deny": config.RISK_THRESHOLD_DENY,

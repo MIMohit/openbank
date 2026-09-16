@@ -2,12 +2,13 @@
 Zero Trust Controller — FastAPI PEP+PDP reverse proxy.
 
 Per-request pipeline (§7 of spec):
-  1. token_verify   — AT signature / issuer / scope / exp / cnf.jkt
-  2. dpop_verify    — JWS verify, jti replay, iat skew, ath, cnf.jkt
-  3. telemetry      — device fp, geo, velocity, call-rate, session continuity
-  4. risk           — rule-based score → belief b_t
-  5. policy_client  — OPA ALLOW / CHALLENGE / DENY
-  6. proxy          — forward to mock ADR API (only on ALLOW)
+  1. token_verify    — AT signature / issuer / scope / exp / cnf.jkt
+  2. dpop_verify     — JWS verify, jti replay, iat skew, ath, cnf.jkt binding
+  3. telemetry       — geo/velocity, call-rate, session continuity, DPoP history
+     device_registry — is this subject using a device key it has used before?
+  4. risk            — rule-based score → belief b_t
+  5. policy_client   — OPA ALLOW / CHALLENGE / DENY
+  6. proxy           — forward to mock ADR API (only on ALLOW)
 
 All stages are instrumented; every request emits one JSONL record (§14).
 Mode (B0/B1/P) and all ablation flags are set by environment variables (config.py).
@@ -22,7 +23,8 @@ import uuid
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse, Response
 
-from app import config, token_verify, dpop_verify, telemetry, risk, policy_client, proxy, jsonl_logger
+from app import (config, token_verify, dpop_verify, telemetry, device_registry,
+                 risk, policy_client, proxy, jsonl_logger)
 
 LOG_LEVEL = config.LOG_LEVEL
 logging.basicConfig(
@@ -43,10 +45,42 @@ _RUN_ID = os.getenv("ZT_RUN_ID", str(uuid.uuid4())[:8])
 # Realm selection by mode
 _REALM = config.KC_REALM_B0 if config.ZT_MODE == "B0" else config.KC_REALM_FAPI2
 
+_NEUTRAL_TELEMETRY = {
+    "device_fp_stable": True, "geo": "", "geo_velocity": 0.0,
+    "call_rate": 0.0, "session_continuity": 1.0, "dpop_failure_rate": 0.0,
+}
+
 
 @app.get("/health")
 async def health():
-    return {"status": "ok", "mode": config.ZT_MODE, "flags": config.as_dict()}
+    return {"status": "ok", "mode": config.ZT_MODE, "run_label": config.RUN_LABEL,
+            "flags": config.as_dict()}
+
+
+@app.post("/admin/reset-state")
+async def reset_state(request: Request):
+    """
+    Harness control plane — NOT part of the measured data path.
+
+    Drops the controller's in-memory continuous-trust state (telemetry
+    histories, per-subject enrolled device keys, DPoP jti replay cache) so that
+    each attack in the suite is measured against a freshly established baseline
+    rather than inheriting the preceding attack's history.  Without it, A6's
+    call-rate signal would be contaminated by A3's burst, A4's device signal by
+    A2's foreign key, and so on, and no per-attack number would be
+    interpretable.  The alternative — restarting the container between attacks
+    — is equivalent but an order of magnitude slower.
+
+    Guarded by the internal service secret, which never leaves the Docker
+    network; the endpoint is never exercised by the attack traffic itself.
+    """
+    if request.headers.get("x-zt-admin", "") != config.INTERNAL_SECRET:
+        return JSONResponse({"detail": "forbidden"}, status_code=403)
+    telemetry.reset()
+    device_registry.reset()
+    dpop_verify.reset()
+    logger.info({"event": "state_reset"})
+    return {"status": "reset"}
 
 
 @app.api_route(
@@ -69,7 +103,9 @@ async def handle_request(request: Request, path: str):
     risk_result: dict = {"belief_b": 1.0, "risk": 0.0, "score_components": {}}
     decision = "DENY"
     user_id = ""
+    cnf_jkt = ""
     telemetry_signals: dict = {}
+    device_signals: dict = {}
     attack_info: dict | None = None
 
     # ── Extract common request metadata ──────────────────────────────────────
@@ -82,6 +118,13 @@ async def handle_request(request: Request, path: str):
     device_fp = request.headers.get("x-device-fp", "")
     request_url = str(request.url)
 
+    # Workload label for the legitimate-traffic experiments: "stable" (the
+    # enrolled device's normal context), "drift" (network/geo change mid
+    # session) or "warmup" (baseline-establishing requests, excluded from
+    # reported rates).  Recorded so §7.2's false-challenge rate can be split
+    # by context profile after the fact.
+    context_profile = request.headers.get("x-context-profile", "")
+
     # Attack instrumentation headers (injected by the attack suite only)
     attack_id = request.headers.get("x-attack-id", "")
     attack_context = request.headers.get("x-attack-context", "false").lower() == "true"
@@ -93,6 +136,7 @@ async def handle_request(request: Request, path: str):
         "path": "/" + path,
         "user_id": user_id,
         "device_id": device_id,
+        "context_profile": context_profile,
     }
 
     # ── B0 PASS-THROUGH (no auth/policy) ─────────────────────────────────────
@@ -116,6 +160,8 @@ async def handle_request(request: Request, path: str):
         latency["proxy"] = round((time.perf_counter() - t_proxy) * 1000, 3)
         latency["total"] = round((time.perf_counter() - t_start) * 1000, 3)
         request_info["user_id"] = user_id
+        if attack_info:
+            attack_info["succeeded"] = response.status_code < 400
         _emit(request_info, {}, checks, risk_result, "ALLOW", latency, attack_info)
         return response
 
@@ -153,20 +199,35 @@ async def handle_request(request: Request, path: str):
             )
             checks["dpop_valid"] = True
             checks["jti_replayed"] = False
+            # Record whether the presented key actually matched the token's
+            # confirmation claim.  With CHECK_DEVICE_BINDING on, a mismatch
+            # never reaches here; with the binding ablated it does, and the
+            # record must say so.
+            checks["cnf_jkt_match"] = dpop_payload.get("_jkt", "") == cnf_jkt
         except Exception as exc:
             checks["dpop_valid"] = False
             if "replay" in str(exc).lower():
                 checks["jti_replayed"] = True
             latency["dpop_verify"] = round((time.perf_counter() - t0) * 1000, 3)
+            # A failed proof is itself a behavioural signal: feed it into the
+            # subject's DPoP-failure history (rule R6) before denying.
+            if config.ENABLE_TELEMETRY:
+                telemetry_signals = telemetry.collect(
+                    subject=user_id, device_id=device_id, session_id=session_id,
+                    source_ip=source_ip, geo=geo, device_fp=device_fp,
+                    request_ts=time.time(), dpop_failed=True,
+                )
             latency["total"] = round((time.perf_counter() - t_start) * 1000, 3)
-            _emit(request_info, {}, checks, risk_result, "DENY", latency, attack_info)
+            _emit(request_info, telemetry_signals, checks, risk_result, "DENY",
+                  latency, attack_info)
             raise exc
         latency["dpop_verify"] = round((time.perf_counter() - t0) * 1000, 3)
 
-    # ── STAGE 3: Telemetry ────────────────────────────────────────────────────
+    # ── STAGE 3: Telemetry + device registry ──────────────────────────────────
     if config.ENABLE_TELEMETRY:
         t0 = time.perf_counter()
         telemetry_signals = telemetry.collect(
+            subject=user_id,
             device_id=device_id,
             session_id=session_id,
             source_ip=source_ip,
@@ -176,10 +237,14 @@ async def handle_request(request: Request, path: str):
         )
         latency["telemetry"] = round((time.perf_counter() - t0) * 1000, 3)
     else:
-        telemetry_signals = {
-            "device_fp_stable": True, "geo": geo, "geo_velocity": 0.0,
-            "call_rate": 0.0, "session_continuity": 1.0, "dpop_failure_rate": 0.0,
-        }
+        telemetry_signals = dict(_NEUTRAL_TELEMETRY, geo=geo)
+
+    if config.CHECK_DEVICE_BINDING:
+        t0 = time.perf_counter()
+        device_signals = device_registry.observe(user_id, cnf_jkt)
+        latency["telemetry"] = round(
+            latency["telemetry"] + (time.perf_counter() - t0) * 1000, 3)
+        telemetry_signals = {**telemetry_signals, **device_signals}
 
     # ── STAGE 4: Risk scoring ─────────────────────────────────────────────────
     if config.ENABLE_RISK_POLICY:
@@ -188,6 +253,7 @@ async def handle_request(request: Request, path: str):
             telemetry=telemetry_signals,
             checks=checks,
             attack_context=attack_context,
+            device_signals=device_signals,
         )
         latency["risk"] = round((time.perf_counter() - t0) * 1000, 3)
 
@@ -207,13 +273,13 @@ async def handle_request(request: Request, path: str):
     # ── STAGE 6: Enforcement ──────────────────────────────────────────────────
     if decision == "ALLOW":
         t0 = time.perf_counter()
-        if attack_info:
-            attack_info["succeeded"] = True
         try:
             response = await proxy.forward(request, user_id)
         except Exception as exc:
             latency["proxy"] = round((time.perf_counter() - t0) * 1000, 3)
             latency["total"] = round((time.perf_counter() - t_start) * 1000, 3)
+            if attack_info:
+                attack_info["succeeded"] = False
             _emit(request_info, telemetry_signals, checks, risk_result, decision, latency, attack_info)
             raise exc
         # `total` is measured after proxy.forward() returns — logging it
@@ -223,6 +289,11 @@ async def handle_request(request: Request, path: str):
         # branch, which always measured total correctly.
         latency["proxy"] = round((time.perf_counter() - t0) * 1000, 3)
         latency["total"] = round((time.perf_counter() - t_start) * 1000, 3)
+        # The controller allowed it, but the resource server still enforces
+        # object-level ownership (A5); the adversary only succeeds if data
+        # actually came back.
+        if attack_info:
+            attack_info["succeeded"] = response.status_code < 400
         _emit(request_info, telemetry_signals, checks, risk_result, decision, latency, attack_info)
         return response
 

@@ -112,6 +112,14 @@ services:
       ZT_ENABLE_RISK_POLICY:
       ZT_ENABLE_VELOCITY:
       ZT_PROXY_PASSTHROUGH:
+      # Measurement instrumentation, also passed through bare: ZT_RUN_LABEL
+      # names the experiment cell (so ablation runs that share ZT_MODE=P are
+      # distinguishable in the JSONL), ZT_RUN_ID names the output file, and
+      # ZT_ORACLE_ATTACK_CONTEXT enables the attack-oracle rule R7, which is
+      # off in every primary measurement.
+      ZT_RUN_LABEL:
+      ZT_RUN_ID:
+      ZT_ORACLE_ATTACK_CONTEXT:
       ZT_RISK_THRESHOLD_ALLOW: ${ZT_RISK_THRESHOLD_ALLOW:-0.4}
       ZT_RISK_THRESHOLD_DENY: ${ZT_RISK_THRESHOLD_DENY:-0.7}
       DPOP_SKEW_SECONDS: ${DPOP_SKEW_SECONDS:-60}

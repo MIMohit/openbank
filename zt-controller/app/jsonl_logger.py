@@ -45,6 +45,9 @@ def build_record(
         "ts": datetime.now(timezone.utc).isoformat(),
         "run_id": run_id,
         "config": config.ZT_MODE,
+        # run_label separates experiment cells that share a ZT_MODE but differ
+        # in ablation flags (e.g. "P" vs "P-minus-velocity").
+        "run_label": config.RUN_LABEL,
         "flags": config.as_dict(),
         "request": request_info,
         "context": context,

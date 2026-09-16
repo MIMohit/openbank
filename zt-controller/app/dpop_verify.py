@@ -164,9 +164,12 @@ def verify_dpop_proof(
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED,
                             detail="Cannot decode DPoP payload")
 
-    # 6. cnf.jkt match
+    # 6. cnf.jkt match — the sender-constraining check itself.  Gated by
+    # CHECK_DEVICE_BINDING so the §7.4 "P − device-binding" ablation can
+    # measure a controller that verifies the proof's signature and freshness
+    # but no longer binds it to the token's key.  It is always on in B1 and P.
     computed_jkt = _jwk_thumbprint_sha256(jwk_pub)
-    if computed_jkt != cnf_jkt:
+    if computed_jkt != cnf_jkt and config.CHECK_DEVICE_BINDING:
         logger.warning({"event": "dpop_jkt_mismatch",
                         "computed": computed_jkt, "expected": cnf_jkt})
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED,
@@ -208,4 +211,10 @@ def verify_dpop_proof(
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED,
                             detail="DPoP ath does not match access token")
 
+    payload["_jkt"] = computed_jkt
     return payload
+
+
+def reset() -> None:
+    """Clear the jti replay cache (harness control plane only)."""
+    _jti_cache.clear()

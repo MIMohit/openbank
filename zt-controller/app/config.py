@@ -64,6 +64,19 @@ ENABLE_RISK_POLICY: bool = _bool("ZT_ENABLE_RISK_POLICY", str(_defaults["ENABLE_
 ENABLE_VELOCITY: bool = _bool("ZT_ENABLE_VELOCITY", str(_defaults["ENABLE_VELOCITY"]))
 PROXY_PASSTHROUGH: bool = _bool("ZT_PROXY_PASSTHROUGH", str(_defaults["PROXY_PASSTHROUGH"]))
 
+# ─── Oracle switch (measurement instrumentation, NOT part of any config) ─────
+# When true, the risk scorer honours the `x-attack-context` header that the
+# attack suite can be asked to send.  That header is supplied by the adversary,
+# so it is an oracle, not a detector; it exists only to measure the pipeline's
+# detection *ceiling* and is off in every primary measurement.  See risk.py.
+ORACLE_ATTACK_CONTEXT: bool = _bool("ZT_ORACLE_ATTACK_CONTEXT", "false")
+
+# ─── Run labelling ───────────────────────────────────────────────────────────
+# RUN_LABEL distinguishes runs that share a ZT_MODE but differ in ablation
+# flags (e.g. "P" vs "P-minus-velocity"), so the analysis pipeline can group
+# JSONL records by experiment cell rather than by mode alone.
+RUN_LABEL: str = os.getenv("ZT_RUN_LABEL", ZT_MODE)
+
 # ─── Risk thresholds ─────────────────────────────────────────────────────────
 # risk < ALLOW_THRESHOLD → ALLOW
 # ALLOW_THRESHOLD ≤ risk < DENY_THRESHOLD → CHALLENGE
@@ -99,4 +112,6 @@ def as_dict() -> dict:
         "ENABLE_RISK_POLICY": ENABLE_RISK_POLICY,
         "ENABLE_VELOCITY": ENABLE_VELOCITY,
         "PROXY_PASSTHROUGH": PROXY_PASSTHROUGH,
+        "ORACLE_ATTACK_CONTEXT": ORACLE_ATTACK_CONTEXT,
+        "run_label": RUN_LABEL,
     }
