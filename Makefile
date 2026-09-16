@@ -2,7 +2,8 @@
 # One-command workflows as required by §2 Definition of Done
 
 .PHONY: up down build test test-unit test-integration reset-state \
-        provision experiments scaling attacks attacks-oracle ablation analysis clean help
+        provision experiments scaling attacks attacks-oracle attacks-adaptive \
+        ablation analysis clean help
 
 SHELL := /bin/bash
 COMPOSE := docker compose
@@ -173,6 +174,47 @@ attacks-oracle: up
 	done
 	@echo "==> Oracle-ceiling attacks complete."
 
+## ─── Adaptive adversary (A7) ──────────────────────────────────────────────
+# A4 measures an adversary who makes no attempt to evade the contextual rules.
+# A7 measures the same account takeover played by an adversary who does: they
+# pace requests below the absolute call-rate threshold and mimic the victim's
+# self-reported context, both of which the threat model already grants them.
+# What remains is the one signal they cannot forge — a cnf.jkt this subject has
+# never used — so A7 measures whether that signal is actionable on its own.
+#
+# Three cells: the FAPI 2.0 baseline, P at the shipped operating point, and P
+# at the recalibrated threshold the sensitivity sweep identifies. Everything is
+# written to its own output directory and its own run labels, so adding this
+# measurement cannot change any number in the primary tables.
+ADAPTIVE_CELLS := B1-adaptive P-adaptive P-adaptive-slow P-adaptive-tau030 P-adaptive-slow-tau030
+
+attacks-adaptive: up
+	@mkdir -p $(OUT_DIR)/attacks_adaptive
+	@rm -f $(OUT_DIR)/attacks_adaptive/*.jsonl $(OUT_DIR)/adp_*.jsonl
+	@for CELL in $(ADAPTIVE_CELLS); do \
+	  echo "==> Adaptive-adversary cell: $$CELL"; \
+	  MODE=P; TAU=0.4; PACE=2.5; \
+	  case $$CELL in \
+	    B1-adaptive)         MODE=B1 ;; \
+	    P-adaptive)          MODE=P ;; \
+	    P-adaptive-slow)     MODE=P; PACE=4.0 ;; \
+	    P-adaptive-tau030)   MODE=P; TAU=0.3 ;; \
+	    P-adaptive-slow-tau030) MODE=P; TAU=0.3; PACE=4.0 ;; \
+	  esac; \
+	  ZT_MODE=$$MODE ZT_RUN_ID=adp_$$CELL ZT_RUN_LABEL=$$CELL \
+	  ZT_RISK_THRESHOLD_ALLOW=$$TAU $(COMPOSE) up -d zt-controller; \
+	  sleep 6; \
+	  PYTHONPATH=. KEYCLOAK_URL=$(KEYCLOAK_URL) python3 -m attacks.runner \
+	      --controller-b0 $(CONTROLLER_URL) \
+	      --controller-b1 $(CONTROLLER_URL) \
+	      --controller-p  $(CONTROLLER_URL) \
+	      --out-dir $(OUT_DIR)/attacks_adaptive \
+	      --repetitions $(REPETITIONS) \
+	      --only A7 --pace-seconds $$PACE \
+	      --modes $$MODE --label $$CELL; \
+	done
+	@echo "==> Adaptive-adversary run complete. Results in $(OUT_DIR)/attacks_adaptive/"
+
 ## ─── Ablation matrix (§7.4, RQ3) ──────────────────────────────────────────
 # Each cell restarts the controller with one enforcement component removed and
 # runs both the attack suite and the drifting legitimate workload against it,
@@ -241,7 +283,7 @@ analysis: $(ANALYSIS_PY)
 	@echo "==> Figures in data/figures/, tables in data/tables/"
 
 ## ─── Full pipeline ─────────────────────────────────────────────────────────
-all: up test experiments scaling attacks attacks-oracle ablation analysis
+all: up test experiments scaling attacks attacks-oracle attacks-adaptive ablation analysis
 	@echo "==> Full pipeline complete."
 
 ## ─── Clean ────────────────────────────────────────────────────────────────
@@ -251,8 +293,10 @@ clean:
 	find . -name "*.pyc" -delete 2>/dev/null || true
 	rm -rf data/raw/*.jsonl data/raw/attacks/*.jsonl \
 	       data/raw/attacks_oracle/*.jsonl data/raw/attacks_ablation/*.jsonl \
+	       data/raw/attacks_adaptive/*.jsonl \
 	       data/raw/resources/*.csv data/raw/resources_ablation/*.csv
 
 help:
 	@echo "Targets: up, down, build, provision, test-unit, test, experiments,"
-	@echo "         scaling, attacks, attacks-oracle, ablation, analysis, all, clean"
+	@echo "         scaling, attacks, attacks-oracle, attacks-adaptive, ablation,"
+	@echo "         analysis, all, clean"

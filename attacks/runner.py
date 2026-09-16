@@ -1,5 +1,7 @@
 """
-Attack runner — executes A1–A6 against B0, B1, P and the §7.4 ablation cells.
+Attack runner — executes the attack suite against B0, B1, P and the ablation
+cells.  `--only` selects a subset; the default is the six attacks of the
+primary taxonomy (A1–A6).  A7, the adaptive-adversary follow-up, is opt-in.
 
 Usage:
   python -m attacks.runner --modes P --label P-minus-velocity \
@@ -26,6 +28,8 @@ defender it is an adversary; it measures a detection *ceiling*, not detection.
 It is off by default and off in every primary measurement (see attacks/base.py
 and zt-controller/app/risk.py).
 """
+from __future__ import annotations
+
 import argparse
 import asyncio
 import json
@@ -41,7 +45,7 @@ import httpx
 
 from attacks import (
     a1_network_replay, a2_token_theft_reuse, a3_device_resident,
-    a4_ato_new_device, a5_bola_bfla, a6_velocity_abuse,
+    a4_ato_new_device, a5_bola_bfla, a6_velocity_abuse, a7_paced_ato,
 )
 from attacks.base import AttackResult, write_attack_result
 from client_sim.device import Device
@@ -164,14 +168,29 @@ async def _prepare(url: str, mode: str) -> tuple:
     return device, access_token, own_account
 
 
+ALL_ATTACKS = ["A1", "A2", "A3", "A4", "A5", "A6"]
+
+
 async def run_all(
     controller_urls: dict,
     out_dir: str,
     repetitions: int = 30,
     label: str = "",
     oracle_tag: bool = False,
+    only: list | None = None,
+    pace_seconds: float = a7_paced_ato.PACE_SECONDS,
 ):
-    """Run A1–A6 against each config and write results."""
+    """
+    Run the selected attacks against each config and write results.
+
+    `only` restricts the suite to a subset of attack ids. It defaults to the
+    six attacks of the primary taxonomy, so the default behaviour of this
+    runner — and therefore of `make attacks` — is unchanged. A7 (the adaptive
+    adversary) is never part of the default set: it is a separate, additively
+    reported measurement with its own output directory and run labels, so that
+    adding it cannot perturb a primary number.
+    """
+    selected = set(only or ALL_ATTACKS)
     Path(out_dir).mkdir(parents=True, exist_ok=True)
     summary = []
     victim_account, victim_user = victim_object_ids()
@@ -179,67 +198,93 @@ async def run_all(
     for mode, url in controller_urls.items():
         cell = label or mode
         print(f"\n=== Running attacks against {cell} (mode={mode}, {url}) "
-              f"oracle_tag={oracle_tag} ===")
+              f"oracle_tag={oracle_tag} selected={sorted(selected)} ===")
 
         # ── A1: network replay ───────────────────────────────────────────────
-        device, access_token, own_account = await _prepare(url, mode)
-        captured_headers = {"Authorization": f"Bearer {access_token}"}
-        captured_headers.update(device.context_headers())
-        if mode != "B0":
-            captured_headers["DPoP"] = device.sign_dpop_proof(
-                "GET", f"{url}/accounts", access_token)
-        r = await a1_network_replay.run(url, cell, captured_headers,
-                                        num_attempts=repetitions, out_dir=out_dir,
-                                        oracle_tag=oracle_tag)
-        summary.append(r.to_dict())
-        print(f"  A1: {r.successes}/{r.attempts} succeeded, detected={r.detected}")
+        if "A1" in selected:
+            device, access_token, own_account = await _prepare(url, mode)
+            captured_headers = {"Authorization": f"Bearer {access_token}"}
+            captured_headers.update(device.context_headers())
+            if mode != "B0":
+                captured_headers["DPoP"] = device.sign_dpop_proof(
+                    "GET", f"{url}/accounts", access_token)
+            r = await a1_network_replay.run(url, cell, captured_headers,
+                                            num_attempts=repetitions, out_dir=out_dir,
+                                            oracle_tag=oracle_tag)
+            summary.append(r.to_dict())
+            print(f"  A1: {r.successes}/{r.attempts} succeeded, detected={r.detected}")
 
         # ── A2: token theft without the key ──────────────────────────────────
-        device, access_token, own_account = await _prepare(url, mode)
-        r = await a2_token_theft_reuse.run(url, cell, access_token,
-                                           num_attempts=repetitions, out_dir=out_dir,
-                                           oracle_tag=oracle_tag)
-        summary.append(r.to_dict())
-        print(f"  A2: {r.successes}/{r.attempts} succeeded, detected={r.detected}")
+        if "A2" in selected:
+            device, access_token, own_account = await _prepare(url, mode)
+            r = await a2_token_theft_reuse.run(url, cell, access_token,
+                                               num_attempts=repetitions, out_dir=out_dir,
+                                               oracle_tag=oracle_tag)
+            summary.append(r.to_dict())
+            print(f"  A2: {r.successes}/{r.attempts} succeeded, detected={r.detected}")
 
         # ── A3: device-resident key abuse (burst on the victim's own key) ────
-        device, access_token, own_account = await _prepare(url, mode)
-        r = await a3_device_resident.run(
-            url, cell, access_token, device,
-            target_paths=["/accounts", f"/transactions?account_id={own_account}"],
-            num_attempts=repetitions, out_dir=out_dir, oracle_tag=oracle_tag)
-        summary.append(r.to_dict())
-        print(f"  A3: {r.successes}/{r.attempts} succeeded, detected={r.detected}")
+        if "A3" in selected:
+            device, access_token, own_account = await _prepare(url, mode)
+            r = await a3_device_resident.run(
+                url, cell, access_token, device,
+                target_paths=["/accounts", f"/transactions?account_id={own_account}"],
+                num_attempts=repetitions, out_dir=out_dir, oracle_tag=oracle_tag)
+            summary.append(r.to_dict())
+            print(f"  A3: {r.successes}/{r.attempts} succeeded, detected={r.detected}")
 
         # ── A4: ATO from a new device ────────────────────────────────────────
         # The attacker runs the token flow themselves, so their token's cnf.jkt
         # is their own key's thumbprint and every B1 check passes.
-        device, access_token, own_account = await _prepare(url, mode)
-        attacker_device = Device(device_id="attacker_a4", geo="RU", source_ip="5.6.7.8")
-        attacker_token = await _authenticate(attacker_device, mode)
-        r = await a4_ato_new_device.run(url, cell, attacker_token, attacker_device,
-                                        num_attempts=repetitions, out_dir=out_dir,
-                                        oracle_tag=oracle_tag)
-        summary.append(r.to_dict())
-        print(f"  A4: {r.successes}/{r.attempts} succeeded, detected={r.detected}")
+        if "A4" in selected:
+            device, access_token, own_account = await _prepare(url, mode)
+            attacker_device = Device(device_id="attacker_a4", geo="RU", source_ip="5.6.7.8")
+            attacker_token = await _authenticate(attacker_device, mode)
+            r = await a4_ato_new_device.run(url, cell, attacker_token, attacker_device,
+                                            num_attempts=repetitions, out_dir=out_dir,
+                                            oracle_tag=oracle_tag)
+            summary.append(r.to_dict())
+            print(f"  A4: {r.successes}/{r.attempts} succeeded, detected={r.detected}")
 
         # ── A5: BOLA/BFLA against a real object owned by another user ────────
-        device, access_token, own_account = await _prepare(url, mode)
-        r = await a5_bola_bfla.run(url, cell, access_token, device,
-                                   victim_account_id=victim_account,
-                                   victim_user_id=victim_user,
-                                   num_attempts=repetitions, out_dir=out_dir,
-                                   oracle_tag=oracle_tag)
-        summary.append(r.to_dict())
-        print(f"  A5: {r.successes}/{r.attempts} succeeded, detected={r.detected}")
+        if "A5" in selected:
+            device, access_token, own_account = await _prepare(url, mode)
+            r = await a5_bola_bfla.run(url, cell, access_token, device,
+                                       victim_account_id=victim_account,
+                                       victim_user_id=victim_user,
+                                       num_attempts=repetitions, out_dir=out_dir,
+                                       oracle_tag=oracle_tag)
+            summary.append(r.to_dict())
+            print(f"  A5: {r.successes}/{r.attempts} succeeded, detected={r.detected}")
 
         # ── A6: velocity abuse ───────────────────────────────────────────────
-        device, access_token, own_account = await _prepare(url, mode)
-        r = await a6_velocity_abuse.run(url, cell, access_token, device,
-                                        num_attempts=repetitions, out_dir=out_dir,
-                                        oracle_tag=oracle_tag)
-        summary.append(r.to_dict())
-        print(f"  A6: {r.successes}/{r.attempts} succeeded, detected={r.detected}")
+        if "A6" in selected:
+            device, access_token, own_account = await _prepare(url, mode)
+            r = await a6_velocity_abuse.run(url, cell, access_token, device,
+                                            num_attempts=repetitions, out_dir=out_dir,
+                                            oracle_tag=oracle_tag)
+            summary.append(r.to_dict())
+            print(f"  A6: {r.successes}/{r.attempts} succeeded, detected={r.detected}")
+
+        # ── A7: paced ATO from a new device (adaptive adversary) ─────────────
+        # A4 with the two transient signals removed: the adversary paces below
+        # the call-rate rule and mimics the victim's self-reported context, so
+        # the only evidence left is the one they cannot forge — a cnf.jkt this
+        # subject has never used.  Not part of the default suite.
+        if "A7" in selected:
+            device, access_token, own_account = await _prepare(url, mode)
+            attacker_device = Device(device_id="attacker_a7")
+            attacker_token = await _authenticate(attacker_device, mode)
+            r = await a7_paced_ato.run(
+                url, cell, attacker_token, attacker_device,
+                mimic_session_id=device.device_id,
+                mimic_geo=device.geo,
+                mimic_source_ip=device.source_ip,
+                mimic_device_fp=device.device_fp,
+                num_attempts=repetitions, out_dir=out_dir,
+                oracle_tag=oracle_tag, pace_seconds=pace_seconds)
+            summary.append(r.to_dict())
+            print(f"  A7: {r.successes}/{r.attempts} succeeded, detected={r.detected}")
 
     # Append to the shared summary (the Makefile invokes this once per cell,
     # restarting the ZT Controller with different flags between calls — each
@@ -273,6 +318,20 @@ def main():
              "e.g. --modes P --label P-minus-velocity.",
     )
     parser.add_argument(
+        "--only", default="",
+        help="Comma-separated attack ids to run (default: A1-A6, the primary "
+             "taxonomy). Use --only A7 for the adaptive-adversary measurement, "
+             "which writes to its own output directory and run label.",
+    )
+    parser.add_argument(
+        "--pace-seconds", type=float, default=a7_paced_ato.PACE_SECONDS,
+        help="A7 only: seconds between the adaptive adversary's requests. The "
+             "sliding call-rate window is shared with the warm-up that "
+             "establishes the victim's baseline, so a pace just under the "
+             "threshold still trips it transiently; this exposes the pace so "
+             "that effect can be measured rather than assumed.",
+    )
+    parser.add_argument(
         "--oracle-tag", action="store_true",
         help="Send x-attack-context:true on every attack request, enabling "
              "risk rule R7. This is an ORACLE (the adversary declares itself) "
@@ -290,8 +349,10 @@ def main():
     urls = {m: all_urls[m] for m in modes}
     if args.label and len(modes) > 1:
         parser.error("--label applies to a single cell; pass one mode")
+    only = [a.strip().upper() for a in args.only.split(",") if a.strip()] or None
     asyncio.run(run_all(urls, args.out_dir, args.repetitions,
-                        label=args.label, oracle_tag=args.oracle_tag))
+                        label=args.label, oracle_tag=args.oracle_tag, only=only,
+                        pace_seconds=args.pace_seconds))
 
 
 if __name__ == "__main__":

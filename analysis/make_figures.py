@@ -37,6 +37,7 @@ RAW_DIR = Path("data/raw")
 ATK_DIR = RAW_DIR / "attacks"
 ORACLE_DIR = RAW_DIR / "attacks_oracle"
 ABL_DIR = RAW_DIR / "attacks_ablation"
+ADAPT_DIR = RAW_DIR / "attacks_adaptive"
 RES_DIR = RAW_DIR / "resources"
 RES_ABL_DIR = RAW_DIR / "resources_ablation"
 FIG_DIR = Path("data/figures")
@@ -54,6 +55,17 @@ ATTACK_NAMES = {
 }
 ABLATION_CELLS = ["P", "P-minus-device-binding", "P-minus-context",
                   "P-minus-velocity", "B1"]
+# Adaptive-adversary cells (A7). Reported separately from the primary taxonomy
+# and with their own run labels, so they cannot perturb any primary table.
+ADAPTIVE_CELLS = ["B1-adaptive", "P-adaptive", "P-adaptive-slow",
+                  "P-adaptive-tau030", "P-adaptive-slow-tau030"]
+ADAPTIVE_DESC = {
+    "B1-adaptive": "FAPI 2.0 baseline; adversary paces at 2.5 s",
+    "P-adaptive": "P, tau_allow = 0.40 (shipped); adversary paces at 2.5 s",
+    "P-adaptive-slow": "P, tau_allow = 0.40 (shipped); adversary paces at 4.0 s",
+    "P-adaptive-tau030": "P, tau_allow = 0.30 (recalibrated); 2.5 s",
+    "P-adaptive-slow-tau030": "P, tau_allow = 0.30 (recalibrated); 4.0 s",
+}
 
 
 # ─── Loading ─────────────────────────────────────────────────────────────────
@@ -744,6 +756,62 @@ def table_risk_components(raw_df: pd.DataFrame):
         print("[OK] table7_risk_components.csv")
 
 
+# ─── Table 9: adaptive adversary (A7) ────────────────────────────────────────
+
+def table_adaptive(adapt_df: pd.DataFrame, raw_df: pd.DataFrame):
+    """
+    Table 9 — the same account takeover as A4, played by an adversary who evades
+    the contextual rules using only capabilities the threat model already grants
+    them: pacing below an absolute call-rate threshold and mimicking the
+    victim's self-reported context.
+
+    A4's single success rate conflates two things. The unknown-device penalty
+    (0.35) sits below the challenge threshold (0.40) and so cannot change a
+    decision on its own; A4 is caught only while a *transient* second rule
+    happens to fire. A7 removes both transients, which is why it needs its own
+    row rather than a footnote: it measures whether the one signal the adversary
+    cannot forge is actionable at the shipped operating point.
+    """
+    if adapt_df.empty:
+        print("[WARN] no adaptive-adversary data; skipping table9")
+        return
+    rows = []
+    for cell in ADAPTIVE_CELLS:
+        sub = adapt_df[(adapt_df["config"] == cell) & (adapt_df["attack_id"] == "A7")]
+        if sub.empty:
+            continue
+        k, n = int(sub["successes"].sum()), int(sub["attempts"].sum())
+        p, lo, hi = wilson_ci(k, n)
+        row = {
+            "Cell": cell,
+            "Description": ADAPTIVE_DESC.get(cell, ""),
+            "successes": k,
+            "attempts": n,
+            "A7_success": _fmt_ci(p, lo, hi),
+            "A7_success_num": round(p, 4),
+        }
+        # Which rules fired, and the resulting decision mix, from the
+        # controller's own records for this cell.
+        cell_recs = raw_df[(raw_df["run_label"] == cell) &
+                           (raw_df["attack.attack_id"] == "A7")] \
+            if not raw_df.empty else pd.DataFrame()
+        if not cell_recs.empty:
+            row["mean_risk"] = round(float(cell_recs["risk.risk"].fillna(0).mean()), 4)
+            for dec in ["ALLOW", "CHALLENGE", "DENY"]:
+                row[f"n_{dec}"] = int((cell_recs["decision"] == dec).sum())
+            for rule in ["device_fp_changed", "impossible_velocity",
+                         "high_call_rate", "low_session_continuity",
+                         "attack_context"]:
+                col = f"risk.score_components.{rule}"
+                row[rule] = round(float(cell_recs[col].notna().mean()), 4) \
+                    if col in cell_recs.columns else 0.0
+        rows.append(row)
+    if not rows:
+        return
+    pd.DataFrame(rows).to_csv(TBL_DIR / "table9_adaptive_adversary.csv", index=False)
+    print("[OK] table9_adaptive_adversary.csv")
+
+
 # ─── Table 8 + figure: latency and throughput vs concurrency (RQ2) ──────────
 
 def table_scaling(raw_df: pd.DataFrame):
@@ -821,9 +889,11 @@ def main():
     atk_df = _load_attack_summary(ATK_DIR)
     orc_df = _load_attack_summary(ORACLE_DIR)
     abl_df = _load_attack_summary(ABL_DIR)
+    adapt_df = _load_attack_summary(ADAPT_DIR)
 
     print(f"Loaded {len(raw_df)} controller records, {len(atk_df)} attack results, "
-          f"{len(orc_df)} oracle results, {len(abl_df)} ablation results")
+          f"{len(orc_df)} oracle results, {len(abl_df)} ablation results, "
+          f"{len(adapt_df)} adaptive-adversary results")
 
     table_taxonomy(atk_df)
     table_oracle_ceiling(atk_df, orc_df)
@@ -838,6 +908,7 @@ def main():
     table_effect_sizes(raw_df, atk_df)
     table_threshold_sensitivity(raw_df)
     table_risk_components(raw_df)
+    table_adaptive(adapt_df, raw_df)
 
     print("\nAnalysis complete. Outputs in data/figures/ and data/tables/")
 

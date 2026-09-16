@@ -1,0 +1,6 @@
+Cell,Description,successes,attempts,A7_success,A7_success_num,mean_risk,n_ALLOW,n_CHALLENGE,n_DENY,device_fp_changed,impossible_velocity,high_call_rate,low_session_continuity,attack_context
+B1-adaptive,FAPI 2.0 baseline; adversary paces at 2.5 s,30,30,"1.000 [0.886, 1.000]",1.0,0.0,30,0,0,0.0,0.0,0.0,0.0,0.0
+P-adaptive,"P, tau_allow = 0.40 (shipped); adversary paces at 2.5 s",27,30,"0.900 [0.744, 0.965]",0.9,0.375,27,3,0,1.0,0.0,0.1,0.0,0.0
+P-adaptive-slow,"P, tau_allow = 0.40 (shipped); adversary paces at 4.0 s",30,30,"1.000 [0.886, 1.000]",1.0,0.35,30,0,0,1.0,0.0,0.0,0.0,0.0
+P-adaptive-tau030,"P, tau_allow = 0.30 (recalibrated); 2.5 s",0,30,"0.000 [0.000, 0.114]",0.0,0.375,0,30,0,1.0,0.0,0.1,0.0,0.0
+P-adaptive-slow-tau030,"P, tau_allow = 0.30 (recalibrated); 4.0 s",0,30,"0.000 [0.000, 0.114]",0.0,0.35,0,30,0,1.0,0.0,0.0,0.0,0.0
