@@ -85,7 +85,10 @@ def fig_attack_success(atk_df: pd.DataFrame):
             k = int(row["successes"].sum())
             n = int(row["attempts"].sum())
             p, lo, hi = wilson_ci(k, n)
-            rates.append(p); lows.append(p - lo); highs.append(hi - p)
+            # max(0, ...) absorbs floating-point noise at the p==0/p==1
+            # boundary (e.g. hi computing to 0.9999999999999999 instead of
+            # exactly 1.0), which errorbar() rejects as a negative yerr.
+            rates.append(p); lows.append(max(0.0, p - lo)); highs.append(max(0.0, hi - p))
         ax.bar(x + i * width, rates, width, label=cfg,
                yerr=[lows, highs], capsize=4, alpha=0.8)
 

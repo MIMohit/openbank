@@ -209,14 +209,21 @@ async def handle_request(request: Request, path: str):
         t0 = time.perf_counter()
         if attack_info:
             attack_info["succeeded"] = True
-        latency["total"] = round((time.perf_counter() - t_start) * 1000, 3)
-        _emit(request_info, telemetry_signals, checks, risk_result, decision, latency, attack_info)
         try:
             response = await proxy.forward(request, user_id)
         except Exception as exc:
             latency["proxy"] = round((time.perf_counter() - t0) * 1000, 3)
+            latency["total"] = round((time.perf_counter() - t_start) * 1000, 3)
+            _emit(request_info, telemetry_signals, checks, risk_result, decision, latency, attack_info)
             raise exc
+        # `total` is measured after proxy.forward() returns — logging it
+        # before the backend round-trip (as this used to) silently excluded
+        # the proxy stage from every ALLOW record's latency, undercounting
+        # B1/P's true end-to-end latency versus B0's separate pass-through
+        # branch, which always measured total correctly.
         latency["proxy"] = round((time.perf_counter() - t0) * 1000, 3)
+        latency["total"] = round((time.perf_counter() - t_start) * 1000, 3)
+        _emit(request_info, telemetry_signals, checks, risk_result, decision, latency, attack_info)
         return response
 
     elif decision == "CHALLENGE":
