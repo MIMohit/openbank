@@ -3,7 +3,7 @@
 
 .PHONY: up down build test test-unit test-integration reset-state \
         provision experiments scaling attacks attacks-oracle attacks-adaptive \
-        ablation analysis figures clean help
+        ablation analysis figures verify-manuscript clean help
 
 SHELL := /bin/bash
 COMPOSE := docker compose
@@ -292,6 +292,14 @@ figures: $(ANALYSIS_PY)
 	@echo "==> Building manuscript figures..."
 	PYTHONPATH=. $(ANALYSIS_PY) analysis/paper_figures.py
 
+## ─── Manuscript / data consistency ────────────────────────────────────────
+# A manuscript and a results pipeline drift apart silently. This re-derives
+# every quantity the manuscript states from the committed tables and fails if
+# the prose no longer matches, so drift is a failing check rather than a
+# reviewer's discovery.
+verify-manuscript: $(ANALYSIS_PY)
+	PYTHONPATH=. $(ANALYSIS_PY) analysis/verify_manuscript.py
+
 ## ─── Full pipeline ─────────────────────────────────────────────────────────
 all: up test experiments scaling attacks attacks-oracle attacks-adaptive ablation analysis
 	@echo "==> Full pipeline complete."
@@ -309,4 +317,4 @@ clean:
 help:
 	@echo "Targets: up, down, build, provision, test-unit, test, experiments,"
 	@echo "         scaling, attacks, attacks-oracle, attacks-adaptive, ablation,"
-	@echo "         analysis, figures, all, clean"
+	@echo "         analysis, figures, verify-manuscript, all, clean"

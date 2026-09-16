@@ -33,13 +33,17 @@ make analysis  # generate figures and tables
 Full measurement run, in the order the paper reports it:
 
 ```bash
-make attacks         # A1–A6 against B0 / B1 / P
-make experiments     # legitimate workload + CPU/memory sampling, per config
-make scaling         # latency and throughput at 5/10/20/40 concurrent users
-make attacks-oracle  # detection-ceiling run (see "Oracle tag" below)
-make ablation        # P, P−device-binding, P−context, P−velocity, B1
-make analysis        # every table and figure in paper/paper.md
+make attacks           # A1–A6 against B0 / B1 / P
+make experiments       # legitimate workload + CPU/memory sampling, per config
+make scaling           # latency and throughput at 5/10/20/40 concurrent users
+make attacks-oracle    # detection-ceiling run (see "Oracle tag" below)
+make attacks-adaptive  # A7, the adaptive adversary (see "Adaptive adversary" below)
+make ablation          # P, P−device-binding, P−context, P−velocity, B1
+make analysis          # every table and figure the manuscript cites
+make verify-manuscript # fail if any number in the manuscript drifted from the data
 ```
+
+The manuscript and its supporting material are in `paper/` — see `paper/README.md`.
 
 ## Architecture
 
@@ -100,7 +104,8 @@ coherent default for it. `make ablation` drives all five cells for you.
 | E4b Load scaling | `make scaling` | `table8_scaling.csv`, `fig4_scaling.png` |
 | E5 Ablation | `make ablation` | `table5_ablation.csv`, `fig5_ablation.png` |
 | Detection ceiling | `make attacks-oracle` | `table1b_oracle_ceiling.csv` |
-| Analysis | `make analysis` | all of the above, plus `table6_threshold_sensitivity.csv`, `table7_risk_components.csv`, `table_effect_sizes.csv` |
+| Adaptive adversary (A7) | `make attacks-adaptive` | `table9_adaptive_adversary.csv` |
+| Analysis | `make analysis` | all of the above, plus `table6_threshold_sensitivity.csv`, `table7_risk_components.csv`, `table_effect_sizes.csv`, and the twelve manuscript figures in `paper/figures/` |
 
 ### Oracle tag — read this before interpreting any attack number
 
@@ -113,6 +118,23 @@ detects. It is **off by default**, in the controller
 and `make attacks` never enables it. `make attacks-oracle` is the ceiling run
 and is reported separately in the paper. `data/tables/table7_risk_components.csv`
 audits this: the `attack_context` column must read 0.0 on every primary row.
+
+### Adaptive adversary — read this before quoting the A4 result
+
+A4 measures an account takeover by an adversary who makes no attempt to evade
+the contextual rules. Under P it succeeds 11 times in 30, and reading the raw
+records shows those 11 are exactly the requests where the unknown-device
+penalty (0.35) is the only rule firing, below the 0.40 challenge threshold; the
+refusals either side come from two sliding-window transients. A7 is the same
+takeover played by an adversary who paces below the rate rule and mimics the
+victim's self-reported context — both granted by the threat model. It succeeds
+30 times in 30 at the shipped operating point, and 0 times in 30 at
+`ZT_RISK_THRESHOLD_ALLOW=0.3`. `make attacks-adaptive` runs all five cells.
+
+A7 is not in the attack runner's default set, writes to
+`data/raw/attacks_adaptive/` under its own run labels, and therefore cannot
+perturb any primary number; every previously reported table regenerates
+byte-identically with it present.
 
 ### Harness control plane
 
