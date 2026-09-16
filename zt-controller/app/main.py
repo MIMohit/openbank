@@ -98,7 +98,7 @@ async def handle_request(request: Request, path: str):
     }
     checks: dict = {
         "token_valid": False, "dpop_valid": False,
-        "jti_replayed": False, "cnf_jkt_match": False,
+        "jti_replayed": False, "cnf_jkt_present": False, "cnf_jkt_match": False,
     }
     risk_result: dict = {"belief_b": 1.0, "risk": 0.0, "score_components": {}}
     decision = "DENY"
@@ -176,7 +176,18 @@ async def handle_request(request: Request, path: str):
         user_id = claims.get("sub", "")
         checks["token_valid"] = True
         cnf_jkt = claims.get("cnf", {}).get("jkt", "")
-        checks["cnf_jkt_match"] = bool(cnf_jkt)
+        checks["cnf_jkt_present"] = bool(cnf_jkt)
+        # `cnf_jkt_match` means "the presented DPoP key's thumbprint was
+        # verified equal to the token's cnf.jkt", which only stage 2 can
+        # establish. Setting it from the claim's *presence* here (as this used
+        # to) recorded True on requests whose binding had in fact mismatched —
+        # A2's records read cnf_jkt_match=true while being refused precisely
+        # for a jkt mismatch. It changes no reported quantity, because every
+        # such request is already classified as credential-refused by
+        # dpop_valid=false, but the field has to mean what it says. Where DPoP
+        # is not enforced there is no binding to verify and no claim to
+        # contradict, so the check is vacuously satisfied.
+        checks["cnf_jkt_match"] = not config.ENFORCE_DPOP
     except Exception as exc:
         latency["token_verify"] = round((time.perf_counter() - t0) * 1000, 3)
         latency["total"] = round((time.perf_counter() - t_start) * 1000, 3)

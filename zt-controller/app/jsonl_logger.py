@@ -30,6 +30,15 @@ def write_record(record: dict) -> None:
             f.write(line)
 
 
+# Semantics of the `checks` block, since two of the four are easy to misread:
+#   token_valid      the access token's signature, issuer and expiry verified
+#   dpop_valid       a DPoP proof was presented and passed every RFC 9449 check
+#   jti_replayed     the proof's jti was already in the replay cache
+#   cnf_jkt_present  the access token carries a cnf.jkt confirmation claim
+#   cnf_jkt_match    the presented key's thumbprint was *verified* equal to
+#                    cnf.jkt. False therefore means "not established", which
+#                    covers both a mismatch and a proof that failed earlier for
+#                    some other reason; it is not evidence that the key differed.
 def build_record(
     run_id: str,
     request_info: dict,

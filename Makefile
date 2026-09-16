@@ -3,7 +3,7 @@
 
 .PHONY: up down build test test-unit test-integration reset-state \
         provision experiments scaling attacks attacks-oracle attacks-adaptive \
-        ablation analysis clean help
+        ablation analysis figures clean help
 
 SHELL := /bin/bash
 COMPOSE := docker compose
@@ -280,7 +280,17 @@ $(ANALYSIS_PY):
 analysis: $(ANALYSIS_PY)
 	@echo "==> Running analysis pipeline..."
 	PYTHONPATH=. $(ANALYSIS_PY) analysis/make_figures.py
-	@echo "==> Figures in data/figures/, tables in data/tables/"
+	@$(MAKE) --no-print-directory figures
+	@echo "==> Tables in data/tables/; manuscript figures in paper/figures/"
+
+## ─── Manuscript figures ───────────────────────────────────────────────────
+# The diagrams and the result plots the manuscript cites, as vector PDF for
+# typesetting and 400 dpi PNG for preview. Result plots read only the CSVs in
+# data/tables/ and the raw records, so no value in a figure can drift away from
+# the table that reports it.
+figures: $(ANALYSIS_PY)
+	@echo "==> Building manuscript figures..."
+	PYTHONPATH=. $(ANALYSIS_PY) analysis/paper_figures.py
 
 ## ─── Full pipeline ─────────────────────────────────────────────────────────
 all: up test experiments scaling attacks attacks-oracle attacks-adaptive ablation analysis
@@ -299,4 +309,4 @@ clean:
 help:
 	@echo "Targets: up, down, build, provision, test-unit, test, experiments,"
 	@echo "         scaling, attacks, attacks-oracle, attacks-adaptive, ablation,"
-	@echo "         analysis, all, clean"
+	@echo "         analysis, figures, all, clean"
