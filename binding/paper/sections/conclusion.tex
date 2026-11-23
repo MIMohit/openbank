@@ -1,18 +1,13 @@
-% sections/conclusion.tex -- Conclusion (W19).
+% sections/conclusion.tex -- Conclusion (W25).
 \section{Conclusion}\label{sec:conclusion}
 
-A sender-constrained proof binds what the verifier sees, not what the
-executor runs. In layered deployments those differ by design, because the
-query, the body and method overrides are not covered, and by interpretation,
-because gateways and frameworks read the same path differently. Across
-\NumTopologies{} topologies a single leaked proof selected more than one
-operation in \NumVulnTopologies{}, and under default configurations
-interpretation differentials alone turned a \texttt{deleteAccount} proof into
-\texttt{deleteStatement}. A legitimate client with a valid proof crossed tenants
-or reached admin routes past path policies in \NumEFourClasses{} classes,
-two of them past a strict allow-list. Re-checking the proof at the origin did not help.
-Binding soundness has to be a property of the deployment: the
-standard should name the executor's view, and gateways should authorize the
-representation they forward. Checking the executor's routed view removed the override and path
-differentials (with D-B at negligible median latency), but not query or body dispatch, and
-rejected rewritten paths: the binding must be defined on the executor's view.
+A sender-constrained proof binds what the verifier sees, not what the executor
+runs. Measuring that gap with a binding-soundness oracle, we found that known
+mechanisms---by-design under-binding and long-standing differential
+families---still let one valid leaked proof select another operation in
+\NumVulnTopologies{} of \NumTopologies{} topologies on current releases. The
+claim ablation shows that \htm and \htu are both necessary and that binding
+the query and body closes dispatch but not differentials; a verifier-to-executor
+view MAC closes the differentials at negligible median cost but forces the
+question of whose view the proof names. The standard should answer it: bind
+the executor's view.

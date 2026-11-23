@@ -1,90 +1,164 @@
-% sections/defence.tex -- Section 6: defences D-A and D-B (E7/E8, A2).
-% Results produced by W17 (binding/experiments/defence/REPORT.md); numbers via numbers.tex macros.
+% sections/defence.tex -- Section 7: defences D-A/D-B/D-C (E7, E8, A2, FRR, performance).
+% Source: experiments/defence/REPORT.md (W17); Alg. 3 from harness/defence/README.md and CONTRACT §8/§10.
+% Figures fig_defence.pdf / fig_latency.pdf by W26 (figs/FIGURES.md). Numbers via numbers.tex.
 \section{Restoring Binding Soundness}\label{sec:defence}
 
-The results of \S\ref{sec:harness} rule out two easy fixes. Re-verifying
-the same proof at the origin keeps every \GA hit and the \texttt{\#}
-differential (\Abl{3}), and RFC~3986 normalisation in front of a path
-policy closes only the dot-segment classes. We therefore evaluate two
-defences that bind the check to the \emph{executor's} view.
-\emph{D-A} (\texttt{origin-routed}): the executor calls the verifier with
-the effective method after override resolution and the canonical path of
-the route it actually matched. \emph{D-B} (view-binding MAC): the verifier
-returns
-$\hdr{X-Verified-View} = \mathrm{HMAC}_K(\jti \| m_v \| \canon(u_v) \| \jkt)$,
-and the executor recomputes it from its routed view and rejects any mismatch.
-For D-B, the gateway must strip a client-supplied \hdr{X-Verified-View}, which
-Envoy, Kong and HAProxy do not do by default (P2 in Table~\ref{tab:rc}).
+\S\ref{sec:results} rules out two easy fixes: re-verifying the same proof at
+the origin keeps every \GA hit and B1 (\Abl{3}), and RFC~3986 normalisation in
+front of a policy closes only dot segments. We evaluate defences that bind the
+check to the \emph{executor's} view.
+\emph{D-A} (\texttt{origin-routed}) applies the standard remedy for
+normalisation bypasses---authorise the representation the router acts
+on~\cite{p2:spring2016_5007,p2:zhang2025uabscan,p2:apisix2026_124680}---to
+proof verification: the executor calls the verifier with the effective method
+after override and the canonical path of the route it matched.
+\emph{D-B} (view MAC, Algorithm~\ref{alg:db}) is, to our knowledge, the first
+mechanism that cryptographically ties the view a PoP verifier accepted to the
+operation the executor dispatches; unlike hop-level request
+synchronisation~\cite{topcuoglu2025sync}, it binds to the client's proof rather
+than to the previous hop. \emph{D-C} is a strict canonical edge
+(\texttt{HTU\_CANON=strict} plus strict profiles).
 
-\paragraph{Setup (E7, E8).} We re-ran every confirmed \Aleak witness (\NumDefWitnesses{}
-requests on \NumDefStacks{} gateway/framework stacks, from the nginx, APISIX and Kong campaigns) and
-the \NumDefEFourTotal{} E4 violations under each defence, with all components real and one topology
-at a time. We compared them with three baselines: \emph{B-origin} (the raw target re-verified at the
-executor), \emph{B-strict} (strict gateway profiles), and \emph{B-optional} (a verifier that skips
-the htm/htu checks). D-C is the strict canonical edge (\texttt{HTU\_CANON=strict} plus strict
-profiles). D-B runs on the four frameworks with an executor-side check.
-Table~\ref{tab:defence} gives the residual hits.
+\begin{algorithm}[t]
+\caption{D-B: verifier emits, executor recomputes the view MAC
+with $\mathsf{mac}(\pi,m,p)=\mathrm{HMAC}_K(\pi.\jti\,\|\,\mathrm{upper}(m)\,\|\,p\,\|\,\mathsf{th}(\pi.\mathit{jwk}))$, key $K$ shared by verifier and executor, $\|$ a newline.}\label{alg:db}
+\SetKwProg{Fn}{}{:}{}
+\Fn{\textsc{Emit}$(\pi, m_v, u_v)$ \Cmt*[f]{verifier, after Alg.~\ref{alg:verifier} allows}}{
+  $\mu\gets\mathsf{mac}(\pi, m_v, \mathsf{canon\_path}(u_v))$\;
+  return \hdr{X-Verified-View: v1;}$\mathrm{b64u}(\mu)$\;
+}
+\Fn{\textsc{Check}$(r)$ \Cmt*[f]{executor, after override and routing, before the handler}}{
+  \lIf{not exactly one \hdr{X-Verified-View}}{reject \texttt{view\_mac\_missing}/\texttt{multiple}}
+  $\mu\gets$ MAC carried in \hdr{X-Verified-View}\;
+  parse $\pi$ from \hdr{DPoP} without verifying\Cmt*[f]{$\Ver$ already did}\;
+  $m_x\gets$ effective method; $(\mathit{tmpl},\theta_x)\gets$ matched route\;
+  \lIf{some $\theta_x[i]\in\{\texttt{.},\texttt{..}\}$}{reject \texttt{view\_param\_dot\_segment}}
+  $p_x\gets\mathsf{canon\_path}(\mathsf{substitute}(\mathit{tmpl},\mathsf{pctenc}(\theta_x)))$\;
+  $\mu'\gets\mathsf{mac}(\pi, m_x, p_x)$\;
+  \lIf{$\neg\mathsf{ConstEq}(\mu,\mu')$}{reject 401 \texttt{view\_mac\_mismatch}}
+  run handler\;
+}
+\end{algorithm}
+
+$\mathsf{canon\_path}$ is the RFC~3986-normalised path only: query and fragment
+dropped, unreserved escapes decoded, hex upper-cased, dot segments removed;
+\texttt{\%2F} is not decoded and \texttt{//} is not merged. Swapping the proof
+or key changes \jti or \jkt and breaks the MAC; a forged header fails without
+$K$; a duplicate is rejected. The gateway must still strip client-supplied
+\hdr{X-Verified-*} at ingress for availability and for the headers the MAC does
+not cover---which Envoy, Kong and HAProxy do not do by default (P2). D-B runs
+on four frameworks; its implementations pass \NumDBUnitPy{} (Python),
+\NumDBUnitNode{} (Node), \NumDBUnitJava{} (Java) and \NumDBUnitCs{} (C\#)
+shared-vector tests.
+
+\paragraph{Security (E7, E8).} We re-ran every confirmed \Aleak witness
+(\NumDefWitnesses{} on \NumDefStacks{} gateway/framework stacks from the NGINX,
+APISIX and Kong campaigns) and the \NumDefEFourTotal{} E4 violations under each
+configuration, against baselines \emph{B-edge} (status quo), \emph{B-origin}
+(raw target re-verified at the executor), \emph{B-strict} (strict profiles)
+and \emph{B-optional} (\htm/\htu checks off). All \NumDefRepTopos{} topologies
+gave identical results in two replications. Table~\ref{tab:defence} and
+Figure~\ref{fig:defence}(a) give the residuals. D-A and D-B remove exactly the
+method override and every \GB path split, and nothing else: all
+\NumDefResidualDA{} query- and body-dispatch witnesses remain, because \htu
+and the MAC cover the path only (\S\ref{sec:ablation} measures query and body
+binding). Under \Aclient they differ. D-A asks the policy about the
+\emph{routed} view and closes all \NumDefEFourTotal{} E4 violations without
+losing a legitimate request. D-B binds execution to the verifier's
+\emph{canonical} view while the PDP matched the raw path, so the \texttt{/../}
+classes survive (\NumDefEFourDB{}): D-B restores \emph{binding} soundness but
+not \emph{policy} soundness unless the policy also reads the canonical view.
+D-C equals B-strict, because the strict gateways reject first; it closes
+\texttt{\%2f} and dot segments but not \texttt{\#} or override. B-optional
+reproduces every witness and, on the full corpus, raises the hits from
+\NumBEdgeFastapi{} to \NumBOptFastapi{} (FastAPI) and from \NumBEdgeExpress{}
+to \NumBOptExpress{} (Express): the \htm/\htu checks are what keep the path
+mutations out.
 
 \begin{table}[t]
-\caption{Witnesses that still execute a different operation (\Aleak) or a forbidden one (E4,
-\Aclient) under each configuration, and attributable false rejection (FRR) on legitimate rewritten
-traffic. Source: \texttt{experiments/defence/REPORT.md}.}
+\caption{Witnesses that still execute a different operation (\Aleak) or a
+forbidden one (E4, \Aclient), and attributable false rejection (FRR, NGINX
+only). Source: \texttt{experiments/defence/REPORT.md}.}
 \label{tab:defence}
 \scriptsize
-\setlength{\tabcolsep}{3pt}
+\setlength{\tabcolsep}{2.6pt}
 \begin{tabular}{@{}l r r r r r r@{}}
 \toprule
 Class (witnesses) & B-edge & B-origin & B-strict & D-A & D-B & D-C \\
 \midrule
-\GA query (57) & 57 & 57 & 57 & 57 & 57 & 57 \\
-\GA body (89) & 89 & 89 & 89 & 89 & 89 & 89 \\
-\GA override (31) & 31 & 31 & 31 & 0 & 0 & 31 \\
-\GB \texttt{\#} in path (28) & 28 & 28 & 28 & 0 & 0 & 28 \\
-\GB APISIX \texttt{\%2f} (12) & 12 & 0 & 0 & 0 & 0 & 0 \\
-\GB dot-segment (12) & 12 & 12 & 0 & 0 & 0 & 0 \\
+\GA query (\DefGOneQuery) & \DefGOneQuery & \DefGOneQuery & \DefGOneQuery & \DefGOneQuery & \DefGOneQuery & \DefGOneQuery \\
+\GA body (\DefGOneBody) & \DefGOneBody & \DefGOneBody & \DefGOneBody & \DefGOneBody & \DefGOneBody & \DefGOneBody \\
+\GA override (\DefGOneOverride) & \DefGOneOverride & \DefGOneOverride & \DefGOneOverride & 0 & 0 & \DefGOneOverride \\
+\GB \texttt{\#} in path (\DefGTwoFrag) & \DefGTwoFrag & \DefGTwoFrag & \DefGTwoFrag & 0 & 0 & \DefGTwoFrag \\
+\GB APISIX \texttt{\%2f} (\DefGTwoPct) & \DefGTwoPct & 0 & 0 & 0 & 0 & 0 \\
+\GB dot segment (\DefGTwoDot) & \DefGTwoDot & \DefGTwoDot & 0 & 0 & 0 & 0 \\
 \midrule
-\Aleak total (\NumDefWitnesses) & 229 & 217 & 205 & 146 & 146 & 205 \\
-E4 \Aclient (\NumDefEFourTotal) & 52 & 31 & 4 & 0 & 36 & 4 \\
-FRR, no rewrite & 0\,\% & 0\,\% & 48\,\% & 5.3\,\% & 5.3\,\% & 48\,\% \\
-FRR, path rewrite & 0\,\% & 100\,\% & 0\,\% & 100\,\% & 100\,\% & 0\,\% \\
+\Aleak total (\NumDefWitnesses) & \NumDefWitnesses & \NumDefResidualBOrigin & \NumDefResidualBStrict & \NumDefResidualDA & \NumDefResidualDB & \NumDefResidualDC \\
+E4 \Aclient (\NumDefEFourTotal) & \NumDefEFourTotal & \NumDefEFourBOrigin & \NumDefEFourBStrict & \NumDefEFourDA & \NumDefEFourDB & \NumDefEFourDC \\
+FRR, no rewrite & 0\,\% & 0\,\% & \FRRNonRewriteStrict & \FRRNonRewriteDAB & \FRRNonRewriteDAB & \FRRNonRewriteStrict \\
+FRR, all scenarios & 0\,\% & \FRRAllBOrigin & \FRRAllStrict & \FRRAllDAB & \FRRAllDAB & \FRRAllStrict \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\paragraph{What each defence fixes.} D-A and D-B remove exactly the \GB path-view splits
-(\texttt{\#}, \texttt{\%2f}, dot-segments) and the method override, and nothing else: all
-\NumDefResidualDA{} query- and body-dispatch witnesses remain, because htu and the view MAC cover
-the path only. Those need query and body binding: in \Abl{1}, binding the query cuts the hits from
-\AblOneHitsFull{} to \AblOneHitsQuery{}, a content digest checked by a body-holding hop to
-\AblOneHitsDigest{}, and both to \AblOneHitsQueryDigest{}; a digest checked only at an
-\texttt{auth\_request} edge, which never sees the body, removes nothing.
-Under \Aclient the two differ. D-A asks the policy about the \emph{routed} view, and closes all
-\NumDefEFourTotal{} E4 violations without losing a legitimate request. D-B binds execution to the
-verifier's \emph{canonical} view, while the PDP matched the raw path, so the \texttt{/../} classes
-survive (\NumDefEFourDB{}). D-B restores binding soundness there, but not policy soundness, unless
-the policy also reads the canonical view. D-C behaves identically to B-strict, because the strict
-gateways reject first. It closes \texttt{\%2f} and dot-segments but not \texttt{\#} or the override.
-B-optional reproduces every witness and, on the full corpus, raises the hits from
-\NumBEdgeFastapi{} to \NumBOptFastapi{} (FastAPI) and from \NumBEdgeExpress{} to \NumBOptExpress{}
-(Express): the htm/htu checks are what keep the path mutations out.
+\begin{figure*}[t]
+\centering
+\figpdf{\textwidth}{4.3cm}{fig_defence.pdf}
+\Description{Left: stacked bars of residual binding hits on the 229 witnesses for B-edge, B-origin, B-strict, D-A, D-B and D-C, split by class; D-A and D-B keep only the query and body dispatch hits. Right: bars of attributable false rejection with 95 percent confidence intervals; B-edge zero, B-strict and D-C about 29 percent, B-origin 40 percent, D-A and D-B 43 percent.}
+\caption{Defence trade-off. (a)~Residual binding hits on the
+\NumDefWitnesses{} E7 witnesses: D-A and D-B remove method override and every
+\GB hit, while \NumDefResidualDB{} query/body \GA witnesses remain by design.
+(b)~Attributable false rejection on legitimate traffic (S0--S5, NGINX, four
+frameworks, $n=\FRRPerConfigN{}$ per configuration, Wilson 95\% CI): D-A/D-B reject
+\FRRAllDAB{} because strip-prefix, version and trailing-slash rewrites change
+the routed view.}
+\label{fig:defence}
+\end{figure*}
 
-\paragraph{Ablation (\Abl{2}).} Leaving one D-B canonicalisation step out shows that
-\AblTwoResult{}. No step affects \GA dispatch, the E4 dot-segment classes, or the rewrite false
-rejections.
+\paragraph{Which steps matter (\Abl{2}).} Leaving one D-B canonicalisation
+step out (replayed offline with D-B's own functions; \NumAtwoAgree{}/\NumAtwoAgree{}
+agreement with the live runs) shows that \AblTwoResult{}. No step affects \GA
+dispatch, the E4 dot-segment classes or the rewrite false rejections.
 
-\paragraph{Cost.} False rejection (\NumFRRRequests{} legitimate requests behind NGINX, counted only
-where B-edge served the request) is \FalseRejectionRate{}. Without rewriting, all D-A/D-B rejects
-(\FRRNonRewriteN{}) come from two encoder seams: a catch-all parameter containing \texttt{/}, and
-Kestrel keeping \texttt{\%2F} encoded. Strip-prefix, version and trailing-slash rewrites are all
-rejected (\FRRRewriteN{}): the proof binds the public URI, the executor sees the internal path.
-Over our synthetic mix this is \FRRAllDAB{} (\FRRAllN{}, 95\,\% CI \FRRAllDABCI{}). A path-only view
-MAC thus needs the gateway's public-to-internal path map, i.e.\ a contract naming the executor's
-view (\S\ref{sec:discussion:rec}). Stricter edge matching is no substitute: it rejects every
-percent-encoded identifier (\FRRAllStrict{} overall) and still passes \texttt{\#} and the override.
-At \PerfRate{}\,req/s, the only load without errors, D-B changes the median by
-\DefenceOverheadPfifty{} and the p99 by \DefenceOverheadPninetynine{} (Cliff's $\delta$
-\DefenceCliffFastapi{} and \DefenceCliffSpring{}, negligible); the HMAC adds no hop. D-A on FastAPI
-has a heavy tail (p95 \PerfDAFastapiPninetyfive{} vs.\ \PerfBEdgeFastapiPninetyfive{}\,ms), which we
-attribute to that executor's verifier call. From 500\,req/s every stack on our shared laptop
-saturated with NGINX 502s (no 401s) that did not reproduce between runs, so we rank nothing above
-\PerfRate{}\,req/s. Timings are preliminary pending a dedicated server.
+\paragraph{False rejection.} We sent \NumFRRRequests{} legitimate requests
+behind NGINX in six scenarios---identity, strip-prefix, version rewrite,
+trailing-slash strip, percent-encoded identifiers, and h2c-to-HTTP/1.1---each
+with a valid proof for the public URL, counting a reject only where B-edge
+served the request (Figure~\ref{fig:defence}b). Over the synthetic mix D-A
+and D-B reject \FRRAllDAB{} (\FRRAllN{}, 95\% CI \FRRAllDABCI{}); the honest
+reading is per scenario. Every rewritten request is rejected (\FRRRewriteN{}):
+the proof binds the public URI, the executor sees the internal path. Without
+rewriting, the rate is \FRRNonRewriteDAB{} (\FRRNonRewriteN{}), all from two
+encoder seams we can fix: a catch-all parameter containing \texttt{/}, and
+Kestrel keeping \texttt{\%2F} encoded. Stricter edge matching is no
+substitute: it rejects every percent-encoded identifier (\FRRAllStrict{}
+overall) and still passes \texttt{\#} and override. The rewrite failures are
+not an implementation artefact but a statement of the problem: a path-only view
+binding is sound only if the proof and the executor agree on \emph{whose} view
+is meant, i.e.\ a gateway that rewrites must hand the executor its
+public-to-internal path map or the verifier must MAC the path it forwards.
+This is the executor-view contract of \S\ref{sec:discussion}.
+
+\paragraph{Latency.} At \PerfRate{}\,req/s, the only load level without errors
+(\PerfRuns{} runs $\times$ \PerfRunSecs{}\,s, k6, NGINX), D-B changes the
+median by \DefenceOverheadPfifty{} and the p99 by
+\DefenceOverheadPninetynine{} (Cliff's $\delta$ \DefenceCliffFastapi{} and
+\DefenceCliffSpring{}, negligible; Figure~\ref{fig:latency}); the HMAC adds no
+hop. D-A on FastAPI has a heavy tail (p95 \PerfDAFastapiPninetyfive{} vs.\
+\PerfBEdgeFastapiPninetyfive{}\,ms, $\delta$ \PerfDACliffFastapi{}), which
+we attribute to that executor's verifier call, since Spring D-A tracks B-edge.
+From \PerfSatRate{}\,req/s every stack on our shared laptop saturated with
+NGINX 502s (no 401s) that did not reproduce between runs, so we rank nothing
+above \PerfRate{}\,req/s.
+
+\begin{figure*}[t]
+\centering
+\figpdf{\textwidth}{4.3cm}{fig_latency.pdf}
+\Description{Two panels, FastAPI and Spring, each with p50, p95 and p99 latency bars on a log scale for B-edge, B-origin, D-A and D-B at 100 requests per second with 95 percent confidence intervals. D-B is indistinguishable from B-edge at the median; D-A on FastAPI has a much higher p95 and p99.}
+\caption{Latency at \PerfRate{}\,req/s (no errors; \PerfRuns{} runs, 95\% CI;
+log scale; shared laptop). D-B's median is indistinguishable from B-edge on
+both frameworks; D-A's FastAPI tail comes from that executor's origin-mode
+verifier call (Spring D-A tracks B-edge). Levels $\ge$\PerfSatRate{}\,req/s
+are omitted as 502 saturation.}
+\label{fig:latency}
+\end{figure*}

@@ -186,7 +186,7 @@
 % Disclosure drafts: disclosure/TRIAGE.md L20-21 (1 NEW: APISIX RC-W13-A; 3 KNOWN-UNFIXED: '#' in uvicorn-h11,
 % Go net/http, FrankenPHP) and L26 ("Drafts written for the 1 NEW + 3 KNOWN-UNFIXED items ... No report is sent").
 \newcommand{\NumDisclosures}{4}
-\newcommand{\NumDisclosuresNew}{1}             % TRIAGE.md L20
+\newcommand{\NumDisclosuresNew}{1}             % TRIAGE.md L20 -- NOT used in the paper: NOVELTY_UPDATE.md §C3 reclassifies APISIX RC-W13-A as a CVE-2026-124680 variant
 \newcommand{\NumDisclosuresKnown}{3}           % TRIAGE.md L21
 \newcommand{\NumDisclosuresDocumented}{6}      % TRIAGE.md L22 (documented behaviour, no report)
 
@@ -292,3 +292,31 @@ reopen nothing}
 % E8: B-optional (htm/htu checks off) vs B-edge on the full 581-case depth-1 corpus (analysis/e8_full_corpus.md)
 \newcommand{\NumBOptFastapi}{52}\newcommand{\NumBEdgeFastapi}{23}
 \newcommand{\NumBOptExpress}{58}\newcommand{\NumBEdgeExpress}{11}
+
+% --- W25 (final paper wave): macros for numbers that previously appeared as literals ---
+% E7 witness classes: experiments/defence/REPORT.md §2.2 table "Remaining hits per class" (analysis/e7_tables.md)
+\newcommand{\DefGOneQuery}{57}                 % G1-query 55 + 2 '#' landing in the query
+\newcommand{\DefGOneBody}{89}
+\newcommand{\DefGOneOverride}{31}
+\newcommand{\DefGTwoFrag}{28}
+\newcommand{\DefGTwoPct}{12}
+\newcommand{\DefGTwoDot}{12}
+\newcommand{\NumDefEFourBOrigin}{31}           % REPORT.md §2.3 total row
+\newcommand{\NumDefEFourBStrict}{4}
+\newcommand{\NumDefRepTopos}{118}              % REPORT.md §7: 118/118 identical in two replications
+\newcommand{\FRRNonRewriteStrict}{48.0\,\%}    % REPORT.md §0: B-strict / D-C 144/300 on S0+S4+S5
+\newcommand{\NumDBUnitPy}{75}\newcommand{\NumDBUnitNode}{38}\newcommand{\NumDBUnitJava}{76}\newcommand{\NumDBUnitCs}{76} % REPORT.md §1
+\newcommand{\NumAtwoAgree}{472}                % REPORT.md §4: offline A2 model agrees with live D-B on 472/472
+% Performance: REPORT.md §6
+\newcommand{\PerfRuns}{5}\newcommand{\PerfRunSecs}{60}
+\newcommand{\PerfSatRate}{500}                 % first load level with errors / saturation (all stacks)
+% A1: experiments/ablation/REPORT.md §A1.1, §A1.2
+\newcommand{\AblOneVariants}{8}
+\newcommand{\AblOneGateDeny}{712}              % §A1.1: digest gate rejected 712 body-mismatched requests
+\newcommand{\AblOneSwapResNoHtm}{4}\newcommand{\AblOneSwapResNoHtu}{9} % §A1.2 max resolution
+\newcommand{\AblOneRequests}{79{,}296}\newcommand{\AblOneSwapRequests}{22{,}848} % §A1 "Matrix"
+\newcommand{\AblOneQueryRemoved}{45}\newcommand{\AblOneDigestRemoved}{63} % §A1.1 "Δ vs full"
+\newcommand{\AblOneFragQuery}{4}               % §A1.1 M7 survives +query
+% E4 reruns/ddmin are in e4/REPORT.md §7-8; RC1+RC2 strict-allowlist breakers: \NumEFourAllowBreak.
+
+\newcommand{\FRRPerConfigN}{500}              % defence/REPORT.md §5.2 "all" row denominators (B-edge served 500 of 516)

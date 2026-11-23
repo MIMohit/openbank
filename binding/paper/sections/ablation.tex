@@ -1,0 +1,85 @@
+% sections/ablation.tex -- Section 8: ablations A1, A4, A5 (W25).
+% Source: experiments/ablation/REPORT.md (W18); fig_ablation_a1.pdf by W26 (figs/FIGURES.md §4).
+\section{What the Proof Should Bind: Ablations}\label{sec:ablation}
+
+Binding more of the request is an old idea---the 2016 OAuth signed-request
+draft covered query, headers and body~\cite{p2:richer2016signedhttp}---and
+RFC~9421 makes coverage configurable~\cite{rfc9421}. What has been missing is
+evidence of what each claim actually buys in a layered deployment. Ablation
+\Abl{1} provides it, and directly informs the current proposal to make \htm and
+\htu optional~\cite{allam2026thread}.
+
+\paragraph{Design (\Abl{1}).} A copy of the reference verifier implements
+\AblOneVariants{} claim sets: \emph{full} (RFC~9449); \emph{$-$\htm},
+\emph{$-$\htu}, \emph{$-$\ath} (claim neither required nor checked);
+\emph{+query} (\htu includes the RFC~3986-normalised query; an absent query is
+bound too); \emph{+digest} (a proof claim must equal the request's RFC~9530
+\hdr{Content-Digest}~\cite{w2:rfc9530}, and a body-holding hop between NGINX and
+the executor rejects any body that does not match it); \emph{digest-nogate}
+(the same without that hop); and \emph{+query+digest}. The two halves of
++digest are both needed: NGINX \texttt{auth\_request} sends the subrequest
+without the body, so an edge verifier never sees the content. We ran
+\AblOneTopos{} topologies (NGINX default, four frameworks with v2 routes,
+override off/on, $\times$ \AblOneVariants{} variants): \AblOneRequests{}
+mutation requests from \AblOneCases{} cases per topology, plus
+\AblOneSwapRequests{} \emph{swap} requests that replay a proof for operation
+$p$ on the canonical request of operation $q$ or with another method---a case
+the mutation catalogue never generates. Hits were confirmed 3/3.
+
+\begin{figure*}[t]
+\centering
+\figpdf{\textwidth}{4.3cm}{fig_ablation_a1.pdf}
+\Description{Left: stacked bars of residual hits on the mutation set for eight claim variants; full, no-htm, no-ath and digest without gate at 192, no-htu at 432, plus-query 147, plus-digest 129, plus-query-plus-digest 84 with a dashed line at the 60 G2 hits that no variant removes. Right: cross-operation and method-swap replay hits, zero for all variants except no-htm at 192 and no-htu at 720.}
+\caption{\Abl{1} binding-claim ablation. (a)~Residual hits on the mutation set:
+\htu does nearly all the work; binding the query and the body (with a
+body-holding hop) removes the dispatch hits, but \AblOneHitsQueryDigest{}
+remain: header-carried \GA and the \AblOneGTwoSurvive{} \GB hits that no claim
+set removes (dashed). (b)~Cross-operation and method-swap replay: \htm and \htu
+each prevent replay that the mutation corpus cannot see.}
+\label{fig:a1}
+\end{figure*}
+
+\paragraph{Results.} Figure~\ref{fig:a1} summarises them.
+(1)~\emph{\htu does nearly all the work against mutation:} every verifier
+denial on the mutation set is an \htu mismatch; dropping it raises the hits
+from \AblOneHitsFull{} to \AblOneHitsNoHtu{} and resolution from
+\AblOneResFull{} to \AblOneResNoHtu{}, and admits \AblOneSwapNoHtu{}
+same-method cross-operation replays (resolution \AblOneSwapResNoHtu{}).
+(2)~\emph{\htm is invisible to path mutation but necessary:} $-$\htm gives the
+identical hit set on the mutation corpus, yet admits \AblOneSwapNoHtm{}
+same-path method swaps (resolution \AblOneSwapResNoHtm{}). A corpus without
+method swaps would wrongly conclude that \htm is redundant.
+(3)~\emph{\ath buys nothing under \Aleak}, as expected: the attacker replays the
+proof with its own token.
+(4)~\emph{+query removes exactly the query class} (\AblOneQueryRemoved{} hits,
+including \texttt{?\_method}) and adds none, but inherits the fragment
+differential: \texttt{?op=freeze\#frag} still passes (\AblOneFragQuery{}
+hits), because the verifier puts \texttt{\#frag} in the fragment while three
+servers keep it in the query value.
+(5)~\emph{+digest removes the body classes only with a body-holding hop}
+(\AblOneDigestRemoved{} hits; the hop rejected \AblOneGateDeny{}
+body-mismatched requests); \emph{digest-nogate} gives the same hits as
+\emph{full}, because the attacker keeps the leaked header and swaps the body.
+(6)~\emph{Binding the query and the body does not close everything.}
++query+digest leaves \AblOneHitsQueryDigest{} hits: header-carried \GA
+(\hdr{X-HTTP-Method-Override}, the \hdr{Content-Type} relabel, \texttt{\#} in
+the query) and all \AblOneGTwoSurvive{} \GB path-differential hits, which no
+claim set removes. Covering more of the request does not fix interpretation
+differentials; only agreement between the verifier's and the router's view
+does---the argument for the executor-view contract and D-B
+(\S\ref{sec:defence}).
+\emph{Legitimate traffic.} Across \AblOneLegitN{} legitimate requests,
+query binding caused no false rejection behind NGINX, which forwards the raw
+target; behind HAProxy's recommended query normalisers, exact matching
+rejected \AblOneLegitFRHapExact{}, RFC~3986 matching
+\AblOneLegitFRHapRfc{}, and sorted matching \AblOneLegitFRHapSorted{}. Body
+binding behind HAProxy failed for every request because its adapter does not
+forward \hdr{Content-Digest}: the risk is integration, not transformation.
+
+\paragraph{Primitive families (\Abl{4}) and profiles (\Abl{5}).}
+Leaving one primitive family out shows that \AblFourResult{}. The \GB evidence
+is therefore fragile to catalogue coverage: dropping the fragment family alone
+removes B1. Across profiles, \AblFiveResult{} (\AblFiveGTwoTopos{} new \GB and
+\AblFiveEFourTopos{} new E4 topologies). The strict deny rule lists
+\texttt{\%23} but not a raw \texttt{\#}, and strict profiles are
+harness-defined, so they are a ceiling rather than a vendor default.

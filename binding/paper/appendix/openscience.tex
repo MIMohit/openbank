@@ -1,0 +1,18 @@
+% appendix/openscience.tex -- ASIA CCS Open Science section (W25). Must stay <= half a page.
+\section{Open Science}\label{app:openscience}
+
+Our contributions rely on artifacts, and we will release them: the
+differential harness (test authorization server and minter, reference RFC~9449
+verifier, the \NumFrameworks{} bench-API executors with their conformance suite,
+gateway configurations for all \NumGatewayProfiles{} profiles, the topology
+orchestrator, the \NumPrimitives{}-primitive mutation catalogue, the raw-socket
+runner and the binding oracle); the D-B implementations and shared test
+vectors; the prevalence pipeline and its pinned inputs; and the raw data behind
+every number (runner, verifier and executor logs, hit and rerun outcome files,
+delta-debugging outputs, analysis scripts, and the scripts that regenerate
+every figure). Every quantitative claim in the paper is a macro whose comment
+names the file that produced it. The artifact is available at
+\url{https://anonymous.4open.science/r/binding-soundness-XXXX}
+(placeholder, to be replaced by the anonymised link at submission). All
+components are containers built from public release images; no third-party
+service is contacted. Test keys are generated locally; no secret is shipped.

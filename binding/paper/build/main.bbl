@@ -2,7 +2,7 @@
 %%% Do NOT edit. File created by BibTeX with style
 %%% ACM-Reference-Format-Journals [18-Jan-2012].
 
-\begin{thebibliography}{54}
+\begin{thebibliography}{62}
 
 %%% ====================================================================
 %%% NOTE TO THE USER: you can override these defaults by providing
@@ -70,6 +70,36 @@
 \shownote{29 June 2026; accessed 2026-11-23}.
 
 
+\bibitem[{Apache APISIX PMC}(2026a)]%
+        {p2:apisix2026_124680}
+\bibfield{author}{\bibinfo{person}{{Apache APISIX PMC}}.}
+  \bibinfo{year}{2026}\natexlab{a}.
+\newblock \bibinfo{title}{{CVE-2026-124680}: Apache {APISIX}: Route-level
+  authentication bypass via path normalization mismatch between routing and
+  upstream forwarding}.
+\newblock \bibinfo{howpublished}{oss-security mailing list; fix in
+  apache/apisix PR 14035 (https://github.com/apache/apisix/pull/14035)}.
+\newblock
+\urldef\tempurl%
+\url{https://www.openwall.com/lists/oss-security/2026/11/13/7}
+\showURL{%
+\tempurl}
+
+
+\bibitem[{Apache APISIX PMC}(2026b)]%
+        {p2:apisix2026_94269}
+\bibfield{author}{\bibinfo{person}{{Apache APISIX PMC}}.}
+  \bibinfo{year}{2026}\natexlab{b}.
+\newblock \bibinfo{title}{{CVE-2026-94269}: Apache {APISIX}: Servlet-style
+  normalization creates a route/upstream authorization mismatch}.
+\newblock \bibinfo{howpublished}{oss-security mailing list}.
+\newblock
+\urldef\tempurl%
+\url{https://www.openwall.com/lists/oss-security/2026/10/01/7}
+\showURL{%
+\tempurl}
+
+
 \bibitem[Backman et~al\mbox{.}(2024)]%
         {rfc9421}
 \bibfield{author}{\bibinfo{person}{Annabelle Backman}, \bibinfo{person}{Justin
@@ -80,23 +110,6 @@
 \newblock
 \urldef\tempurl%
 \url{https://doi.org/10.17487/RFC9421}
-\showDOI{\tempurl}
-
-
-\bibitem[B{\"u}ttner et~al\mbox{.}(2021)]%
-        {buttner2021whitelisting}
-\bibfield{author}{\bibinfo{person}{Andre B{\"u}ttner},
-  \bibinfo{person}{Hoai~Viet Nguyen}, \bibinfo{person}{Nils Gruschka}, {and}
-  \bibinfo{person}{Luigi {Lo Iacono}}.} \bibinfo{year}{2021}\natexlab{}.
-\newblock \showarticletitle{Less is Often More: Header Whitelisting as Semantic
-  Gap Mitigation in {HTTP}-Based Software Systems}. In
-  \bibinfo{booktitle}{\emph{ICT Systems Security and Privacy Protection (IFIP
-  SEC 2021)}} \emph{(\bibinfo{series}{IFIP Advances in Information and
-  Communication Technology}, Vol.~\bibinfo{volume}{625})}.
-  \bibinfo{publisher}{Springer}, \bibinfo{pages}{332--347}.
-\newblock
-\urldef\tempurl%
-\url{https://doi.org/10.1007/978-3-030-78120-0_22}
 \showDOI{\tempurl}
 
 
@@ -142,6 +155,21 @@
 \showDOI{\tempurl}
 
 
+\bibitem[Doyhenard(2024)]%
+        {p2:doyhenard2024gotta}
+\bibfield{author}{\bibinfo{person}{Martin Doyhenard}.}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \bibinfo{title}{Gotta Cache 'em All: Bending the Rules of Web Cache
+  Exploitation}.
+\newblock \bibinfo{howpublished}{Black Hat USA 2024 / DEF CON 32, PortSwigger
+  Research white paper}.
+\newblock
+\urldef\tempurl%
+\url{https://portswigger.net/research/gotta-cache-em-all}
+\showURL{%
+\tempurl}
+
+
 \bibitem[{encode/uvicorn}(2021)]%
         {w2:uvicorn1222}
 \bibfield{author}{\bibinfo{person}{{encode/uvicorn}}.}
@@ -157,16 +185,30 @@
 \shownote{Opened 2021-10-19; accessed 2026-11-23}.
 
 
-\bibitem[{Envoy maintainers}(2019)]%
-        {envoy2019ghsa}
+\bibitem[{Envoy maintainers}(2021)]%
+        {p2:envoy2021_29492}
 \bibfield{author}{\bibinfo{person}{{Envoy maintainers}}.}
-  \bibinfo{year}{2019}\natexlab{}.
-\newblock \bibinfo{title}{{GHSA-xcx5-93pw-jw2w}: Unnormalized paths seen by
-  routing and all {L7} filters}.
+  \bibinfo{year}{2021}\natexlab{}.
+\newblock \bibinfo{title}{{CVE-2021-29492}: escaped slashes in {URL} paths
+  bypass access control}.
 \newblock
 \newblock
 \urldef\tempurl%
-\url{https://github.com/envoyproxy/envoy/security/advisories/GHSA-xcx5-93pw-jw2w}
+\url{https://nvd.nist.gov/vuln/detail/CVE-2021-29492}
+\showURL{%
+\tempurl}
+
+
+\bibitem[{Envoy maintainers}(2026)]%
+        {p2:envoy2026_73551}
+\bibfield{author}{\bibinfo{person}{{Envoy maintainers}}.}
+  \bibinfo{year}{2026}\natexlab{}.
+\newblock \bibinfo{title}{{CVE-2026-73551} ({GHSA-2w8w-rfw7-8gg4}): path
+  normalization does not handle dot and dot-dot segments with parameters}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://osv.dev/vulnerability/CVE-2026-73551}
 \showURL{%
 \tempurl}
 
@@ -217,62 +259,16 @@
 \showDOI{\tempurl}
 
 
-\bibitem[Fett et~al\mbox{.}(2019)]%
-        {fett2019fapi}
-\bibfield{author}{\bibinfo{person}{Daniel Fett}, \bibinfo{person}{Pedram
-  Hosseyni}, {and} \bibinfo{person}{Ralf K{\"u}sters}.}
-  \bibinfo{year}{2019}\natexlab{}.
-\newblock \showarticletitle{An Extensive Formal Security Analysis of the
-  {OpenID} Financial-Grade {API}}. In \bibinfo{booktitle}{\emph{2019 IEEE
-  Symposium on Security and Privacy (SP)}}. \bibinfo{publisher}{IEEE},
-  \bibinfo{pages}{453--471}.
-\newblock
-\urldef\tempurl%
-\url{https://doi.org/10.1109/SP.2019.00067}
-\showDOI{\tempurl}
-
-
-\bibitem[Fett et~al\mbox{.}(2016)]%
-        {fett2016oauth}
-\bibfield{author}{\bibinfo{person}{Daniel Fett}, \bibinfo{person}{Ralf
-  K{\"u}sters}, {and} \bibinfo{person}{Guido Schmitz}.}
-  \bibinfo{year}{2016}\natexlab{}.
-\newblock \showarticletitle{A Comprehensive Formal Security Analysis of {OAuth}
-  2.0}. In \bibinfo{booktitle}{\emph{Proceedings of the 2016 ACM SIGSAC
-  Conference on Computer and Communications Security (CCS)}}.
-  \bibinfo{publisher}{ACM}, \bibinfo{pages}{1204--1215}.
-\newblock
-\urldef\tempurl%
-\url{https://doi.org/10.1145/2976749.2978385}
-\showDOI{\tempurl}
-
-
-\bibitem[Gallo(2026a)]%
-        {gallo2026relational}
-\bibfield{author}{\bibinfo{person}{N. Gallo}.}
-  \bibinfo{year}{2026}\natexlab{a}.
+\bibitem[Gallo(2026)]%
+        {p2:gallo2026beyond}
+\bibfield{author}{\bibinfo{person}{Nicola Gallo}.}
+  \bibinfo{year}{2026}\natexlab{}.
 \newblock \bibinfo{title}{Beyond Proof of Possession: A Relational Theory of
   Authority}.
+\newblock \bibinfo{howpublished}{arXiv:2611.07159 [cs.CR]}.
 \newblock
-\newblock
-\showeprint[arxiv]{2611.07159}
 \urldef\tempurl%
 \url{https://arxiv.org/abs/2611.07159}
-\showURL{%
-\tempurl}
-
-
-\bibitem[Gallo(2026b)]%
-        {gallo2026continuity}
-\bibfield{author}{\bibinfo{person}{N. Gallo}.}
-  \bibinfo{year}{2026}\natexlab{b}.
-\newblock \bibinfo{title}{Proof-of-Continuity: A Temporal Model for Authority
-  Propagation in Distributed Systems and {AI} Agents}.
-\newblock
-\newblock
-\showeprint[arxiv]{2607.08906}
-\urldef\tempurl%
-\url{https://arxiv.org/abs/2607.08906}
 \showURL{%
 \tempurl}
 
@@ -293,17 +289,31 @@
 
 
 \bibitem[Golinelli et~al\mbox{.}(2026)]%
-        {golinelli2026post}
-\bibfield{author}{\bibinfo{person}{Matteo Golinelli}, \bibinfo{person}{S.~E.
-  Hannachi}, {and} \bibinfo{person}{Bruno Crispo}.}
-  \bibinfo{year}{2026}\natexlab{}.
-\newblock \bibinfo{title}{When {POST} Becomes {GET}: Investigating {HTTP}
-  Method Interchangeability and Its Security Implications}.
+        {p2:golinelli2026post}
+\bibfield{author}{\bibinfo{person}{Matteo Golinelli},
+  \bibinfo{person}{Seif~Errahmane Hannachi}, {and} \bibinfo{person}{Bruno
+  Crispo}.} \bibinfo{year}{2026}\natexlab{}.
+\newblock \showarticletitle{When {POST} Becomes {GET}: Investigating {HTTP}
+  Method Interchangeability and Its Security Implications}. In
+  \bibinfo{booktitle}{\emph{Annual Computer Security Applications Conference
+  (ACSAC 2026)}}.
 \newblock
-\newblock
-\showeprint[arxiv]{2610.37474}
 \urldef\tempurl%
-\url{https://arxiv.org/abs/2610.37474}
+\url{https://www.acsac.org/2026/program/papers/}
+\showURL{%
+\tempurl}
+
+
+\bibitem[{heimdall maintainers}(2026)]%
+        {p2:heimdall2026_42274}
+\bibfield{author}{\bibinfo{person}{{heimdall maintainers}}.}
+  \bibinfo{year}{2026}\natexlab{}.
+\newblock \bibinfo{title}{{CVE-2026-42274} ({GHSA-3q34-rx83-r6mq}):
+  authorization bypass via path normalization mismatch}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://advisories.gitlab.com/golang/github.com/dadrus/heimdall/CVE-2026-42274/}
 \showURL{%
 \tempurl}
 
@@ -361,15 +371,32 @@
   \url{https://eprint.iacr.org/2024/1540}}.
 
 
-\bibitem[{Istio}(2021)]%
-        {istio2021cve31920}
-\bibfield{author}{\bibinfo{person}{{Istio}}.} \bibinfo{year}{2021}\natexlab{}.
-\newblock \bibinfo{title}{{ISTIO-SECURITY-2021-005} ({CVE-2021-31920}):
-  Authorization policy bypass via multiple or escaped slashes}.
+\bibitem[Hosseyni et~al\mbox{.}(2026)]%
+        {p2:hosseyni2026audience}
+\bibfield{author}{\bibinfo{person}{Pedram Hosseyni}, \bibinfo{person}{Ralf
+  K{\"u}sters}, {and} \bibinfo{person}{Tim W{\"u}rtele}.}
+  \bibinfo{year}{2026}\natexlab{}.
+\newblock \showarticletitle{Audience Injection Attacks: A New Class of Attacks
+  on Web-Based Authorization and Authentication Standards}. In
+  \bibinfo{booktitle}{\emph{2026 IEEE Symposium on Security and Privacy (SP)}}.
+  \bibinfo{publisher}{IEEE}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1109/SP63933.2026.00116}
+\showDOI{\tempurl}
+
+
+\bibitem[{Istio Product Security}(2021)]%
+        {p2:istio2021_008}
+\bibfield{author}{\bibinfo{person}{{Istio Product Security}}.}
+  \bibinfo{year}{2021}\natexlab{}.
+\newblock \bibinfo{title}{{ISTIO-SECURITY-2021-008}: {CVE-2021-39156} (Envoy
+  {CVE-2021-32779}) fragment in path bypasses path-based authorization policy;
+  {CVE-2021-39155} host case}.
 \newblock
 \newblock
 \urldef\tempurl%
-\url{https://istio.io/latest/news/security/istio-security-2021-005/}
+\url{https://istio.io/latest/news/security/istio-security-2021-008/}
 \showURL{%
 \tempurl}
 
@@ -451,21 +478,6 @@
 \url{https://arxiv.org/abs/2607.01711}
 \showURL{%
 \tempurl}
-
-
-\bibitem[Lodderstedt et~al\mbox{.}(2025)]%
-        {rfc9700}
-\bibfield{author}{\bibinfo{person}{Torsten Lodderstedt}, \bibinfo{person}{John
-  Bradley}, \bibinfo{person}{Andrey Labunets}, {and} \bibinfo{person}{Daniel
-  Fett}.} \bibinfo{year}{2025}\natexlab{}.
-\newblock \bibinfo{booktitle}{\emph{Best Current Practice for {OAuth} 2.0
-  Security}}.
-\newblock \bibinfo{type}{RFC} 9700 (BCP 240). \bibinfo{institution}{RFC
-  Editor}.
-\newblock
-\urldef\tempurl%
-\url{https://doi.org/10.17487/RFC9700}
-\showDOI{\tempurl}
 
 
 \bibitem[Madden and Zehavi(2025)]%
@@ -577,26 +589,10 @@
 \showDOI{\tempurl}
 
 
-\bibitem[{NIST NVD}(2026a)]%
-        {opaenvoy2026cve26205}
-\bibfield{author}{\bibinfo{person}{{NIST NVD}}.}
-  \bibinfo{year}{2026}\natexlab{a}.
-\newblock \bibinfo{title}{{CVE-2026-26205}: opa-envoy-plugin input.parsed\_path
-  double-slash misinterpretation}.
-\newblock
-\newblock
-\urldef\tempurl%
-\url{https://nvd.nist.gov/vuln/detail/CVE-2026-26205}
-\showURL{%
-\tempurl}
-\newblock
-\shownote{GHSA-9f29-v6mm-pw6w}.
-
-
-\bibitem[{NIST NVD}(2026b)]%
+\bibitem[{NIST NVD}(2026)]%
         {traefik2026cve40912}
 \bibfield{author}{\bibinfo{person}{{NIST NVD}}.}
-  \bibinfo{year}{2026}\natexlab{b}.
+  \bibinfo{year}{2026}\natexlab{}.
 \newblock \bibinfo{title}{{CVE-2026-40912}: {Traefik} {StripPrefixRegex} and
   {ForwardAuth} dot-segment authorization bypass}.
 \newblock
@@ -637,6 +633,20 @@
 \tempurl}
 \newblock
 \shownote{Accessed 2026-11-23}.
+
+
+\bibitem[{Ory maintainers}(2026)]%
+        {p2:oathkeeper2026_33494}
+\bibfield{author}{\bibinfo{person}{{Ory maintainers}}.}
+  \bibinfo{year}{2026}\natexlab{}.
+\newblock \bibinfo{title}{{CVE-2026-33494} ({GHSA-p224-6x5r-fjpm}): Ory
+  {Oathkeeper} path traversal authorization bypass}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://advisories.gitlab.com/golang/github.com/ory/oathkeeper/CVE-2026-33494/}
+\showURL{%
+\tempurl}
 
 
 \bibitem[{OSV / NIST NVD}(2026)]%
@@ -687,22 +697,6 @@
 \showDOI{\tempurl}
 
 
-\bibitem[{PieterKas (GitHub)}(2025)]%
-        {sep1932}
-\bibfield{author}{\bibinfo{person}{{PieterKas (GitHub)}}.}
-  \bibinfo{year}{2025}\natexlab{}.
-\newblock \bibinfo{title}{{SEP-1932}: {DPoP} Profile for {MCP}}.
-\newblock \bibinfo{howpublished}{Model Context Protocol specification
-  enhancement proposal, GitHub pull request \#1932 (open)}.
-\newblock
-\urldef\tempurl%
-\url{https://github.com/modelcontextprotocol/modelcontextprotocol/pull/1932}
-\showURL{%
-\tempurl}
-\newblock
-\shownote{Opened 5 December 2025; accessed 2026-11-23}.
-
-
 \bibitem[{PieterKas (GitHub)}(2026)]%
         {mcpconf369}
 \bibfield{author}{\bibinfo{person}{{PieterKas (GitHub)}}.}
@@ -717,6 +711,20 @@
 \tempurl}
 \newblock
 \shownote{Opened 25 June 2026; accessed 2026-11-23}.
+
+
+\bibitem[{Pivotal / Spring Security team}(2016)]%
+        {p2:spring2016_5007}
+\bibfield{author}{\bibinfo{person}{{Pivotal / Spring Security team}}.}
+  \bibinfo{year}{2016}\natexlab{}.
+\newblock \bibinfo{title}{{CVE-2016-5007}: {Spring Security} / {MVC} Path
+  Matching Inconsistency}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://spring.io/security/cve-2016-5007}
+\showURL{%
+\tempurl}
 
 
 \bibitem[Polli and Pardue(2024)]%
@@ -746,6 +754,37 @@
 \showDOI{\tempurl}
 
 
+\bibitem[Richer et~al\mbox{.}(2016)]%
+        {p2:richer2016signedhttp}
+\bibfield{author}{\bibinfo{person}{Justin Richer}, \bibinfo{person}{John
+  Bradley}, {and} \bibinfo{person}{Hannes Tschofenig}.}
+  \bibinfo{year}{2016}\natexlab{}.
+\newblock \bibinfo{title}{A Method for Signing {HTTP} Requests for {OAuth}}.
+\newblock \bibinfo{howpublished}{IETF Internet-Draft
+  draft-ietf-oauth-signed-http-request-03 (expired 2017-02-09)}.
+\newblock
+\urldef\tempurl%
+\url{https://datatracker.ietf.org/doc/draft-ietf-oauth-signed-http-request/03/}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Sadeghi et~al\mbox{.}(2026)]%
+        {p2:sadeghi2026nginxbuster}
+\bibfield{author}{\bibinfo{person}{Aliakbar Sadeghi}, \bibinfo{person}{Maryam
+  Rostamipoor}, \bibinfo{person}{Sai~Chand Boyapati}, {and}
+  \bibinfo{person}{Omar Chowdhury}.} \bibinfo{year}{2026}\natexlab{}.
+\newblock \showarticletitle{Breaking the Gate: Detecting Invisible
+  Authentication Slip-Through in {NGINX} Reverse Proxy}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the 2026 ACM SIGSAC Conference on
+  Computer and Communications Security (CCS '26)}}. \bibinfo{publisher}{ACM},
+  \bibinfo{pages}{5284--5298}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3830454.3846523}
+\showDOI{\tempurl}
+
+
 \bibitem[Shen et~al\mbox{.}(2022)]%
         {shen2022hdiff}
 \bibfield{author}{\bibinfo{person}{Kaiwen Shen}, \bibinfo{person}{Jianyu Lu},
@@ -762,21 +801,6 @@
 \urldef\tempurl%
 \url{https://doi.org/10.1109/DSN53405.2022.00014}
 \showDOI{\tempurl}
-
-
-\bibitem[Somorovsky et~al\mbox{.}(2012)]%
-        {somorovsky2012saml}
-\bibfield{author}{\bibinfo{person}{Juraj Somorovsky}, \bibinfo{person}{Andreas
-  Mayer}, \bibinfo{person}{J{\"o}rg Schwenk}, \bibinfo{person}{Marco Kampmann},
-  {and} \bibinfo{person}{Meiko Jensen}.} \bibinfo{year}{2012}\natexlab{}.
-\newblock \showarticletitle{On Breaking {SAML}: Be Whoever You Want to Be}. In
-  \bibinfo{booktitle}{\emph{21st USENIX Security Symposium (USENIX Security
-  12)}}. \bibinfo{publisher}{USENIX Association}.
-\newblock
-\urldef\tempurl%
-\url{https://www.usenix.org/conference/usenixsecurity12/technical-sessions/presentation/somorovsky}
-\showURL{%
-\tempurl}
 
 
 \bibitem[Topcuoglu et~al\mbox{.}(2025)]%
@@ -810,6 +834,34 @@
 \shownote{Living documentation, accessed 2026-11-23}.
 
 
+\bibitem[{Traefik maintainers}(2026)]%
+        {p2:traefik2026_88009}
+\bibfield{author}{\bibinfo{person}{{Traefik maintainers}}.}
+  \bibinfo{year}{2026}\natexlab{}.
+\newblock \bibinfo{title}{{CVE-2026-88009} ({GHSA-f52w-8j3h-j724}): rootless
+  {HTTP/1} request-target routes as ``/'' but is forwarded verbatim}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://advisories.gitlab.com/golang/github.com/traefik/traefik/v2/CVE-2026-88009/}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Tsai(2018)]%
+        {p2:tsai2018breaking}
+\bibfield{author}{\bibinfo{person}{Orange Tsai}.}
+  \bibinfo{year}{2018}\natexlab{}.
+\newblock \bibinfo{title}{Breaking Parser Logic! Take Your Path Normalization
+  Off and Pop 0days Out}.
+\newblock \bibinfo{howpublished}{Black Hat USA 2018 and DEF CON 26}.
+\newblock
+\urldef\tempurl%
+\url{https://i.blackhat.com/us-18/Wed-August-8/us-18-Orange-Tsai-Breaking-Parser-Logic-Take-Your-Path-Normalization-Off-And-Pop-0days-Out-2.pdf}
+\showURL{%
+\tempurl}
+
+
 \bibitem[{Wiz Vulnerability Database}(2021)]%
         {w2:kongcve27306}
 \bibfield{author}{\bibinfo{person}{{Wiz Vulnerability Database}}.}
@@ -826,19 +878,56 @@
 \shownote{Accessed 2026-11-23}.
 
 
-\bibitem[{xvnpw}(2021)]%
-        {w2:xvnpw2021kong}
-\bibfield{author}{\bibinfo{person}{{xvnpw}}.} \bibinfo{year}{2021}\natexlab{}.
-\newblock \bibinfo{title}{Path traversal in authorization context in {Kong} and
-  {F5 NGINX}}.
-\newblock
+\bibitem[{xvnpw}(2021a)]%
+        {p2:xvnpw2021tips}
+\bibfield{author}{\bibinfo{person}{{xvnpw}}.} \bibinfo{year}{2021}\natexlab{a}.
+\newblock \bibinfo{title}{Bug bounty tips for nginx \$request\_uri path
+  traversal bypass}.
+\newblock \bibinfo{howpublished}{Blog post}.
 \newblock
 \urldef\tempurl%
-\url{https://xvnpw.github.io/posts/path_traversal_in_authorization_context_in_kong_and_f5_nginx}
+\url{https://xvnpw.github.io/posts/bug_bounty_tips_for_nginx_request_uri_path_traversal_bypass/}
 \showURL{%
 \tempurl}
+
+
+\bibitem[{xvnpw}(2021b)]%
+        {p2:xvnpw2021apisix}
+\bibfield{author}{\bibinfo{person}{{xvnpw}}.} \bibinfo{year}{2021}\natexlab{b}.
+\newblock \bibinfo{title}{{CVE-2021-43557}: {Apache APISIX}: Path traversal in
+  request\_uri variable}.
+\newblock \bibinfo{howpublished}{Blog post}.
 \newblock
-\shownote{Accessed 2026-11-23}.
+\urldef\tempurl%
+\url{https://xvnpw.github.io/posts/cve_2021_43557_apache_apisix_path_traversal_in_request_uri_variable/}
+\showURL{%
+\tempurl}
+
+
+\bibitem[{xvnpw}(2021c)]%
+        {p2:xvnpw2021kong}
+\bibfield{author}{\bibinfo{person}{{xvnpw}}.} \bibinfo{year}{2021}\natexlab{c}.
+\newblock \bibinfo{title}{Path traversal in authorization context in {Kong} and
+  {F5 NGINX}}.
+\newblock \bibinfo{howpublished}{Blog post}.
+\newblock
+\urldef\tempurl%
+\url{https://xvnpw.github.io/posts/path_traversal_in_authorization_context_in_kong_and_f5_nginx/}
+\showURL{%
+\tempurl}
+
+
+\bibitem[{xvnpw}(2022)]%
+        {p2:xvnpw2022ingress}
+\bibfield{author}{\bibinfo{person}{{xvnpw}}.} \bibinfo{year}{2022}\natexlab{}.
+\newblock \bibinfo{title}{External Authentication bypass in ingress-nginx}.
+\newblock \bibinfo{howpublished}{Blog post; HackerOne report 1357948 (closed as
+  informative); kubernetes/ingress-nginx issue 8644}.
+\newblock
+\urldef\tempurl%
+\url{https://xvnpw.github.io/posts/external_authentication_bypass_in_ingress_nginx/}
+\showURL{%
+\tempurl}
 
 
 \bibitem[Yang et~al\mbox{.}(2026)]%
@@ -855,6 +944,21 @@
 \url{https://www.ndss-symposium.org/ndss-paper/token-time-bomb-evaluating-jwt-implementations-for-vulnerability-discovery/}
 \showURL{%
 \tempurl}
+
+
+\bibitem[Zhang et~al\mbox{.}(2025)]%
+        {p2:zhang2025uabscan}
+\bibfield{author}{\bibinfo{person}{Qiyi Zhang}, \bibinfo{person}{Fengyu Liu},
+  \bibinfo{person}{Zihan Lin}, {and} \bibinfo{person}{Yuan Zhang}.}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{Be Aware of What You Let Pass: Demystifying
+  {URL}-based Authentication Bypass Vulnerability in {Java} Web Applications}.
+  In \bibinfo{booktitle}{\emph{Proceedings of the 2025 ACM SIGSAC Conference on
+  Computer and Communications Security (CCS '25)}}. \bibinfo{publisher}{ACM}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3719027.3765199}
+\showDOI{\tempurl}
 
 
 \bibitem[Zhou et~al\mbox{.}(2026)]%

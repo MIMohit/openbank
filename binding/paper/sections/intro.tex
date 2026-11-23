@@ -1,90 +1,89 @@
-% sections/intro.tex -- Introduction (final, W19). Every number is a macro from
-% numbers.tex; the defence paragraph waits for W17 (E7/E8).
+% sections/intro.tex -- Introduction (W25). Claims follow ../lit/pass2/NOVELTY_UPDATE.md (C1-C6);
+% every number is a numbers.tex macro.
 \section{Introduction}\label{sec:intro}
 
-Sender-constrained access tokens are the standard defence against token
-theft in high-assurance APIs. FAPI~2.0 requires them, and RFC~9449 (DPoP) and
-RFC~8705 provide them~\cite{rfc9449,rfc8705,fapisp2025}. Formal analyses prove the
-resulting protocols secure, \emph{provided} the resource server performs every
-specified check~\cite{hosseyni2024csf,hosseyni2024tops}.
+Sender-constrained access tokens are the standard defence against token theft
+in high-assurance APIs: FAPI~2.0 requires them, and DPoP (RFC~9449) and
+mTLS-bound tokens (RFC~8705) provide them~\cite{rfc9449,rfc8705,fapisp2025}.
+Formal analyses prove the resulting protocols secure, \emph{provided} the
+resource server performs every specified
+check~\cite{hosseyni2024csf,hosseyni2024tops}. Those analyses model the
+resource server as one atomic process. Real deployments split it: a gateway
+plugin or an external authorization service checks the proof against
+\emph{its view} of the request, while a framework router, method-override
+middleware and a handler decide what \emph{actually runs}. A DPoP proof binds
+only the method (\htm) and the target URI without query (\htu).
 
-Those analyses model the resource server as a single party. Real deployments
-split it. A gateway plugin or an external authorization service checks the
-proof against \emph{its view} of the request; a framework router,
-method-override middleware and a handler decide what \emph{actually runs}.
-DPoP binds only the method and the target URI without its
-query~\cite{rfc9449}. Whenever the two components' views of a request
-diverge, or the executor decides on something the proof does not cover, the
-sender constraint degrades without any check failing.
+That a security check and the component that acts on a request can interpret
+the same request differently is well known for path-based access
+control~\cite{p2:tsai2018breaking,p2:xvnpw2021kong,p2:zhang2025uabscan}.
+We ask the corresponding question for \emph{cryptographic} request binding:
+when a verifier accepts a DPoP proof for its view of a request, does the
+backend execute exactly the operation the proof was bound to? We call this
+property \emph{binding soundness}. It is the request-level analogue of the
+audience binding that Hosseyni et al.\ showed to be ambiguous for signed
+client assertions across endpoints~\cite{p2:hosseyni2026audience}: there, a
+valid assertion is accepted at the wrong endpoint; here, a valid proof is
+accepted for one operation and another is executed.
 
-We make this precise as \emph{binding soundness}: a proof accepted for the
-verifier's view must determine exactly one executed operation
-(Definition~\ref{def:soundness}). Its \emph{binding resolution} counts how
-many operations one accepted proof can select. Resolution exceeds one in
-three ways: \GA, under-binding by design, where the query, the body or a method
-override selects the operation; \GB, interpretation differentials between
-verifier and router; and \GC, spoofable propagation of check results between
-hops. A related property, \emph{authorization soundness}, asks the same
-question of a policy decision made on the verifier's view
-(Definition~\ref{def:authz}). It matters for a malicious but legitimate
-client, who can sign any request it likes.
-
-We test both properties with a differential harness whose oracle is the
-definition itself: the verifier accepts the request, and the executor runs a
-different operation, judged against ground truth measured on the bare
-executor. The harness combines \NumGateways{} gateways, \NumFrameworks{}
-frameworks implementing one bench API, a single reference verifier and
-\NumPrimitives{} mutation primitives sent as raw bytes. We ran
-\NumTopologiesAll{} topologies and \NumCasesAll{} requests, and re-ran every
-finding three times on fresh deployments. A prevalence study of
-\NumSpecs{} API descriptions and the override code of \NumTargetFrameworks{}
-frameworks estimates how often \GA occurs outside the harness.
-
-\paragraph{Findings.} Two interpretation differentials carry the result.
-First, under a malicious client with a path policy at the gateway, we
-found \NumEFourViolations{} cross-tenant or admin executions in
-\NumEFourClasses{} classes. Two of them, Kestrel's and Kong's handling of
-\texttt{/../}, defeat a strict default-deny allow-list, Kong's for every
-backend. Second, under a leaked proof, NGINX and Kong forward a \texttt{\#}
-that three backend servers keep in the path. With a nested route, a leaked
-\texttt{deleteAccount} proof then runs \texttt{deleteStatement} under default
-configurations. Both rest on component behaviours that are individually
-documented or already known; what is new is that they break the binding
-between a correctly verified proof and the operation it authorises.
-Overall, \NumVulnTopologies{} of \NumTopologies{} topologies have binding
-resolution above one under a leaked proof (up to \MaxResolution{}), with
-\NumHits{} confirmed hits. Most are \GA: query and body dispatch change the
-operation behind every gateway and framework, and with method override
-enabled a POST proof executes PUT or DELETE in all \NumFrameworks{}
-frameworks, by default in Rails and Laravel. We also observed an
-encoded-slash split behind APISIX whose mechanism we have not yet confirmed,
-and a low-impact dot-segment effect on catch-all routes. We found no \GC
-binding hit. Verifying the same proof again at the executor removes none of
-the \GA hits and not the \texttt{\#} differential.
-
-Two defences that check the executor's routed view (D-A) or a view MAC it
-recomputes (D-B) remove the override and all \GB witnesses, leaving the
-\NumDefResidualDA{} query and body dispatch witnesses of \NumDefWitnesses{}, which need
-query and body binding (\Abl{1}). D-B costs \DefenceOverheadPfifty{} at the
-median, but rejects every legitimate request whose path a gateway rewrote.
+This is a measurement and defence paper. We do not claim new attack classes:
+every mechanism we observe is documented, either by RFC~9449 itself or by a
+long line of advisories on path-normalisation differentials. What has been
+missing is (i)~a definition and an oracle that judge a deployment by the
+operation a valid proof selects, (ii)~a measurement of whether the known
+mechanisms still turn a correctly verified proof into a different operation
+on current releases, (iii)~evidence of what each proof claim actually buys,
+at a time when the IETF OAuth WG has been asked to make \htm and \htu
+optional~\cite{allam2026thread}, and (iv)~a defence that ties the verified
+view to the executed operation.
 
 \paragraph{Contributions.}
-\begin{itemize}[leftmargin=*,itemsep=1pt]
-\item \textbf{Property.} Binding soundness and binding resolution for
-sender-constrained requests in layered deployments, separated from
-authorization soundness, with three failure classes and two adversaries
-(\S\ref{sec:model}).
-\item \textbf{Measurement of \GA.} How often API descriptions put several
-state-changing operations behind one (method, path) key, and where method
-override is on by default (\S\ref{sec:prevalence}).
-\item \textbf{A binding oracle and its findings.} An open harness that
-measures proof acceptance against the executed operation across gateways,
-placements and frameworks, with the root causes it found
-(\S\ref{sec:harness}).
-\item \textbf{Recommendations.} An executor-view contract for the standard,
-and for gateways, authorizing on the representation they forward
-(\S\ref{sec:defence}, \S\ref{sec:discussion}).
+\begin{itemize}[leftmargin=*,itemsep=1pt,topsep=2pt]
+\item \textbf{Binding soundness and its oracle} (\S\ref{sec:model},
+\S\ref{sec:harness}). We define binding soundness and \emph{binding
+resolution}---the number of operations one accepted proof can select---for a
+resource server split into verifier and executor, separate it from
+authorization soundness, and turn the definition into a differential oracle
+judged against measured ground truth.
+\item \textbf{Measurement: known mechanisms yield operation substitution
+under a valid leaked proof on current releases} (\S\ref{sec:prevalence},
+\S\ref{sec:results}). Over \NumTopologiesAll{} topologies of \NumGateways{}
+gateways and \NumFrameworks{} frameworks and \NumCasesAll{} raw requests,
+\NumVulnTopologies{} of \NumTopologies{} topologies have resolution above
+one (up to \MaxResolution{}), with \NumHits{} hits, each confirmed in three
+reruns on freshly started deployments. RFC~9449 deliberately leaves the query, headers and body outside
+the proof, and an earlier OAuth design that did cover
+them~\cite{p2:richer2016signedhttp} was not standardised; we do not claim
+this under-binding as a vulnerability, but measure its consequence in
+\NumSpecs{} API descriptions and the override defaults of
+\NumTargetFrameworks{} frameworks. Every interpretation differential we
+observe belongs to a known CVE family (fragment handling~\cite{p2:istio2021_008},
+encoded slashes~\cite{p2:envoy2021_29492,p2:apisix2026_124680}, dot
+segments~\cite{traefik2026cve40912,p2:envoy2026_73551}); we show that the
+same differentials defeat a cryptographic binding, and that a nested route
+turns one into an \emph{operation} change (\texttt{deleteAccount}$\to$\texttt{deleteStatement}).
+\item \textbf{A claim ablation that answers the \htm/\htu proposal}
+(\S\ref{sec:ablation}). Dropping \htu raises the hits from
+\AblOneHitsFull{} to \AblOneHitsNoHtu{} and admits \AblOneSwapNoHtu{}
+cross-operation replays; dropping \htm is invisible to path mutation but
+admits \AblOneSwapNoHtm{} same-path method swaps. Binding the query and a
+body digest removes exactly the dispatch classes, and only when a
+body-holding hop checks the digest; all \AblOneGTwoSurvive{} differential
+hits survive every claim set.
+\item \textbf{D-B, a verifier-to-executor view MAC} (\S\ref{sec:defence}).
+To our knowledge the first mechanism that cryptographically ties the view a
+PoP verifier accepted to the operation the executor dispatches. With
+executor-side verification on the routed view (D-A), it removes the
+override and every path-differential witness, leaving the
+\NumDefResidualDB{} query and body dispatch witnesses of \NumDefWitnesses{},
+at \DefenceOverheadPfifty{} median latency. Its cost is false rejection of
+legitimately rewritten paths (\FRRAllDAB{} on our synthetic mix), which we
+argue calls for an \emph{executor-view contract} in the standard.
 \end{itemize}
 
-All experiments ran on local containers; no third-party system was tested
-(\S\ref{sec:discussion:ethics}).
+We also reproduce known gateway-policy splits~\cite{p2:xvnpw2021kong,p2:zhang2025uabscan}
+under a malicious but legitimate client (\S\ref{sec:results:e4}): not as
+findings, but to show that sender-constraining is orthogonal to them. All
+experiments ran on local containers; no third-party system was tested
+(\S\ref{sec:discussion:ethics}). The harness and data will be released
+(Appendix~\ref{app:openscience}).

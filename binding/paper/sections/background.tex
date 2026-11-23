@@ -1,102 +1,67 @@
-% sections/background.tex -- Owner: W2. Quotations checked against the RFC
-% texts fetched from rfc-editor.org on 2026-11-23 (RFC 9449, 8705, 9440, 9421)
-% and vendor docs fetched the same day.
+% sections/background.tex -- Quotations checked against the RFC texts fetched from rfc-editor.org
+% on 2026-11-23 (RFC 9449, 8705, 9440, 9421) and vendor docs fetched the same day (W2/W10).
+% Alg. 1 is transcribed from ../harness/verifier/core.py (verify()), in its check order (W25).
 \section{Background}\label{sec:background}
 
-\subsection{DPoP}\label{sec:bg:dpop}
-RFC~9449 binds an access token to a client key through a \jkt confirmation claim
-and requires a fresh signed proof JWT with each request~\cite{rfc9449}.
-The proof carries \htm, ``the value of the HTTP method'', and \htu, ``the HTTP
-target URI \ldots{} of the request to which the JWT is attached, without query
-and fragment parts''. The narrowness is deliberate: ``only these two message
-parts are covered by the DPoP proof. The idea is to sign just enough of the
-HTTP data to provide reasonable proof of possession \ldots{} to avoid the
-substantial difficulties inherent in attempting to normalize HTTP messages''
-(\S4.2). The RFC's security considerations repeat the point: ``DPoP does not ensure the integrity
-of the payload or headers of requests'', which ``makes DPoP potentially
-susceptible to replay attacks where an attacker is able to modify message
-contents and headers'' (\S11.7).
+\paragraph{DPoP.} RFC~9449 binds an access token $T$ to a client key $k$
+through a confirmation claim \jkt and requires a fresh signed proof JWT with
+each request~\cite{rfc9449}. The proof carries \htm, ``the value of the HTTP
+method'', and \htu, ``the HTTP target URI \ldots{} without query and fragment
+parts'', plus \ath, a hash of $T$. The narrowness is deliberate: ``the idea is
+to sign just enough of the HTTP data to provide reasonable proof of possession
+\ldots{} to avoid the substantial difficulties inherent in attempting to
+normalize HTTP messages'' (\S4.2), and ``DPoP does not ensure the integrity of
+the payload or headers of requests'' (\S11.7). The receiving server must
+ensure that ``the \htm claim matches the HTTP method of the current request''
+and that ``the \htu claim matches the HTTP URI value for the HTTP request in
+which the JWT was received, ignoring any query and fragment parts''; servers
+``SHOULD employ syntax-based normalization \ldots{} and scheme-based
+normalization'' before comparing (\S4.3). What ``the current request'' means
+when the checking server is not the executing server is not specified.
+Replay protection is time-bounded; a single-use \jti check ``may not always
+be feasible in practice, e.g., when multiple servers behind a single endpoint
+have no shared state'' (\S11.1). Algorithm~\ref{alg:verifier} gives the
+check as our reference verifier implements it.
 
-\paragraph{Checking a proof.} \S4.3 requires the receiving server to ensure,
-among other checks, that ``the \htm claim matches the HTTP method of the current
-request'' and that ``the \htu claim matches the HTTP URI value for the HTTP
-request in which the JWT was received, ignoring any query and fragment parts''.
-The comparison function is only recommended: ``To reduce the likelihood of
-false negatives, servers SHOULD employ syntax-based normalization (Section
-6.2.2 of [RFC3986]) and scheme-based normalization (Section 6.2.3 of
-[RFC3986]) before comparing the \htu claim.'' What ``the current request''
-means when the checking server is not the executing server is not specified.
+\begin{algorithm}[t]
+\caption{RFC~9449 resource-server check of the reference verifier, on the
+view $\view(r)=(m_v,u_v)$ an adapter reconstructs.}\label{alg:verifier}
+\KwIn{view $(m_v,u_v)$; headers \hdr{Authorization}, \hdr{DPoP}; config $(\canon, W, \mathit{cache})$}
+\KwOut{\KwAllow with $(\mathit{sub},\jkt)$, or \KwDeny with a reason}
+require exactly one \hdr{Authorization: DPoP} $T$ (no Bearer) and one \hdr{DPoP} $\pi$\;
+parse $\pi$; require \clm{typ}$=$\clm{dpop+jwt}, asymmetric \clm{alg}, public \clm{jwk}\;
+\lIf{$\neg\mathsf{Verify}(\pi.\mathit{jwk}, \pi)$}{\KwDeny \texttt{bad\_signature}}
+require claims \jti, \htm, \htu, \iat\;
+\lIf{$\pi.\htm \neq m_v$}{\KwDeny \texttt{htm\_mismatch}\Cmt*[f]{\S4.3(8)}}
+\lIf{$\canon(\pi.\htu) \neq \canon(u_v \setminus \{\mathit{query},\mathit{fragment}\})$}{\KwDeny \texttt{htu\_mismatch}\Cmt*[f]{\S4.3(9)}}
+\lIf{$|\mathit{now}-\pi.\iat| > W$}{\KwDeny \texttt{iat\_skew}}
+verify $T$ (signature, \clm{typ}, \clm{iss}, \clm{aud}, \clm{exp})\;
+\lIf{$\pi.\ath \neq H(T)$}{\KwDeny \texttt{ath\_mismatch}\Cmt*[f]{\S7}}
+\lIf{$T.\jkt \neq \mathsf{th}(\pi.\mathit{jwk})$}{\KwDeny \texttt{jkt\_mismatch}}
+\lIf{$\mathit{cache}$ on $\wedge\ \pi.\jti \in \mathit{cache}$}{\KwDeny \texttt{jti\_replay}}
+add $\pi.\jti$ to $\mathit{cache}$\Cmt*[f]{only on allow}
+\KwAllow; emit \hdr{X-Verified-Sub}, \hdr{X-Verified-Jkt} (and \hdr{X-Verified-View}, Alg.~\ref{alg:db})\;
+\end{algorithm}
 
-\paragraph{Resource-server obligations.} For protected-resource access, \S7
-requires that ``the DPoP proof MUST include the \ath claim with a valid hash of
-the associated access token''. The resource server must ``check the DPoP
-proof according to the rules in Section 4.3, and check that the public key of
-the DPoP proof matches the public key to which the access token is bound''
-(\S7.1), and ``MUST NOT grant access to the resource unless all checks are
-successful''. \S7 also warns that ``the \ath field alone does not prevent replay
-of the DPoP proof or provide binding to the request in which the proof is
-presented, and it is still important to check the time window of the proof as
-well as the included message parameters, such as \htm and \htu''.
-Replay protection is time-bounded and only optionally stateful. Servers ``MUST only accept DPoP proofs for a
-limited time after their creation'', and a single-use \jti check ``may not
-always be feasible in practice, e.g., when multiple servers behind a single
-endpoint have no shared state'' (\S11.1).
+\paragraph{Certificate binding and signatures.} RFC~8705 binds tokens to a
+client certificate; behind a TLS-terminating intermediary, how certificate
+metadata reaches the application ``is out of scope'' (\S6.5)~\cite{rfc8705}.
+RFC~9440 standardises \hdr{Client-Cert} for this hop and requires that
+incoming copies ``MUST be removed or overwritten before forwarding''~\cite{rfc9440}.
+A certificate binding thus becomes a header whose soundness depends on every
+hop. HTTP Message Signatures let the signer choose the covered components;
+uncovered portions ``are susceptible to modification by an attacker without
+affecting the signature'' (RFC~9421 \S7.2.1)~\cite{rfc9421}.
 
-\subsection{Certificate binding behind proxies}\label{sec:bg:mtls}
-RFC~8705 binds tokens to the thumbprint of a client
-certificate, carried in the confirmation member
-\clm{x5t\#S256}~\cite{rfc8705}. When TLS terminates at an
-intermediary, ``how the client certificate metadata is securely communicated
-between the intermediary and the application server \ldots{} is out of scope
-of this specification'' (\S6.5). RFC~9440 standardises the
-\hdr{Client-Cert} and \hdr{Client-Cert-Chain} fields for this hop~\cite{rfc9440}.
-It requires that any occurrence in the incoming request ``MUST be removed or
-overwritten before forwarding'' and that ``backend servers MUST only accept
-the Client-Cert and Client-Cert-Chain header fields from a trusted
-[TLS-terminating reverse proxy]''. It also warns that ``neglecting to
-prevent field injection does not `fail safe'{}''. In layered deployments,
-then, a certificate binding becomes a header, and its soundness depends on
-whether every hop strips and authenticates that header. This is our class \GC.
-
-\subsection{HTTP Message Signatures}\label{sec:bg:sigs}
-RFC~9421 lets the signer choose the \emph{covered components}, which include
-derived components such as \texttt{@method}, \texttt{@target-uri},
-\texttt{@authority}, \texttt{@path}, \texttt{@query} and
-\texttt{@request-target}~\cite{rfc9421}. Coverage is therefore a deployment choice.
-\S7.2.1 (``Insufficient Coverage'') states that ``any portions of the message
-not covered by the signature are susceptible to modification by an attacker
-without affecting the signature'', and that the result ``would still pass
-signature verification''. The RFC also notes that \texttt{@request-target}
-``is more difficult to reliably construct in other versions of HTTP''. Our
-signature arm (\Exp{6}) applies the binding oracle to verifiers with
-different coverage choices.
-
-\subsection{Layered verification topologies}\label{sec:bg:topologies}
-Gateways rarely verify DPoP natively. More often they delegate the decision to
-an external service, which must reconstruct the client's request from what the
-gateway sends it.
-\begin{itemize}[leftmargin=*,itemsep=1pt]
-\item \textbf{Envoy \texttt{ext\_authz}} (HTTP service mode) sends an
-authorization request whose path the operator can extend with
-\texttt{path\_prefix} or replace with \texttt{path\_override}. Of the client's
-headers, it forwards those matching \texttt{allowed\_headers}, plus ``Host,
-Method, Path, Content-Length, and Authorization'', which are
-``automatically included''~\cite{w2:envoyextauthz}.
-\item \textbf{Traefik ForwardAuth} sends the original request's method,
-protocol, host and URI to the authentication service as
-the headers \hdr{X-Forwarded-}\allowbreak\hdr{Method}, \hdr{-Proto}, \hdr{-Host} and
-\hdr{-Uri}. Any 2xx response grants access. Whether inbound
-\hdr{X-Forwarded-*} headers are trusted is governed by the
-\texttt{trustForwardHeader} option. When that option is unset, the current documentation states that some
-headers are removed ``but others (e.g.\ X-Forwarded-Prefix) are forwarded
-untouched''~\cite{w2:traefikfwdauth}.
-\item \textbf{NGINX \texttt{auth\_request}} ``implements client authorization
-based on the result of a subrequest'': a 2xx result allows the request and 401/403
-denies it~\cite{w2:nginxauthreq}. The original URI reaches the service only
-through headers set in the configuration, conventionally \hdr{X-Original-URI} set from
-\texttt{\$request\_uri}.
-\end{itemize}
-Kong, APISIX and HAProxy have equivalent mechanisms
-(\S\ref{sec:harness}). In each topology the verifier sees one rendering of the
-request while the router acts on another. This gap is the subject of the
-next section.
+\paragraph{Layered verification.} Gateways rarely verify DPoP natively; they
+delegate to an external service that reconstructs the client's request from
+what the gateway sends. Envoy \texttt{ext\_authz} sends a check request with
+the method and path~\cite{w2:envoyextauthz}; Traefik ForwardAuth sends
+\hdr{X-Forwarded-Method}/\hdr{-Uri} and grants access on any
+2xx~\cite{w2:traefikfwdauth}; NGINX \texttt{auth\_request} ``implements client
+authorization based on the result of a subrequest'', and the original URI
+reaches the service only through headers set in the configuration,
+conventionally \hdr{X-Original-URI} from
+\texttt{\$request\_uri}~\cite{w2:nginxauthreq}. Kong, APISIX and HAProxy have
+equivalent mechanisms (\S\ref{sec:harness}). In each, the verifier sees one
+rendering of the request while the router acts on another.

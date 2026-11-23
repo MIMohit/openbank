@@ -1,4 +1,4 @@
-% macros.tex -- notation shared by all sections (W2).
+% macros.tex -- notation shared by all sections (W2; extended by W25).
 \usepackage{xcolor}
 \usepackage{xspace}
 \usepackage{enumitem}
@@ -47,8 +47,28 @@
 \newcommand{\Exp}[1]{\textsf{E#1}\xspace}
 \newcommand{\Abl}[1]{\textsf{A#1}\xspace}
 
-% Figures (Fig. 1 views, Fig. 2 harness) are TikZ, drawn in the .tex sources.
+% TikZ schematics (Fig. 1 architecture, Fig. 2 views) are drawn in sections/model.tex.
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta,positioning,fit,calc,backgrounds}
 
 % acmart provides the definition environment (acmthm).
+
+% Algorithms (Alg. 1 verifier, Alg. 2 oracle, Alg. 3 D-B).
+\usepackage[ruled,linesnumbered,vlined]{algorithm2e}
+\SetAlFnt{\small}\SetAlCapFnt{\small}\SetAlCapNameFnt{\small}
+\SetKwComment{Cmt}{\color{gray}$\triangleright$\ }{}
+\SetKw{KwDeny}{deny}\SetKw{KwAllow}{allow}
+\setlength{\algomargin}{1.2em}
+
+% Matplotlib figures produced by W26 in figs/ (CONTRACT §13). If a PDF is not there yet,
+% a framed placeholder of the same height keeps the layout and the reference.
+% \figpdf{width}{max height}{file}
+\newcommand{\figpdf}[3]{\IfFileExists{figs/#3}%
+  {\includegraphics[width=#1,height=#2,keepaspectratio]{figs/#3}}%
+  {\fbox{\parbox[c][#2][c]{\dimexpr#1-2\fboxsep-2\fboxrule\relax}{\centering\footnotesize
+   \textcolor{orange}{TODO (W26): figs/\detokenize{#3}}}}}}
+
+% Comparison-table marks
+\newcommand{\yes}{\ensuremath{\bullet}}
+\newcommand{\prt}{\ensuremath{\circ}}
+\newcommand{\no}{--}

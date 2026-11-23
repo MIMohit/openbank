@@ -1,91 +1,74 @@
-% sections/discussion.tex -- Discussion (W19): recommendations, limitations, ethics.
-% Claims are calibrated per binding/experiments/GATE_DECISION.md "Caveats the paper must carry".
+% sections/discussion.tex -- Discussion (W25): executor-view contract, IETF htm/htu, limitations, ethics.
 \section{Discussion}\label{sec:discussion}
 
-\subsection{Recommendations}\label{sec:discussion:rec}
-
-\paragraph{Standards: an executor-view contract.} RFC~9449 tells the resource
-server to compare \htm and \htu with ``the HTTP method'' and ``the HTTP URI
-value'' of the request~\cite{rfc9449}. That is unambiguous for one process
-and underspecified for a layered deployment. Our results suggest stating
-\emph{whose} request is meant. The comparison should be made on the method and
-path the \emph{executor} will act on, after override resolution and routing
+\paragraph{An executor-view contract.}\label{sec:discussion:rec} RFC~9449 tells
+the resource server to compare \htm and \htu with ``the HTTP method'' and ``the
+HTTP URI value'' of the request~\cite{rfc9449}. That is unambiguous for one
+process and underspecified for a layered deployment. Our results suggest
+stating \emph{whose} request is meant: the method and path the
+\emph{executor} acts on, after override resolution and routing
 normalisation. A verifier placed elsewhere must either receive exactly the
-representation the gateway forwards upstream or hand a decision bound to its
-view to the executor, which checks it against what it routed (the D-A and D-B
-designs of \S\ref{sec:defence}). Re-verifying the same raw view at the
-origin is not enough (\Abl{3}). Three further points follow.
-(i)~\emph{Keep \htm and \htu.} Proposals to make them optional because
-proxies rewrite URIs~\cite{allam2026thread} would turn every \GB
-witness into a \GA one; the rewriting is a reason to define the executor's view,
-not to drop the binding. In \Abl{1}, dropping \htu raises the hits from \AblOneHitsFull{} to
-\AblOneHitsNoHtu{} and admits \AblOneSwapNoHtu{} cross-operation replays; dropping \htm is invisible
-to path mutation but admits \AblOneSwapNoHtm{} same-path method-swap replays.
-(ii)~\emph{Bind the query and the body where operations dispatch on them.} An
-optional claim over the query, or a body digest in the style of RFC~9530
-\hdr{Content-Digest}~\cite{w2:rfc9530}, closes \GA for action endpoints,
-RPC-style APIs, FHIR conditional interactions and MCP tool calls; HTTP Message
-Signatures can cover the same components~\cite{rfc9421}.
-(iii)~\emph{Profiles} such as FAPI~2.0, which leave internal architecture out
-of scope, should at least require that the verifier and the executor share
-one view of method and path.
+representation the gateway forwards upstream, or hand the executor a decision
+bound to its view that the executor checks against what it routed (D-A, D-B).
+Re-verifying the same raw view at the origin is not enough (\Abl{3}). A
+rewriting gateway is a party to the contract: it must publish its
+public-to-internal path map, or the verifier must bind the path the gateway
+forwards; otherwise the \FRRAllDAB{} rewrite false rejections of
+\S\ref{sec:defence} are the price of soundness.
 
-\paragraph{Gateway vendors: authorize what you forward.} Every gateway-resolved
-class we found has the same shape: the authorization subrequest carries one
-representation of the path and the upstream request another. Kong passes the
-raw \texttt{\$request\_uri} and proxies the normalised path. Behind APISIX we
-observed the opposite split, though we have not yet confirmed its mechanism. HAProxy, which uses one parsed URI for both, had no \GB hit, and
-NGINX's native ACL, which matches the URI it routes, closed the dot-segment
-classes. Gateways should authorize on the same representation they forward,
-or reject requests whose raw and normalised paths differ. They should also
-reject a \texttt{\#} in an origin-form target, as RFC~9112 requires, and strip
-client-supplied \hdr{X-Verified-*} and certificate headers at the boundary.
-Envoy's path normalisation helps but is off by default.
+\paragraph{The \htm/\htu proposal.} Proposals to make \htm and \htu optional
+because proxies rewrite URIs~\cite{allam2026thread,madden2025thread} would turn
+every \GB witness into a \GA one: in \Abl{1}, dropping \htu more than doubles
+the hits and admits \AblOneSwapNoHtu{} cross-operation replays, and dropping
+\htm admits \AblOneSwapNoHtm{} method swaps that a mutation corpus cannot see.
+Rewriting is a reason to define the executor's view, not to drop the binding.
+Where operations dispatch on the query or body (action endpoints, RPC, FHIR
+conditional interactions, MCP tool calls), an optional query claim and a
+digest checked by a body-holding hop close \GA dispatch; header-carried
+semantics and \GB remain, so binding more is complementary to the contract,
+not a substitute.
 
-\paragraph{Framework authors.} Method override should be off by default,
-restricted to forms, and visible to authorization middleware. Laravel offers
-no way to turn it off, and Rails keeps it in every non-API application.
+\paragraph{Gateways and frameworks.} Every gateway-resolved class has one
+shape: the authorization subrequest carries one representation of the path and
+the upstream request another. HAProxy, which uses one parsed URI for both, had
+no \GB hit. Gateways should authorize what they forward, reject a \texttt{\#}
+in an origin-form target as RFC~9112 requires, and strip client-supplied
+\hdr{X-Verified-*} and certificate headers. Method override should be off by
+default and visible to authorization middleware; Laravel offers no switch, and
+Rails keeps it in every non-API application.
 
-\subsection{Limitations}\label{sec:discussion:lim}
+\paragraph{Limitations.}\label{sec:discussion:lim}
+\emph{Route space.} The bench API has \NumBenchOps{} operations plus
+\NumNewRoutes{} in v2; several differentials change the operation only when a
+matching route exists (nested route for B1, shared POST path for override,
+catch-all for B3). Whether real applications contain such routes is argued
+from \Exp{1}/\Exp{2}, not measured. The S1 rule also counts identifier
+suffixes that reach no other resource.
+\emph{APISIX mechanism.} The verifier-side half of B2 is unconfirmed: the
+published \texttt{forward-auth} code should send the raw URI, which conflicts
+with the decoded view we logged (\S\ref{sec:results}).
+\emph{Testbed.} Every topology ran on one 16\,GB laptop over cleartext
+HTTP/1.1 with versions pinned on one date (Kong 3.9.5 is not its newest
+line; the split is configuration-level); TLS, HTTP/2 front ends and
+multi-replica replay caches were not exercised, and only depth-1 cases ran.
+\emph{False rejection} was measured behind NGINX only; other gateways' FRR is
+unmeasured. \emph{Latency} is from the shared laptop only (a dedicated-server
+re-run did not complete), so it supports ``negligible at \PerfRate{}\,req/s''
+and nothing about throughput.
+\emph{Coverage.} \GC appears only as propagation because the bench API does
+not act on trust headers; the \Aclient battery omitted absolute-form targets
+and \hdr{X-Original-URL}, and ran \NumEFourTopologies{} of \NumEFourCells{}
+cells. D-B was implemented for four of eight frameworks. One author screened
+the literature and judged the prevalence sample.
 
-\emph{Synthetic route space.} The bench API has \NumBenchOps{} operations
-plus \NumNewRoutes{} in v2. Several differentials change the operation only
-when a matching route exists: the nested route for B1, the shared POST path for
-override, the catch-all for B3. Whether real applications contain such
-routes is argued from \Exp{1} and \Exp{2}, not measured. The oracle's S1 rule
-also counts identifier suffixes such as \texttt{acc-alice-1\#frag}, which
-reach no other resource.
-\emph{Laptop testbed.} Every topology ran as containers on one 16\,GB host,
-over cleartext HTTP/1.1, with versions pinned on one date. TLS, HTTP/2 front
-ends and multi-replica replay caches were not exercised, and load-dependent
-behaviour was not measured. Only depth-1 cases were run, and the
-\emph{strict} profile is pending (\Abl{5}).
-\emph{Single reviewer.} One author screened the literature and judged the
-prevalence sample, with a written rationale for each verdict but no
-inter-rater agreement.
-\emph{\GC coverage.} The bench API does not act on trust headers, so \GC
-can appear only as propagation. The \Aclient battery omitted absolute-form
-targets and \hdr{X-Original-URL}/\hdr{X-Rewrite-URL}, so those vectors
-remain open rather than shown to be absent. \Aclient also ran
-\NumEFourTopologies{} of \NumEFourCells{} cells against one tenant, so its
-class counts are lower bounds.
-
-\subsection{Ethics and disclosure}\label{sec:discussion:ethics}
-
-All experiments ran against software we deployed ourselves, on local
-containers using public release images, with test keys and synthetic
-accounts. No third-party or production system was tested, and no real user
-data was involved. The harness generates requests only for the
-\texttt{api.bench.test} origin inside an isolated container network. Before publication we will
-disclose the product-specific findings to the affected vendors. These are
-the APISIX encoded-slash observation, once its mechanism is confirmed, and
-the handling of \texttt{\#} in a request target by uvicorn/h11, Go
-\texttt{net/http} and FrankenPHP, which is known but unfixed. The Kong split
-is documented behaviour and needs no new report. We will give the vendors
-time to respond and report their responses in the final version.
-At submission, reports are drafted for \NumDisclosures{} candidates (\NumDisclosuresNew{} new,
-\NumDisclosuresKnown{} known but unfixed; triage of 2026-11-23) and none has been sent; the APISIX
-report waits for the byte-level confirmation above.
-Configuration-level and by-design findings, such as default-off
-normalisation and method override, are documented behaviour; we report them
-as recommendations.
+\paragraph{Ethics and disclosure.}\label{sec:discussion:ethics} All experiments
+ran against software we deployed ourselves, on local containers with public
+release images, test keys and synthetic accounts; no third-party or production
+system was tested. We drafted reports for \NumDisclosures{} candidates and
+sent none. The \texttt{\#} handling of uvicorn/h11, Go \texttt{net/http} and
+FrankenPHP is known but unfixed, and will be reported to the projects before
+publication. After the prior-art check we no longer treat the APISIX
+observation as new: if reported, it will be framed as a consequence of the
+intentional CVE-2026-124680 behaviour, after the mechanism is confirmed.
+Configuration-level and by-design behaviours (Kong raw variables, default-off
+normalisation, method override) are documented and appear as recommendations.

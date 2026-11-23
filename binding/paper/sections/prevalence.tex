@@ -1,21 +1,18 @@
-% sections/prevalence.tex -- Section 4: under-binding by design (E1, E2, A1).
+% sections/prevalence.tex -- Section 4: prevalence of under-binding (E1, E2). A1 moved to sections/ablation.tex (W25).
 % Owner: W10 (wave 2). Every number is a macro from numbers.tex, whose comments name
 % the source line in binding/prevalence/E1_results.md or E2_results.md (W8).
-\section{Under-Binding by Design}\label{sec:prevalence}
+\section{Prevalence of Under-Binding (\GA)}\label{sec:prevalence}
 
-\GA needs no bug. A proof bound to $(\htm, \htu)$ leaves the operation open
-whenever the executor dispatches on something outside $\Cov$. We ask two
-questions. How often does an API description put several operations behind
-one (method, path) key (\Exp{1})? And how often is a method override, which
-moves the effective method out of $\Cov$, reachable in mainstream frameworks
-(\Exp{2})? The novelty is not that dispatch or method confusion exists:
-Golinelli et al.\ show that many web applications treat POST and GET
-interchangeably~\cite{golinelli2026post}, and CVE-2026-37236 shows a gateway
-whose \hdr{X-HTTP-Method-Override} handling bypasses method-based access
-control upstream~\cite{grpcgw2026cve37236}. Both concern method or path
-\emph{policies} inside a single product. We measure the same mechanisms
-against a \emph{proof}: whether a verifier that checks RFC~9449 correctly
-can still accept a request whose executed operation the proof does not name.
+\GA needs no bug: a proof bound to $(\htm,\htu)$ leaves the operation open
+whenever the executor dispatches on something outside $\Cov$. Method
+confusion and dispatch are known: Golinelli et al.\ show that applications
+treat POST and GET interchangeably~\cite{p2:golinelli2026post}, and
+CVE-2026-37236 shows an \hdr{X-HTTP-Method-Override} bypassing upstream method
+ACLs~\cite{grpcgw2026cve37236}. Our contribution is to measure how often a
+proof-bound request is exposed: how often API descriptions put several
+operations behind one (method, path) key (\Exp{1}), and how often method
+override---which survives a proof-bound \htm because it is resolved after
+verification---is reachable (\Exp{2}).
 
 \subsection{API descriptions (\Exp{1})}\label{sec:prev:e1}
 
@@ -33,9 +30,8 @@ parameter with an enum of at least two values (M2), header dispatch such as
 field (M4), and JSON-RPC or GraphQL single endpoints (M5). Only their strong
 tiers are counted.
 
-\paragraph{Validation.} One author judged a seeded sample of
-\NumValidationSample{} flagged operations, stratified by detector, against the
-spec text; unclear verdicts count as false positives. Precision is
+\paragraph{Validation.} One author judged a seeded, detector-stratified sample of
+\NumValidationSample{} flagged operations against the spec text (unclear counts as false positive). Precision is
 \PrecMOne{} for M1 (\NumMOneTP/\NumMOneSample), \PrecMTwo{} for M2, \PrecMFour{} for M4 and
 \PrecMFive{} for M5 (\NumMFiveFlags{} flags). Weighted by stratum it is \PrecWeighted{}
 overall, but only \PrecNonMOneWeighted{} outside M1. We therefore also report a
@@ -128,23 +124,10 @@ Core is lower (\PctEnableAspnet{}). Where it is on by default it stays on: only
 Express projects that use the package, \PctExpressQueryGetter{} of the two
 common call forms choose the query getter.
 
-\paragraph{What the proof binds (\Abl{1}).} \Exp{1} and \Exp{2} measure
-descriptions and defaults, not deployments. The harness turns them into
-executed operations: ablation \Abl{1} re-runs the \GA cases with the reference
-verifier changed one binding claim at a time (drop \htm, \htu or \ath; add the
-query; add an RFC~9530 body digest) and reports resolution for each.
-Results (\AblOneCases{} cases per topology): \AblOneResult{}. Body binding works only if a
-hop that holds the body checks the digest; what remains is header-carried semantics and the
-\GB differentials.
-
 \paragraph{Limitations.} The corpus over-represents hyperscalers and
-under-represents GraphQL, gRPC and private APIs such as Open Banking. A
-description may omit dispatch it performs, and we validated only flagged
-operations, so recall is unmeasured and the counts are lower bounds on the
-described APIs. A single author judged the sample, with a rationale per
-verdict but no inter-rater agreement. A collision means a proof bound to $K$
-would be ambiguous; it does not mean the API accepts DPoP. Code-search ratios
-mix numerators and denominators from different queries and include tutorials
-and vendored copies. Enabling override is exploitable only if a POST route
-shares its path with a state-changing route and the verifier sits in front of
-the override, which is what the harness tests.
+under-represents GraphQL, gRPC and private APIs; recall is unmeasured, so
+counts are lower bounds; one author judged the sample. A collision means a
+proof bound to $K$ would be ambiguous, not that the API accepts DPoP.
+Code-search ratios are engine estimates. Override is exploitable only if a
+POST route shares its path with a state-changing route and the verifier sits
+in front of the override, which the harness tests (\S\ref{sec:results}).

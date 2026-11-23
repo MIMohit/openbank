@@ -1,18 +1,22 @@
-% appendix/oracle.tex -- Owner: W2. Normative text: binding/harness/oracle/oracle_spec.md.
-% Keep this appendix consistent with that file; it is the paper-facing summary.
-\section{Binding Oracle}\label{app:oracle}
+% appendix/oracle.tex -- paper-facing summary of ../harness/oracle/oracle_spec.md (W2/W25).
+\section{Binding Oracle Details}\label{app:oracle}
 For a case with base operation $b$ and fresh proof $\pi$ bound to $b$'s
-canonical (\htm, \htu), the ground truth is $\op(\pi) = \hat\exe(r_\pi)$,
-measured by sending $r_\pi$ directly to the executor with verification off.
-All records for one case are joined on the proof's \jti. A case is a
-\emph{hit} iff (i)~the verifier logged \textsf{allow} for that \jti (edge
-placement), or the executor did not deny it (origin placement), or both
-(both placements); (ii)~the executor logged an operation for that \jti with
-$\op_x \notin \{b, \textsf{NOT\_FOUND}\}$, or with $\op_x = b$ but path
-parameters different from $\op(\pi)$'s; and (iii)~the executor's status is
-below 400. Severity is \textsf{S1} for a state-changing operation or a
-different resource or owner, \textsf{S2} for a different read, and
-\textsf{S3} for health or public files. Hits are deduplicated by a
-root-cause signature (topology factors, minimal primitive set, class, and
-kind of deviation) and confirmed by three independent reruns.
-\todo{Final table of hit counts per signature, from harness/logs/*/hits.jsonl.}
+canonical (\htm, \htu), the ground truth $\op(\pi)=\hat\exe(r_\pi)$ is measured
+by sending $r_\pi$ directly to the executor with verification off and the
+topology's override setting, including the base operation's canonical query or
+body (e.g.\ \texttt{?op=freeze}). Records are joined on the proof's \jti; each
+case mints a fresh proof, so each \jti belongs to one case.
+Algorithm~\ref{alg:oracle} gives the hit predicate. Each hit records its
+deviation kinds: \emph{method} (effective method $\neq$ base method),
+\emph{route} (template differs), \emph{dispatch} (same template and method,
+different operation) and \emph{resource} (same operation, different path
+parameters, compared after percent-decoding). Severity is assigned from the
+executed record: \textsf{S1} for a state-changing or privileged operation or a
+different resource, \textsf{S2} for another read, \textsf{S3} for health or
+public files. Hits are deduplicated by a root-cause signature (topology
+factors, 1-minimal primitive set from delta debugging, class, deviation kind)
+and confirmed by three reruns on freshly started topologies; a rerun denied for
+clock skew (\texttt{iat\_skew}) is redone, not counted. The separate \GC
+propagation predicate flags any client-chosen trust header that reaches the
+executor; markers equal to the gateway-set subject are false positives and were
+discounted.
