@@ -62,10 +62,11 @@ and a low-impact dot-segment effect on catch-all routes. We found no \GC
 binding hit. Verifying the same proof again at the executor removes none of
 the \GA hits and not the \texttt{\#} differential.
 
-\todo{Defence paragraph (W17, E7/E8): D-A (the executor re-checks its routed
-view) and D-B (view-binding MAC); residual hits, overhead
-\DefenceOverheadPfifty{} (p50) / \DefenceOverheadPninetynine{} (p99), false
-rejection \FalseRejectionRate{}.}
+Two defences that check the executor's routed view (D-A) or a view MAC it
+recomputes (D-B) remove the override and all \GB witnesses, leaving the
+\NumDefResidualDA{} query and body dispatch witnesses of \NumDefWitnesses{}, which need
+query and body binding (\Abl{1}). D-B costs \DefenceOverheadPfifty{} at the
+median, but rejects every legitimate request whose path a gateway rewrote.
 
 \paragraph{Contributions.}
 \begin{itemize}[leftmargin=*,itemsep=1pt]

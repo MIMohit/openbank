@@ -18,7 +18,9 @@ origin is not enough (\Abl{3}). Three further points follow.
 (i)~\emph{Keep \htm and \htu.} Proposals to make them optional because
 proxies rewrite URIs~\cite{allam2026thread} would turn every \GB
 witness into a \GA one; the rewriting is a reason to define the executor's view,
-not to drop the binding. \todo{cite \Abl{1} (W18) for what dropping \htm/\htu does.}
+not to drop the binding. In \Abl{1}, dropping \htu raises the hits from \AblOneHitsFull{} to
+\AblOneHitsNoHtu{} and admits \AblOneSwapNoHtu{} cross-operation replays; dropping \htm is invisible
+to path mutation but admits \AblOneSwapNoHtm{} same-path method-swap replays.
 (ii)~\emph{Bind the query and the body where operations dispatch on them.} An
 optional claim over the query, or a body digest in the style of RFC~9530
 \hdr{Content-Digest}~\cite{w2:rfc9530}, closes \GA for action endpoints,
@@ -81,8 +83,9 @@ the handling of \texttt{\#} in a request target by uvicorn/h11, Go
 \texttt{net/http} and FrankenPHP, which is known but unfixed. The Kong split
 is documented behaviour and needs no new report. We will give the vendors
 time to respond and report their responses in the final version.
-\todo{Disclosure status and dates; no report has been sent yet
-(disclosure/TRIAGE.md).}
+At submission, reports are drafted for \NumDisclosures{} candidates (\NumDisclosuresNew{} new,
+\NumDisclosuresKnown{} known but unfixed; triage of 2026-11-23) and none has been sent; the APISIX
+report waits for the byte-level confirmation above.
 Configuration-level and by-design findings, such as default-off
 normalisation and method override, are documented behaviour; we report them
 as recommendations.

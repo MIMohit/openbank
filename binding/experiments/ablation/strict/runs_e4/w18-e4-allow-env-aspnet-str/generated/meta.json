@@ -1,0 +1,27 @@
+{
+  "topology": {
+    "id": "w18-e4-allow-env-aspnet-str",
+    "gateway": "envoy",
+    "gateway_image": "envoyproxy/envoy:v1.39.6",
+    "profile": "strict",
+    "placement": "edge",
+    "framework": "aspnet",
+    "executor_image": "bh-exec-aspnet:latest",
+    "override": "off",
+    "verifier": {
+      "image": "bh-pdp-allow:latest",
+      "canon": "rfc3986",
+      "view_mac": "off",
+      "view_mac_key": "bh-test-view-mac-key",
+      "jti_cache": "on",
+      "iat_window": 60
+    },
+    "host_port": 29883,
+    "verify_mode": "off"
+  },
+  "stubs": {
+    "verifier": false,
+    "executor": false
+  },
+  "project": "w18-bh-w18-e4-allow-env-aspnet-str"
+}

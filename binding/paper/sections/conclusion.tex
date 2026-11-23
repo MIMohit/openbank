@@ -13,4 +13,6 @@ or reached admin routes past path policies in \NumEFourClasses{} classes,
 two of them past a strict allow-list. Re-checking the proof at the origin did not help.
 Binding soundness has to be a property of the deployment: the
 standard should name the executor's view, and gateways should authorize the
-representation they forward. \todo{One sentence on the defence result (W17).}
+representation they forward. Checking the executor's routed view removed the override and path
+differentials (with D-B at negligible median latency), but not query or body dispatch, and
+rejected rewritten paths: the binding must be defined on the executor's view.

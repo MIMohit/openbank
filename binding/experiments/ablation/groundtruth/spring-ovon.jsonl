@@ -1,0 +1,17 @@
+{"base_method": "POST", "base_op_id": "accountAction.freeze", "base_path": "/api/v1/accounts/acc-alice-1/actions", "op_id": "accountAction.freeze", "path_params": {"id": "acc-alice-1"}, "status": 200}
+{"base_method": "DELETE", "base_op_id": "adminDeleteUser", "base_path": "/api/v1/admin/users/u-1", "op_id": "adminDeleteUser", "path_params": {"id": "u-1"}, "status": 200}
+{"base_method": "GET", "base_op_id": "adminListUsers", "base_path": "/api/v1/admin/users", "op_id": "adminListUsers", "path_params": {}, "status": 200}
+{"base_method": "GET", "base_op_id": "catchAllFile", "base_path": "/api/v1/files/reports/logo.png", "op_id": "catchAllFile", "path_params": {"path": "/reports/logo.png"}, "status": 200}
+{"base_method": "POST", "base_op_id": "createTransfer", "base_path": "/api/v1/transfers", "op_id": "createTransfer", "path_params": {}, "status": 200}
+{"base_method": "DELETE", "base_op_id": "deleteAccount", "base_path": "/api/v1/accounts/acc-alice-1", "op_id": "deleteAccount", "path_params": {"id": "acc-alice-1"}, "status": 200}
+{"base_method": "DELETE", "base_op_id": "deleteStatement", "base_path": "/api/v1/accounts/acc-alice-1/statements/stmt-1", "op_id": "deleteStatement", "path_params": {"id": "acc-alice-1", "sid": "stmt-1"}, "status": 200}
+{"base_method": "GET", "base_op_id": "getAccount", "base_path": "/api/v1/accounts/acc-alice-1", "op_id": "getAccount", "path_params": {"id": "acc-alice-1"}, "status": 200}
+{"base_method": "GET", "base_op_id": "getAccountV2", "base_path": "/api/v2/accounts/acc-alice-1", "op_id": "getAccountV2", "path_params": {"id": "acc-alice-1"}, "status": 200}
+{"base_method": "GET", "base_op_id": "getStatements", "base_path": "/api/v1/accounts/acc-alice-1/statements", "op_id": "getStatements", "path_params": {"id": "acc-alice-1"}, "status": 200}
+{"base_method": "POST", "base_op_id": "graphql.getProfile", "base_path": "/api/v1/graphql", "op_id": "graphql.getProfile", "path_params": {}, "status": 200}
+{"base_method": "GET", "base_op_id": "health", "base_path": "/api/v1/health", "op_id": "health", "path_params": {}, "status": 200}
+{"base_method": "GET", "base_op_id": "listAccounts", "base_path": "/api/v1/accounts", "op_id": "listAccounts", "path_params": {}, "status": 200}
+{"base_method": "GET", "base_op_id": "me", "base_path": "/api/v1/me", "op_id": "me", "path_params": {}, "status": 200}
+{"base_method": "POST", "base_op_id": "postAccount", "base_path": "/api/v1/accounts/acc-alice-1", "op_id": "postAccount", "path_params": {"id": "acc-alice-1"}, "status": 200}
+{"base_method": "GET", "base_op_id": "publicFile", "base_path": "/api/v1/public/logo.png", "op_id": "publicFile", "path_params": {"file": "logo.png"}, "status": 200}
+{"base_method": "PUT", "base_op_id": "updateAccount", "base_path": "/api/v1/accounts/acc-alice-1", "op_id": "updateAccount", "path_params": {"id": "acc-alice-1"}, "status": 200}

@@ -1,0 +1,876 @@
+%%% -*-BibTeX-*-
+%%% Do NOT edit. File created by BibTeX with style
+%%% ACM-Reference-Format-Journals [18-Jan-2012].
+
+\begin{thebibliography}{54}
+
+%%% ====================================================================
+%%% NOTE TO THE USER: you can override these defaults by providing
+%%% customized versions of any of these macros before the \bibliography
+%%% command.  Each of them MUST provide its own final punctuation,
+%%% except for \shownote{}, \showDOI{}, and \showURL{}.  The latter two
+%%% do not use final punctuation, in order to avoid confusing it with
+%%% the Web address.
+%%%
+%%% To suppress output of a particular field, define its macro to expand
+%%% to an empty string, or better, \unskip, like this:
+%%%
+%%% \newcommand{\showDOI}[1]{\unskip}   % LaTeX syntax
+%%%
+%%% \def \showDOI #1{\unskip}           % plain TeX syntax
+%%%
+%%% ====================================================================
+
+\ifx \showCODEN    \undefined \def \showCODEN     #1{\unskip}     \fi
+\ifx \showDOI      \undefined \def \showDOI       #1{#1}\fi
+\ifx \showISBNx    \undefined \def \showISBNx     #1{\unskip}     \fi
+\ifx \showISBNxiii \undefined \def \showISBNxiii  #1{\unskip}     \fi
+\ifx \showISSN     \undefined \def \showISSN      #1{\unskip}     \fi
+\ifx \showLCCN     \undefined \def \showLCCN      #1{\unskip}     \fi
+\ifx \shownote     \undefined \def \shownote      #1{#1}          \fi
+\ifx \showarticletitle \undefined \def \showarticletitle #1{#1}   \fi
+\ifx \showURL      \undefined \def \showURL       {\relax}        \fi
+% The following commands are used for tagged output and should be
+% invisible to TeX
+\providecommand\bibfield[2]{#2}
+\providecommand\bibinfo[2]{#2}
+\providecommand\natexlab[1]{#1}
+\providecommand\showeprint[2][]{arXiv:#2}
+
+\bibitem[Akhavani et~al\mbox{.}(2025)]%
+        {akhavani2025waffled}
+\bibfield{author}{\bibinfo{person}{Seyed~Ali Akhavani}, \bibinfo{person}{Bahruz
+  Jabiyev}, \bibinfo{person}{Ben Kallus}, \bibinfo{person}{Cem Topcuoglu},
+  \bibinfo{person}{Sergey Bratus}, {and} \bibinfo{person}{Engin Kirda}.}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{{WAFFLED}: Exploiting Parsing Discrepancies to
+  Bypass Web Application Firewalls}. In \bibinfo{booktitle}{\emph{2025 Annual
+  Computer Security Applications Conference (ACSAC)}}.
+  \bibinfo{publisher}{IEEE}, \bibinfo{pages}{689--702}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1109/ACSAC67867.2025.00062}
+\showDOI{\tempurl}
+\newblock
+\shownote{arXiv:2503.10846}.
+
+
+\bibitem[Allam(2026)]%
+        {allam2026thread}
+\bibfield{author}{\bibinfo{person}{B. Allam}.} \bibinfo{year}{2026}\natexlab{}.
+\newblock \bibinfo{title}{[{OAUTH-WG}] rfc9449 (proposal: Making htm and htu
+  Optional to Enable Wider Adoption)}.
+\newblock \bibinfo{howpublished}{Message to the IETF OAuth WG mailing list}.
+\newblock
+\urldef\tempurl%
+\url{https://www.mail-archive.com/oauth@ietf.org/msg26175.html}
+\showURL{%
+\tempurl}
+\newblock
+\shownote{29 June 2026; accessed 2026-11-23}.
+
+
+\bibitem[Backman et~al\mbox{.}(2024)]%
+        {rfc9421}
+\bibfield{author}{\bibinfo{person}{Annabelle Backman}, \bibinfo{person}{Justin
+  Richer}, {and} \bibinfo{person}{Manu Sporny}.}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{{HTTP} Message Signatures}}.
+\newblock \bibinfo{type}{RFC} 9421. \bibinfo{institution}{RFC Editor}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.17487/RFC9421}
+\showDOI{\tempurl}
+
+
+\bibitem[B{\"u}ttner et~al\mbox{.}(2021)]%
+        {buttner2021whitelisting}
+\bibfield{author}{\bibinfo{person}{Andre B{\"u}ttner},
+  \bibinfo{person}{Hoai~Viet Nguyen}, \bibinfo{person}{Nils Gruschka}, {and}
+  \bibinfo{person}{Luigi {Lo Iacono}}.} \bibinfo{year}{2021}\natexlab{}.
+\newblock \showarticletitle{Less is Often More: Header Whitelisting as Semantic
+  Gap Mitigation in {HTTP}-Based Software Systems}. In
+  \bibinfo{booktitle}{\emph{ICT Systems Security and Privacy Protection (IFIP
+  SEC 2021)}} \emph{(\bibinfo{series}{IFIP Advances in Information and
+  Communication Technology}, Vol.~\bibinfo{volume}{625})}.
+  \bibinfo{publisher}{Springer}, \bibinfo{pages}{332--347}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1007/978-3-030-78120-0_22}
+\showDOI{\tempurl}
+
+
+\bibitem[Campbell and Bishop(2023)]%
+        {rfc9440}
+\bibfield{author}{\bibinfo{person}{Brian Campbell} {and} \bibinfo{person}{Mike
+  Bishop}.} \bibinfo{year}{2023}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{Client-Cert {HTTP} Header Field}}.
+\newblock \bibinfo{type}{RFC} 9440. \bibinfo{institution}{RFC Editor}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.17487/RFC9440}
+\showDOI{\tempurl}
+
+
+\bibitem[Campbell et~al\mbox{.}(2020)]%
+        {rfc8705}
+\bibfield{author}{\bibinfo{person}{Brian Campbell}, \bibinfo{person}{John
+  Bradley}, \bibinfo{person}{Nat Sakimura}, {and} \bibinfo{person}{Torsten
+  Lodderstedt}.} \bibinfo{year}{2020}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{{OAuth} 2.0 Mutual-{TLS} Client
+  Authentication and Certificate-Bound Access Tokens}}.
+\newblock \bibinfo{type}{RFC} 8705. \bibinfo{institution}{RFC Editor}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.17487/RFC8705}
+\showDOI{\tempurl}
+
+
+\bibitem[Chen et~al\mbox{.}(2016)]%
+        {chen2016host}
+\bibfield{author}{\bibinfo{person}{Jianjun Chen}, \bibinfo{person}{Jian Jiang},
+  \bibinfo{person}{Haixin Duan}, \bibinfo{person}{Nicholas Weaver},
+  \bibinfo{person}{Tao Wan}, {and} \bibinfo{person}{Vern Paxson}.}
+  \bibinfo{year}{2016}\natexlab{}.
+\newblock \showarticletitle{Host of Troubles: Multiple Host Ambiguities in
+  {HTTP} Implementations}. In \bibinfo{booktitle}{\emph{Proceedings of the 2016
+  ACM SIGSAC Conference on Computer and Communications Security (CCS)}}.
+  \bibinfo{publisher}{ACM}, \bibinfo{pages}{1516--1527}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/2976749.2978394}
+\showDOI{\tempurl}
+
+
+\bibitem[{encode/uvicorn}(2021)]%
+        {w2:uvicorn1222}
+\bibfield{author}{\bibinfo{person}{{encode/uvicorn}}.}
+  \bibinfo{year}{2021}\natexlab{}.
+\newblock \bibinfo{title}{Handling {URL} components (Discussion \#1222)}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://github.com/encode/uvicorn/discussions/1222}
+\showURL{%
+\tempurl}
+\newblock
+\shownote{Opened 2021-10-19; accessed 2026-11-23}.
+
+
+\bibitem[{Envoy maintainers}(2019)]%
+        {envoy2019ghsa}
+\bibfield{author}{\bibinfo{person}{{Envoy maintainers}}.}
+  \bibinfo{year}{2019}\natexlab{}.
+\newblock \bibinfo{title}{{GHSA-xcx5-93pw-jw2w}: Unnormalized paths seen by
+  routing and all {L7} filters}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://github.com/envoyproxy/envoy/security/advisories/GHSA-xcx5-93pw-jw2w}
+\showURL{%
+\tempurl}
+
+
+\bibitem[{Envoy Project}(2026)]%
+        {w2:envoyextauthz}
+\bibfield{author}{\bibinfo{person}{{Envoy Project}}.}
+  \bibinfo{year}{2026}\natexlab{}.
+\newblock \bibinfo{title}{{External Authorization (ext\_authz) filter, v3 API
+  reference}}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://www.envoyproxy.io/docs/envoy/latest/api-v3/extensions/filters/http/ext_authz/v3/ext_authz.proto}
+\showURL{%
+\tempurl}
+\newblock
+\shownote{Living documentation, accessed 2026-11-23}.
+
+
+\bibitem[Fett(2025)]%
+        {fapiam2025}
+\bibfield{author}{\bibinfo{person}{Daniel Fett}.}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \bibinfo{title}{{FAPI} 2.0 Attacker Model (Final)}.
+\newblock \bibinfo{howpublished}{OpenID Foundation}.
+\newblock
+\urldef\tempurl%
+\url{https://openid.net/specs/fapi-attacker-model-2_0-final.html}
+\showURL{%
+\tempurl}
+\newblock
+\shownote{22 February 2025; accessed 2026-11-23}.
+
+
+\bibitem[Fett et~al\mbox{.}(2023)]%
+        {rfc9449}
+\bibfield{author}{\bibinfo{person}{Daniel Fett}, \bibinfo{person}{Brian
+  Campbell}, \bibinfo{person}{John Bradley}, \bibinfo{person}{Torsten
+  Lodderstedt}, \bibinfo{person}{Michael Jones}, {and} \bibinfo{person}{David
+  Waite}.} \bibinfo{year}{2023}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{{OAuth} 2.0 Demonstrating Proof of
+  Possession ({DPoP})}}.
+\newblock \bibinfo{type}{RFC} 9449. \bibinfo{institution}{RFC Editor}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.17487/RFC9449}
+\showDOI{\tempurl}
+
+
+\bibitem[Fett et~al\mbox{.}(2019)]%
+        {fett2019fapi}
+\bibfield{author}{\bibinfo{person}{Daniel Fett}, \bibinfo{person}{Pedram
+  Hosseyni}, {and} \bibinfo{person}{Ralf K{\"u}sters}.}
+  \bibinfo{year}{2019}\natexlab{}.
+\newblock \showarticletitle{An Extensive Formal Security Analysis of the
+  {OpenID} Financial-Grade {API}}. In \bibinfo{booktitle}{\emph{2019 IEEE
+  Symposium on Security and Privacy (SP)}}. \bibinfo{publisher}{IEEE},
+  \bibinfo{pages}{453--471}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1109/SP.2019.00067}
+\showDOI{\tempurl}
+
+
+\bibitem[Fett et~al\mbox{.}(2016)]%
+        {fett2016oauth}
+\bibfield{author}{\bibinfo{person}{Daniel Fett}, \bibinfo{person}{Ralf
+  K{\"u}sters}, {and} \bibinfo{person}{Guido Schmitz}.}
+  \bibinfo{year}{2016}\natexlab{}.
+\newblock \showarticletitle{A Comprehensive Formal Security Analysis of {OAuth}
+  2.0}. In \bibinfo{booktitle}{\emph{Proceedings of the 2016 ACM SIGSAC
+  Conference on Computer and Communications Security (CCS)}}.
+  \bibinfo{publisher}{ACM}, \bibinfo{pages}{1204--1215}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/2976749.2978385}
+\showDOI{\tempurl}
+
+
+\bibitem[Gallo(2026a)]%
+        {gallo2026relational}
+\bibfield{author}{\bibinfo{person}{N. Gallo}.}
+  \bibinfo{year}{2026}\natexlab{a}.
+\newblock \bibinfo{title}{Beyond Proof of Possession: A Relational Theory of
+  Authority}.
+\newblock
+\newblock
+\showeprint[arxiv]{2611.07159}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2611.07159}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Gallo(2026b)]%
+        {gallo2026continuity}
+\bibfield{author}{\bibinfo{person}{N. Gallo}.}
+  \bibinfo{year}{2026}\natexlab{b}.
+\newblock \bibinfo{title}{Proof-of-Continuity: A Temporal Model for Authority
+  Propagation in Distributed Systems and {AI} Agents}.
+\newblock
+\newblock
+\showeprint[arxiv]{2607.08906}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2607.08906}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Gavazzi et~al\mbox{.}(2025)]%
+        {gavazzi2025h2fuzz}
+\bibfield{author}{\bibinfo{person}{Anthony Gavazzi}, \bibinfo{person}{Weixin
+  Kong}, {and} \bibinfo{person}{Engin Kirda}.} \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{{H2Fuzz}: Guided, Black-box, Differential Fuzzing
+  for {HTTP/2}-to-{HTTP/1} Conversion Anomalies}. In
+  \bibinfo{booktitle}{\emph{2025 28th International Symposium on Research in
+  Attacks, Intrusions and Defenses (RAID)}}. \bibinfo{publisher}{IEEE},
+  \bibinfo{pages}{920--934}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1109/RAID67961.2025.00059}
+\showDOI{\tempurl}
+
+
+\bibitem[Golinelli et~al\mbox{.}(2026)]%
+        {golinelli2026post}
+\bibfield{author}{\bibinfo{person}{Matteo Golinelli}, \bibinfo{person}{S.~E.
+  Hannachi}, {and} \bibinfo{person}{Bruno Crispo}.}
+  \bibinfo{year}{2026}\natexlab{}.
+\newblock \bibinfo{title}{When {POST} Becomes {GET}: Investigating {HTTP}
+  Method Interchangeability and Its Security Implications}.
+\newblock
+\newblock
+\showeprint[arxiv]{2610.37474}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2610.37474}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Hosseyni et~al\mbox{.}(2022)]%
+        {hosseyni2022tr}
+\bibfield{author}{\bibinfo{person}{Pedram Hosseyni}, \bibinfo{person}{Ralf
+  K{\"u}sters}, {and} \bibinfo{person}{Tim W{\"u}rtele}.}
+  \bibinfo{year}{2022}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{Formal Security Analysis of the {OpenID}
+  Financial-grade {API} 2.0}}.
+\newblock \bibinfo{type}{Technical Report} WP 1(b).
+  \bibinfo{institution}{OpenID Foundation / University of Stuttgart}.
+\newblock
+\urldef\tempurl%
+\url{https://openid.net/wordpress-content/uploads/2022/12/Formal-Security-Analysis-of-FAPI-2.0_FINAL_2022-10.pdf}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Hosseyni et~al\mbox{.}(2024a)]%
+        {hosseyni2024csf}
+\bibfield{author}{\bibinfo{person}{Pedram Hosseyni}, \bibinfo{person}{Ralf
+  K{\"u}sters}, {and} \bibinfo{person}{Tim W{\"u}rtele}.}
+  \bibinfo{year}{2024}\natexlab{a}.
+\newblock \showarticletitle{Formal Security Analysis of the {OpenID} {FAPI}
+  2.0: Accompanying a Standardization Process}. In
+  \bibinfo{booktitle}{\emph{2024 IEEE 37th Computer Security Foundations
+  Symposium (CSF)}}. \bibinfo{publisher}{IEEE}, \bibinfo{pages}{589--604}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1109/CSF61375.2024.00002}
+\showDOI{\tempurl}
+\newblock
+\shownote{Full version: IACR Cryptology ePrint Archive 2024/078,
+  \url{https://eprint.iacr.org/2024/078}}.
+
+
+\bibitem[Hosseyni et~al\mbox{.}(2024b)]%
+        {hosseyni2024tops}
+\bibfield{author}{\bibinfo{person}{Pedram Hosseyni}, \bibinfo{person}{Ralf
+  K{\"u}sters}, {and} \bibinfo{person}{Tim W{\"u}rtele}.}
+  \bibinfo{year}{2024}\natexlab{b}.
+\newblock \showarticletitle{Formal Security Analysis of the {OpenID} {FAPI} 2.0
+  Family of Protocols: Accompanying a Standardization Process}.
+\newblock \bibinfo{journal}{\emph{ACM Transactions on Privacy and Security}}
+  \bibinfo{volume}{28}, \bibinfo{number}{1} (\bibinfo{year}{2024}),
+  \bibinfo{pages}{1--36}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3699716}
+\showDOI{\tempurl}
+\newblock
+\shownote{Full version: IACR Cryptology ePrint Archive 2024/1540,
+  \url{https://eprint.iacr.org/2024/1540}}.
+
+
+\bibitem[{Istio}(2021)]%
+        {istio2021cve31920}
+\bibfield{author}{\bibinfo{person}{{Istio}}.} \bibinfo{year}{2021}\natexlab{}.
+\newblock \bibinfo{title}{{ISTIO-SECURITY-2021-005} ({CVE-2021-31920}):
+  Authorization policy bypass via multiple or escaped slashes}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://istio.io/latest/news/security/istio-security-2021-005/}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Jabiyev et~al\mbox{.}(2024)]%
+        {jabiyev2024gudifu}
+\bibfield{author}{\bibinfo{person}{Bahruz Jabiyev}, \bibinfo{person}{Anthony
+  Gavazzi}, \bibinfo{person}{Kaan Onarlioglu}, {and} \bibinfo{person}{Engin
+  Kirda}.} \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Gudifu: Guided Differential Fuzzing for {HTTP}
+  Request Parsing Discrepancies}. In \bibinfo{booktitle}{\emph{Proceedings of
+  the 27th International Symposium on Research in Attacks, Intrusions and
+  Defenses (RAID)}}. \bibinfo{publisher}{ACM}, \bibinfo{pages}{235--247}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3678890.3678904}
+\showDOI{\tempurl}
+
+
+\bibitem[Jabiyev et~al\mbox{.}(2022)]%
+        {jabiyev2022frameshifter}
+\bibfield{author}{\bibinfo{person}{Bahruz Jabiyev}, \bibinfo{person}{Steven
+  Sprecher}, \bibinfo{person}{Anthony Gavazzi}, \bibinfo{person}{Tommaso
+  Innocenti}, \bibinfo{person}{Kaan Onarlioglu}, {and} \bibinfo{person}{Engin
+  Kirda}.} \bibinfo{year}{2022}\natexlab{}.
+\newblock \showarticletitle{{FRAMESHIFTER}: Security Implications of
+  {HTTP/2}-to-{HTTP/1} Conversion Anomalies}. In \bibinfo{booktitle}{\emph{31st
+  USENIX Security Symposium (USENIX Security 22)}}. \bibinfo{publisher}{USENIX
+  Association}.
+\newblock
+\urldef\tempurl%
+\url{https://www.usenix.org/conference/usenixsecurity22/presentation/jabiyev}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Jabiyev et~al\mbox{.}(2021)]%
+        {jabiyev2021treqs}
+\bibfield{author}{\bibinfo{person}{Bahruz Jabiyev}, \bibinfo{person}{Steven
+  Sprecher}, \bibinfo{person}{Kaan Onarlioglu}, {and} \bibinfo{person}{Engin
+  Kirda}.} \bibinfo{year}{2021}\natexlab{}.
+\newblock \showarticletitle{{T-Reqs}: {HTTP} Request Smuggling with
+  Differential Fuzzing}. In \bibinfo{booktitle}{\emph{Proceedings of the 2021
+  ACM SIGSAC Conference on Computer and Communications Security (CCS)}}.
+  \bibinfo{publisher}{ACM}, \bibinfo{pages}{1805--1820}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3460120.3485384}
+\showDOI{\tempurl}
+
+
+\bibitem[Kallus et~al\mbox{.}(2024)]%
+        {kallus2024garden}
+\bibfield{author}{\bibinfo{person}{Ben Kallus}, \bibinfo{person}{Prashant
+  Anantharaman}, \bibinfo{person}{Michael~E. Locasto}, {and}
+  \bibinfo{person}{Sean~W. Smith}.} \bibinfo{year}{2024}\natexlab{}.
+\newblock \bibinfo{title}{The {HTTP} Garden: Discovering Parsing
+  Vulnerabilities in {HTTP/1.1} Implementations by Differential Fuzzing of
+  Request Streams}.
+\newblock
+\newblock
+\showeprint[arxiv]{2405.17737}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2405.17737}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Kim et~al\mbox{.}(2026)]%
+        {kim2026tbsg}
+\bibfield{author}{\bibinfo{person}{D. Kim}, \bibinfo{person}{J.-Y. Choi}, {and}
+  \bibinfo{person}{J. Lee}.} \bibinfo{year}{2026}\natexlab{}.
+\newblock \bibinfo{title}{Trust Boundary Semantic Gaps: A Multi-dimensional
+  Analysis and Mitigation for Security-by-Design}.
+\newblock
+\newblock
+\showeprint[arxiv]{2607.01711}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2607.01711}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Lodderstedt et~al\mbox{.}(2025)]%
+        {rfc9700}
+\bibfield{author}{\bibinfo{person}{Torsten Lodderstedt}, \bibinfo{person}{John
+  Bradley}, \bibinfo{person}{Andrey Labunets}, {and} \bibinfo{person}{Daniel
+  Fett}.} \bibinfo{year}{2025}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{Best Current Practice for {OAuth} 2.0
+  Security}}.
+\newblock \bibinfo{type}{RFC} 9700 (BCP 240). \bibinfo{institution}{RFC
+  Editor}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.17487/RFC9700}
+\showDOI{\tempurl}
+
+
+\bibitem[Madden and Zehavi(2025)]%
+        {madden2025thread}
+\bibfield{author}{\bibinfo{person}{Neil Madden} {and} \bibinfo{person}{Yaron
+  Zehavi}.} \bibinfo{year}{2025}\natexlab{}.
+\newblock \bibinfo{title}{[{OAUTH-WG}] {DPoP} tokens vs downstream resource
+  servers}.
+\newblock \bibinfo{howpublished}{IETF OAuth WG mailing-list thread}.
+\newblock
+\urldef\tempurl%
+\url{https://go.mail-archive.com/oauth@ietf.org/msg24959.html}
+\showURL{%
+\tempurl}
+\newblock
+\shownote{Messages of 16 and 18 October 2025; accessed 2026-11-23}.
+
+
+\bibitem[{Mancinas Fontalvo}(2026)]%
+        {mancinas2026}
+\bibfield{author}{\bibinfo{person}{Sergio~E. {Mancinas Fontalvo}}.}
+  \bibinfo{year}{2026}\natexlab{}.
+\newblock \bibinfo{title}{Operational Realities of Sender-Constrained {OAuth}:
+  Replay-State Scaling Thresholds and Silent Binding Failures in Distributed
+  Resource-Server Deployments}.
+\newblock \bibinfo{howpublished}{Preprint, author website}.
+\newblock
+\urldef\tempurl%
+\url{https://sergioemancinas.com/papers/mancinas-sender-constrained-oauth-2026.pdf}
+\showURL{%
+\tempurl}
+\newblock
+\shownote{PDF dated 2026-07-28; no venue found}.
+
+
+\bibitem[Mirheidari et~al\mbox{.}(2020)]%
+        {mirheidari2020cached}
+\bibfield{author}{\bibinfo{person}{Seyed~Ali Mirheidari},
+  \bibinfo{person}{Sajjad Arshad}, \bibinfo{person}{Kaan Onarlioglu},
+  \bibinfo{person}{Bruno Crispo}, \bibinfo{person}{Engin Kirda}, {and}
+  \bibinfo{person}{William Robertson}.} \bibinfo{year}{2020}\natexlab{}.
+\newblock \showarticletitle{Cached and Confused: Web Cache Deception in the
+  Wild}. In \bibinfo{booktitle}{\emph{29th USENIX Security Symposium (USENIX
+  Security 20)}}. \bibinfo{publisher}{USENIX Association}.
+\newblock
+\urldef\tempurl%
+\url{https://www.usenix.org/conference/usenixsecurity20/presentation/mirheidari}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Mu et~al\mbox{.}(2025)]%
+        {mu2025hdhunter}
+\bibfield{author}{\bibinfo{person}{Keran Mu}, \bibinfo{person}{Jianjun Chen},
+  \bibinfo{person}{Jianwei Zhuge}, \bibinfo{person}{Qi Li},
+  \bibinfo{person}{Haixin Duan}, {and} \bibinfo{person}{Nick Feamster}.}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{The Silent Danger in {HTTP}: Identifying {HTTP}
+  Desync Vulnerabilities with Gray-box Testing}. In
+  \bibinfo{booktitle}{\emph{34th USENIX Security Symposium (USENIX Security
+  25)}}. \bibinfo{publisher}{USENIX Association}.
+\newblock
+\urldef\tempurl%
+\url{https://www.usenix.org/conference/usenixsecurity25/presentation/mu}
+\showURL{%
+\tempurl}
+
+
+\bibitem[{NGINX}(2026)]%
+        {w2:nginxauthreq}
+\bibfield{author}{\bibinfo{person}{{NGINX}}.} \bibinfo{year}{2026}\natexlab{}.
+\newblock \bibinfo{title}{{Module ngx\_http\_auth\_request\_module}}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://nginx.org/en/docs/http/ngx_http_auth_request_module.html}
+\showURL{%
+\tempurl}
+\newblock
+\shownote{Living documentation, accessed 2026-11-23}.
+
+
+\bibitem[Nguyen and {Lo Iacono}(2020)]%
+        {nguyen2020crehma}
+\bibfield{author}{\bibinfo{person}{Hoai~Viet Nguyen} {and}
+  \bibinfo{person}{Luigi {Lo Iacono}}.} \bibinfo{year}{2020}\natexlab{}.
+\newblock \showarticletitle{{CREHMA}: Cache-aware {REST}-ful {HTTP} Message
+  Authentication}. In \bibinfo{booktitle}{\emph{Proceedings of the Tenth ACM
+  Conference on Data and Application Security and Privacy (CODASPY)}}.
+  \bibinfo{publisher}{ACM}, \bibinfo{pages}{49--60}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3374664.3375750}
+\showDOI{\tempurl}
+
+
+\bibitem[Nguyen et~al\mbox{.}(2019)]%
+        {nguyen2019cpdos}
+\bibfield{author}{\bibinfo{person}{Hoai~Viet Nguyen}, \bibinfo{person}{Luigi
+  {Lo Iacono}}, {and} \bibinfo{person}{Hannes Federrath}.}
+  \bibinfo{year}{2019}\natexlab{}.
+\newblock \showarticletitle{Your Cache Has Fallen: Cache-Poisoned
+  Denial-of-Service Attack}. In \bibinfo{booktitle}{\emph{Proceedings of the
+  2019 ACM SIGSAC Conference on Computer and Communications Security (CCS)}}.
+  \bibinfo{publisher}{ACM}, \bibinfo{pages}{1915--1936}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3319535.3354215}
+\showDOI{\tempurl}
+
+
+\bibitem[{NIST NVD}(2026a)]%
+        {opaenvoy2026cve26205}
+\bibfield{author}{\bibinfo{person}{{NIST NVD}}.}
+  \bibinfo{year}{2026}\natexlab{a}.
+\newblock \bibinfo{title}{{CVE-2026-26205}: opa-envoy-plugin input.parsed\_path
+  double-slash misinterpretation}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://nvd.nist.gov/vuln/detail/CVE-2026-26205}
+\showURL{%
+\tempurl}
+\newblock
+\shownote{GHSA-9f29-v6mm-pw6w}.
+
+
+\bibitem[{NIST NVD}(2026b)]%
+        {traefik2026cve40912}
+\bibfield{author}{\bibinfo{person}{{NIST NVD}}.}
+  \bibinfo{year}{2026}\natexlab{b}.
+\newblock \bibinfo{title}{{CVE-2026-40912}: {Traefik} {StripPrefixRegex} and
+  {ForwardAuth} dot-segment authorization bypass}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://nvd.nist.gov/vuln/detail/CVE-2026-40912}
+\showURL{%
+\tempurl}
+\newblock
+\shownote{GHSA-6jwx-7vp4-9847; accessed 2026-11-23}.
+
+
+\bibitem[Nygren and Bishop(2025)]%
+        {nygren2025binding}
+\bibfield{author}{\bibinfo{person}{Erik Nygren} {and} \bibinfo{person}{Mike
+  Bishop}.} \bibinfo{year}{2025}\natexlab{}.
+\newblock \bibinfo{title}{{HTTP/1.1} Request Smuggling Defense using
+  Cryptographic Message Binding}.
+\newblock \bibinfo{howpublished}{IETF Internet-Draft
+  draft-nygren-httpbis-http11-request-binding}.
+\newblock
+\urldef\tempurl%
+\url{https://datatracker.ietf.org/doc/draft-nygren-httpbis-http11-request-binding/}
+\showURL{%
+\tempurl}
+
+
+\bibitem[{OpenID Foundation FAPI Working Group}(2025)]%
+        {fapisp2025}
+\bibfield{author}{\bibinfo{person}{{OpenID Foundation FAPI Working Group}}.}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \bibinfo{title}{{FAPI} 2.0 Security Profile (Final)}.
+\newblock \bibinfo{howpublished}{OpenID Foundation}.
+\newblock
+\urldef\tempurl%
+\url{https://openid.net/specs/fapi-security-profile-2_0-final.html}
+\showURL{%
+\tempurl}
+\newblock
+\shownote{Accessed 2026-11-23}.
+
+
+\bibitem[{OSV / NIST NVD}(2026)]%
+        {grpcgw2026cve37236}
+\bibfield{author}{\bibinfo{person}{{OSV / NIST NVD}}.}
+  \bibinfo{year}{2026}\natexlab{}.
+\newblock \bibinfo{title}{{CVE-2026-37236}: grpc-gateway
+  {X-HTTP-Method-Override} handling bypasses upstream method-based access
+  controls}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://osv.dev/vulnerability/CVE-2026-37236}
+\showURL{%
+\tempurl}
+\newblock
+\shownote{Published 28 August 2026; fix commit 72123cd in
+  grpc-ecosystem/grpc-gateway}.
+
+
+\bibitem[Padilla(2026)]%
+        {padilla2026mcp}
+\bibfield{author}{\bibinfo{person}{N. Padilla}.}
+  \bibinfo{year}{2026}\natexlab{}.
+\newblock \bibinfo{title}{Exposed by Design: A Dynamic Security Assessment of
+  Internet-Facing {MCP} Servers at Scale}.
+\newblock
+\newblock
+\showeprint[arxiv]{2608.00150}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2608.00150}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Philippaerts et~al\mbox{.}(2022)]%
+        {philippaerts2022oauch}
+\bibfield{author}{\bibinfo{person}{Pieter Philippaerts}, \bibinfo{person}{Davy
+  Preuveneers}, {and} \bibinfo{person}{Wouter Joosen}.}
+  \bibinfo{year}{2022}\natexlab{}.
+\newblock \showarticletitle{{OAuch}: Exploring Security Compliance in the
+  {OAuth} 2.0 Ecosystem}. In \bibinfo{booktitle}{\emph{Proceedings of the 25th
+  International Symposium on Research in Attacks, Intrusions and Defenses
+  (RAID)}}. \bibinfo{publisher}{ACM}, \bibinfo{pages}{460--481}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3545948.3545955}
+\showDOI{\tempurl}
+
+
+\bibitem[{PieterKas (GitHub)}(2025)]%
+        {sep1932}
+\bibfield{author}{\bibinfo{person}{{PieterKas (GitHub)}}.}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \bibinfo{title}{{SEP-1932}: {DPoP} Profile for {MCP}}.
+\newblock \bibinfo{howpublished}{Model Context Protocol specification
+  enhancement proposal, GitHub pull request \#1932 (open)}.
+\newblock
+\urldef\tempurl%
+\url{https://github.com/modelcontextprotocol/modelcontextprotocol/pull/1932}
+\showURL{%
+\tempurl}
+\newblock
+\shownote{Opened 5 December 2025; accessed 2026-11-23}.
+
+
+\bibitem[{PieterKas (GitHub)}(2026)]%
+        {mcpconf369}
+\bibfield{author}{\bibinfo{person}{{PieterKas (GitHub)}}.}
+  \bibinfo{year}{2026}\natexlab{}.
+\newblock \bibinfo{title}{Server Auth: {DPoP} Proof Validation ({SEP-1932})}.
+\newblock \bibinfo{howpublished}{modelcontextprotocol/conformance, GitHub issue
+  \#369 (open)}.
+\newblock
+\urldef\tempurl%
+\url{https://github.com/modelcontextprotocol/conformance/issues/369}
+\showURL{%
+\tempurl}
+\newblock
+\shownote{Opened 25 June 2026; accessed 2026-11-23}.
+
+
+\bibitem[Polli and Pardue(2024)]%
+        {w2:rfc9530}
+\bibfield{author}{\bibinfo{person}{Roberto Polli} {and} \bibinfo{person}{Lucas
+  Pardue}.} \bibinfo{year}{2024}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{{Digest Fields}}}.
+\newblock \bibinfo{type}{RFC} 9530. \bibinfo{institution}{IETF}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.17487/RFC9530}
+\showDOI{\tempurl}
+
+
+\bibitem[Reynolds et~al\mbox{.}(2022)]%
+        {reynolds2022equivocal}
+\bibfield{author}{\bibinfo{person}{Joshua Reynolds}, \bibinfo{person}{Adam
+  Bates}, {and} \bibinfo{person}{Michael Bailey}.}
+  \bibinfo{year}{2022}\natexlab{}.
+\newblock \showarticletitle{Equivocal {URLs}: Understanding the Fragmented
+  Space of {URL} Parser Implementations}. In \bibinfo{booktitle}{\emph{Computer
+  Security -- ESORICS 2022}} \emph{(\bibinfo{series}{Lecture Notes in Computer
+  Science})}. \bibinfo{publisher}{Springer}, \bibinfo{pages}{166--185}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1007/978-3-031-17143-7_9}
+\showDOI{\tempurl}
+
+
+\bibitem[Shen et~al\mbox{.}(2022)]%
+        {shen2022hdiff}
+\bibfield{author}{\bibinfo{person}{Kaiwen Shen}, \bibinfo{person}{Jianyu Lu},
+  \bibinfo{person}{Yaru Yang}, \bibinfo{person}{Jianjun Chen},
+  \bibinfo{person}{Mingming Zhang}, \bibinfo{person}{Haixin Duan},
+  \bibinfo{person}{Jia Zhang}, {and} \bibinfo{person}{Xiaofeng Zheng}.}
+  \bibinfo{year}{2022}\natexlab{}.
+\newblock \showarticletitle{{HDiff}: A Semi-automatic Framework for Discovering
+  Semantic Gap Attack in {HTTP} Implementations}. In
+  \bibinfo{booktitle}{\emph{2022 52nd Annual IEEE/IFIP International Conference
+  on Dependable Systems and Networks (DSN)}}. \bibinfo{publisher}{IEEE},
+  \bibinfo{pages}{1--13}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1109/DSN53405.2022.00014}
+\showDOI{\tempurl}
+
+
+\bibitem[Somorovsky et~al\mbox{.}(2012)]%
+        {somorovsky2012saml}
+\bibfield{author}{\bibinfo{person}{Juraj Somorovsky}, \bibinfo{person}{Andreas
+  Mayer}, \bibinfo{person}{J{\"o}rg Schwenk}, \bibinfo{person}{Marco Kampmann},
+  {and} \bibinfo{person}{Meiko Jensen}.} \bibinfo{year}{2012}\natexlab{}.
+\newblock \showarticletitle{On Breaking {SAML}: Be Whoever You Want to Be}. In
+  \bibinfo{booktitle}{\emph{21st USENIX Security Symposium (USENIX Security
+  12)}}. \bibinfo{publisher}{USENIX Association}.
+\newblock
+\urldef\tempurl%
+\url{https://www.usenix.org/conference/usenixsecurity12/technical-sessions/presentation/somorovsky}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Topcuoglu et~al\mbox{.}(2025)]%
+        {topcuoglu2025sync}
+\bibfield{author}{\bibinfo{person}{Cem Topcuoglu}, \bibinfo{person}{Kaan
+  Onarlioglu}, \bibinfo{person}{Steven Sprecher}, {and} \bibinfo{person}{Engin
+  Kirda}.} \bibinfo{year}{2025}\natexlab{}.
+\newblock \bibinfo{title}{{HTTP} Request Synchronization Defeats Discrepancy
+  Attacks}.
+\newblock
+\newblock
+\showeprint[arxiv]{2510.09952}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2510.09952}
+\showURL{%
+\tempurl}
+
+
+\bibitem[{Traefik Labs}(2026)]%
+        {w2:traefikfwdauth}
+\bibfield{author}{\bibinfo{person}{{Traefik Labs}}.}
+  \bibinfo{year}{2026}\natexlab{}.
+\newblock \bibinfo{title}{{ForwardAuth middleware}}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://doc.traefik.io/traefik/reference/routing-configuration/http/middlewares/forwardauth/}
+\showURL{%
+\tempurl}
+\newblock
+\shownote{Living documentation, accessed 2026-11-23}.
+
+
+\bibitem[{Wiz Vulnerability Database}(2021)]%
+        {w2:kongcve27306}
+\bibfield{author}{\bibinfo{person}{{Wiz Vulnerability Database}}.}
+  \bibinfo{year}{2021}\natexlab{}.
+\newblock \bibinfo{title}{{CVE-2021-27306}: {Kong} path normalisation and
+  authorization bypass}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://www.wiz.io/vulnerability-database/cve/cve-2021-27306}
+\showURL{%
+\tempurl}
+\newblock
+\shownote{Accessed 2026-11-23}.
+
+
+\bibitem[{xvnpw}(2021)]%
+        {w2:xvnpw2021kong}
+\bibfield{author}{\bibinfo{person}{{xvnpw}}.} \bibinfo{year}{2021}\natexlab{}.
+\newblock \bibinfo{title}{Path traversal in authorization context in {Kong} and
+  {F5 NGINX}}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://xvnpw.github.io/posts/path_traversal_in_authorization_context_in_kong_and_f5_nginx}
+\showURL{%
+\tempurl}
+\newblock
+\shownote{Accessed 2026-11-23}.
+
+
+\bibitem[Yang et~al\mbox{.}(2026)]%
+        {yang2026jwteemo}
+\bibfield{author}{\bibinfo{person}{J. Yang}, \bibinfo{person}{E. Wang},
+  \bibinfo{person}{J. Chen}, \bibinfo{person}{Q. Wang}, \bibinfo{person}{Y.
+  Zhang}, \bibinfo{person}{H. Duan}, \bibinfo{person}{W. Xie}, {and}
+  \bibinfo{person}{B. Wang}.} \bibinfo{year}{2026}\natexlab{}.
+\newblock \showarticletitle{Token Time Bomb: Evaluating {JWT} Implementations
+  for Vulnerability Discovery}. In \bibinfo{booktitle}{\emph{Network and
+  Distributed System Security Symposium (NDSS)}}.
+\newblock
+\urldef\tempurl%
+\url{https://www.ndss-symposium.org/ndss-paper/token-time-bomb-evaluating-jwt-implementations-for-vulnerability-discovery/}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Zhou et~al\mbox{.}(2026)]%
+        {zhou2026mcp}
+\bibfield{author}{\bibinfo{person}{H. Zhou}, \bibinfo{person}{X. Zhang},
+  \bibinfo{person}{H. Zhang}, \bibinfo{person}{H. Zhang}, \bibinfo{person}{M.
+  Zhang}, {and} \bibinfo{person}{M. Yang}.} \bibinfo{year}{2026}\natexlab{}.
+\newblock \bibinfo{title}{A First Measurement Study on Authentication Security
+  in Real-World Remote {MCP} Servers}.
+\newblock
+\newblock
+\showeprint[arxiv]{2605.22333}
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2605.22333}
+\showURL{%
+\tempurl}
+
+
+\end{thebibliography}

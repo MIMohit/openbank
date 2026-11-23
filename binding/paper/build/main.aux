@@ -1,0 +1,280 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
+\HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldcontentsline\contentsline
+\gdef\contentsline#1#2#3#4{\oldcontentsline{#1}{#2}{#3}}
+\global\let\oldnewlabel\newlabel
+\gdef\newlabel#1#2{\newlabelxx{#1}#2}
+\gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
+\AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\contentsline\oldcontentsline
+\let\newlabel\oldnewlabel
+\fi}
+\fi}
+\global\let\hyper@last\relax 
+\gdef\HyperFirstAtBeginDocument#1{#1}
+\providecommand*\HyPL@Entry[1]{}
+\citation{rfc9449,rfc8705,fapisp2025}
+\citation{hosseyni2024csf,hosseyni2024tops}
+\citation{rfc9449}
+\HyPL@Entry{0<</S/D>>}
+\@writefile{toc}{\contentsline {section}{Abstract}{1}{section*.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}\protected@file@percent }
+\newlabel{sec:intro}{{1}{1}{Introduction}{section.1}{}}
+\@writefile{toc}{\contentsline {paragraph}{Findings.}{1}{section*.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Contributions.}{1}{section*.6}\protected@file@percent }
+\citation{rfc9449}
+\citation{rfc8705}
+\citation{rfc9440}
+\citation{rfc9421}
+\citation{w2:envoyextauthz}
+\citation{w2:traefikfwdauth}
+\citation{w2:nginxauthreq}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Background}{2}{section.2}\protected@file@percent }
+\newlabel{sec:background}{{2}{2}{Background}{section.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}DPoP}{2}{subsection.2.1}\protected@file@percent }
+\newlabel{sec:bg:dpop}{{2.1}{2}{DPoP}{subsection.2.1}{}}
+\@writefile{toc}{\contentsline {paragraph}{Checking a proof.}{2}{section*.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Resource-server obligations.}{2}{section*.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Certificate binding behind proxies}{2}{subsection.2.2}\protected@file@percent }
+\newlabel{sec:bg:mtls}{{2.2}{2}{Certificate binding behind proxies}{subsection.2.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}HTTP Message Signatures}{2}{subsection.2.3}\protected@file@percent }
+\newlabel{sec:bg:sigs}{{2.3}{2}{HTTP Message Signatures}{subsection.2.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Layered verification topologies}{2}{subsection.2.4}\protected@file@percent }
+\newlabel{sec:bg:topologies}{{2.4}{2}{Layered verification topologies}{subsection.2.4}{}}
+\citation{rfc9449}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Verifier view and executed operation. $\mathsf  {V}$ checks $\pi $ against its view $v(r)$; $\mathsf  {E}$ runs $x(r)$ on the request $\tau _D(r)$ that the intermediaries deliver. Edge placement reaches $\mathsf  {V}$ through a gateway adapter; origin placement calls it from $\mathsf  {E}$ (dashed).\relax }}{3}{figure.caption.9}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:views}{{1}{3}{Verifier view and executed operation. $\Ver $ checks $\pi $ against its view $\view (r)$; $\Exe $ runs $\exe (r)$ on the request $\tau _D(r)$ that the intermediaries deliver. Edge placement reaches $\Ver $ through a gateway adapter; origin placement calls it from $\Exe $ (dashed).\relax }{figure.caption.9}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}System and Threat Model}{3}{section.3}\protected@file@percent }
+\newlabel{sec:model}{{3}{3}{System and Threat Model}{section.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}System model}{3}{subsection.3.1}\protected@file@percent }
+\newlabel{sec:model:system}{{3.1}{3}{System model}{subsection.3.1}{}}
+\@writefile{toc}{\contentsline {paragraph}{Client $\mathsf  {C}$.}{3}{section*.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Verifier $\mathsf  {V}$.}{3}{section*.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Policy decision point $\mathsf  {P}$ (optional).}{3}{section*.12}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Executor $\mathsf  {E}$.}{3}{section*.13}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Binding soundness}{3}{subsection.3.2}\protected@file@percent }
+\newlabel{sec:model:soundness}{{3.2}{3}{Binding soundness}{subsection.3.2}{}}
+\newlabel{def:soundness}{{3.1}{3}{Binding soundness}{theorem.3.1}{}}
+\newlabel{def:resolution}{{3.2}{3}{Binding resolution}{theorem.3.2}{}}
+\newlabel{def:authz}{{3.3}{3}{Authorization soundness with a PDP}{theorem.3.3}{}}
+\citation{fapiam2025}
+\citation{rfc9449}
+\citation{hosseyni2024csf}
+\citation{w2:rfc9530}
+\citation{rfc8705}
+\@writefile{toc}{\contentsline {paragraph}{Which property a finding violates.}{4}{section*.14}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Failure classes}{4}{subsection.3.3}\protected@file@percent }
+\newlabel{sec:model:classes}{{3.3}{4}{Failure classes}{subsection.3.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Adversaries}{4}{subsection.3.4}\protected@file@percent }
+\newlabel{sec:model:adversaries}{{3.4}{4}{Adversaries}{subsection.3.4}{}}
+\@writefile{toc}{\contentsline {paragraph}{\ensuremath  {\mathcal  {A}_{\mathrm  {leak}}}\xspace  , proof-leak adversary.}{4}{section*.15}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\ensuremath  {\mathcal  {A}_{\mathrm  {client}}}\xspace  , malicious legitimate client.}{4}{section*.16}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Excluded adversaries.}{4}{section*.17}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Hypotheses and experiments}{4}{subsection.3.5}\protected@file@percent }
+\newlabel{sec:model:hyp}{{3.5}{4}{Hypotheses and experiments}{subsection.3.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6}Scope}{4}{subsection.3.6}\protected@file@percent }
+\newlabel{sec:model:scope}{{3.6}{4}{Scope}{subsection.3.6}{}}
+\citation{golinelli2026post}
+\citation{grpcgw2026cve37236}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Hypotheses, the experiments that test them, and what would falsify them.\relax }}{5}{table.caption.18}\protected@file@percent }
+\newlabel{tab:hyp}{{1}{5}{Hypotheses, the experiments that test them, and what would falsify them.\relax }{table.caption.18}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Under-Binding by Design}{5}{section.4}\protected@file@percent }
+\newlabel{sec:prevalence}{{4}{5}{Under-Binding by Design}{section.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}API descriptions (\textsf  {E1}\xspace  )}{5}{subsection.4.1}\protected@file@percent }
+\newlabel{sec:prev:e1}{{4.1}{5}{API descriptions (\Exp {1})}{subsection.4.1}{}}
+\@writefile{toc}{\contentsline {paragraph}{Method.}{5}{section*.19}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces \textsf  {E1}\xspace  : state-changing operations on a collided (method, path) key. Raw detector counts, strong tier; 95\% Wilson intervals in brackets.\relax }}{5}{table.caption.21}\protected@file@percent }
+\newlabel{tab:e1}{{2}{5}{\Exp {1}: state-changing operations on a collided (method, path) key. Raw detector counts, strong tier; 95\% Wilson intervals in brackets.\relax }{table.caption.21}{}}
+\@writefile{toc}{\contentsline {paragraph}{Validation.}{5}{section*.20}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Results.}{5}{section*.22}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Standards that under-bind by construction.}{5}{section*.23}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Framework method override (\textsf  {E2}\xspace  )}{6}{subsection.4.2}\protected@file@percent }
+\newlabel{sec:prev:e2}{{4.2}{6}{Framework method override (\Exp {2})}{subsection.4.2}{}}
+\@writefile{toc}{\contentsline {paragraph}{Method.}{6}{section*.24}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Results.}{6}{section*.25}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{What the proof binds (\textsf  {A1}\xspace  ).}{6}{section*.26}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Limitations.}{6}{section*.27}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Harness. For every case the runner mints a fresh proof for the base operation, applies the case's primitives to the canonical bytes and sends them through the topology. The oracle joins the runner, verifier and executor logs on the proof's \texttt  {jti}\xspace  . Ground truth comes from sending each canonical request directly to the executor (dotted).\relax }}{6}{figure.caption.28}\protected@file@percent }
+\newlabel{fig:harness}{{2}{6}{Harness. For every case the runner mints a fresh proof for the base operation, applies the case's primitives to the canonical bytes and sends them through the topology. The oracle joins the runner, verifier and executor logs on the proof's \jti . Ground truth comes from sending each canonical request directly to the executor (dotted).\relax }{figure.caption.28}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}A Binding Oracle for Layered Deployments}{6}{section.5}\protected@file@percent }
+\newlabel{sec:harness}{{5}{6}{A Binding Oracle for Layered Deployments}{section.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Architecture}{6}{subsection.5.1}\protected@file@percent }
+\newlabel{sec:harness:arch}{{5.1}{6}{Architecture}{subsection.5.1}{}}
+\@writefile{toc}{\contentsline {paragraph}{Tokens and proofs.}{6}{section*.29}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Reference verifier.}{6}{section*.30}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Executors and the override mechanism enabled by \texttt  {OVERRIDE=on} (versions read from the built images).\relax }}{7}{table.caption.33}\protected@file@percent }
+\newlabel{tab:exec}{{3}{7}{Executors and the override mechanism enabled by \texttt {OVERRIDE=on} (versions read from the built images).\relax }{table.caption.33}{}}
+\@writefile{toc}{\contentsline {paragraph}{Gateways.}{7}{section*.31}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Executors.}{7}{section*.32}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Mutations.}{7}{section*.34}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Orchestration.}{7}{section*.35}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Oracle}{7}{subsection.5.2}\protected@file@percent }
+\newlabel{sec:harness:oracle}{{5.2}{7}{Oracle}{subsection.5.2}{}}
+\@writefile{toc}{\contentsline {paragraph}{Ground truth.}{7}{section*.36}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Hits.}{7}{section*.37}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{What is not a hit.}{7}{section*.38}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Signatures and reruns.}{7}{section*.39}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Validation}{7}{subsection.5.3}\protected@file@percent }
+\newlabel{sec:harness:validation}{{5.3}{7}{Validation}{subsection.5.3}{}}
+\citation{w2:uvicorn1222}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Experiment matrix}{8}{subsection.5.4}\protected@file@percent }
+\newlabel{sec:harness:matrix}{{5.4}{8}{Experiment matrix}{subsection.5.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5}Binding soundness under \ensuremath  {\mathcal  {A}_{\mathrm  {leak}}}\xspace  }{8}{subsection.5.5}\protected@file@percent }
+\newlabel{sec:harness:results}{{5.5}{8}{Binding soundness under \Aleak }{subsection.5.5}{}}
+\@writefile{toc}{\contentsline {paragraph}{Totals.}{8}{section*.41}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Campaign. Requests are raw-socket cases; every hit was re-run three times on a freshly started topology.\relax }}{8}{table.caption.40}\protected@file@percent }
+\newlabel{tab:campaign}{{4}{8}{Campaign. Requests are raw-socket cases; every hit was re-run three times on a freshly started topology.\relax }{table.caption.40}{}}
+\@writefile{toc}{\contentsline {paragraph}{By class.}{8}{section*.42}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Binding-soundness mechanisms.}{8}{section*.45}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Confirmed binding hits under \ensuremath  {\mathcal  {A}_{\mathrm  {leak}}}\xspace  , edge placement, v1 route space. Each cell sums four topologies (default and recommended profile, override off and on). (a)\nonbreakingspace \textsf  {G1}\xspace  hits are the same for every gateway; the extra four hits for FastAPI, chi and Laravel behind NGINX, Traefik and APISIX are fragment-in-query hits, which minimise to query dispatch. (b)\nonbreakingspace \textsf  {G2}\xspace  hits: \texttt  {\#} kept in the path (NGINX, Kong) and the APISIX \texttt  {\%2f} observation, whose mechanism is not yet confirmed. Generated by \texttt  {figs/make\_figs.py} from the recorded hit logs.\relax }}{9}{figure.caption.43}\protected@file@percent }
+\newlabel{fig:heatmap}{{3}{9}{Confirmed binding hits under \Aleak , edge placement, v1 route space. Each cell sums four topologies (default and recommended profile, override off and on). (a)~\GA hits are the same for every gateway; the extra four hits for FastAPI, chi and Laravel behind NGINX, Traefik and APISIX are fragment-in-query hits, which minimise to query dispatch. (b)~\GB hits: \texttt {\#} kept in the path (NGINX, Kong) and the APISIX \texttt {\%2f} observation, whose mechanism is not yet confirmed. Generated by \texttt {figs/make\_figs.py} from the recorded hit logs.\relax }{figure.caption.43}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Root causes, one row per independent mechanism (resolving component $\times $ differential). All hold on current releases under the default profile and are unchanged by the recommended one, unless stated. Witnesses are ddmin outputs; \texttt  {.../a1} stands for \texttt  {/api/v1/accounts/acc-alice-1}. ``Allow-list'': whether the class defeats a default-deny per-tenant allow-list. $^{\dagger }$Measured observation; mechanism not yet confirmed (\S  \ref  {sec:harness:results}).\relax }}{9}{table.caption.44}\protected@file@percent }
+\newlabel{tab:rc}{{5}{9}{Root causes, one row per independent mechanism (resolving component $\times $ differential). All hold on current releases under the default profile and are unchanged by the recommended one, unless stated. Witnesses are ddmin outputs; \texttt {.../a1} stands for \texttt {/api/v1/accounts/acc-alice-1}. ``Allow-list'': whether the class defeats a default-deny per-tenant allow-list. $^{\dagger }$Measured observation; mechanism not yet confirmed (\S \ref {sec:harness:results}).\relax }{table.caption.44}{}}
+\@writefile{toc}{\contentsline {paragraph}{\textsf  {G1}\xspace  .}{9}{section*.46}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\textsf  {G3}\xspace  .}{9}{section*.47}\protected@file@percent }
+\citation{istio2021cve31920}
+\citation{traefik2026cve40912}
+\citation{w2:xvnpw2021kong,w2:kongcve27306}
+\@writefile{toc}{\contentsline {paragraph}{Resolution.}{10}{section*.48}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Placement (\textsf  {A3}\xspace  ).}{10}{section*.49}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Other ablations.}{10}{section*.50}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.6}Authorization soundness under \ensuremath  {\mathcal  {A}_{\mathrm  {client}}}\xspace  }{10}{subsection.5.6}\protected@file@percent }
+\newlabel{sec:harness:e4}{{5.6}{10}{Authorization soundness under \Aclient }{subsection.5.6}{}}
+\@writefile{toc}{\contentsline {paragraph}{Setup.}{10}{section*.51}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Results.}{10}{section*.52}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Calibration.}{10}{section*.53}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6}Restoring Binding Soundness}{10}{section.6}\protected@file@percent }
+\newlabel{sec:defence}{{6}{10}{Restoring Binding Soundness}{section.6}{}}
+\citation{rfc9449}
+\citation{allam2026thread}
+\citation{w2:rfc9530}
+\citation{rfc9421}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Witnesses that still execute a different operation (\ensuremath  {\mathcal  {A}_{\mathrm  {leak}}}\xspace  ) or a forbidden one (E4, \ensuremath  {\mathcal  {A}_{\mathrm  {client}}}\xspace  ) under each configuration, and attributable false rejection (FRR) on legitimate rewritten traffic. Source: \texttt  {experiments/defence/REPORT.md}.\relax }}{11}{table.caption.55}\protected@file@percent }
+\newlabel{tab:defence}{{6}{11}{Witnesses that still execute a different operation (\Aleak ) or a forbidden one (E4, \Aclient ) under each configuration, and attributable false rejection (FRR) on legitimate rewritten traffic. Source: \texttt {experiments/defence/REPORT.md}.\relax }{table.caption.55}{}}
+\@writefile{toc}{\contentsline {paragraph}{Setup (E7, E8).}{11}{section*.54}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{What each defence fixes.}{11}{section*.56}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Ablation (\textsf  {A2}\xspace  ).}{11}{section*.57}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Cost.}{11}{section*.58}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7}Discussion}{11}{section.7}\protected@file@percent }
+\newlabel{sec:discussion}{{7}{11}{Discussion}{section.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.1}Recommendations}{11}{subsection.7.1}\protected@file@percent }
+\newlabel{sec:discussion:rec}{{7.1}{11}{Recommendations}{subsection.7.1}{}}
+\@writefile{toc}{\contentsline {paragraph}{Standards: an executor-view contract.}{11}{section*.59}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Gateway vendors: authorize what you forward.}{11}{section*.60}\protected@file@percent }
+\citation{hosseyni2022tr,hosseyni2024csf,hosseyni2024tops}
+\citation{fett2016oauth,fett2019fapi}
+\citation{fapiam2025}
+\citation{jabiyev2021treqs,jabiyev2024gudifu,mu2025hdhunter,kallus2024garden,shen2022hdiff}
+\citation{jabiyev2022frameshifter,gavazzi2025h2fuzz}
+\citation{chen2016host}
+\citation{reynolds2022equivocal}
+\citation{mirheidari2020cached,nguyen2019cpdos}
+\citation{akhavani2025waffled}
+\citation{topcuoglu2025sync}
+\citation{buttner2021whitelisting}
+\citation{nygren2025binding}
+\citation{nguyen2020crehma}
+\citation{rfc9421}
+\citation{somorovsky2012saml}
+\citation{golinelli2026post}
+\@writefile{toc}{\contentsline {paragraph}{Framework authors.}{12}{section*.61}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}Limitations}{12}{subsection.7.2}\protected@file@percent }
+\newlabel{sec:discussion:lim}{{7.2}{12}{Limitations}{subsection.7.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.3}Ethics and disclosure}{12}{subsection.7.3}\protected@file@percent }
+\newlabel{sec:discussion:ethics}{{7.3}{12}{Ethics and disclosure}{subsection.7.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {8}Related Work}{12}{section.8}\protected@file@percent }
+\newlabel{sec:related}{{8}{12}{Related Work}{section.8}{}}
+\@writefile{toc}{\contentsline {paragraph}{Formal analyses of sender-constrained protocols.}{12}{section*.62}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{HTTP interpretation differentials.}{12}{section*.63}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Defences against differentials.}{12}{section*.64}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Execution semantics and placement.}{12}{section*.65}\protected@file@percent }
+\citation{traefik2026cve40912,istio2021cve31920,opaenvoy2026cve26205,envoy2019ghsa}
+\citation{grpcgw2026cve37236}
+\citation{mancinas2026}
+\citation{gallo2026continuity,gallo2026relational,kim2026tbsg}
+\citation{philippaerts2022oauch}
+\citation{yang2026jwteemo}
+\citation{zhou2026mcp,padilla2026mcp}
+\citation{mcpconf369}
+\citation{rfc9449}
+\citation{allam2026thread,madden2025thread}
+\citation{sep1932}
+\citation{fapisp2025,rfc9700}
+\bibstyle{ACM-Reference-Format}
+\bibdata{../lit/refs,extra}
+\bibcite{akhavani2025waffled}{{1}{2025}{{Akhavani et~al\mbox  {.}}}{{}}}
+\bibcite{allam2026thread}{{2}{2026}{{Allam}}{{}}}
+\bibcite{rfc9421}{{3}{2024}{{Backman et~al\mbox  {.}}}{{}}}
+\bibcite{buttner2021whitelisting}{{4}{2021}{{B{\"u}ttner et~al\mbox  {.}}}{{}}}
+\bibcite{rfc9440}{{5}{2023}{{Campbell and Bishop}}{{}}}
+\bibcite{rfc8705}{{6}{2020}{{Campbell et~al\mbox  {.}}}{{}}}
+\bibcite{chen2016host}{{7}{2016}{{Chen et~al\mbox  {.}}}{{}}}
+\bibcite{w2:uvicorn1222}{{8}{2021}{{encode/uvicorn}}{{}}}
+\bibcite{envoy2019ghsa}{{9}{2019}{{Envoy maintainers}}{{}}}
+\bibcite{w2:envoyextauthz}{{10}{2026}{{Envoy Project}}{{}}}
+\bibcite{fapiam2025}{{11}{2025}{{Fett}}{{}}}
+\bibcite{rfc9449}{{12}{2023}{{Fett et~al\mbox  {.}}}{{}}}
+\bibcite{fett2019fapi}{{13}{2019}{{Fett et~al\mbox  {.}}}{{}}}
+\bibcite{fett2016oauth}{{14}{2016}{{Fett et~al\mbox  {.}}}{{}}}
+\bibcite{gallo2026relational}{{15}{2026a}{{Gallo}}{{}}}
+\bibcite{gallo2026continuity}{{16}{2026b}{{Gallo}}{{}}}
+\bibcite{gavazzi2025h2fuzz}{{17}{2025}{{Gavazzi et~al\mbox  {.}}}{{}}}
+\bibcite{golinelli2026post}{{18}{2026}{{Golinelli et~al\mbox  {.}}}{{}}}
+\bibcite{hosseyni2022tr}{{19}{2022}{{Hosseyni et~al\mbox  {.}}}{{}}}
+\bibcite{hosseyni2024csf}{{20}{2024a}{{Hosseyni et~al\mbox  {.}}}{{}}}
+\bibcite{hosseyni2024tops}{{21}{2024b}{{Hosseyni et~al\mbox  {.}}}{{}}}
+\bibcite{istio2021cve31920}{{22}{2021}{{Istio}}{{}}}
+\bibcite{jabiyev2024gudifu}{{23}{2024}{{Jabiyev et~al\mbox  {.}}}{{}}}
+\bibcite{jabiyev2022frameshifter}{{24}{2022}{{Jabiyev et~al\mbox  {.}}}{{}}}
+\@writefile{toc}{\contentsline {paragraph}{Testing and measurement of OAuth deployments.}{13}{section*.66}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Standards discussion.}{13}{section*.67}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {9}Conclusion}{13}{section.9}\protected@file@percent }
+\newlabel{sec:conclusion}{{9}{13}{Conclusion}{section.9}{}}
+\@writefile{toc}{\contentsline {section}{References}{13}{section*.69}\protected@file@percent }
+\bibcite{jabiyev2021treqs}{{25}{2021}{{Jabiyev et~al\mbox  {.}}}{{}}}
+\bibcite{kallus2024garden}{{26}{2024}{{Kallus et~al\mbox  {.}}}{{}}}
+\bibcite{kim2026tbsg}{{27}{2026}{{Kim et~al\mbox  {.}}}{{}}}
+\bibcite{rfc9700}{{28}{2025}{{Lodderstedt et~al\mbox  {.}}}{{}}}
+\bibcite{madden2025thread}{{29}{2025}{{Madden and Zehavi}}{{}}}
+\bibcite{mancinas2026}{{30}{2026}{{Mancinas Fontalvo}}{{}}}
+\bibcite{mirheidari2020cached}{{31}{2020}{{Mirheidari et~al\mbox  {.}}}{{}}}
+\bibcite{mu2025hdhunter}{{32}{2025}{{Mu et~al\mbox  {.}}}{{}}}
+\bibcite{w2:nginxauthreq}{{33}{2026}{{NGINX}}{{}}}
+\bibcite{nguyen2020crehma}{{34}{2020}{{Nguyen and {Lo Iacono}}}{{}}}
+\bibcite{nguyen2019cpdos}{{35}{2019}{{Nguyen et~al\mbox  {.}}}{{}}}
+\bibcite{opaenvoy2026cve26205}{{36}{2026a}{{NIST NVD}}{{}}}
+\bibcite{traefik2026cve40912}{{37}{2026b}{{NIST NVD}}{{}}}
+\bibcite{nygren2025binding}{{38}{2025}{{Nygren and Bishop}}{{}}}
+\bibcite{fapisp2025}{{39}{2025}{{OpenID Foundation FAPI Working Group}}{{}}}
+\bibcite{grpcgw2026cve37236}{{40}{2026}{{OSV / NIST NVD}}{{}}}
+\bibcite{padilla2026mcp}{{41}{2026}{{Padilla}}{{}}}
+\bibcite{philippaerts2022oauch}{{42}{2022}{{Philippaerts et~al\mbox  {.}}}{{}}}
+\bibcite{sep1932}{{43}{2025}{{PieterKas (GitHub)}}{{}}}
+\bibcite{mcpconf369}{{44}{2026}{{PieterKas (GitHub)}}{{}}}
+\bibcite{w2:rfc9530}{{45}{2024}{{Polli and Pardue}}{{}}}
+\bibcite{reynolds2022equivocal}{{46}{2022}{{Reynolds et~al\mbox  {.}}}{{}}}
+\bibcite{shen2022hdiff}{{47}{2022}{{Shen et~al\mbox  {.}}}{{}}}
+\bibcite{somorovsky2012saml}{{48}{2012}{{Somorovsky et~al\mbox  {.}}}{{}}}
+\bibcite{topcuoglu2025sync}{{49}{2025}{{Topcuoglu et~al\mbox  {.}}}{{}}}
+\bibcite{w2:traefikfwdauth}{{50}{2026}{{Traefik Labs}}{{}}}
+\bibcite{w2:kongcve27306}{{51}{2021}{{Wiz Vulnerability Database}}{{}}}
+\bibcite{w2:xvnpw2021kong}{{52}{2021}{{xvnpw}}{{}}}
+\bibcite{yang2026jwteemo}{{53}{2026}{{Yang et~al\mbox  {.}}}{{}}}
+\bibcite{zhou2026mcp}{{54}{2026}{{Zhou et~al\mbox  {.}}}{{}}}
+\@writefile{toc}{\contentsline {section}{\numberline {A}Hypotheses, Experiments and Ablations}{14}{appendix.A}\protected@file@percent }
+\newlabel{app:hyp}{{A}{14}{Hypotheses, Experiments and Ablations}{appendix.A}{}}
+\newlabel{tocindent-1}{0pt}
+\newlabel{tocindent0}{0pt}
+\newlabel{tocindent1}{6.255pt}
+\newlabel{tocindent2}{10.35pt}
+\newlabel{tocindent3}{0pt}
+\@writefile{toc}{\contentsline {paragraph}{Ablations.}{15}{section*.70}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {B}Mutation Primitives}{15}{appendix.B}\protected@file@percent }
+\newlabel{app:primitives}{{B}{15}{Mutation Primitives}{appendix.B}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {C}Binding Oracle}{15}{appendix.C}\protected@file@percent }
+\newlabel{app:oracle}{{C}{15}{Binding Oracle}{appendix.C}{}}
+\newlabel{TotPages}{{15}{15}{}{page.15}{}}
+\gdef \@abspage@last{15}

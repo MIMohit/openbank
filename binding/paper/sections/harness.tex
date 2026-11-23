@@ -368,9 +368,8 @@ APISIX's published \texttt{forward-auth} plugin builds \hdr{X-Forwarded-Uri}
 from \texttt{ctx.var.request\_uri}, which should be the raw target, and this
 contradicts the view we logged. Until the bytes the plugin sends are traced
 locally, we report B2 as a measured observation, not as a gateway that
-checks one representation and forwards another. \todo{Confirm the B2
-mechanism (\texttt{X-Forwarded-Uri} bytes vs.\ \texttt{ngx.var.request\_uri}
-/ \texttt{ngx.var.uri}); see disclosure/TRIAGE.md.} Kong sends the raw
+checks one representation and forwards another; tracing those bytes is
+a precondition of the APISIX report (\S\ref{sec:discussion:ethics}). Kong sends the raw
 target and the verifier denies it. HAProxy uses one parsed URI for both the
 check and the upstream request and has no \GB hit. \emph{B3, dot segment.} RFC~3986
 normalisation removes \texttt{./}; the v1 routers then return 404
@@ -434,10 +433,12 @@ same proof at the origin is thus no defence: the origin must check the
 \emph{routed} view (D-A) or trust a bound edge decision (D-B,
 \S\ref{sec:defence}).
 
-\paragraph{Other ablations.} \todo{\Abl{1} binding claims (\AblOneResult),
-\Abl{4} class leave-one-out (\AblFourResult) and \Abl{5} profiles including
-\emph{strict} (\AblFiveResult): W18. The default and recommended profiles
-above are already identical.}
+\paragraph{Other ablations.} \Abl{1} (binding claims) is reported in
+\S\ref{sec:prevalence} and \Abl{2} in \S\ref{sec:defence}. \Abl{4} (leave one
+primitive family out): \AblFourResult{}, so the \GB evidence is fragile to
+catalogue coverage. \Abl{5} (profiles, \AblFiveGTwoTopos{} new \GB and
+\AblFiveEFourTopos{} new E4 topologies): \AblFiveResult{}; the strict
+profiles are harness-defined, a ceiling rather than a vendor default.
 
 \subsection{Authorization soundness under \Aclient}\label{sec:harness:e4}
 

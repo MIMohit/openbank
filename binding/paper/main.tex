@@ -35,9 +35,11 @@ differentials, defeat a strict allow-list. Behind default NGINX and Kong, a
 fragment that the backend keeps in the path turns a leaked
 \texttt{deleteAccount} proof into \texttt{deleteStatement}. Method override
 turns a POST proof into PUT or DELETE in all \NumFrameworks{} frameworks, by
-default in Rails and Laravel. Re-verifying at the origin does not help. \todo{Defence sentence
-(W17): overhead \DefenceOverheadPfifty{}, false rejection
-\FalseRejectionRate{}.}
+default in Rails and Laravel. Re-verifying at the origin does not help. A view MAC that the
+executor checks against its routed view removes the override and
+path-differential witnesses at a median cost of \DefenceOverheadPfifty{}, but
+query and body dispatch remain, and legitimately rewritten paths are rejected
+unless the binding is defined on the executor's view.
 \end{abstract}
 
 \begin{CCSXML}

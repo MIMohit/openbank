@@ -54,7 +54,10 @@ FRR, path rewrite & 0\,\% & 100\,\% & 0\,\% & 100\,\% & 100\,\% & 0\,\% \\
 \paragraph{What each defence fixes.} D-A and D-B remove exactly the \GB path-view splits
 (\texttt{\#}, \texttt{\%2f}, dot-segments) and the method override, and nothing else: all
 \NumDefResidualDA{} query- and body-dispatch witnesses remain, because htu and the view MAC cover
-the path only. Binding the query or a content digest (e.g.\ RFC~9421) would be needed for those.
+the path only. Those need query and body binding: in \Abl{1}, binding the query cuts the hits from
+\AblOneHitsFull{} to \AblOneHitsQuery{}, a content digest checked by a body-holding hop to
+\AblOneHitsDigest{}, and both to \AblOneHitsQueryDigest{}; a digest checked only at an
+\texttt{auth\_request} edge, which never sees the body, removes nothing.
 Under \Aclient the two differ. D-A asks the policy about the \emph{routed} view, and closes all
 \NumDefEFourTotal{} E4 violations without losing a legitimate request. D-B binds execution to the
 verifier's \emph{canonical} view, while the PDP matched the raw path, so the \texttt{/../} classes
@@ -69,12 +72,19 @@ B-optional reproduces every witness and, on the full corpus, raises the hits fro
 \AblTwoResult{}. No step affects \GA dispatch, the E4 dot-segment classes, or the rewrite false
 rejections.
 
-\paragraph{Cost.} False rejection is \FalseRejectionRate{}. Without rewriting, all D-A/D-B false
-rejects (\FRRNonRewriteN{}) come from two encoder seams: a catch-all parameter containing \texttt{/},
-and Kestrel keeping \texttt{\%2F} encoded. Strip-prefix, version rewriting and trailing-slash
-normalisation are rejected outright, because the proof binds the public URI while the executor
-sees the internal path. An executor-side defence therefore needs the gateway's public-to-internal
-path map. The strict profiles reject every percent-encoded identifier (\FRRAllStrict{} overall).
-Latency overhead at the executor is \DefenceOverheadPfifty{} (p50) and
-\DefenceOverheadPninetynine{} (p99). These figures are preliminary laptop measurements pending a
-dedicated server.
+\paragraph{Cost.} False rejection (\NumFRRRequests{} legitimate requests behind NGINX, counted only
+where B-edge served the request) is \FalseRejectionRate{}. Without rewriting, all D-A/D-B rejects
+(\FRRNonRewriteN{}) come from two encoder seams: a catch-all parameter containing \texttt{/}, and
+Kestrel keeping \texttt{\%2F} encoded. Strip-prefix, version and trailing-slash rewrites are all
+rejected (\FRRRewriteN{}): the proof binds the public URI, the executor sees the internal path.
+Over our synthetic mix this is \FRRAllDAB{} (\FRRAllN{}, 95\,\% CI \FRRAllDABCI{}). A path-only view
+MAC thus needs the gateway's public-to-internal path map, i.e.\ a contract naming the executor's
+view (\S\ref{sec:discussion:rec}). Stricter edge matching is no substitute: it rejects every
+percent-encoded identifier (\FRRAllStrict{} overall) and still passes \texttt{\#} and the override.
+At \PerfRate{}\,req/s, the only load without errors, D-B changes the median by
+\DefenceOverheadPfifty{} and the p99 by \DefenceOverheadPninetynine{} (Cliff's $\delta$
+\DefenceCliffFastapi{} and \DefenceCliffSpring{}, negligible); the HMAC adds no hop. D-A on FastAPI
+has a heavy tail (p95 \PerfDAFastapiPninetyfive{} vs.\ \PerfBEdgeFastapiPninetyfive{}\,ms), which we
+attribute to that executor's verifier call. From 500\,req/s every stack on our shared laptop
+saturated with NGINX 502s (no 401s) that did not reproduce between runs, so we rank nothing above
+\PerfRate{}\,req/s. Timings are preliminary pending a dedicated server.

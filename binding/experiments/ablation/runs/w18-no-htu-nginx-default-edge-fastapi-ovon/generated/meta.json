@@ -1,0 +1,27 @@
+{
+  "topology": {
+    "id": "w18-no-htu-nginx-default-edge-fastapi-ovon",
+    "gateway": "nginx",
+    "gateway_image": "nginx:1.30.7-alpine",
+    "profile": "default",
+    "placement": "edge",
+    "framework": "fastapi",
+    "executor_image": "bh-exec-fastapi:v2",
+    "override": "on",
+    "verifier": {
+      "image": "bh-verifier:ablate-no-htu",
+      "canon": "rfc3986",
+      "view_mac": "off",
+      "view_mac_key": "bh-test-view-mac-key",
+      "jti_cache": "on",
+      "iat_window": 60
+    },
+    "host_port": 29881,
+    "verify_mode": "off"
+  },
+  "stubs": {
+    "verifier": false,
+    "executor": false
+  },
+  "project": "w18-bh-w18-no-htu-nginx-default-edge-fastapi-ovon"
+}

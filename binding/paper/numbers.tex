@@ -1,5 +1,5 @@
 % numbers.tex -- every quantitative claim in the paper is a macro defined here.
-% Values marked TBD are not yet produced (ablations A1/A4/A5: W18).
+% All values filled (W20, 2026-11-24) from experiments/{defence,ablation}/REPORT.md and disclosure/TRIAGE.md.
 % Fill ONLY from recorded outputs (harness/logs/*, prevalence/*), and cite
 % the producing script next to each value. Never estimate.
 
@@ -183,7 +183,12 @@
 \newcommand{\NumHitsNginxOriginFixed}{105}     % §A3.2 table (26+17+10+11+11+11+9+10), all confirmed 3/3
 \newcommand{\NumJtiReplayEnvoyBoth}{606}       % §A3.3: 606/948 jti_replay on envoy-both
 \newcommand{\NumBindingGTwoClasses}{3}       % GATE_DECISION.md binding-soundness table (B1 '#', B2 APISIX %2f, B3 dot-segment catch-all)
-\newcommand{\NumDisclosures}{\TBD{NumDisclosures (W16 triage)}}
+% Disclosure drafts: disclosure/TRIAGE.md L20-21 (1 NEW: APISIX RC-W13-A; 3 KNOWN-UNFIXED: '#' in uvicorn-h11,
+% Go net/http, FrankenPHP) and L26 ("Drafts written for the 1 NEW + 3 KNOWN-UNFIXED items ... No report is sent").
+\newcommand{\NumDisclosures}{4}
+\newcommand{\NumDisclosuresNew}{1}             % TRIAGE.md L20
+\newcommand{\NumDisclosuresKnown}{3}           % TRIAGE.md L21
+\newcommand{\NumDisclosuresDocumented}{6}      % TRIAGE.md L22 (documented behaviour, no report)
 
 % --- E4 authorization soundness (A_client + PDP): e4/REPORT.md, e4/ROOT_CAUSES.md (W12) ---
 % Totals recomputed from e4/runs/summary.csv by figs/make_figs.py -> aggregate.json "e4".
@@ -244,14 +249,31 @@ reopen nothing}
 \newcommand{\AblFiveResult}{recommended equals default for every binding hit; strict removes the APISIX \%2f and dot-segment binding classes and both E4 allowlist breakers (RC1, RC2: 0 violations), but not the raw-\# class on nginx/kong or aspnet case folding}
 
 % --- E7/E8 defence ---
-\newcommand{\DefenceOverheadPfifty}{\TBD{DefenceOverheadP50}}
-\newcommand{\DefenceOverheadPninetynine}{\TBD{DefenceOverheadP99}}
+% Performance: experiments/defence/REPORT.md §6 (PRELIMINARY: shared laptop, host load 11-20);
+% analysis/perf_tests.csv rows 4 and 16 (D-B vs B-edge, 100 req/s, the only error-free load level) and
+% analysis/perf_latency.csv rows 2-5, 18-21. nginx 1.30.7 + fastapi / spring, 5 runs x 60 s, k6 1.3.0.
+% D-B median_diff_ms: fastapi -0.002, spring -0.003 (both |x| < 0.01 ms).
+\newcommand{\DefenceOverheadPfifty}{${<}\,0.01$\,ms}
+% D-B p99_diff_ms: fastapi +7.75, spring -0.203 (perf_tests.csv rows 4, 16).
+\newcommand{\DefenceOverheadPninetynine}{${+}7.75$\,ms (FastAPI) and ${-}0.20$\,ms (Spring)}
+\newcommand{\DefenceCliffFastapi}{${+}0.04$}  % perf_tests.csv row 4: cliffs_delta 0.043, negligible; MWU p 8.7e-24
+\newcommand{\DefenceCliffSpring}{${-}0.01$}   % perf_tests.csv row 16: cliffs_delta -0.008, negligible
+\newcommand{\DefenceMWUSpring}{0.06}           % perf_tests.csv row 16: mwu_p 0.0595
+\newcommand{\PerfRate}{100}                    % req/s, the only level free of overload and errors (REPORT.md §6)
+% D-A on fastapi at 100 req/s: p95 148.96 ms vs B-edge 3.97 ms; Cliff's delta +0.54 (large)
+% (perf_latency.csv rows 2, 4; perf_tests.csv row 3). REPORT.md §6 attributes it to the fastapi executor's
+% origin-mode verifier call (W4 implementation), not to D-A as a design.
+\newcommand{\PerfDAFastapiPninetyfive}{149}\newcommand{\PerfBEdgeFastapiPninetyfive}{4}
+\newcommand{\PerfDACliffFastapi}{${+}0.54$}
 % FRR: experiments/defence/REPORT.md §5, analysis/frr_tables.md + frr_summary.json (scripts/frr_client.py,
 % frr_analyse.py); attributable = B-edge served it, the defence did not; 4 frameworks behind nginx.
 \newcommand{\FalseRejectionRate}{\FRRNonRewriteDAB{} on non-rewriting traffic and 100\,\% under path rewriting}
 \newcommand{\FRRNonRewriteDAB}{5.3\,\%}        % D-A = D-B: 16/300 (S0+S4+S5)
 \newcommand{\FRRNonRewriteN}{16/300}
 \newcommand{\FRRAllDAB}{43.2\,\%}              % 216/500, Wilson 95% CI [38.9, 47.6]
+\newcommand{\FRRAllDABCI}{[38.9, 47.6]}    % frr_tables.md second table, D-A = D-B (frr_summary.json lo/hi)
+\newcommand{\FRRAllN}{216/500}                 % frr_tables.md ALL row
+\newcommand{\FRRRewriteN}{200/200}             % REPORT.md §4 A2 table "S1/S2/S3 rewrites (200)": 0 accepted; §5.2 S1-S3 rows
 \newcommand{\FRRAllStrict}{28.8\,\%}           % D-C = B-strict: 144/500, every percent-encoded id -> 400
 \newcommand{\FRRAllBOrigin}{40.0\,\%}          % 200/500
 \newcommand{\NumFRRRequests}{3{,}096}          % 516 per configuration x 6

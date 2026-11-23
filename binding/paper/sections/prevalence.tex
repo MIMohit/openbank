@@ -133,7 +133,9 @@ descriptions and defaults, not deployments. The harness turns them into
 executed operations: ablation \Abl{1} re-runs the \GA cases with the reference
 verifier changed one binding claim at a time (drop \htm, \htu or \ath; add the
 query; add an RFC~9530 body digest) and reports resolution for each.
-\todo{\Abl{1} results: \AblOneResult{} (W18, in progress). Until then, \S\ref{sec:harness:results} shows the override transition executed: a POST proof runs PUT or DELETE in all \NumFrameworks{} frameworks once override is on.}
+Results (\AblOneCases{} cases per topology): \AblOneResult{}. Body binding works only if a
+hop that holds the body checks the digest; what remains is header-carried semantics and the
+\GB differentials.
 
 \paragraph{Limitations.} The corpus over-represents hyperscalers and
 under-represents GraphQL, gRPC and private APIs such as Open Banking. A
