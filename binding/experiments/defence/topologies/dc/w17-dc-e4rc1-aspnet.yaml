@@ -1,0 +1,12 @@
+id: w17-dc-e4rc1-aspnet
+gateway: nginx
+profile: strict
+placement: edge
+framework: aspnet
+executor_image: bh-exec-aspnet:v2
+override: 'off'
+verifier:
+  image: bh-pdp-allow:latest
+  canon: strict
+  view_mac: 'off'
+host_port: 28899

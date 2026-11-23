@@ -1,0 +1,1 @@
+oracle[w13-haproxy-default-edge-express-ovon] {'topology': 'w13-haproxy-default-edge-express-ovon', 'cases': 948, 'accepted': 659, 'hits_raw': 11, 'hits_confirmed': 0, 'S1': 6, 'S2': 5, 'S3': 0, 'signatures': 11, 'max_res_hat': 3, 'b0': 0, 'propagation': 130, 'uncorrelated': 19}

@@ -1,0 +1,145 @@
+### fastapi / ovoff-verifyoff (OVERRIDE=off VERIFY_MODE=off)
+PASS  jti=null without DPoP header
+# 31/31 required checks passed
+### fastapi / ovoff-originraw (OVERRIDE=off VERIFY_MODE=origin-raw)
+PASS  verify[origin-raw] deny deleteAccount             -> 401 deleteAccount view=(DELETE /api/v1/accounts/acc-alice-1)  
+# 33/33 required checks passed
+### fastapi / ovoff-originrouted (OVERRIDE=off VERIFY_MODE=origin-routed)
+PASS  verify[origin-routed] deny deleteAccount             -> 401 deleteAccount view=(DELETE /api/v1/accounts/acc-alice-1)  
+# 33/33 required checks passed
+### fastapi / ovon-verifyoff (OVERRIDE=on VERIFY_MODE=off)
+INFO  override: header on GET (non-POST origin)      GET /api/v1/accounts/acc-alice-1 -> 200 deleteAccount
+# 31/31 required checks passed
+### fastapi / ovon-originraw (OVERRIDE=on VERIFY_MODE=origin-raw)
+PASS  verify[origin-raw] allow override POST->DELETE    -> 200 deleteAccount view=(POST /api/v1/accounts/acc-alice-1)  
+# 34/34 required checks passed
+### fastapi / ovon-originrouted (OVERRIDE=on VERIFY_MODE=origin-routed)
+PASS  verify[origin-routed] allow override POST->DELETE    -> 200 deleteAccount view=(DELETE /api/v1/accounts/acc-alice-1)  
+# 34/34 required checks passed
+### express / ovoff-verifyoff (OVERRIDE=off VERIFY_MODE=off)
+PASS  jti=null without DPoP header
+# 31/31 required checks passed
+### express / ovoff-originraw (OVERRIDE=off VERIFY_MODE=origin-raw)
+PASS  verify[origin-raw] deny deleteAccount             -> 401 deleteAccount view=(DELETE /api/v1/accounts/acc-alice-1)  
+# 33/33 required checks passed
+### express / ovoff-originrouted (OVERRIDE=off VERIFY_MODE=origin-routed)
+PASS  verify[origin-routed] deny deleteAccount             -> 401 deleteAccount view=(DELETE /api/v1/accounts/acc-alice-1)  
+# 33/33 required checks passed
+### express / ovon-verifyoff (OVERRIDE=on VERIFY_MODE=off)
+INFO  override: header on GET (non-POST origin)      GET /api/v1/accounts/acc-alice-1 -> 200 getAccount
+# 31/31 required checks passed
+### express / ovon-originraw (OVERRIDE=on VERIFY_MODE=origin-raw)
+PASS  verify[origin-raw] allow override POST->DELETE    -> 200 deleteAccount view=(POST /api/v1/accounts/acc-alice-1)  
+# 34/34 required checks passed
+### express / ovon-originrouted (OVERRIDE=on VERIFY_MODE=origin-routed)
+PASS  verify[origin-routed] allow override POST->DELETE    -> 200 deleteAccount view=(DELETE /api/v1/accounts/acc-alice-1)  
+# 34/34 required checks passed
+### django / ovoff-verifyoff (OVERRIDE=off VERIFY_MODE=off)
+PASS  jti=null without DPoP header
+# 31/31 required checks passed
+### django / ovoff-originraw (OVERRIDE=off VERIFY_MODE=origin-raw)
+PASS  verify[origin-raw] deny deleteAccount             -> 401 deleteAccount view=(DELETE /api/v1/accounts/acc-alice-1)  
+# 33/33 required checks passed
+### django / ovoff-originrouted (OVERRIDE=off VERIFY_MODE=origin-routed)
+PASS  verify[origin-routed] deny deleteAccount             -> 401 deleteAccount view=(DELETE /api/v1/accounts/acc-alice-1)  
+# 33/33 required checks passed
+### django / ovon-verifyoff (OVERRIDE=on VERIFY_MODE=off)
+INFO  override: header on GET (non-POST origin)      GET /api/v1/accounts/acc-alice-1 -> 200 getAccount
+# 31/31 required checks passed
+### django / ovon-originraw (OVERRIDE=on VERIFY_MODE=origin-raw)
+PASS  verify[origin-raw] allow override POST->DELETE    -> 200 deleteAccount view=(POST /api/v1/accounts/acc-alice-1)  
+# 34/34 required checks passed
+### django / ovon-originrouted (OVERRIDE=on VERIFY_MODE=origin-routed)
+PASS  verify[origin-routed] allow override POST->DELETE    -> 200 deleteAccount view=(DELETE /api/v1/accounts/acc-alice-1)  
+# 34/34 required checks passed
+### go-chi / ovoff-verifyoff (OVERRIDE=off VERIFY_MODE=off)
+PASS  jti=null without DPoP header
+# 31/31 required checks passed
+### go-chi / ovoff-originraw (OVERRIDE=off VERIFY_MODE=origin-raw)
+PASS  verify[origin-raw] deny deleteAccount             -> 401 deleteAccount view=(DELETE /api/v1/accounts/acc-alice-1)  
+# 33/33 required checks passed
+### go-chi / ovoff-originrouted (OVERRIDE=off VERIFY_MODE=origin-routed)
+PASS  verify[origin-routed] deny deleteAccount             -> 401 deleteAccount view=(DELETE /api/v1/accounts/acc-alice-1)  
+# 33/33 required checks passed
+### go-chi / ovon-verifyoff (OVERRIDE=on VERIFY_MODE=off)
+INFO  override: header on GET (non-POST origin)      GET /api/v1/accounts/acc-alice-1 -> 200 getAccount
+# 31/31 required checks passed
+### go-chi / ovon-originraw (OVERRIDE=on VERIFY_MODE=origin-raw)
+PASS  verify[origin-raw] allow override POST->DELETE    -> 200 deleteAccount view=(POST /api/v1/accounts/acc-alice-1)  
+# 34/34 required checks passed
+### go-chi / ovon-originrouted (OVERRIDE=on VERIFY_MODE=origin-routed)
+PASS  verify[origin-routed] allow override POST->DELETE    -> 200 deleteAccount view=(DELETE /api/v1/accounts/acc-alice-1)  
+# 34/34 required checks passed
+### spring / ovoff-verifyoff (OVERRIDE=off VERIFY_MODE=off)
+PASS  jti=null without DPoP header
+# 31/31 required checks passed
+### spring / ovoff-originraw (OVERRIDE=off VERIFY_MODE=origin-raw)
+PASS  verify[origin-raw] deny deleteAccount             -> 401 deleteAccount view=(DELETE /api/v1/accounts/acc-alice-1)  
+# 33/33 required checks passed
+### spring / ovoff-originrouted (OVERRIDE=off VERIFY_MODE=origin-routed)
+PASS  verify[origin-routed] deny deleteAccount             -> 401 deleteAccount view=(DELETE /api/v1/accounts/acc-alice-1)  
+# 33/33 required checks passed
+### spring / ovon-verifyoff (OVERRIDE=on VERIFY_MODE=off)
+INFO  override: header on GET (non-POST origin)      GET /api/v1/accounts/acc-alice-1 -> 200 getAccount
+# 31/31 required checks passed
+### spring / ovon-originraw (OVERRIDE=on VERIFY_MODE=origin-raw)
+PASS  verify[origin-raw] allow override POST->DELETE    -> 200 postAccount view=(POST /api/v1/accounts/acc-alice-1)  
+# 34/34 required checks passed
+### spring / ovon-originrouted (OVERRIDE=on VERIFY_MODE=origin-routed)
+PASS  verify[origin-routed] allow override POST->DELETE    -> 200 postAccount view=(POST /api/v1/accounts/acc-alice-1)  
+# 34/34 required checks passed
+### aspnet / ovoff-verifyoff (OVERRIDE=off VERIFY_MODE=off)
+PASS  jti=null without DPoP header
+# 31/31 required checks passed
+### aspnet / ovoff-originraw (OVERRIDE=off VERIFY_MODE=origin-raw)
+PASS  verify[origin-raw] deny deleteAccount             -> 401 deleteAccount view=(DELETE /api/v1/accounts/acc-alice-1)  
+# 33/33 required checks passed
+### aspnet / ovoff-originrouted (OVERRIDE=off VERIFY_MODE=origin-routed)
+PASS  verify[origin-routed] deny deleteAccount             -> 401 deleteAccount view=(DELETE /api/v1/accounts/acc-alice-1)  
+# 33/33 required checks passed
+### aspnet / ovon-verifyoff (OVERRIDE=on VERIFY_MODE=off)
+INFO  override: header on GET (non-POST origin)      GET /api/v1/accounts/acc-alice-1 -> 200 getAccount
+# 31/31 required checks passed
+### aspnet / ovon-originraw (OVERRIDE=on VERIFY_MODE=origin-raw)
+PASS  verify[origin-raw] allow override POST->DELETE    -> 200 deleteAccount view=(POST /api/v1/accounts/acc-alice-1)  
+# 34/34 required checks passed
+### aspnet / ovon-originrouted (OVERRIDE=on VERIFY_MODE=origin-routed)
+PASS  verify[origin-routed] allow override POST->DELETE    -> 200 deleteAccount view=(DELETE /api/v1/accounts/acc-alice-1)  
+# 34/34 required checks passed
+### rails / ovoff-verifyoff (OVERRIDE=off VERIFY_MODE=off)
+PASS  jti=null without DPoP header
+# 31/31 required checks passed
+### rails / ovoff-originraw (OVERRIDE=off VERIFY_MODE=origin-raw)
+PASS  verify[origin-raw] deny deleteAccount             -> 401 deleteAccount view=(DELETE /api/v1/accounts/acc-alice-1)  
+# 33/33 required checks passed
+### rails / ovoff-originrouted (OVERRIDE=off VERIFY_MODE=origin-routed)
+PASS  verify[origin-routed] deny deleteAccount             -> 401 deleteAccount view=(DELETE /api/v1/accounts/acc-alice-1)  
+# 33/33 required checks passed
+### rails / ovon-verifyoff (OVERRIDE=on VERIFY_MODE=off)
+INFO  override: header on GET (non-POST origin)      GET /api/v1/accounts/acc-alice-1 -> 200 getAccount
+# 31/31 required checks passed
+### rails / ovon-originraw (OVERRIDE=on VERIFY_MODE=origin-raw)
+PASS  verify[origin-raw] allow override POST->DELETE    -> 200 deleteAccount view=(POST /api/v1/accounts/acc-alice-1)  
+# 34/34 required checks passed
+### rails / ovon-originrouted (OVERRIDE=on VERIFY_MODE=origin-routed)
+PASS  verify[origin-routed] allow override POST->DELETE    -> 200 deleteAccount view=(DELETE /api/v1/accounts/acc-alice-1)  
+# 34/34 required checks passed
+### laravel / ovoff-verifyoff (OVERRIDE=off VERIFY_MODE=off)
+PASS  jti=null without DPoP header
+# 31/31 required checks passed
+### laravel / ovoff-originraw (OVERRIDE=off VERIFY_MODE=origin-raw)
+PASS  verify[origin-raw] deny deleteAccount             -> 401 deleteAccount view=(DELETE /api/v1/accounts/acc-alice-1)  
+# 33/33 required checks passed
+### laravel / ovoff-originrouted (OVERRIDE=off VERIFY_MODE=origin-routed)
+PASS  verify[origin-routed] deny deleteAccount             -> 401 deleteAccount view=(DELETE /api/v1/accounts/acc-alice-1)  
+# 33/33 required checks passed
+### laravel / ovon-verifyoff (OVERRIDE=on VERIFY_MODE=off)
+INFO  override: header on GET (non-POST origin)      GET /api/v1/accounts/acc-alice-1 -> 200 getAccount
+# 31/31 required checks passed
+### laravel / ovon-originraw (OVERRIDE=on VERIFY_MODE=origin-raw)
+PASS  verify[origin-raw] allow override POST->DELETE    -> 200 deleteAccount view=(POST /api/v1/accounts/acc-alice-1)  
+# 34/34 required checks passed
+### laravel / ovon-originrouted (OVERRIDE=on VERIFY_MODE=origin-routed)
+PASS  verify[origin-routed] allow override POST->DELETE    -> 200 deleteAccount view=(DELETE /api/v1/accounts/acc-alice-1)  
+# 34/34 required checks passed
+matrix rc=0

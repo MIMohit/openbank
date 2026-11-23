@@ -1,0 +1,41 @@
+{
+  "confirmed": [
+    "dotseg-admin-del",
+    "dotseg-admin-list",
+    "dotseg-bob-del",
+    "dotseg-bob-get",
+    "dotseg-bob-getv2",
+    "dotseg-bob-put",
+    "dotseg-v2v1-admin",
+    "dslash-accounts-bob",
+    "dslash-admin-del",
+    "dslash-admin-list",
+    "encdotseg-admin-list",
+    "encdotseg-bob-get",
+    "matrix-accounts-bob",
+    "matrix-admin-del",
+    "matrix-admin-list"
+  ],
+  "flaky": [],
+  "n_confirmed": 15,
+  "n_flaky": 0,
+  "per_vector_counts": {
+    "dotseg-admin-del": 3,
+    "dotseg-admin-list": 3,
+    "dotseg-bob-del": 3,
+    "dotseg-bob-get": 3,
+    "dotseg-bob-getv2": 3,
+    "dotseg-bob-put": 3,
+    "dotseg-v2v1-admin": 3,
+    "dslash-accounts-bob": 3,
+    "dslash-admin-del": 3,
+    "dslash-admin-list": 3,
+    "encdotseg-admin-list": 3,
+    "encdotseg-bob-get": 3,
+    "matrix-accounts-bob": 3,
+    "matrix-admin-del": 3,
+    "matrix-admin-list": 3
+  },
+  "reps": 3,
+  "topology": "w12-block-kng-spring-def"
+}

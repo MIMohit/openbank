@@ -1,0 +1,30 @@
+paper,oracle,layer,binding,placement,artefact
+hosseyni2024csf,formal proof of authorization/session-integrity properties,protocol (symbolic WIM),"DPoP(htm,htu,ath,nonce,cnf.jkt); mTLS",no (RS = single atomic process; Alg.12 p39 ePrint),paper only (pen-and-paper proof)
+hosseyni2024tops,formal proof,protocol (symbolic WIM),DPoP; mTLS; FAPI Message Signing (signed resource requests),"no (RS atomic process, App. C.12 p71-74); reverse proxy only mentioned as cause of A7 response tampering (p12)",paper only
+hosseyni2022tr,formal proof,protocol (symbolic WIM),DPoP; mTLS,no,report
+fapiam2025,n/a,threat model spec,sender-constraining (DPoP/mTLS) assumed,"no ('TLS intercepting proxy logs' only as leak source, Sec 7.7)",spec
+jabiyev2021treqs,parsing discrepancy (body/framing boundary),HTTP/1.1 proxy<->server parsing,no,proxy+backend chains (no authz verifier),UNVERIFIED (not checked this session)
+jabiyev2024gudifu,parsing discrepancy across whole request (graybox),HTTP/1.1 proxies,no,proxy chains,public: github.com/bahruzjabiyev/gudifu-fuzzer
+mu2025hdhunter,desync discrepancy (coverage-guided differential),HTTP requests/responses/CGI,no,proxy/server chains,"public (Zenodo 14557763, HDHunter-1.0.0.zip)"
+kallus2024garden,parse-tree discrepancy,HTTP/1.1 origin+gateway,no,gateway transformations,public: github.com/narfindustries/http-garden
+akhavani2025waffled,WAF verdict allow + framework parses malicious payload,WAF vs. web framework (body content types),no (no token/signature-binding content),check layer (WAF) in front of execute layer (framework),public: github.com/sa-akhavani/waffled (bypass requests restricted)
+topcuoglu2025sync,n/a (defence); consistency of per-hop processing history,"proxy chain (Apache, NGINX, HAProxy, Varnish, Cloudflare)",no (does not bind to client proof),multi-hop proxies; origin optional,NOT public: github.com/http-request-sync/defeats_discrepancy_attacks 404; user has 0 repos (checked 2026-11-23)
+chen2016host,divergent Host interpretation -> cache poisoning / filter bypass,HTTP Host semantics across proxies/firewalls/CDNs,no,middlebox + server,UNVERIFIED
+mirheidari2020cached,cache stores private response (path confusion),cache vs origin path interpretation,no,CDN/cache + origin,UNVERIFIED
+golinelli2026post,response equivalence (GET-converted vs POST) + CSRF-token acceptance per method,web application/framework routing,"no (CSRF tokens, not PoP)",no (single app; mentions nginx proxy_method p2),public: github.com/Golim/method-interchange
+mancinas2026,replay admitted (jti cache eviction); 401 vs accept for XFCC loss,"RS deployment (Spring Security, Keycloak, NGINX/Envoy mTLS termination)","DPoP (jti/iat), mTLS (cnf.x5t#S256)","partly (TLS-terminating intermediary for mTLS, Sec VI-B p7)",public: github.com/sergioemancinas/dpop-replay-threshold
+yang2026jwteemo,parsing discrepancy across libraries + resource exhaustion,JWT/JOSE libraries,no (JWS/JWE level only),no,public: github.com/JWTeemo/JWTeemo
+philippaerts2022oauch,spec-compliance test verdicts,OAuth authorization servers,no RS-side binding,no,public tool (oauch.io; github.com/DistriNet/OAuch per prior review)
+zhou2026mcp,authentication weakness checks,MCP servers (OAuth RS),no,no,UNVERIFIED
+gallo2026continuity,none (formal argument),abstract authority propagation (multi-hop),discusses DPoP/Token Binding conceptually,multi-hop chains abstractly,none
+kim2026tbsg,none (retrospective analysis),generic trust boundaries,signatures/tokens accepted yet insufficient (abstract),boundary-level,none
+allam2026thread,n/a,standards,DPoP htm/htu,argues proxies rewrite URIs,attached draft proposal
+madden2025thread,n/a,standards (gateway -> downstream RS),DPoP htu,"yes, informally (edge gateway vs downstream RS; phantom-token pattern)",none
+sep1932,n/a,standards (MCP),DPoP,no,spec draft
+mcpconf369,per-check reject expected,conformance tests (MCP RS),DPoP,no (single endpoint),test suite (in progress)
+grpcgw2026cve37236,method-ACL bypass,upstream proxy/WAF -> grpc-gateway router,no (method ACL),"edge check, backend override",advisory + fix commit
+traefik2026cve40912,path-ACL bypass,gateway (Traefik) -> ForwardAuth -> backend,no (path ACL),edge forward-auth,advisory
+istio2021cve31920,path-ACL bypass,mesh (Envoy RBAC/AuthorizationPolicy) -> backend,no,sidecar/edge,advisory
+opaenvoy2026cve26205,path-ACL bypass,Envoy ext_authz PDP (OPA),no,ext_authz,advisory
+envoy2019ghsa,path-ACL bypass,Envoy,no,ext_authz,advisory
+THIS_WORK(planned),verifier allow AND executed op_id != op(pi) (binding-soundness oracle),gateway x verifier placement x framework,DPoP htm/htu/ath/jti (+ trust headers),edge / origin / both,planned public harness

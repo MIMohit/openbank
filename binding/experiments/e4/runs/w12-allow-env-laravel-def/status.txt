@@ -1,0 +1,1 @@
+w12-allow-env-laravel-def runner_rc=0 secs=46 violations=0 e4_runner[w12-allow-env-laravel-def] wrote /Users/mimohit/openbank/binding/harness/logs/w12-allow-env-laravel-def/runner.jsonl: {'sent': 29, 'errors': 0}

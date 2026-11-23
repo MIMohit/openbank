@@ -1,0 +1,277 @@
+{
+ "10.1109/csf61375.2024.00002": {
+  "title": "Formal Security Analysis of the OpenID FAPI 2.0: Accompanying a Standardization Process",
+  "authors": [
+   "Pedram Hosseyni",
+   "Ralf K\u00fcsters",
+   "Tim W\u00fcrtele"
+  ],
+  "container": "2024 IEEE 37th Computer Security Foundations Symposium (CSF)",
+  "year": 2024,
+  "pages": "589-604",
+  "publisher": "IEEE",
+  "type": "proceedings-article"
+ },
+ "10.1145/3699716": {
+  "title": "Formal Security Analysis of the OpenID FAPI 2.0 Family of Protocols: Accompanying a Standardization Process",
+  "authors": [
+   "Pedram Hosseyni",
+   "Ralf K\u00fcsters",
+   "Tim W\u00fcrtele"
+  ],
+  "container": "ACM Transactions on Privacy and Security",
+  "year": 2024,
+  "pages": "1-36",
+  "publisher": "Association for Computing Machinery (ACM)",
+  "type": "journal-article"
+ },
+ "10.1109/SP.2019.00067": {
+  "title": "An Extensive Formal Security Analysis of the OpenID Financial-Grade API",
+  "authors": [
+   "Daniel Fett",
+   "Pedram Hosseyni",
+   "Ralf Kusters"
+  ],
+  "container": "2019 IEEE Symposium on Security and Privacy (SP)",
+  "year": 2019,
+  "pages": "453-471",
+  "publisher": "IEEE",
+  "type": "proceedings-article"
+ },
+ "10.1145/2976749.2978385": {
+  "title": "A Comprehensive Formal Security Analysis of OAuth 2.0",
+  "authors": [
+   "Daniel Fett",
+   "Ralf K\u00fcsters",
+   "Guido Schmitz"
+  ],
+  "container": "Proceedings of the 2016 ACM SIGSAC Conference on Computer and Communications Security",
+  "year": 2016,
+  "pages": "1204-1215",
+  "publisher": "ACM",
+  "type": "proceedings-article"
+ },
+ "10.1109/acsac67867.2025.00062": {
+  "title": "WAFFLED: Exploiting Parsing Discrepancies to Bypass Web Application Firewalls",
+  "authors": [
+   "Seyed Ali Akhavani",
+   "Bahruz Jabiyev",
+   "Ben Kallus",
+   "Cem Topcuoglu",
+   "Sergey Bratus",
+   "Engin Kirda"
+  ],
+  "container": "2025 IEEE Annual Computer Security Applications Conference (ACSAC)",
+  "year": 2025,
+  "pages": "689-702",
+  "publisher": "IEEE",
+  "type": "proceedings-article"
+ },
+ "10.1145/3460120.3485384": {
+  "title": "T-Reqs: HTTP Request Smuggling with Differential Fuzzing",
+  "authors": [
+   "Bahruz Jabiyev",
+   "Steven Sprecher",
+   "Kaan Onarlioglu",
+   "Engin Kirda"
+  ],
+  "container": "Proceedings of the 2021 ACM SIGSAC Conference on Computer and Communications Security",
+  "year": 2021,
+  "pages": "1805-1820",
+  "publisher": "ACM",
+  "type": "proceedings-article"
+ },
+ "10.1145/3678890.3678904": {
+  "title": "Gudifu: Guided Differential Fuzzing for HTTP Request Parsing Discrepancies",
+  "authors": [
+   "Bahruz Jabiyev",
+   "Anthony Gavazzi",
+   "Kaan Onarlioglu",
+   "Engin Kirda"
+  ],
+  "container": "The 27th International Symposium on Research in Attacks, Intrusions and Defenses",
+  "year": 2024,
+  "pages": "235-247",
+  "publisher": "ACM",
+  "type": "proceedings-article"
+ },
+ "10.1145/2976749.2978394": {
+  "title": "Host of Troubles",
+  "authors": [
+   "Jianjun Chen",
+   "Jian Jiang",
+   "Haixin Duan",
+   "Nicholas Weaver",
+   "Tao Wan",
+   "Vern Paxson"
+  ],
+  "container": "Proceedings of the 2016 ACM SIGSAC Conference on Computer and Communications Security",
+  "year": 2016,
+  "pages": "1516-1527",
+  "publisher": "ACM",
+  "type": "proceedings-article"
+ },
+ "10.1109/raid67961.2025.00059": {
+  "title": "H2Fuzz: Guided, Black-box, Differential Fuzzing for HTTP/2-to-HTTP/1 Conversion Anomalies",
+  "authors": [
+   "Anthony Gavazzi",
+   "Weixin Kong",
+   "Engin Kirda"
+  ],
+  "container": "2025 28th International Symposium on Research in Attacks, Intrusions and Defenses (RAID)",
+  "year": 2025,
+  "pages": "920-934",
+  "publisher": "IEEE",
+  "type": "proceedings-article"
+ },
+ "10.1145/3545948.3545955": {
+  "title": "OAuch: Exploring Security Compliance in the OAuth\u00a02.0 Ecosystem",
+  "authors": [
+   "Pieter Philippaerts",
+   "Davy Preuveneers",
+   "Wouter Joosen"
+  ],
+  "container": "Proceedings of the 25th International Symposium on Research in Attacks, Intrusions and Defenses",
+  "year": 2022,
+  "pages": "460-481",
+  "publisher": "ACM",
+  "type": "proceedings-article"
+ },
+ "10.1145/3374664.3375750": {
+  "title": "CREHMA",
+  "authors": [
+   "Hoai Viet Nguyen",
+   "Luigi Lo Iacono"
+  ],
+  "container": "Proceedings of the Tenth ACM Conference on Data and Application Security and Privacy",
+  "year": 2020,
+  "pages": "49-60",
+  "publisher": "ACM",
+  "type": "proceedings-article"
+ },
+ "10.1007/978-3-030-78120-0_22": {
+  "title": "Less is Often More: Header Whitelisting as Semantic Gap Mitigation in HTTP-Based Software Systems",
+  "authors": [
+   "Andre B\u00fcttner",
+   "Hoai Viet Nguyen",
+   "Nils Gruschka",
+   "Luigi Lo Iacono"
+  ],
+  "container": "IFIP Advances in Information and Communication Technology",
+  "year": 2021,
+  "pages": "332-347",
+  "publisher": "Springer International Publishing",
+  "type": "book-chapter"
+ },
+ "10.1007/978-3-031-17143-7_9": {
+  "title": "Equivocal URLs: Understanding the\u00a0Fragmented Space of\u00a0URL Parser Implementations",
+  "authors": [
+   "Joshua Reynolds",
+   "Adam Bates",
+   "Michael Bailey"
+  ],
+  "container": "Lecture Notes in Computer Science",
+  "year": 2022,
+  "pages": "166-185",
+  "publisher": "Springer Nature Switzerland",
+  "type": "book-chapter"
+ },
+ "10.1109/DSN53405.2022.00014": {
+  "title": "HDiff: A Semi-automatic Framework for Discovering Semantic Gap Attack in HTTP Implementations",
+  "authors": [
+   "Kaiwen Shen",
+   "Jianyu Lu",
+   "Yaru Yang",
+   "Jianjun Chen",
+   "Mingming Zhang",
+   "Haixin Duan",
+   "Jia Zhang",
+   "Xiaofeng Zheng"
+  ],
+  "container": "2022 52nd Annual IEEE/IFIP International Conference on Dependable Systems and Networks (DSN)",
+  "year": 2022,
+  "pages": "1-13",
+  "publisher": "IEEE",
+  "type": "proceedings-article"
+ },
+ "10.17487/rfc9449": {
+  "title": "OAuth 2.0 Demonstrating Proof of Possession (DPoP)",
+  "authors": [
+   "D. Fett",
+   "B. Campbell",
+   "J. Bradley",
+   "T. Lodderstedt",
+   "M. Jones",
+   "D. Waite"
+  ],
+  "container": "",
+  "year": 2023,
+  "pages": null,
+  "publisher": "RFC Editor",
+  "type": "report"
+ },
+ "10.17487/rfc8705": {
+  "title": "OAuth 2.0 Mutual-TLS Client Authentication and Certificate-Bound Access\u00a0Tokens",
+  "authors": [
+   "B. Campbell",
+   "J. Bradley",
+   "N. Sakimura",
+   "T. Lodderstedt"
+  ],
+  "container": "",
+  "year": 2020,
+  "pages": null,
+  "publisher": "RFC Editor",
+  "type": "report"
+ },
+ "10.17487/rfc9421": {
+  "title": "HTTP Message Signatures",
+  "authors": [
+   "M. Sporny"
+  ],
+  "container": "",
+  "year": 2024,
+  "pages": null,
+  "publisher": "RFC Editor",
+  "type": "report"
+ },
+ "10.17487/rfc9440": {
+  "title": "Client-Cert HTTP Header Field",
+  "authors": [
+   "B. Campbell",
+   "M. Bishop"
+  ],
+  "container": "",
+  "year": 2023,
+  "pages": null,
+  "publisher": "RFC Editor",
+  "type": "report"
+ },
+ "10.17487/rfc9700": {
+  "title": "Best Current Practice for OAuth 2.0 Security",
+  "authors": [
+   "T. Lodderstedt",
+   "J. Bradley",
+   "A. Labunets",
+   "D. Fett"
+  ],
+  "container": "",
+  "year": 2025,
+  "pages": null,
+  "publisher": "RFC Editor",
+  "type": "report"
+ },
+ "10.1145/3319535.3354215": {
+  "title": "Your Cache Has Fallen",
+  "authors": [
+   "Hoai Viet Nguyen",
+   "Luigi Lo Iacono",
+   "Hannes Federrath"
+  ],
+  "container": "Proceedings of the 2019 ACM SIGSAC Conference on Computer and Communications Security",
+  "year": 2019,
+  "pages": "1915-1936",
+  "publisher": "ACM",
+  "type": "proceedings-article"
+ }
+}

@@ -1,0 +1,1 @@
+oracle[w14-envoy-default-origin-fastapi-ovon] {'topology': 'w14-envoy-default-origin-fastapi-ovon', 'cases': 948, 'accepted': 857, 'hits_raw': 19, 'hits_confirmed': 0, 'S1': 10, 'S2': 9, 'S3': 0, 'signatures': 16, 'max_res_hat': 3, 'b0': 0, 'propagation': 130, 'uncorrelated': 13}

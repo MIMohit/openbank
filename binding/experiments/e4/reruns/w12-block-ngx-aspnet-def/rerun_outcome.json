@@ -1,0 +1,33 @@
+{
+  "confirmed": [
+    "case-admin-del",
+    "case-admin-list",
+    "dotseg-admin-del",
+    "dotseg-admin-list",
+    "dotseg-bob-del",
+    "dotseg-bob-get",
+    "dotseg-bob-getv2",
+    "dotseg-bob-put",
+    "dotseg-v2v1-admin",
+    "encdotseg-admin-list",
+    "encdotseg-bob-get"
+  ],
+  "flaky": [],
+  "n_confirmed": 11,
+  "n_flaky": 0,
+  "per_vector_counts": {
+    "case-admin-del": 3,
+    "case-admin-list": 3,
+    "dotseg-admin-del": 3,
+    "dotseg-admin-list": 3,
+    "dotseg-bob-del": 3,
+    "dotseg-bob-get": 3,
+    "dotseg-bob-getv2": 3,
+    "dotseg-bob-put": 3,
+    "dotseg-v2v1-admin": 3,
+    "encdotseg-admin-list": 3,
+    "encdotseg-bob-get": 3
+  },
+  "reps": 3,
+  "topology": "w12-block-ngx-aspnet-def"
+}

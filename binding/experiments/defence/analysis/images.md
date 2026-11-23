@@ -1,0 +1,19 @@
+| image | id |
+|---|---|
+| `apache/apisix:3.21.0-debian` | `sha256:1741a8e1186e` |
+| `bh-exec-aspnet:defence` | `sha256:df600480d9ff` |
+| `bh-exec-aspnet:v2` | `sha256:8e8dd4011848` |
+| `bh-exec-express:defence` | `sha256:e713363509ad` |
+| `bh-exec-express:v2` | `sha256:c9605a0a520f` |
+| `bh-exec-fastapi:defence` | `sha256:b985137bf76e` |
+| `bh-exec-fastapi:v2` | `sha256:8955b9a3f6fe` |
+| `bh-exec-rails:v2` | `sha256:843848b529d7` |
+| `bh-exec-spring:defence` | `sha256:63ac61e83f12` |
+| `bh-exec-spring:v2` | `sha256:68f4b8ad37a1` |
+| `bh-pdp-allow:latest` | `sha256:8981036e677c` |
+| `bh-pdp-block:latest` | `sha256:8515bfc52ef2` |
+| `bh-verifier:latest` | `sha256:263f3231d20f` |
+| `bh-verifier:w17-optional` | `sha256:764dbe1b3582` |
+| `kong:3.9.5` | `sha256:e9b87ddd0e60` |
+| `nginx:1.30.7-alpine` | `sha256:caf4e1e032a2` |
+| `python:3.12.16-slim-trixie` | `sha256:5e2bdb1b0d54` |

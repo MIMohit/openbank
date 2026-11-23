@@ -1,0 +1,2662 @@
+[
+  {
+    "id": "smoke-envoy-default-edge",
+    "gateway": "envoy",
+    "profile": "default",
+    "image": "envoyproxy/envoy:v1.39.6",
+    "digest": "sha256:1fde8efee875e4e4f6a39a90fe49d9338e1caacce5762034ef9fb4bbb9ad6aed",
+    "ok": true,
+    "up_s": 21.0,
+    "jti": "f2d78e07-656c-4f3d-9322-650b04c76f35",
+    "status": 200,
+    "body": "{\"op_id\": \"getAccount\", \"framework\": \"stub\", \"method\": \"GET\", \"path_params\": {\"id\": \"acc-alice-1\"}, \"stub\": true}",
+    "verifier": [
+      {
+        "ts": "2026-11-22T18:51:25.103081+00:00",
+        "adapter": "envoy",
+        "jti": "f2d78e07-656c-4f3d-9322-650b04c76f35",
+        "view_method": "GET",
+        "view_uri": "/api/v1/accounts/acc-alice-1",
+        "view_host": "api.bench.test",
+        "view_proto": "http",
+        "htm": "GET",
+        "htu": "http://api.bench.test/api/v1/accounts/acc-alice-1",
+        "canon_mode": "rfc3986",
+        "decision": "allow",
+        "reason": "STUB-ALWAYS-ALLOW",
+        "sub": "stub",
+        "jkt": "stub",
+        "has_authorization": true,
+        "has_dpop": true,
+        "stub": true
+      }
+    ],
+    "executor": [
+      {
+        "ts": "2026-11-22T18:51:25.500412+00:00",
+        "framework": "stub",
+        "jti": "f2d78e07-656c-4f3d-9322-650b04c76f35",
+        "op_id": "getAccount",
+        "route_template": "/api/v1/accounts/{id}",
+        "raw_method": "GET",
+        "effective_method": "GET",
+        "raw_target": "/api/v1/accounts/acc-alice-1",
+        "path_params": {
+          "id": "acc-alice-1"
+        },
+        "query": "",
+        "trust_headers": {
+          "x-forwarded-proto": "http",
+          "x-verified-sub": "stub",
+          "x-verified-jkt": "stub"
+        },
+        "denied": false,
+        "status": 200,
+        "stub": true
+      }
+    ],
+    "checks": {
+      "http_200": true,
+      "verifier_once": true,
+      "executor_once": true,
+      "adapter": true,
+      "view_method": true,
+      "view_uri": true,
+      "view_host": true,
+      "auth+dpop_to_verifier": true,
+      "exec_op": true,
+      "exec_target": true
+    }
+  },
+  {
+    "id": "smoke-envoy-recommended-edge",
+    "gateway": "envoy",
+    "profile": "recommended",
+    "image": "envoyproxy/envoy:v1.39.6",
+    "digest": "sha256:1fde8efee875e4e4f6a39a90fe49d9338e1caacce5762034ef9fb4bbb9ad6aed",
+    "ok": true,
+    "up_s": 11.3,
+    "jti": "b3e8f94a-c054-4680-8e73-3c5181b626a8",
+    "status": 200,
+    "body": "{\"op_id\": \"getAccount\", \"framework\": \"stub\", \"method\": \"GET\", \"path_params\": {\"id\": \"acc-alice-1\"}, \"stub\": true}",
+    "verifier": [
+      {
+        "ts": "2026-11-22T18:51:53.969200+00:00",
+        "adapter": "envoy",
+        "jti": "b3e8f94a-c054-4680-8e73-3c5181b626a8",
+        "view_method": "GET",
+        "view_uri": "/api/v1/accounts/acc-alice-1",
+        "view_host": "api.bench.test",
+        "view_proto": "http",
+        "htm": "GET",
+        "htu": "http://api.bench.test/api/v1/accounts/acc-alice-1",
+        "canon_mode": "rfc3986",
+        "decision": "allow",
+        "reason": "STUB-ALWAYS-ALLOW",
+        "sub": "stub",
+        "jkt": "stub",
+        "has_authorization": true,
+        "has_dpop": true,
+        "stub": true
+      }
+    ],
+    "executor": [
+      {
+        "ts": "2026-11-22T18:51:54.022529+00:00",
+        "framework": "stub",
+        "jti": "b3e8f94a-c054-4680-8e73-3c5181b626a8",
+        "op_id": "getAccount",
+        "route_template": "/api/v1/accounts/{id}",
+        "raw_method": "GET",
+        "effective_method": "GET",
+        "raw_target": "/api/v1/accounts/acc-alice-1",
+        "path_params": {
+          "id": "acc-alice-1"
+        },
+        "query": "",
+        "trust_headers": {
+          "x-forwarded-for": "172.24.0.1",
+          "x-forwarded-proto": "http",
+          "x-verified-sub": "stub",
+          "x-verified-jkt": "stub"
+        },
+        "denied": false,
+        "status": 200,
+        "stub": true
+      }
+    ],
+    "checks": {
+      "http_200": true,
+      "verifier_once": true,
+      "executor_once": true,
+      "adapter": true,
+      "view_method": true,
+      "view_uri": true,
+      "view_host": true,
+      "auth+dpop_to_verifier": true,
+      "exec_op": true,
+      "exec_target": true
+    }
+  },
+  {
+    "id": "smoke-envoy-strict-edge",
+    "gateway": "envoy",
+    "profile": "strict",
+    "image": "envoyproxy/envoy:v1.39.6",
+    "digest": "sha256:1fde8efee875e4e4f6a39a90fe49d9338e1caacce5762034ef9fb4bbb9ad6aed",
+    "ok": true,
+    "up_s": 19.9,
+    "jti": "d73501ac-b332-46b0-b318-772951c99457",
+    "status": 200,
+    "body": "{\"op_id\": \"getAccount\", \"framework\": \"stub\", \"method\": \"GET\", \"path_params\": {\"id\": \"acc-alice-1\"}, \"stub\": true}",
+    "verifier": [
+      {
+        "ts": "2026-11-22T18:52:33.310872+00:00",
+        "adapter": "envoy",
+        "jti": "d73501ac-b332-46b0-b318-772951c99457",
+        "view_method": "GET",
+        "view_uri": "/api/v1/accounts/acc-alice-1",
+        "view_host": "api.bench.test",
+        "view_proto": "http",
+        "htm": "GET",
+        "htu": "http://api.bench.test/api/v1/accounts/acc-alice-1",
+        "canon_mode": "rfc3986",
+        "decision": "allow",
+        "reason": "STUB-ALWAYS-ALLOW",
+        "sub": "stub",
+        "jkt": "stub",
+        "has_authorization": true,
+        "has_dpop": true,
+        "stub": true
+      }
+    ],
+    "executor": [
+      {
+        "ts": "2026-11-22T18:52:33.322541+00:00",
+        "framework": "stub",
+        "jti": "d73501ac-b332-46b0-b318-772951c99457",
+        "op_id": "getAccount",
+        "route_template": "/api/v1/accounts/{id}",
+        "raw_method": "GET",
+        "effective_method": "GET",
+        "raw_target": "/api/v1/accounts/acc-alice-1",
+        "path_params": {
+          "id": "acc-alice-1"
+        },
+        "query": "",
+        "trust_headers": {
+          "x-forwarded-for": "172.24.0.1",
+          "x-forwarded-proto": "http",
+          "x-verified-sub": "stub",
+          "x-verified-jkt": "stub"
+        },
+        "denied": false,
+        "status": 200,
+        "stub": true
+      }
+    ],
+    "checks": {
+      "http_200": true,
+      "verifier_once": true,
+      "executor_once": true,
+      "adapter": true,
+      "view_method": true,
+      "view_uri": true,
+      "view_host": true,
+      "auth+dpop_to_verifier": true,
+      "exec_op": true,
+      "exec_target": true
+    }
+  },
+  {
+    "id": "smoke-traefik-default-edge",
+    "gateway": "traefik",
+    "profile": "default",
+    "image": "traefik:v3.7.19",
+    "digest": "sha256:a6c0194dda77bcb804824580f36fa7edc56e315b1acfe933366c8b52844a78a4",
+    "ok": true,
+    "up_s": 21.8,
+    "jti": "8bbe94a1-fb45-4d3c-b595-bb541e58c744",
+    "status": 200,
+    "body": "{\"op_id\": \"getAccount\", \"framework\": \"stub\", \"method\": \"GET\", \"path_params\": {\"id\": \"acc-alice-1\"}, \"stub\": true}",
+    "verifier": [
+      {
+        "ts": "2026-11-22T18:53:04.366315+00:00",
+        "adapter": "fwd",
+        "jti": "8bbe94a1-fb45-4d3c-b595-bb541e58c744",
+        "view_method": "GET",
+        "view_uri": "/api/v1/accounts/acc-alice-1",
+        "view_host": "api.bench.test",
+        "view_proto": "http",
+        "htm": "GET",
+        "htu": "http://api.bench.test/api/v1/accounts/acc-alice-1",
+        "canon_mode": "rfc3986",
+        "decision": "allow",
+        "reason": "STUB-ALWAYS-ALLOW",
+        "sub": "stub",
+        "jkt": "stub",
+        "has_authorization": true,
+        "has_dpop": true,
+        "stub": true
+      }
+    ],
+    "executor": [
+      {
+        "ts": "2026-11-22T18:53:04.380578+00:00",
+        "framework": "stub",
+        "jti": "8bbe94a1-fb45-4d3c-b595-bb541e58c744",
+        "op_id": "getAccount",
+        "route_template": "/api/v1/accounts/{id}",
+        "raw_method": "GET",
+        "effective_method": "GET",
+        "raw_target": "/api/v1/accounts/acc-alice-1",
+        "path_params": {
+          "id": "acc-alice-1"
+        },
+        "query": "",
+        "trust_headers": {
+          "x-forwarded-for": "172.23.0.1",
+          "x-forwarded-host": "api.bench.test",
+          "x-forwarded-port": "80",
+          "x-forwarded-proto": "http",
+          "x-forwarded-server": "d97c05b7abcd",
+          "x-verified-jkt": "stub",
+          "x-verified-sub": "stub"
+        },
+        "denied": false,
+        "status": 200,
+        "stub": true
+      }
+    ],
+    "checks": {
+      "http_200": true,
+      "verifier_once": true,
+      "executor_once": true,
+      "adapter": true,
+      "view_method": true,
+      "view_uri": true,
+      "view_host": true,
+      "auth+dpop_to_verifier": true,
+      "exec_op": true,
+      "exec_target": true
+    }
+  },
+  {
+    "id": "smoke-traefik-recommended-edge",
+    "gateway": "traefik",
+    "profile": "recommended",
+    "image": "traefik:v3.7.19",
+    "digest": "sha256:a6c0194dda77bcb804824580f36fa7edc56e315b1acfe933366c8b52844a78a4",
+    "ok": true,
+    "stubs": {
+      "verifier": true,
+      "executor": true
+    },
+    "up_s": 7.0,
+    "jti": "141300a1-723c-4cf3-aee5-dc72c19c11c6",
+    "status": 200,
+    "body": "{\"op_id\": \"getAccount\", \"framework\": \"stub\", \"method\": \"GET\", \"path_params\": {\"id\": \"acc-alice-1\"}, \"stub\": true}",
+    "verifier": [
+      {
+        "ts": "2026-11-22T18:58:23.578365+00:00",
+        "adapter": "fwd",
+        "jti": "141300a1-723c-4cf3-aee5-dc72c19c11c6",
+        "view_method": "GET",
+        "view_uri": "/api/v1/accounts/acc-alice-1",
+        "view_host": "api.bench.test",
+        "view_proto": "http",
+        "htm": "GET",
+        "htu": "http://api.bench.test/api/v1/accounts/acc-alice-1",
+        "canon_mode": "rfc3986",
+        "decision": "allow",
+        "reason": "STUB-ALWAYS-ALLOW",
+        "sub": "stub",
+        "jkt": "stub",
+        "has_authorization": true,
+        "has_dpop": true,
+        "stub": true
+      }
+    ],
+    "executor": [
+      {
+        "ts": "2026-11-22T18:58:23.593490+00:00",
+        "framework": "stub",
+        "jti": "141300a1-723c-4cf3-aee5-dc72c19c11c6",
+        "op_id": "getAccount",
+        "route_template": "/api/v1/accounts/{id}",
+        "raw_method": "GET",
+        "effective_method": "GET",
+        "raw_target": "/api/v1/accounts/acc-alice-1",
+        "path_params": {
+          "id": "acc-alice-1"
+        },
+        "query": "",
+        "trust_headers": {
+          "x-forwarded-for": "172.23.0.1",
+          "x-forwarded-host": "api.bench.test",
+          "x-forwarded-port": "80",
+          "x-forwarded-proto": "http",
+          "x-forwarded-server": "3fa7f480c11b",
+          "x-verified-jkt": "stub",
+          "x-verified-sub": "stub"
+        },
+        "denied": false,
+        "status": 200,
+        "stub": true
+      }
+    ],
+    "checks": {
+      "http_200": true,
+      "verifier_once": true,
+      "executor_once": true,
+      "adapter": true,
+      "view_method": true,
+      "view_uri": true,
+      "view_host": true,
+      "auth+dpop_to_verifier": true,
+      "decision_allow": true,
+      "exec_op": true,
+      "exec_target": true
+    }
+  },
+  {
+    "id": "smoke-traefik-strict-edge",
+    "gateway": "traefik",
+    "profile": "strict",
+    "image": "traefik:v3.7.19",
+    "digest": "sha256:a6c0194dda77bcb804824580f36fa7edc56e315b1acfe933366c8b52844a78a4",
+    "ok": true,
+    "stubs": {
+      "verifier": true,
+      "executor": true
+    },
+    "up_s": 7.1,
+    "jti": "a0664a34-4abb-4e10-8af0-d243cbccd805",
+    "status": 200,
+    "body": "{\"op_id\": \"getAccount\", \"framework\": \"stub\", \"method\": \"GET\", \"path_params\": {\"id\": \"acc-alice-1\"}, \"stub\": true}",
+    "verifier": [
+      {
+        "ts": "2026-11-22T18:58:37.992361+00:00",
+        "adapter": "fwd",
+        "jti": "a0664a34-4abb-4e10-8af0-d243cbccd805",
+        "view_method": "GET",
+        "view_uri": "/api/v1/accounts/acc-alice-1",
+        "view_host": "api.bench.test",
+        "view_proto": "http",
+        "htm": "GET",
+        "htu": "http://api.bench.test/api/v1/accounts/acc-alice-1",
+        "canon_mode": "rfc3986",
+        "decision": "allow",
+        "reason": "STUB-ALWAYS-ALLOW",
+        "sub": "stub",
+        "jkt": "stub",
+        "has_authorization": true,
+        "has_dpop": true,
+        "stub": true
+      }
+    ],
+    "executor": [
+      {
+        "ts": "2026-11-22T18:58:37.995958+00:00",
+        "framework": "stub",
+        "jti": "a0664a34-4abb-4e10-8af0-d243cbccd805",
+        "op_id": "getAccount",
+        "route_template": "/api/v1/accounts/{id}",
+        "raw_method": "GET",
+        "effective_method": "GET",
+        "raw_target": "/api/v1/accounts/acc-alice-1",
+        "path_params": {
+          "id": "acc-alice-1"
+        },
+        "query": "",
+        "trust_headers": {
+          "x-forwarded-for": "172.23.0.1",
+          "x-forwarded-host": "api.bench.test",
+          "x-forwarded-port": "80",
+          "x-forwarded-proto": "http",
+          "x-forwarded-server": "a615f0ac0ad3",
+          "x-verified-jkt": "stub",
+          "x-verified-sub": "stub"
+        },
+        "denied": false,
+        "status": 200,
+        "stub": true
+      }
+    ],
+    "checks": {
+      "http_200": true,
+      "verifier_once": true,
+      "executor_once": true,
+      "adapter": true,
+      "view_method": true,
+      "view_uri": true,
+      "view_host": true,
+      "auth+dpop_to_verifier": true,
+      "decision_allow": true,
+      "exec_op": true,
+      "exec_target": true
+    }
+  },
+  {
+    "id": "smoke-nginx-default-edge",
+    "gateway": "nginx",
+    "profile": "default",
+    "image": "nginx:1.30.7-alpine",
+    "digest": "sha256:caf4e1e032a20f9c3c5e28fc7f25ffd768ad8677b4975c54193075997b3a97e3",
+    "ok": true,
+    "up_s": 17.7,
+    "jti": "29e49871-695e-408c-ac9a-344285c294e7",
+    "status": 200,
+    "body": "{\"op_id\": \"getAccount\", \"framework\": \"stub\", \"method\": \"GET\", \"path_params\": {\"id\": \"acc-alice-1\"}, \"stub\": true}",
+    "verifier": [
+      {
+        "ts": "2026-11-22T18:54:04.854579+00:00",
+        "adapter": "orig",
+        "jti": "29e49871-695e-408c-ac9a-344285c294e7",
+        "view_method": "GET",
+        "view_uri": "/api/v1/accounts/acc-alice-1",
+        "view_host": "api.bench.test",
+        "view_proto": "http",
+        "htm": "GET",
+        "htu": "http://api.bench.test/api/v1/accounts/acc-alice-1",
+        "canon_mode": "rfc3986",
+        "decision": "allow",
+        "reason": "STUB-ALWAYS-ALLOW",
+        "sub": "stub",
+        "jkt": "stub",
+        "has_authorization": true,
+        "has_dpop": true,
+        "stub": true
+      }
+    ],
+    "executor": [
+      {
+        "ts": "2026-11-22T18:54:04.887689+00:00",
+        "framework": "stub",
+        "jti": "29e49871-695e-408c-ac9a-344285c294e7",
+        "op_id": "getAccount",
+        "route_template": "/api/v1/accounts/{id}",
+        "raw_method": "GET",
+        "effective_method": "GET",
+        "raw_target": "/api/v1/accounts/acc-alice-1",
+        "path_params": {
+          "id": "acc-alice-1"
+        },
+        "query": "",
+        "trust_headers": {
+          "x-verified-sub": "stub",
+          "x-verified-jkt": "stub"
+        },
+        "denied": false,
+        "status": 200,
+        "stub": true
+      }
+    ],
+    "checks": {
+      "http_200": true,
+      "verifier_once": true,
+      "executor_once": true,
+      "adapter": true,
+      "view_method": true,
+      "view_uri": true,
+      "view_host": true,
+      "auth+dpop_to_verifier": true,
+      "exec_op": true,
+      "exec_target": true
+    }
+  },
+  {
+    "id": "smoke-nginx-recommended-edge",
+    "gateway": "nginx",
+    "profile": "recommended",
+    "image": "nginx:1.30.7-alpine",
+    "digest": "sha256:caf4e1e032a20f9c3c5e28fc7f25ffd768ad8677b4975c54193075997b3a97e3",
+    "ok": true,
+    "up_s": 15.3,
+    "jti": "1cb6b119-bb33-46e3-9808-68af41fa8097",
+    "status": 200,
+    "body": "{\"op_id\": \"getAccount\", \"framework\": \"stub\", \"method\": \"GET\", \"path_params\": {\"id\": \"acc-alice-1\"}, \"stub\": true}",
+    "verifier": [
+      {
+        "ts": "2026-11-22T18:54:34.698588+00:00",
+        "adapter": "orig",
+        "jti": "1cb6b119-bb33-46e3-9808-68af41fa8097",
+        "view_method": "GET",
+        "view_uri": "/api/v1/accounts/acc-alice-1",
+        "view_host": "api.bench.test",
+        "view_proto": "http",
+        "htm": "GET",
+        "htu": "http://api.bench.test/api/v1/accounts/acc-alice-1",
+        "canon_mode": "rfc3986",
+        "decision": "allow",
+        "reason": "STUB-ALWAYS-ALLOW",
+        "sub": "stub",
+        "jkt": "stub",
+        "has_authorization": true,
+        "has_dpop": true,
+        "stub": true
+      }
+    ],
+    "executor": [
+      {
+        "ts": "2026-11-22T18:54:34.709968+00:00",
+        "framework": "stub",
+        "jti": "1cb6b119-bb33-46e3-9808-68af41fa8097",
+        "op_id": "getAccount",
+        "route_template": "/api/v1/accounts/{id}",
+        "raw_method": "GET",
+        "effective_method": "GET",
+        "raw_target": "/api/v1/accounts/acc-alice-1",
+        "path_params": {
+          "id": "acc-alice-1"
+        },
+        "query": "",
+        "trust_headers": {
+          "x-verified-sub": "stub",
+          "x-verified-jkt": "stub",
+          "x-forwarded-for": "172.23.0.1",
+          "x-forwarded-proto": "http"
+        },
+        "denied": false,
+        "status": 200,
+        "stub": true
+      }
+    ],
+    "checks": {
+      "http_200": true,
+      "verifier_once": true,
+      "executor_once": true,
+      "adapter": true,
+      "view_method": true,
+      "view_uri": true,
+      "view_host": true,
+      "auth+dpop_to_verifier": true,
+      "exec_op": true,
+      "exec_target": true
+    }
+  },
+  {
+    "id": "smoke-nginx-strict-edge",
+    "gateway": "nginx",
+    "profile": "strict",
+    "image": "nginx:1.30.7-alpine",
+    "digest": "sha256:caf4e1e032a20f9c3c5e28fc7f25ffd768ad8677b4975c54193075997b3a97e3",
+    "ok": true,
+    "up_s": 10.2,
+    "jti": "7c366cac-4437-44da-9844-a3cad8a83381",
+    "status": 200,
+    "body": "{\"op_id\": \"getAccount\", \"framework\": \"stub\", \"method\": \"GET\", \"path_params\": {\"id\": \"acc-alice-1\"}, \"stub\": true}",
+    "verifier": [
+      {
+        "ts": "2026-11-22T18:54:52.629844+00:00",
+        "adapter": "orig",
+        "jti": "7c366cac-4437-44da-9844-a3cad8a83381",
+        "view_method": "GET",
+        "view_uri": "/api/v1/accounts/acc-alice-1",
+        "view_host": "api.bench.test",
+        "view_proto": "http",
+        "htm": "GET",
+        "htu": "http://api.bench.test/api/v1/accounts/acc-alice-1",
+        "canon_mode": "rfc3986",
+        "decision": "allow",
+        "reason": "STUB-ALWAYS-ALLOW",
+        "sub": "stub",
+        "jkt": "stub",
+        "has_authorization": true,
+        "has_dpop": true,
+        "stub": true
+      }
+    ],
+    "executor": [
+      {
+        "ts": "2026-11-22T18:54:52.639987+00:00",
+        "framework": "stub",
+        "jti": "7c366cac-4437-44da-9844-a3cad8a83381",
+        "op_id": "getAccount",
+        "route_template": "/api/v1/accounts/{id}",
+        "raw_method": "GET",
+        "effective_method": "GET",
+        "raw_target": "/api/v1/accounts/acc-alice-1",
+        "path_params": {
+          "id": "acc-alice-1"
+        },
+        "query": "",
+        "trust_headers": {
+          "x-verified-sub": "stub",
+          "x-verified-jkt": "stub",
+          "x-forwarded-for": "172.23.0.1",
+          "x-forwarded-proto": "http"
+        },
+        "denied": false,
+        "status": 200,
+        "stub": true
+      }
+    ],
+    "checks": {
+      "http_200": true,
+      "verifier_once": true,
+      "executor_once": true,
+      "adapter": true,
+      "view_method": true,
+      "view_uri": true,
+      "view_host": true,
+      "auth+dpop_to_verifier": true,
+      "exec_op": true,
+      "exec_target": true
+    }
+  },
+  {
+    "id": "smoke-kong-default-edge",
+    "gateway": "kong",
+    "profile": "default",
+    "image": "kong:3.9.5",
+    "digest": "sha256:e9b87ddd0e6087792586e2cbba5ce91eadcbdd3d3673249aa4606f7207408c0d",
+    "ok": true,
+    "up_s": 27.3,
+    "jti": "51d05281-bd88-49b2-97c7-3f8cebf70e1a",
+    "status": 200,
+    "body": "{\"op_id\": \"getAccount\", \"framework\": \"stub\", \"method\": \"GET\", \"path_params\": {\"id\": \"acc-alice-1\"}, \"stub\": true}",
+    "verifier": [
+      {
+        "ts": "2026-11-22T18:55:29.294292+00:00",
+        "adapter": "orig",
+        "jti": "51d05281-bd88-49b2-97c7-3f8cebf70e1a",
+        "view_method": "GET",
+        "view_uri": "/api/v1/accounts/acc-alice-1",
+        "view_host": "api.bench.test",
+        "view_proto": "http",
+        "htm": "GET",
+        "htu": "http://api.bench.test/api/v1/accounts/acc-alice-1",
+        "canon_mode": "rfc3986",
+        "decision": "allow",
+        "reason": "STUB-ALWAYS-ALLOW",
+        "sub": "stub",
+        "jkt": "stub",
+        "has_authorization": true,
+        "has_dpop": true,
+        "stub": true
+      }
+    ],
+    "executor": [
+      {
+        "ts": "2026-11-22T18:55:29.886054+00:00",
+        "framework": "stub",
+        "jti": "51d05281-bd88-49b2-97c7-3f8cebf70e1a",
+        "op_id": "getAccount",
+        "route_template": "/api/v1/accounts/{id}",
+        "raw_method": "GET",
+        "effective_method": "GET",
+        "raw_target": "/api/v1/accounts/acc-alice-1",
+        "path_params": {
+          "id": "acc-alice-1"
+        },
+        "query": "",
+        "trust_headers": {
+          "x-forwarded-for": "172.23.0.1",
+          "x-forwarded-proto": "http",
+          "x-forwarded-host": "api.bench.test",
+          "x-forwarded-port": "8000",
+          "x-forwarded-path": "/api/v1/accounts/acc-alice-1",
+          "x-verified-sub": "stub",
+          "x-verified-jkt": "stub"
+        },
+        "denied": false,
+        "status": 200,
+        "stub": true
+      }
+    ],
+    "checks": {
+      "http_200": true,
+      "verifier_once": true,
+      "executor_once": true,
+      "adapter": true,
+      "view_method": true,
+      "view_uri": true,
+      "view_host": true,
+      "auth+dpop_to_verifier": true,
+      "exec_op": true,
+      "exec_target": true
+    }
+  },
+  {
+    "id": "smoke-kong-recommended-edge",
+    "gateway": "kong",
+    "profile": "recommended",
+    "image": "kong:3.9.5",
+    "digest": "sha256:e9b87ddd0e6087792586e2cbba5ce91eadcbdd3d3673249aa4606f7207408c0d",
+    "ok": true,
+    "stubs": {
+      "verifier": true,
+      "executor": true
+    },
+    "up_s": 18.6,
+    "jti": "8252da4f-b875-492e-a826-31564a5de5a5",
+    "status": 200,
+    "body": "{\"op_id\": \"getAccount\", \"framework\": \"stub\", \"method\": \"GET\", \"path_params\": {\"id\": \"acc-alice-1\"}, \"stub\": true}",
+    "verifier": [
+      {
+        "ts": "2026-11-22T18:59:05.881678+00:00",
+        "adapter": "orig",
+        "jti": "8252da4f-b875-492e-a826-31564a5de5a5",
+        "view_method": "GET",
+        "view_uri": "/api/v1/accounts/acc-alice-1",
+        "view_host": "api.bench.test",
+        "view_proto": "http",
+        "htm": "GET",
+        "htu": "http://api.bench.test/api/v1/accounts/acc-alice-1",
+        "canon_mode": "rfc3986",
+        "decision": "allow",
+        "reason": "STUB-ALWAYS-ALLOW",
+        "sub": "stub",
+        "jkt": "stub",
+        "has_authorization": true,
+        "has_dpop": true,
+        "stub": true
+      }
+    ],
+    "executor": [
+      {
+        "ts": "2026-11-22T18:59:06.149810+00:00",
+        "framework": "stub",
+        "jti": "8252da4f-b875-492e-a826-31564a5de5a5",
+        "op_id": "getAccount",
+        "route_template": "/api/v1/accounts/{id}",
+        "raw_method": "GET",
+        "effective_method": "GET",
+        "raw_target": "/api/v1/accounts/acc-alice-1",
+        "path_params": {
+          "id": "acc-alice-1"
+        },
+        "query": "",
+        "trust_headers": {
+          "x-forwarded-for": "172.23.0.1",
+          "x-forwarded-proto": "http",
+          "x-forwarded-host": "api.bench.test",
+          "x-forwarded-port": "8000",
+          "x-forwarded-path": "/api/v1/accounts/acc-alice-1",
+          "x-verified-sub": "stub",
+          "x-verified-jkt": "stub"
+        },
+        "denied": false,
+        "status": 200,
+        "stub": true
+      }
+    ],
+    "checks": {
+      "http_200": true,
+      "verifier_once": true,
+      "executor_once": true,
+      "adapter": true,
+      "view_method": true,
+      "view_uri": true,
+      "view_host": true,
+      "auth+dpop_to_verifier": true,
+      "decision_allow": true,
+      "exec_op": true,
+      "exec_target": true
+    }
+  },
+  {
+    "id": "smoke-kong-strict-edge",
+    "gateway": "kong",
+    "profile": "strict",
+    "image": "kong:3.9.5",
+    "digest": "sha256:e9b87ddd0e6087792586e2cbba5ce91eadcbdd3d3673249aa4606f7207408c0d",
+    "ok": true,
+    "stubs": {
+      "verifier": true,
+      "executor": true
+    },
+    "up_s": 13.0,
+    "jti": "8e3345a0-0c98-47f1-8ff6-4e53d1129d0d",
+    "status": 200,
+    "body": "{\"op_id\": \"getAccount\", \"framework\": \"stub\", \"method\": \"GET\", \"path_params\": {\"id\": \"acc-alice-1\"}, \"stub\": true}",
+    "verifier": [
+      {
+        "ts": "2026-11-22T18:59:28.970577+00:00",
+        "adapter": "orig",
+        "jti": "8e3345a0-0c98-47f1-8ff6-4e53d1129d0d",
+        "view_method": "GET",
+        "view_uri": "/api/v1/accounts/acc-alice-1",
+        "view_host": "api.bench.test",
+        "view_proto": "http",
+        "htm": "GET",
+        "htu": "http://api.bench.test/api/v1/accounts/acc-alice-1",
+        "canon_mode": "rfc3986",
+        "decision": "allow",
+        "reason": "STUB-ALWAYS-ALLOW",
+        "sub": "stub",
+        "jkt": "stub",
+        "has_authorization": true,
+        "has_dpop": true,
+        "stub": true
+      }
+    ],
+    "executor": [
+      {
+        "ts": "2026-11-22T18:59:29.027828+00:00",
+        "framework": "stub",
+        "jti": "8e3345a0-0c98-47f1-8ff6-4e53d1129d0d",
+        "op_id": "getAccount",
+        "route_template": "/api/v1/accounts/{id}",
+        "raw_method": "GET",
+        "effective_method": "GET",
+        "raw_target": "/api/v1/accounts/acc-alice-1",
+        "path_params": {
+          "id": "acc-alice-1"
+        },
+        "query": "",
+        "trust_headers": {
+          "x-forwarded-for": "172.23.0.1",
+          "x-forwarded-proto": "http",
+          "x-forwarded-host": "api.bench.test",
+          "x-forwarded-port": "8000",
+          "x-forwarded-path": "/api/v1/accounts/acc-alice-1",
+          "x-verified-sub": "stub",
+          "x-verified-jkt": "stub"
+        },
+        "denied": false,
+        "status": 200,
+        "stub": true
+      }
+    ],
+    "checks": {
+      "http_200": true,
+      "verifier_once": true,
+      "executor_once": true,
+      "adapter": true,
+      "view_method": true,
+      "view_uri": true,
+      "view_host": true,
+      "auth+dpop_to_verifier": true,
+      "decision_allow": true,
+      "exec_op": true,
+      "exec_target": true
+    }
+  },
+  {
+    "id": "smoke-apisix-default-edge",
+    "gateway": "apisix",
+    "profile": "default",
+    "image": "apache/apisix:3.21.0-debian",
+    "digest": "sha256:1741a8e1186e5c39ea10e6b4fb3e682534d1705efb8328195de5b41ad0657380",
+    "ok": true,
+    "up_s": 12.9,
+    "jti": "864a7f23-c0a2-43d0-8fce-16567d3a4752",
+    "status": 200,
+    "body": "{\"op_id\": \"getAccount\", \"framework\": \"stub\", \"method\": \"GET\", \"path_params\": {\"id\": \"acc-alice-1\"}, \"stub\": true}",
+    "verifier": [
+      {
+        "ts": "2026-11-22T18:56:26.812168+00:00",
+        "adapter": "fwd",
+        "jti": "864a7f23-c0a2-43d0-8fce-16567d3a4752",
+        "view_method": "GET",
+        "view_uri": "/api/v1/accounts/acc-alice-1",
+        "view_host": "api.bench.test",
+        "view_proto": "http",
+        "htm": "GET",
+        "htu": "http://api.bench.test/api/v1/accounts/acc-alice-1",
+        "canon_mode": "rfc3986",
+        "decision": "allow",
+        "reason": "STUB-ALWAYS-ALLOW",
+        "sub": "stub",
+        "jkt": "stub",
+        "has_authorization": true,
+        "has_dpop": true,
+        "stub": true
+      }
+    ],
+    "executor": [
+      {
+        "ts": "2026-11-22T18:56:26.816140+00:00",
+        "framework": "stub",
+        "jti": "864a7f23-c0a2-43d0-8fce-16567d3a4752",
+        "op_id": "getAccount",
+        "route_template": "/api/v1/accounts/{id}",
+        "raw_method": "GET",
+        "effective_method": "GET",
+        "raw_target": "/api/v1/accounts/acc-alice-1",
+        "path_params": {
+          "id": "acc-alice-1"
+        },
+        "query": "",
+        "trust_headers": {
+          "x-forwarded-for": "172.23.0.1",
+          "x-forwarded-proto": "http",
+          "x-forwarded-host": "api.bench.test",
+          "x-forwarded-port": "8000",
+          "x-verified-sub": "stub",
+          "x-verified-jkt": "stub"
+        },
+        "denied": false,
+        "status": 200,
+        "stub": true
+      }
+    ],
+    "checks": {
+      "http_200": true,
+      "verifier_once": true,
+      "executor_once": true,
+      "adapter": true,
+      "view_method": true,
+      "view_uri": true,
+      "view_host": true,
+      "auth+dpop_to_verifier": true,
+      "exec_op": true,
+      "exec_target": true
+    }
+  },
+  {
+    "id": "smoke-apisix-recommended-edge",
+    "gateway": "apisix",
+    "profile": "recommended",
+    "image": "apache/apisix:3.21.0-debian",
+    "digest": "sha256:1741a8e1186e5c39ea10e6b4fb3e682534d1705efb8328195de5b41ad0657380",
+    "ok": true,
+    "up_s": 6.7,
+    "jti": "6d07e7dd-509a-4965-8496-169b079d30c8",
+    "status": 200,
+    "body": "{\"op_id\": \"getAccount\", \"framework\": \"stub\", \"method\": \"GET\", \"path_params\": {\"id\": \"acc-alice-1\"}, \"stub\": true}",
+    "verifier": [
+      {
+        "ts": "2026-11-22T18:56:41.659900+00:00",
+        "adapter": "fwd",
+        "jti": "6d07e7dd-509a-4965-8496-169b079d30c8",
+        "view_method": "GET",
+        "view_uri": "/api/v1/accounts/acc-alice-1",
+        "view_host": "api.bench.test",
+        "view_proto": "http",
+        "htm": "GET",
+        "htu": "http://api.bench.test/api/v1/accounts/acc-alice-1",
+        "canon_mode": "rfc3986",
+        "decision": "allow",
+        "reason": "STUB-ALWAYS-ALLOW",
+        "sub": "stub",
+        "jkt": "stub",
+        "has_authorization": true,
+        "has_dpop": true,
+        "stub": true
+      }
+    ],
+    "executor": [
+      {
+        "ts": "2026-11-22T18:56:41.662633+00:00",
+        "framework": "stub",
+        "jti": "6d07e7dd-509a-4965-8496-169b079d30c8",
+        "op_id": "getAccount",
+        "route_template": "/api/v1/accounts/{id}",
+        "raw_method": "GET",
+        "effective_method": "GET",
+        "raw_target": "/api/v1/accounts/acc-alice-1",
+        "path_params": {
+          "id": "acc-alice-1"
+        },
+        "query": "",
+        "trust_headers": {
+          "x-forwarded-for": "172.23.0.1",
+          "x-forwarded-proto": "http",
+          "x-forwarded-host": "api.bench.test",
+          "x-forwarded-port": "8000",
+          "x-verified-sub": "stub",
+          "x-verified-jkt": "stub"
+        },
+        "denied": false,
+        "status": 200,
+        "stub": true
+      }
+    ],
+    "checks": {
+      "http_200": true,
+      "verifier_once": true,
+      "executor_once": true,
+      "adapter": true,
+      "view_method": true,
+      "view_uri": true,
+      "view_host": true,
+      "auth+dpop_to_verifier": true,
+      "exec_op": true,
+      "exec_target": true
+    }
+  },
+  {
+    "id": "smoke-apisix-strict-edge",
+    "gateway": "apisix",
+    "profile": "strict",
+    "image": "apache/apisix:3.21.0-debian",
+    "digest": "sha256:1741a8e1186e5c39ea10e6b4fb3e682534d1705efb8328195de5b41ad0657380",
+    "ok": true,
+    "up_s": 8.4,
+    "jti": "9cd8b6b4-b050-4170-ace8-b52e3559667b",
+    "status": 200,
+    "body": "{\"op_id\": \"getAccount\", \"framework\": \"stub\", \"method\": \"GET\", \"path_params\": {\"id\": \"acc-alice-1\"}, \"stub\": true}",
+    "verifier": [
+      {
+        "ts": "2026-11-22T18:56:58.394680+00:00",
+        "adapter": "fwd",
+        "jti": "9cd8b6b4-b050-4170-ace8-b52e3559667b",
+        "view_method": "GET",
+        "view_uri": "/api/v1/accounts/acc-alice-1",
+        "view_host": "api.bench.test",
+        "view_proto": "http",
+        "htm": "GET",
+        "htu": "http://api.bench.test/api/v1/accounts/acc-alice-1",
+        "canon_mode": "rfc3986",
+        "decision": "allow",
+        "reason": "STUB-ALWAYS-ALLOW",
+        "sub": "stub",
+        "jkt": "stub",
+        "has_authorization": true,
+        "has_dpop": true,
+        "stub": true
+      }
+    ],
+    "executor": [
+      {
+        "ts": "2026-11-22T18:56:58.413421+00:00",
+        "framework": "stub",
+        "jti": "9cd8b6b4-b050-4170-ace8-b52e3559667b",
+        "op_id": "getAccount",
+        "route_template": "/api/v1/accounts/{id}",
+        "raw_method": "GET",
+        "effective_method": "GET",
+        "raw_target": "/api/v1/accounts/acc-alice-1",
+        "path_params": {
+          "id": "acc-alice-1"
+        },
+        "query": "",
+        "trust_headers": {
+          "x-forwarded-for": "172.23.0.1",
+          "x-forwarded-proto": "http",
+          "x-forwarded-host": "api.bench.test",
+          "x-forwarded-port": "8000",
+          "x-verified-sub": "stub",
+          "x-verified-jkt": "stub"
+        },
+        "denied": false,
+        "status": 200,
+        "stub": true
+      }
+    ],
+    "checks": {
+      "http_200": true,
+      "verifier_once": true,
+      "executor_once": true,
+      "adapter": true,
+      "view_method": true,
+      "view_uri": true,
+      "view_host": true,
+      "auth+dpop_to_verifier": true,
+      "exec_op": true,
+      "exec_target": true
+    }
+  },
+  {
+    "id": "smoke-haproxy-default-edge",
+    "gateway": "haproxy",
+    "profile": "default",
+    "image": "haproxy:3.2.27",
+    "digest": "sha256:5ddf08c89c95a311f4bfb761d74016597fdca76ecfcdf169ed1bab117f3da1ea",
+    "ok": true,
+    "up_s": 6.8,
+    "jti": "5a01201b-0b10-4959-8432-83e4fe38c9ad",
+    "status": 200,
+    "body": "{\"op_id\": \"getAccount\", \"framework\": \"stub\", \"method\": \"GET\", \"path_params\": {\"id\": \"acc-alice-1\"}, \"stub\": true}",
+    "verifier": [
+      {
+        "ts": "2026-11-22T18:57:14.791995+00:00",
+        "adapter": "orig",
+        "jti": "5a01201b-0b10-4959-8432-83e4fe38c9ad",
+        "view_method": "GET",
+        "view_uri": "/api/v1/accounts/acc-alice-1",
+        "view_host": "api.bench.test",
+        "view_proto": "http",
+        "htm": "GET",
+        "htu": "http://api.bench.test/api/v1/accounts/acc-alice-1",
+        "canon_mode": "rfc3986",
+        "decision": "allow",
+        "reason": "STUB-ALWAYS-ALLOW",
+        "sub": "stub",
+        "jkt": "stub",
+        "has_authorization": true,
+        "has_dpop": true,
+        "stub": true
+      }
+    ],
+    "executor": [
+      {
+        "ts": "2026-11-22T18:57:14.797833+00:00",
+        "framework": "stub",
+        "jti": "5a01201b-0b10-4959-8432-83e4fe38c9ad",
+        "op_id": "getAccount",
+        "route_template": "/api/v1/accounts/{id}",
+        "raw_method": "GET",
+        "effective_method": "GET",
+        "raw_target": "/api/v1/accounts/acc-alice-1",
+        "path_params": {
+          "id": "acc-alice-1"
+        },
+        "query": "",
+        "trust_headers": {
+          "x-verified-sub": "stub",
+          "x-verified-jkt": "stub"
+        },
+        "denied": false,
+        "status": 200,
+        "stub": true
+      }
+    ],
+    "checks": {
+      "http_200": true,
+      "verifier_once": true,
+      "executor_once": true,
+      "adapter": true,
+      "view_method": true,
+      "view_uri": true,
+      "view_host": true,
+      "auth+dpop_to_verifier": true,
+      "exec_op": true,
+      "exec_target": true
+    }
+  },
+  {
+    "id": "smoke-haproxy-recommended-edge",
+    "gateway": "haproxy",
+    "profile": "recommended",
+    "image": "haproxy:3.2.27",
+    "digest": "sha256:5ddf08c89c95a311f4bfb761d74016597fdca76ecfcdf169ed1bab117f3da1ea",
+    "ok": true,
+    "up_s": 8.5,
+    "jti": "664369fc-4888-4e94-9d07-17894123ef1b",
+    "status": 200,
+    "body": "{\"op_id\": \"getAccount\", \"framework\": \"stub\", \"method\": \"GET\", \"path_params\": {\"id\": \"acc-alice-1\"}, \"stub\": true}",
+    "verifier": [
+      {
+        "ts": "2026-11-22T18:57:30.084025+00:00",
+        "adapter": "orig",
+        "jti": "664369fc-4888-4e94-9d07-17894123ef1b",
+        "view_method": "GET",
+        "view_uri": "/api/v1/accounts/acc-alice-1",
+        "view_host": "api.bench.test",
+        "view_proto": "http",
+        "htm": "GET",
+        "htu": "http://api.bench.test/api/v1/accounts/acc-alice-1",
+        "canon_mode": "rfc3986",
+        "decision": "allow",
+        "reason": "STUB-ALWAYS-ALLOW",
+        "sub": "stub",
+        "jkt": "stub",
+        "has_authorization": true,
+        "has_dpop": true,
+        "stub": true
+      }
+    ],
+    "executor": [
+      {
+        "ts": "2026-11-22T18:57:30.090770+00:00",
+        "framework": "stub",
+        "jti": "664369fc-4888-4e94-9d07-17894123ef1b",
+        "op_id": "getAccount",
+        "route_template": "/api/v1/accounts/{id}",
+        "raw_method": "GET",
+        "effective_method": "GET",
+        "raw_target": "/api/v1/accounts/acc-alice-1",
+        "path_params": {
+          "id": "acc-alice-1"
+        },
+        "query": "",
+        "trust_headers": {
+          "x-verified-sub": "stub",
+          "x-verified-jkt": "stub"
+        },
+        "denied": false,
+        "status": 200,
+        "stub": true
+      }
+    ],
+    "checks": {
+      "http_200": true,
+      "verifier_once": true,
+      "executor_once": true,
+      "adapter": true,
+      "view_method": true,
+      "view_uri": true,
+      "view_host": true,
+      "auth+dpop_to_verifier": true,
+      "exec_op": true,
+      "exec_target": true
+    }
+  },
+  {
+    "id": "smoke-haproxy-strict-edge",
+    "gateway": "haproxy",
+    "profile": "strict",
+    "image": "haproxy:3.2.27",
+    "digest": "sha256:5ddf08c89c95a311f4bfb761d74016597fdca76ecfcdf169ed1bab117f3da1ea",
+    "ok": true,
+    "up_s": 6.5,
+    "jti": "68334f2a-8793-4536-bee4-8c789febed88",
+    "status": 200,
+    "body": "{\"op_id\": \"getAccount\", \"framework\": \"stub\", \"method\": \"GET\", \"path_params\": {\"id\": \"acc-alice-1\"}, \"stub\": true}",
+    "verifier": [
+      {
+        "ts": "2026-11-22T18:57:43.506555+00:00",
+        "adapter": "orig",
+        "jti": "68334f2a-8793-4536-bee4-8c789febed88",
+        "view_method": "GET",
+        "view_uri": "/api/v1/accounts/acc-alice-1",
+        "view_host": "api.bench.test",
+        "view_proto": "http",
+        "htm": "GET",
+        "htu": "http://api.bench.test/api/v1/accounts/acc-alice-1",
+        "canon_mode": "rfc3986",
+        "decision": "allow",
+        "reason": "STUB-ALWAYS-ALLOW",
+        "sub": "stub",
+        "jkt": "stub",
+        "has_authorization": true,
+        "has_dpop": true,
+        "stub": true
+      }
+    ],
+    "executor": [
+      {
+        "ts": "2026-11-22T18:57:43.510219+00:00",
+        "framework": "stub",
+        "jti": "68334f2a-8793-4536-bee4-8c789febed88",
+        "op_id": "getAccount",
+        "route_template": "/api/v1/accounts/{id}",
+        "raw_method": "GET",
+        "effective_method": "GET",
+        "raw_target": "/api/v1/accounts/acc-alice-1",
+        "path_params": {
+          "id": "acc-alice-1"
+        },
+        "query": "",
+        "trust_headers": {
+          "x-verified-sub": "stub",
+          "x-verified-jkt": "stub"
+        },
+        "denied": false,
+        "status": 200,
+        "stub": true
+      }
+    ],
+    "checks": {
+      "http_200": true,
+      "verifier_once": true,
+      "executor_once": true,
+      "adapter": true,
+      "view_method": true,
+      "view_uri": true,
+      "view_host": true,
+      "auth+dpop_to_verifier": true,
+      "exec_op": true,
+      "exec_target": true
+    }
+  },
+  {
+    "id": "smokereal-envoy-default-edge",
+    "gateway": "envoy",
+    "profile": "default",
+    "image": "envoyproxy/envoy:v1.39.6",
+    "digest": "sha256:1fde8efee875e4e4f6a39a90fe49d9338e1caacce5762034ef9fb4bbb9ad6aed",
+    "ok": true,
+    "stubs": {
+      "verifier": false,
+      "executor": true
+    },
+    "up_s": 25.0,
+    "jti": "577ab3eb-07d9-4715-a053-bb296bc1ca54",
+    "status": 200,
+    "body": "{\"op_id\": \"getAccount\", \"framework\": \"stub\", \"method\": \"GET\", \"path_params\": {\"id\": \"acc-alice-1\"}, \"stub\": true}",
+    "verifier": [
+      {
+        "ts": "2026-11-22T19:00:19.150118+00:00",
+        "adapter": "envoy",
+        "jti": "577ab3eb-07d9-4715-a053-bb296bc1ca54",
+        "view_method": "GET",
+        "view_uri": "/api/v1/accounts/acc-alice-1",
+        "view_host": "api.bench.test",
+        "view_proto": "http",
+        "view_dup": false,
+        "htm": "GET",
+        "htu": "http://api.bench.test/api/v1/accounts/acc-alice-1",
+        "canon_mode": "rfc3986",
+        "decision": "allow",
+        "reason": "ok",
+        "sub": "alice",
+        "jkt": "lxZXvDIoYZzbolMbWIWBOOEdz9dZQozbmTa1zdXUgTc",
+        "status": 200,
+        "latency_us": 311114
+      }
+    ],
+    "executor": [
+      {
+        "ts": "2026-11-22T19:00:19.191780+00:00",
+        "framework": "stub",
+        "jti": "577ab3eb-07d9-4715-a053-bb296bc1ca54",
+        "op_id": "getAccount",
+        "route_template": "/api/v1/accounts/{id}",
+        "raw_method": "GET",
+        "effective_method": "GET",
+        "raw_target": "/api/v1/accounts/acc-alice-1",
+        "path_params": {
+          "id": "acc-alice-1"
+        },
+        "query": "",
+        "trust_headers": {
+          "x-forwarded-proto": "http",
+          "x-verified-sub": "alice",
+          "x-verified-jkt": "lxZXvDIoYZzbolMbWIWBOOEdz9dZQozbmTa1zdXUgTc"
+        },
+        "denied": false,
+        "status": 200,
+        "stub": true
+      }
+    ],
+    "checks": {
+      "http_200": true,
+      "verifier_once": true,
+      "executor_once": true,
+      "adapter": true,
+      "view_method": true,
+      "view_uri": true,
+      "view_host": true,
+      "auth+dpop_to_verifier": true,
+      "decision_allow": true,
+      "exec_op": true,
+      "exec_target": true
+    }
+  },
+  {
+    "id": "smokereal-envoy-recommended-edge",
+    "gateway": "envoy",
+    "profile": "recommended",
+    "image": "envoyproxy/envoy:v1.39.6",
+    "digest": "sha256:1fde8efee875e4e4f6a39a90fe49d9338e1caacce5762034ef9fb4bbb9ad6aed",
+    "ok": true,
+    "stubs": {
+      "verifier": false,
+      "executor": true
+    },
+    "up_s": 12.1,
+    "jti": "b1c28854-2e9a-45c0-b5d2-9bb55ff2da11",
+    "status": 200,
+    "body": "{\"op_id\": \"getAccount\", \"framework\": \"stub\", \"method\": \"GET\", \"path_params\": {\"id\": \"acc-alice-1\"}, \"stub\": true}",
+    "verifier": [
+      {
+        "ts": "2026-11-22T19:00:43.474236+00:00",
+        "adapter": "envoy",
+        "jti": "b1c28854-2e9a-45c0-b5d2-9bb55ff2da11",
+        "view_method": "GET",
+        "view_uri": "/api/v1/accounts/acc-alice-1",
+        "view_host": "api.bench.test",
+        "view_proto": "http",
+        "view_dup": false,
+        "htm": "GET",
+        "htu": "http://api.bench.test/api/v1/accounts/acc-alice-1",
+        "canon_mode": "rfc3986",
+        "decision": "allow",
+        "reason": "ok",
+        "sub": "alice",
+        "jkt": "lxZXvDIoYZzbolMbWIWBOOEdz9dZQozbmTa1zdXUgTc",
+        "status": 200,
+        "latency_us": 210546
+      }
+    ],
+    "executor": [
+      {
+        "ts": "2026-11-22T19:00:43.495361+00:00",
+        "framework": "stub",
+        "jti": "b1c28854-2e9a-45c0-b5d2-9bb55ff2da11",
+        "op_id": "getAccount",
+        "route_template": "/api/v1/accounts/{id}",
+        "raw_method": "GET",
+        "effective_method": "GET",
+        "raw_target": "/api/v1/accounts/acc-alice-1",
+        "path_params": {
+          "id": "acc-alice-1"
+        },
+        "query": "",
+        "trust_headers": {
+          "x-forwarded-for": "172.23.0.1",
+          "x-forwarded-proto": "http",
+          "x-verified-sub": "alice",
+          "x-verified-jkt": "lxZXvDIoYZzbolMbWIWBOOEdz9dZQozbmTa1zdXUgTc"
+        },
+        "denied": false,
+        "status": 200,
+        "stub": true
+      }
+    ],
+    "checks": {
+      "http_200": true,
+      "verifier_once": true,
+      "executor_once": true,
+      "adapter": true,
+      "view_method": true,
+      "view_uri": true,
+      "view_host": true,
+      "auth+dpop_to_verifier": true,
+      "decision_allow": true,
+      "exec_op": true,
+      "exec_target": true
+    }
+  },
+  {
+    "id": "smokereal-envoy-strict-edge",
+    "gateway": "envoy",
+    "profile": "strict",
+    "image": "envoyproxy/envoy:v1.39.6",
+    "digest": "sha256:1fde8efee875e4e4f6a39a90fe49d9338e1caacce5762034ef9fb4bbb9ad6aed",
+    "ok": true,
+    "stubs": {
+      "verifier": false,
+      "executor": true
+    },
+    "up_s": 10.0,
+    "jti": "56df0578-a545-496f-957a-7bc39a96da39",
+    "status": 200,
+    "body": "{\"op_id\": \"getAccount\", \"framework\": \"stub\", \"method\": \"GET\", \"path_params\": {\"id\": \"acc-alice-1\"}, \"stub\": true}",
+    "verifier": [
+      {
+        "ts": "2026-11-22T19:01:04.930540+00:00",
+        "adapter": "envoy",
+        "jti": "56df0578-a545-496f-957a-7bc39a96da39",
+        "view_method": "GET",
+        "view_uri": "/api/v1/accounts/acc-alice-1",
+        "view_host": "api.bench.test",
+        "view_proto": "http",
+        "view_dup": false,
+        "htm": "GET",
+        "htu": "http://api.bench.test/api/v1/accounts/acc-alice-1",
+        "canon_mode": "rfc3986",
+        "decision": "allow",
+        "reason": "ok",
+        "sub": "alice",
+        "jkt": "lxZXvDIoYZzbolMbWIWBOOEdz9dZQozbmTa1zdXUgTc",
+        "status": 200,
+        "latency_us": 103320
+      }
+    ],
+    "executor": [
+      {
+        "ts": "2026-11-22T19:01:04.939876+00:00",
+        "framework": "stub",
+        "jti": "56df0578-a545-496f-957a-7bc39a96da39",
+        "op_id": "getAccount",
+        "route_template": "/api/v1/accounts/{id}",
+        "raw_method": "GET",
+        "effective_method": "GET",
+        "raw_target": "/api/v1/accounts/acc-alice-1",
+        "path_params": {
+          "id": "acc-alice-1"
+        },
+        "query": "",
+        "trust_headers": {
+          "x-forwarded-for": "172.23.0.1",
+          "x-forwarded-proto": "http",
+          "x-verified-sub": "alice",
+          "x-verified-jkt": "lxZXvDIoYZzbolMbWIWBOOEdz9dZQozbmTa1zdXUgTc"
+        },
+        "denied": false,
+        "status": 200,
+        "stub": true
+      }
+    ],
+    "checks": {
+      "http_200": true,
+      "verifier_once": true,
+      "executor_once": true,
+      "adapter": true,
+      "view_method": true,
+      "view_uri": true,
+      "view_host": true,
+      "auth+dpop_to_verifier": true,
+      "decision_allow": true,
+      "exec_op": true,
+      "exec_target": true
+    }
+  },
+  {
+    "id": "smokereal-traefik-default-edge",
+    "gateway": "traefik",
+    "profile": "default",
+    "image": "traefik:v3.7.19",
+    "digest": "sha256:a6c0194dda77bcb804824580f36fa7edc56e315b1acfe933366c8b52844a78a4",
+    "ok": true,
+    "stubs": {
+      "verifier": false,
+      "executor": true
+    },
+    "up_s": 7.3,
+    "jti": "93bafc89-23e9-4838-b41f-211b9e653e1e",
+    "status": 200,
+    "body": "{\"op_id\": \"getAccount\", \"framework\": \"stub\", \"method\": \"GET\", \"path_params\": {\"id\": \"acc-alice-1\"}, \"stub\": true}",
+    "verifier": [
+      {
+        "ts": "2026-11-22T19:01:20.351289+00:00",
+        "adapter": "fwd",
+        "jti": "93bafc89-23e9-4838-b41f-211b9e653e1e",
+        "view_method": "GET",
+        "view_uri": "/api/v1/accounts/acc-alice-1",
+        "view_host": "api.bench.test",
+        "view_proto": "http",
+        "view_dup": false,
+        "htm": "GET",
+        "htu": "http://api.bench.test/api/v1/accounts/acc-alice-1",
+        "canon_mode": "rfc3986",
+        "decision": "allow",
+        "reason": "ok",
+        "sub": "alice",
+        "jkt": "lxZXvDIoYZzbolMbWIWBOOEdz9dZQozbmTa1zdXUgTc",
+        "status": 200,
+        "latency_us": 54978
+      }
+    ],
+    "executor": [
+      {
+        "ts": "2026-11-22T19:01:20.355032+00:00",
+        "framework": "stub",
+        "jti": "93bafc89-23e9-4838-b41f-211b9e653e1e",
+        "op_id": "getAccount",
+        "route_template": "/api/v1/accounts/{id}",
+        "raw_method": "GET",
+        "effective_method": "GET",
+        "raw_target": "/api/v1/accounts/acc-alice-1",
+        "path_params": {
+          "id": "acc-alice-1"
+        },
+        "query": "",
+        "trust_headers": {
+          "x-forwarded-for": "172.23.0.1",
+          "x-forwarded-host": "api.bench.test",
+          "x-forwarded-port": "80",
+          "x-forwarded-proto": "http",
+          "x-forwarded-server": "f77c44446cf8",
+          "x-verified-jkt": "lxZXvDIoYZzbolMbWIWBOOEdz9dZQozbmTa1zdXUgTc",
+          "x-verified-sub": "alice"
+        },
+        "denied": false,
+        "status": 200,
+        "stub": true
+      }
+    ],
+    "checks": {
+      "http_200": true,
+      "verifier_once": true,
+      "executor_once": true,
+      "adapter": true,
+      "view_method": true,
+      "view_uri": true,
+      "view_host": true,
+      "auth+dpop_to_verifier": true,
+      "decision_allow": true,
+      "exec_op": true,
+      "exec_target": true
+    }
+  },
+  {
+    "id": "smokereal-traefik-recommended-edge",
+    "gateway": "traefik",
+    "profile": "recommended",
+    "image": "traefik:v3.7.19",
+    "digest": "sha256:a6c0194dda77bcb804824580f36fa7edc56e315b1acfe933366c8b52844a78a4",
+    "ok": true,
+    "stubs": {
+      "verifier": false,
+      "executor": true
+    },
+    "up_s": 9.7,
+    "jti": "422a83ed-df22-41e0-933b-9b9167560643",
+    "status": 200,
+    "body": "{\"op_id\": \"getAccount\", \"framework\": \"stub\", \"method\": \"GET\", \"path_params\": {\"id\": \"acc-alice-1\"}, \"stub\": true}",
+    "verifier": [
+      {
+        "ts": "2026-11-22T19:01:37.274439+00:00",
+        "adapter": "fwd",
+        "jti": "422a83ed-df22-41e0-933b-9b9167560643",
+        "view_method": "GET",
+        "view_uri": "/api/v1/accounts/acc-alice-1",
+        "view_host": "api.bench.test",
+        "view_proto": "http",
+        "view_dup": false,
+        "htm": "GET",
+        "htu": "http://api.bench.test/api/v1/accounts/acc-alice-1",
+        "canon_mode": "rfc3986",
+        "decision": "allow",
+        "reason": "ok",
+        "sub": "alice",
+        "jkt": "lxZXvDIoYZzbolMbWIWBOOEdz9dZQozbmTa1zdXUgTc",
+        "status": 200,
+        "latency_us": 27209
+      }
+    ],
+    "executor": [
+      {
+        "ts": "2026-11-22T19:01:37.276672+00:00",
+        "framework": "stub",
+        "jti": "422a83ed-df22-41e0-933b-9b9167560643",
+        "op_id": "getAccount",
+        "route_template": "/api/v1/accounts/{id}",
+        "raw_method": "GET",
+        "effective_method": "GET",
+        "raw_target": "/api/v1/accounts/acc-alice-1",
+        "path_params": {
+          "id": "acc-alice-1"
+        },
+        "query": "",
+        "trust_headers": {
+          "x-forwarded-for": "172.23.0.1",
+          "x-forwarded-host": "api.bench.test",
+          "x-forwarded-port": "80",
+          "x-forwarded-proto": "http",
+          "x-forwarded-server": "cdcf8ce701f0",
+          "x-verified-jkt": "lxZXvDIoYZzbolMbWIWBOOEdz9dZQozbmTa1zdXUgTc",
+          "x-verified-sub": "alice"
+        },
+        "denied": false,
+        "status": 200,
+        "stub": true
+      }
+    ],
+    "checks": {
+      "http_200": true,
+      "verifier_once": true,
+      "executor_once": true,
+      "adapter": true,
+      "view_method": true,
+      "view_uri": true,
+      "view_host": true,
+      "auth+dpop_to_verifier": true,
+      "decision_allow": true,
+      "exec_op": true,
+      "exec_target": true
+    }
+  },
+  {
+    "id": "smokereal-traefik-strict-edge",
+    "gateway": "traefik",
+    "profile": "strict",
+    "image": "traefik:v3.7.19",
+    "digest": "sha256:a6c0194dda77bcb804824580f36fa7edc56e315b1acfe933366c8b52844a78a4",
+    "ok": true,
+    "stubs": {
+      "verifier": false,
+      "executor": true
+    },
+    "up_s": 6.5,
+    "jti": "1a130eb9-3746-457c-bfb8-989965ae3e2e",
+    "status": 200,
+    "body": "{\"op_id\": \"getAccount\", \"framework\": \"stub\", \"method\": \"GET\", \"path_params\": {\"id\": \"acc-alice-1\"}, \"stub\": true}",
+    "verifier": [
+      {
+        "ts": "2026-11-22T19:01:50.571458+00:00",
+        "adapter": "fwd",
+        "jti": "1a130eb9-3746-457c-bfb8-989965ae3e2e",
+        "view_method": "GET",
+        "view_uri": "/api/v1/accounts/acc-alice-1",
+        "view_host": "api.bench.test",
+        "view_proto": "http",
+        "view_dup": false,
+        "htm": "GET",
+        "htu": "http://api.bench.test/api/v1/accounts/acc-alice-1",
+        "canon_mode": "rfc3986",
+        "decision": "allow",
+        "reason": "ok",
+        "sub": "alice",
+        "jkt": "lxZXvDIoYZzbolMbWIWBOOEdz9dZQozbmTa1zdXUgTc",
+        "status": 200,
+        "latency_us": 36642
+      }
+    ],
+    "executor": [
+      {
+        "ts": "2026-11-22T19:01:50.577982+00:00",
+        "framework": "stub",
+        "jti": "1a130eb9-3746-457c-bfb8-989965ae3e2e",
+        "op_id": "getAccount",
+        "route_template": "/api/v1/accounts/{id}",
+        "raw_method": "GET",
+        "effective_method": "GET",
+        "raw_target": "/api/v1/accounts/acc-alice-1",
+        "path_params": {
+          "id": "acc-alice-1"
+        },
+        "query": "",
+        "trust_headers": {
+          "x-forwarded-for": "172.23.0.1",
+          "x-forwarded-host": "api.bench.test",
+          "x-forwarded-port": "80",
+          "x-forwarded-proto": "http",
+          "x-forwarded-server": "ec33a6553ada",
+          "x-verified-jkt": "lxZXvDIoYZzbolMbWIWBOOEdz9dZQozbmTa1zdXUgTc",
+          "x-verified-sub": "alice"
+        },
+        "denied": false,
+        "status": 200,
+        "stub": true
+      }
+    ],
+    "checks": {
+      "http_200": true,
+      "verifier_once": true,
+      "executor_once": true,
+      "adapter": true,
+      "view_method": true,
+      "view_uri": true,
+      "view_host": true,
+      "auth+dpop_to_verifier": true,
+      "decision_allow": true,
+      "exec_op": true,
+      "exec_target": true
+    }
+  },
+  {
+    "id": "smokereal-nginx-default-edge",
+    "gateway": "nginx",
+    "profile": "default",
+    "image": "nginx:1.30.7-alpine",
+    "digest": "sha256:caf4e1e032a20f9c3c5e28fc7f25ffd768ad8677b4975c54193075997b3a97e3",
+    "ok": true,
+    "stubs": {
+      "verifier": false,
+      "executor": true
+    },
+    "up_s": 10.1,
+    "jti": "76687ae5-9bc8-440f-9834-4840f1513595",
+    "status": 200,
+    "body": "{\"op_id\": \"getAccount\", \"framework\": \"stub\", \"method\": \"GET\", \"path_params\": {\"id\": \"acc-alice-1\"}, \"stub\": true}",
+    "verifier": [
+      {
+        "ts": "2026-11-22T19:02:07.641754+00:00",
+        "adapter": "orig",
+        "jti": "76687ae5-9bc8-440f-9834-4840f1513595",
+        "view_method": "GET",
+        "view_uri": "/api/v1/accounts/acc-alice-1",
+        "view_host": "api.bench.test",
+        "view_proto": "http",
+        "view_dup": false,
+        "htm": "GET",
+        "htu": "http://api.bench.test/api/v1/accounts/acc-alice-1",
+        "canon_mode": "rfc3986",
+        "decision": "allow",
+        "reason": "ok",
+        "sub": "alice",
+        "jkt": "lxZXvDIoYZzbolMbWIWBOOEdz9dZQozbmTa1zdXUgTc",
+        "status": 200,
+        "latency_us": 48595
+      }
+    ],
+    "executor": [
+      {
+        "ts": "2026-11-22T19:02:07.645992+00:00",
+        "framework": "stub",
+        "jti": "76687ae5-9bc8-440f-9834-4840f1513595",
+        "op_id": "getAccount",
+        "route_template": "/api/v1/accounts/{id}",
+        "raw_method": "GET",
+        "effective_method": "GET",
+        "raw_target": "/api/v1/accounts/acc-alice-1",
+        "path_params": {
+          "id": "acc-alice-1"
+        },
+        "query": "",
+        "trust_headers": {
+          "x-verified-sub": "alice",
+          "x-verified-jkt": "lxZXvDIoYZzbolMbWIWBOOEdz9dZQozbmTa1zdXUgTc"
+        },
+        "denied": false,
+        "status": 200,
+        "stub": true
+      }
+    ],
+    "checks": {
+      "http_200": true,
+      "verifier_once": true,
+      "executor_once": true,
+      "adapter": true,
+      "view_method": true,
+      "view_uri": true,
+      "view_host": true,
+      "auth+dpop_to_verifier": true,
+      "decision_allow": true,
+      "exec_op": true,
+      "exec_target": true
+    }
+  },
+  {
+    "id": "smokereal-nginx-recommended-edge",
+    "gateway": "nginx",
+    "profile": "recommended",
+    "image": "nginx:1.30.7-alpine",
+    "digest": "sha256:caf4e1e032a20f9c3c5e28fc7f25ffd768ad8677b4975c54193075997b3a97e3",
+    "ok": true,
+    "stubs": {
+      "verifier": false,
+      "executor": true
+    },
+    "up_s": 9.3,
+    "jti": "e843cde8-db72-4e0d-ac5c-7daf251700e2",
+    "status": 200,
+    "body": "{\"op_id\": \"getAccount\", \"framework\": \"stub\", \"method\": \"GET\", \"path_params\": {\"id\": \"acc-alice-1\"}, \"stub\": true}",
+    "verifier": [
+      {
+        "ts": "2026-11-22T19:02:26.001749+00:00",
+        "adapter": "orig",
+        "jti": "e843cde8-db72-4e0d-ac5c-7daf251700e2",
+        "view_method": "GET",
+        "view_uri": "/api/v1/accounts/acc-alice-1",
+        "view_host": "api.bench.test",
+        "view_proto": "http",
+        "view_dup": false,
+        "htm": "GET",
+        "htu": "http://api.bench.test/api/v1/accounts/acc-alice-1",
+        "canon_mode": "rfc3986",
+        "decision": "allow",
+        "reason": "ok",
+        "sub": "alice",
+        "jkt": "lxZXvDIoYZzbolMbWIWBOOEdz9dZQozbmTa1zdXUgTc",
+        "status": 200,
+        "latency_us": 38236
+      }
+    ],
+    "executor": [
+      {
+        "ts": "2026-11-22T19:02:26.003687+00:00",
+        "framework": "stub",
+        "jti": "e843cde8-db72-4e0d-ac5c-7daf251700e2",
+        "op_id": "getAccount",
+        "route_template": "/api/v1/accounts/{id}",
+        "raw_method": "GET",
+        "effective_method": "GET",
+        "raw_target": "/api/v1/accounts/acc-alice-1",
+        "path_params": {
+          "id": "acc-alice-1"
+        },
+        "query": "",
+        "trust_headers": {
+          "x-verified-sub": "alice",
+          "x-verified-jkt": "lxZXvDIoYZzbolMbWIWBOOEdz9dZQozbmTa1zdXUgTc",
+          "x-forwarded-for": "172.23.0.1",
+          "x-forwarded-proto": "http"
+        },
+        "denied": false,
+        "status": 200,
+        "stub": true
+      }
+    ],
+    "checks": {
+      "http_200": true,
+      "verifier_once": true,
+      "executor_once": true,
+      "adapter": true,
+      "view_method": true,
+      "view_uri": true,
+      "view_host": true,
+      "auth+dpop_to_verifier": true,
+      "decision_allow": true,
+      "exec_op": true,
+      "exec_target": true
+    }
+  },
+  {
+    "id": "smokereal-nginx-strict-edge",
+    "gateway": "nginx",
+    "profile": "strict",
+    "image": "nginx:1.30.7-alpine",
+    "digest": "sha256:caf4e1e032a20f9c3c5e28fc7f25ffd768ad8677b4975c54193075997b3a97e3",
+    "ok": true,
+    "stubs": {
+      "verifier": false,
+      "executor": true
+    },
+    "up_s": 8.9,
+    "jti": "0b9dc125-7f5a-4ba0-af54-ec713cda889e",
+    "status": 200,
+    "body": "{\"op_id\": \"getAccount\", \"framework\": \"stub\", \"method\": \"GET\", \"path_params\": {\"id\": \"acc-alice-1\"}, \"stub\": true}",
+    "verifier": [
+      {
+        "ts": "2026-11-22T19:02:41.821905+00:00",
+        "adapter": "orig",
+        "jti": "0b9dc125-7f5a-4ba0-af54-ec713cda889e",
+        "view_method": "GET",
+        "view_uri": "/api/v1/accounts/acc-alice-1",
+        "view_host": "api.bench.test",
+        "view_proto": "http",
+        "view_dup": false,
+        "htm": "GET",
+        "htu": "http://api.bench.test/api/v1/accounts/acc-alice-1",
+        "canon_mode": "rfc3986",
+        "decision": "allow",
+        "reason": "ok",
+        "sub": "alice",
+        "jkt": "lxZXvDIoYZzbolMbWIWBOOEdz9dZQozbmTa1zdXUgTc",
+        "status": 200,
+        "latency_us": 54621
+      }
+    ],
+    "executor": [
+      {
+        "ts": "2026-11-22T19:02:41.824248+00:00",
+        "framework": "stub",
+        "jti": "0b9dc125-7f5a-4ba0-af54-ec713cda889e",
+        "op_id": "getAccount",
+        "route_template": "/api/v1/accounts/{id}",
+        "raw_method": "GET",
+        "effective_method": "GET",
+        "raw_target": "/api/v1/accounts/acc-alice-1",
+        "path_params": {
+          "id": "acc-alice-1"
+        },
+        "query": "",
+        "trust_headers": {
+          "x-verified-sub": "alice",
+          "x-verified-jkt": "lxZXvDIoYZzbolMbWIWBOOEdz9dZQozbmTa1zdXUgTc",
+          "x-forwarded-for": "172.23.0.1",
+          "x-forwarded-proto": "http"
+        },
+        "denied": false,
+        "status": 200,
+        "stub": true
+      }
+    ],
+    "checks": {
+      "http_200": true,
+      "verifier_once": true,
+      "executor_once": true,
+      "adapter": true,
+      "view_method": true,
+      "view_uri": true,
+      "view_host": true,
+      "auth+dpop_to_verifier": true,
+      "decision_allow": true,
+      "exec_op": true,
+      "exec_target": true
+    }
+  },
+  {
+    "id": "smokereal-kong-default-edge",
+    "gateway": "kong",
+    "profile": "default",
+    "image": "kong:3.9.5",
+    "digest": "sha256:e9b87ddd0e6087792586e2cbba5ce91eadcbdd3d3673249aa4606f7207408c0d",
+    "ok": true,
+    "stubs": {
+      "verifier": false,
+      "executor": true
+    },
+    "up_s": 15.1,
+    "jti": "7f784a89-750a-4c49-8b82-a3e882106969",
+    "status": 200,
+    "body": "{\"op_id\": \"getAccount\", \"framework\": \"stub\", \"method\": \"GET\", \"path_params\": {\"id\": \"acc-alice-1\"}, \"stub\": true}",
+    "verifier": [
+      {
+        "ts": "2026-11-22T19:03:04.806223+00:00",
+        "adapter": "orig",
+        "jti": "7f784a89-750a-4c49-8b82-a3e882106969",
+        "view_method": "GET",
+        "view_uri": "/api/v1/accounts/acc-alice-1",
+        "view_host": "api.bench.test",
+        "view_proto": "http",
+        "view_dup": false,
+        "htm": "GET",
+        "htu": "http://api.bench.test/api/v1/accounts/acc-alice-1",
+        "canon_mode": "rfc3986",
+        "decision": "allow",
+        "reason": "ok",
+        "sub": "alice",
+        "jkt": "lxZXvDIoYZzbolMbWIWBOOEdz9dZQozbmTa1zdXUgTc",
+        "status": 200,
+        "latency_us": 20473
+      }
+    ],
+    "executor": [
+      {
+        "ts": "2026-11-22T19:03:04.812463+00:00",
+        "framework": "stub",
+        "jti": "7f784a89-750a-4c49-8b82-a3e882106969",
+        "op_id": "getAccount",
+        "route_template": "/api/v1/accounts/{id}",
+        "raw_method": "GET",
+        "effective_method": "GET",
+        "raw_target": "/api/v1/accounts/acc-alice-1",
+        "path_params": {
+          "id": "acc-alice-1"
+        },
+        "query": "",
+        "trust_headers": {
+          "x-forwarded-for": "172.23.0.1",
+          "x-forwarded-proto": "http",
+          "x-forwarded-host": "api.bench.test",
+          "x-forwarded-port": "8000",
+          "x-forwarded-path": "/api/v1/accounts/acc-alice-1",
+          "x-verified-sub": "alice",
+          "x-verified-jkt": "lxZXvDIoYZzbolMbWIWBOOEdz9dZQozbmTa1zdXUgTc"
+        },
+        "denied": false,
+        "status": 200,
+        "stub": true
+      }
+    ],
+    "checks": {
+      "http_200": true,
+      "verifier_once": true,
+      "executor_once": true,
+      "adapter": true,
+      "view_method": true,
+      "view_uri": true,
+      "view_host": true,
+      "auth+dpop_to_verifier": true,
+      "decision_allow": true,
+      "exec_op": true,
+      "exec_target": true
+    }
+  },
+  {
+    "id": "smokereal-kong-recommended-edge",
+    "gateway": "kong",
+    "profile": "recommended",
+    "image": "kong:3.9.5",
+    "digest": "sha256:e9b87ddd0e6087792586e2cbba5ce91eadcbdd3d3673249aa4606f7207408c0d",
+    "ok": true,
+    "stubs": {
+      "verifier": false,
+      "executor": true
+    },
+    "up_s": 13.6,
+    "jti": "a3e98f08-f456-451e-b7f1-353a836df5f9",
+    "status": 200,
+    "body": "{\"op_id\": \"getAccount\", \"framework\": \"stub\", \"method\": \"GET\", \"path_params\": {\"id\": \"acc-alice-1\"}, \"stub\": true}",
+    "verifier": [
+      {
+        "ts": "2026-11-22T19:03:26.311007+00:00",
+        "adapter": "orig",
+        "jti": "a3e98f08-f456-451e-b7f1-353a836df5f9",
+        "view_method": "GET",
+        "view_uri": "/api/v1/accounts/acc-alice-1",
+        "view_host": "api.bench.test",
+        "view_proto": "http",
+        "view_dup": false,
+        "htm": "GET",
+        "htu": "http://api.bench.test/api/v1/accounts/acc-alice-1",
+        "canon_mode": "rfc3986",
+        "decision": "allow",
+        "reason": "ok",
+        "sub": "alice",
+        "jkt": "lxZXvDIoYZzbolMbWIWBOOEdz9dZQozbmTa1zdXUgTc",
+        "status": 200,
+        "latency_us": 209042
+      }
+    ],
+    "executor": [
+      {
+        "ts": "2026-11-22T19:03:26.372835+00:00",
+        "framework": "stub",
+        "jti": "a3e98f08-f456-451e-b7f1-353a836df5f9",
+        "op_id": "getAccount",
+        "route_template": "/api/v1/accounts/{id}",
+        "raw_method": "GET",
+        "effective_method": "GET",
+        "raw_target": "/api/v1/accounts/acc-alice-1",
+        "path_params": {
+          "id": "acc-alice-1"
+        },
+        "query": "",
+        "trust_headers": {
+          "x-forwarded-for": "172.23.0.1",
+          "x-forwarded-proto": "http",
+          "x-forwarded-host": "api.bench.test",
+          "x-forwarded-port": "8000",
+          "x-forwarded-path": "/api/v1/accounts/acc-alice-1",
+          "x-verified-sub": "alice",
+          "x-verified-jkt": "lxZXvDIoYZzbolMbWIWBOOEdz9dZQozbmTa1zdXUgTc"
+        },
+        "denied": false,
+        "status": 200,
+        "stub": true
+      }
+    ],
+    "checks": {
+      "http_200": true,
+      "verifier_once": true,
+      "executor_once": true,
+      "adapter": true,
+      "view_method": true,
+      "view_uri": true,
+      "view_host": true,
+      "auth+dpop_to_verifier": true,
+      "decision_allow": true,
+      "exec_op": true,
+      "exec_target": true
+    }
+  },
+  {
+    "id": "smokereal-kong-strict-edge",
+    "gateway": "kong",
+    "profile": "strict",
+    "image": "kong:3.9.5",
+    "digest": "sha256:e9b87ddd0e6087792586e2cbba5ce91eadcbdd3d3673249aa4606f7207408c0d",
+    "ok": true,
+    "stubs": {
+      "verifier": false,
+      "executor": true
+    },
+    "up_s": 14.9,
+    "jti": "ab93d392-fdd5-4acc-b73a-fa01d051427f",
+    "status": 200,
+    "body": "{\"op_id\": \"getAccount\", \"framework\": \"stub\", \"method\": \"GET\", \"path_params\": {\"id\": \"acc-alice-1\"}, \"stub\": true}",
+    "verifier": [
+      {
+        "ts": "2026-11-22T19:03:51.666910+00:00",
+        "adapter": "orig",
+        "jti": "ab93d392-fdd5-4acc-b73a-fa01d051427f",
+        "view_method": "GET",
+        "view_uri": "/api/v1/accounts/acc-alice-1",
+        "view_host": "api.bench.test",
+        "view_proto": "http",
+        "view_dup": false,
+        "htm": "GET",
+        "htu": "http://api.bench.test/api/v1/accounts/acc-alice-1",
+        "canon_mode": "rfc3986",
+        "decision": "allow",
+        "reason": "ok",
+        "sub": "alice",
+        "jkt": "lxZXvDIoYZzbolMbWIWBOOEdz9dZQozbmTa1zdXUgTc",
+        "status": 200,
+        "latency_us": 375835
+      }
+    ],
+    "executor": [
+      {
+        "ts": "2026-11-22T19:03:51.715811+00:00",
+        "framework": "stub",
+        "jti": "ab93d392-fdd5-4acc-b73a-fa01d051427f",
+        "op_id": "getAccount",
+        "route_template": "/api/v1/accounts/{id}",
+        "raw_method": "GET",
+        "effective_method": "GET",
+        "raw_target": "/api/v1/accounts/acc-alice-1",
+        "path_params": {
+          "id": "acc-alice-1"
+        },
+        "query": "",
+        "trust_headers": {
+          "x-forwarded-for": "172.23.0.1",
+          "x-forwarded-proto": "http",
+          "x-forwarded-host": "api.bench.test",
+          "x-forwarded-port": "8000",
+          "x-forwarded-path": "/api/v1/accounts/acc-alice-1",
+          "x-verified-sub": "alice",
+          "x-verified-jkt": "lxZXvDIoYZzbolMbWIWBOOEdz9dZQozbmTa1zdXUgTc"
+        },
+        "denied": false,
+        "status": 200,
+        "stub": true
+      }
+    ],
+    "checks": {
+      "http_200": true,
+      "verifier_once": true,
+      "executor_once": true,
+      "adapter": true,
+      "view_method": true,
+      "view_uri": true,
+      "view_host": true,
+      "auth+dpop_to_verifier": true,
+      "decision_allow": true,
+      "exec_op": true,
+      "exec_target": true
+    }
+  },
+  {
+    "id": "smokereal-apisix-default-edge",
+    "gateway": "apisix",
+    "profile": "default",
+    "image": "apache/apisix:3.21.0-debian",
+    "digest": "sha256:1741a8e1186e5c39ea10e6b4fb3e682534d1705efb8328195de5b41ad0657380",
+    "ok": true,
+    "stubs": {
+      "verifier": false,
+      "executor": true
+    },
+    "up_s": 9.6,
+    "jti": "4fed7ecb-cdc2-4aa6-98a1-e326007ba739",
+    "status": 200,
+    "body": "{\"op_id\": \"getAccount\", \"framework\": \"stub\", \"method\": \"GET\", \"path_params\": {\"id\": \"acc-alice-1\"}, \"stub\": true}",
+    "verifier": [
+      {
+        "ts": "2026-11-22T19:04:10.586935+00:00",
+        "adapter": "fwd",
+        "jti": "4fed7ecb-cdc2-4aa6-98a1-e326007ba739",
+        "view_method": "GET",
+        "view_uri": "/api/v1/accounts/acc-alice-1",
+        "view_host": "api.bench.test",
+        "view_proto": "http",
+        "view_dup": false,
+        "htm": "GET",
+        "htu": "http://api.bench.test/api/v1/accounts/acc-alice-1",
+        "canon_mode": "rfc3986",
+        "decision": "allow",
+        "reason": "ok",
+        "sub": "alice",
+        "jkt": "lxZXvDIoYZzbolMbWIWBOOEdz9dZQozbmTa1zdXUgTc",
+        "status": 200,
+        "latency_us": 50095
+      }
+    ],
+    "executor": [
+      {
+        "ts": "2026-11-22T19:04:10.597842+00:00",
+        "framework": "stub",
+        "jti": "4fed7ecb-cdc2-4aa6-98a1-e326007ba739",
+        "op_id": "getAccount",
+        "route_template": "/api/v1/accounts/{id}",
+        "raw_method": "GET",
+        "effective_method": "GET",
+        "raw_target": "/api/v1/accounts/acc-alice-1",
+        "path_params": {
+          "id": "acc-alice-1"
+        },
+        "query": "",
+        "trust_headers": {
+          "x-forwarded-for": "172.23.0.1",
+          "x-forwarded-proto": "http",
+          "x-forwarded-host": "api.bench.test",
+          "x-forwarded-port": "8000",
+          "x-verified-sub": "alice",
+          "x-verified-jkt": "lxZXvDIoYZzbolMbWIWBOOEdz9dZQozbmTa1zdXUgTc"
+        },
+        "denied": false,
+        "status": 200,
+        "stub": true
+      }
+    ],
+    "checks": {
+      "http_200": true,
+      "verifier_once": true,
+      "executor_once": true,
+      "adapter": true,
+      "view_method": true,
+      "view_uri": true,
+      "view_host": true,
+      "auth+dpop_to_verifier": true,
+      "decision_allow": true,
+      "exec_op": true,
+      "exec_target": true
+    }
+  },
+  {
+    "id": "smokereal-apisix-recommended-edge",
+    "gateway": "apisix",
+    "profile": "recommended",
+    "image": "apache/apisix:3.21.0-debian",
+    "digest": "sha256:1741a8e1186e5c39ea10e6b4fb3e682534d1705efb8328195de5b41ad0657380",
+    "ok": true,
+    "stubs": {
+      "verifier": false,
+      "executor": true
+    },
+    "up_s": 8.2,
+    "jti": "762d07c8-ea03-4ee8-a0f0-bf58a2bacfca",
+    "status": 200,
+    "body": "{\"op_id\": \"getAccount\", \"framework\": \"stub\", \"method\": \"GET\", \"path_params\": {\"id\": \"acc-alice-1\"}, \"stub\": true}",
+    "verifier": [
+      {
+        "ts": "2026-11-22T19:04:26.384832+00:00",
+        "adapter": "fwd",
+        "jti": "762d07c8-ea03-4ee8-a0f0-bf58a2bacfca",
+        "view_method": "GET",
+        "view_uri": "/api/v1/accounts/acc-alice-1",
+        "view_host": "api.bench.test",
+        "view_proto": "http",
+        "view_dup": false,
+        "htm": "GET",
+        "htu": "http://api.bench.test/api/v1/accounts/acc-alice-1",
+        "canon_mode": "rfc3986",
+        "decision": "allow",
+        "reason": "ok",
+        "sub": "alice",
+        "jkt": "lxZXvDIoYZzbolMbWIWBOOEdz9dZQozbmTa1zdXUgTc",
+        "status": 200,
+        "latency_us": 24292
+      }
+    ],
+    "executor": [
+      {
+        "ts": "2026-11-22T19:04:26.387032+00:00",
+        "framework": "stub",
+        "jti": "762d07c8-ea03-4ee8-a0f0-bf58a2bacfca",
+        "op_id": "getAccount",
+        "route_template": "/api/v1/accounts/{id}",
+        "raw_method": "GET",
+        "effective_method": "GET",
+        "raw_target": "/api/v1/accounts/acc-alice-1",
+        "path_params": {
+          "id": "acc-alice-1"
+        },
+        "query": "",
+        "trust_headers": {
+          "x-forwarded-for": "172.23.0.1",
+          "x-forwarded-proto": "http",
+          "x-forwarded-host": "api.bench.test",
+          "x-forwarded-port": "8000",
+          "x-verified-sub": "alice",
+          "x-verified-jkt": "lxZXvDIoYZzbolMbWIWBOOEdz9dZQozbmTa1zdXUgTc"
+        },
+        "denied": false,
+        "status": 200,
+        "stub": true
+      }
+    ],
+    "checks": {
+      "http_200": true,
+      "verifier_once": true,
+      "executor_once": true,
+      "adapter": true,
+      "view_method": true,
+      "view_uri": true,
+      "view_host": true,
+      "auth+dpop_to_verifier": true,
+      "decision_allow": true,
+      "exec_op": true,
+      "exec_target": true
+    }
+  },
+  {
+    "id": "smokereal-apisix-strict-edge",
+    "gateway": "apisix",
+    "profile": "strict",
+    "image": "apache/apisix:3.21.0-debian",
+    "digest": "sha256:1741a8e1186e5c39ea10e6b4fb3e682534d1705efb8328195de5b41ad0657380",
+    "ok": true,
+    "stubs": {
+      "verifier": false,
+      "executor": true
+    },
+    "up_s": 11.1,
+    "jti": "3b74f065-e8a8-4d86-a8c2-dfd3da9a5b65",
+    "status": 200,
+    "body": "{\"op_id\": \"getAccount\", \"framework\": \"stub\", \"method\": \"GET\", \"path_params\": {\"id\": \"acc-alice-1\"}, \"stub\": true}",
+    "verifier": [
+      {
+        "ts": "2026-11-22T19:04:45.706371+00:00",
+        "adapter": "fwd",
+        "jti": "3b74f065-e8a8-4d86-a8c2-dfd3da9a5b65",
+        "view_method": "GET",
+        "view_uri": "/api/v1/accounts/acc-alice-1",
+        "view_host": "api.bench.test",
+        "view_proto": "http",
+        "view_dup": false,
+        "htm": "GET",
+        "htu": "http://api.bench.test/api/v1/accounts/acc-alice-1",
+        "canon_mode": "rfc3986",
+        "decision": "allow",
+        "reason": "ok",
+        "sub": "alice",
+        "jkt": "lxZXvDIoYZzbolMbWIWBOOEdz9dZQozbmTa1zdXUgTc",
+        "status": 200,
+        "latency_us": 29273
+      }
+    ],
+    "executor": [
+      {
+        "ts": "2026-11-22T19:04:45.709154+00:00",
+        "framework": "stub",
+        "jti": "3b74f065-e8a8-4d86-a8c2-dfd3da9a5b65",
+        "op_id": "getAccount",
+        "route_template": "/api/v1/accounts/{id}",
+        "raw_method": "GET",
+        "effective_method": "GET",
+        "raw_target": "/api/v1/accounts/acc-alice-1",
+        "path_params": {
+          "id": "acc-alice-1"
+        },
+        "query": "",
+        "trust_headers": {
+          "x-forwarded-for": "172.23.0.1",
+          "x-forwarded-proto": "http",
+          "x-forwarded-host": "api.bench.test",
+          "x-forwarded-port": "8000",
+          "x-verified-sub": "alice",
+          "x-verified-jkt": "lxZXvDIoYZzbolMbWIWBOOEdz9dZQozbmTa1zdXUgTc"
+        },
+        "denied": false,
+        "status": 200,
+        "stub": true
+      }
+    ],
+    "checks": {
+      "http_200": true,
+      "verifier_once": true,
+      "executor_once": true,
+      "adapter": true,
+      "view_method": true,
+      "view_uri": true,
+      "view_host": true,
+      "auth+dpop_to_verifier": true,
+      "decision_allow": true,
+      "exec_op": true,
+      "exec_target": true
+    }
+  },
+  {
+    "id": "smokereal-haproxy-default-edge",
+    "gateway": "haproxy",
+    "profile": "default",
+    "image": "haproxy:3.2.27",
+    "digest": "sha256:5ddf08c89c95a311f4bfb761d74016597fdca76ecfcdf169ed1bab117f3da1ea",
+    "ok": true,
+    "stubs": {
+      "verifier": false,
+      "executor": true
+    },
+    "up_s": 8.5,
+    "jti": "2dd39217-5339-4568-9d25-8b65e668c459",
+    "status": 200,
+    "body": "{\"op_id\": \"getAccount\", \"framework\": \"stub\", \"method\": \"GET\", \"path_params\": {\"id\": \"acc-alice-1\"}, \"stub\": true}",
+    "verifier": [
+      {
+        "ts": "2026-11-22T19:05:03.131195+00:00",
+        "adapter": "orig",
+        "jti": "2dd39217-5339-4568-9d25-8b65e668c459",
+        "view_method": "GET",
+        "view_uri": "/api/v1/accounts/acc-alice-1",
+        "view_host": "api.bench.test",
+        "view_proto": "http",
+        "view_dup": false,
+        "htm": "GET",
+        "htu": "http://api.bench.test/api/v1/accounts/acc-alice-1",
+        "canon_mode": "rfc3986",
+        "decision": "allow",
+        "reason": "ok",
+        "sub": "alice",
+        "jkt": "lxZXvDIoYZzbolMbWIWBOOEdz9dZQozbmTa1zdXUgTc",
+        "status": 200,
+        "latency_us": 45710
+      }
+    ],
+    "executor": [
+      {
+        "ts": "2026-11-22T19:05:03.137094+00:00",
+        "framework": "stub",
+        "jti": "2dd39217-5339-4568-9d25-8b65e668c459",
+        "op_id": "getAccount",
+        "route_template": "/api/v1/accounts/{id}",
+        "raw_method": "GET",
+        "effective_method": "GET",
+        "raw_target": "/api/v1/accounts/acc-alice-1",
+        "path_params": {
+          "id": "acc-alice-1"
+        },
+        "query": "",
+        "trust_headers": {
+          "x-verified-sub": "alice",
+          "x-verified-jkt": "lxZXvDIoYZzbolMbWIWBOOEdz9dZQozbmTa1zdXUgTc"
+        },
+        "denied": false,
+        "status": 200,
+        "stub": true
+      }
+    ],
+    "checks": {
+      "http_200": true,
+      "verifier_once": true,
+      "executor_once": true,
+      "adapter": true,
+      "view_method": true,
+      "view_uri": true,
+      "view_host": true,
+      "auth+dpop_to_verifier": true,
+      "decision_allow": true,
+      "exec_op": true,
+      "exec_target": true
+    }
+  },
+  {
+    "id": "smokereal-haproxy-recommended-edge",
+    "gateway": "haproxy",
+    "profile": "recommended",
+    "image": "haproxy:3.2.27",
+    "digest": "sha256:5ddf08c89c95a311f4bfb761d74016597fdca76ecfcdf169ed1bab117f3da1ea",
+    "ok": true,
+    "stubs": {
+      "verifier": false,
+      "executor": true
+    },
+    "up_s": 10.3,
+    "jti": "271e074b-4ce7-4d35-b0c7-29546b8161a2",
+    "status": 200,
+    "body": "{\"op_id\": \"getAccount\", \"framework\": \"stub\", \"method\": \"GET\", \"path_params\": {\"id\": \"acc-alice-1\"}, \"stub\": true}",
+    "verifier": [
+      {
+        "ts": "2026-11-22T19:05:20.670939+00:00",
+        "adapter": "orig",
+        "jti": "271e074b-4ce7-4d35-b0c7-29546b8161a2",
+        "view_method": "GET",
+        "view_uri": "/api/v1/accounts/acc-alice-1",
+        "view_host": "api.bench.test",
+        "view_proto": "http",
+        "view_dup": false,
+        "htm": "GET",
+        "htu": "http://api.bench.test/api/v1/accounts/acc-alice-1",
+        "canon_mode": "rfc3986",
+        "decision": "allow",
+        "reason": "ok",
+        "sub": "alice",
+        "jkt": "lxZXvDIoYZzbolMbWIWBOOEdz9dZQozbmTa1zdXUgTc",
+        "status": 200,
+        "latency_us": 22553
+      }
+    ],
+    "executor": [
+      {
+        "ts": "2026-11-22T19:05:20.672703+00:00",
+        "framework": "stub",
+        "jti": "271e074b-4ce7-4d35-b0c7-29546b8161a2",
+        "op_id": "getAccount",
+        "route_template": "/api/v1/accounts/{id}",
+        "raw_method": "GET",
+        "effective_method": "GET",
+        "raw_target": "/api/v1/accounts/acc-alice-1",
+        "path_params": {
+          "id": "acc-alice-1"
+        },
+        "query": "",
+        "trust_headers": {
+          "x-verified-sub": "alice",
+          "x-verified-jkt": "lxZXvDIoYZzbolMbWIWBOOEdz9dZQozbmTa1zdXUgTc"
+        },
+        "denied": false,
+        "status": 200,
+        "stub": true
+      }
+    ],
+    "checks": {
+      "http_200": true,
+      "verifier_once": true,
+      "executor_once": true,
+      "adapter": true,
+      "view_method": true,
+      "view_uri": true,
+      "view_host": true,
+      "auth+dpop_to_verifier": true,
+      "decision_allow": true,
+      "exec_op": true,
+      "exec_target": true
+    }
+  },
+  {
+    "id": "smokereal-haproxy-strict-edge",
+    "gateway": "haproxy",
+    "profile": "strict",
+    "image": "haproxy:3.2.27",
+    "digest": "sha256:5ddf08c89c95a311f4bfb761d74016597fdca76ecfcdf169ed1bab117f3da1ea",
+    "ok": true,
+    "stubs": {
+      "verifier": false,
+      "executor": true
+    },
+    "up_s": 8.7,
+    "jti": "6049d2f0-81ca-466f-aa16-22e5923911ee",
+    "status": 200,
+    "body": "{\"op_id\": \"getAccount\", \"framework\": \"stub\", \"method\": \"GET\", \"path_params\": {\"id\": \"acc-alice-1\"}, \"stub\": true}",
+    "verifier": [
+      {
+        "ts": "2026-11-22T19:05:38.410171+00:00",
+        "adapter": "orig",
+        "jti": "6049d2f0-81ca-466f-aa16-22e5923911ee",
+        "view_method": "GET",
+        "view_uri": "/api/v1/accounts/acc-alice-1",
+        "view_host": "api.bench.test",
+        "view_proto": "http",
+        "view_dup": false,
+        "htm": "GET",
+        "htu": "http://api.bench.test/api/v1/accounts/acc-alice-1",
+        "canon_mode": "rfc3986",
+        "decision": "allow",
+        "reason": "ok",
+        "sub": "alice",
+        "jkt": "lxZXvDIoYZzbolMbWIWBOOEdz9dZQozbmTa1zdXUgTc",
+        "status": 200,
+        "latency_us": 17158
+      }
+    ],
+    "executor": [
+      {
+        "ts": "2026-11-22T19:05:38.411583+00:00",
+        "framework": "stub",
+        "jti": "6049d2f0-81ca-466f-aa16-22e5923911ee",
+        "op_id": "getAccount",
+        "route_template": "/api/v1/accounts/{id}",
+        "raw_method": "GET",
+        "effective_method": "GET",
+        "raw_target": "/api/v1/accounts/acc-alice-1",
+        "path_params": {
+          "id": "acc-alice-1"
+        },
+        "query": "",
+        "trust_headers": {
+          "x-verified-sub": "alice",
+          "x-verified-jkt": "lxZXvDIoYZzbolMbWIWBOOEdz9dZQozbmTa1zdXUgTc"
+        },
+        "denied": false,
+        "status": 200,
+        "stub": true
+      }
+    ],
+    "checks": {
+      "http_200": true,
+      "verifier_once": true,
+      "executor_once": true,
+      "adapter": true,
+      "view_method": true,
+      "view_uri": true,
+      "view_host": true,
+      "auth+dpop_to_verifier": true,
+      "decision_allow": true,
+      "exec_op": true,
+      "exec_target": true
+    }
+  }
+]

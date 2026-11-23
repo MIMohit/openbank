@@ -1,0 +1,1 @@
+w12-block-ngx-express-def runner_rc=0 secs=14 violations=2 e4_runner[w12-block-ngx-express-def] wrote /Users/mimohit/openbank/binding/harness/logs/w12-block-ngx-express-def/runner.jsonl: {'sent': 29, 'errors': 0}

@@ -1,0 +1,1 @@
+oracle[w13-kong-recommended-edge-fastapi-ovon] {'topology': 'w13-kong-recommended-edge-fastapi-ovon', 'cases': 948, 'accepted': 672, 'hits_raw': 25, 'hits_confirmed': 0, 'S1': 16, 'S2': 9, 'S3': 0, 'signatures': 17, 'max_res_hat': 4, 'b0': 0, 'propagation': 130, 'uncorrelated': 22}

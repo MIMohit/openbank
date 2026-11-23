@@ -1,0 +1,30 @@
+topology,case_id,vector_id,policy_scope,class,outcome,violation_kind,forbidden_kind_intended,pdp_decision,pdp_reason,matched_rule,exec_op_id,exec_status,effective_method,exec_path_params,raw_target,route_template
+w12-nat-ngx-aspnet,case-admin-del,case-admin-del,blocklist,g2,VIOLATION,admin,admin,allow,ok,,adminDeleteUser,200,DELETE,"{""id"": ""u-1""}",/api/v1/ADMIN/users/u-1,/api/v1/admin/users/{id}
+w12-nat-ngx-aspnet,case-admin-list,case-admin-list,blocklist,g2,VIOLATION,admin,admin,allow,ok,,adminListUsers,200,GET,{},/api/v1/ADMIN/users,/api/v1/admin/users
+w12-nat-ngx-aspnet,case-api-admin,case-api-admin,blocklist,g2,no_records,,admin,,,,,,,null,,
+w12-nat-ngx-aspnet,direct-admin-del,direct-admin-del,direct,g2,no_records,,admin,,,,,,,null,,
+w12-nat-ngx-aspnet,direct-admin-list,direct-admin-list,direct,g2,no_records,,admin,,,,,,,null,,
+w12-nat-ngx-aspnet,direct-bob-get,direct-bob-get,direct,g2,no_records,,bob,,,,,,,null,,
+w12-nat-ngx-aspnet,direct-bob-getv2,direct-bob-getv2,direct,g2,no_records,,bob,,,,,,,null,,
+w12-nat-ngx-aspnet,dotseg-admin-del,dotseg-admin-del,allowlist,g2,no_records,,admin,,,,,,,null,,
+w12-nat-ngx-aspnet,dotseg-admin-list,dotseg-admin-list,allowlist,g2,no_records,,admin,,,,,,,null,,
+w12-nat-ngx-aspnet,dotseg-bob-del,dotseg-bob-del,allowlist,g2,no_records,,bob,,,,,,,null,,
+w12-nat-ngx-aspnet,dotseg-bob-get,dotseg-bob-get,allowlist,g2,no_records,,bob,,,,,,,null,,
+w12-nat-ngx-aspnet,dotseg-bob-getv2,dotseg-bob-getv2,allowlist,g2,no_records,,bob,,,,,,,null,,
+w12-nat-ngx-aspnet,dotseg-bob-put,dotseg-bob-put,allowlist,g2,no_records,,bob,,,,,,,null,,
+w12-nat-ngx-aspnet,dotseg-v2v1-admin,dotseg-v2v1-admin,allowlist,g2,no_records,,admin,,,,,,,null,,
+w12-nat-ngx-aspnet,dslash-accounts-bob,dslash-accounts-bob,blocklist,g2,no_records,,bob,,,,,,,null,,
+w12-nat-ngx-aspnet,dslash-admin-del,dslash-admin-del,blocklist,g2,no_records,,admin,,,,,,,null,,
+w12-nat-ngx-aspnet,dslash-admin-list,dslash-admin-list,blocklist,g2,no_records,,admin,,,,,,,null,,
+w12-nat-ngx-aspnet,encdotseg-admin-list,encdotseg-admin-list,allowlist,g2,no_records,,admin,,,,,,,null,,
+w12-nat-ngx-aspnet,encdotseg-bob-get,encdotseg-bob-get,allowlist,g2,no_records,,bob,,,,,,,null,,
+w12-nat-ngx-aspnet,encslash-bob-get,encslash-bob-get,blocklist,g2,no_records,,bob,,,,,,,null,,
+w12-nat-ngx-aspnet,json-accounts-bob,json-accounts-bob,blocklist,g2,no_records,,bob,,,,,,,null,,
+w12-nat-ngx-aspnet,json-admin-list,json-admin-list,blocklist,g2,no_records,,admin,,,,,,,null,,
+w12-nat-ngx-aspnet,legit-alice-get,legit-alice-get,legit,g2,allowed_sound,,,allow,ok,,getAccount,200,GET,"{""id"": ""acc-alice-1""}",/api/v1/accounts/acc-alice-1,/api/v1/accounts/{id}
+w12-nat-ngx-aspnet,legit-alice-getv2,legit-alice-getv2,legit,g2,allowed_sound,,,allow,ok,,getAccountV2,200,GET,"{""id"": ""acc-alice-1""}",/api/v2/accounts/acc-alice-1,/api/v2/accounts/{id}
+w12-nat-ngx-aspnet,legit-me,legit-me,legit,g2,allowed_sound,,,allow,ok,,me,200,GET,{},/api/v1/me,/api/v1/me
+w12-nat-ngx-aspnet,matrix-accounts-bob,matrix-accounts-bob,blocklist,g2,exec_rejected,,bob,allow,ok,,NOT_FOUND,404,GET,{},/api/v1/accounts;x=1/acc-bob-1,
+w12-nat-ngx-aspnet,matrix-admin-del,matrix-admin-del,blocklist,g2,exec_rejected,,admin,allow,ok,,NOT_FOUND,404,DELETE,{},/api/v1/admin;x=1/users/u-1,
+w12-nat-ngx-aspnet,matrix-admin-list,matrix-admin-list,blocklist,g2,exec_rejected,,admin,allow,ok,,NOT_FOUND,404,GET,{},/api/v1/admin;x=1/users,
+w12-nat-ngx-aspnet,trail-admin-list,trail-admin-list,blocklist,g2,no_records,,admin,,,,,,,null,,

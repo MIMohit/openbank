@@ -1,0 +1,166 @@
+{
+ "topology": "w13-apisix-default-edge-aspnet-ovoff",
+ "case_id": "graphql.getProfile:g1-gql-to-deleteProfile:alice:87f436958aca",
+ "primitive_ids": [
+  "g1-gql-to-deleteProfile"
+ ],
+ "exec_op_id": "graphql.deleteProfile",
+ "exec_path_params": {},
+ "full_units": 6,
+ "minimal_units": 6,
+ "still_hit": true,
+ "canonical_request": "POST /api/v1/graphql HTTP/1.1\r\nHost: api.bench.test\r\nAuthorization: @@AUTHZ@@\r\nDPoP: @@PROOF@@\r\nAccept: application/json\r\nUser-Agent: bind-harness/1.0\r\nContent-Type: application/json\r\nContent-Length: 97\r\nConnection: close\r\n\r\n{\"operationName\":\"getProfile\",\"query\":\"query getProfile { profile { id email } }\",\"variables\":{}}",
+ "minimal_request": "POST /api/v1/graphql HTTP/1.1\r\nHost: api.bench.test\r\nAuthorization: @@AUTHZ@@\r\nDPoP: @@PROOF@@\r\nAccept: application/json\r\nUser-Agent: bind-harness/1.0\r\nContent-Type: application/json\r\nContent-Length: 100\r\nConnection: close\r\n\r\n{\"operationName\":\"deleteProfile\",\"query\":\"query getProfile { profile { id email } }\",\"variables\":{}}",
+ "trials": [
+  {
+   "n_units": 6,
+   "status": 200,
+   "hit": true
+  },
+  {
+   "n_units": 3,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 3,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 3,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 3,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 5,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 5,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 5,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 5,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 5,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 5,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 5,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 5,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 5,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 5,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 5,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 5,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 6,
+   "status": 200,
+   "hit": true
+  }
+ ]
+}

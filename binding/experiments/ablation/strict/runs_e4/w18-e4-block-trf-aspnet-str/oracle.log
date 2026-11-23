@@ -1,0 +1,1 @@
+e4_oracle[w18-e4-block-trf-aspnet-str] {'topology': 'w18-e4-block-trf-aspnet-str', 'gateway': 'traefik', 'profile': 'strict', 'framework': 'aspnet', 'verifier_image': 'bh-pdp-block:latest', 'cases': 29, 'pdp_allow': 8, 'violations': 2, 'admin': 2, 'bob': 0, 'vectors_hit': 'case-admin-del,case-admin-list'}

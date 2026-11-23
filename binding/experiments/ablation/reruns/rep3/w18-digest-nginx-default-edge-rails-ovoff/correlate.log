@@ -1,0 +1,1 @@
+oracle[w18-digest-nginx-default-edge-rails-ovoff] {'topology': 'w18-digest-nginx-default-edge-rails-ovoff', 'cases': 24, 'accepted': 24, 'hits_raw': 7, 'hits_confirmed': 0, 'S1': 7, 'S2': 0, 'S3': 0, 'signatures': 7, 'max_res_hat': 3, 'b0': 0, 'propagation': 0, 'uncorrelated': 5}

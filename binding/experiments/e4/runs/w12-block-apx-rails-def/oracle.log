@@ -1,0 +1,1 @@
+e4_oracle[w12-block-apx-rails-def] {'topology': 'w12-block-apx-rails-def', 'gateway': 'apisix', 'profile': 'default', 'framework': 'rails', 'verifier_image': 'bh-pdp-block:latest', 'cases': 29, 'pdp_allow': 8, 'violations': 0, 'admin': 0, 'bob': 0, 'vectors_hit': ''}

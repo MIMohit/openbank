@@ -1,0 +1,10 @@
+id: w14-traefik-default-edge-go-chi-ovoff
+gateway: traefik
+gateway_image: traefik:v3.7.19
+profile: default
+placement: edge
+framework: go-chi
+executor_image: bh-exec-go-chi:latest
+override: 'off'
+verifier: {image: 'bh-verifier:latest', canon: rfc3986, view_mac: 'off'}
+host_port: 34118

@@ -1,0 +1,50 @@
+== fwd allow
+   HTTP/1.1 200 OK
+   Server: bh-verifier/1.0 Python/3.12.8
+   Date: Sun, 22 Nov 2026 18:48:05 GMT
+   Content-Type: application/json
+   Content-Length: 91
+   X-Verified-Sub: alice
+   X-Verified-Jkt: lxZXvDIoYZzbolMbWIWBOOEdz9dZQozbmTa1zdXUgTc
+   X-Verified-View: v1;lk2IAvXUZYeNdkc2oXsfYObnYrpin5_VJUzCzM3p-Zw
+   
+   {"decision": "allow", "sub": "alice", "jkt": "lxZXvDIoYZzbolMbWIWBOOEdz9dZQozbmTa1zdXUgTc"}   -> HTTP 200
+== fwd replay (same proof)
+   {"decision": "deny", "reason": "jti_replay", "error": "invalid_dpop_proof"}   -> HTTP 401
+== orig allow
+   HTTP/1.1 200 OK
+   Server: bh-verifier/1.0 Python/3.12.8
+   Date: Sun, 22 Nov 2026 18:48:05 GMT
+   Content-Type: application/json
+   Content-Length: 91
+   X-Verified-Sub: alice
+   X-Verified-Jkt: lxZXvDIoYZzbolMbWIWBOOEdz9dZQozbmTa1zdXUgTc
+   X-Verified-View: v1;PjLfOSKu3lC-Pr8QpfGncHStrfcdyOgerH7BLahaBj0
+   
+   {"decision": "allow", "sub": "alice", "jkt": "lxZXvDIoYZzbolMbWIWBOOEdz9dZQozbmTa1zdXUgTc"}   -> HTTP 200
+== orig deny (DELETE view)
+   HTTP/1.1 401 Unauthorized
+   Server: bh-verifier/1.0 Python/3.12.8
+   Date: Sun, 22 Nov 2026 18:48:06 GMT
+   Content-Type: application/json
+   Content-Length: 77
+   WWW-Authenticate: DPoP error="invalid_dpop_proof", algs="ES256 ES384 ES512 RS256 PS256"
+   
+   {"decision": "deny", "reason": "htm_mismatch", "error": "invalid_dpop_proof"}   -> HTTP 401
+== envoy allow
+   HTTP/1.1 200 OK
+   Server: bh-verifier/1.0 Python/3.12.8
+   Date: Sun, 22 Nov 2026 18:48:06 GMT
+   Content-Type: application/json
+   Content-Length: 91
+   X-Verified-Sub: alice
+   X-Verified-Jkt: lxZXvDIoYZzbolMbWIWBOOEdz9dZQozbmTa1zdXUgTc
+   X-Verified-View: v1;OH3-reF4YD5FMhwDum7RhVkVcjrb9W8xIgur4pbPx7Q
+   
+   {"decision": "allow", "sub": "alice", "jkt": "lxZXvDIoYZzbolMbWIWBOOEdz9dZQozbmTa1zdXUgTc"}   -> HTTP 200
+== envoy deny (DELETE)
+   {"decision": "deny", "reason": "htm_mismatch", "error": "invalid_dpop_proof"}   -> HTTP 401
+== orig deny (wrong_ath)
+   {"decision": "deny", "reason": "ath_mismatch", "error": "invalid_dpop_proof"}   -> HTTP 401
+== orig deny (bearer)
+   {"decision": "deny", "reason": "bearer_downgrade", "error": "invalid_token"}   -> HTTP 401

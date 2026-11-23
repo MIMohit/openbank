@@ -1,0 +1,10 @@
+w9-nginx-default-edge-express-ovon: reran 11 hits x 3
+w9-nginx-default-edge-express-ovoff: reran 15 hits x 3
+w9-nginx-default-edge-fastapi-ovoff: reran 20 hits x 3
+w9-nginx-default-edge-fastapi-ovon: reran 26 hits x 3
+w9-nginx-default-edge-spring-ovoff: reran 14 hits x 3
+w9-nginx-recommended-edge-express-ovoff: reran 15 hits x 3
+w9-nginx-default-edge-spring-ovon: reran 11 hits x 3
+w9-nginx-recommended-edge-express-ovon: reran 11 hits x 3
+w9-nginx-recommended-edge-fastapi-ovoff: reran 20 hits x 3
+w9-nginx-recommended-edge-fastapi-ovon: reran 26 hits x 3

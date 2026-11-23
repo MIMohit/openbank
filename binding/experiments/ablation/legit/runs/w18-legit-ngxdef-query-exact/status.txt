@@ -1,0 +1,1 @@
+[legit] w18-legit-ngxdef-query-exact bind=query: 18 sent, false_reject=0

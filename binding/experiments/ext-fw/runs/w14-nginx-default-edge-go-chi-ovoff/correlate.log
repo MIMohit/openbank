@@ -1,0 +1,1 @@
+oracle[w14-nginx-default-edge-go-chi-ovoff] {'topology': 'w14-nginx-default-edge-go-chi-ovoff', 'cases': 948, 'accepted': 659, 'hits_raw': 19, 'hits_confirmed': 0, 'S1': 12, 'S2': 7, 'S3': 0, 'signatures': 14, 'max_res_hat': 3, 'b0': 0, 'propagation': 117, 'uncorrelated': 2}

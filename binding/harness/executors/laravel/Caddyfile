@@ -1,0 +1,14 @@
+{
+	frankenphp
+	auto_https off
+	admin off
+	log {
+		level ERROR
+	}
+}
+
+:8080 {
+	root * /app/public
+	# Standard FrankenPHP classic mode: serve existing files, otherwise public/index.php.
+	php_server
+}

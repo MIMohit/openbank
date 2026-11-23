@@ -1,0 +1,1 @@
+oracle[w18-no-htu-nginx-default-edge-rails-ovon] {'topology': 'w18-no-htu-nginx-default-edge-rails-ovon', 'cases': 78, 'accepted': 78, 'hits_raw': 61, 'hits_confirmed': 0, 'S1': 52, 'S2': 9, 'S3': 0, 'signatures': 28, 'max_res_hat': 8, 'b0': 0, 'propagation': 0, 'uncorrelated': 2}

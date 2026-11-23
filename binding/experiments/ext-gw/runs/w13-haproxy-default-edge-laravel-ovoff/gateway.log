@@ -1,0 +1,400 @@
+gateway-1  | -:- [23/Nov/2026:07:05:18.147] <HTTPCLIENT> -/- 2/0/0/145/149 200 313 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:56988 [23/Nov/2026:07:05:18.147] fe be_exec/exec 149/0/4/41/194 200 309 - - ---- 1/1/0/0/0 0/0 "GET /api/v2/accounts/acc-alice-1 HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:07:05:18.358] <HTTPCLIENT> -/- 2/0/0/7/7 200 313 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:56996 [23/Nov/2026:07:05:18.358] fe be_exec/exec 7/0/2/44/53 200 309 - - ---- 1/1/0/0/0 0/0 "GET /api/v2/accounts/acc-alice-1 HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:07:05:18.424] <HTTPCLIENT> -/- 2/0/0/40/40 200 313 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:56998 [23/Nov/2026:07:05:18.424] fe be_exec/exec 40/0/14/74/128 200 309 - - ---- 1/1/0/0/0 0/0 "GET /api/v2/accounts/acc-alice-1 HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:07:05:18.579] <HTTPCLIENT> -/- 2/0/0/12/12 200 313 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:57014 [23/Nov/2026:07:05:18.578] fe be_exec/exec 13/0/10/62/85 200 309 - - ---- 1/1/0/0/0 0/0 "GET /api/v2/accounts/acc-alice-1 HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:07:05:18.704] <HTTPCLIENT> -/- 2/0/0/19/26 200 313 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:57024 [23/Nov/2026:07:05:18.704] fe be_exec/exec 26/0/41/53/120 200 309 - - ---- 1/1/0/0/0 0/0 "GET /api/v2/accounts/acc-alice-1 HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:07:05:18.871] <HTTPCLIENT> -/- 2/0/0/17/17 200 313 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:57038 [23/Nov/2026:07:05:18.870] fe be_exec/exec 18/0/3/25/46 200 309 - - ---- 1/1/0/0/0 0/0 "GET /api/v2/accounts/acc-alice-1 HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:07:05:18.941] <HTTPCLIENT> -/- 2/0/0/25/25 200 313 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:57046 [23/Nov/2026:07:05:18.941] fe be_exec/exec 25/0/1/13/39 200 309 - - ---- 1/1/0/0/0 0/0 "GET /api/v2/accounts/acc-alice-1 HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:07:05:18.995] <HTTPCLIENT> -/- 2/0/0/5/45 200 313 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:57056 [23/Nov/2026:07:05:18.995] fe be_exec/exec 46/0/6/323/375 200 309 - - ---- 1/1/0/0/0 0/0 "GET /api/v2/accounts/acc-alice-1 HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:07:05:19.481] <HTTPCLIENT> -/- 2/0/0/22/28 200 313 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:57060 [23/Nov/2026:07:05:19.481] fe be_exec/exec 28/0/3/80/111 200 309 - - ---- 1/1/0/0/0 0/0 "GET /api/v2/accounts/acc-alice-1 HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:07:05:19.607] <HTTPCLIENT> -/- 2/0/0/12/12 200 313 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:57760 [23/Nov/2026:07:05:19.607] fe be_exec/exec 12/0/18/26/56 200 309 - - ---- 1/1/0/0/0 0/0 "GET /api/v2/accounts/acc-alice-1 HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:07:05:19.691] <HTTPCLIENT> -/- 2/0/0/13/13 200 313 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:57774 [23/Nov/2026:07:05:19.691] fe be_exec/exec 13/0/2/31/46 200 309 - - ---- 1/1/0/0/0 0/0 "GET /api/v2/accounts/acc-alice-1 HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:07:05:19.753] <HTTPCLIENT> -/- 2/0/0/24/24 200 313 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:57788 [23/Nov/2026:07:05:19.753] fe be_exec/exec 24/0/1/13/38 200 309 - - ---- 1/1/0/0/0 0/0 "GET /api/v2/accounts/acc-alice-1 HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:07:05:19.799] <HTTPCLIENT> -/- 2/0/0/16/16 200 313 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:57794 [23/Nov/2026:07:05:19.799] fe be_exec/exec 16/0/4/9/29 200 309 - - ---- 1/1/0/0/0 0/0 "GET /api/v2/accounts/acc-alice-1 HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:07:05:19.855] <HTTPCLIENT> -/- 2/0/0/26/60 200 313 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:57804 [23/Nov/2026:07:05:19.854] fe be_exec/exec 60/0/1/36/97 200 309 - - ---- 1/1/0/0/0 0/0 "GET /api/v2/accounts/acc-alice-1 HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:07:05:19.965] <HTTPCLIENT> -/- 2/0/0/8/48 200 313 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:57812 [23/Nov/2026:07:05:19.965] fe be_exec/exec 48/0/3/86/137 200 309 - - ---- 1/1/0/0/0 0/0 "GET /api/v2/accounts/acc-alice-1?_method=PUT HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:07:05:20.147] <HTTPCLIENT> -/- 2/0/0/23/23 200 313 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:57816 [23/Nov/2026:07:05:20.147] fe be_exec/exec 24/0/31/36/91 200 309 - - ---- 1/1/0/0/0 0/0 "GET /api/v2/accounts/acc-alice-1?_method=DELETE HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:07:05:20.329] <HTTPCLIENT> -/- 2/0/0/8/8 200 313 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:57820 [23/Nov/2026:07:05:20.328] fe be_exec/exec 9/0/6/41/56 200 309 - - ---- 1/1/0/0/0 0/0 "GET /api/v2/accounts/acc-alice-1?_method=POST HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:07:05:20.406] <HTTPCLIENT> -/- 2/0/0/10/10 200 313 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:57824 [23/Nov/2026:07:05:20.405] fe be_exec/exec 10/0/1/91/102 200 309 - - ---- 1/1/0/0/0 0/0 "GET /api/v2/accounts/acc-alice-1?_method=PATCH HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:07:05:20.585] <HTTPCLIENT> -/- 2/0/0/9/9 200 313 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.5:52866 [23/Nov/2026:07:05:20.614] fe fe/<NOSRV> -1/-1/-1/-1/0 400 0 - - CR-- 2/2/0/0/0 0/0 "<BADREQ>"
+gateway-1  | 172.23.0.1:57832 [23/Nov/2026:07:05:20.585] fe be_exec/exec 10/0/14/29/53 200 309 - - ---- 1/1/0/0/0 0/0 "GET /api/v2/accounts/acc-alice-1?_method=GET HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:07:05:20.708] <HTTPCLIENT> -/- 2/0/0/4/4 200 313 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:57844 [23/Nov/2026:07:05:20.707] fe be_exec/exec 5/0/0/49/54 200 309 - - ---- 1/1/0/0/0 0/0 "GET /api/v2/accounts/acc-alice-1 HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:07:05:20.803] <HTTPCLIENT> -/- 2/0/0/15/15 200 313 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:57856 [23/Nov/2026:07:05:20.802] fe be_exec/exec 16/0/1/19/36 200 309 - - ---- 1/1/0/0/0 0/0 "GET /api/v2/accounts/acc-alice-1 HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:07:05:20.876] <HTTPCLIENT> -/- 2/0/0/66/68 200 313 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:57860 [23/Nov/2026:07:05:20.875] fe be_exec/exec 69/0/1/118/188 200 309 - - ---- 1/1/0/0/0 0/0 "GET /api/v2/accounts/acc-alice-1 HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:07:05:21.082] <HTTPCLIENT> -/- 2/0/0/16/16 200 313 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:57868 [23/Nov/2026:07:05:21.081] fe be_exec/exec 17/0/8/16/41 200 309 - - ---- 1/1/0/0/0 0/0 "GET /api/v2/accounts/acc-alice-1 HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:07:05:21.150] <HTTPCLIENT> -/- 2/0/0/11/11 200 313 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:57880 [23/Nov/2026:07:05:21.150] fe be_exec/exec 11/0/0/23/34 200 309 - - ---- 1/1/0/0/0 0/0 "GET /api/v2/accounts/acc-alice-1 HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:07:05:21.205] <HTTPCLIENT> -/- 2/0/0/21/21 401 318 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:57892 [23/Nov/2026:07:05:21.204] fe fe/<NOSRV> 22/-1/-1/-1/22 401 112 - - LR-- 1/1/0/0/0 0/0 "GET /api/v2/accounts/../acc-alice-1 HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:07:05:21.299] <HTTPCLIENT> -/- 2/0/0/94/94 200 313 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:57900 [23/Nov/2026:07:05:21.299] fe be_exec/exec 94/0/0/496/590 404 267 - - ---- 1/1/0/0/0 0/0 "GET /api/v2/accounts/./acc-alice-1 HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:07:05:21.916] <HTTPCLIENT> -/- 2/0/0/57/57 401 318 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:57908 [23/Nov/2026:07:05:21.916] fe fe/<NOSRV> 57/-1/-1/-1/57 401 112 - - LR-- 1/1/0/0/0 0/0 "GET /api/v2/accounts/%2e%2e/acc-alice-1 HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:07:05:21.993] <HTTPCLIENT> -/- 2/0/0/35/70 200 313 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:57918 [23/Nov/2026:07:05:21.993] fe be_exec/exec 70/0/14/502/586 404 267 - - ---- 1/1/0/0/0 0/0 "GET /api/v2/accounts/%2e/acc-alice-1 HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:07:05:22.686] <HTTPCLIENT> -/- 238/0/0/226/491 401 318 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:57930 [23/Nov/2026:07:05:22.686] fe fe/<NOSRV> 491/-1/-1/-1/491 401 112 - - LR-- 1/1/0/0/0 0/0 "GET /api/v2/accounts/..%2facc-alice-1 HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:07:05:23.218] <HTTPCLIENT> -/- 2/0/0/76/76 401 318 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:57944 [23/Nov/2026:07:05:23.218] fe fe/<NOSRV> 76/-1/-1/-1/76 401 112 - - LR-- 1/1/0/0/0 0/0 "GET /api/v2/accounts/%2e%2e%2facc-alice-1 HTTP/1.1"
+gateway-1  | 172.23.0.1:57948 [23/Nov/2026:07:05:23.363] fe fe/<NOSRV> -1/-1/-1/-1/0 400 0 - - PR-- 1/1/0/0/0 0/0 "<BADREQ>"
+gateway-1  | -:- [23/Nov/2026:07:05:23.413] <HTTPCLIENT> -/- 2/0/0/1622/1690 401 318 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:57964 [23/Nov/2026:07:05:23.413] fe fe/<NOSRV> 1690/-1/-1/-1/1690 401 112 - - LR-- 1/1/0/0/0 0/0 "GET /api/v2/accounts/%2facc-alice-1 HTTP/1.1"
+gateway-1  | 172.23.0.1:57976 [23/Nov/2026:07:05:25.451] fe fe/<NOSRV> 0/-1/-1/-1/0 404 106 - - LR-- 1/1/0/0/0 0/0 "GET //api/v2/accounts/acc-alice-1 HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:07:05:25.754] <HTTPCLIENT> -/- 2/0/0/107/108 401 318 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:57978 [23/Nov/2026:07:05:25.754] fe fe/<NOSRV> 108/-1/-1/-1/108 401 112 - - LR-- 1/1/0/0/0 0/0 "GET /api//v2/accounts/acc-alice-1 HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:07:05:25.885] <HTTPCLIENT> -/- 2/0/0/69/69 401 318 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:57982 [23/Nov/2026:07:05:25.885] fe fe/<NOSRV> 69/-1/-1/-1/69 401 112 - - LR-- 2/2/0/0/0 0/0 "GET /api/v2/accounts/acc-alice-1;v=1 HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:07:05:25.964] <HTTPCLIENT> -/- 2/0/0/18/65 401 318 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:57986 [23/Nov/2026:07:05:25.964] fe fe/<NOSRV> 65/-1/-1/-1/65 401 112 - - LR-- 1/1/0/0/0 0/0 "GET /api/v2/accounts/acc-alice-1;jsessionid=abc HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:07:05:26.071] <HTTPCLIENT> -/- 2/0/0/111/114 401 318 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:57996 [23/Nov/2026:07:05:26.071] fe fe/<NOSRV> 114/-1/-1/-1/114 401 112 - - LR-- 1/1/0/0/0 0/0 "GET /api/v2/accounts/acc-alice-1/ HTTP/1.1"
+gateway-1  | 172.23.0.1:58008 [23/Nov/2026:07:05:26.216] fe fe/<NOSRV> 0/-1/-1/-1/0 404 106 - - LR-- 2/2/0/0/0 0/0 "GET /API/V2/ACCOUNTS/ACC-ALICE-1 HTTP/1.1"
+gateway-1  | 172.23.0.1:58010 [23/Nov/2026:07:05:26.233] fe fe/<NOSRV> 0/-1/-1/-1/0 404 106 - - LR-- 1/1/0/0/0 0/0 "GET /API/V2/ACCOUNTS/ACC-ALICE-1 HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:07:05:26.244] <HTTPCLIENT> -/- 2/0/0/61/62 200 313 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:58018 [23/Nov/2026:07:05:26.243] fe be_exec/exec 62/0/98/1891/2051 200 309 - - ---- 1/1/0/0/0 0/0 "GET http://api.bench.test/api/v2/accounts/acc-alice-1 HTTP/1.1"
+gateway-1  | 172.23.0.5:52882 [23/Nov/2026:07:05:28.313] fe fe/<NOSRV> -1/-1/-1/-1/0 400 0 - - CR-- 1/1/0/0/0 0/0 "<BADREQ>"
+gateway-1  | 172.23.0.1:58022 [23/Nov/2026:07:05:28.335] fe fe/<NOSRV> -1/-1/-1/-1/0 400 0 - - PR-- 1/1/0/0/0 0/0 "<BADREQ>"
+gateway-1  | -:- [23/Nov/2026:07:05:28.401] <HTTPCLIENT> -/- 2/0/0/12/12 200 313 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:58036 [23/Nov/2026:07:05:28.400] fe be_exec/exec 13/0/2/36/51 200 309 - - ---- 1/1/0/0/0 0/0 "GET http://api.bench.test/api/v2/accounts/acc-alice-1 HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:07:05:28.492] <HTTPCLIENT> -/- 2/0/0/6/6 401 318 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:58048 [23/Nov/2026:07:05:28.491] fe fe/<NOSRV> 7/-1/-1/-1/7 401 112 - - LR-- 1/1/0/0/0 0/0 "GET /api/v2/accounts/..\acc-alice-1 HTTP/1.1"
+gateway-1  | 172.23.0.1:58058 [23/Nov/2026:07:05:28.539] fe fe/<NOSRV> -1/-1/-1/-1/0 400 0 - - PR-- 1/1/0/0/0 0/0 "<BADREQ>"
+gateway-1  | -:- [23/Nov/2026:07:05:28.560] <HTTPCLIENT> -/- 2/0/0/9/9 401 318 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:58066 [23/Nov/2026:07:05:28.560] fe fe/<NOSRV> 9/-1/-1/-1/9 401 112 - - LR-- 1/1/0/0/0 0/0 "GET /api/v2/accounts/acc-alice-1%00 HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:07:05:28.609] <HTTPCLIENT> -/- 2/0/0/3/4 401 318 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:58072 [23/Nov/2026:07:05:28.609] fe fe/<NOSRV> 4/-1/-1/-1/4 401 112 - - LR-- 1/1/0/0/0 0/0 "GET /api/v2/accounts/%00acc-alice-1 HTTP/1.1"
+gateway-1  | 172.23.0.1:58078 [23/Nov/2026:07:05:28.645] fe fe/<NOSRV> -1/-1/-1/-1/0 400 0 - - PR-- 1/1/0/0/0 0/0 "<BADREQ>"
+gateway-1  | 172.23.0.1:58088 [23/Nov/2026:07:05:29.392] fe fe/<NOSRV> -1/-1/-1/-1/0 400 0 - - PR-- 1/1/0/0/0 0/0 "<BADREQ>"
+gateway-1  | -:- [23/Nov/2026:07:05:29.400] <HTTPCLIENT> -/- 2/0/0/20/20 401 318 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:58096 [23/Nov/2026:07:05:29.400] fe fe/<NOSRV> 20/-1/-1/-1/20 401 112 - - LR-- 1/1/0/0/0 0/0 "GET /api/v1/accounts/acc-alice-1 HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:07:05:29.444] <HTTPCLIENT> -/- 2/0/0/34/34 200 313 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:58104 [23/Nov/2026:07:05:29.444] fe be_exec/exec 34/0/1/135/170 200 309 - - ---- 1/1/0/0/0 0/0 "GET /api/v2/accounts/acc-alice-1 HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:07:05:29.649] <HTTPCLIENT> -/- 2/0/0/967/987 200 313 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:55694 [23/Nov/2026:07:05:29.649] fe be_exec/exec 987/0/161/1814/2962 200 309 - - ---- 1/1/0/0/0 0/0 "GET /api/v2/accounts/acc-alice-1 HTTP/1.1"
+gateway-1  | 172.23.0.1:55698 [23/Nov/2026:07:05:32.817] fe fe/<NOSRV> -1/-1/-1/-1/0 400 0 - - PR-- 1/1/0/0/0 0/0 "<BADREQ>"
+gateway-1  | 
+gateway-1  | WARNING! thread 1 has stopped processing traffic for 110 milliseconds
+gateway-1  | -:- [23/Nov/2026:07:05:32.859] <HTTPCLIENT> -/- 71/0/0/2007/2721 200 313 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  |     with 0 streams currently blocked, prevented from making any progress.
+gateway-1  |     While this may occasionally happen with inefficient configurations
+gateway-1  |     involving excess of regular expressions, map_reg, or heavy Lua processing,
+gateway-1  |     this must remain exceptional because the system's stability is now at risk.
+gateway-1  |     Timers in logs may be reported incorrectly, spurious timeouts may happen,
+gateway-1  |     some incoming connections may silently be dropped, health checks may
+gateway-1  |     randomly fail, and accesses to the CLI may block the whole process. The
+gateway-1  |     blocking delay before emitting this warning may be adjusted via the global
+gateway-1  |     'warn-blocked-traffic-after' directive. Please check the trace below for
+gateway-1  |     any clues about configuration elements that need to be corrected:
+gateway-1  | 
+gateway-1  | * Thread 1 : id=0xffff87653020 act=1 glob=0 wq=0 rq=0 tl=0 tlsz=0 rqsz=0
+gateway-1  |       1/1    loops=1440 ctxsw=2484 stuck=0 prof=0 harmless=0 isolated=0
+gateway-1  |              cpu_ns: poll=2006804285 now=2117407492 diff=110603207
+gateway-1  |              curr_task=0xaaaade38f6f0 (task) calls=111 last=0
+gateway-1  |                fct=0xaaaaab8f38a0(cli_io_handler+0x152c0) ctx=0xaaaaddfdef10
+gateway-1  |              lock_hist: U:SERVER S:DNS R:DNS U:DNS R:TASK_WQ U:TASK_WQ S:DNS S:DNS locked: DNS(S)
+gateway-1  |              call trace(4):
+gateway-1  |              | 0xaaaaab91bfa8 <21 00 80 52 37 fd ff 97]: ha_stuck_warning+0xe8/0x194 > ha_thread_dump_one
+gateway-1  |              | 0xaaaaaba08bd0 <08 07 00 54 bd 4c fc 97]: wdt_handler+0x1a4/0x2cc > ha_stuck_warning
+gateway-1  |              | 0xffff87e3e7e8 <1f 20 03 d5 1f 20 03 d5]: linux-vdso:__kernel_rt_sigreturn
+gateway-1  |              | 0xffff873f28b8 <e0 03 13 aa 53 32 00 94]: libc:+0x828b8 > libc:+0x8f200
+gateway-1  |  => Trying to gracefully recover now (pid 8).
+gateway-1  | 
+gateway-1  | WARNING! thread 6 has stopped processing traffic for 157 milliseconds
+gateway-1  |     with 2 streams currently blocked, prevented from making any progress.
+gateway-1  |     While this may occasionally happen with inefficient configurations
+gateway-1  |     involving excess of regular expressions, map_reg, or heavy Lua processing,
+gateway-1  |     this must remain exceptional because the system's stability is now at risk.
+gateway-1  |     Timers in logs may be reported incorrectly, spurious timeouts may happen,
+gateway-1  |     some incoming connections may silently be dropped, health checks may
+gateway-1  |     randomly fail, and accesses to the CLI may block the whole process. The
+gateway-1  |     blocking delay before emitting this warning may be adjusted via the global
+gateway-1  |     'warn-blocked-traffic-after' directive. Please check the trace below for
+gateway-1  |     any clues about configuration elements that need to be corrected:
+gateway-1  | 
+gateway-1  | * Thread 6 : id=0xffff7a7c30a0 act=1 glob=0 wq=1 rq=0 tl=1 tlsz=2 rqsz=2
+gateway-1  |       1/6    loops=1138 ctxsw=2431 stuck=0 prof=0 harmless=0 isolated=0
+gateway-1  |              cpu_ns: poll=1073485793 now=1254855878 diff=181370085
+gateway-1  |              curr_task=0xffff5405bfc0 (task) calls=5 last=0
+gateway-1  |                fct=0xaaaaab86a070(process_stream) ctx=0xffff5c0466e0
+gateway-1  |              stream=0xffff5c0466e0: [1795417532.859829] id=1772 proto=?
+gateway-1  |                flags=0x100c0a, conn_retries=0, conn_exp=<NEVER> conn_et=0x000 srv_conn=(nil), pend_pos=(nil) waiting=0 epoch=0
+gateway-1  |                p_con=2 p_stc=7 p_req=10 p_res=11 p_prp=11
+gateway-1  |                frontend=<HTTPCLIENT> (id=4294967295 mode=http), listener=? (id=0)
+gateway-1  |                backend=<HTTPCLIENT> (id=4294967295 mode=http)
+gateway-1  |                server=<HTTPCLIENT> (id=1) addr=172.23.0.2:9100
+gateway-1  |                task=0xffff5405bfc0 (state=0x01 nice=0 calls=5 rate=0 exp=0s tid=5(1/5) age=2s)
+gateway-1  |                txn=0xffff5c042090 flags=0x83000 meth=1 status=200 req.st=MSG_CLOSED rsp.st=MSG_CLOSED req.f=0x4c rsp.f=0x0d
+gateway-1  |                scf=0xffff5c046670 flags=0x00034042 ioto=0s state=CLO endp=APPCTX,0xffff5c0461c0,0x1000c642 sub=0 rex=<NEVER> wex=<NEVER> rto=? wto=<NEVER>
+gateway-1  |                    app0=0xffff5c0461c0 st0=5 st1=0 applet=<HTTPCLIENT> tid=5 nice=0 calls=2 rate=0
+gateway-1  |                scb=0xffff5c046ba0 flags=0x0003d05b ioto=3s state=CLO endp=CONN,0xffff5c04fdb0,0x50404a41 sub=0 rex=<NEVER> wex=<NEVER> rto=2s wto=<NEVER>
+gateway-1  |                    h1s=0xffff5c04fdb0 h1s.flg=0x14090 .req.state=MSG_DONE .res.state=MSG_DONE
+gateway-1  |                     .meth=GET status=200 .sd.flg=0x50404a41 .sd.evts=E1 .sc.flg=0x0003d05b .sc.app=0xffff5c0466e0 .sc.evts=S1 .subs=(nil)
+gateway-1  |                     h1c=0xffff58047770 h1c.flg=0x80000000 .sub=0 .ibuf=0@(nil)+0/0 .obuf=0@(nil)+0/0 .evts= .task=0xffff54056a80 .exp=<NEVER>
+gateway-1  |                    co1=0xffff58047510 ctrl=tcpv4 xprt=RAW mux=H1 data=STRM target=SERVER:0xaaaade406ce0
+gateway-1  |                    flags=0x00000300 fd=39 fd.state=10120 updt=0 fd.tmask=0x20
+gateway-1  |                req=0xffff5c046708 (f=0x048000 an=0x0 tofwd=0 total=1355)
+gateway-1  |                    an_exp=<NEVER> buf=0xffff5c046710 data=(nil) o=0 p=0 i=0 size=0
+gateway-1  |                    htx=0xaaaaabb68f70 flags=0x0 size=0 data=0 used=0 wrap=NO extra=0
+gateway-1  |                res=0xffff5c046750 (f=0x80048100 an=0x0 tofwd=0 total=313)
+gateway-1  |                    an_exp=<NEVER> buf=0xffff5c046758 data=0xffff5c0421b0 o=0 p=0 i=0 size=16384
+gateway-1  |                    htx=0xffff5c0421b0 flags=0x0 size=16336 data=0 used=0 wrap=NO extra=0
+gateway-1  |              lock_hist: S:IDLE_CONNS U:IDLE_CONNS R:TASK_WQ U:TASK_WQ S:LUA U:LUA R:TASK_WQ U:TASK_WQ
+gateway-1  |              call trace(11):
+gateway-1  |              | 0xaaaaab91bfa8 <21 00 80 52 37 fd ff 97]: ha_stuck_warning+0xe8/0x194 > ha_thread_dump_one
+gateway-1  |              | 0xaaaaaba08bd0 <08 07 00 54 bd 4c fc 97]: wdt_handler+0x1a4/0x2cc > ha_stuck_warning
+gateway-1  |              | 0xffff87e3e7e8 <1f 20 03 d5 1f 20 03 d5]: linux-vdso:__kernel_rt_sigreturn
+gateway-1  |              | 0xaaaaab8463f8 <e0 03 13 aa eb 4c 01 94]: sess_build_logline_orig+0x1b8/0x4ff4 > strlcpy2
+gateway-1  |              | 0xaaaaab84c6d4 <e1 03 13 aa dc e6 ff 97]: strm_log+0xe4/0x210 > sess_build_logline_orig
+gateway-1  |              | 0xaaaaab86d174 <e1 00 80 d2 40 00 3f d6]: process_stream+0x3104/0x31e8
+gateway-1  |  => Trying to gracefully recover now (pid 8).
+gateway-1  | 
+gateway-1  | WARNING! thread 6 has stopped processing traffic for 640 milliseconds
+gateway-1  |     with 1 streams currently blocked, prevented from making any progress.
+gateway-1  |     While this may occasionally happen with inefficient configurations
+gateway-1  |     involving excess of regular expressions, map_reg, or heavy Lua processing,
+gateway-1  |     this must remain exceptional because the system's stability is now at risk.
+gateway-1  |     Timers in logs may be reported incorrectly, spurious timeouts may happen,
+gateway-1  |     some incoming connections may silently be dropped, health checks may
+gateway-1  |     randomly fail, and accesses to the CLI may block the whole process. The
+gateway-1  |     blocking delay before emitting this warning may be adjusted via the global
+gateway-1  |     'warn-blocked-traffic-after' directive. Please check the trace below for
+gateway-1  |     any clues about configuration elements that need to be corrected:
+gateway-1  | 
+gateway-1  | * Thread 6 : id=0xffff7a7c30a0 act=1 glob=0 wq=1 rq=0 tl=1 tlsz=2 rqsz=2
+gateway-1  |       1/6    loops=1138 ctxsw=2431 stuck=0 prof=0 harmless=0 isolated=0
+gateway-1  |              cpu_ns: poll=1073485793 now=1715382752 diff=641896959
+gateway-1  |              curr_task=0xffff5405bfc0 (task) calls=5 last=0
+gateway-1  |                fct=0xaaaaab86a070(process_stream) ctx=(nil)
+gateway-1  |              lock_hist: R:TASK_WQ U:TASK_WQ S:LUA U:LUA R:TASK_WQ U:TASK_WQ S:IDLE_CONNS U:IDLE_CONNS
+gateway-1  |              call trace(11):
+gateway-1  |              | 0xaaaaab91bfa8 <21 00 80 52 37 fd ff 97]: ha_stuck_warning+0xe8/0x194 > ha_thread_dump_one
+gateway-1  |              | 0xaaaaaba08bd0 <08 07 00 54 bd 4c fc 97]: wdt_handler+0x1a4/0x2cc > ha_stuck_warning
+gateway-1  |              | 0xffff87e3e7e8 <1f 20 03 d5 1f 20 03 d5]: linux-vdso:__kernel_rt_sigreturn
+gateway-1  |              | 0xaaaaab90cd94 <80 c2 00 91 ec f0 ff 97]: sc_destroy+0x48/0x164 > cli_io_handler+0x2ab60
+gateway-1  |              | 0xaaaaab8693f0 <60 62 41 f9 58 8e 02 94]: stream_free+0x58c/0xdfc > sc_destroy
+gateway-1  |              | 0xaaaaab86cf4c <e0 03 16 aa c7 ef ff 97]: process_stream+0x2edc/0x31e8 > stream_free
+gateway-1  |  => Trying to gracefully recover now (pid 8).
+gateway-1  | 
+gateway-1  | WARNING! thread 6 has stopped processing traffic for 1151 milliseconds
+gateway-1  |     with 1 streams currently blocked, prevented from making any progress.
+gateway-1  |     While this may occasionally happen with inefficient configurations
+gateway-1  |     involving excess of regular expressions, map_reg, or heavy Lua processing,
+gateway-1  |     this must remain exceptional because the system's stability is now at risk.
+gateway-1  |     Timers in logs may be reported incorrectly, spurious timeouts may happen,
+gateway-1  |     some incoming connections may silently be dropped, health checks may
+gateway-1  |     randomly fail, and accesses to the CLI may block the whole process. The
+gateway-1  |     blocking delay before emitting this warning may be adjusted via the global
+gateway-1  |     'warn-blocked-traffic-after' directive. Please check the trace below for
+gateway-1  |     any clues about configuration elements that need to be corrected:
+gateway-1  | 
+gateway-1  | * Thread 6 : id=0xffff7a7c30a0 act=1 glob=0 wq=0 rq=0 tl=0 tlsz=0 rqsz=0
+gateway-1  |       1/6    loops=1138 ctxsw=2433 stuck=0 prof=0 harmless=0 isolated=0
+gateway-1  |              cpu_ns: poll=1073485793 now=2224870665 diff=1151384872
+gateway-1  |              curr_task=0xffff5405e940 (task) calls=3 last=0
+gateway-1  |                fct=0xaaaaab86a070(process_stream) ctx=0xffff5c03f5c0
+gateway-1  |              stream=0xffff5c03f5c0: [1795417532.859829] id=1771 proto=tcpv4 source=172.23.0.1:55712
+gateway-1  |                flags=0xc00, conn_retries=0, conn_exp=<NEVER> conn_et=0x000 srv_conn=(nil), pend_pos=(nil) waiting=0 epoch=0
+gateway-1  |                p_con=0 p_stc=3 p_req=3 p_res=2 p_prp=2
+gateway-1  |                frontend=fe (id=2 mode=http), listener=? (id=1)
+gateway-1  |                backend=<NONE> (id=-1 mode=-)
+gateway-1  |                server=<NONE> (id=-1)
+gateway-1  |                task=0xffff5405e940 (state=0x01 nice=0 calls=3 rate=0 exp=<NEVER> tid=5(1/5) age=2s)
+gateway-1  |                txn=0xffff5c03fbd0 flags=0x3000 meth=1 status=-1 req.st=MSG_BODY rsp.st=MSG_RPBEFORE req.f=0x4c rsp.f=0x00
+gateway-1  |                scf=0xffff5c03f550 flags=0x00000422 ioto=30s state=EST endp=CONN,0xffff5c0372b0,0x50404041 sub=1 rex=<NEVER> wex=<NEVER> rto=27s wto=<NEVER>
+gateway-1  |                    h1s=0xffff5c0372b0 h1s.flg=0x100040 .req.state=MSG_DONE .res.state=MSG_RPBEFORE
+gateway-1  |                     .meth=GET status=0 .sd.flg=0x50404041 .sd.evts= .sc.flg=0x00000422 .sc.app=0xffff5c03f5c0 .sc.evts=
+gateway-1  |                     .subs=0xffff5c03f568(ev=1 tl=0xffff5c037380 tl.calls=0 tl.ctx=0xffff5c03f550 tl.fct=sc_conn_io_cb)
+gateway-1  |                     h1c=0xffff5c0472f0 h1c.flg=0x0 .sub=1 .ibuf=0@(nil)+0/0 .obuf=0@(nil)+0/0 .evts= .task=0xffff5405abe0 .exp=<NEVER>
+gateway-1  |                    co0=0xffff54060310 ctrl=tcpv4 xprt=RAW mux=H1 data=STRM target=LISTENER:0xaaaade296380
+gateway-1  |                    flags=0x80000300 fd=38 fd.state=21 updt=0 fd.tmask=0x20
+gateway-1  |                scb=0xffff5c03fae0 flags=0x00000021 ioto=0s state=INI endp=NONE,(nil),0x00000050 sub=0 rex=<NEVER> wex=<NEVER> rto=<NEVER> wto=<NEVER>
+gateway-1  |                req=0xffff5c03f5e8 (f=0x808000 an=0x30 tofwd=0 total=1289)
+gateway-1  |                    an_exp=<NEVER> buf=0xffff5c03f5f0 data=0xffff5c03b540 o=0 p=0 i=16384 size=16384
+gateway-1  |                    htx=0xffff5c03b540 flags=0x10 size=16336 data=1289 used=8 wrap=NO extra=0
+gateway-1  |                res=0xffff5c03f630 (f=0x80000000 an=0x0 tofwd=0 total=0)
+gateway-1  |                    an_exp=<NEVER> buf=0xffff5c03f638 data=0xffff5c0421b0 o=0 p=0 i=0 size=16384
+gateway-1  |                    htx=0xffff5c0421b0 flags=0x0 size=16336 data=0 used=0 wrap=NO extra=0
+gateway-1  |                current_rule="lua.bh_authz" [/usr/local/etc/haproxy/haproxy.cfg:22] (RUNNING)
+gateway-1  |              Current executing Lua from a stream analyser -- 
+gateway-1  |              lock_hist: U:TASK_WQ S:LUA U:LUA R:TASK_WQ U:TASK_WQ S:IDLE_CONNS U:IDLE_CONNS S:LUA locked: LUA(S)
+gateway-1  |              call trace(4):
+gateway-1  |              | 0xaaaaab91bfa8 <21 00 80 52 37 fd ff 97]: ha_stuck_warning+0xe8/0x194 > ha_thread_dump_one
+gateway-1  |              | 0xaaaaaba08bd0 <08 07 00 54 bd 4c fc 97]: wdt_handler+0x1a4/0x2cc > ha_stuck_warning
+gateway-1  |              | 0xffff87e3e7e8 <1f 20 03 d5 1f 20 03 d5]: linux-vdso:__kernel_rt_sigreturn
+gateway-1  |              | 0xffff875fa908 <42 80 00 d1 0f 59 00 94]: liblua5:lua_settable+0x44/0xc4 > liblua5:+0x20d40
+gateway-1  | ### Note: at least one thread was stuck in a Lua context loaded using the
+gateway-1  |           'lua-load' directive, which is known for causing heavy contention
+gateway-1  |           when used with threads. Please consider using 'lua-load-per-thread'
+gateway-1  |           instead if your code is safe to run in parallel on multiple threads.
+gateway-1  |  => Trying to gracefully recover now (pid 8).
+gateway-1  | 
+gateway-1  | WARNING! thread 6 has stopped processing traffic for 1386 milliseconds
+gateway-1  |     with 1 streams currently blocked, prevented from making any progress.
+gateway-1  |     While this may occasionally happen with inefficient configurations
+gateway-1  |     involving excess of regular expressions, map_reg, or heavy Lua processing,
+gateway-1  |     this must remain exceptional because the system's stability is now at risk.
+gateway-1  |     Timers in logs may be reported incorrectly, spurious timeouts may happen,
+gateway-1  |     some incoming connections may silently be dropped, health checks may
+gateway-1  |     randomly fail, and accesses to the CLI may block the whole process. The
+gateway-1  |     blocking delay before emitting this warning may be adjusted via the global
+gateway-1  |     'warn-blocked-traffic-after' directive. Please check the trace below for
+gateway-1  |     any clues about configuration elements that need to be corrected:
+gateway-1  | 
+gateway-1  | * Thread 6 : id=0xffff7a7c30a0 act=1 glob=0 wq=0 rq=0 tl=0 tlsz=0 rqsz=0
+gateway-1  |       1/6    loops=1138 ctxsw=2433 stuck=0 prof=0 harmless=0 isolated=0
+gateway-1  |              cpu_ns: poll=1073485793 now=2471015956 diff=1397530163
+gateway-1  |              curr_task=0xffff5405e940 (task) calls=3 last=0
+gateway-1  |                fct=0xaaaaab86a070(process_stream) ctx=0xffff5c03f5c0
+gateway-1  |              stream=0xffff5c03f5c0: [1795417532.859829] id=1771 proto=tcpv4 source=172.23.0.1:55712
+gateway-1  |                flags=0xc00, conn_retries=0, conn_exp=<NEVER> conn_et=0x000 srv_conn=(nil), pend_pos=(nil) waiting=0 epoch=0
+gateway-1  |                p_con=0 p_stc=3 p_req=3 p_res=2 p_prp=2
+gateway-1  |                frontend=fe (id=2 mode=http), listener=? (id=1)
+gateway-1  |                backend=<NONE> (id=-1 mode=-)
+gateway-1  |                server=<NONE> (id=-1)
+gateway-1  |                task=0xffff5405e940 (state=0x01 nice=0 calls=3 rate=0 exp=<NEVER> tid=5(1/5) age=2s)
+gateway-1  |                txn=0xffff5c03fbd0 flags=0x3000 meth=1 status=-1 req.st=MSG_BODY rsp.st=MSG_RPBEFORE req.f=0x4c rsp.f=0x00
+gateway-1  |                scf=0xffff5c03f550 flags=0x00000422 ioto=30s state=EST endp=CONN,0xffff5c0372b0,0x50404041 sub=1 rex=<NEVER> wex=<NEVER> rto=27s wto=<NEVER>
+gateway-1  |                    h1s=0xffff5c0372b0 h1s.flg=0x100040 .req.state=MSG_DONE .res.state=MSG_RPBEFORE
+gateway-1  |                     .meth=GET status=0 .sd.flg=0x50404041 .sd.evts= .sc.flg=0x00000422 .sc.app=0xffff5c03f5c0 .sc.evts=
+gateway-1  |                     .subs=0xffff5c03f568(ev=1 tl=0xffff5c037380 tl.calls=0 tl.ctx=0xffff5c03f550 tl.fct=sc_conn_io_cb)
+gateway-1  |                     h1c=0xffff5c0472f0 h1c.flg=0x0 .sub=1 .ibuf=0@(nil)+0/0 .obuf=0@(nil)+0/0 .evts= .task=0xffff5405abe0 .exp=<NEVER>
+gateway-1  |                    co0=0xffff54060310 ctrl=tcpv4 xprt=RAW mux=H1 data=STRM target=LISTENER:0xaaaade296380
+gateway-1  |                    flags=0x80000300 fd=38 fd.state=21 updt=0 fd.tmask=0x20
+gateway-1  |                scb=0xffff5c03fae0 flags=0x00000021 ioto=0s state=INI endp=NONE,(nil),0x00000050 sub=0 rex=<NEVER> wex=<NEVER> rto=<NEVER> wto=<NEVER>
+gateway-1  |                req=0xffff5c03f5e8 (f=0x808000 an=0x30 tofwd=0 total=1289)
+gateway-1  |                    an_exp=<NEVER> buf=0xffff5c03f5f0 data=0xffff5c03b540 o=0 p=0 i=16384 size=16384
+gateway-1  |                    htx=0xffff5c03b540 flags=0x10 size=16336 data=1289 used=8 wrap=NO extra=0
+gateway-1  |                res=0xffff5c03f630 (f=0x80000000 an=0x0 tofwd=0 total=0)
+gateway-1  |                    an_exp=<NEVER> buf=0xffff5c03f638 data=0xffff5c0421b0 o=0 p=0 i=0 size=16384
+gateway-1  |                    htx=0xffff5c0421b0 flags=0x0 size=16336 data=0 used=0 wrap=NO extra=0
+gateway-1  |                current_rule="lua.bh_authz" [/usr/local/etc/haproxy/haproxy.cfg:22] (RUNNING)
+gateway-1  |              Current executing Lua from a stream analyser -- 
+gateway-1  |              lock_hist: U:TASK_WQ S:LUA U:LUA R:TASK_WQ U:TASK_WQ S:IDLE_CONNS U:IDLE_CONNS S:LUA locked: LUA(S)
+gateway-1  |              call trace(4):
+gateway-1  |              | 0xaaaaab91bfa8 <21 00 80 52 37 fd ff 97]: ha_stuck_warning+0xe8/0x194 > ha_thread_dump_one
+gateway-1  |              | 0xaaaaaba08bd0 <08 07 00 54 bd 4c fc 97]: wdt_handler+0x1a4/0x2cc > ha_stuck_warning
+gateway-1  |              | 0xffff87e3e7e8 <1f 20 03 d5 1f 20 03 d5]: linux-vdso:__kernel_rt_sigreturn
+gateway-1  |              | 0xffff87611b04 <21 c0 00 91 50 c4 ff 97]: liblua5:+0x21b04 > liblua5:+0x12c40
+gateway-1  | ### Note: at least one thread was stuck in a Lua context loaded using the
+gateway-1  |           'lua-load' directive, which is known for causing heavy contention
+gateway-1  |           when used with threads. Please consider using 'lua-load-per-thread'
+gateway-1  |           instead if your code is safe to run in parallel on multiple threads.
+gateway-1  |  => Trying to gracefully recover now (pid 8).
+gateway-1  | 
+gateway-1  | WARNING! thread 7 has stopped processing traffic for 280 milliseconds
+gateway-1  |     with 1 streams currently blocked, prevented from making any progress.
+gateway-1  |     While this may occasionally happen with inefficient configurations
+gateway-1  |     involving excess of regular expressions, map_reg, or heavy Lua processing,
+gateway-1  |     this must remain exceptional because the system's stability is now at risk.
+gateway-1  |     Timers in logs may be reported incorrectly, spurious timeouts may happen,
+gateway-1  |     some incoming connections may silently be dropped, health checks may
+gateway-1  |     randomly fail, and accesses to the CLI may block the whole process. The
+gateway-1  |     blocking delay before emitting this warning may be adjusted via the global
+gateway-1  |     'warn-blocked-traffic-after' directive. Please check the trace below for
+gateway-1  |     any clues about configuration elements that need to be corrected:
+gateway-1  | 
+gateway-1  | * Thread 7 : id=0xffff79fb30a0 act=1 glob=0 wq=1 rq=0 tl=0 tlsz=0 rqsz=0
+gateway-1  |       1/7    loops=1230 ctxsw=2511 stuck=0 prof=0 harmless=0 isolated=0
+gateway-1  |              cpu_ns: poll=798061688 now=1079701771 diff=281640083
+gateway-1  |              curr_task=0xffff54062350 (task) calls=1 last=0
+gateway-1  |                fct=0xaaaaab86a070(process_stream) ctx=0xffff7403f5c0
+gateway-1  |              stream=0xffff7403f5c0: [1795417545.316467] id=1773 proto=tcpv4 source=172.23.0.1:57034
+gateway-1  |                flags=0xc00, conn_retries=0, conn_exp=<NEVER> conn_et=0x000 srv_conn=(nil), pend_pos=(nil) waiting=0 epoch=0
+gateway-1  |                p_con=0 p_stc=1 p_req=1 p_res=0 p_prp=0
+gateway-1  |                frontend=fe (id=2 mode=http), listener=? (id=1)
+gateway-1  |                backend=<NONE> (id=-1 mode=-)
+gateway-1  |                server=<NONE> (id=-1)
+gateway-1  |                task=0xffff54062350 (state=0x01 nice=0 calls=1 rate=0 exp=<NEVER> tid=6(1/6) age=0s)
+gateway-1  |                txn=0xffff7403fbd0 flags=0x3000 meth=1 status=-1 req.st=MSG_BODY rsp.st=MSG_RPBEFORE req.f=0x4c rsp.f=0x00
+gateway-1  |                scf=0xffff7403f550 flags=0x00000422 ioto=30s state=EST endp=CONN,0xffff7403b3f0,0x40404041 sub=1 rex=<NEVER> wex=<NEVER> rto=30s wto=<NEVER>
+gateway-1  |                    h1s=0xffff7403b3f0 h1s.flg=0x100040 .req.state=MSG_DONE .res.state=MSG_RPBEFORE
+gateway-1  |                     .meth=GET status=0 .sd.flg=0x40404041 .sd.evts= .sc.flg=0x00000422 .sc.app=0xffff7403f5c0 .sc.evts=
+gateway-1  |                     .subs=0xffff7403f568(ev=1 tl=0xffff74052220 tl.calls=0 tl.ctx=0xffff7403f550 tl.fct=sc_conn_io_cb)
+gateway-1  |                     h1c=0xffff7404fe10 h1c.flg=0x0 .sub=1 .ibuf=0@(nil)+0/0 .obuf=0@(nil)+0/0 .evts= .task=0xffff540409b0 .exp=<NEVER>
+gateway-1  |                    co0=0xffff54050ce0 ctrl=tcpv4 xprt=RAW mux=H1 data=STRM target=LISTENER:0xaaaade296380
+gateway-1  |                    flags=0x80000300 fd=40 fd.state=21 updt=1 fd.tmask=0x40
+gateway-1  |                scb=0xffff7403fae0 flags=0x00000021 ioto=0s state=INI endp=NONE,(nil),0x00000050 sub=0 rex=<NEVER> wex=<NEVER> rto=<NEVER> wto=<NEVER>
+gateway-1  |                req=0xffff7403f5e8 (f=0x808001 an=0x30 tofwd=0 total=1297)
+gateway-1  |                    an_exp=<NEVER> buf=0xffff7403f5f0 data=0xffff7403b540 o=0 p=0 i=16384 size=16384
+gateway-1  |                    htx=0xffff7403b540 flags=0x10 size=16336 data=1297 used=8 wrap=NO extra=0
+gateway-1  |                res=0xffff7403f630 (f=0x80000000 an=0x0 tofwd=0 total=0)
+gateway-1  |                    an_exp=<NEVER> buf=0xffff7403f638 data=0xffff740373e0 o=0 p=0 i=0 size=16384
+gateway-1  |                    htx=0xffff740373e0 flags=0x0 size=16336 data=0 used=0 wrap=NO extra=0
+gateway-1  |                current_rule="lua.bh_authz" [/usr/local/etc/haproxy/haproxy.cfg:22] (RUNNING)
+gateway-1  |              lock_hist: R:TASK_WQ U:TASK_WQ R:LISTENER U:LISTENER R:TASK_WQ U:TASK_WQ R:PATEXP U:PATEXP
+gateway-1  |              call trace(15):
+gateway-1  |              | 0xaaaaab91bfa8 <21 00 80 52 37 fd ff 97]: ha_stuck_warning+0xe8/0x194 > ha_thread_dump_one
+gateway-1  |              | 0xaaaaaba08bd0 <08 07 00 54 bd 4c fc 97]: wdt_handler+0x1a4/0x2cc > ha_stuck_warning
+gateway-1  |              | 0xffff87e3e7e8 <1f 20 03 d5 1f 20 03 d5]: linux-vdso:__kernel_rt_sigreturn
+gateway-1  |              | 0xaaaaab7be7d8 <c0 03 5f d6 6b 68 fd 97]: quic_conn_sock_fd_iocb+0x25638 > main-0x1180
+gateway-1  |              | 0xaaaaab7d4614 <e0 03 13 aa 54 a8 ff 97]: hlua_ctx_init+0x3ec/0x410 > quic_conn_sock_fd_iocb+0x255c0
+gateway-1  |              | 0xaaaaab7d46a8 <e1 03 13 2a e1 fe ff 97]: quic_conn_sock_fd_iocb+0x3b508 > hlua_ctx_init
+gateway-1  |              | 0xaaaaab7d4758 <e0 27 40 f9 bb ff ff 97]: quic_conn_sock_fd_iocb+0x3b5b8 > quic_conn_sock_fd_iocb+0x3b4a0
+gateway-1  |              | 0xaaaaab88023c <e0 03 15 aa a0 00 3f d6]: process_stream+0x161cc
+gateway-1  |              | 0xaaaaab882a70 <e0 03 14 aa a0 f5 ff 97]: http_process_req_common+0xd0/0x1440 > process_stream+0x1607c
+gateway-1  |              | 0xaaaaab86afec <e0 03 17 aa 6e 5e 00 94]: process_stream+0xf7c/0x31e8 > http_process_req_common
+gateway-1  | ### Note: at least one thread was stuck in a Lua context loaded using the
+gateway-1  |           'lua-load' directive, which is known for causing heavy contention
+gateway-1  |           when used with threads. Please consider using 'lua-load-per-thread'
+gateway-1  |           instead if your code is safe to run in parallel on multiple threads.
+gateway-1  |  => Trying to gracefully recover now (pid 8).
+gateway-1  | -:- [23/Nov/2026:07:05:45.316] <HTTPCLIENT> -/- 4288/0/0/1255/5542 200 313 - - ---- 2/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:55712 [23/Nov/2026:07:05:32.859] fe be_exec/exec 2721/0/13930/2732/19383 200 309 - - ---- 2/2/1/1/1 0/0 "GET /api/v2/accounts/acc-alice-1 HTTP/1.1"
+gateway-1  | 172.23.0.1:57034 [23/Nov/2026:07:05:45.316] fe be_exec/exec 5542/0/37/1354/6933 200 309 - - ---- 1/1/0/0/0 0/0 "GET /api/v2/accounts/acc-alice-1 HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:07:05:52.779] <HTTPCLIENT> -/- 2/0/0/101/101 200 313 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:65002 [23/Nov/2026:07:05:52.778] fe be_exec/exec 102/0/1/284/387 200 309 - - ---- 1/1/0/0/0 0/0 "GET /api/v2/accounts/acc-alice-1 HTTP/1.1"
+gateway-1  | 172.23.0.5:39924 [23/Nov/2026:07:05:53.239] fe fe/<NOSRV> -1/-1/-1/-1/0 400 0 - - CR-- 2/2/0/0/0 0/0 "<BADREQ>"
+gateway-1  | -:- [23/Nov/2026:07:05:53.206] <HTTPCLIENT> -/- 2/0/0/73/75 200 313 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:65012 [23/Nov/2026:07:05:53.206] fe be_exec/exec 75/0/3/366/444 200 309 - - ---- 3/3/0/0/0 0/0 "GET /api/v2/accounts/acc-alice-1 HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:07:05:53.726] <HTTPCLIENT> -/- 2/0/0/93/94 200 313 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:65028 [23/Nov/2026:07:05:53.726] fe be_exec/exec 94/0/4/67/165 200 309 - - ---- 1/1/0/0/0 0/0 "GET /api/v2/accounts/acc-alice-1 HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:07:05:53.927] <HTTPCLIENT> -/- 2/0/0/53/54 200 313 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:65036 [23/Nov/2026:07:05:53.926] fe be_exec/exec 55/0/1/68/124 200 309 - - ---- 1/1/0/0/0 0/0 "GET /api/v2/accounts/acc-alice-1 HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:07:05:54.074] <HTTPCLIENT> -/- 2/0/0/6/6 200 313 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:65046 [23/Nov/2026:07:05:54.073] fe be_exec/exec 7/0/10/430/447 200 309 - - ---- 1/1/0/0/0 0/0 "GET /api/v2/accounts/acc-alice-1 HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:07:05:54.538] <HTTPCLIENT> -/- 2/0/0/6/7 200 313 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:65058 [23/Nov/2026:07:05:54.537] fe be_exec/exec 7/0/3/115/125 200 309 - - ---- 1/1/0/0/0 0/0 "GET /api/v2/accounts/acc-alice-1 HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:07:05:54.694] <HTTPCLIENT> -/- 2/0/0/16/16 200 313 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:65066 [23/Nov/2026:07:05:54.694] fe be_exec/exec 17/0/2/54/73 200 309 - - ---- 1/1/0/0/0 0/0 "GET /api/v2/accounts/acc-alice-1 HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:07:05:54.790] <HTTPCLIENT> -/- 2/0/0/26/26 200 313 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:65080 [23/Nov/2026:07:05:54.790] fe be_exec/exec 26/0/18/82/126 200 309 - - ---- 1/1/0/0/0 0/0 "GET /api/v2/accounts/acc-alice-1 HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:07:05:54.944] <HTTPCLIENT> -/- 2/0/0/2/2 200 313 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:65094 [23/Nov/2026:07:05:54.943] fe be_exec/exec 2/0/1/54/57 200 309 - - ---- 1/1/0/0/0 0/0 "GET /api/v2/accounts/acc-alice-1 HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:07:05:55.010] <HTTPCLIENT> -/- 2/0/0/7/7 200 313 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:65110 [23/Nov/2026:07:05:55.009] fe be_exec/exec 8/0/4/19/31 200 309 - - ---- 1/1/0/0/0 0/0 "GET /api/v2/accounts/acc-alice-1 HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:07:05:55.055] <HTTPCLIENT> -/- 2/0/0/2/45 200 313 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:65124 [23/Nov/2026:07:05:55.055] fe be_exec/exec 45/0/0/17/62 200 309 - - ---- 1/1/0/0/0 0/0 "GET /api/v2/accounts/acc-alice-1 HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:07:05:55.132] <HTTPCLIENT> -/- 2/0/0/10/11 200 313 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:65138 [23/Nov/2026:07:05:55.132] fe be_exec/exec 11/0/1/16/28 200 309 - - ---- 1/1/0/0/0 0/0 "GET /api/v2/accounts/acc-alice-1 HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:07:05:55.172] <HTTPCLIENT> -/- 2/0/0/6/47 200 313 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:65154 [23/Nov/2026:07:05:55.172] fe be_exec/exec 47/0/0/9/56 200 309 - - ---- 1/1/0/0/0 0/0 "GET /api/v2/accounts/acc-alice-1 HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:07:05:55.256] <HTTPCLIENT> -/- 2/0/0/1/42 200 313 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:65158 [23/Nov/2026:07:05:55.255] fe be_exec/exec 42/0/1/10/53 200 309 - - ---- 1/1/0/0/0 0/0 "GET /api/v2/accounts/acc-alice-1 HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:07:05:55.317] <HTTPCLIENT> -/- 2/0/0/3/45 200 313 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:65174 [23/Nov/2026:07:05:55.317] fe be_exec/exec 45/0/0/14/59 200 309 - - ---- 1/1/0/0/0 0/0 "GET /api/v2/accounts/acc-alice-1 HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:07:05:55.389] <HTTPCLIENT> -/- 2/0/0/2/43 200 313 - - ---- 1/0/0/0/0 0/0 {172.23.0.2} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.23.0.1:65176 [23/Nov/2026:07:05:55.388] fe be_exec/exec 43/0/1/11/55 200 309 - - ---- 1/1/0/0/0 0/0 "GET /api/v2/accounts/acc-alice-1 HTTP/1.1"
+gateway-1  | 172.23.0.5:39926 [23/Nov/2026:07:05:56.082] fe fe/<NOSRV> -1/-1/-1/-1/0 400 0 - - CR-- 1/1/0/0/0 0/0 "<BADREQ>"

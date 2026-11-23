@@ -1,0 +1,8 @@
+w18-query-nginx-default-edge-laravel-ovoff rep1 hits=      22 skew=0
+w18-query-nginx-default-edge-rails-ovon rep1 hits=      13 skew=0
+w18-digest-nogate-nginx-default-edge-fastapi-ovoff rep2 hits=      27 skew=0
+w18-query-nginx-default-edge-rails-ovoff rep2 hits=      11 skew=0
+w18-query-nginx-default-edge-rails-ovon rep2 hits=      13 skew=0
+w18-query-nginx-default-edge-spring-ovon rep2 hits=      10 skew=0
+w18-digest-nogate-nginx-default-edge-fastapi-ovon rep3 hits=      39 skew=0
+w18-query-nginx-default-edge-laravel-ovon rep3 hits=      24 skew=0

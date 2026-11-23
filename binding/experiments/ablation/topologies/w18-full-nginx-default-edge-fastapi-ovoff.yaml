@@ -1,0 +1,10 @@
+id: w18-full-nginx-default-edge-fastapi-ovoff
+gateway: nginx
+gateway_image: nginx:1.30.7-alpine
+profile: default
+placement: edge
+framework: fastapi
+executor_image: bh-exec-fastapi:v2
+override: 'off'
+verifier: {image: 'bh-verifier:ablate-full', canon: rfc3986, view_mac: 'off'}
+host_port: 29881

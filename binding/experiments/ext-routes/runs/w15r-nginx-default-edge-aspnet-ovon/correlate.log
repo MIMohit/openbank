@@ -1,0 +1,1 @@
+oracle[w15r-nginx-default-edge-aspnet-ovon] {'topology': 'w15r-nginx-default-edge-aspnet-ovon', 'cases': 581, 'accepted': 387, 'hits_raw': 6, 'hits_confirmed': 0, 'S1': 4, 'S2': 2, 'S3': 0, 'signatures': 6, 'max_res_hat': 4, 'b0': 0, 'propagation': 72, 'uncorrelated': 2}

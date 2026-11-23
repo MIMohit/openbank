@@ -1,0 +1,1 @@
+e4_oracle[w12-allow-ngx-fastapi-def] {'topology': 'w12-allow-ngx-fastapi-def', 'gateway': 'nginx', 'profile': 'default', 'framework': 'fastapi', 'verifier_image': 'bh-pdp-allow:latest', 'cases': 29, 'pdp_allow': 13, 'violations': 0, 'admin': 0, 'bob': 0, 'vectors_hit': ''}

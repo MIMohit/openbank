@@ -1,0 +1,37 @@
+RERUN DRIVER start 14:46:25  reps=3
+=== [framework:aspnet:dot-segment] w12-allow-ngx-aspnet-def ===
+rep1: dotseg-admin-del dotseg-admin-list dotseg-bob-del dotseg-bob-get dotseg-bob-getv2 dotseg-bob-put dotseg-v2v1-admin encdotseg-admin-list encdotseg-bob-get 
+rep2: dotseg-admin-del dotseg-admin-list dotseg-bob-del dotseg-bob-get dotseg-bob-getv2 dotseg-bob-put dotseg-v2v1-admin encdotseg-admin-list encdotseg-bob-get 
+rep3: dotseg-admin-del dotseg-admin-list dotseg-bob-del dotseg-bob-get dotseg-bob-getv2 dotseg-bob-put dotseg-v2v1-admin encdotseg-admin-list encdotseg-bob-get 
+{"topology": "w12-allow-ngx-aspnet-def", "n_confirmed": 9, "n_flaky": 0, "confirmed": ["dotseg-admin-del", "dotseg-admin-list", "dotseg-bob-del", "dotseg-bob-get", "dotseg-bob-getv2", "dotseg-bob-put", "dotseg-v2v1-admin", "encdotseg-admin-list", "encdotseg-bob-get"], "flaky": []}
+=== [gateway:kong:dot-segment] w12-allow-kng-fastapi-def ===
+rep1: dotseg-admin-del dotseg-admin-list dotseg-bob-del dotseg-bob-get dotseg-bob-getv2 dotseg-bob-put dotseg-v2v1-admin encdotseg-admin-list encdotseg-bob-get 
+rep2: dotseg-admin-del dotseg-admin-list dotseg-bob-del dotseg-bob-get dotseg-bob-getv2 dotseg-bob-put dotseg-v2v1-admin encdotseg-admin-list encdotseg-bob-get 
+rep3: dotseg-admin-del dotseg-admin-list dotseg-bob-del dotseg-bob-get dotseg-bob-getv2 dotseg-bob-put dotseg-v2v1-admin encdotseg-admin-list encdotseg-bob-get 
+{"topology": "w12-allow-kng-fastapi-def", "n_confirmed": 9, "n_flaky": 0, "confirmed": ["dotseg-admin-del", "dotseg-admin-list", "dotseg-bob-del", "dotseg-bob-get", "dotseg-bob-getv2", "dotseg-bob-put", "dotseg-v2v1-admin", "encdotseg-admin-list", "encdotseg-bob-get"], "flaky": []}
+=== [framework:aspnet:case-fold] w12-block-ngx-aspnet-def ===
+rep1: case-admin-del case-admin-list dotseg-admin-del dotseg-admin-list dotseg-bob-del dotseg-bob-get dotseg-bob-getv2 dotseg-bob-put dotseg-v2v1-admin encdotseg-admin-list encdotseg-bob-get 
+rep2: case-admin-del case-admin-list dotseg-admin-del dotseg-admin-list dotseg-bob-del dotseg-bob-get dotseg-bob-getv2 dotseg-bob-put dotseg-v2v1-admin encdotseg-admin-list encdotseg-bob-get 
+rep3: case-admin-del case-admin-list dotseg-admin-del dotseg-admin-list dotseg-bob-del dotseg-bob-get dotseg-bob-getv2 dotseg-bob-put dotseg-v2v1-admin encdotseg-admin-list encdotseg-bob-get 
+{"topology": "w12-block-ngx-aspnet-def", "n_confirmed": 11, "n_flaky": 0, "confirmed": ["case-admin-del", "case-admin-list", "dotseg-admin-del", "dotseg-admin-list", "dotseg-bob-del", "dotseg-bob-get", "dotseg-bob-getv2", "dotseg-bob-put", "dotseg-v2v1-admin", "encdotseg-admin-list", "encdotseg-bob-get"], "flaky": []}
+=== [framework:express:case-fold] w12-block-ngx-express-def ===
+rep1: case-admin-del case-admin-list 
+rep2: case-admin-del case-admin-list 
+rep3: case-admin-del case-admin-list 
+{"topology": "w12-block-ngx-express-def", "n_confirmed": 2, "n_flaky": 0, "confirmed": ["case-admin-del", "case-admin-list"], "flaky": []}
+=== [framework:rails:double-slash] w12-block-ngx-rails-def ===
+rep1: dslash-accounts-bob dslash-admin-del dslash-admin-list 
+rep2: dslash-accounts-bob dslash-admin-del dslash-admin-list 
+rep3: dslash-accounts-bob dslash-admin-del dslash-admin-list 
+{"topology": "w12-block-ngx-rails-def", "n_confirmed": 3, "n_flaky": 0, "confirmed": ["dslash-accounts-bob", "dslash-admin-del", "dslash-admin-list"], "flaky": []}
+=== [framework:spring:matrix-param] w12-block-ngx-spring-def ===
+rep1: matrix-accounts-bob matrix-admin-del matrix-admin-list 
+rep2: matrix-accounts-bob matrix-admin-del matrix-admin-list 
+rep3: matrix-accounts-bob matrix-admin-del matrix-admin-list 
+{"topology": "w12-block-ngx-spring-def", "n_confirmed": 3, "n_flaky": 0, "confirmed": ["matrix-accounts-bob", "matrix-admin-del", "matrix-admin-list"], "flaky": []}
+=== [gateway:kong:double-slash] w12-block-kng-spring-def ===
+rep1: dotseg-admin-del dotseg-admin-list dotseg-bob-del dotseg-bob-get dotseg-bob-getv2 dotseg-bob-put dotseg-v2v1-admin dslash-accounts-bob dslash-admin-del dslash-admin-list encdotseg-admin-list encdotseg-bob-get matrix-accounts-bob matrix-admin-del matrix-admin-list 
+rep2: dotseg-admin-del dotseg-admin-list dotseg-bob-del dotseg-bob-get dotseg-bob-getv2 dotseg-bob-put dotseg-v2v1-admin dslash-accounts-bob dslash-admin-del dslash-admin-list encdotseg-admin-list encdotseg-bob-get matrix-accounts-bob matrix-admin-del matrix-admin-list 
+rep3: dotseg-admin-del dotseg-admin-list dotseg-bob-del dotseg-bob-get dotseg-bob-getv2 dotseg-bob-put dotseg-v2v1-admin dslash-accounts-bob dslash-admin-del dslash-admin-list encdotseg-admin-list encdotseg-bob-get matrix-accounts-bob matrix-admin-del matrix-admin-list 
+{"topology": "w12-block-kng-spring-def", "n_confirmed": 15, "n_flaky": 0, "confirmed": ["dotseg-admin-del", "dotseg-admin-list", "dotseg-bob-del", "dotseg-bob-get", "dotseg-bob-getv2", "dotseg-bob-put", "dotseg-v2v1-admin", "dslash-accounts-bob", "dslash-admin-del", "dslash-admin-list", "encdotseg-admin-list", "encdotseg-bob-get", "matrix-accounts-bob", "matrix-admin-del", "matrix-admin-list"], "flaky": []}
+RERUN DRIVER done 14:51:36

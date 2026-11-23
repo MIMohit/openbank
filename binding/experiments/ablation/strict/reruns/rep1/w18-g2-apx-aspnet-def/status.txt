@@ -1,0 +1,1 @@
+w18-g2-apx-aspnet-def rc=0 secs=16 oracle[w18-g2-apx-aspnet-def] {'topology': 'w18-g2-apx-aspnet-def', 'cases': 26, 'accepted': 26, 'hits_raw': 9, 'hits_confirmed': 0, 'S1': 9, 'S2': 0, 'S3': 0, 'signatures': 1, 'max_res_hat': 2, 'b0':

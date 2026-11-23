@@ -1,0 +1,131 @@
+[06:47:11] (1/65) START w12-allow-ngx-laravel-def
+[06:47:51] (1/65) DONE  w12-allow-ngx-laravel-def runner_rc=0 secs=40 violations=0 e4_runner[w12-allow-ngx-laravel-def] wrote /Users/mimohit/openbank/binding/harness/logs/w12-allow-ngx-laravel-def/runner.jsonl: {'sent': 29, 'errors': 0} 
+[06:47:51] (2/65) START w12-allow-trf-laravel-def
+[06:48:41] (2/65) DONE  w12-allow-trf-laravel-def runner_rc=0 secs=50 violations=0 e4_runner[w12-allow-trf-laravel-def] wrote /Users/mimohit/openbank/binding/harness/logs/w12-allow-trf-laravel-def/runner.jsonl: {'sent': 29, 'errors': 0} 
+[06:48:41] (3/65) START w12-allow-env-laravel-def
+[06:49:27] (3/65) DONE  w12-allow-env-laravel-def runner_rc=0 secs=46 violations=0 e4_runner[w12-allow-env-laravel-def] wrote /Users/mimohit/openbank/binding/harness/logs/w12-allow-env-laravel-def/runner.jsonl: {'sent': 29, 'errors': 0} 
+[06:49:27] (4/65) START w12-allow-apx-laravel-def
+[06:50:15] (4/65) DONE  w12-allow-apx-laravel-def runner_rc=0 secs=48 violations=0 e4_runner[w12-allow-apx-laravel-def] wrote /Users/mimohit/openbank/binding/harness/logs/w12-allow-apx-laravel-def/runner.jsonl: {'sent': 29, 'errors': 0} 
+[06:50:15] (5/65) START w12-allow-hap-laravel-def
+[06:50:59] (5/65) DONE  w12-allow-hap-laravel-def runner_rc=0 secs=44 violations=0 e4_runner[w12-allow-hap-laravel-def] wrote /Users/mimohit/openbank/binding/harness/logs/w12-allow-hap-laravel-def/runner.jsonl: {'sent': 29, 'errors': 0} 
+[06:50:59] (6/65) START w12-block-ngx-aspnet-def
+[06:51:13] (6/65) DONE  w12-block-ngx-aspnet-def runner_rc=0 secs=14 violations=11 e4_runner[w12-block-ngx-aspnet-def] wrote /Users/mimohit/openbank/binding/harness/logs/w12-block-ngx-aspnet-def/runner.jsonl: {'sent': 29, 'errors': 0} 
+[06:51:13] (7/65) START w12-block-ngx-rails-def
+[06:51:28] (7/65) DONE  w12-block-ngx-rails-def runner_rc=0 secs=15 violations=3 e4_runner[w12-block-ngx-rails-def] wrote /Users/mimohit/openbank/binding/harness/logs/w12-block-ngx-rails-def/runner.jsonl: {'sent': 29, 'errors': 0} 
+[06:51:28] (8/65) START w12-block-ngx-spring-def
+[06:51:42] (8/65) DONE  w12-block-ngx-spring-def runner_rc=0 secs=14 violations=3 e4_runner[w12-block-ngx-spring-def] wrote /Users/mimohit/openbank/binding/harness/logs/w12-block-ngx-spring-def/runner.jsonl: {'sent': 29, 'errors': 0} 
+[06:51:42] (9/65) START w12-block-ngx-express-def
+[06:51:56] (9/65) DONE  w12-block-ngx-express-def runner_rc=0 secs=14 violations=2 e4_runner[w12-block-ngx-express-def] wrote /Users/mimohit/openbank/binding/harness/logs/w12-block-ngx-express-def/runner.jsonl: {'sent': 29, 'errors': 0} 
+[06:51:56] (10/65) START w12-block-trf-aspnet-def
+[06:52:28] (10/65) DONE  w12-block-trf-aspnet-def runner_rc=0 secs=32 violations=2 e4_runner[w12-block-trf-aspnet-def] wrote /Users/mimohit/openbank/binding/harness/logs/w12-block-trf-aspnet-def/runner.jsonl: {'sent': 29, 'errors': 0} 
+[06:52:28] (11/65) START w12-block-trf-rails-def
+[06:52:57] (11/65) DONE  w12-block-trf-rails-def runner_rc=0 secs=29 violations=0 e4_runner[w12-block-trf-rails-def] wrote /Users/mimohit/openbank/binding/harness/logs/w12-block-trf-rails-def/runner.jsonl: {'sent': 29, 'errors': 0} 
+[06:52:57] (12/65) START w12-block-trf-spring-def
+[06:53:37] (12/65) DONE  w12-block-trf-spring-def runner_rc=0 secs=40 violations=3 e4_runner[w12-block-trf-spring-def] wrote /Users/mimohit/openbank/binding/harness/logs/w12-block-trf-spring-def/runner.jsonl: {'sent': 29, 'errors': 0} 
+[06:53:37] (13/65) START w12-block-trf-express-def
+[06:54:00] (13/65) DONE  w12-block-trf-express-def runner_rc=0 secs=23 violations=2 e4_runner[w12-block-trf-express-def] wrote /Users/mimohit/openbank/binding/harness/logs/w12-block-trf-express-def/runner.jsonl: {'sent': 29, 'errors': 0} 
+[06:54:00] (14/65) START w12-block-env-aspnet-def
+[06:54:24] (14/65) DONE  w12-block-env-aspnet-def runner_rc=0 secs=24 violations=11 e4_runner[w12-block-env-aspnet-def] wrote /Users/mimohit/openbank/binding/harness/logs/w12-block-env-aspnet-def/runner.jsonl: {'sent': 29, 'errors': 0} 
+[06:54:24] (15/65) START w12-block-env-rails-def
+[06:55:11] (15/65) DONE  w12-block-env-rails-def runner_rc=0 secs=46 violations=3 e4_runner[w12-block-env-rails-def] wrote /Users/mimohit/openbank/binding/harness/logs/w12-block-env-rails-def/runner.jsonl: {'sent': 29, 'errors': 0} 
+[06:55:11] (16/65) START w12-block-env-spring-def
+[06:55:54] (16/65) DONE  w12-block-env-spring-def runner_rc=0 secs=43 violations=3 e4_runner[w12-block-env-spring-def] wrote /Users/mimohit/openbank/binding/harness/logs/w12-block-env-spring-def/runner.jsonl: {'sent': 29, 'errors': 0} 
+[06:55:54] (17/65) START w12-block-env-express-def
+[06:56:26] (17/65) DONE  w12-block-env-express-def runner_rc=0 secs=32 violations=2 e4_runner[w12-block-env-express-def] wrote /Users/mimohit/openbank/binding/harness/logs/w12-block-env-express-def/runner.jsonl: {'sent': 29, 'errors': 0} 
+[06:56:26] (18/65) START w12-block-kng-aspnet-def
+[06:56:54] (18/65) DONE  w12-block-kng-aspnet-def runner_rc=0 secs=28 violations=14 e4_runner[w12-block-kng-aspnet-def] wrote /Users/mimohit/openbank/binding/harness/logs/w12-block-kng-aspnet-def/runner.jsonl: {'sent': 29, 'errors': 0} 
+[06:56:54] (19/65) START w12-block-kng-rails-def
+[06:57:22] (19/65) DONE  w12-block-kng-rails-def runner_rc=0 secs=28 violations=12 e4_runner[w12-block-kng-rails-def] wrote /Users/mimohit/openbank/binding/harness/logs/w12-block-kng-rails-def/runner.jsonl: {'sent': 29, 'errors': 0} 
+[06:57:22] (20/65) START w12-block-kng-spring-def
+[06:58:34] (20/65) DONE  w12-block-kng-spring-def runner_rc=0 secs=72 violations=15 e4_runner[w12-block-kng-spring-def] wrote /Users/mimohit/openbank/binding/harness/logs/w12-block-kng-spring-def/runner.jsonl: {'sent': 29, 'errors': 0} 
+[06:58:34] (21/65) START w12-block-kng-express-def
+[06:59:00] (21/65) DONE  w12-block-kng-express-def runner_rc=0 secs=26 violations=14 e4_runner[w12-block-kng-express-def] wrote /Users/mimohit/openbank/binding/harness/logs/w12-block-kng-express-def/runner.jsonl: {'sent': 29, 'errors': 0} 
+[06:59:00] (22/65) START w12-block-apx-aspnet-def
+[06:59:21] (22/65) DONE  w12-block-apx-aspnet-def runner_rc=0 secs=20 violations=2 e4_runner[w12-block-apx-aspnet-def] wrote /Users/mimohit/openbank/binding/harness/logs/w12-block-apx-aspnet-def/runner.jsonl: {'sent': 29, 'errors': 0} 
+[06:59:21] (23/65) START w12-block-apx-rails-def
+[06:59:48] (23/65) DONE  w12-block-apx-rails-def runner_rc=0 secs=27 violations=0 e4_runner[w12-block-apx-rails-def] wrote /Users/mimohit/openbank/binding/harness/logs/w12-block-apx-rails-def/runner.jsonl: {'sent': 29, 'errors': 0} 
+[06:59:48] (24/65) START w12-block-apx-spring-def
+[07:00:10] (24/65) DONE  w12-block-apx-spring-def runner_rc=0 secs=22 violations=3 e4_runner[w12-block-apx-spring-def] wrote /Users/mimohit/openbank/binding/harness/logs/w12-block-apx-spring-def/runner.jsonl: {'sent': 29, 'errors': 0} 
+[07:00:10] (25/65) START w12-block-apx-express-def
+[07:00:30] (25/65) DONE  w12-block-apx-express-def runner_rc=0 secs=20 violations=2 e4_runner[w12-block-apx-express-def] wrote /Users/mimohit/openbank/binding/harness/logs/w12-block-apx-express-def/runner.jsonl: {'sent': 29, 'errors': 0} 
+[07:00:30] (26/65) START w12-block-hap-aspnet-def
+[07:00:50] (26/65) DONE  w12-block-hap-aspnet-def runner_rc=0 secs=20 violations=11 e4_runner[w12-block-hap-aspnet-def] wrote /Users/mimohit/openbank/binding/harness/logs/w12-block-hap-aspnet-def/runner.jsonl: {'sent': 29, 'errors': 0} 
+[07:00:50] (27/65) START w12-block-hap-rails-def
+[07:01:11] (27/65) DONE  w12-block-hap-rails-def runner_rc=0 secs=20 violations=3 e4_runner[w12-block-hap-rails-def] wrote /Users/mimohit/openbank/binding/harness/logs/w12-block-hap-rails-def/runner.jsonl: {'sent': 29, 'errors': 0} 
+[07:01:11] (28/65) START w12-block-hap-spring-def
+[07:01:37] (28/65) DONE  w12-block-hap-spring-def runner_rc=0 secs=26 violations=3 e4_runner[w12-block-hap-spring-def] wrote /Users/mimohit/openbank/binding/harness/logs/w12-block-hap-spring-def/runner.jsonl: {'sent': 29, 'errors': 0} 
+[07:01:37] (29/65) START w12-block-hap-express-def
+[07:01:54] (29/65) DONE  w12-block-hap-express-def runner_rc=0 secs=17 violations=2 e4_runner[w12-block-hap-express-def] wrote /Users/mimohit/openbank/binding/harness/logs/w12-block-hap-express-def/runner.jsonl: {'sent': 29, 'errors': 0} 
+[07:01:54] (30/65) START w12-allow-ngx-aspnet-rec
+[07:02:12] (30/65) DONE  w12-allow-ngx-aspnet-rec runner_rc=0 secs=18 violations=9 e4_runner[w12-allow-ngx-aspnet-rec] wrote /Users/mimohit/openbank/binding/harness/logs/w12-allow-ngx-aspnet-rec/runner.jsonl: {'sent': 29, 'errors': 0} 
+[07:02:12] (31/65) START w12-allow-ngx-rails-rec
+[07:02:29] (31/65) DONE  w12-allow-ngx-rails-rec runner_rc=0 secs=17 violations=0 e4_runner[w12-allow-ngx-rails-rec] wrote /Users/mimohit/openbank/binding/harness/logs/w12-allow-ngx-rails-rec/runner.jsonl: {'sent': 29, 'errors': 0} 
+[07:02:29] (32/65) START w12-allow-ngx-spring-rec
+[07:02:49] (32/65) DONE  w12-allow-ngx-spring-rec runner_rc=0 secs=20 violations=0 e4_runner[w12-allow-ngx-spring-rec] wrote /Users/mimohit/openbank/binding/harness/logs/w12-allow-ngx-spring-rec/runner.jsonl: {'sent': 29, 'errors': 0} 
+[07:02:49] (33/65) START w12-allow-trf-aspnet-rec
+[07:03:09] (33/65) DONE  w12-allow-trf-aspnet-rec runner_rc=0 secs=19 violations=0 e4_runner[w12-allow-trf-aspnet-rec] wrote /Users/mimohit/openbank/binding/harness/logs/w12-allow-trf-aspnet-rec/runner.jsonl: {'sent': 29, 'errors': 0} 
+[07:03:09] (34/65) START w12-allow-trf-rails-rec
+[07:03:36] (34/65) DONE  w12-allow-trf-rails-rec runner_rc=0 secs=27 violations=0 e4_runner[w12-allow-trf-rails-rec] wrote /Users/mimohit/openbank/binding/harness/logs/w12-allow-trf-rails-rec/runner.jsonl: {'sent': 29, 'errors': 0} 
+[07:03:36] (35/65) START w12-allow-trf-spring-rec
+[07:03:59] (35/65) DONE  w12-allow-trf-spring-rec runner_rc=0 secs=23 violations=0 e4_runner[w12-allow-trf-spring-rec] wrote /Users/mimohit/openbank/binding/harness/logs/w12-allow-trf-spring-rec/runner.jsonl: {'sent': 29, 'errors': 0} 
+[07:03:59] (36/65) START w12-allow-env-aspnet-rec
+[07:04:21] (36/65) DONE  w12-allow-env-aspnet-rec runner_rc=0 secs=22 violations=0 e4_runner[w12-allow-env-aspnet-rec] wrote /Users/mimohit/openbank/binding/harness/logs/w12-allow-env-aspnet-rec/runner.jsonl: {'sent': 29, 'errors': 0} 
+[07:04:21] (37/65) START w12-allow-env-rails-rec
+[07:05:04] (37/65) DONE  w12-allow-env-rails-rec runner_rc=0 secs=43 violations=0 e4_runner[w12-allow-env-rails-rec] wrote /Users/mimohit/openbank/binding/harness/logs/w12-allow-env-rails-rec/runner.jsonl: {'sent': 29, 'errors': 0} 
+[07:05:04] (38/65) START w12-allow-env-spring-rec
+[07:06:22] (38/65) DONE  w12-allow-env-spring-rec runner_rc=0 secs=77 violations=0 e4_runner[w12-allow-env-spring-rec] wrote /Users/mimohit/openbank/binding/harness/logs/w12-allow-env-spring-rec/runner.jsonl: {'sent': 29, 'errors': 0} 
+[07:06:22] (39/65) START w12-allow-kng-aspnet-rec
+[07:06:50] (39/65) DONE  w12-allow-kng-aspnet-rec runner_rc=0 secs=28 violations=9 e4_runner[w12-allow-kng-aspnet-rec] wrote /Users/mimohit/openbank/binding/harness/logs/w12-allow-kng-aspnet-rec/runner.jsonl: {'sent': 29, 'errors': 0} 
+[07:06:50] (40/65) START w12-allow-kng-rails-rec
+[07:07:23] (40/65) DONE  w12-allow-kng-rails-rec runner_rc=0 secs=33 violations=9 e4_runner[w12-allow-kng-rails-rec] wrote /Users/mimohit/openbank/binding/harness/logs/w12-allow-kng-rails-rec/runner.jsonl: {'sent': 29, 'errors': 0} 
+[07:07:23] (41/65) START w12-allow-kng-spring-rec
+[07:07:52] (41/65) DONE  w12-allow-kng-spring-rec runner_rc=0 secs=28 violations=9 e4_runner[w12-allow-kng-spring-rec] wrote /Users/mimohit/openbank/binding/harness/logs/w12-allow-kng-spring-rec/runner.jsonl: {'sent': 29, 'errors': 0} 
+[07:07:52] (42/65) START w12-allow-apx-aspnet-rec
+[07:08:11] (42/65) DONE  w12-allow-apx-aspnet-rec runner_rc=0 secs=19 violations=0 e4_runner[w12-allow-apx-aspnet-rec] wrote /Users/mimohit/openbank/binding/harness/logs/w12-allow-apx-aspnet-rec/runner.jsonl: {'sent': 29, 'errors': 0} 
+[07:08:11] (43/65) START w12-allow-apx-rails-rec
+[07:08:27] (43/65) DONE  w12-allow-apx-rails-rec runner_rc=0 secs=16 violations=0 e4_runner[w12-allow-apx-rails-rec] wrote /Users/mimohit/openbank/binding/harness/logs/w12-allow-apx-rails-rec/runner.jsonl: {'sent': 29, 'errors': 0} 
+[07:08:27] (44/65) START w12-allow-apx-spring-rec
+[07:08:49] (44/65) DONE  w12-allow-apx-spring-rec runner_rc=0 secs=22 violations=0 e4_runner[w12-allow-apx-spring-rec] wrote /Users/mimohit/openbank/binding/harness/logs/w12-allow-apx-spring-rec/runner.jsonl: {'sent': 29, 'errors': 0} 
+[07:08:49] (45/65) START w12-allow-hap-aspnet-rec
+[07:09:06] (45/65) DONE  w12-allow-hap-aspnet-rec runner_rc=0 secs=17 violations=2 e4_runner[w12-allow-hap-aspnet-rec] wrote /Users/mimohit/openbank/binding/harness/logs/w12-allow-hap-aspnet-rec/runner.jsonl: {'sent': 29, 'errors': 0} 
+[07:09:06] (46/65) START w12-allow-hap-rails-rec
+[07:09:23] (46/65) DONE  w12-allow-hap-rails-rec runner_rc=0 secs=17 violations=0 e4_runner[w12-allow-hap-rails-rec] wrote /Users/mimohit/openbank/binding/harness/logs/w12-allow-hap-rails-rec/runner.jsonl: {'sent': 29, 'errors': 0} 
+[07:09:23] (47/65) START w12-allow-hap-spring-rec
+[07:09:39] (47/65) DONE  w12-allow-hap-spring-rec runner_rc=0 secs=16 violations=0 e4_runner[w12-allow-hap-spring-rec] wrote /Users/mimohit/openbank/binding/harness/logs/w12-allow-hap-spring-rec/runner.jsonl: {'sent': 29, 'errors': 0} 
+[07:09:39] (48/65) START w12-block-ngx-aspnet-rec
+[07:09:55] (48/65) DONE  w12-block-ngx-aspnet-rec runner_rc=0 secs=16 violations=11 e4_runner[w12-block-ngx-aspnet-rec] wrote /Users/mimohit/openbank/binding/harness/logs/w12-block-ngx-aspnet-rec/runner.jsonl: {'sent': 29, 'errors': 0} 
+[07:09:55] (49/65) START w12-block-ngx-rails-rec
+[07:10:09] (49/65) DONE  w12-block-ngx-rails-rec runner_rc=0 secs=14 violations=3 e4_runner[w12-block-ngx-rails-rec] wrote /Users/mimohit/openbank/binding/harness/logs/w12-block-ngx-rails-rec/runner.jsonl: {'sent': 29, 'errors': 0} 
+[07:10:09] (50/65) START w12-block-ngx-spring-rec
+[07:10:24] (50/65) DONE  w12-block-ngx-spring-rec runner_rc=0 secs=15 violations=3 e4_runner[w12-block-ngx-spring-rec] wrote /Users/mimohit/openbank/binding/harness/logs/w12-block-ngx-spring-rec/runner.jsonl: {'sent': 29, 'errors': 0} 
+[07:10:24] (51/65) START w12-block-trf-aspnet-rec
+[07:10:39] (51/65) DONE  w12-block-trf-aspnet-rec runner_rc=0 secs=15 violations=2 e4_runner[w12-block-trf-aspnet-rec] wrote /Users/mimohit/openbank/binding/harness/logs/w12-block-trf-aspnet-rec/runner.jsonl: {'sent': 29, 'errors': 0} 
+[07:10:39] (52/65) START w12-block-trf-rails-rec
+[07:10:54] (52/65) DONE  w12-block-trf-rails-rec runner_rc=0 secs=15 violations=0 e4_runner[w12-block-trf-rails-rec] wrote /Users/mimohit/openbank/binding/harness/logs/w12-block-trf-rails-rec/runner.jsonl: {'sent': 29, 'errors': 0} 
+[07:10:54] (53/65) START w12-block-trf-spring-rec
+[07:11:11] (53/65) DONE  w12-block-trf-spring-rec runner_rc=0 secs=17 violations=3 e4_runner[w12-block-trf-spring-rec] wrote /Users/mimohit/openbank/binding/harness/logs/w12-block-trf-spring-rec/runner.jsonl: {'sent': 29, 'errors': 0} 
+[07:11:11] (54/65) START w12-block-env-aspnet-rec
+[07:11:26] (54/65) DONE  w12-block-env-aspnet-rec runner_rc=0 secs=15 violations=2 e4_runner[w12-block-env-aspnet-rec] wrote /Users/mimohit/openbank/binding/harness/logs/w12-block-env-aspnet-rec/runner.jsonl: {'sent': 29, 'errors': 0} 
+[07:11:26] (55/65) START w12-block-env-rails-rec
+[07:11:43] (55/65) DONE  w12-block-env-rails-rec runner_rc=0 secs=16 violations=0 e4_runner[w12-block-env-rails-rec] wrote /Users/mimohit/openbank/binding/harness/logs/w12-block-env-rails-rec/runner.jsonl: {'sent': 29, 'errors': 0} 
+[07:11:43] (56/65) START w12-block-env-spring-rec
+[07:11:57] (56/65) DONE  w12-block-env-spring-rec runner_rc=0 secs=14 violations=3 e4_runner[w12-block-env-spring-rec] wrote /Users/mimohit/openbank/binding/harness/logs/w12-block-env-spring-rec/runner.jsonl: {'sent': 29, 'errors': 0} 
+[07:11:57] (57/65) START w12-block-kng-aspnet-rec
+[07:12:18] (57/65) DONE  w12-block-kng-aspnet-rec runner_rc=0 secs=21 violations=14 e4_runner[w12-block-kng-aspnet-rec] wrote /Users/mimohit/openbank/binding/harness/logs/w12-block-kng-aspnet-rec/runner.jsonl: {'sent': 29, 'errors': 0} 
+[07:12:18] (58/65) START w12-block-kng-rails-rec
+[07:12:38] (58/65) DONE  w12-block-kng-rails-rec runner_rc=0 secs=20 violations=12 e4_runner[w12-block-kng-rails-rec] wrote /Users/mimohit/openbank/binding/harness/logs/w12-block-kng-rails-rec/runner.jsonl: {'sent': 29, 'errors': 0} 
+[07:12:38] (59/65) START w12-block-kng-spring-rec
+[07:13:00] (59/65) DONE  w12-block-kng-spring-rec runner_rc=0 secs=22 violations=15 e4_runner[w12-block-kng-spring-rec] wrote /Users/mimohit/openbank/binding/harness/logs/w12-block-kng-spring-rec/runner.jsonl: {'sent': 29, 'errors': 0} 
+[07:13:00] (60/65) START w12-block-apx-aspnet-rec
+[07:13:18] (60/65) DONE  w12-block-apx-aspnet-rec runner_rc=0 secs=18 violations=2 e4_runner[w12-block-apx-aspnet-rec] wrote /Users/mimohit/openbank/binding/harness/logs/w12-block-apx-aspnet-rec/runner.jsonl: {'sent': 29, 'errors': 0} 
+[07:13:18] (61/65) START w12-block-apx-rails-rec
+[07:13:35] (61/65) DONE  w12-block-apx-rails-rec runner_rc=0 secs=17 violations=0 e4_runner[w12-block-apx-rails-rec] wrote /Users/mimohit/openbank/binding/harness/logs/w12-block-apx-rails-rec/runner.jsonl: {'sent': 29, 'errors': 0} 
+[07:13:35] (62/65) START w12-block-apx-spring-rec
+[07:13:59] (62/65) DONE  w12-block-apx-spring-rec runner_rc=0 secs=24 violations=3 e4_runner[w12-block-apx-spring-rec] wrote /Users/mimohit/openbank/binding/harness/logs/w12-block-apx-spring-rec/runner.jsonl: {'sent': 29, 'errors': 0} 
+[07:13:59] (63/65) START w12-block-hap-aspnet-rec
+[07:14:15] (63/65) DONE  w12-block-hap-aspnet-rec runner_rc=0 secs=16 violations=4 e4_runner[w12-block-hap-aspnet-rec] wrote /Users/mimohit/openbank/binding/harness/logs/w12-block-hap-aspnet-rec/runner.jsonl: {'sent': 29, 'errors': 0} 
+[07:14:15] (64/65) START w12-block-hap-rails-rec
+[07:14:32] (64/65) DONE  w12-block-hap-rails-rec runner_rc=0 secs=17 violations=0 e4_runner[w12-block-hap-rails-rec] wrote /Users/mimohit/openbank/binding/harness/logs/w12-block-hap-rails-rec/runner.jsonl: {'sent': 29, 'errors': 0} 
+[07:14:32] (65/65) START w12-block-hap-spring-rec
+[07:14:50] (65/65) DONE  w12-block-hap-spring-rec runner_rc=0 secs=18 violations=3 e4_runner[w12-block-hap-spring-rec] wrote /Users/mimohit/openbank/binding/harness/logs/w12-block-hap-spring-rec/runner.jsonl: {'sent': 29, 'errors': 0} 
+[07:14:50] SWEEP COMPLETE (65 topologies)

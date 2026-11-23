@@ -1,0 +1,1 @@
+w18-g2-kng-fastapi-def rc=0 secs=26 oracle[w18-g2-kng-fastapi-def] {'topology': 'w18-g2-kng-fastapi-def', 'cases': 176, 'accepted': 74, 'hits_raw': 11, 'hits_confirmed': 0, 'S1': 10, 'S2': 1, 'S3': 0, 'signatures': 3, 'max_res_hat': 3, 

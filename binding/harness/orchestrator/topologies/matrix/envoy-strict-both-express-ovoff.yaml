@@ -1,0 +1,10 @@
+id: envoy-strict-both-express-ovoff
+gateway: envoy
+gateway_image: envoyproxy/envoy:v1.39.6
+profile: strict
+placement: both
+framework: express
+executor_image: bh-exec-express:latest
+override: 'off'
+verifier: {image: 'bh-verifier:latest', canon: rfc3986, view_mac: 'off'}
+host_port: 18130

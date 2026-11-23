@@ -1,0 +1,1 @@
+oracle[w17-borigin-ngx-fastapi-ovoff] {'topology': 'w17-borigin-ngx-fastapi-ovoff', 'cases': 44, 'accepted': 44, 'hits_raw': 27, 'hits_confirmed': 0, 'S1': 19, 'S2': 8, 'S3': 0, 'signatures': 19, 'max_res_hat': 3, 'b0': 0, 'propagation': 0, 'uncorrelated': 1}

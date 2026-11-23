@@ -1,0 +1,33 @@
+# Dependencies and build output
+**/.venv*/
+**/venv/
+**/node_modules/
+**/target/
+**/vendor/
+**/bin/
+**/obj/
+**/__pycache__/
+**/.pytest_cache/
+*.pyc
+.DS_Store
+
+# Large or regenerable data. Raw logs are archived separately (see README "Raw data")
+harness/logs/
+prevalence/data/
+harness/orchestrator/generated/
+experiments/**/generated/
+experiments/defence/build/
+experiments/**/*.jsonl
+experiments/defence/results/perf/raw/
+
+# Secrets: test keys are never committed (only public JWKs, via harness/keys/.gitignore)
+**/.shimkeys/
+*.pem
+*priv*.jwk
+
+# LaTeX build output
+paper/out/
+paper/*.aux
+paper/*.log
+paper/*.bbl
+paper/*.blg

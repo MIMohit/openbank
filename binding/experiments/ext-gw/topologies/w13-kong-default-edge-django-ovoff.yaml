@@ -1,0 +1,10 @@
+id: w13-kong-default-edge-django-ovoff
+gateway: kong
+gateway_image: kong:3.9.5
+profile: default
+placement: edge
+framework: django
+executor_image: bh-exec-django:latest
+override: 'off'
+verifier: {image: 'bh-verifier:latest', canon: rfc3986, view_mac: 'off'}
+host_port: 29102

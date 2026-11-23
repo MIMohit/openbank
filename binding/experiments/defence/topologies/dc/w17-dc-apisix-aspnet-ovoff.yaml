@@ -1,0 +1,12 @@
+id: w17-dc-apisix-aspnet-ovoff
+gateway: apisix
+profile: strict
+placement: edge
+framework: aspnet
+executor_image: bh-exec-aspnet:v2
+override: 'off'
+verifier:
+  image: bh-verifier:latest
+  canon: strict
+  view_mac: 'off'
+host_port: 28843

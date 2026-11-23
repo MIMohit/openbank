@@ -1,0 +1,1 @@
+w12-allow-ngx-spring-rec runner_rc=0 secs=20 violations=0 e4_runner[w12-allow-ngx-spring-rec] wrote /Users/mimohit/openbank/binding/harness/logs/w12-allow-ngx-spring-rec/runner.jsonl: {'sent': 29, 'errors': 0}

@@ -1,0 +1,8 @@
+w14-nginx-default-origin-aspnet-ovon
+w14-nginx-default-origin-django-ovon
+w14-nginx-default-origin-express-ovon
+w14-nginx-default-origin-fastapi-ovon
+w14-nginx-default-origin-go-chi-ovon
+w14-nginx-default-origin-laravel-ovon
+w14-nginx-default-origin-rails-ovon
+w14-nginx-default-origin-spring-ovon

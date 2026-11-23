@@ -1,0 +1,6 @@
+{
+  "volumes": [
+    "./gateway/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro",
+    "./gateway/bh_authz.lua:/usr/local/etc/haproxy/bh_authz.lua:ro"
+  ]
+}

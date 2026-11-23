@@ -1,0 +1,21 @@
+{
+ "total_hits": 2968,
+ "mechanisms": 10,
+ "g2_mechanisms": 3,
+ "g2_hits": 350,
+ "hits_by_primitive_group": {
+  "G1": 2582,
+  "G2": 386
+ },
+ "e4_violations": 325,
+ "e4_classes": 7,
+ "e4_class_keys": [
+  "framework:aspnet:case-fold",
+  "framework:aspnet:dot-segment",
+  "framework:express:case-fold",
+  "framework:rails:double-slash",
+  "framework:spring:matrix-param",
+  "gateway:kong:dot-segment",
+  "gateway:kong:double-slash"
+ ]
+}

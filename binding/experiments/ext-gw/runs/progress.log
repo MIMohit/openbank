@@ -1,0 +1,190 @@
+[1/96] SKIP (done) w13-kong-default-edge-fastapi-ovoff
+[2/96] 11:14:10 START w13-kong-default-edge-express-ovoff
+[2/96] 11:15:09 DONE  w13-kong-default-edge-express-ovoff hits=15 runner_rc=0 secs=59
+[3/96] 11:15:09 START w13-kong-default-edge-django-ovoff
+[3/96] 11:16:07 DONE  w13-kong-default-edge-django-ovoff hits=13 runner_rc=0 secs=58
+[4/96] 11:16:07 START w13-kong-default-edge-go-chi-ovoff
+[4/96] 11:17:06 DONE  w13-kong-default-edge-go-chi-ovoff hits=18 runner_rc=0 secs=59
+[5/96] 11:17:06 START w13-kong-default-edge-spring-ovoff
+[5/96] 11:18:10 DONE  w13-kong-default-edge-spring-ovoff hits=14 runner_rc=0 secs=64
+[6/96] 11:18:10 START w13-kong-default-edge-aspnet-ovoff
+[6/96] 11:19:09 DONE  w13-kong-default-edge-aspnet-ovoff hits=14 runner_rc=0 secs=59
+[7/96] 11:19:09 START w13-kong-default-edge-rails-ovoff
+[7/96] 11:20:07 DONE  w13-kong-default-edge-rails-ovoff hits=14 runner_rc=0 secs=58
+[8/96] 11:20:07 START w13-kong-default-edge-laravel-ovoff
+[8/96] 11:21:45 DONE  w13-kong-default-edge-laravel-ovoff hits=NA 
+[9/96] 11:21:45 START w13-kong-recommended-edge-fastapi-ovoff
+[9/96] 11:22:42 DONE  w13-kong-recommended-edge-fastapi-ovoff hits=19 runner_rc=0 secs=57
+[10/96] 11:22:42 START w13-kong-recommended-edge-express-ovoff
+[10/96] 11:23:41 DONE  w13-kong-recommended-edge-express-ovoff hits=15 runner_rc=0 secs=59
+[11/96] 11:23:41 START w13-kong-recommended-edge-django-ovoff
+[11/96] 11:24:43 DONE  w13-kong-recommended-edge-django-ovoff hits=13 runner_rc=0 secs=62
+[12/96] 11:24:43 START w13-kong-recommended-edge-go-chi-ovoff
+[12/96] 11:25:49 DONE  w13-kong-recommended-edge-go-chi-ovoff hits=18 runner_rc=0 secs=66
+[13/96] 11:25:49 START w13-kong-recommended-edge-spring-ovoff
+[13/96] 11:27:48 DONE  w13-kong-recommended-edge-spring-ovoff hits=14 runner_rc=0 secs=119
+[14/96] 11:27:48 START w13-kong-recommended-edge-aspnet-ovoff
+[14/96] 11:30:07 DONE  w13-kong-recommended-edge-aspnet-ovoff hits=14 runner_rc=0 secs=139
+[15/96] 11:30:07 START w13-kong-recommended-edge-rails-ovoff
+[15/96] 11:31:28 DONE  w13-kong-recommended-edge-rails-ovoff hits=14 runner_rc=0 secs=81
+[16/96] 11:31:28 START w13-kong-recommended-edge-laravel-ovoff
+[16/96] 11:33:09 DONE  w13-kong-recommended-edge-laravel-ovoff hits=NA 
+[17/96] SKIP (done) w13-apisix-default-edge-fastapi-ovoff
+[18/96] 11:33:09 START w13-apisix-default-edge-express-ovoff
+[18/96] 11:34:11 DONE  w13-apisix-default-edge-express-ovoff hits=21 runner_rc=0 secs=62
+[19/96] 11:34:11 START w13-apisix-default-edge-django-ovoff
+[19/96] 11:35:11 DONE  w13-apisix-default-edge-django-ovoff hits=13 runner_rc=0 secs=59
+[20/96] 11:35:11 START w13-apisix-default-edge-go-chi-ovoff
+[20/96] 11:36:10 DONE  w13-apisix-default-edge-go-chi-ovoff hits=19 runner_rc=0 secs=59
+[21/96] 11:36:10 START w13-apisix-default-edge-spring-ovoff
+[21/96] 11:37:25 DONE  w13-apisix-default-edge-spring-ovoff hits=14 runner_rc=0 secs=75
+[22/96] 11:37:25 START w13-apisix-default-edge-aspnet-ovoff
+[22/96] 11:38:44 DONE  w13-apisix-default-edge-aspnet-ovoff hits=20 runner_rc=0 secs=79
+[23/96] 11:38:44 START w13-apisix-default-edge-rails-ovoff
+[23/96] 11:39:59 DONE  w13-apisix-default-edge-rails-ovoff hits=20 runner_rc=0 secs=74
+[24/96] 11:39:59 START w13-apisix-default-edge-laravel-ovoff
+[24/96] 11:40:11 DONE  w13-apisix-default-edge-laravel-ovoff hits=NA 
+[25/96] 11:40:11 START w13-apisix-recommended-edge-fastapi-ovoff
+[25/96] 11:41:17 DONE  w13-apisix-recommended-edge-fastapi-ovoff hits=14 runner_rc=0 secs=66
+[26/96] 11:41:17 START w13-apisix-recommended-edge-express-ovoff
+[26/96] 11:43:13 DONE  w13-apisix-recommended-edge-express-ovoff hits=21 runner_rc=0 secs=116
+[27/96] 11:43:13 START w13-apisix-recommended-edge-django-ovoff
+[27/96] 11:44:55 DONE  w13-apisix-recommended-edge-django-ovoff hits=13 runner_rc=0 secs=102
+[28/96] 11:44:56 START w13-apisix-recommended-edge-go-chi-ovoff
+[28/96] 11:46:32 DONE  w13-apisix-recommended-edge-go-chi-ovoff hits=19 runner_rc=0 secs=95
+[29/96] 11:46:32 START w13-apisix-recommended-edge-spring-ovoff
+[29/96] 11:48:29 DONE  w13-apisix-recommended-edge-spring-ovoff hits=14 runner_rc=0 secs=117
+[30/96] 11:48:29 START w13-apisix-recommended-edge-aspnet-ovoff
+[30/96] 11:49:33 DONE  w13-apisix-recommended-edge-aspnet-ovoff hits=20 runner_rc=0 secs=64
+[31/96] 11:49:33 START w13-apisix-recommended-edge-rails-ovoff
+[31/96] 11:50:39 DONE  w13-apisix-recommended-edge-rails-ovoff hits=20 runner_rc=0 secs=66
+[32/96] 11:50:39 START w13-apisix-recommended-edge-laravel-ovoff
+[32/96] 11:52:18 DONE  w13-apisix-recommended-edge-laravel-ovoff hits=NA 
+[33/96] SKIP (done) w13-haproxy-default-edge-fastapi-ovoff
+[34/96] 11:52:18 START w13-haproxy-default-edge-express-ovoff
+[34/96] 11:53:11 DONE  w13-haproxy-default-edge-express-ovoff hits=15 runner_rc=0 secs=53
+[35/96] 11:53:11 START w13-haproxy-default-edge-django-ovoff
+[35/96] 11:54:06 DONE  w13-haproxy-default-edge-django-ovoff hits=13 runner_rc=0 secs=55
+[36/96] 11:54:06 START w13-haproxy-default-edge-go-chi-ovoff
+[36/96] 11:54:58 DONE  w13-haproxy-default-edge-go-chi-ovoff hits=12 runner_rc=0 secs=52
+[37/96] 11:54:58 START w13-haproxy-default-edge-spring-ovoff
+[37/96] 11:55:51 DONE  w13-haproxy-default-edge-spring-ovoff hits=14 runner_rc=0 secs=53
+[38/96] 11:55:51 START w13-haproxy-default-edge-aspnet-ovoff
+[38/96] 11:56:47 DONE  w13-haproxy-default-edge-aspnet-ovoff hits=14 runner_rc=0 secs=56
+[39/96] 11:56:47 START w13-haproxy-default-edge-rails-ovoff
+[39/96] 11:57:41 DONE  w13-haproxy-default-edge-rails-ovoff hits=14 runner_rc=0 secs=54
+[40/96] 11:57:41 START w13-haproxy-default-edge-laravel-ovoff
+[40/96] 11:59:18 DONE  w13-haproxy-default-edge-laravel-ovoff hits=NA 
+[41/96] 11:59:18 START w13-haproxy-recommended-edge-fastapi-ovoff
+[41/96] 12:00:13 DONE  w13-haproxy-recommended-edge-fastapi-ovoff hits=13 runner_rc=0 secs=55
+[42/96] 12:00:13 START w13-haproxy-recommended-edge-express-ovoff
+[42/96] 12:01:08 DONE  w13-haproxy-recommended-edge-express-ovoff hits=15 runner_rc=0 secs=55
+[43/96] 12:01:08 START w13-haproxy-recommended-edge-django-ovoff
+[43/96] 12:02:04 DONE  w13-haproxy-recommended-edge-django-ovoff hits=13 runner_rc=0 secs=56
+[44/96] 12:02:04 START w13-haproxy-recommended-edge-go-chi-ovoff
+[44/96] 12:02:59 DONE  w13-haproxy-recommended-edge-go-chi-ovoff hits=12 runner_rc=0 secs=55
+[45/96] 12:02:59 START w13-haproxy-recommended-edge-spring-ovoff
+[45/96] 12:03:55 DONE  w13-haproxy-recommended-edge-spring-ovoff hits=14 runner_rc=0 secs=56
+[46/96] 12:03:56 START w13-haproxy-recommended-edge-aspnet-ovoff
+[46/96] 12:04:50 DONE  w13-haproxy-recommended-edge-aspnet-ovoff hits=14 runner_rc=0 secs=54
+[47/96] 12:04:50 START w13-haproxy-recommended-edge-rails-ovoff
+[47/96] 12:05:46 DONE  w13-haproxy-recommended-edge-rails-ovoff hits=14 runner_rc=0 secs=56
+[48/96] 12:05:46 START w13-haproxy-recommended-edge-laravel-ovoff
+[48/96] 12:07:24 DONE  w13-haproxy-recommended-edge-laravel-ovoff hits=NA 
+[49/96] 12:07:24 START w13-kong-default-edge-fastapi-ovon
+[49/96] 12:08:24 DONE  w13-kong-default-edge-fastapi-ovon hits=25 runner_rc=0 secs=60
+[50/96] 12:08:24 START w13-kong-default-edge-express-ovon
+[50/96] 12:09:24 DONE  w13-kong-default-edge-express-ovon hits=11 runner_rc=0 secs=60
+[51/96] 12:09:24 START w13-kong-default-edge-django-ovon
+[51/96] 12:10:23 DONE  w13-kong-default-edge-django-ovon hits=9 runner_rc=0 secs=59
+[52/96] 12:10:23 START w13-kong-default-edge-go-chi-ovon
+[52/96] 12:11:22 DONE  w13-kong-default-edge-go-chi-ovon hits=16 runner_rc=0 secs=59
+[53/96] 12:11:22 START w13-kong-default-edge-spring-ovon
+[53/96] 12:12:22 DONE  w13-kong-default-edge-spring-ovon hits=11 runner_rc=0 secs=60
+[54/96] 12:12:22 START w13-kong-default-edge-aspnet-ovon
+[54/96] 12:13:21 DONE  w13-kong-default-edge-aspnet-ovon hits=11 runner_rc=0 secs=59
+[55/96] 12:13:21 START w13-kong-default-edge-rails-ovon
+[55/96] 12:14:20 DONE  w13-kong-default-edge-rails-ovon hits=10 runner_rc=0 secs=59
+[56/96] 12:14:20 START w13-kong-default-edge-laravel-ovon
+[56/96] 12:15:58 DONE  w13-kong-default-edge-laravel-ovon hits=NA 
+[57/96] 12:15:58 START w13-kong-recommended-edge-fastapi-ovon
+[57/96] 12:16:57 DONE  w13-kong-recommended-edge-fastapi-ovon hits=25 runner_rc=0 secs=59
+[58/96] 12:16:57 START w13-kong-recommended-edge-express-ovon
+[58/96] 12:17:56 DONE  w13-kong-recommended-edge-express-ovon hits=11 runner_rc=0 secs=59
+[59/96] 12:17:56 START w13-kong-recommended-edge-django-ovon
+[59/96] 12:18:56 DONE  w13-kong-recommended-edge-django-ovon hits=9 runner_rc=0 secs=60
+[60/96] 12:18:56 START w13-kong-recommended-edge-go-chi-ovon
+[60/96] 12:19:56 DONE  w13-kong-recommended-edge-go-chi-ovon hits=16 runner_rc=0 secs=60
+[61/96] 12:19:56 START w13-kong-recommended-edge-spring-ovon
+[61/96] 12:20:55 DONE  w13-kong-recommended-edge-spring-ovon hits=11 runner_rc=0 secs=59
+[62/96] 12:20:55 START w13-kong-recommended-edge-aspnet-ovon
+[62/96] 12:21:54 DONE  w13-kong-recommended-edge-aspnet-ovon hits=11 runner_rc=0 secs=59
+[63/96] 12:21:54 START w13-kong-recommended-edge-rails-ovon
+[63/96] 12:22:54 DONE  w13-kong-recommended-edge-rails-ovon hits=10 runner_rc=0 secs=60
+[64/96] 12:22:54 START w13-kong-recommended-edge-laravel-ovon
+[64/96] 12:24:32 DONE  w13-kong-recommended-edge-laravel-ovon hits=NA 
+[65/96] 12:24:32 START w13-apisix-default-edge-fastapi-ovon
+[65/96] 12:25:24 DONE  w13-apisix-default-edge-fastapi-ovon hits=20 runner_rc=0 secs=52
+[66/96] 12:25:24 START w13-apisix-default-edge-express-ovon
+[66/96] 12:26:18 DONE  w13-apisix-default-edge-express-ovon hits=17 runner_rc=0 secs=54
+[67/96] 12:26:18 START w13-apisix-default-edge-django-ovon
+[67/96] 12:27:12 DONE  w13-apisix-default-edge-django-ovon hits=9 runner_rc=0 secs=54
+[68/96] 12:27:12 START w13-apisix-default-edge-go-chi-ovon
+[68/96] 12:28:06 DONE  w13-apisix-default-edge-go-chi-ovon hits=17 runner_rc=0 secs=54
+[69/96] 12:28:06 START w13-apisix-default-edge-spring-ovon
+[69/96] 12:29:01 DONE  w13-apisix-default-edge-spring-ovon hits=11 runner_rc=0 secs=55
+[70/96] 12:29:01 START w13-apisix-default-edge-aspnet-ovon
+[70/96] 12:29:54 DONE  w13-apisix-default-edge-aspnet-ovon hits=17 runner_rc=0 secs=53
+[71/96] 12:29:54 START w13-apisix-default-edge-rails-ovon
+[71/96] 12:30:50 DONE  w13-apisix-default-edge-rails-ovon hits=16 runner_rc=0 secs=56
+[72/96] 12:30:50 START w13-apisix-default-edge-laravel-ovon
+[72/96] 12:32:28 DONE  w13-apisix-default-edge-laravel-ovon hits=NA 
+[73/96] 12:32:28 START w13-apisix-recommended-edge-fastapi-ovon
+[73/96] 12:33:22 DONE  w13-apisix-recommended-edge-fastapi-ovon hits=20 runner_rc=0 secs=54
+[74/96] 12:33:22 START w13-apisix-recommended-edge-express-ovon
+[74/96] 12:34:16 DONE  w13-apisix-recommended-edge-express-ovon hits=17 runner_rc=0 secs=54
+[75/96] 12:34:16 START w13-apisix-recommended-edge-django-ovon
+[75/96] 12:35:10 DONE  w13-apisix-recommended-edge-django-ovon hits=9 runner_rc=0 secs=54
+[76/96] 12:35:10 START w13-apisix-recommended-edge-go-chi-ovon
+[76/96] 12:36:04 DONE  w13-apisix-recommended-edge-go-chi-ovon hits=17 runner_rc=0 secs=54
+[77/96] 12:36:04 START w13-apisix-recommended-edge-spring-ovon
+[77/96] 12:36:59 DONE  w13-apisix-recommended-edge-spring-ovon hits=11 runner_rc=0 secs=55
+[78/96] 12:36:59 START w13-apisix-recommended-edge-aspnet-ovon
+[78/96] 12:37:52 DONE  w13-apisix-recommended-edge-aspnet-ovon hits=17 runner_rc=0 secs=53
+[79/96] 12:37:52 START w13-apisix-recommended-edge-rails-ovon
+[79/96] 12:38:47 DONE  w13-apisix-recommended-edge-rails-ovon hits=16 runner_rc=0 secs=55
+[80/96] 12:38:47 START w13-apisix-recommended-edge-laravel-ovon
+[80/96] 12:40:25 DONE  w13-apisix-recommended-edge-laravel-ovon hits=NA 
+[81/96] 12:40:25 START w13-haproxy-default-edge-fastapi-ovon
+[81/96] 12:41:18 DONE  w13-haproxy-default-edge-fastapi-ovon hits=19 runner_rc=0 secs=53
+[82/96] 12:41:18 START w13-haproxy-default-edge-express-ovon
+[82/96] 12:42:10 DONE  w13-haproxy-default-edge-express-ovon hits=11 runner_rc=0 secs=52
+[83/96] 12:42:10 START w13-haproxy-default-edge-django-ovon
+[83/96] 12:43:03 DONE  w13-haproxy-default-edge-django-ovon hits=9 runner_rc=0 secs=53
+[84/96] 12:43:03 START w13-haproxy-default-edge-go-chi-ovon
+[84/96] 12:43:56 DONE  w13-haproxy-default-edge-go-chi-ovon hits=10 runner_rc=0 secs=53
+[85/96] 12:43:56 START w13-haproxy-default-edge-spring-ovon
+[85/96] 12:44:50 DONE  w13-haproxy-default-edge-spring-ovon hits=11 runner_rc=0 secs=54
+[86/96] 12:44:50 START w13-haproxy-default-edge-aspnet-ovon
+[86/96] 12:45:43 DONE  w13-haproxy-default-edge-aspnet-ovon hits=11 runner_rc=0 secs=53
+[87/96] 12:45:43 START w13-haproxy-default-edge-rails-ovon
+[87/96] 12:46:36 DONE  w13-haproxy-default-edge-rails-ovon hits=10 runner_rc=0 secs=53
+[88/96] 12:46:36 START w13-haproxy-default-edge-laravel-ovon
+[88/96] 12:47:30 DONE  w13-haproxy-default-edge-laravel-ovon hits=9 runner_rc=0 secs=54
+[89/96] 12:47:30 START w13-haproxy-recommended-edge-fastapi-ovon
+[89/96] 12:48:23 DONE  w13-haproxy-recommended-edge-fastapi-ovon hits=19 runner_rc=0 secs=53
+[90/96] 12:48:23 START w13-haproxy-recommended-edge-express-ovon
+[90/96] 12:49:31 DONE  w13-haproxy-recommended-edge-express-ovon hits=11 runner_rc=0 secs=68
+[91/96] 12:49:31 START w13-haproxy-recommended-edge-django-ovon
+[91/96] 12:50:30 DONE  w13-haproxy-recommended-edge-django-ovon hits=9 runner_rc=0 secs=59
+[92/96] 12:50:30 START w13-haproxy-recommended-edge-go-chi-ovon
+[92/96] 12:51:25 DONE  w13-haproxy-recommended-edge-go-chi-ovon hits=10 runner_rc=0 secs=55
+[93/96] 12:51:25 START w13-haproxy-recommended-edge-spring-ovon
+[93/96] 12:52:46 DONE  w13-haproxy-recommended-edge-spring-ovon hits=11 runner_rc=0 secs=81
+[94/96] 12:52:46 START w13-haproxy-recommended-edge-aspnet-ovon
+[94/96] 12:54:09 DONE  w13-haproxy-recommended-edge-aspnet-ovon hits=11 runner_rc=0 secs=83
+[95/96] 12:54:09 START w13-haproxy-recommended-edge-rails-ovon
+[95/96] 12:55:58 DONE  w13-haproxy-recommended-edge-rails-ovon hits=10 runner_rc=0 secs=107
+[96/96] 12:55:58 START w13-haproxy-recommended-edge-laravel-ovon
+[96/96] 12:57:26 DONE  w13-haproxy-recommended-edge-laravel-ovon hits=9 runner_rc=0 secs=88
+ALL DONE

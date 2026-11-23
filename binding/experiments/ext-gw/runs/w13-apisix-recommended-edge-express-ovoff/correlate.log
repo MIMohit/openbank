@@ -1,0 +1,1 @@
+oracle[w13-apisix-recommended-edge-express-ovoff] {'topology': 'w13-apisix-recommended-edge-express-ovoff', 'cases': 948, 'accepted': 698, 'hits_raw': 21, 'hits_confirmed': 0, 'S1': 12, 'S2': 9, 'S3': 0, 'signatures': 16, 'max_res_hat': 3, 'b0': 0, 'propagation': 117, 'uncorrelated': 26}

@@ -1,0 +1,158 @@
+{
+ "topology": "w18-g2-ngx-fastapi-str",
+ "case_id": "adminDeleteUser:g2-fragment:alice:01108de983fd",
+ "primitive_ids": [
+  "g2-fragment"
+ ],
+ "exec_op_id": "adminDeleteUser",
+ "exec_path_params": {
+  "id": "u-1#frag"
+ },
+ "full_units": 5,
+ "minimal_units": 5,
+ "still_hit": true,
+ "canonical_request": "DELETE /api/v1/admin/users/u-1 HTTP/1.1\r\nHost: api.bench.test\r\nAuthorization: @@AUTHZ@@\r\nDPoP: @@PROOF@@\r\nAccept: application/json\r\nUser-Agent: bind-harness/1.0\r\nConnection: close\r\n\r\n",
+ "minimal_request": "DELETE /api/v1/admin/users/u-1#frag HTTP/1.1\r\nHost: api.bench.test\r\nAuthorization: @@AUTHZ@@\r\nDPoP: @@PROOF@@\r\nAccept: application/json\r\nUser-Agent: bind-harness/1.0\r\nConnection: close\r\n\r\n",
+ "trials": [
+  {
+   "n_units": 5,
+   "status": 200,
+   "hit": true
+  },
+  {
+   "n_units": 3,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 3,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 4,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 2,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 2,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 4,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 4,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 4,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 4,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 4,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 4,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 4,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 4,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 4,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 4,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 5,
+   "status": 200,
+   "hit": true
+  }
+ ]
+}

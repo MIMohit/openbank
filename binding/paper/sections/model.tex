@@ -1,0 +1,285 @@
+% sections/model.tex -- system model, binding soundness, failure classes,
+% adversaries, hypotheses, scope. Owner: W2. Terms follow binding/CONTRACT.md.
+\section{System and Threat Model}\label{sec:model}
+
+\subsection{System model}\label{sec:model:system}
+
+A deployment $D$ consists of a client, a verifier, an optional policy decision
+point, zero or more intermediaries and an executor (Figure~\ref{fig:views}).
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[font=\footnotesize,
+  box/.style={draw, rounded corners=2pt, align=center, inner sep=3pt, minimum height=0.95cm},
+  cls/.style={text=red!70!black, align=left, font=\scriptsize},
+  >={Stealth[length=4pt]}]
+\node[box] (C) at (0,0) {Client $\Cl$\\ $k$, $T$};
+\node[box] (G) at (2.55,0) {Gateway\\ (intermediary)};
+\node[box, minimum width=2.45cm] (E) at (6.05,0) {Executor $\Exe$\\ override $\to$ router\\ $\to$ handler};
+\node[box] (V) at (2.55,-2.0) {Verifier $\Ver$\\ checks $\pi$ against $\view(r)$};
+\draw[->] (C) -- node[above]{$r, T, \pi$} (G);
+\draw[->] (G) -- node[above]{$\tau_D(r)$} (E);
+\draw[->] ([xshift=-4pt]G.south) -- node[left, align=right]{edge: view\\ headers $(m_v,u_v)$} ([xshift=-4pt]V.north);
+\draw[->] ([xshift=4pt]V.north) -- node[right, align=left]{allow,\\ \hdr{X-Verified-*}} ([xshift=4pt]G.south);
+\draw[->, dashed] ([xshift=6pt]E.south) |- node[pos=0.25, right, align=left]{origin:\\ $\Exe$ calls $\Ver$} (V.east);
+\node[above=1pt of E] {$\exe(r) = (m_x, \mathit{route}_x, \op_x)$};
+\node[cls, anchor=north west] at (-0.6,-2.75) {%
+\GA: query, body or override $\notin \Cov$ select $\op_x$ in $\Exe$\\
+\GB: $\Ver$'s view $\view(r)$ and $\Exe$'s parse $\mathsf{in}_\Exe(r)$ differ\\
+\GC: client sets a header a later hop trusts (\hdr{X-Forwarded-Uri}, \hdr{X-Verified-Sub})};
+\end{tikzpicture}
+\Description{Block diagram: a client sends a request with token and proof to a gateway, which forwards it to an executor containing override middleware, router and handler. The gateway asks a verifier below it using view headers; the executor can instead call the verifier itself in origin placement. Red labels mark the three failure classes G1, G2 and G3.}
+\caption{Verifier view and executed operation. $\Ver$ checks $\pi$ against
+its view $\view(r)$; $\Exe$ runs $\exe(r)$ on the request $\tau_D(r)$ that the
+intermediaries deliver. Edge placement reaches $\Ver$ through a gateway
+adapter; origin placement calls it from $\Exe$ (dashed).}
+\label{fig:views}
+\end{figure}
+
+\paragraph{Client $\Cl$.} $\Cl$ holds a signing key $k$ and an access token $T$
+issued by the authorization server. $T$ is bound to $k$ through its confirmation
+claim, $T.\jkt = \mathsf{th}(k)$, the RFC~7638 thumbprint of the public key. For each request
+$r$, $\Cl$ creates a fresh proof
+$\pi = (\htm, \htu, \ath, \jti, \iat)$ signed with $k$, where $\htm$ is the
+method, $\htu$ is the target URI without query and fragment, $\ath = H(T)$ is
+the base64url SHA-256 hash of $T$, $\jti$ is a unique identifier and $\iat$
+is the creation time~\cite{rfc9449}. We write $r_\pi$ for the
+\emph{canonical request} of $\pi$: the request an honest client sends with
+$\pi$, whose method is $\htm$ and whose origin-form target is the path of $\htu$.
+The request $r$ itself is a byte string; nothing about it is
+fixed except the parts the verifier checks.
+
+\paragraph{Verifier $\Ver$.} $\Ver$ maps the request it observes to a
+\emph{view} $\view(r) = (m_v, u_v)$, a method and a URI. At the edge, $\Ver$ is a
+gateway plugin or an external service reached through a gateway adapter
+(Envoy \texttt{ext\_authz}, Traefik ForwardAuth, NGINX
+\texttt{auth\_request}); at the origin, it is middleware in the executor's
+process. The adapter determines where $\view(r)$ comes from: the
+gateway's own request line, or headers such as \hdr{X-Forwarded-Uri} and
+\hdr{X-Original-URI} that the gateway writes (\S\ref{sec:bg:topologies}).
+$\Ver$ \emph{accepts}, written $\Acc_\Ver(r, T, \pi)=1$, iff all checks of RFC~9449 \S4.3 pass
+for that view:
+the signature verifies under the header key $k$; $T.\jkt=\mathsf{th}(k)$;
+$\ath = H(T)$; $\htm = m_v$;
+$\canon(\htu) = \canon(u_v \setminus \mathit{query})$; $\iat$ lies within the
+acceptance window; and, if replay state is kept, $\jti$ is fresh.
+Here $\canon$ is the comparison function the verifier applies. RFC~9449 suggests,
+but does not require, syntax- and scheme-based normalisation (RFC~3986
+\S6.2.2--6.2.3); we treat $\canon$ as a deployment parameter
+(\texttt{HTU\_CANON} in our harness).
+
+\paragraph{Policy decision point $\PDP$ (optional).} $\PDP$ maps the
+view and the token's subject to a decision about a resource and an action,
+$\PDP(\view(r), T) \in \{\mathsf{permit}, \mathsf{deny}\}$. It names the
+resource $\rho_\PDP(\view(r))$ it decided on, for example the account identifier in
+the path. Consent checks and OPA policies keyed on the path are of this kind.
+
+\paragraph{Executor $\Exe$.} $\Exe$ is the framework router, any
+method-override middleware, and the handler. It receives the request as
+delivered by the intermediaries, $\tau_D(r)$, and computes the
+\emph{executed operation}
+$\exe(r) = (m_x, \mathit{route}_x, \op_x)$: the effective method after
+override resolution, the matched route (a template together with its path-parameter
+assignment $\theta_x$), and the operation identifier that ran, including any
+dispatch on the query or the body. Two executions are \emph{the same
+operation} when they agree on $\hat\exe(r) = (\op_x, \theta_x)$. We define
+$\op(\pi) = \hat\exe(r_\pi)$ for $r_\pi$ sent directly to $\Exe$ with no
+intermediary and no verification. This is the harness's ground truth.
+
+\subsection{Binding soundness}\label{sec:model:soundness}
+
+Let $\Acc_D(\pi)$ be the set of requests $r$ such that, in deployment $D$,
+the verifier accepts $r$ under $\pi$ and the executor runs an operation for
+it (it does not reject the request or fail to route it).
+
+\begin{definition}[Binding soundness]\label{def:soundness}
+A deployment $D$ is \emph{binding-sound} if, for every proof $\pi$ and all
+$r, r' \in \Acc_D(\pi)$, $\hat\exe(r) = \hat\exe(r')$. It is
+\emph{binding-correct} if, in addition, $\hat\exe(r) = \op(\pi)$ for every
+$r \in \Acc_D(\pi)$.
+\end{definition}
+
+\begin{definition}[Binding resolution]\label{def:resolution}
+The \emph{binding resolution} of $\pi$ in $D$ is
+$\res_D(\pi) = \lvert \{ \hat\exe(r) : r \in \Acc_D(\pi) \} \rvert$.
+\end{definition}
+
+$D$ is binding-sound iff $\res_D(\pi) \le 1$ for all $\pi$. For a functioning
+deployment, $r_\pi \in \Acc_D(\pi)$, so soundness and correctness coincide.
+A single accepted $r$ with $\hat\exe(r) \neq \op(\pi)$ is therefore a witness
+that $\res_D(\pi) \ge 2$. Our oracle searches for such witnesses
+(Appendix~\ref{app:oracle}). Because the harness observes finitely many requests, every
+resolution it reports is a lower bound.
+
+Binding soundness is weaker than message integrity. It allows requests to
+differ in any component, provided the executor does not
+run a different operation as a result. It is the property RFC~9449's design
+implicitly relies on when it signs ``just enough of the HTTP data''
+(\S\ref{sec:bg:dpop}).
+
+\begin{definition}[Authorization soundness with a PDP]\label{def:authz}
+A deployment with $\PDP$ is \emph{authorization-sound} if, whenever
+$\Ver$ accepts $r$ and $\PDP$ permits action $a$ on resource
+$\rho = \rho_\PDP(\view(r))$, the executor acts only on $\rho$ with action $a$:
+$\rho_\Exe(\exe(r)) = \rho$ and $a_\Exe(\exe(r)) = a$.
+\end{definition}
+
+Binding soundness is about which operation a \emph{proof} selects.
+Authorization soundness is about which resource a \emph{decision} selects.
+A legitimate client can mint any proof it wants, so for it only the second
+property matters.
+
+\paragraph{Which property a finding violates.} The two properties separate our
+findings cleanly. A \emph{binding-soundness} finding always involves a proof
+the adversary did not create: \Aleak replays one leaked $(T,\pi)$, and the
+executor runs an operation other than $\op(\pi)$. An
+\emph{authorization-soundness} finding involves no leaked proof. \Aclient
+signs exactly the request it sends, so the DPoP check passes as specified,
+and the violation is that a policy evaluated on $\view(r)$ permits a
+resource or action that the executor does not act on. The sender constraint
+is not broken in the second case. What fails is the assumption,
+shared by the proof check and the policy, that $\view(r)$ describes what will
+run. We report the two kinds separately (\S\ref{sec:harness:results},
+\S\ref{sec:harness:e4}) and never add them up.
+
+\subsection{Failure classes}\label{sec:model:classes}
+
+Let $\Cov = \{\text{method}, \text{target URI without query}, T\}$ be the
+request components covered by the proof. Let $\mathsf{in}_\Exe(r) = (m^\Exe, p^\Exe)$ be
+the raw method and the path as the executor parses them from $\tau_D(r)$, before override
+resolution. A witness $r \in \Acc_D(\pi)$ with $\hat\exe(r) \neq \op(\pi)$
+falls into one or more classes:
+
+\begin{description}[leftmargin=0pt,itemsep=2pt]
+\item[\GA, under-binding by design.] The executor reads the covered
+components exactly as the verifier does, $\mathsf{in}_\Exe(r) = \mathsf{in}_\Exe(r_\pi)$
+and $(m^\Exe, \canon(p^\Exe)) = (m_v, \canon(u_v))$, yet the operation differs. The difference must
+therefore come from components outside $\Cov$: query parameters that dispatch
+an action, a body field that selects a GraphQL or RPC operation, or a
+method-override header or parameter (\hdr{X-HTTP-Method-Override},
+\hdr{\_method}) that sets $m_x \neq m^\Exe$. Every component behaves as
+specified; the proof simply does not cover what the executor uses.
+\item[\GB, interpretation differential.] The verifier and the executor
+disagree on a covered component:
+$(m^\Exe, \canon(p^\Exe)) \neq (m_v, \canon(u_v))$. Causes include dot-segments, percent-encoded
+separators, matrix parameters, duplicate slashes, absolute-form targets,
+case folding, and prefix rewrites applied after the verifier's view was taken.
+\item[\GC, binding propagation.] A field $f$ that a downstream component
+treats as the \emph{result} of an upstream check has a value chosen by the
+client rather than by the trusted component that should set it. Examples are the view headers
+(\hdr{X-Forwarded-Uri}, \hdr{X-Original-URI}), identity headers
+(\hdr{X-Verified-Sub}), and certificate headers (\hdr{Client-Cert},
+\hdr{X-Forwarded-Client-Cert}). \GC can make $\view(r)$ itself
+client-controlled, which turns any acceptance into a \GB witness, or it can
+change the subject or key the executor believes was verified.
+\end{description}
+
+The classes are attributed by the primitive that produced the witness together
+with the logged views. When one witness needs primitives from several classes,
+we attribute it to all of them and say so.
+
+\subsection{Adversaries}\label{sec:model:adversaries}
+
+\paragraph{\Aleak, proof-leak adversary.} \emph{Capabilities:} \Aleak obtains
+one valid pair $(T, \pi)$ for a request $r_\pi$, for example from logs, a
+debugging proxy or an intermediary's request log. It can send arbitrary bytes to the public
+origin. This matches attacker A5 of the FAPI~2.0 Attacker Model, which ``can
+also read requests sent to the resource server after they have been processed
+by the resource server''~\cite{fapiam2025}. \emph{Limits:} \Aleak does not
+learn $k$, cannot mint or alter proofs, and cannot break TLS.
+\emph{Goal:} within the \iat window, get $\Exe$ to run some
+$\hat\exe(r) \neq \op(\pi)$. \emph{Exploits:} \GA and \GB, as well as \GC
+where a view header is client-controlled.
+
+Replay state constrains \Aleak, but does not stop it everywhere. RFC~9449 notes
+that single-use \jti checking ``may not always be feasible in practice, e.g.,
+when multiple servers behind a single endpoint have no shared state'', and
+describes the check ``in the context of the target URI''~\cite{rfc9449}.
+A replay with a different target can therefore escape a cache keyed per URI.
+The harness sends only the mutated request for each fresh proof, with the
+verifier's replay cache on. This models deployments in which the \jti check
+does not reject the mutated request, either because the canonical request
+was never sent to this replica or because the cache is keyed per target
+URI.
+
+\paragraph{\Aclient, malicious legitimate client.} \emph{Capabilities:} a
+registered client with its own $k$ and $T$, and consent for a resource set
+$R$ (in the harness, \texttt{alice} owns \texttt{acc-alice-1}). It can mint
+any proof for any request. \emph{Limits:} it holds no other client's key or
+token, and cannot alter the configuration of the gateway, verifier or PDP. \emph{Goal:} make $\Ver$
+and $\PDP$ approve $\rho \in R$ while $\Exe$ acts on $\rho' \notin R$ or runs a
+non-consented action, a confused deputy that violates
+Definition~\ref{def:authz}. \emph{Exploits:} \GB and \GC. It can also exploit \GA
+when the policy is keyed on the view, for example a policy that permits
+\texttt{POST /accounts/\{id\}/actions} while the query selects
+\texttt{close}.
+
+\paragraph{Excluded adversaries.}
+(i)~A network attacker: TLS is assumed, and against it
+sender-constraining already achieves its goal.
+(ii)~A malicious or compromised gateway, verifier or executor operator, which
+wins trivially.
+(iii)~Malware on the client device holding $k$, which can sign
+any request; the key-protection mechanisms that address it are out of scope.
+(iv)~A compromised or attacker-controlled authorization server, which the formal FAPI~2.0
+analysis already treats~\cite{hosseyni2024csf}.
+(v)~Denial of service and side channels, which do not bear on which operation is executed.
+
+\subsection{Hypotheses and experiments}\label{sec:model:hyp}
+
+Table~\ref{tab:hyp} maps each hypothesis to the experiments (\Exp{1}--\Exp{10})
+and ablations (\Abl{1}--\Abl{5}) that can support or falsify it. Each ablation
+varies one factor and re-measures empirical resolution over the same cases.
+\Abl{1} varies the \emph{binding claims} of the reference verifier (\Exp{9}):
+drop \htm, \htu or \ath, or additionally bind the query or a body digest
+(RFC~9530 \hdr{Content-Digest}~\cite{w2:rfc9530}). \Abl{2} removes one
+canonicalisation step at a time from defence D-B (percent-decoding,
+dot-segment removal, case normalisation, slash merging, prefix mapping).
+\Abl{3} varies verifier placement (edge, origin, both). \Abl{4} leaves one
+primitive class (\GA, \GB, \GC) out of the catalogue. \Abl{5} varies the
+gateway configuration profile (default, recommended, strict).
+Appendix~\ref{app:hyp} gives each falsification criterion in full.
+
+\begin{table*}[t]
+\caption{Hypotheses, the experiments that test them, and what would falsify them.}
+\label{tab:hyp}
+\small
+\begin{tabular}{@{}l p{6.4cm} p{4.6cm} p{4.6cm}@{}}
+\toprule
+& Claim & Tests & Falsified if \\
+\midrule
+\Hyp{1} & \GA: state-changing operations are not determined by (method, path); override is reachable
+  & \Exp{1}, \Exp{2}, \Exp{3}$_{\GA}$, \Exp{6}, \Exp{9} (\Abl{1})
+  & nearly all ops unique; override off in all common configs \\
+\Hyp{2} & \GB: some edge-verified topologies have $\res>1$
+  & \Exp{3}, \Exp{6}, \Exp{8}, \Abl{1} (\htu), \Abl{3}, \Abl{5}
+  & all tested versions consistent \\
+\Hyp{3} & \GC / confused deputy: $\rho'\notin R$ executable, or propagated binding forgeable
+  & \Exp{4}, \Exp{5}, \Abl{3}, \Abl{4}
+  & all patched versions resist \\
+\Hyp{4} & Canonical binding (D-A, D-B) removes \GB/\GC cheaply
+  & \Exp{7}, \Exp{8}, \Abl{2}, \Abl{3}
+  & high false rejection on legitimate rewriting \\
+\Hyp{5} & (optional) formal sufficiency of canonical binding
+  & \Exp{10}
+  & model finds a gap \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\subsection{Scope}\label{sec:model:scope}
+
+All harness traffic is plaintext HTTP/1.1 to the public origin
+\texttt{http://api.bench.test}, and every \htu uses that origin. TLS is out of
+the harness's scope for three reasons. First, the decisions under test
+(view extraction, URI comparison, routing, method override and header
+forwarding) operate on the request after TLS termination and do not depend on
+whether TLS was used. Second, the adversaries above never need to break TLS:
+\Aleak obtains its proof out of band and \Aclient owns its channel. Third,
+certificate binding behind a TLS-terminating proxy reduces to a header,
+because RFC~8705 leaves how certificate metadata reaches the application
+``out of scope''~\cite{rfc8705}, and our \GC experiments test that header
+directly. The scheme affects only scheme-based normalisation of \htu, which
+we hold fixed. We do not evaluate HTTP/2-specific desynchronisation. HTTP/2
+front ends appear only through cleartext \texttt{h2c}, and only where a gateway
+supports it; we discuss this limitation in \S\ref{sec:discussion}.

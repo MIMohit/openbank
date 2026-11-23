@@ -1,0 +1,1 @@
+bstrict aspnet 89 / 129 ok

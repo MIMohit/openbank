@@ -1,0 +1,80 @@
+% sections/defence.tex -- Section 6: defences D-A and D-B (E7/E8, A2).
+% Results produced by W17 (binding/experiments/defence/REPORT.md); numbers via numbers.tex macros.
+\section{Restoring Binding Soundness}\label{sec:defence}
+
+The results of \S\ref{sec:harness} rule out two easy fixes. Re-verifying
+the same proof at the origin keeps every \GA hit and the \texttt{\#}
+differential (\Abl{3}), and RFC~3986 normalisation in front of a path
+policy closes only the dot-segment classes. We therefore evaluate two
+defences that bind the check to the \emph{executor's} view.
+\emph{D-A} (\texttt{origin-routed}): the executor calls the verifier with
+the effective method after override resolution and the canonical path of
+the route it actually matched. \emph{D-B} (view-binding MAC): the verifier
+returns
+$\hdr{X-Verified-View} = \mathrm{HMAC}_K(\jti \| m_v \| \canon(u_v) \| \jkt)$,
+and the executor recomputes it from its routed view and rejects any mismatch.
+For D-B, the gateway must strip a client-supplied \hdr{X-Verified-View}, which
+Envoy, Kong and HAProxy do not do by default (P2 in Table~\ref{tab:rc}).
+
+\paragraph{Setup (E7, E8).} We re-ran every confirmed \Aleak witness (\NumDefWitnesses{}
+requests on \NumDefStacks{} gateway/framework stacks, from the nginx, APISIX and Kong campaigns) and
+the \NumDefEFourTotal{} E4 violations under each defence, with all components real and one topology
+at a time. We compared them with three baselines: \emph{B-origin} (the raw target re-verified at the
+executor), \emph{B-strict} (strict gateway profiles), and \emph{B-optional} (a verifier that skips
+the htm/htu checks). D-C is the strict canonical edge (\texttt{HTU\_CANON=strict} plus strict
+profiles). D-B runs on the four frameworks with an executor-side check.
+Table~\ref{tab:defence} gives the residual hits.
+
+\begin{table}[t]
+\caption{Witnesses that still execute a different operation (\Aleak) or a forbidden one (E4,
+\Aclient) under each configuration, and attributable false rejection (FRR) on legitimate rewritten
+traffic. Source: \texttt{experiments/defence/REPORT.md}.}
+\label{tab:defence}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}l r r r r r r@{}}
+\toprule
+Class (witnesses) & B-edge & B-origin & B-strict & D-A & D-B & D-C \\
+\midrule
+\GA query (57) & 57 & 57 & 57 & 57 & 57 & 57 \\
+\GA body (89) & 89 & 89 & 89 & 89 & 89 & 89 \\
+\GA override (31) & 31 & 31 & 31 & 0 & 0 & 31 \\
+\GB \texttt{\#} in path (28) & 28 & 28 & 28 & 0 & 0 & 28 \\
+\GB APISIX \texttt{\%2f} (12) & 12 & 0 & 0 & 0 & 0 & 0 \\
+\GB dot-segment (12) & 12 & 12 & 0 & 0 & 0 & 0 \\
+\midrule
+\Aleak total (\NumDefWitnesses) & 229 & 217 & 205 & 146 & 146 & 205 \\
+E4 \Aclient (\NumDefEFourTotal) & 52 & 31 & 4 & 0 & 36 & 4 \\
+FRR, no rewrite & 0\,\% & 0\,\% & 48\,\% & 5.3\,\% & 5.3\,\% & 48\,\% \\
+FRR, path rewrite & 0\,\% & 100\,\% & 0\,\% & 100\,\% & 100\,\% & 0\,\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{What each defence fixes.} D-A and D-B remove exactly the \GB path-view splits
+(\texttt{\#}, \texttt{\%2f}, dot-segments) and the method override, and nothing else: all
+\NumDefResidualDA{} query- and body-dispatch witnesses remain, because htu and the view MAC cover
+the path only. Binding the query or a content digest (e.g.\ RFC~9421) would be needed for those.
+Under \Aclient the two differ. D-A asks the policy about the \emph{routed} view, and closes all
+\NumDefEFourTotal{} E4 violations without losing a legitimate request. D-B binds execution to the
+verifier's \emph{canonical} view, while the PDP matched the raw path, so the \texttt{/../} classes
+survive (\NumDefEFourDB{}). D-B restores binding soundness there, but not policy soundness, unless
+the policy also reads the canonical view. D-C behaves identically to B-strict, because the strict
+gateways reject first. It closes \texttt{\%2f} and dot-segments but not \texttt{\#} or the override.
+B-optional reproduces every witness and, on the full corpus, raises the hits from
+\NumBEdgeFastapi{} to \NumBOptFastapi{} (FastAPI) and from \NumBEdgeExpress{} to \NumBOptExpress{}
+(Express): the htm/htu checks are what keep the path mutations out.
+
+\paragraph{Ablation (\Abl{2}).} Leaving one D-B canonicalisation step out shows that
+\AblTwoResult{}. No step affects \GA dispatch, the E4 dot-segment classes, or the rewrite false
+rejections.
+
+\paragraph{Cost.} False rejection is \FalseRejectionRate{}. Without rewriting, all D-A/D-B false
+rejects (\FRRNonRewriteN{}) come from two encoder seams: a catch-all parameter containing \texttt{/},
+and Kestrel keeping \texttt{\%2F} encoded. Strip-prefix, version rewriting and trailing-slash
+normalisation are rejected outright, because the proof binds the public URI while the executor
+sees the internal path. An executor-side defence therefore needs the gateway's public-to-internal
+path map. The strict profiles reject every percent-encoded identifier (\FRRAllStrict{} overall).
+Latency overhead at the executor is \DefenceOverheadPfifty{} (p50) and
+\DefenceOverheadPninetynine{} (p99). These figures are preliminary laptop measurements pending a
+dedicated server.

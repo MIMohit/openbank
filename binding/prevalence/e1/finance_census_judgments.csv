@@ -1,0 +1,10 @@
+api_id,method,path,mechanism,verdict,rationale
+rebilly.com,POST,/kyc-documents,M4 oneOf+discriminator,FP,polymorphic KYC document subtypes of one create operation
+rebilly.com,PUT,/kyc-documents/{id},M4 oneOf+discriminator,FP,polymorphic KYC document subtypes of one update operation
+sinao.app,POST,/apps/{appId}/transactions/,M2 query:method,FP,payment method of the transaction (data)
+sinao.app,POST,/apps/{appId}/transactions/{id},M2 query:method,FP,payment method of the transaction (data)
+stripe.com,POST,/v1/payouts,M4 prop:method,FP,instant|standard payout speed option of one create-payout operation
+stripe.com,POST,/v1/subscription_items/{subscription_item}/usage_records,M4 prop:action,TP,increment adds to usage; set overwrites it (spec L48212 of stripe.com/2022-11-15)
+zuora.com,POST,/objects/jobs,M4 prop:operation,TP,operation=delete|create selects a bulk delete job vs a bulk create job
+zuora.com,POST,/v1/payment-methods/{payment-method-id}/profiles,M4 prop:action,TP,Activate sends a cardholder-initiated transaction to the gateway; Persist does not (spec L94578-94589 of zuora.com/2021-08-20)
+zuora.com,POST,/v1/refunds/{refund-id}/reconcile,M4 prop:action,TP,action=settle|reject selects opposite reconciliation outcomes

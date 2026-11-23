@@ -1,0 +1,26 @@
+{
+ "topology": "w18-query-digest-nginx-default-edge-spring-ovoff",
+ "case_id": "graphql.getProfile:g1-ct-urlencoded:alice:45765f710853",
+ "primitive_ids": [
+  "g1-ct-urlencoded"
+ ],
+ "exec_op_id": "graphql.unknown",
+ "exec_path_params": {},
+ "full_units": 1,
+ "minimal_units": 1,
+ "still_hit": true,
+ "canonical_request": "POST /api/v1/graphql HTTP/1.1\r\nHost: api.bench.test\r\nAuthorization: @@AUTHZ@@\r\nDPoP: @@PROOF@@\r\nAccept: application/json\r\nUser-Agent: bind-harness/1.0\r\nContent-Type: application/json\r\nContent-Length: 97\r\nConnection: close\r\n\r\n{\"operationName\":\"getProfile\",\"query\":\"query getProfile { profile { id email } }\",\"variables\":{}}",
+ "minimal_request": "POST /api/v1/graphql HTTP/1.1\r\nHost: api.bench.test\r\nAuthorization: @@AUTHZ@@\r\nDPoP: @@PROOF@@\r\nAccept: application/json\r\nUser-Agent: bind-harness/1.0\r\nContent-Type: application/x-www-form-urlencoded\r\nContent-Length: 97\r\nConnection: close\r\n\r\n{\"operationName\":\"getProfile\",\"query\":\"query getProfile { profile { id email } }\",\"variables\":{}}",
+ "trials": [
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": true
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": true
+  }
+ ]
+}

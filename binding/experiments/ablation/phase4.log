@@ -1,0 +1,38 @@
+adminDeleteUser:g2-backslash:alice:55f3bd784bc6: 3 -> 3 units, still_hit=True
+  DELETE /api/v1/admin/users/..\u-1 HTTP/1.1
+adminDeleteUser:g2-matrix-jsessionid:alice:d4843bf57fab: 15 -> 15 units, still_hit=True
+  DELETE /api/v1/admin/users/u-1;jsessionid=abc HTTP/1.1
+catchAllFile:g2-dot-enc:alice:bad45d36b871: 4 -> 4 units, still_hit=True
+  GET /api/v1/files/reports/%2e/logo.png HTTP/1.1
+catchAllFile:g2-pct2f-before-last:alice:4905ba690abd: 3 -> 3 units, still_hit=True
+  GET /api/v1/files/reports/%2flogo.png HTTP/1.1
+catchAllFile:g2-trailing-slash:alice:305183341858: 1 -> 1 units, still_hit=True
+  GET /api/v1/files/reports/logo.png/ HTTP/1.1
+getAccount:g2-abs-form-diff-path:alice:e84ecc2fab4c: 28 -> 7 units, still_hit=True
+  GET /api/v2/accounts/acc-alice-1 HTTP/1.1
+getAccount:g2-prefix-v1-to-v2:alice:70ab5ff8956e: 1 -> 1 units, still_hit=True
+  GET /api/v2/accounts/acc-alice-1 HTTP/1.1
+2026/11/23 15:30:16 [notice] 31#31: signal process started
+accountAction.freeze:g2-fragment:alice:8c66fa6aaefa: 5 -> 1 units, still_hit=True
+  POST /api/v1/accounts/acc-alice-1/actions?op=freeze# HTTP/1.1
+adminDeleteUser:g2-fragment:alice:01108de983fd: 5 -> 5 units, still_hit=True
+  DELETE /api/v1/admin/users/u-1#frag HTTP/1.1
+catchAllFile:g2-dot-enc:alice:bad45d36b871: 4 -> 4 units, still_hit=True
+  GET /api/v1/files/reports/%2e/logo.png HTTP/1.1
+2026/11/23 15:30:57 [notice] 31#31: signal process started
+deleteAccount:g1-hdr-xhmo-get:alice:9fc762b8f583: 1 -> 1 units, still_hit=True
+  DELETE /api/v1/accounts/acc-alice-1 HTTP/1.1
+postAccount:g1-hdr-xhmo-delete:alice:386355476602: 1 -> 1 units, still_hit=True
+  POST /api/v1/accounts/acc-alice-1 HTTP/1.1
+2026/11/23 15:31:21 [notice] 31#31: signal process started
+graphql.getProfile:g1-ct-urlencoded:alice:45765f710853: 1 -> 1 units, still_hit=True
+  POST /api/v1/graphql HTTP/1.1
+adminDeleteUser:g2-fragment:alice:01108de983fd: 5 -> 5 units, still_hit=True
+  DELETE /api/v1/admin/users/u-1#frag HTTP/1.1
+accountAction.freeze:g2-fragment:alice:8c66fa6aaefa: 5 -> 1 units, still_hit=True
+  POST /api/v1/accounts/acc-alice-1/actions?op=freezeg HTTP/1.1
+adminDeleteUser:g2-fragment:alice:01108de983fd: 5 -> 5 units, still_hit=True
+  DELETE /api/v1/admin/users/u-1#frag HTTP/1.1
+accountAction.freeze:g2-fragment:alice:8c66fa6aaefa: 5 -> 1 units, still_hit=True
+  POST /api/v1/accounts/acc-alice-1/actions?op=freezeg HTTP/1.1
+PHASE4DONE

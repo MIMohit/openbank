@@ -1,0 +1,5 @@
+vector_family,violations,share,classes_reached,loo_violations_left,loo_classes_left,loo_classes_lost
+dotseg,220,0.6769,framework:aspnet:dot-segment|gateway:kong:dot-segment,105,5,framework:aspnet:dot-segment|gateway:kong:dot-segment
+case,36,0.1108,framework:aspnet:case-fold|framework:express:case-fold,289,5,framework:aspnet:case-fold|framework:express:case-fold
+matrix,36,0.1108,framework:spring:matrix-param,289,6,framework:spring:matrix-param
+dslash,33,0.1015,framework:rails:double-slash|gateway:kong:double-slash,292,5,framework:rails:double-slash|gateway:kong:double-slash

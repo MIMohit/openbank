@@ -1,0 +1,1 @@
+oracle[w18-no-htu-nginx-default-edge-fastapi-ovon] {'topology': 'w18-no-htu-nginx-default-edge-fastapi-ovon', 'cases': 92, 'accepted': 92, 'hits_raw': 75, 'hits_confirmed': 0, 'S1': 58, 'S2': 17, 'S3': 0, 'signatures': 35, 'max_res_hat': 10, 'b0': 0, 'propagation': 0, 'uncorrelated': 2}

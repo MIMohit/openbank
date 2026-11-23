@@ -1,0 +1,1 @@
+e4_oracle[w17-dc-e4rc6-rails] {'topology': 'w17-dc-e4rc6-rails', 'gateway': 'nginx', 'profile': 'strict', 'framework': 'rails', 'verifier_image': 'bh-pdp-block:latest', 'cases': 29, 'pdp_allow': 5, 'violations': 0, 'admin': 0, 'bob': 0, 'vectors_hit': ''}

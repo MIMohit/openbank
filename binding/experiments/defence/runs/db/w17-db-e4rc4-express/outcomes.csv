@@ -1,0 +1,30 @@
+topology,case_id,vector_id,policy_scope,class,outcome,violation_kind,forbidden_kind_intended,pdp_decision,pdp_reason,matched_rule,exec_op_id,exec_status,effective_method,exec_path_params,raw_target,route_template
+w17-db-e4rc4-express,case-admin-del,case-admin-del,blocklist,g2,exec_rejected,,admin,allow,ok,<default>,adminDeleteUser,401,DELETE,"{""id"": ""u-1""}",/api/v1/ADMIN/users/u-1,/api/v1/admin/users/{id}
+w17-db-e4rc4-express,case-admin-list,case-admin-list,blocklist,g2,exec_rejected,,admin,allow,ok,<default>,adminListUsers,401,GET,{},/api/v1/ADMIN/users,/api/v1/admin/users
+w17-db-e4rc4-express,case-api-admin,case-api-admin,blocklist,g2,no_records,,admin,,,,,,,null,,
+w17-db-e4rc4-express,direct-admin-del,direct-admin-del,direct,g2,pdp_denied,,admin,deny,policy_deny:deny-admin,deny-admin,,,,null,,
+w17-db-e4rc4-express,direct-admin-list,direct-admin-list,direct,g2,pdp_denied,,admin,deny,policy_deny:deny-admin,deny-admin,,,,null,,
+w17-db-e4rc4-express,direct-bob-get,direct-bob-get,direct,g2,pdp_denied,,bob,deny,policy_deny:deny-foreign-account,deny-foreign-account,,,,null,,
+w17-db-e4rc4-express,direct-bob-getv2,direct-bob-getv2,direct,g2,pdp_denied,,bob,deny,policy_deny:deny-foreign-account,deny-foreign-account,,,,null,,
+w17-db-e4rc4-express,dotseg-admin-del,dotseg-admin-del,allowlist,g2,exec_rejected,,admin,allow,ok,<default>,NOT_FOUND,404,DELETE,{},/api/v1/accounts/acc-alice-1/../../admin/users/u-1,
+w17-db-e4rc4-express,dotseg-admin-list,dotseg-admin-list,allowlist,g2,exec_rejected,,admin,allow,ok,<default>,NOT_FOUND,404,GET,{},/api/v1/accounts/acc-alice-1/../../admin/users,
+w17-db-e4rc4-express,dotseg-bob-del,dotseg-bob-del,allowlist,g2,exec_rejected,,bob,allow,ok,<default>,NOT_FOUND,404,DELETE,{},/api/v1/accounts/acc-alice-1/../acc-bob-1,
+w17-db-e4rc4-express,dotseg-bob-get,dotseg-bob-get,allowlist,g2,exec_rejected,,bob,allow,ok,<default>,NOT_FOUND,404,GET,{},/api/v1/accounts/acc-alice-1/../acc-bob-1,
+w17-db-e4rc4-express,dotseg-bob-getv2,dotseg-bob-getv2,allowlist,g2,exec_rejected,,bob,allow,ok,<default>,NOT_FOUND,404,GET,{},/api/v2/accounts/acc-alice-1/../acc-bob-1,
+w17-db-e4rc4-express,dotseg-bob-put,dotseg-bob-put,allowlist,g2,exec_rejected,,bob,allow,ok,<default>,NOT_FOUND,404,PUT,{},/api/v1/accounts/acc-alice-1/../acc-bob-1,
+w17-db-e4rc4-express,dotseg-v2v1-admin,dotseg-v2v1-admin,allowlist,g2,exec_rejected,,admin,allow,ok,<default>,NOT_FOUND,404,GET,{},/api/v2/accounts/acc-alice-1/../../../v1/admin/users,
+w17-db-e4rc4-express,dslash-accounts-bob,dslash-accounts-bob,blocklist,g2,exec_rejected,,bob,allow,ok,<default>,NOT_FOUND,404,GET,{},/api/v1//accounts/acc-bob-1,
+w17-db-e4rc4-express,dslash-admin-del,dslash-admin-del,blocklist,g2,exec_rejected,,admin,allow,ok,<default>,NOT_FOUND,404,DELETE,{},/api/v1//admin/users/u-1,
+w17-db-e4rc4-express,dslash-admin-list,dslash-admin-list,blocklist,g2,exec_rejected,,admin,allow,ok,<default>,NOT_FOUND,404,GET,{},/api/v1//admin/users,
+w17-db-e4rc4-express,encdotseg-admin-list,encdotseg-admin-list,allowlist,g2,exec_rejected,,admin,allow,ok,<default>,NOT_FOUND,404,GET,{},/api/v1/accounts/acc-alice-1/%2e%2e/%2e%2e/admin/users,
+w17-db-e4rc4-express,encdotseg-bob-get,encdotseg-bob-get,allowlist,g2,exec_rejected,,bob,allow,ok,<default>,NOT_FOUND,404,GET,{},/api/v1/accounts/acc-alice-1/%2e%2e/acc-bob-1,
+w17-db-e4rc4-express,encslash-bob-get,encslash-bob-get,blocklist,g2,pdp_denied,,bob,deny,policy_deny:deny-foreign-account,deny-foreign-account,,,,null,,
+w17-db-e4rc4-express,json-accounts-bob,json-accounts-bob,blocklist,g2,pdp_denied,,bob,deny,policy_deny:deny-foreign-account,deny-foreign-account,,,,null,,
+w17-db-e4rc4-express,json-admin-list,json-admin-list,blocklist,g2,pdp_denied,,admin,deny,policy_deny:deny-admin,deny-admin,,,,null,,
+w17-db-e4rc4-express,legit-alice-get,legit-alice-get,legit,g2,allowed_sound,,,allow,ok,<default>,getAccount,200,GET,"{""id"": ""acc-alice-1""}",/api/v1/accounts/acc-alice-1,/api/v1/accounts/{id}
+w17-db-e4rc4-express,legit-alice-getv2,legit-alice-getv2,legit,g2,allowed_sound,,,allow,ok,<default>,getAccountV2,200,GET,"{""id"": ""acc-alice-1""}",/api/v2/accounts/acc-alice-1,/api/v2/accounts/{id}
+w17-db-e4rc4-express,legit-me,legit-me,legit,g2,allowed_sound,,,allow,ok,<default>,me,200,GET,{},/api/v1/me,/api/v1/me
+w17-db-e4rc4-express,matrix-accounts-bob,matrix-accounts-bob,blocklist,g2,exec_rejected,,bob,allow,ok,<default>,NOT_FOUND,404,GET,{},/api/v1/accounts;x=1/acc-bob-1,
+w17-db-e4rc4-express,matrix-admin-del,matrix-admin-del,blocklist,g2,exec_rejected,,admin,allow,ok,<default>,NOT_FOUND,404,DELETE,{},/api/v1/admin;x=1/users/u-1,
+w17-db-e4rc4-express,matrix-admin-list,matrix-admin-list,blocklist,g2,exec_rejected,,admin,allow,ok,<default>,NOT_FOUND,404,GET,{},/api/v1/admin;x=1/users,
+w17-db-e4rc4-express,trail-admin-list,trail-admin-list,blocklist,g2,pdp_denied,,admin,deny,policy_deny:deny-admin,deny-admin,,,,null,,

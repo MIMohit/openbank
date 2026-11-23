@@ -1,0 +1,290 @@
+{
+  "e4": {
+    "admin": 180,
+    "bob": 145,
+    "requests": 2784,
+    "topologies": 96,
+    "topologies_with_violations": 50,
+    "violations": 325
+  },
+  "heatmap_cells_full": 48,
+  "heatmap_g1": {
+    "apisix/aspnet": 50,
+    "apisix/django": 44,
+    "apisix/express": 52,
+    "apisix/fastapi": 68,
+    "apisix/go-chi": 48,
+    "apisix/laravel": 48,
+    "apisix/rails": 48,
+    "apisix/spring": 50,
+    "envoy/aspnet": 50,
+    "envoy/django": 44,
+    "envoy/express": 52,
+    "envoy/fastapi": 64,
+    "envoy/go-chi": 44,
+    "envoy/laravel": 44,
+    "envoy/rails": 48,
+    "envoy/spring": 50,
+    "haproxy/aspnet": 50,
+    "haproxy/django": 44,
+    "haproxy/express": 52,
+    "haproxy/fastapi": 64,
+    "haproxy/go-chi": 44,
+    "haproxy/laravel": 44,
+    "haproxy/rails": 48,
+    "haproxy/spring": 50,
+    "kong/aspnet": 50,
+    "kong/django": 44,
+    "kong/express": 52,
+    "kong/fastapi": 64,
+    "kong/go-chi": 44,
+    "kong/laravel": 44,
+    "kong/rails": 48,
+    "kong/spring": 50,
+    "nginx/aspnet": 50,
+    "nginx/django": 44,
+    "nginx/express": 52,
+    "nginx/fastapi": 68,
+    "nginx/go-chi": 48,
+    "nginx/laravel": 48,
+    "nginx/rails": 48,
+    "nginx/spring": 50,
+    "traefik/aspnet": 50,
+    "traefik/django": 44,
+    "traefik/express": 52,
+    "traefik/fastapi": 68,
+    "traefik/go-chi": 48,
+    "traefik/laravel": 48,
+    "traefik/rails": 48,
+    "traefik/spring": 50
+  },
+  "heatmap_g1_total": 2412,
+  "heatmap_g2": {
+    "apisix/aspnet": 24,
+    "apisix/django": 0,
+    "apisix/express": 24,
+    "apisix/fastapi": 0,
+    "apisix/go-chi": 24,
+    "apisix/laravel": 0,
+    "apisix/rails": 24,
+    "apisix/spring": 0,
+    "envoy/aspnet": 0,
+    "envoy/django": 0,
+    "envoy/express": 0,
+    "envoy/fastapi": 0,
+    "envoy/go-chi": 0,
+    "envoy/laravel": 0,
+    "envoy/rails": 0,
+    "envoy/spring": 0,
+    "haproxy/aspnet": 0,
+    "haproxy/django": 0,
+    "haproxy/express": 0,
+    "haproxy/fastapi": 0,
+    "haproxy/go-chi": 0,
+    "haproxy/laravel": 0,
+    "haproxy/rails": 0,
+    "haproxy/spring": 0,
+    "kong/aspnet": 0,
+    "kong/django": 0,
+    "kong/express": 0,
+    "kong/fastapi": 24,
+    "kong/go-chi": 24,
+    "kong/laravel": 24,
+    "kong/rails": 0,
+    "kong/spring": 0,
+    "nginx/aspnet": 0,
+    "nginx/django": 0,
+    "nginx/express": 0,
+    "nginx/fastapi": 24,
+    "nginx/go-chi": 24,
+    "nginx/laravel": 24,
+    "nginx/rails": 0,
+    "nginx/spring": 0,
+    "traefik/aspnet": 0,
+    "traefik/django": 0,
+    "traefik/express": 0,
+    "traefik/fastapi": 0,
+    "traefik/go-chi": 0,
+    "traefik/laravel": 0,
+    "traefik/rails": 0,
+    "traefik/spring": 0
+  },
+  "heatmap_g2_total": 240,
+  "heatmap_topologies_per_cell": {
+    "apisix/aspnet": 4,
+    "apisix/django": 4,
+    "apisix/express": 4,
+    "apisix/fastapi": 4,
+    "apisix/go-chi": 4,
+    "apisix/laravel": 4,
+    "apisix/rails": 4,
+    "apisix/spring": 4,
+    "envoy/aspnet": 4,
+    "envoy/django": 4,
+    "envoy/express": 4,
+    "envoy/fastapi": 4,
+    "envoy/go-chi": 4,
+    "envoy/laravel": 4,
+    "envoy/rails": 4,
+    "envoy/spring": 4,
+    "haproxy/aspnet": 4,
+    "haproxy/django": 4,
+    "haproxy/express": 4,
+    "haproxy/fastapi": 4,
+    "haproxy/go-chi": 4,
+    "haproxy/laravel": 4,
+    "haproxy/rails": 4,
+    "haproxy/spring": 4,
+    "kong/aspnet": 4,
+    "kong/django": 4,
+    "kong/express": 4,
+    "kong/fastapi": 4,
+    "kong/go-chi": 4,
+    "kong/laravel": 4,
+    "kong/rails": 4,
+    "kong/spring": 4,
+    "nginx/aspnet": 4,
+    "nginx/django": 4,
+    "nginx/express": 4,
+    "nginx/fastapi": 4,
+    "nginx/go-chi": 4,
+    "nginx/laravel": 4,
+    "nginx/rails": 4,
+    "nginx/spring": 4,
+    "traefik/aspnet": 4,
+    "traefik/django": 4,
+    "traefik/express": 4,
+    "traefik/fastapi": 4,
+    "traefik/go-chi": 4,
+    "traefik/laravel": 4,
+    "traefik/rails": 4,
+    "traefik/spring": 4
+  },
+  "leak": {
+    "ext-fw": {
+      "hits": 694,
+      "hits_csv": 694,
+      "mech_class": {
+        "g1": 646,
+        "g2": 48
+      },
+      "oracle_class": {
+        "g1": 630,
+        "g2": 64
+      },
+      "placements": {
+        "both": 16,
+        "edge": 48,
+        "origin": 16
+      },
+      "res_hat": {
+        "1": 877,
+        "2": 48,
+        "3": 115
+      },
+      "severity": {
+        "S1": 391,
+        "S2": 303
+      },
+      "topologies": 80
+    },
+    "ext-gw": {
+      "hits": 1368,
+      "hits_csv": 1368,
+      "mech_class": {
+        "g1": 1200,
+        "g2": 168
+      },
+      "oracle_class": {
+        "g1": 1188,
+        "g2": 180
+      },
+      "placements": {
+        "edge": 96
+      },
+      "res_hat": {
+        "1": 876,
+        "2": 162,
+        "3": 204,
+        "4": 6
+      },
+      "severity": {
+        "S1": 768,
+        "S2": 600
+      },
+      "topologies": 96
+    },
+    "ext-routes": {
+      "hits": 226,
+      "hits_csv": 226,
+      "mech_class": {
+        "g1": 116,
+        "g2": 110
+      },
+      "oracle_class": {
+        "g1": 116,
+        "g2": 110
+      },
+      "placements": {
+        "edge": 32
+      },
+      "res_hat": {
+        "1": 176,
+        "2": 40,
+        "3": 19,
+        "4": 16,
+        "5": 3,
+        "6": 2
+      },
+      "severity": {
+        "S1": 184,
+        "S2": 42
+      },
+      "topologies": 32
+    },
+    "kill": {
+      "hits": 680,
+      "hits_csv": 680,
+      "mech_class": {
+        "g1": 656,
+        "g2": 24
+      },
+      "oracle_class": {
+        "g1": 648,
+        "g2": 32
+      },
+      "placements": {
+        "edge": 48
+      },
+      "res_hat": {
+        "1": 492,
+        "2": 18,
+        "3": 108,
+        "4": 6
+      },
+      "severity": {
+        "S1": 344,
+        "S2": 336
+      },
+      "topologies": 48
+    }
+  },
+  "leak_res_hat_total": {
+    "1": 2421,
+    "2": 268,
+    "3": 446,
+    "4": 28,
+    "5": 3,
+    "6": 2
+  },
+  "leak_total": {
+    "S1": 1687,
+    "S2": 1281,
+    "hits": 2968,
+    "mech_g1": 2618,
+    "mech_g2": 350,
+    "oracle_g1": 2582,
+    "oracle_g2": 386,
+    "topologies": 256
+  }
+}

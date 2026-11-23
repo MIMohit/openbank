@@ -1,0 +1,12 @@
+id: w17-dc-ngx-spring-ovon
+gateway: nginx
+profile: strict
+placement: edge
+framework: spring
+executor_image: bh-exec-spring:v2
+override: 'on'
+verifier:
+  image: bh-verifier:latest
+  canon: strict
+  view_mac: 'off'
+host_port: 28839

@@ -1,0 +1,1 @@
+w12-allow-env-rails-def runner_rc=0 secs=18 violations=0 e4_runner[w12-allow-env-rails-def] wrote /Users/mimohit/openbank/binding/harness/logs/w12-allow-env-rails-def/runner.jsonl: {'sent': 29, 'errors': 0}

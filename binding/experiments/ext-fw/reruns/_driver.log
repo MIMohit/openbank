@@ -1,0 +1,171 @@
+=== rerun driver start 2026-11-23T09:02:44Z  topologies=      56 ===
+--- [1/56] w14-envoy-default-edge-django-ovoff  2026-11-23T09:02:44Z ---
+w14-envoy-default-edge-django-ovoff: reran 13 hits x 3
+    rc=0 done 2026-11-23T09:03:38Z
+--- [2/56] w14-envoy-default-edge-django-ovon  2026-11-23T09:03:38Z ---
+w14-envoy-default-edge-django-ovon: reran 9 hits x 3
+    rc=0 done 2026-11-23T09:04:32Z
+--- [3/56] w14-envoy-default-edge-go-chi-ovoff  2026-11-23T09:04:32Z ---
+w14-envoy-default-edge-go-chi-ovoff: reran 12 hits x 3
+    rc=0 done 2026-11-23T09:05:26Z
+--- [4/56] w14-envoy-default-edge-go-chi-ovon  2026-11-23T09:05:26Z ---
+w14-envoy-default-edge-go-chi-ovon: reran 10 hits x 3
+    rc=0 done 2026-11-23T09:06:20Z
+--- [5/56] w14-envoy-default-edge-laravel-ovoff  2026-11-23T09:06:20Z ---
+w14-envoy-default-edge-laravel-ovoff: reran 13 hits x 3
+    rc=0 done 2026-11-23T09:07:14Z
+--- [6/56] w14-envoy-default-edge-laravel-ovon  2026-11-23T09:07:14Z ---
+w14-envoy-default-edge-laravel-ovon rep1: INVALID (verifier never engaged / B0 bypass), retry (attempt 1)
+w14-envoy-default-edge-laravel-ovon: reran 9 hits x 3
+    rc=0 done 2026-11-23T09:08:27Z
+--- [7/56] w14-envoy-default-edge-rails-ovoff  2026-11-23T09:08:27Z ---
+w14-envoy-default-edge-rails-ovoff: reran 14 hits x 3
+    rc=0 done 2026-11-23T09:09:21Z
+--- [8/56] w14-envoy-default-edge-rails-ovon  2026-11-23T09:09:21Z ---
+w14-envoy-default-edge-rails-ovon: reran 10 hits x 3
+    rc=0 done 2026-11-23T09:10:17Z
+--- [9/56] w14-envoy-default-origin-aspnet-ovon  2026-11-23T09:10:17Z ---
+w14-envoy-default-origin-aspnet-ovon: reran 11 hits x 3
+    rc=0 done 2026-11-23T09:11:13Z
+--- [10/56] w14-envoy-default-origin-django-ovon  2026-11-23T09:11:13Z ---
+w14-envoy-default-origin-django-ovon: reran 9 hits x 3
+    rc=0 done 2026-11-23T09:12:06Z
+--- [11/56] w14-envoy-default-origin-express-ovon  2026-11-23T09:12:06Z ---
+w14-envoy-default-origin-express-ovon: reran 11 hits x 3
+    rc=0 done 2026-11-23T09:12:59Z
+--- [12/56] w14-envoy-default-origin-fastapi-ovon  2026-11-23T09:12:59Z ---
+w14-envoy-default-origin-fastapi-ovon: reran 19 hits x 3
+    rc=0 done 2026-11-23T09:13:52Z
+--- [13/56] w14-envoy-default-origin-go-chi-ovon  2026-11-23T09:13:52Z ---
+w14-envoy-default-origin-go-chi-ovon: reran 10 hits x 3
+    rc=0 done 2026-11-23T09:14:48Z
+--- [14/56] w14-envoy-default-origin-laravel-ovon  2026-11-23T09:14:48Z ---
+w14-envoy-default-origin-laravel-ovon: reran 9 hits x 3
+    rc=0 done 2026-11-23T09:15:41Z
+--- [15/56] w14-envoy-default-origin-rails-ovon  2026-11-23T09:15:41Z ---
+w14-envoy-default-origin-rails-ovon: reran 10 hits x 3
+    rc=0 done 2026-11-23T09:16:34Z
+--- [16/56] w14-envoy-default-origin-spring-ovon  2026-11-23T09:16:34Z ---
+w14-envoy-default-origin-spring-ovon: reran 11 hits x 3
+    rc=0 done 2026-11-23T09:17:30Z
+--- [17/56] w14-envoy-recommended-edge-django-ovoff  2026-11-23T09:17:30Z ---
+w14-envoy-recommended-edge-django-ovoff: reran 13 hits x 3
+    rc=0 done 2026-11-23T09:18:24Z
+--- [18/56] w14-envoy-recommended-edge-django-ovon  2026-11-23T09:18:24Z ---
+w14-envoy-recommended-edge-django-ovon: reran 9 hits x 3
+    rc=0 done 2026-11-23T09:19:19Z
+--- [19/56] w14-envoy-recommended-edge-go-chi-ovoff  2026-11-23T09:19:19Z ---
+w14-envoy-recommended-edge-go-chi-ovoff: reran 12 hits x 3
+    rc=0 done 2026-11-23T09:20:13Z
+--- [20/56] w14-envoy-recommended-edge-go-chi-ovon  2026-11-23T09:20:13Z ---
+w14-envoy-recommended-edge-go-chi-ovon: reran 10 hits x 3
+    rc=0 done 2026-11-23T09:21:07Z
+--- [21/56] w14-envoy-recommended-edge-laravel-ovoff  2026-11-23T09:21:07Z ---
+w14-envoy-recommended-edge-laravel-ovoff: reran 13 hits x 3
+    rc=0 done 2026-11-23T09:22:01Z
+--- [22/56] w14-envoy-recommended-edge-laravel-ovon  2026-11-23T09:22:01Z ---
+w14-envoy-recommended-edge-laravel-ovon: reran 9 hits x 3
+    rc=0 done 2026-11-23T09:22:55Z
+--- [23/56] w14-envoy-recommended-edge-rails-ovoff  2026-11-23T09:22:55Z ---
+w14-envoy-recommended-edge-rails-ovoff: reran 14 hits x 3
+    rc=0 done 2026-11-23T09:23:49Z
+--- [24/56] w14-envoy-recommended-edge-rails-ovon  2026-11-23T09:23:49Z ---
+w14-envoy-recommended-edge-rails-ovon: reran 10 hits x 3
+    rc=0 done 2026-11-23T09:24:43Z
+--- [25/56] w14-nginx-default-edge-django-ovoff  2026-11-23T09:24:43Z ---
+w14-nginx-default-edge-django-ovoff: reran 13 hits x 3
+    rc=0 done 2026-11-23T09:25:36Z
+--- [26/56] w14-nginx-default-edge-django-ovon  2026-11-23T09:25:36Z ---
+w14-nginx-default-edge-django-ovon: reran 9 hits x 3
+    rc=0 done 2026-11-23T09:26:29Z
+--- [27/56] w14-nginx-default-edge-go-chi-ovoff  2026-11-23T09:26:29Z ---
+w14-nginx-default-edge-go-chi-ovoff: reran 19 hits x 3
+    rc=0 done 2026-11-23T09:27:22Z
+--- [28/56] w14-nginx-default-edge-go-chi-ovon  2026-11-23T09:27:22Z ---
+w14-nginx-default-edge-go-chi-ovon: reran 17 hits x 3
+    rc=0 done 2026-11-23T09:28:15Z
+--- [29/56] w14-nginx-default-edge-laravel-ovoff  2026-11-23T09:28:15Z ---
+w14-nginx-default-edge-laravel-ovoff: reran 20 hits x 3
+    rc=0 done 2026-11-23T09:29:08Z
+--- [30/56] w14-nginx-default-edge-laravel-ovon  2026-11-23T09:29:08Z ---
+w14-nginx-default-edge-laravel-ovon: reran 16 hits x 3
+    rc=0 done 2026-11-23T09:30:01Z
+--- [31/56] w14-nginx-default-edge-rails-ovoff  2026-11-23T09:30:01Z ---
+w14-nginx-default-edge-rails-ovoff: reran 14 hits x 3
+    rc=0 done 2026-11-23T09:30:55Z
+--- [32/56] w14-nginx-default-edge-rails-ovon  2026-11-23T09:30:55Z ---
+w14-nginx-default-edge-rails-ovon: reran 10 hits x 3
+    rc=0 done 2026-11-23T09:31:48Z
+--- [33/56] w14-nginx-recommended-edge-django-ovoff  2026-11-23T09:31:48Z ---
+w14-nginx-recommended-edge-django-ovoff: reran 13 hits x 3
+    rc=0 done 2026-11-23T09:32:42Z
+--- [34/56] w14-nginx-recommended-edge-django-ovon  2026-11-23T09:32:42Z ---
+w14-nginx-recommended-edge-django-ovon: reran 9 hits x 3
+    rc=0 done 2026-11-23T09:33:35Z
+--- [35/56] w14-nginx-recommended-edge-go-chi-ovoff  2026-11-23T09:33:35Z ---
+w14-nginx-recommended-edge-go-chi-ovoff: reran 19 hits x 3
+    rc=0 done 2026-11-23T09:34:28Z
+--- [36/56] w14-nginx-recommended-edge-go-chi-ovon  2026-11-23T09:34:28Z ---
+w14-nginx-recommended-edge-go-chi-ovon: reran 17 hits x 3
+    rc=0 done 2026-11-23T09:35:21Z
+--- [37/56] w14-nginx-recommended-edge-laravel-ovoff  2026-11-23T09:35:21Z ---
+w14-nginx-recommended-edge-laravel-ovoff: reran 20 hits x 3
+    rc=0 done 2026-11-23T09:36:15Z
+--- [38/56] w14-nginx-recommended-edge-laravel-ovon  2026-11-23T09:36:15Z ---
+w14-nginx-recommended-edge-laravel-ovon: reran 16 hits x 3
+    rc=0 done 2026-11-23T09:37:08Z
+--- [39/56] w14-nginx-recommended-edge-rails-ovoff  2026-11-23T09:37:08Z ---
+w14-nginx-recommended-edge-rails-ovoff: reran 14 hits x 3
+    rc=0 done 2026-11-23T09:38:01Z
+--- [40/56] w14-nginx-recommended-edge-rails-ovon  2026-11-23T09:38:01Z ---
+w14-nginx-recommended-edge-rails-ovon: reran 10 hits x 3
+    rc=0 done 2026-11-23T09:38:55Z
+--- [41/56] w14-traefik-default-edge-django-ovoff  2026-11-23T09:38:55Z ---
+w14-traefik-default-edge-django-ovoff: reran 13 hits x 3
+    rc=0 done 2026-11-23T09:39:52Z
+--- [42/56] w14-traefik-default-edge-django-ovon  2026-11-23T09:39:52Z ---
+w14-traefik-default-edge-django-ovon: reran 9 hits x 3
+    rc=0 done 2026-11-23T09:40:48Z
+--- [43/56] w14-traefik-default-edge-go-chi-ovoff  2026-11-23T09:40:48Z ---
+w14-traefik-default-edge-go-chi-ovoff: reran 13 hits x 3
+    rc=0 done 2026-11-23T09:41:44Z
+--- [44/56] w14-traefik-default-edge-go-chi-ovon  2026-11-23T09:41:44Z ---
+w14-traefik-default-edge-go-chi-ovon: reran 11 hits x 3
+    rc=0 done 2026-11-23T09:42:40Z
+--- [45/56] w14-traefik-default-edge-laravel-ovoff  2026-11-23T09:42:40Z ---
+w14-traefik-default-edge-laravel-ovoff: reran 14 hits x 3
+    rc=0 done 2026-11-23T09:43:37Z
+--- [46/56] w14-traefik-default-edge-laravel-ovon  2026-11-23T09:43:38Z ---
+w14-traefik-default-edge-laravel-ovon: reran 10 hits x 3
+    rc=0 done 2026-11-23T09:44:34Z
+--- [47/56] w14-traefik-default-edge-rails-ovoff  2026-11-23T09:44:34Z ---
+w14-traefik-default-edge-rails-ovoff: reran 14 hits x 3
+    rc=0 done 2026-11-23T09:45:31Z
+--- [48/56] w14-traefik-default-edge-rails-ovon  2026-11-23T09:45:31Z ---
+w14-traefik-default-edge-rails-ovon: reran 10 hits x 3
+    rc=0 done 2026-11-23T09:46:27Z
+--- [49/56] w14-traefik-recommended-edge-django-ovoff  2026-11-23T09:46:27Z ---
+w14-traefik-recommended-edge-django-ovoff: reran 13 hits x 3
+    rc=0 done 2026-11-23T09:47:24Z
+--- [50/56] w14-traefik-recommended-edge-django-ovon  2026-11-23T09:47:24Z ---
+w14-traefik-recommended-edge-django-ovon: reran 9 hits x 3
+    rc=0 done 2026-11-23T09:48:20Z
+--- [51/56] w14-traefik-recommended-edge-go-chi-ovoff  2026-11-23T09:48:20Z ---
+w14-traefik-recommended-edge-go-chi-ovoff: reran 13 hits x 3
+    rc=0 done 2026-11-23T09:49:16Z
+--- [52/56] w14-traefik-recommended-edge-go-chi-ovon  2026-11-23T09:49:16Z ---
+w14-traefik-recommended-edge-go-chi-ovon: reran 11 hits x 3
+    rc=0 done 2026-11-23T09:50:12Z
+--- [53/56] w14-traefik-recommended-edge-laravel-ovoff  2026-11-23T09:50:12Z ---
+w14-traefik-recommended-edge-laravel-ovoff: reran 14 hits x 3
+    rc=0 done 2026-11-23T09:51:10Z
+--- [54/56] w14-traefik-recommended-edge-laravel-ovon  2026-11-23T09:51:10Z ---
+w14-traefik-recommended-edge-laravel-ovon: reran 10 hits x 3
+    rc=0 done 2026-11-23T09:52:06Z
+--- [55/56] w14-traefik-recommended-edge-rails-ovoff  2026-11-23T09:52:06Z ---
+w14-traefik-recommended-edge-rails-ovoff: reran 14 hits x 3
+    rc=0 done 2026-11-23T09:53:04Z
+--- [56/56] w14-traefik-recommended-edge-rails-ovon  2026-11-23T09:53:04Z ---
+w14-traefik-recommended-edge-rails-ovon: reran 10 hits x 3
+    rc=0 done 2026-11-23T09:54:00Z
+=== rerun driver DONE 2026-11-23T09:54:00Z ===

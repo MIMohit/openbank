@@ -1,0 +1,7 @@
+row,aspnet/ovoff,aspnet/ovon,express/ovoff,express/ovon,fastapi/ovoff,fastapi/ovon,spring/ovoff,spring/ovon
+envoy/default,14,11,15,11,13,19,14,11
+envoy/recommended,14,11,15,11,13,19,14,11
+nginx/default,14,11,15,11,20,26,14,11
+nginx/recommended,14,11,15,11,20,26,14,11
+traefik/default,14,11,15,11,14,20,14,11
+traefik/recommended,14,11,15,11,14,20,14,11

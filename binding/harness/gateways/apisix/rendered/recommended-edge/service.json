@@ -1,0 +1,9 @@
+{
+  "volumes": [
+    "./gateway/config.yaml:/usr/local/apisix/conf/config.yaml:ro",
+    "./gateway/apisix.yaml:/usr/local/apisix/conf/apisix.yaml:ro"
+  ],
+  "environment": {
+    "APISIX_STAND_ALONE": "true"
+  }
+}

@@ -1,0 +1,61 @@
+% extra.bib -- W2's own citations. Keys are prefixed "w2:" so they cannot
+% collide with W1's ../lit/refs.bib. Works that refs.bib already holds
+% (RFC 9449/8705/9440/9421, FAPI 2.0 AM, Hosseyni et al.) were removed here on
+% 2026-11-23 (W10); cite them by their refs.bib keys (rfc9449, fapiam2025, hosseyni2024csf, ...).
+
+@techreport{w2:rfc9530,
+  author = {Roberto Polli and Lucas Pardue},
+  title = {{Digest Fields}},
+  type = {RFC}, number = {9530}, institution = {IETF}, year = {2024}, month = feb,
+  doi = {10.17487/RFC9530}, url = {https://www.rfc-editor.org/rfc/rfc9530}
+}
+@techreport{w2:rfc3986,
+  author = {Tim Berners-Lee and Roy T. Fielding and Larry Masinter},
+  title = {{Uniform Resource Identifier (URI): Generic Syntax}},
+  type = {RFC}, number = {3986}, institution = {IETF}, year = {2005}, month = jan,
+  doi = {10.17487/RFC3986}, url = {https://www.rfc-editor.org/rfc/rfc3986}
+}
+@misc{w2:envoyextauthz,
+  author = {{Envoy Project}},
+  title = {{External Authorization (ext\_authz) filter, v3 API reference}},
+  url = {https://www.envoyproxy.io/docs/envoy/latest/api-v3/extensions/filters/http/ext_authz/v3/ext_authz.proto},
+  year = {2026},
+  note = {Living documentation, accessed 2026-11-23}
+}
+@misc{w2:traefikfwdauth,
+  author = {{Traefik Labs}},
+  title = {{ForwardAuth middleware}},
+  url = {https://doc.traefik.io/traefik/reference/routing-configuration/http/middlewares/forwardauth/},
+  year = {2026},
+  note = {Living documentation, accessed 2026-11-23}
+}
+@misc{w2:nginxauthreq,
+  author = {{NGINX}},
+  title = {{Module ngx\_http\_auth\_request\_module}},
+  url = {https://nginx.org/en/docs/http/ngx_http_auth_request_module.html},
+  year = {2026},
+  note = {Living documentation, accessed 2026-11-23}
+}
+% Added by W19 from ../disclosure/TRIAGE.md (W16). Titles follow the cited pages' URLs;
+% the pages themselves were read by W16, not re-read here.
+@misc{w2:kongcve27306,
+  author = {{Wiz Vulnerability Database}},
+  title = {{CVE-2021-27306}: {Kong} path normalisation and authorization bypass},
+  url = {https://www.wiz.io/vulnerability-database/cve/cve-2021-27306},
+  year = {2021},
+  note = {Accessed 2026-11-23}
+}
+@misc{w2:xvnpw2021kong,
+  author = {{xvnpw}},
+  title = {Path traversal in authorization context in {Kong} and {F5 NGINX}},
+  url = {https://xvnpw.github.io/posts/path_traversal_in_authorization_context_in_kong_and_f5_nginx},
+  year = {2021},
+  note = {Accessed 2026-11-23}
+}
+@misc{w2:uvicorn1222,
+  author = {{encode/uvicorn}},
+  title = {Handling {URL} components (Discussion \#1222)},
+  url = {https://github.com/encode/uvicorn/discussions/1222},
+  year = {2021},
+  note = {Opened 2021-10-19; accessed 2026-11-23}
+}

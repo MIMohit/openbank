@@ -1,0 +1,17 @@
+{
+  "confirmed": [
+    "matrix-accounts-bob",
+    "matrix-admin-del",
+    "matrix-admin-list"
+  ],
+  "flaky": [],
+  "n_confirmed": 3,
+  "n_flaky": 0,
+  "per_vector_counts": {
+    "matrix-accounts-bob": 3,
+    "matrix-admin-del": 3,
+    "matrix-admin-list": 3
+  },
+  "reps": 3,
+  "topology": "w12-block-ngx-spring-def"
+}

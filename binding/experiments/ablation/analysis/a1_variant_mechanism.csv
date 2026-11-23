@@ -1,0 +1,16 @@
+key,full,no-htm,no-htu,no-ath,query,digest-nogate,digest,query-digest
+M1,40,40,40,40,0,40,40,0
+M2,26,26,26,26,26,26,0,0
+M3,2,2,2,2,2,2,2,2
+M4,29,29,29,29,29,29,0,0
+M5a,9,9,9,9,9,9,9,9
+M5b,22,22,22,22,17,22,14,9
+M6,44,44,44,44,44,44,44,44
+M7,4,4,4,4,4,4,4,4
+M8,0,0,22,0,0,0,0,0
+M9,16,16,62,16,16,16,16,16
+other:absolute-form,0,0,8,0,0,0,0,0
+other:backslash,0,0,36,0,0,0,0,0
+other:matrix-param,0,0,108,0,0,0,0,0
+other:prefix-rewrite,0,0,16,0,0,0,0,0
+other:trailing-slash,0,0,4,0,0,0,0,0

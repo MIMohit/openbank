@@ -1,0 +1,26 @@
+=== phase4 a3host reruns start 2026-11-23T10:00:47Z ===
+--- w14-nginx-default-origin-aspnet-ovon 2026-11-23T10:00:47Z ---
+w14-nginx-default-origin-aspnet-ovon: reran 11 hits x 3
+    rc=0 done 2026-11-23T10:01:43Z
+--- w14-nginx-default-origin-django-ovon 2026-11-23T10:01:43Z ---
+w14-nginx-default-origin-django-ovon: reran 9 hits x 3
+    rc=0 done 2026-11-23T10:02:36Z
+--- w14-nginx-default-origin-express-ovon 2026-11-23T10:02:36Z ---
+w14-nginx-default-origin-express-ovon: reran 11 hits x 3
+    rc=0 done 2026-11-23T10:03:29Z
+--- w14-nginx-default-origin-fastapi-ovon 2026-11-23T10:03:29Z ---
+w14-nginx-default-origin-fastapi-ovon: reran 26 hits x 3
+    rc=0 done 2026-11-23T10:04:22Z
+--- w14-nginx-default-origin-go-chi-ovon 2026-11-23T10:04:22Z ---
+w14-nginx-default-origin-go-chi-ovon: reran 17 hits x 3
+    rc=0 done 2026-11-23T10:05:19Z
+--- w14-nginx-default-origin-laravel-ovon 2026-11-23T10:05:19Z ---
+w14-nginx-default-origin-laravel-ovon: reran 10 hits x 3
+    rc=0 done 2026-11-23T10:06:12Z
+--- w14-nginx-default-origin-rails-ovon 2026-11-23T10:06:12Z ---
+w14-nginx-default-origin-rails-ovon: reran 10 hits x 3
+    rc=0 done 2026-11-23T10:07:05Z
+--- w14-nginx-default-origin-spring-ovon 2026-11-23T10:07:05Z ---
+w14-nginx-default-origin-spring-ovon: reran 11 hits x 3
+    rc=0 done 2026-11-23T10:08:02Z
+=== phase4 a3host reruns DONE 2026-11-23T10:08:02Z ===

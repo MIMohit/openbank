@@ -1,0 +1,2 @@
+topology,gateway,profile,framework,verifier_image,cases,pdp_allow,violations,admin,bob,vectors_hit
+w12-block-ngx-rails-def,nginx,default,rails,bh-pdp-block:latest,29,20,3,2,1,"dslash-accounts-bob,dslash-admin-del,dslash-admin-list"

@@ -1,0 +1,1 @@
+oracle[w15r-envoy-default-edge-spring-ovon] {'topology': 'w15r-envoy-default-edge-spring-ovon', 'cases': 581, 'accepted': 395, 'hits_raw': 6, 'hits_confirmed': 0, 'S1': 6, 'S2': 0, 'S3': 0, 'signatures': 6, 'max_res_hat': 3, 'b0': 0, 'propagation': 48, 'uncorrelated': 5}

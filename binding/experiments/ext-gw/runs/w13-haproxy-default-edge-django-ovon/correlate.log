@@ -1,0 +1,1 @@
+oracle[w13-haproxy-default-edge-django-ovon] {'topology': 'w13-haproxy-default-edge-django-ovon', 'cases': 948, 'accepted': 659, 'hits_raw': 9, 'hits_confirmed': 0, 'S1': 6, 'S2': 3, 'S3': 0, 'signatures': 9, 'max_res_hat': 3, 'b0': 0, 'propagation': 130, 'uncorrelated': 20}

@@ -1,0 +1,67 @@
+[1/28] 12:52:25 w14-nginx-default-origin-fastapi-ovon
+w14-nginx-default-origin-fastapi-ovon runner_rc=0 secs=40 runner[w14-nginx-default-origin-fastapi-ovon/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-nginx-default-origin-fastapi-ovon/runner.jsonl: {'sent': 948, 'errors': 0}
+[2/28] 12:53:05 w14-nginx-default-origin-express-ovon
+w14-nginx-default-origin-express-ovon runner_rc=0 secs=44 runner[w14-nginx-default-origin-express-ovon/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-nginx-default-origin-express-ovon/runner.jsonl: {'sent': 948, 'errors': 0}
+[3/28] 12:53:49 w14-nginx-default-origin-django-ovon
+w14-nginx-default-origin-django-ovon runner_rc=0 secs=38 runner[w14-nginx-default-origin-django-ovon/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-nginx-default-origin-django-ovon/runner.jsonl: {'sent': 948, 'errors': 0}
+[4/28] 12:54:27 w14-nginx-default-origin-go-chi-ovon
+w14-nginx-default-origin-go-chi-ovon runner_rc=0 secs=101 runner[w14-nginx-default-origin-go-chi-ovon/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-nginx-default-origin-go-chi-ovon/runner.jsonl: {'sent': 948, 'errors': 0}
+[5/28] 12:56:09 w14-nginx-default-origin-spring-ovon
+w14-nginx-default-origin-spring-ovon runner_rc=0 secs=58 runner[w14-nginx-default-origin-spring-ovon/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-nginx-default-origin-spring-ovon/runner.jsonl: {'sent': 948, 'errors': 0}
+[6/28] 12:57:07 w14-nginx-default-origin-aspnet-ovon
+w14-nginx-default-origin-aspnet-ovon runner_rc=0 secs=103 runner[w14-nginx-default-origin-aspnet-ovon/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-nginx-default-origin-aspnet-ovon/runner.jsonl: {'sent': 948, 'errors': 0}
+[7/28] 12:58:50 w14-nginx-default-origin-rails-ovon
+w14-nginx-default-origin-rails-ovon runner_rc=0 secs=31 runner[w14-nginx-default-origin-rails-ovon/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-nginx-default-origin-rails-ovon/runner.jsonl: {'sent': 948, 'errors': 0}
+[8/28] 12:59:21 w14-nginx-default-both-fastapi-ovon
+w14-nginx-default-both-fastapi-ovon runner_rc=0 secs=37 runner[w14-nginx-default-both-fastapi-ovon/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-nginx-default-both-fastapi-ovon/runner.jsonl: {'sent': 948, 'errors': 0}
+[9/28] 12:59:58 w14-nginx-default-both-express-ovon
+w14-nginx-default-both-express-ovon runner_rc=0 secs=29 runner[w14-nginx-default-both-express-ovon/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-nginx-default-both-express-ovon/runner.jsonl: {'sent': 948, 'errors': 0}
+[10/28] 13:00:27 w14-nginx-default-both-django-ovon
+w14-nginx-default-both-django-ovon runner_rc=0 secs=30 runner[w14-nginx-default-both-django-ovon/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-nginx-default-both-django-ovon/runner.jsonl: {'sent': 948, 'errors': 0}
+[11/28] 13:00:57 w14-nginx-default-both-go-chi-ovon
+w14-nginx-default-both-go-chi-ovon runner_rc=0 secs=60 runner[w14-nginx-default-both-go-chi-ovon/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-nginx-default-both-go-chi-ovon/runner.jsonl: {'sent': 948, 'errors': 0}
+[12/28] 13:01:57 w14-nginx-default-both-spring-ovon
+w14-nginx-default-both-spring-ovon runner_rc=0 secs=47 runner[w14-nginx-default-both-spring-ovon/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-nginx-default-both-spring-ovon/runner.jsonl: {'sent': 948, 'errors': 0}
+[13/28] 13:02:44 w14-nginx-default-both-aspnet-ovon
+w14-nginx-default-both-aspnet-ovon runner_rc=0 secs=66 runner[w14-nginx-default-both-aspnet-ovon/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-nginx-default-both-aspnet-ovon/runner.jsonl: {'sent': 948, 'errors': 0}
+[14/28] 13:03:50 w14-nginx-default-both-rails-ovon
+w14-nginx-default-both-rails-ovon runner_rc=0 secs=42 runner[w14-nginx-default-both-rails-ovon/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-nginx-default-both-rails-ovon/runner.jsonl: {'sent': 948, 'errors': 0}
+[15/28] 13:04:32 w14-envoy-default-origin-fastapi-ovon
+w14-envoy-default-origin-fastapi-ovon runner_rc=0 secs=112 runner[w14-envoy-default-origin-fastapi-ovon/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-envoy-default-origin-fastapi-ovon/runner.jsonl: {'sent': 948, 'errors': 0}
+[16/28] 13:06:24 w14-envoy-default-origin-express-ovon
+w14-envoy-default-origin-express-ovon runner_rc=0 secs=32 runner[w14-envoy-default-origin-express-ovon/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-envoy-default-origin-express-ovon/runner.jsonl: {'sent': 948, 'errors': 0}
+[17/28] 13:06:56 w14-envoy-default-origin-django-ovon
+w14-envoy-default-origin-django-ovon runner_rc=0 secs=41 runner[w14-envoy-default-origin-django-ovon/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-envoy-default-origin-django-ovon/runner.jsonl: {'sent': 948, 'errors': 0}
+[18/28] 13:07:37 w14-envoy-default-origin-go-chi-ovon
+w14-envoy-default-origin-go-chi-ovon runner_rc=0 secs=55 runner[w14-envoy-default-origin-go-chi-ovon/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-envoy-default-origin-go-chi-ovon/runner.jsonl: {'sent': 948, 'errors': 0}
+[19/28] 13:08:32 w14-envoy-default-origin-spring-ovon
+w14-envoy-default-origin-spring-ovon runner_rc=0 secs=43 runner[w14-envoy-default-origin-spring-ovon/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-envoy-default-origin-spring-ovon/runner.jsonl: {'sent': 948, 'errors': 0}
+[20/28] 13:09:15 w14-envoy-default-origin-aspnet-ovon
+w14-envoy-default-origin-aspnet-ovon runner_rc=0 secs=51 runner[w14-envoy-default-origin-aspnet-ovon/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-envoy-default-origin-aspnet-ovon/runner.jsonl: {'sent': 948, 'errors': 0}
+[21/28] 13:10:06 w14-envoy-default-origin-rails-ovon
+w14-envoy-default-origin-rails-ovon runner_rc=0 secs=22 runner[w14-envoy-default-origin-rails-ovon/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-envoy-default-origin-rails-ovon/runner.jsonl: {'sent': 948, 'errors': 0}
+[22/28] 13:10:28 w14-envoy-default-both-fastapi-ovon
+w14-envoy-default-both-fastapi-ovon runner_rc=0 secs=30 runner[w14-envoy-default-both-fastapi-ovon/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-envoy-default-both-fastapi-ovon/runner.jsonl: {'sent': 948, 'errors': 0}
+[23/28] 13:10:58 w14-envoy-default-both-express-ovon
+w14-envoy-default-both-express-ovon runner_rc=0 secs=31 runner[w14-envoy-default-both-express-ovon/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-envoy-default-both-express-ovon/runner.jsonl: {'sent': 948, 'errors': 0}
+[24/28] 13:11:29 w14-envoy-default-both-django-ovon
+w14-envoy-default-both-django-ovon runner_rc=0 secs=31 runner[w14-envoy-default-both-django-ovon/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-envoy-default-both-django-ovon/runner.jsonl: {'sent': 948, 'errors': 0}
+[25/28] 13:12:00 w14-envoy-default-both-go-chi-ovon
+w14-envoy-default-both-go-chi-ovon runner_rc=0 secs=48 runner[w14-envoy-default-both-go-chi-ovon/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-envoy-default-both-go-chi-ovon/runner.jsonl: {'sent': 948, 'errors': 0}
+[26/28] 13:12:48 w14-envoy-default-both-spring-ovon
+w14-envoy-default-both-spring-ovon runner_rc=0 secs=40 runner[w14-envoy-default-both-spring-ovon/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-envoy-default-both-spring-ovon/runner.jsonl: {'sent': 948, 'errors': 0}
+[27/28] 13:13:28 w14-envoy-default-both-aspnet-ovon
+w14-envoy-default-both-aspnet-ovon runner_rc=0 secs=56 runner[w14-envoy-default-both-aspnet-ovon/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-envoy-default-both-aspnet-ovon/runner.jsonl: {'sent': 948, 'errors': 0}
+[28/28] 13:14:24 w14-envoy-default-both-rails-ovon
+w14-envoy-default-both-rails-ovon runner_rc=0 secs=32 runner[w14-envoy-default-both-rails-ovon/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-envoy-default-both-rails-ovon/runner.jsonl: {'sent': 948, 'errors': 0}
+ALL DONE (28 topologies)
+[1/4] 13:14:56 w14-nginx-default-origin-laravel-ovon
+w14-nginx-default-origin-laravel-ovon runner_rc=0 secs=20 runner[w14-nginx-default-origin-laravel-ovon/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-nginx-default-origin-laravel-ovon/runner.jsonl: {'sent': 948, 'errors': 0}
+[2/4] 13:15:16 w14-nginx-default-both-laravel-ovon
+w14-nginx-default-both-laravel-ovon runner_rc=0 secs=21 runner[w14-nginx-default-both-laravel-ovon/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-nginx-default-both-laravel-ovon/runner.jsonl: {'sent': 948, 'errors': 0}
+[3/4] 13:15:37 w14-envoy-default-origin-laravel-ovon
+w14-envoy-default-origin-laravel-ovon runner_rc=0 secs=21 runner[w14-envoy-default-origin-laravel-ovon/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-envoy-default-origin-laravel-ovon/runner.jsonl: {'sent': 948, 'errors': 0}
+[4/4] 13:15:58 w14-envoy-default-both-laravel-ovon
+w14-envoy-default-both-laravel-ovon runner_rc=0 secs=30 runner[w14-envoy-default-both-laravel-ovon/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-envoy-default-both-laravel-ovon/runner.jsonl: {'sent': 948, 'errors': 0}
+ALL DONE (4 topologies)
+PART_B_COMPLETE

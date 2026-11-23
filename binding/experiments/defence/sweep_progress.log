@@ -1,0 +1,134 @@
+docker clock skew 0s
+bedge ngx-fastapi-ovoff w17-bedge-ngx-fastapi-ovoff runner_rc=0 secs=13 hits=27 [ext_run_matrix] w17-bedge-ngx-fastapi-ovoff/gateway: {'sent': 44, 'errors': 0}
+bedge ngx-express-ovoff w17-bedge-ngx-express-ovoff runner_rc=0 secs=13 hits=17 [ext_run_matrix] w17-bedge-ngx-express-ovoff/gateway: {'sent': 34, 'errors': 0}
+bedge ngx-express-ovon w17-bedge-ngx-express-ovon runner_rc=0 secs=12 hits=22 [ext_run_matrix] w17-bedge-ngx-express-ovon/gateway: {'sent': 39, 'errors': 0}
+bedge ngx-spring-ovoff w17-bedge-ngx-spring-ovoff runner_rc=0 secs=13 hits=16 [ext_run_matrix] w17-bedge-ngx-spring-ovoff/gateway: {'sent': 33, 'errors': 0}
+bedge ngx-spring-ovon w17-bedge-ngx-spring-ovon runner_rc=0 secs=13 hits=17 [ext_run_matrix] w17-bedge-ngx-spring-ovon/gateway: {'sent': 34, 'errors': 0}
+bedge ngx-aspnet-ovoff w17-bedge-ngx-aspnet-ovoff runner_rc=0 secs=13 hits=14 [ext_run_matrix] w17-bedge-ngx-aspnet-ovoff/gateway: {'sent': 31, 'errors': 0}
+bedge ngx-aspnet-ovon w17-bedge-ngx-aspnet-ovon runner_rc=0 secs=13 hits=17 [ext_run_matrix] w17-bedge-ngx-aspnet-ovon/gateway: {'sent': 34, 'errors': 0}
+bedge apisix-express-ovoff w17-bedge-apisix-express-ovoff runner_rc=0 secs=15 hits=21 [ext_run_matrix] w17-bedge-apisix-express-ovoff/gateway: {'sent': 34, 'errors': 0}
+bedge apisix-aspnet-ovoff w17-bedge-apisix-aspnet-ovoff runner_rc=0 secs=15 hits=20 [ext_run_matrix] w17-bedge-apisix-aspnet-ovoff/gateway: {'sent': 33, 'errors': 0}
+bedge kong-fastapi-ovoff w17-bedge-kong-fastapi-ovoff runner_rc=0 secs=20 hits=19 [ext_run_matrix] w17-bedge-kong-fastapi-ovoff/gateway: {'sent': 32, 'errors': 0}
+da ngx-fastapi-ovoff w17-da-ngx-fastapi-ovoff runner_rc=0 secs=12 hits=0 [ext_run_matrix] w17-da-ngx-fastapi-ovoff/gateway: {'sent': 44, 'errors': 0}
+da ngx-fastapi-ovon w17-da-ngx-fastapi-ovon runner_rc=0 secs=13 hits=0 [ext_run_matrix] w17-da-ngx-fastapi-ovon/gateway: {'sent': 56, 'errors': 0}
+da ngx-express-ovoff w17-da-ngx-express-ovoff runner_rc=0 secs=13 hits=0 [ext_run_matrix] w17-da-ngx-express-ovoff/gateway: {'sent': 34, 'errors': 0}
+da ngx-express-ovon w17-da-ngx-express-ovon runner_rc=0 secs=13 hits=0 [ext_run_matrix] w17-da-ngx-express-ovon/gateway: {'sent': 39, 'errors': 0}
+da ngx-spring-ovoff w17-da-ngx-spring-ovoff runner_rc=0 secs=15 hits=0 [ext_run_matrix] w17-da-ngx-spring-ovoff/gateway: {'sent': 33, 'errors': 0}
+da ngx-spring-ovon w17-da-ngx-spring-ovon runner_rc=0 secs=15 hits=0 [ext_run_matrix] w17-da-ngx-spring-ovon/gateway: {'sent': 34, 'errors': 0}
+da ngx-aspnet-ovoff w17-da-ngx-aspnet-ovoff runner_rc=0 secs=14 hits=0 [ext_run_matrix] w17-da-ngx-aspnet-ovoff/gateway: {'sent': 31, 'errors': 0}
+da ngx-aspnet-ovon w17-da-ngx-aspnet-ovon runner_rc=0 secs=14 hits=0 [ext_run_matrix] w17-da-ngx-aspnet-ovon/gateway: {'sent': 34, 'errors': 0}
+da apisix-express-ovoff w17-da-apisix-express-ovoff runner_rc=0 secs=14 hits=15 [ext_run_matrix] w17-da-apisix-express-ovoff/gateway: {'sent': 34, 'errors': 0}
+da apisix-aspnet-ovoff w17-da-apisix-aspnet-ovoff runner_rc=0 secs=15 hits=14 [ext_run_matrix] w17-da-apisix-aspnet-ovoff/gateway: {'sent': 33, 'errors': 0}
+da kong-fastapi-ovoff w17-da-kong-fastapi-ovoff runner_rc=0 secs=18 hits=0 [ext_run_matrix] w17-da-kong-fastapi-ovoff/gateway: {'sent': 32, 'errors': 0}
+db ngx-fastapi-ovoff w17-db-ngx-fastapi-ovoff runner_rc=0 secs=13 hits=14 [ext_run_matrix] w17-db-ngx-fastapi-ovoff/gateway: {'sent': 44, 'errors': 0}
+db ngx-fastapi-ovon w17-db-ngx-fastapi-ovon runner_rc=0 secs=12 hits=14 [ext_run_matrix] w17-db-ngx-fastapi-ovon/gateway: {'sent': 56, 'errors': 0}
+db ngx-express-ovoff w17-db-ngx-express-ovoff runner_rc=0 secs=13 hits=15 [ext_run_matrix] w17-db-ngx-express-ovoff/gateway: {'sent': 34, 'errors': 0}
+db ngx-express-ovon w17-db-ngx-express-ovon runner_rc=0 secs=13 hits=11 [ext_run_matrix] w17-db-ngx-express-ovon/gateway: {'sent': 39, 'errors': 0}
+db ngx-spring-ovoff w17-db-ngx-spring-ovoff runner_rc=0 secs=13 hits=14 [ext_run_matrix] w17-db-ngx-spring-ovoff/gateway: {'sent': 33, 'errors': 0}
+db ngx-spring-ovon w17-db-ngx-spring-ovon runner_rc=0 secs=12 hits=11 [ext_run_matrix] w17-db-ngx-spring-ovon/gateway: {'sent': 34, 'errors': 0}
+db ngx-aspnet-ovoff w17-db-ngx-aspnet-ovoff runner_rc=0 secs=12 hits=14 [ext_run_matrix] w17-db-ngx-aspnet-ovoff/gateway: {'sent': 31, 'errors': 0}
+db ngx-aspnet-ovon w17-db-ngx-aspnet-ovon runner_rc=0 secs=13 hits=11 [ext_run_matrix] w17-db-ngx-aspnet-ovon/gateway: {'sent': 34, 'errors': 0}
+db apisix-express-ovoff w17-db-apisix-express-ovoff runner_rc=0 secs=14 hits=15 [ext_run_matrix] w17-db-apisix-express-ovoff/gateway: {'sent': 34, 'errors': 0}
+db apisix-aspnet-ovoff w17-db-apisix-aspnet-ovoff runner_rc=0 secs=15 hits=14 [ext_run_matrix] w17-db-apisix-aspnet-ovoff/gateway: {'sent': 33, 'errors': 0}
+db kong-fastapi-ovoff w17-db-kong-fastapi-ovoff runner_rc=0 secs=20 hits=13 [ext_run_matrix] w17-db-kong-fastapi-ovoff/gateway: {'sent': 32, 'errors': 0}
+dc ngx-fastapi-ovoff w17-dc-ngx-fastapi-ovoff runner_rc=0 secs=13 hits=25 [ext_run_matrix] w17-dc-ngx-fastapi-ovoff/gateway: {'sent': 44, 'errors': 0}
+dc ngx-fastapi-ovon w17-dc-ngx-fastapi-ovon runner_rc=0 secs=13 hits=37 [ext_run_matrix] w17-dc-ngx-fastapi-ovon/gateway: {'sent': 56, 'errors': 0}
+dc ngx-express-ovoff w17-dc-ngx-express-ovoff runner_rc=0 secs=12 hits=15 [ext_run_matrix] w17-dc-ngx-express-ovoff/gateway: {'sent': 34, 'errors': 0}
+dc ngx-express-ovon w17-dc-ngx-express-ovon runner_rc=0 secs=13 hits=20 [ext_run_matrix] w17-dc-ngx-express-ovon/gateway: {'sent': 39, 'errors': 0}
+dc ngx-spring-ovoff w17-dc-ngx-spring-ovoff runner_rc=0 secs=13 hits=14 [ext_run_matrix] w17-dc-ngx-spring-ovoff/gateway: {'sent': 33, 'errors': 0}
+dc ngx-spring-ovon w17-dc-ngx-spring-ovon runner_rc=0 secs=13 hits=15 [ext_run_matrix] w17-dc-ngx-spring-ovon/gateway: {'sent': 34, 'errors': 0}
+dc ngx-aspnet-ovoff w17-dc-ngx-aspnet-ovoff runner_rc=0 secs=12 hits=14 [ext_run_matrix] w17-dc-ngx-aspnet-ovoff/gateway: {'sent': 31, 'errors': 0}
+dc ngx-aspnet-ovon w17-dc-ngx-aspnet-ovon runner_rc=0 secs=13 hits=17 [ext_run_matrix] w17-dc-ngx-aspnet-ovon/gateway: {'sent': 34, 'errors': 0}
+dc apisix-express-ovoff w17-dc-apisix-express-ovoff runner_rc=0 secs=14 hits=15 [ext_run_matrix] w17-dc-apisix-express-ovoff/gateway: {'sent': 34, 'errors': 0}
+dc apisix-aspnet-ovoff w17-dc-apisix-aspnet-ovoff runner_rc=0 secs=15 hits=14 [ext_run_matrix] w17-dc-apisix-aspnet-ovoff/gateway: {'sent': 33, 'errors': 0}
+dc kong-fastapi-ovoff w17-dc-kong-fastapi-ovoff runner_rc=0 secs=19 hits=19 [ext_run_matrix] w17-dc-kong-fastapi-ovoff/gateway: {'sent': 32, 'errors': 0}
+borigin ngx-fastapi-ovoff w17-borigin-ngx-fastapi-ovoff runner_rc=0 secs=13 hits=27 [ext_run_matrix] w17-borigin-ngx-fastapi-ovoff/gateway: {'sent': 44, 'errors': 0}
+borigin ngx-fastapi-ovon w17-borigin-ngx-fastapi-ovon runner_rc=0 secs=13 hits=39 [ext_run_matrix] w17-borigin-ngx-fastapi-ovon/gateway: {'sent': 56, 'errors': 0}
+borigin ngx-express-ovoff w17-borigin-ngx-express-ovoff runner_rc=0 secs=13 hits=17 [ext_run_matrix] w17-borigin-ngx-express-ovoff/gateway: {'sent': 34, 'errors': 0}
+borigin ngx-express-ovon w17-borigin-ngx-express-ovon runner_rc=0 secs=12 hits=22 [ext_run_matrix] w17-borigin-ngx-express-ovon/gateway: {'sent': 39, 'errors': 0}
+borigin ngx-spring-ovoff w17-borigin-ngx-spring-ovoff runner_rc=0 secs=14 hits=16 [ext_run_matrix] w17-borigin-ngx-spring-ovoff/gateway: {'sent': 33, 'errors': 0}
+borigin ngx-spring-ovon w17-borigin-ngx-spring-ovon runner_rc=0 secs=14 hits=17 [ext_run_matrix] w17-borigin-ngx-spring-ovon/gateway: {'sent': 34, 'errors': 0}
+borigin ngx-aspnet-ovoff w17-borigin-ngx-aspnet-ovoff runner_rc=0 secs=14 hits=14 [ext_run_matrix] w17-borigin-ngx-aspnet-ovoff/gateway: {'sent': 31, 'errors': 0}
+borigin ngx-aspnet-ovon w17-borigin-ngx-aspnet-ovon runner_rc=0 secs=14 hits=17 [ext_run_matrix] w17-borigin-ngx-aspnet-ovon/gateway: {'sent': 34, 'errors': 0}
+borigin apisix-express-ovoff w17-borigin-apisix-express-ovoff runner_rc=0 secs=14 hits=15 [ext_run_matrix] w17-borigin-apisix-express-ovoff/gateway: {'sent': 34, 'errors': 0}
+borigin apisix-aspnet-ovoff w17-borigin-apisix-aspnet-ovoff runner_rc=0 secs=15 hits=14 [ext_run_matrix] w17-borigin-apisix-aspnet-ovoff/gateway: {'sent': 33, 'errors': 0}
+borigin kong-fastapi-ovoff w17-borigin-kong-fastapi-ovoff runner_rc=0 secs=17 hits=19 [ext_run_matrix] w17-borigin-kong-fastapi-ovoff/gateway: {'sent': 32, 'errors': 0}
+bstrict ngx-fastapi-ovoff w17-bstrict-ngx-fastapi-ovoff runner_rc=0 secs=12 hits=25 [ext_run_matrix] w17-bstrict-ngx-fastapi-ovoff/gateway: {'sent': 44, 'errors': 0}
+bstrict ngx-fastapi-ovon w17-bstrict-ngx-fastapi-ovon runner_rc=0 secs=13 hits=37 [ext_run_matrix] w17-bstrict-ngx-fastapi-ovon/gateway: {'sent': 56, 'errors': 0}
+bstrict ngx-express-ovoff w17-bstrict-ngx-express-ovoff runner_rc=0 secs=13 hits=15 [ext_run_matrix] w17-bstrict-ngx-express-ovoff/gateway: {'sent': 34, 'errors': 0}
+bstrict ngx-express-ovon w17-bstrict-ngx-express-ovon runner_rc=0 secs=13 hits=20 [ext_run_matrix] w17-bstrict-ngx-express-ovon/gateway: {'sent': 39, 'errors': 0}
+bstrict ngx-spring-ovoff w17-bstrict-ngx-spring-ovoff runner_rc=0 secs=12 hits=14 [ext_run_matrix] w17-bstrict-ngx-spring-ovoff/gateway: {'sent': 33, 'errors': 0}
+bstrict ngx-spring-ovon w17-bstrict-ngx-spring-ovon runner_rc=0 secs=14 hits=15 [ext_run_matrix] w17-bstrict-ngx-spring-ovon/gateway: {'sent': 34, 'errors': 0}
+bstrict ngx-aspnet-ovoff w17-bstrict-ngx-aspnet-ovoff runner_rc=0 secs=12 hits=14 [ext_run_matrix] w17-bstrict-ngx-aspnet-ovoff/gateway: {'sent': 31, 'errors': 0}
+bstrict ngx-aspnet-ovon w17-bstrict-ngx-aspnet-ovon runner_rc=0 secs=13 hits=17 [ext_run_matrix] w17-bstrict-ngx-aspnet-ovon/gateway: {'sent': 34, 'errors': 0}
+bstrict apisix-express-ovoff w17-bstrict-apisix-express-ovoff runner_rc=0 secs=15 hits=15 [ext_run_matrix] w17-bstrict-apisix-express-ovoff/gateway: {'sent': 34, 'errors': 0}
+bstrict apisix-aspnet-ovoff w17-bstrict-apisix-aspnet-ovoff runner_rc=0 secs=14 hits=14 [ext_run_matrix] w17-bstrict-apisix-aspnet-ovoff/gateway: {'sent': 33, 'errors': 0}
+bstrict kong-fastapi-ovoff w17-bstrict-kong-fastapi-ovoff runner_rc=0 secs=20 hits=19 [ext_run_matrix] w17-bstrict-kong-fastapi-ovoff/gateway: {'sent': 32, 'errors': 0}
+bopt ngx-fastapi-ovoff w17-bopt-ngx-fastapi-ovoff runner_rc=0 secs=12 hits=27 [ext_run_matrix] w17-bopt-ngx-fastapi-ovoff/gateway: {'sent': 44, 'errors': 0}
+bopt ngx-fastapi-ovon w17-bopt-ngx-fastapi-ovon runner_rc=0 secs=13 hits=39 [ext_run_matrix] w17-bopt-ngx-fastapi-ovon/gateway: {'sent': 56, 'errors': 0}
+bopt ngx-express-ovoff w17-bopt-ngx-express-ovoff runner_rc=0 secs=13 hits=17 [ext_run_matrix] w17-bopt-ngx-express-ovoff/gateway: {'sent': 34, 'errors': 0}
+bopt ngx-express-ovon w17-bopt-ngx-express-ovon runner_rc=0 secs=13 hits=22 [ext_run_matrix] w17-bopt-ngx-express-ovon/gateway: {'sent': 39, 'errors': 0}
+bopt ngx-spring-ovoff w17-bopt-ngx-spring-ovoff runner_rc=0 secs=13 hits=16 [ext_run_matrix] w17-bopt-ngx-spring-ovoff/gateway: {'sent': 33, 'errors': 0}
+bopt ngx-spring-ovon w17-bopt-ngx-spring-ovon runner_rc=0 secs=14 hits=17 [ext_run_matrix] w17-bopt-ngx-spring-ovon/gateway: {'sent': 34, 'errors': 0}
+bopt ngx-aspnet-ovoff w17-bopt-ngx-aspnet-ovoff runner_rc=0 secs=13 hits=14 [ext_run_matrix] w17-bopt-ngx-aspnet-ovoff/gateway: {'sent': 31, 'errors': 0}
+bopt ngx-aspnet-ovon w17-bopt-ngx-aspnet-ovon runner_rc=0 secs=13 hits=17 [ext_run_matrix] w17-bopt-ngx-aspnet-ovon/gateway: {'sent': 34, 'errors': 0}
+bopt apisix-express-ovoff w17-bopt-apisix-express-ovoff runner_rc=0 secs=16 hits=21 [ext_run_matrix] w17-bopt-apisix-express-ovoff/gateway: {'sent': 34, 'errors': 0}
+bopt apisix-aspnet-ovoff w17-bopt-apisix-aspnet-ovoff runner_rc=0 secs=15 hits=20 [ext_run_matrix] w17-bopt-apisix-aspnet-ovoff/gateway: {'sent': 33, 'errors': 0}
+bopt kong-fastapi-ovoff w17-bopt-kong-fastapi-ovoff runner_rc=0 secs=21 hits=19 [ext_run_matrix] w17-bopt-kong-fastapi-ovoff/gateway: {'sent': 32, 'errors': 0}
+SWEEP DONE ../experiments/defence/worklist_aleak.txt Mon Nov 23 16:59:30 +06 2026
+docker clock skew 0s
+bedge RC1 w17-bedge-e4rc1-aspnet runner_rc=0 secs=14 hits=9 e4_runner[w17-bedge-e4rc1-aspnet] wrote /Users/mimohit/openbank/binding/harness/logs/w17-bedge-e4rc1-aspnet/runner.jsonl: {'sent': 29, 'errors': 0}
+bedge RC2 w17-bedge-e4rc2-fastapi runner_rc=0 secs=19 hits=9 e4_runner[w17-bedge-e4rc2-fastapi] wrote /Users/mimohit/openbank/binding/harness/logs/w17-bedge-e4rc2-fastapi/runner.jsonl: {'sent': 29, 'errors': 0}
+bedge RC3 w17-bedge-e4rc3-aspnet runner_rc=0 secs=13 hits=11 e4_runner[w17-bedge-e4rc3-aspnet] wrote /Users/mimohit/openbank/binding/harness/logs/w17-bedge-e4rc3-aspnet/runner.jsonl: {'sent': 29, 'errors': 0}
+bedge RC4 w17-bedge-e4rc4-express runner_rc=0 secs=13 hits=2 e4_runner[w17-bedge-e4rc4-express] wrote /Users/mimohit/openbank/binding/harness/logs/w17-bedge-e4rc4-express/runner.jsonl: {'sent': 29, 'errors': 0}
+bedge RC5 w17-bedge-e4rc5-spring runner_rc=0 secs=13 hits=3 e4_runner[w17-bedge-e4rc5-spring] wrote /Users/mimohit/openbank/binding/harness/logs/w17-bedge-e4rc5-spring/runner.jsonl: {'sent': 29, 'errors': 0}
+bedge RC6 w17-bedge-e4rc6-rails runner_rc=0 secs=12 hits=3 e4_runner[w17-bedge-e4rc6-rails] wrote /Users/mimohit/openbank/binding/harness/logs/w17-bedge-e4rc6-rails/runner.jsonl: {'sent': 29, 'errors': 0}
+bedge RC7 w17-bedge-e4rc7-spring runner_rc=0 secs=20 hits=15 e4_runner[w17-bedge-e4rc7-spring] wrote /Users/mimohit/openbank/binding/harness/logs/w17-bedge-e4rc7-spring/runner.jsonl: {'sent': 29, 'errors': 0}
+da RC1 w17-da-e4rc1-aspnet runner_rc=0 secs=14 hits=0 e4_runner[w17-da-e4rc1-aspnet] wrote /Users/mimohit/openbank/binding/harness/logs/w17-da-e4rc1-aspnet/runner.jsonl: {'sent': 29, 'errors': 0}
+da RC2 w17-da-e4rc2-fastapi runner_rc=0 secs=18 hits=0 e4_runner[w17-da-e4rc2-fastapi] wrote /Users/mimohit/openbank/binding/harness/logs/w17-da-e4rc2-fastapi/runner.jsonl: {'sent': 29, 'errors': 0}
+da RC3 w17-da-e4rc3-aspnet runner_rc=0 secs=13 hits=0 e4_runner[w17-da-e4rc3-aspnet] wrote /Users/mimohit/openbank/binding/harness/logs/w17-da-e4rc3-aspnet/runner.jsonl: {'sent': 29, 'errors': 0}
+da RC4 w17-da-e4rc4-express runner_rc=0 secs=13 hits=0 e4_runner[w17-da-e4rc4-express] wrote /Users/mimohit/openbank/binding/harness/logs/w17-da-e4rc4-express/runner.jsonl: {'sent': 29, 'errors': 0}
+da RC5 w17-da-e4rc5-spring runner_rc=0 secs=13 hits=0 e4_runner[w17-da-e4rc5-spring] wrote /Users/mimohit/openbank/binding/harness/logs/w17-da-e4rc5-spring/runner.jsonl: {'sent': 29, 'errors': 0}
+da RC6 w17-da-e4rc6-rails runner_rc=0 secs=13 hits=0 e4_runner[w17-da-e4rc6-rails] wrote /Users/mimohit/openbank/binding/harness/logs/w17-da-e4rc6-rails/runner.jsonl: {'sent': 29, 'errors': 0}
+da RC7 w17-da-e4rc7-spring runner_rc=0 secs=20 hits=0 e4_runner[w17-da-e4rc7-spring] wrote /Users/mimohit/openbank/binding/harness/logs/w17-da-e4rc7-spring/runner.jsonl: {'sent': 29, 'errors': 0}
+db RC1 w17-db-e4rc1-aspnet runner_rc=0 secs=12 hits=9 e4_runner[w17-db-e4rc1-aspnet] wrote /Users/mimohit/openbank/binding/harness/logs/w17-db-e4rc1-aspnet/runner.jsonl: {'sent': 29, 'errors': 0}
+db RC2 w17-db-e4rc2-fastapi runner_rc=0 secs=20 hits=9 e4_runner[w17-db-e4rc2-fastapi] wrote /Users/mimohit/openbank/binding/harness/logs/w17-db-e4rc2-fastapi/runner.jsonl: {'sent': 29, 'errors': 0}
+db RC3 w17-db-e4rc3-aspnet runner_rc=0 secs=12 hits=9 e4_runner[w17-db-e4rc3-aspnet] wrote /Users/mimohit/openbank/binding/harness/logs/w17-db-e4rc3-aspnet/runner.jsonl: {'sent': 29, 'errors': 0}
+db RC4 w17-db-e4rc4-express runner_rc=0 secs=13 hits=0 e4_runner[w17-db-e4rc4-express] wrote /Users/mimohit/openbank/binding/harness/logs/w17-db-e4rc4-express/runner.jsonl: {'sent': 29, 'errors': 0}
+db RC5 w17-db-e4rc5-spring runner_rc=0 secs=13 hits=0 e4_runner[w17-db-e4rc5-spring] wrote /Users/mimohit/openbank/binding/harness/logs/w17-db-e4rc5-spring/runner.jsonl: {'sent': 29, 'errors': 0}
+db RC7 w17-db-e4rc7-spring runner_rc=0 secs=19 hits=9 e4_runner[w17-db-e4rc7-spring] wrote /Users/mimohit/openbank/binding/harness/logs/w17-db-e4rc7-spring/runner.jsonl: {'sent': 29, 'errors': 0}
+dc RC1 w17-dc-e4rc1-aspnet runner_rc=0 secs=13 hits=0 e4_runner[w17-dc-e4rc1-aspnet] wrote /Users/mimohit/openbank/binding/harness/logs/w17-dc-e4rc1-aspnet/runner.jsonl: {'sent': 29, 'errors': 0}
+dc RC2 w17-dc-e4rc2-fastapi runner_rc=0 secs=18 hits=0 e4_runner[w17-dc-e4rc2-fastapi] wrote /Users/mimohit/openbank/binding/harness/logs/w17-dc-e4rc2-fastapi/runner.jsonl: {'sent': 29, 'errors': 0}
+dc RC3 w17-dc-e4rc3-aspnet runner_rc=0 secs=12 hits=2 e4_runner[w17-dc-e4rc3-aspnet] wrote /Users/mimohit/openbank/binding/harness/logs/w17-dc-e4rc3-aspnet/runner.jsonl: {'sent': 29, 'errors': 0}
+dc RC4 w17-dc-e4rc4-express runner_rc=0 secs=13 hits=2 e4_runner[w17-dc-e4rc4-express] wrote /Users/mimohit/openbank/binding/harness/logs/w17-dc-e4rc4-express/runner.jsonl: {'sent': 29, 'errors': 0}
+dc RC5 w17-dc-e4rc5-spring runner_rc=0 secs=13 hits=0 e4_runner[w17-dc-e4rc5-spring] wrote /Users/mimohit/openbank/binding/harness/logs/w17-dc-e4rc5-spring/runner.jsonl: {'sent': 29, 'errors': 0}
+dc RC6 w17-dc-e4rc6-rails runner_rc=0 secs=13 hits=0 e4_runner[w17-dc-e4rc6-rails] wrote /Users/mimohit/openbank/binding/harness/logs/w17-dc-e4rc6-rails/runner.jsonl: {'sent': 29, 'errors': 0}
+dc RC7 w17-dc-e4rc7-spring runner_rc=0 secs=19 hits=0 e4_runner[w17-dc-e4rc7-spring] wrote /Users/mimohit/openbank/binding/harness/logs/w17-dc-e4rc7-spring/runner.jsonl: {'sent': 29, 'errors': 0}
+borigin RC1 w17-borigin-e4rc1-aspnet runner_rc=0 secs=14 hits=9 e4_runner[w17-borigin-e4rc1-aspnet] wrote /Users/mimohit/openbank/binding/harness/logs/w17-borigin-e4rc1-aspnet/runner.jsonl: {'sent': 29, 'errors': 0}
+borigin RC2 w17-borigin-e4rc2-fastapi runner_rc=0 secs=19 hits=0 e4_runner[w17-borigin-e4rc2-fastapi] wrote /Users/mimohit/openbank/binding/harness/logs/w17-borigin-e4rc2-fastapi/runner.jsonl: {'sent': 29, 'errors': 0}
+borigin RC3 w17-borigin-e4rc3-aspnet runner_rc=0 secs=13 hits=11 e4_runner[w17-borigin-e4rc3-aspnet] wrote /Users/mimohit/openbank/binding/harness/logs/w17-borigin-e4rc3-aspnet/runner.jsonl: {'sent': 29, 'errors': 0}
+borigin RC4 w17-borigin-e4rc4-express runner_rc=0 secs=13 hits=2 e4_runner[w17-borigin-e4rc4-express] wrote /Users/mimohit/openbank/binding/harness/logs/w17-borigin-e4rc4-express/runner.jsonl: {'sent': 29, 'errors': 0}
+borigin RC5 w17-borigin-e4rc5-spring runner_rc=0 secs=13 hits=3 e4_runner[w17-borigin-e4rc5-spring] wrote /Users/mimohit/openbank/binding/harness/logs/w17-borigin-e4rc5-spring/runner.jsonl: {'sent': 29, 'errors': 0}
+borigin RC6 w17-borigin-e4rc6-rails runner_rc=0 secs=13 hits=3 e4_runner[w17-borigin-e4rc6-rails] wrote /Users/mimohit/openbank/binding/harness/logs/w17-borigin-e4rc6-rails/runner.jsonl: {'sent': 29, 'errors': 0}
+borigin RC7 w17-borigin-e4rc7-spring runner_rc=0 secs=18 hits=3 e4_runner[w17-borigin-e4rc7-spring] wrote /Users/mimohit/openbank/binding/harness/logs/w17-borigin-e4rc7-spring/runner.jsonl: {'sent': 29, 'errors': 0}
+bstrict RC1 w17-bstrict-e4rc1-aspnet runner_rc=0 secs=13 hits=0 e4_runner[w17-bstrict-e4rc1-aspnet] wrote /Users/mimohit/openbank/binding/harness/logs/w17-bstrict-e4rc1-aspnet/runner.jsonl: {'sent': 29, 'errors': 0}
+bstrict RC2 w17-bstrict-e4rc2-fastapi runner_rc=0 secs=18 hits=0 e4_runner[w17-bstrict-e4rc2-fastapi] wrote /Users/mimohit/openbank/binding/harness/logs/w17-bstrict-e4rc2-fastapi/runner.jsonl: {'sent': 29, 'errors': 0}
+bstrict RC3 w17-bstrict-e4rc3-aspnet runner_rc=0 secs=13 hits=2 e4_runner[w17-bstrict-e4rc3-aspnet] wrote /Users/mimohit/openbank/binding/harness/logs/w17-bstrict-e4rc3-aspnet/runner.jsonl: {'sent': 29, 'errors': 0}
+bstrict RC4 w17-bstrict-e4rc4-express runner_rc=0 secs=12 hits=2 e4_runner[w17-bstrict-e4rc4-express] wrote /Users/mimohit/openbank/binding/harness/logs/w17-bstrict-e4rc4-express/runner.jsonl: {'sent': 29, 'errors': 0}
+bstrict RC5 w17-bstrict-e4rc5-spring runner_rc=0 secs=13 hits=0 e4_runner[w17-bstrict-e4rc5-spring] wrote /Users/mimohit/openbank/binding/harness/logs/w17-bstrict-e4rc5-spring/runner.jsonl: {'sent': 29, 'errors': 0}
+bstrict RC6 w17-bstrict-e4rc6-rails runner_rc=0 secs=13 hits=0 e4_runner[w17-bstrict-e4rc6-rails] wrote /Users/mimohit/openbank/binding/harness/logs/w17-bstrict-e4rc6-rails/runner.jsonl: {'sent': 29, 'errors': 0}
+bstrict RC7 w17-bstrict-e4rc7-spring runner_rc=0 secs=18 hits=0 e4_runner[w17-bstrict-e4rc7-spring] wrote /Users/mimohit/openbank/binding/harness/logs/w17-bstrict-e4rc7-spring/runner.jsonl: {'sent': 29, 'errors': 0}
+SWEEP DONE ../experiments/defence/worklist_e4.txt Mon Nov 23 17:09:32 +06 2026
+docker clock skew 0s
+da ngx-fastapi-ovoff w17-da-ngx-fastapi-ovoff runner_rc=0 secs=13 hits=14 [ext_run_matrix] w17-da-ngx-fastapi-ovoff/gateway: {'sent': 44, 'errors': 0}
+da ngx-fastapi-ovon w17-da-ngx-fastapi-ovon runner_rc=0 secs=12 hits=14 [ext_run_matrix] w17-da-ngx-fastapi-ovon/gateway: {'sent': 56, 'errors': 0}
+da ngx-express-ovoff w17-da-ngx-express-ovoff runner_rc=0 secs=12 hits=15 [ext_run_matrix] w17-da-ngx-express-ovoff/gateway: {'sent': 34, 'errors': 0}
+da ngx-express-ovon w17-da-ngx-express-ovon runner_rc=0 secs=13 hits=11 [ext_run_matrix] w17-da-ngx-express-ovon/gateway: {'sent': 39, 'errors': 0}
+da ngx-spring-ovoff w17-da-ngx-spring-ovoff runner_rc=0 secs=15 hits=14 [ext_run_matrix] w17-da-ngx-spring-ovoff/gateway: {'sent': 33, 'errors': 0}
+da ngx-spring-ovon w17-da-ngx-spring-ovon runner_rc=0 secs=14 hits=11 [ext_run_matrix] w17-da-ngx-spring-ovon/gateway: {'sent': 34, 'errors': 0}
+da ngx-aspnet-ovoff w17-da-ngx-aspnet-ovoff runner_rc=0 secs=14 hits=14 [ext_run_matrix] w17-da-ngx-aspnet-ovoff/gateway: {'sent': 31, 'errors': 0}
+da ngx-aspnet-ovon w17-da-ngx-aspnet-ovon runner_rc=0 secs=14 hits=11 [ext_run_matrix] w17-da-ngx-aspnet-ovon/gateway: {'sent': 34, 'errors': 0}
+da apisix-express-ovoff w17-da-apisix-express-ovoff runner_rc=0 secs=14 hits=15 [ext_run_matrix] w17-da-apisix-express-ovoff/gateway: {'sent': 34, 'errors': 0}
+da apisix-aspnet-ovoff w17-da-apisix-aspnet-ovoff runner_rc=0 secs=15 hits=14 [ext_run_matrix] w17-da-apisix-aspnet-ovoff/gateway: {'sent': 33, 'errors': 0}
+da kong-fastapi-ovoff w17-da-kong-fastapi-ovoff runner_rc=0 secs=18 hits=13 [ext_run_matrix] w17-da-kong-fastapi-ovoff/gateway: {'sent': 32, 'errors': 0}
+SWEEP DONE ../experiments/defence/worklist_aleak.txt Mon Nov 23 17:12:10 +06 2026

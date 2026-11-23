@@ -1,0 +1,8 @@
+**
+!verifier/requirements.txt
+!verifier/__init__.py
+!verifier/core.py
+!verifier/canon.py
+!verifier/jose.py
+!verifier/server.py
+!keys/as_pub.jwk

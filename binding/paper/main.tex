@@ -1,0 +1,80 @@
+% main.tex -- "Proof != Execution" (W2 owns binding/paper/ except sections/related.tex)
+\documentclass[sigconf,anonymous,review]{acmart}
+
+\input{macros}
+\input{numbers}
+
+\setcopyright{none}
+\settopmatter{printacmref=false}
+\renewcommand\footnotetextcopyrightpermission[1]{}
+\acmConference[ASIA CCS '27]{ACM Asia Conference on Computer and Communications Security}{2027}{}
+
+\begin{document}
+
+\title{Proof $\neq$ Execution: Binding Soundness of Sender-Constrained API Requests in Layered Deployments}
+
+\author{Anonymous Author(s)}
+\affiliation{\institution{Under review}\country{}}
+
+\begin{abstract}
+Sender-constrained access tokens such as DPoP (RFC~9449) bind a request to a
+proof of possession, but the proof covers only the method and the target URI
+without its query, and it is checked by a \emph{verifier} that is often not the
+component that \emph{executes} the request. We define \emph{binding
+soundness}: a proof accepted for the verifier's view of a request must
+determine exactly one executed operation. We identify three ways it fails in
+layered deployments: under-binding by design (\GA), interpretation
+differentials between verifier and router (\GB), and spoofable propagation of
+binding results (\GC). We build a differential harness whose oracle is
+the definition itself and run it over \NumTopologiesAll{} deployments of
+\NumGateways{} gateways and \NumFrameworks{} frameworks. With one leaked
+proof, \NumVulnTopologies{} of \NumTopologies{} topologies execute more than
+one operation. A legitimate client with a valid proof bypasses
+gateway path policies in \NumEFourClasses{} classes; two, both dot-segment
+differentials, defeat a strict allow-list. Behind default NGINX and Kong, a
+fragment that the backend keeps in the path turns a leaked
+\texttt{deleteAccount} proof into \texttt{deleteStatement}. Method override
+turns a POST proof into PUT or DELETE in all \NumFrameworks{} frameworks, by
+default in Rails and Laravel. Re-verifying at the origin does not help. \todo{Defence sentence
+(W17): overhead \DefenceOverheadPfifty{}, false rejection
+\FalseRejectionRate{}.}
+\end{abstract}
+
+\begin{CCSXML}
+<ccs2012>
+<concept><concept_id>10002978.10003022.10003026</concept_id>
+<concept_desc>Security and privacy~Web application security</concept_desc>
+<concept_significance>500</concept_significance></concept>
+<concept><concept_id>10002978.10002991.10002993</concept_id>
+<concept_desc>Security and privacy~Access control</concept_desc>
+<concept_significance>300</concept_significance></concept>
+</ccs2012>
+\end{CCSXML}
+\ccsdesc[500]{Security and privacy~Web application security}
+\ccsdesc[300]{Security and privacy~Access control}
+\keywords{DPoP, sender-constrained tokens, API gateways, HTTP parsing differentials, OAuth}
+
+\maketitle
+
+\input{sections/intro}
+\input{sections/background}
+\input{sections/model}
+\input{sections/prevalence}
+\input{sections/harness}
+\input{sections/defence}
+\input{sections/discussion}
+% sections/related.tex is owned by W1; fall back to a stub until it exists.
+\IfFileExists{sections/related.tex}{\input{sections/related}}{%
+  \section{Related Work}\label{sec:related}\todo{sections/related.tex (W1) not yet present.}}
+\input{sections/conclusion}
+
+\bibliographystyle{ACM-Reference-Format}
+% ../lit/refs.bib is owned by W1; extra.bib holds W2's own citations.
+\IfFileExists{../lit/refs.bib}{\bibliography{../lit/refs,extra}}{\bibliography{extra}}
+
+\appendix
+\input{appendix/hypotheses}
+\input{appendix/primitives}
+\input{appendix/oracle}
+
+\end{document}

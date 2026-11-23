@@ -1,0 +1,1 @@
+w18-g2-trf-aspnet-str rc=0 secs=18 oracle[w18-g2-trf-aspnet-str] {'topology': 'w18-g2-trf-aspnet-str', 'cases': 176, 'accepted': 51, 'hits_raw': 0, 'hits_confirmed': 0, 'S1': 0, 'S2': 0, 'S3': 0, 'signatures': 0, 'max_res_hat': 1, 'b0'

@@ -1,0 +1,25 @@
+bedge fastapi 121 / 129 ok
+bedge express 129 / 129 ok
+bedge spring 121 / 129 ok
+bedge aspnet 129 / 129 ok
+borigin fastapi 71 / 129 ok
+borigin express 79 / 129 ok
+borigin spring 71 / 129 ok
+borigin aspnet 79 / 129 ok
+bstrict fastapi 89 / 129 ok
+bstrict express 89 / 129 ok
+bstrict spring 89 / 129 ok
+bstrict aspnet 89 / 129 ok
+da fastapi 69 / 129 ok
+da express 77 / 129 ok
+da spring 69 / 129 ok
+da aspnet 69 / 129 ok
+db fastapi 69 / 129 ok
+db express 77 / 129 ok
+db spring 69 / 129 ok
+db aspnet 69 / 129 ok
+dc fastapi 89 / 129 ok
+dc express 89 / 129 ok
+dc spring 89 / 129 ok
+dc aspnet 89 / 129 ok
+FRR DONE

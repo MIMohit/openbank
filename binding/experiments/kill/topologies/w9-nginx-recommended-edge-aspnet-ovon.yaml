@@ -1,0 +1,10 @@
+id: w9-nginx-recommended-edge-aspnet-ovon
+gateway: nginx
+gateway_image: nginx:1.30.7-alpine
+profile: recommended
+placement: edge
+framework: aspnet
+executor_image: bh-exec-aspnet:latest
+override: 'on'
+verifier: {image: 'bh-verifier:latest', canon: rfc3986, view_mac: 'off'}
+host_port: 28115

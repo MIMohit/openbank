@@ -1,0 +1,5 @@
+Puma starting in single mode...
+* Puma version: 8.1.2 ("Puma Psychosis")
+* Ruby version: ruby 3.3.14 (2026-11-19 revision f4c37f481b) [aarch64-linux]
+*  Min threads: 4
+*  Max threads: 8

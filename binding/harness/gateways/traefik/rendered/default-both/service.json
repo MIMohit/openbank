@@ -1,0 +1,10 @@
+{
+  "volumes": [
+    "./gateway/traefik.yml:/etc/traefik/traefik.yml:ro",
+    "./gateway/dynamic.yml:/etc/traefik/dynamic.yml:ro"
+  ],
+  "command": [
+    "traefik",
+    "--configFile=/etc/traefik/traefik.yml"
+  ]
+}

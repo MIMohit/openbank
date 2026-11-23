@@ -1,0 +1,1 @@
+[legit] w18-legit-haprec-digest bind=digest: 18 sent, false_reject=18

@@ -1,0 +1,54 @@
+% macros.tex -- notation shared by all sections (W2).
+\usepackage{xcolor}
+\usepackage{xspace}
+\usepackage{enumitem}
+% Long monospace header names otherwise overrun the narrow sigconf column.
+\setlength{\emergencystretch}{2em}
+
+% Placeholder for any number that is not yet measured. Never replace by hand
+% with a guess: numbers.tex is filled from analysis outputs only.
+\newcommand{\TBD}[1]{\textcolor{red}{\textbf{[TBD:\allowbreak #1]}}}
+\newcommand{\todo}[1]{\textcolor{orange}{[TODO: #1]}}
+
+% Protocol claims and fields
+\newcommand{\clm}[1]{\texttt{#1}}
+\newcommand{\htm}{\clm{htm}\xspace}
+\newcommand{\htu}{\clm{htu}\xspace}
+\newcommand{\ath}{\clm{ath}\xspace}
+\newcommand{\jti}{\clm{jti}\xspace}
+\newcommand{\iat}{\clm{iat}\xspace}
+\newcommand{\cnf}{\clm{cnf}\xspace}
+\newcommand{\jkt}{\clm{cnf.jkt}\xspace}
+\newcommand{\hdr}[1]{\texttt{#1}}
+
+% Parties and adversaries
+\newcommand{\Cl}{\mathsf{C}}
+\newcommand{\Ver}{\mathsf{V}}
+\newcommand{\PDP}{\mathsf{P}}
+\newcommand{\Exe}{\mathsf{E}}
+\newcommand{\Aleak}{\ensuremath{\mathcal{A}_{\mathrm{leak}}}\xspace}
+\newcommand{\Aclient}{\ensuremath{\mathcal{A}_{\mathrm{client}}}\xspace}
+
+% Views, executions, sets
+\newcommand{\view}{v}
+\newcommand{\exe}{x}
+\newcommand{\op}{\mathit{op}}
+\newcommand{\Acc}{\mathsf{Acc}}
+\newcommand{\res}{\mathsf{res}}
+\newcommand{\canon}{\mathsf{canon}}
+\newcommand{\Cov}{\mathsf{Cov}}
+\newcommand{\Req}{\mathcal{R}}
+
+% Failure classes, hypotheses
+\newcommand{\GA}{\textsf{G1}\xspace}
+\newcommand{\GB}{\textsf{G2}\xspace}
+\newcommand{\GC}{\textsf{G3}\xspace}
+\newcommand{\Hyp}[1]{\textsf{H#1}\xspace}
+\newcommand{\Exp}[1]{\textsf{E#1}\xspace}
+\newcommand{\Abl}[1]{\textsf{A#1}\xspace}
+
+% Figures (Fig. 1 views, Fig. 2 harness) are TikZ, drawn in the .tex sources.
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,fit,calc,backgrounds}
+
+% acmart provides the definition environment (acmthm).

@@ -1,0 +1,140 @@
+{
+ "ngx-fastapi-ovoff": {
+  "gateway": "nginx",
+  "framework": "fastapi",
+  "override": "off",
+  "n_cases": 44,
+  "classes": {
+   "baseline": 17,
+   "G2-#": 11,
+   "G1-query": 5,
+   "G1-query(frag-in-query)": 1,
+   "G1-body": 8,
+   "G2-dot": 2
+  }
+ },
+ "ngx-fastapi-ovon": {
+  "gateway": "nginx",
+  "framework": "fastapi",
+  "override": "on",
+  "n_cases": 56,
+  "classes": {
+   "baseline": 17,
+   "G1-override": 12,
+   "G2-#": 11,
+   "G1-query": 5,
+   "G1-query(frag-in-query)": 1,
+   "G1-body": 8,
+   "G2-dot": 2
+  }
+ },
+ "ngx-express-ovoff": {
+  "gateway": "nginx",
+  "framework": "express",
+  "override": "off",
+  "n_cases": 34,
+  "classes": {
+   "baseline": 17,
+   "G1-query": 5,
+   "G1-body": 10,
+   "G2-dot": 2
+  }
+ },
+ "ngx-express-ovon": {
+  "gateway": "nginx",
+  "framework": "express",
+  "override": "on",
+  "n_cases": 39,
+  "classes": {
+   "baseline": 17,
+   "G1-query": 5,
+   "G1-body": 6,
+   "G1-override": 9,
+   "G2-dot": 2
+  }
+ },
+ "ngx-spring-ovoff": {
+  "gateway": "nginx",
+  "framework": "spring",
+  "override": "off",
+  "n_cases": 33,
+  "classes": {
+   "baseline": 17,
+   "G1-query": 5,
+   "G1-body": 9,
+   "G2-dot": 2
+  }
+ },
+ "ngx-spring-ovon": {
+  "gateway": "nginx",
+  "framework": "spring",
+  "override": "on",
+  "n_cases": 34,
+  "classes": {
+   "baseline": 17,
+   "G1-query": 5,
+   "G1-body": 6,
+   "G1-override": 4,
+   "G2-dot": 2
+  }
+ },
+ "ngx-aspnet-ovoff": {
+  "gateway": "nginx",
+  "framework": "aspnet",
+  "override": "off",
+  "n_cases": 31,
+  "classes": {
+   "baseline": 17,
+   "G1-query": 5,
+   "G1-body": 9
+  }
+ },
+ "ngx-aspnet-ovon": {
+  "gateway": "nginx",
+  "framework": "aspnet",
+  "override": "on",
+  "n_cases": 34,
+  "classes": {
+   "baseline": 17,
+   "G1-query": 5,
+   "G1-body": 6,
+   "G1-override": 6
+  }
+ },
+ "apisix-express-ovoff": {
+  "gateway": "apisix",
+  "framework": "express",
+  "override": "off",
+  "n_cases": 34,
+  "classes": {
+   "baseline": 13,
+   "G2-%2f": 6,
+   "G1-query": 5,
+   "G1-body": 10
+  }
+ },
+ "apisix-aspnet-ovoff": {
+  "gateway": "apisix",
+  "framework": "aspnet",
+  "override": "off",
+  "n_cases": 33,
+  "classes": {
+   "baseline": 13,
+   "G2-%2f": 6,
+   "G1-query": 5,
+   "G1-body": 9
+  }
+ },
+ "kong-fastapi-ovoff": {
+  "gateway": "kong",
+  "framework": "fastapi",
+  "override": "off",
+  "n_cases": 32,
+  "classes": {
+   "baseline": 13,
+   "G2-#": 6,
+   "G1-query": 5,
+   "G1-body": 8
+  }
+ }
+}

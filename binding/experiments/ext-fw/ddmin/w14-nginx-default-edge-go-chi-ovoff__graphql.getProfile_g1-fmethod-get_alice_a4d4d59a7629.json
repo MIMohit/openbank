@@ -1,0 +1,46 @@
+{
+ "topology": "w14-nginx-default-edge-go-chi-ovoff",
+ "case_id": "graphql.getProfile:g1-fmethod-get:alice:a4d4d59a7629",
+ "primitive_ids": [
+  "g1-fmethod-get"
+ ],
+ "exec_op_id": "graphql.unknown",
+ "exec_path_params": {},
+ "full_units": 12,
+ "minimal_units": 1,
+ "still_hit": true,
+ "canonical_request": "POST /api/v1/graphql HTTP/1.1\r\nHost: api.bench.test\r\nAuthorization: @@AUTHZ@@\r\nDPoP: @@PROOF@@\r\nAccept: application/json\r\nUser-Agent: bind-harness/1.0\r\nContent-Type: application/json\r\nContent-Length: 97\r\nConnection: close\r\n\r\n{\"operationName\":\"getProfile\",\"query\":\"query getProfile { profile { id email } }\",\"variables\":{}}",
+ "minimal_request": "POST /api/v1/graphql HTTP/1.1\r\nHost: api.bench.test\r\nAuthorization: @@AUTHZ@@\r\nDPoP: @@PROOF@@\r\nAccept: application/json\r\nUser-Agent: bind-harness/1.0\r\nContent-Type: application/json\r\nContent-Length: 1\r\nConnection: close\r\n\r\nT",
+ "trials": [
+  {
+   "n_units": 12,
+   "status": 200,
+   "hit": true
+  },
+  {
+   "n_units": 6,
+   "status": 200,
+   "hit": true
+  },
+  {
+   "n_units": 3,
+   "status": 200,
+   "hit": true
+  },
+  {
+   "n_units": 2,
+   "status": 200,
+   "hit": true
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": true
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": true
+  }
+ ]
+}

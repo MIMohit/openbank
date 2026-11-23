@@ -1,0 +1,202 @@
+{
+ "topology": "w12-block-ngx-aspnet-def",
+ "vector_id": "case-admin-list",
+ "canonical_vector": "direct-admin-list",
+ "primitive_ids": [
+  "e4-case-admin-list"
+ ],
+ "forbidden_op": "adminListUsers",
+ "forbidden_kind": "admin",
+ "canonical_target": "/api/v1/admin/users",
+ "mutated_target": "/api/v1/ADMIN/users",
+ "full_units": 5,
+ "minimal_units": 5,
+ "canonical_denied_ok": true,
+ "full_hit": true,
+ "minimal_target": "/api/v1/ADMIN/users",
+ "minimal_method": "GET",
+ "minimal_request_line": "GET /api/v1/ADMIN/users",
+ "still_hit": true,
+ "trials": [
+  {
+   "n_units": 0,
+   "status": 404,
+   "allowed": true,
+   "hit": false
+  },
+  {
+   "n_units": 5,
+   "status": 200,
+   "allowed": true,
+   "hit": true
+  },
+  {
+   "n_units": 5,
+   "status": 200,
+   "allowed": true,
+   "hit": true
+  },
+  {
+   "n_units": 3,
+   "status": 404,
+   "allowed": true,
+   "hit": false
+  },
+  {
+   "n_units": 3,
+   "status": 404,
+   "allowed": true,
+   "hit": false
+  },
+  {
+   "n_units": 4,
+   "status": 404,
+   "allowed": true,
+   "hit": false
+  },
+  {
+   "n_units": 2,
+   "status": 404,
+   "allowed": true,
+   "hit": false
+  },
+  {
+   "n_units": 2,
+   "status": 404,
+   "allowed": true,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 404,
+   "allowed": true,
+   "hit": false
+  },
+  {
+   "n_units": 4,
+   "status": 404,
+   "allowed": true,
+   "hit": false
+  },
+  {
+   "n_units": 4,
+   "status": 404,
+   "allowed": true,
+   "hit": false
+  },
+  {
+   "n_units": 4,
+   "status": 404,
+   "allowed": true,
+   "hit": false
+  },
+  {
+   "n_units": 4,
+   "status": 404,
+   "allowed": true,
+   "hit": false
+  },
+  {
+   "n_units": 4,
+   "status": 404,
+   "allowed": true,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 404,
+   "allowed": true,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 404,
+   "allowed": true,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 404,
+   "allowed": true,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 404,
+   "allowed": true,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 404,
+   "allowed": true,
+   "hit": false
+  },
+  {
+   "n_units": 4,
+   "status": 404,
+   "allowed": true,
+   "hit": false
+  },
+  {
+   "n_units": 4,
+   "status": 404,
+   "allowed": true,
+   "hit": false
+  },
+  {
+   "n_units": 4,
+   "status": 404,
+   "allowed": true,
+   "hit": false
+  },
+  {
+   "n_units": 4,
+   "status": 404,
+   "allowed": true,
+   "hit": false
+  },
+  {
+   "n_units": 4,
+   "status": 404,
+   "allowed": true,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 404,
+   "allowed": true,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 404,
+   "allowed": true,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 404,
+   "allowed": true,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 404,
+   "allowed": true,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 404,
+   "allowed": true,
+   "hit": false
+  },
+  {
+   "n_units": 5,
+   "status": 200,
+   "allowed": true,
+   "hit": true
+  }
+ ]
+}

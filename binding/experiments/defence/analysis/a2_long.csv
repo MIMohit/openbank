@@ -1,0 +1,979 @@
+set,source,class,case_id,kind,view,exec,full,-pct,-dot,-case,-slash,-prefix,-method,-pct-slash
+E7,apisix-aspnet-ovoff,baseline,listAccounts:baseline:alice:4dfd65063bbe,legit,GET /api/v1/accounts,GET /api/v1/accounts {},True,True,True,True,True,True,True,True
+E7,apisix-aspnet-ovoff,baseline,getAccount:baseline:alice:a21ea02ca88e,legit,GET /api/v1/accounts/acc-alice-1,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,apisix-aspnet-ovoff,baseline,updateAccount:baseline:alice:8cd74f6aa2fd,legit,PUT /api/v1/accounts/acc-alice-1,"PUT /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,apisix-aspnet-ovoff,baseline,deleteAccount:baseline:alice:ca01b6994798,legit,DELETE /api/v1/accounts/acc-alice-1,"DELETE /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,apisix-aspnet-ovoff,baseline,accountAction.freeze:baseline:alice:da80e402ea4b,legit,POST /api/v1/accounts/acc-alice-1/actions?op=freeze,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,apisix-aspnet-ovoff,baseline,createTransfer:baseline:alice:1c14d87e125e,legit,POST /api/v1/transfers,POST /api/v1/transfers {},True,True,True,True,True,True,True,True
+E7,apisix-aspnet-ovoff,baseline,graphql.getProfile:baseline:alice:d81bf8f616e4,legit,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,apisix-aspnet-ovoff,baseline,me:baseline:alice:e40f9ef298fb,legit,GET /api/v1/me,GET /api/v1/me {},True,True,True,True,True,True,True,True
+E7,apisix-aspnet-ovoff,baseline,adminListUsers:baseline:alice:a7e7d4a4211e,legit,GET /api/v1/admin/users,GET /api/v1/admin/users {},True,True,True,True,True,True,True,True
+E7,apisix-aspnet-ovoff,baseline,adminDeleteUser:baseline:alice:60ff09027a07,legit,DELETE /api/v1/admin/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",True,True,True,True,True,True,True,True
+E7,apisix-aspnet-ovoff,baseline,health:baseline:alice:f674509d34b7,legit,GET /api/v1/health,GET /api/v1/health {},True,True,True,True,True,True,True,True
+E7,apisix-aspnet-ovoff,baseline,publicFile:baseline:alice:d9423b1589da,legit,GET /api/v1/public/logo.png,"GET /api/v1/public/{file} {""file"": ""logo.png""}",True,True,True,True,True,True,True,True
+E7,apisix-aspnet-ovoff,baseline,getAccountV2:baseline:alice:a49803859d25,legit,GET /api/v2/accounts/acc-alice-1,"GET /api/v2/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,apisix-aspnet-ovoff,G2-%2f,getAccount:g2-pct2f-before-last:alice:2887c7f21a88,witness,GET /api/v1/accounts/acc-alice-1,"GET /api/v1/accounts/{id} {""id"": ""%2facc-alice-1""}",False,False,False,False,False,False,False,False
+E7,apisix-aspnet-ovoff,G2-%2f,updateAccount:g2-pct2f-before-last:alice:d2f7af4d1cba,witness,PUT /api/v1/accounts/acc-alice-1,"PUT /api/v1/accounts/{id} {""id"": ""%2facc-alice-1""}",False,False,False,False,False,False,False,False
+E7,apisix-aspnet-ovoff,G2-%2f,deleteAccount:g2-pct2f-before-last:alice:bf8b98fbd922,witness,DELETE /api/v1/accounts/acc-alice-1,"DELETE /api/v1/accounts/{id} {""id"": ""%2facc-alice-1""}",False,False,False,False,False,False,False,False
+E7,apisix-aspnet-ovoff,G1-query,accountAction.freeze:g1-op-freeze-to-close:alice:b4ba45197e11,witness,POST /api/v1/accounts/acc-alice-1/actions?op=close,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,apisix-aspnet-ovoff,G1-query,accountAction.freeze:g1-op-freeze-to-unknown:alice:e2b011248e4d,witness,POST /api/v1/accounts/acc-alice-1/actions?op=wipe,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,apisix-aspnet-ovoff,G1-query,accountAction.freeze:g1-op-remove:alice:1ba840b3e6c2,witness,POST /api/v1/accounts/acc-alice-1/actions,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,apisix-aspnet-ovoff,G1-query,accountAction.freeze:g1-op-dup-close:alice:05b1d325b576,witness,POST /api/v1/accounts/acc-alice-1/actions?op=freeze&op=close,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,apisix-aspnet-ovoff,G1-query,accountAction.freeze:g1-op-case-close:alice:70bd6687d8e5,witness,POST /api/v1/accounts/acc-alice-1/actions?op=CLOSE,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,apisix-aspnet-ovoff,G1-body,graphql.getProfile:g1-fmethod-put:alice:f884faee7ee2,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,apisix-aspnet-ovoff,G1-body,graphql.getProfile:g1-fmethod-delete:alice:22993e846ee6,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,apisix-aspnet-ovoff,G1-body,graphql.getProfile:g1-fmethod-post:alice:8b577a7d73c8,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,apisix-aspnet-ovoff,G1-body,graphql.getProfile:g1-fmethod-patch:alice:034a09c69a76,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,apisix-aspnet-ovoff,G1-body,graphql.getProfile:g1-fmethod-get:alice:a4d4d59a7629,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,apisix-aspnet-ovoff,G1-body,graphql.getProfile:g1-gql-to-deleteProfile:alice:87f436958aca,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,apisix-aspnet-ovoff,G1-body,graphql.getProfile:g1-gql-to-unknown:alice:785a0e930ec4,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,apisix-aspnet-ovoff,G1-body,graphql.getProfile:g1-gql-null:alice:5ac1af0ebcf1,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,apisix-aspnet-ovoff,G1-body,graphql.getProfile:g1-gql-dup-deleteProfile:alice:13cc0a191149,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,apisix-aspnet-ovoff,G2-%2f,adminDeleteUser:g2-pct2f-before-last:alice:a76c6dfcd9b0,witness,DELETE /api/v1/admin/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""%2fu-1""}",False,False,False,False,False,False,False,False
+E7,apisix-aspnet-ovoff,G2-%2f,publicFile:g2-pct2f-before-last:alice:619bea38938e,witness,GET /api/v1/public/logo.png,"GET /api/v1/public/{file} {""file"": ""%2flogo.png""}",False,False,False,False,False,False,False,False
+E7,apisix-aspnet-ovoff,G2-%2f,getAccountV2:g2-pct2f-before-last:alice:3ebfa3d957c0,witness,GET /api/v2/accounts/acc-alice-1,"GET /api/v2/accounts/{id} {""id"": ""%2facc-alice-1""}",False,False,False,False,False,False,False,False
+E7,apisix-express-ovoff,baseline,listAccounts:baseline:alice:4dfd65063bbe,legit,GET /api/v1/accounts,GET /api/v1/accounts {},True,True,True,True,True,True,True,True
+E7,apisix-express-ovoff,baseline,getAccount:baseline:alice:a21ea02ca88e,legit,GET /api/v1/accounts/acc-alice-1,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,apisix-express-ovoff,baseline,updateAccount:baseline:alice:8cd74f6aa2fd,legit,PUT /api/v1/accounts/acc-alice-1,"PUT /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,apisix-express-ovoff,baseline,deleteAccount:baseline:alice:ca01b6994798,legit,DELETE /api/v1/accounts/acc-alice-1,"DELETE /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,apisix-express-ovoff,baseline,accountAction.freeze:baseline:alice:da80e402ea4b,legit,POST /api/v1/accounts/acc-alice-1/actions?op=freeze,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,apisix-express-ovoff,baseline,createTransfer:baseline:alice:1c14d87e125e,legit,POST /api/v1/transfers,POST /api/v1/transfers {},True,True,True,True,True,True,True,True
+E7,apisix-express-ovoff,baseline,graphql.getProfile:baseline:alice:d81bf8f616e4,legit,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,apisix-express-ovoff,baseline,me:baseline:alice:e40f9ef298fb,legit,GET /api/v1/me,GET /api/v1/me {},True,True,True,True,True,True,True,True
+E7,apisix-express-ovoff,baseline,adminListUsers:baseline:alice:a7e7d4a4211e,legit,GET /api/v1/admin/users,GET /api/v1/admin/users {},True,True,True,True,True,True,True,True
+E7,apisix-express-ovoff,baseline,adminDeleteUser:baseline:alice:60ff09027a07,legit,DELETE /api/v1/admin/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",True,True,True,True,True,True,True,True
+E7,apisix-express-ovoff,baseline,health:baseline:alice:f674509d34b7,legit,GET /api/v1/health,GET /api/v1/health {},True,True,True,True,True,True,True,True
+E7,apisix-express-ovoff,baseline,publicFile:baseline:alice:d9423b1589da,legit,GET /api/v1/public/logo.png,"GET /api/v1/public/{file} {""file"": ""logo.png""}",True,True,True,True,True,True,True,True
+E7,apisix-express-ovoff,baseline,getAccountV2:baseline:alice:a49803859d25,legit,GET /api/v2/accounts/acc-alice-1,"GET /api/v2/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,apisix-express-ovoff,G2-%2f,getAccount:g2-pct2f-before-last:alice:2887c7f21a88,witness,GET /api/v1/accounts/acc-alice-1,"GET /api/v1/accounts/{id} {""id"": ""/acc-alice-1""}",False,False,False,False,False,False,False,True
+E7,apisix-express-ovoff,G2-%2f,updateAccount:g2-pct2f-before-last:alice:d2f7af4d1cba,witness,PUT /api/v1/accounts/acc-alice-1,"PUT /api/v1/accounts/{id} {""id"": ""/acc-alice-1""}",False,False,False,False,False,False,False,True
+E7,apisix-express-ovoff,G2-%2f,deleteAccount:g2-pct2f-before-last:alice:bf8b98fbd922,witness,DELETE /api/v1/accounts/acc-alice-1,"DELETE /api/v1/accounts/{id} {""id"": ""/acc-alice-1""}",False,False,False,False,False,False,False,True
+E7,apisix-express-ovoff,G1-query,accountAction.freeze:g1-op-freeze-to-close:alice:b4ba45197e11,witness,POST /api/v1/accounts/acc-alice-1/actions?op=close,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,apisix-express-ovoff,G1-query,accountAction.freeze:g1-op-freeze-to-unknown:alice:e2b011248e4d,witness,POST /api/v1/accounts/acc-alice-1/actions?op=wipe,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,apisix-express-ovoff,G1-query,accountAction.freeze:g1-op-remove:alice:1ba840b3e6c2,witness,POST /api/v1/accounts/acc-alice-1/actions,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,apisix-express-ovoff,G1-query,accountAction.freeze:g1-op-dup-close:alice:05b1d325b576,witness,POST /api/v1/accounts/acc-alice-1/actions?op=freeze&op=close,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,apisix-express-ovoff,G1-query,accountAction.freeze:g1-op-case-close:alice:70bd6687d8e5,witness,POST /api/v1/accounts/acc-alice-1/actions?op=CLOSE,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,apisix-express-ovoff,G1-body,graphql.getProfile:g1-fmethod-put:alice:f884faee7ee2,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,apisix-express-ovoff,G1-body,graphql.getProfile:g1-fmethod-delete:alice:22993e846ee6,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,apisix-express-ovoff,G1-body,graphql.getProfile:g1-fmethod-post:alice:8b577a7d73c8,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,apisix-express-ovoff,G1-body,graphql.getProfile:g1-fmethod-patch:alice:034a09c69a76,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,apisix-express-ovoff,G1-body,graphql.getProfile:g1-fmethod-get:alice:a4d4d59a7629,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,apisix-express-ovoff,G1-body,graphql.getProfile:g1-ct-urlencoded:alice:45765f710853,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,apisix-express-ovoff,G1-body,graphql.getProfile:g1-ct-textplain:alice:a66929c0db68,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,apisix-express-ovoff,G1-body,graphql.getProfile:g1-gql-to-deleteProfile:alice:87f436958aca,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,apisix-express-ovoff,G1-body,graphql.getProfile:g1-gql-to-unknown:alice:785a0e930ec4,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,apisix-express-ovoff,G1-body,graphql.getProfile:g1-gql-null:alice:5ac1af0ebcf1,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,apisix-express-ovoff,G2-%2f,adminDeleteUser:g2-pct2f-before-last:alice:a76c6dfcd9b0,witness,DELETE /api/v1/admin/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""/u-1""}",False,False,False,False,False,False,False,True
+E7,apisix-express-ovoff,G2-%2f,publicFile:g2-pct2f-before-last:alice:619bea38938e,witness,GET /api/v1/public/logo.png,"GET /api/v1/public/{file} {""file"": ""/logo.png""}",False,False,False,False,False,False,False,True
+E7,apisix-express-ovoff,G2-%2f,getAccountV2:g2-pct2f-before-last:alice:3ebfa3d957c0,witness,GET /api/v2/accounts/acc-alice-1,"GET /api/v2/accounts/{id} {""id"": ""/acc-alice-1""}",False,False,False,False,False,False,False,True
+E4,E4RC1,E4-dotseg,dotseg-bob-get,witness,GET /api/v1/accounts/acc-alice-1/../acc-bob-1,"GET /api/v1/accounts/{id} {""id"": ""acc-bob-1""}",True,True,True,True,True,True,True,True
+E4,E4RC1,E4-dotseg,dotseg-bob-getv2,witness,GET /api/v2/accounts/acc-alice-1/../acc-bob-1,"GET /api/v2/accounts/{id} {""id"": ""acc-bob-1""}",True,True,True,True,True,True,True,True
+E4,E4RC1,E4-dotseg,dotseg-bob-del,witness,DELETE /api/v1/accounts/acc-alice-1/../acc-bob-1,"DELETE /api/v1/accounts/{id} {""id"": ""acc-bob-1""}",True,True,True,True,True,True,True,True
+E4,E4RC1,E4-dotseg,dotseg-bob-put,witness,PUT /api/v1/accounts/acc-alice-1/../acc-bob-1,"PUT /api/v1/accounts/{id} {""id"": ""acc-bob-1""}",True,True,True,True,True,True,True,True
+E4,E4RC1,E4-dotseg,dotseg-admin-list,witness,GET /api/v1/accounts/acc-alice-1/../../admin/users,GET /api/v1/admin/users {},True,True,True,True,True,True,True,True
+E4,E4RC1,E4-dotseg,dotseg-admin-del,witness,DELETE /api/v1/accounts/acc-alice-1/../../admin/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",True,True,True,True,True,True,True,True
+E4,E4RC1,E4-dotseg,dotseg-v2v1-admin,witness,GET /api/v2/accounts/acc-alice-1/../../../v1/admin/users,GET /api/v1/admin/users {},True,True,True,True,True,True,True,True
+E4,E4RC1,E4-encdotseg,encdotseg-bob-get,witness,GET /api/v1/accounts/acc-alice-1/%2e%2e/acc-bob-1,"GET /api/v1/accounts/{id} {""id"": ""acc-bob-1""}",True,True,True,True,True,True,True,True
+E4,E4RC1,E4-encdotseg,encdotseg-admin-list,witness,GET /api/v1/accounts/acc-alice-1/%2e%2e/%2e%2e/admin/users,GET /api/v1/admin/users {},True,True,True,True,True,True,True,True
+E4,E4RC1,E4-encslash,encslash-bob-get,other,GET /api/v1/accounts/acc-alice-1%2f..%2facc-bob-1,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1%2f..%2facc-bob-1""}",False,True,False,False,False,False,False,True
+E4,E4RC1,E4-legit,legit-alice-get,legit,GET /api/v1/accounts/acc-alice-1,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E4,E4RC1,E4-legit,legit-alice-getv2,legit,GET /api/v2/accounts/acc-alice-1,"GET /api/v2/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E4,E4RC1,E4-legit,legit-me,legit,GET /api/v1/me,GET /api/v1/me {},True,True,True,True,True,True,True,True
+E4,E4RC2,E4-dotseg,dotseg-bob-get,witness,GET /api/v1/accounts/acc-alice-1/../acc-bob-1,"GET /api/v1/accounts/{id} {""id"": ""acc-bob-1""}",True,True,True,True,True,True,True,True
+E4,E4RC2,E4-dotseg,dotseg-bob-getv2,witness,GET /api/v2/accounts/acc-alice-1/../acc-bob-1,"GET /api/v2/accounts/{id} {""id"": ""acc-bob-1""}",True,True,True,True,True,True,True,True
+E4,E4RC2,E4-dotseg,dotseg-bob-del,witness,DELETE /api/v1/accounts/acc-alice-1/../acc-bob-1,"DELETE /api/v1/accounts/{id} {""id"": ""acc-bob-1""}",True,True,True,True,True,True,True,True
+E4,E4RC2,E4-dotseg,dotseg-bob-put,witness,PUT /api/v1/accounts/acc-alice-1/../acc-bob-1,"PUT /api/v1/accounts/{id} {""id"": ""acc-bob-1""}",True,True,True,True,True,True,True,True
+E4,E4RC2,E4-dotseg,dotseg-admin-list,witness,GET /api/v1/accounts/acc-alice-1/../../admin/users,GET /api/v1/admin/users {},True,True,True,True,True,True,True,True
+E4,E4RC2,E4-dotseg,dotseg-admin-del,witness,DELETE /api/v1/accounts/acc-alice-1/../../admin/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",True,True,True,True,True,True,True,True
+E4,E4RC2,E4-dotseg,dotseg-v2v1-admin,witness,GET /api/v2/accounts/acc-alice-1/../../../v1/admin/users,GET /api/v1/admin/users {},True,True,True,True,True,True,True,True
+E4,E4RC2,E4-encdotseg,encdotseg-bob-get,witness,GET /api/v1/accounts/acc-alice-1/%2e%2e/acc-bob-1,"GET /api/v1/accounts/{id} {""id"": ""acc-bob-1""}",True,True,True,True,True,True,True,True
+E4,E4RC2,E4-encdotseg,encdotseg-admin-list,witness,GET /api/v1/accounts/acc-alice-1/%2e%2e/%2e%2e/admin/users,GET /api/v1/admin/users {},True,True,True,True,True,True,True,True
+E4,E4RC2,E4-legit,legit-alice-get,legit,GET /api/v1/accounts/acc-alice-1,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E4,E4RC2,E4-legit,legit-alice-getv2,legit,GET /api/v2/accounts/acc-alice-1,"GET /api/v2/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E4,E4RC2,E4-legit,legit-me,legit,GET /api/v1/me,GET /api/v1/me {},True,True,True,True,True,True,True,True
+E4,E4RC3,E4-dotseg,dotseg-bob-get,witness,GET /api/v1/accounts/acc-alice-1/../acc-bob-1,"GET /api/v1/accounts/{id} {""id"": ""acc-bob-1""}",True,True,True,True,True,True,True,True
+E4,E4RC3,E4-dotseg,dotseg-bob-getv2,witness,GET /api/v2/accounts/acc-alice-1/../acc-bob-1,"GET /api/v2/accounts/{id} {""id"": ""acc-bob-1""}",True,True,True,True,True,True,True,True
+E4,E4RC3,E4-dotseg,dotseg-bob-del,witness,DELETE /api/v1/accounts/acc-alice-1/../acc-bob-1,"DELETE /api/v1/accounts/{id} {""id"": ""acc-bob-1""}",True,True,True,True,True,True,True,True
+E4,E4RC3,E4-dotseg,dotseg-bob-put,witness,PUT /api/v1/accounts/acc-alice-1/../acc-bob-1,"PUT /api/v1/accounts/{id} {""id"": ""acc-bob-1""}",True,True,True,True,True,True,True,True
+E4,E4RC3,E4-dotseg,dotseg-admin-list,witness,GET /api/v1/accounts/acc-alice-1/../../admin/users,GET /api/v1/admin/users {},True,True,True,True,True,True,True,True
+E4,E4RC3,E4-dotseg,dotseg-admin-del,witness,DELETE /api/v1/accounts/acc-alice-1/../../admin/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",True,True,True,True,True,True,True,True
+E4,E4RC3,E4-dotseg,dotseg-v2v1-admin,witness,GET /api/v2/accounts/acc-alice-1/../../../v1/admin/users,GET /api/v1/admin/users {},True,True,True,True,True,True,True,True
+E4,E4RC3,E4-encdotseg,encdotseg-bob-get,witness,GET /api/v1/accounts/acc-alice-1/%2e%2e/acc-bob-1,"GET /api/v1/accounts/{id} {""id"": ""acc-bob-1""}",True,True,True,True,True,True,True,True
+E4,E4RC3,E4-encdotseg,encdotseg-admin-list,witness,GET /api/v1/accounts/acc-alice-1/%2e%2e/%2e%2e/admin/users,GET /api/v1/admin/users {},True,True,True,True,True,True,True,True
+E4,E4RC3,E4-case,case-admin-list,witness,GET /api/v1/ADMIN/users,GET /api/v1/admin/users {},False,False,False,True,False,False,False,False
+E4,E4RC3,E4-case,case-admin-del,witness,DELETE /api/v1/ADMIN/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",False,False,False,True,False,False,False,False
+E4,E4RC3,E4-legit,legit-alice-get,legit,GET /api/v1/accounts/acc-alice-1,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E4,E4RC3,E4-legit,legit-alice-getv2,legit,GET /api/v2/accounts/acc-alice-1,"GET /api/v2/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E4,E4RC3,E4-legit,legit-me,legit,GET /api/v1/me,GET /api/v1/me {},True,True,True,True,True,True,True,True
+E4,E4RC4,E4-case,case-admin-list,witness,GET /api/v1/ADMIN/users,GET /api/v1/admin/users {},False,False,False,True,False,False,False,False
+E4,E4RC4,E4-case,case-admin-del,witness,DELETE /api/v1/ADMIN/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",False,False,False,True,False,False,False,False
+E4,E4RC4,E4-legit,legit-alice-get,legit,GET /api/v1/accounts/acc-alice-1,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E4,E4RC4,E4-legit,legit-alice-getv2,legit,GET /api/v2/accounts/acc-alice-1,"GET /api/v2/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E4,E4RC4,E4-legit,legit-me,legit,GET /api/v1/me,GET /api/v1/me {},True,True,True,True,True,True,True,True
+E4,E4RC5,E4-matrix,matrix-admin-list,witness,GET /api/v1/admin;x=1/users,GET /api/v1/admin/users {},False,False,False,False,False,False,False,False
+E4,E4RC5,E4-matrix,matrix-admin-del,witness,DELETE /api/v1/admin;x=1/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",False,False,False,False,False,False,False,False
+E4,E4RC5,E4-matrix,matrix-accounts-bob,witness,GET /api/v1/accounts;x=1/acc-bob-1,"GET /api/v1/accounts/{id} {""id"": ""acc-bob-1""}",False,False,False,False,False,False,False,False
+E4,E4RC5,E4-legit,legit-alice-get,legit,GET /api/v1/accounts/acc-alice-1,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E4,E4RC5,E4-legit,legit-alice-getv2,legit,GET /api/v2/accounts/acc-alice-1,"GET /api/v2/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E4,E4RC5,E4-legit,legit-me,legit,GET /api/v1/me,GET /api/v1/me {},True,True,True,True,True,True,True,True
+E4,E4RC6,E4-dslash,dslash-admin-list,witness,GET /api/v1//admin/users,GET /api/v1/admin/users {},False,False,False,False,True,False,False,True
+E4,E4RC6,E4-dslash,dslash-admin-del,witness,DELETE /api/v1//admin/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",False,False,False,False,True,False,False,True
+E4,E4RC6,E4-dslash,dslash-accounts-bob,witness,GET /api/v1//accounts/acc-bob-1,"GET /api/v1/accounts/{id} {""id"": ""acc-bob-1""}",False,False,False,False,True,False,False,True
+E4,E4RC6,E4-legit,legit-alice-get,legit,GET /api/v1/accounts/acc-alice-1,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E4,E4RC6,E4-legit,legit-alice-getv2,legit,GET /api/v2/accounts/acc-alice-1,"GET /api/v2/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E4,E4RC6,E4-legit,legit-me,legit,GET /api/v1/me,GET /api/v1/me {},True,True,True,True,True,True,True,True
+E4,E4RC7,E4-dotseg,dotseg-bob-get,witness,GET /api/v1/accounts/acc-alice-1/../acc-bob-1,"GET /api/v1/accounts/{id} {""id"": ""acc-bob-1""}",True,True,True,True,True,True,True,True
+E4,E4RC7,E4-dotseg,dotseg-bob-getv2,witness,GET /api/v2/accounts/acc-alice-1/../acc-bob-1,"GET /api/v2/accounts/{id} {""id"": ""acc-bob-1""}",True,True,True,True,True,True,True,True
+E4,E4RC7,E4-dotseg,dotseg-bob-del,witness,DELETE /api/v1/accounts/acc-alice-1/../acc-bob-1,"DELETE /api/v1/accounts/{id} {""id"": ""acc-bob-1""}",True,True,True,True,True,True,True,True
+E4,E4RC7,E4-dotseg,dotseg-bob-put,witness,PUT /api/v1/accounts/acc-alice-1/../acc-bob-1,"PUT /api/v1/accounts/{id} {""id"": ""acc-bob-1""}",True,True,True,True,True,True,True,True
+E4,E4RC7,E4-dotseg,dotseg-admin-list,witness,GET /api/v1/accounts/acc-alice-1/../../admin/users,GET /api/v1/admin/users {},True,True,True,True,True,True,True,True
+E4,E4RC7,E4-dotseg,dotseg-admin-del,witness,DELETE /api/v1/accounts/acc-alice-1/../../admin/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",True,True,True,True,True,True,True,True
+E4,E4RC7,E4-dotseg,dotseg-v2v1-admin,witness,GET /api/v2/accounts/acc-alice-1/../../../v1/admin/users,GET /api/v1/admin/users {},True,True,True,True,True,True,True,True
+E4,E4RC7,E4-encdotseg,encdotseg-bob-get,witness,GET /api/v1/accounts/acc-alice-1/%2e%2e/acc-bob-1,"GET /api/v1/accounts/{id} {""id"": ""acc-bob-1""}",True,True,True,True,True,True,True,True
+E4,E4RC7,E4-encdotseg,encdotseg-admin-list,witness,GET /api/v1/accounts/acc-alice-1/%2e%2e/%2e%2e/admin/users,GET /api/v1/admin/users {},True,True,True,True,True,True,True,True
+E4,E4RC7,E4-matrix,matrix-admin-list,witness,GET /api/v1/admin;x=1/users,GET /api/v1/admin/users {},False,False,False,False,False,False,False,False
+E4,E4RC7,E4-matrix,matrix-admin-del,witness,DELETE /api/v1/admin;x=1/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",False,False,False,False,False,False,False,False
+E4,E4RC7,E4-matrix,matrix-accounts-bob,witness,GET /api/v1/accounts;x=1/acc-bob-1,"GET /api/v1/accounts/{id} {""id"": ""acc-bob-1""}",False,False,False,False,False,False,False,False
+E4,E4RC7,E4-dslash,dslash-admin-list,witness,GET /api/v1//admin/users,GET /api/v1/admin/users {},False,False,False,False,True,False,False,True
+E4,E4RC7,E4-dslash,dslash-admin-del,witness,DELETE /api/v1//admin/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",False,False,False,False,True,False,False,True
+E4,E4RC7,E4-dslash,dslash-accounts-bob,witness,GET /api/v1//accounts/acc-bob-1,"GET /api/v1/accounts/{id} {""id"": ""acc-bob-1""}",False,False,False,False,True,False,False,True
+E4,E4RC7,E4-legit,legit-alice-get,legit,GET /api/v1/accounts/acc-alice-1,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E4,E4RC7,E4-legit,legit-alice-getv2,legit,GET /api/v2/accounts/acc-alice-1,"GET /api/v2/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E4,E4RC7,E4-legit,legit-me,legit,GET /api/v1/me,GET /api/v1/me {},True,True,True,True,True,True,True,True
+E7,kong-fastapi-ovoff,baseline,listAccounts:baseline:alice:4dfd65063bbe,legit,GET /api/v1/accounts,GET /api/v1/accounts {},True,True,True,True,True,True,True,True
+E7,kong-fastapi-ovoff,baseline,getAccount:baseline:alice:a21ea02ca88e,legit,GET /api/v1/accounts/acc-alice-1,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,kong-fastapi-ovoff,baseline,updateAccount:baseline:alice:8cd74f6aa2fd,legit,PUT /api/v1/accounts/acc-alice-1,"PUT /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,kong-fastapi-ovoff,baseline,deleteAccount:baseline:alice:ca01b6994798,legit,DELETE /api/v1/accounts/acc-alice-1,"DELETE /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,kong-fastapi-ovoff,baseline,accountAction.freeze:baseline:alice:da80e402ea4b,legit,POST /api/v1/accounts/acc-alice-1/actions?op=freeze,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,kong-fastapi-ovoff,baseline,createTransfer:baseline:alice:1c14d87e125e,legit,POST /api/v1/transfers,POST /api/v1/transfers {},True,True,True,True,True,True,True,True
+E7,kong-fastapi-ovoff,baseline,graphql.getProfile:baseline:alice:d81bf8f616e4,legit,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,kong-fastapi-ovoff,baseline,me:baseline:alice:e40f9ef298fb,legit,GET /api/v1/me,GET /api/v1/me {},True,True,True,True,True,True,True,True
+E7,kong-fastapi-ovoff,baseline,adminListUsers:baseline:alice:a7e7d4a4211e,legit,GET /api/v1/admin/users,GET /api/v1/admin/users {},True,True,True,True,True,True,True,True
+E7,kong-fastapi-ovoff,baseline,adminDeleteUser:baseline:alice:60ff09027a07,legit,DELETE /api/v1/admin/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",True,True,True,True,True,True,True,True
+E7,kong-fastapi-ovoff,baseline,health:baseline:alice:f674509d34b7,legit,GET /api/v1/health,GET /api/v1/health {},True,True,True,True,True,True,True,True
+E7,kong-fastapi-ovoff,baseline,publicFile:baseline:alice:d9423b1589da,legit,GET /api/v1/public/logo.png,"GET /api/v1/public/{file} {""file"": ""logo.png""}",True,True,True,True,True,True,True,True
+E7,kong-fastapi-ovoff,baseline,getAccountV2:baseline:alice:a49803859d25,legit,GET /api/v2/accounts/acc-alice-1,"GET /api/v2/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,kong-fastapi-ovoff,G2-#,getAccount:g2-fragment:alice:3821accb50a4,witness,GET /api/v1/accounts/acc-alice-1#frag,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1#frag""}",False,True,False,False,False,False,False,True
+E7,kong-fastapi-ovoff,G2-#,updateAccount:g2-fragment:alice:488c6397c417,witness,PUT /api/v1/accounts/acc-alice-1#frag,"PUT /api/v1/accounts/{id} {""id"": ""acc-alice-1#frag""}",False,True,False,False,False,False,False,True
+E7,kong-fastapi-ovoff,G2-#,deleteAccount:g2-fragment:alice:d1f045c8213b,witness,DELETE /api/v1/accounts/acc-alice-1#frag,"DELETE /api/v1/accounts/{id} {""id"": ""acc-alice-1#frag""}",False,True,False,False,False,False,False,True
+E7,kong-fastapi-ovoff,G1-query,accountAction.freeze:g1-op-freeze-to-close:alice:b4ba45197e11,witness,POST /api/v1/accounts/acc-alice-1/actions?op=close,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,kong-fastapi-ovoff,G1-query,accountAction.freeze:g1-op-freeze-to-unknown:alice:e2b011248e4d,witness,POST /api/v1/accounts/acc-alice-1/actions?op=wipe,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,kong-fastapi-ovoff,G1-query,accountAction.freeze:g1-op-remove:alice:1ba840b3e6c2,witness,POST /api/v1/accounts/acc-alice-1/actions,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,kong-fastapi-ovoff,G1-query,accountAction.freeze:g1-op-dup-close:alice:05b1d325b576,witness,POST /api/v1/accounts/acc-alice-1/actions?op=freeze&op=close,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,kong-fastapi-ovoff,G1-query,accountAction.freeze:g1-op-case-close:alice:70bd6687d8e5,witness,POST /api/v1/accounts/acc-alice-1/actions?op=CLOSE,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,kong-fastapi-ovoff,G1-body,graphql.getProfile:g1-fmethod-put:alice:f884faee7ee2,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,kong-fastapi-ovoff,G1-body,graphql.getProfile:g1-fmethod-delete:alice:22993e846ee6,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,kong-fastapi-ovoff,G1-body,graphql.getProfile:g1-fmethod-post:alice:8b577a7d73c8,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,kong-fastapi-ovoff,G1-body,graphql.getProfile:g1-fmethod-patch:alice:034a09c69a76,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,kong-fastapi-ovoff,G1-body,graphql.getProfile:g1-fmethod-get:alice:a4d4d59a7629,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,kong-fastapi-ovoff,G1-body,graphql.getProfile:g1-gql-to-deleteProfile:alice:87f436958aca,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,kong-fastapi-ovoff,G1-body,graphql.getProfile:g1-gql-to-unknown:alice:785a0e930ec4,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,kong-fastapi-ovoff,G1-body,graphql.getProfile:g1-gql-null:alice:5ac1af0ebcf1,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,kong-fastapi-ovoff,G2-#,adminDeleteUser:g2-fragment:alice:01108de983fd,witness,DELETE /api/v1/admin/users/u-1#frag,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1#frag""}",False,True,False,False,False,False,False,True
+E7,kong-fastapi-ovoff,G2-#,publicFile:g2-fragment:alice:0915bffac09c,witness,GET /api/v1/public/logo.png#frag,"GET /api/v1/public/{file} {""file"": ""logo.png#frag""}",False,True,False,False,False,False,False,True
+E7,kong-fastapi-ovoff,G2-#,getAccountV2:g2-fragment:alice:5376c9b1ae70,witness,GET /api/v2/accounts/acc-alice-1#frag,"GET /api/v2/accounts/{id} {""id"": ""acc-alice-1#frag""}",False,True,False,False,False,False,False,True
+E7,ngx-aspnet-ovoff,baseline,listAccounts:baseline:alice:4dfd65063bbe,legit,GET /api/v1/accounts,GET /api/v1/accounts {},True,True,True,True,True,True,True,True
+E7,ngx-aspnet-ovoff,baseline,getAccount:baseline:alice:a21ea02ca88e,legit,GET /api/v1/accounts/acc-alice-1,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-aspnet-ovoff,baseline,updateAccount:baseline:alice:8cd74f6aa2fd,legit,PUT /api/v1/accounts/acc-alice-1,"PUT /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-aspnet-ovoff,baseline,deleteAccount:baseline:alice:ca01b6994798,legit,DELETE /api/v1/accounts/acc-alice-1,"DELETE /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-aspnet-ovoff,baseline,accountAction.freeze:baseline:alice:da80e402ea4b,legit,POST /api/v1/accounts/acc-alice-1/actions?op=freeze,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-aspnet-ovoff,baseline,createTransfer:baseline:alice:1c14d87e125e,legit,POST /api/v1/transfers,POST /api/v1/transfers {},True,True,True,True,True,True,True,True
+E7,ngx-aspnet-ovoff,baseline,graphql.getProfile:baseline:alice:d81bf8f616e4,legit,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-aspnet-ovoff,baseline,me:baseline:alice:e40f9ef298fb,legit,GET /api/v1/me,GET /api/v1/me {},True,True,True,True,True,True,True,True
+E7,ngx-aspnet-ovoff,baseline,adminListUsers:baseline:alice:a7e7d4a4211e,legit,GET /api/v1/admin/users,GET /api/v1/admin/users {},True,True,True,True,True,True,True,True
+E7,ngx-aspnet-ovoff,baseline,adminDeleteUser:baseline:alice:60ff09027a07,legit,DELETE /api/v1/admin/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",True,True,True,True,True,True,True,True
+E7,ngx-aspnet-ovoff,baseline,health:baseline:alice:f674509d34b7,legit,GET /api/v1/health,GET /api/v1/health {},True,True,True,True,True,True,True,True
+E7,ngx-aspnet-ovoff,baseline,publicFile:baseline:alice:d9423b1589da,legit,GET /api/v1/public/logo.png,"GET /api/v1/public/{file} {""file"": ""logo.png""}",True,True,True,True,True,True,True,True
+E7,ngx-aspnet-ovoff,baseline,getAccountV2:baseline:alice:a49803859d25,legit,GET /api/v2/accounts/acc-alice-1,"GET /api/v2/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-aspnet-ovoff,G1-query,accountAction.freeze:g1-op-freeze-to-close:alice:b4ba45197e11,witness,POST /api/v1/accounts/acc-alice-1/actions?op=close,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-aspnet-ovoff,G1-query,accountAction.freeze:g1-op-freeze-to-unknown:alice:e2b011248e4d,witness,POST /api/v1/accounts/acc-alice-1/actions?op=wipe,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-aspnet-ovoff,G1-query,accountAction.freeze:g1-op-remove:alice:1ba840b3e6c2,witness,POST /api/v1/accounts/acc-alice-1/actions,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-aspnet-ovoff,G1-query,accountAction.freeze:g1-op-dup-close:alice:05b1d325b576,witness,POST /api/v1/accounts/acc-alice-1/actions?op=freeze&op=close,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-aspnet-ovoff,G1-query,accountAction.freeze:g1-op-case-close:alice:70bd6687d8e5,witness,POST /api/v1/accounts/acc-alice-1/actions?op=CLOSE,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-aspnet-ovoff,G1-body,graphql.getProfile:g1-fmethod-put:alice:f884faee7ee2,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-aspnet-ovoff,G1-body,graphql.getProfile:g1-fmethod-delete:alice:22993e846ee6,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-aspnet-ovoff,G1-body,graphql.getProfile:g1-fmethod-post:alice:8b577a7d73c8,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-aspnet-ovoff,G1-body,graphql.getProfile:g1-fmethod-patch:alice:034a09c69a76,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-aspnet-ovoff,G1-body,graphql.getProfile:g1-fmethod-get:alice:a4d4d59a7629,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-aspnet-ovoff,G1-body,graphql.getProfile:g1-gql-to-deleteProfile:alice:87f436958aca,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-aspnet-ovoff,G1-body,graphql.getProfile:g1-gql-to-unknown:alice:785a0e930ec4,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-aspnet-ovoff,G1-body,graphql.getProfile:g1-gql-null:alice:5ac1af0ebcf1,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-aspnet-ovoff,G1-body,graphql.getProfile:g1-gql-dup-deleteProfile:alice:13cc0a191149,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-aspnet-ovoff,baseline,postAccount:baseline:alice:aaa6f9a4ba00,legit,POST /api/v1/accounts/acc-alice-1,"POST /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-aspnet-ovoff,baseline,getStatements:baseline:alice:4146410e62f1,legit,GET /api/v1/accounts/acc-alice-1/statements,"GET /api/v1/accounts/{id}/statements {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-aspnet-ovoff,baseline,deleteStatement:baseline:alice:80c6d64a166a,legit,DELETE /api/v1/accounts/acc-alice-1/statements/stmt-1,"DELETE /api/v1/accounts/{id}/statements/{sid} {""id"": ""acc-alice-1"", ""sid"": ""stmt-1""}",True,True,True,True,True,True,True,True
+E7,ngx-aspnet-ovoff,baseline,catchAllFile:baseline:alice:56e758837c94,legit,GET /api/v1/files/reports/logo.png,"GET /api/v1/files/{path} {""path"": ""reports/logo.png""}",False,True,False,False,False,False,False,True
+E7,ngx-aspnet-ovon,baseline,listAccounts:baseline:alice:4dfd65063bbe,legit,GET /api/v1/accounts,GET /api/v1/accounts {},True,True,True,True,True,True,True,True
+E7,ngx-aspnet-ovon,baseline,getAccount:baseline:alice:a21ea02ca88e,legit,GET /api/v1/accounts/acc-alice-1,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-aspnet-ovon,baseline,updateAccount:baseline:alice:8cd74f6aa2fd,legit,PUT /api/v1/accounts/acc-alice-1,"PUT /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-aspnet-ovon,baseline,deleteAccount:baseline:alice:ca01b6994798,legit,DELETE /api/v1/accounts/acc-alice-1,"DELETE /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-aspnet-ovon,baseline,accountAction.freeze:baseline:alice:da80e402ea4b,legit,POST /api/v1/accounts/acc-alice-1/actions?op=freeze,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-aspnet-ovon,baseline,createTransfer:baseline:alice:1c14d87e125e,legit,POST /api/v1/transfers,POST /api/v1/transfers {},True,True,True,True,True,True,True,True
+E7,ngx-aspnet-ovon,baseline,graphql.getProfile:baseline:alice:d81bf8f616e4,legit,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-aspnet-ovon,baseline,me:baseline:alice:e40f9ef298fb,legit,GET /api/v1/me,GET /api/v1/me {},True,True,True,True,True,True,True,True
+E7,ngx-aspnet-ovon,baseline,adminListUsers:baseline:alice:a7e7d4a4211e,legit,GET /api/v1/admin/users,GET /api/v1/admin/users {},True,True,True,True,True,True,True,True
+E7,ngx-aspnet-ovon,baseline,adminDeleteUser:baseline:alice:60ff09027a07,legit,DELETE /api/v1/admin/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",True,True,True,True,True,True,True,True
+E7,ngx-aspnet-ovon,baseline,health:baseline:alice:f674509d34b7,legit,GET /api/v1/health,GET /api/v1/health {},True,True,True,True,True,True,True,True
+E7,ngx-aspnet-ovon,baseline,publicFile:baseline:alice:d9423b1589da,legit,GET /api/v1/public/logo.png,"GET /api/v1/public/{file} {""file"": ""logo.png""}",True,True,True,True,True,True,True,True
+E7,ngx-aspnet-ovon,baseline,getAccountV2:baseline:alice:a49803859d25,legit,GET /api/v2/accounts/acc-alice-1,"GET /api/v2/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-aspnet-ovon,G1-query,accountAction.freeze:g1-op-freeze-to-close:alice:b4ba45197e11,witness,POST /api/v1/accounts/acc-alice-1/actions?op=close,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-aspnet-ovon,G1-query,accountAction.freeze:g1-op-freeze-to-unknown:alice:e2b011248e4d,witness,POST /api/v1/accounts/acc-alice-1/actions?op=wipe,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-aspnet-ovon,G1-query,accountAction.freeze:g1-op-remove:alice:1ba840b3e6c2,witness,POST /api/v1/accounts/acc-alice-1/actions,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-aspnet-ovon,G1-query,accountAction.freeze:g1-op-dup-close:alice:05b1d325b576,witness,POST /api/v1/accounts/acc-alice-1/actions?op=freeze&op=close,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-aspnet-ovon,G1-query,accountAction.freeze:g1-op-case-close:alice:70bd6687d8e5,witness,POST /api/v1/accounts/acc-alice-1/actions?op=CLOSE,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-aspnet-ovon,G1-body,graphql.getProfile:g1-fmethod-post:alice:8b577a7d73c8,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-aspnet-ovon,G1-body,graphql.getProfile:g1-ct-urlencoded:alice:45765f710853,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-aspnet-ovon,G1-body,graphql.getProfile:g1-gql-to-deleteProfile:alice:87f436958aca,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-aspnet-ovon,G1-body,graphql.getProfile:g1-gql-to-unknown:alice:785a0e930ec4,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-aspnet-ovon,G1-body,graphql.getProfile:g1-gql-null:alice:5ac1af0ebcf1,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-aspnet-ovon,G1-body,graphql.getProfile:g1-gql-dup-deleteProfile:alice:13cc0a191149,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-aspnet-ovon,baseline,postAccount:baseline:alice:aaa6f9a4ba00,legit,POST /api/v1/accounts/acc-alice-1,"POST /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-aspnet-ovon,G1-override,postAccount:g1-hdr-xhmo-put:alice:6ece570f5fb8,witness,POST /api/v1/accounts/acc-alice-1,"PUT /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,True,False
+E7,ngx-aspnet-ovon,G1-override,postAccount:g1-hdr-xhmo-delete:alice:386355476602,witness,POST /api/v1/accounts/acc-alice-1,"DELETE /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,True,False
+E7,ngx-aspnet-ovon,G1-override,postAccount:g1-hdr-xhmo-get:alice:10fa118d02ae,witness,POST /api/v1/accounts/acc-alice-1,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,True,False
+E7,ngx-aspnet-ovon,G1-override,postAccount:g1-fmethod-put:alice:8875cd2188fc,witness,POST /api/v1/accounts/acc-alice-1,"PUT /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,True,False
+E7,ngx-aspnet-ovon,G1-override,postAccount:g1-fmethod-delete:alice:eb43d4e59e8a,witness,POST /api/v1/accounts/acc-alice-1,"DELETE /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,True,False
+E7,ngx-aspnet-ovon,G1-override,postAccount:g1-fmethod-get:alice:822a189523f7,witness,POST /api/v1/accounts/acc-alice-1,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,True,False
+E7,ngx-aspnet-ovon,baseline,getStatements:baseline:alice:4146410e62f1,legit,GET /api/v1/accounts/acc-alice-1/statements,"GET /api/v1/accounts/{id}/statements {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-aspnet-ovon,baseline,deleteStatement:baseline:alice:80c6d64a166a,legit,DELETE /api/v1/accounts/acc-alice-1/statements/stmt-1,"DELETE /api/v1/accounts/{id}/statements/{sid} {""id"": ""acc-alice-1"", ""sid"": ""stmt-1""}",True,True,True,True,True,True,True,True
+E7,ngx-aspnet-ovon,baseline,catchAllFile:baseline:alice:56e758837c94,legit,GET /api/v1/files/reports/logo.png,"GET /api/v1/files/{path} {""path"": ""reports/logo.png""}",False,True,False,False,False,False,False,True
+E7,ngx-express-ovoff,baseline,listAccounts:baseline:alice:4dfd65063bbe,legit,GET /api/v1/accounts,GET /api/v1/accounts {},True,True,True,True,True,True,True,True
+E7,ngx-express-ovoff,baseline,getAccount:baseline:alice:a21ea02ca88e,legit,GET /api/v1/accounts/acc-alice-1,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-express-ovoff,baseline,updateAccount:baseline:alice:8cd74f6aa2fd,legit,PUT /api/v1/accounts/acc-alice-1,"PUT /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-express-ovoff,baseline,deleteAccount:baseline:alice:ca01b6994798,legit,DELETE /api/v1/accounts/acc-alice-1,"DELETE /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-express-ovoff,baseline,accountAction.freeze:baseline:alice:da80e402ea4b,legit,POST /api/v1/accounts/acc-alice-1/actions?op=freeze,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-express-ovoff,baseline,createTransfer:baseline:alice:1c14d87e125e,legit,POST /api/v1/transfers,POST /api/v1/transfers {},True,True,True,True,True,True,True,True
+E7,ngx-express-ovoff,baseline,graphql.getProfile:baseline:alice:d81bf8f616e4,legit,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-express-ovoff,baseline,me:baseline:alice:e40f9ef298fb,legit,GET /api/v1/me,GET /api/v1/me {},True,True,True,True,True,True,True,True
+E7,ngx-express-ovoff,baseline,adminListUsers:baseline:alice:a7e7d4a4211e,legit,GET /api/v1/admin/users,GET /api/v1/admin/users {},True,True,True,True,True,True,True,True
+E7,ngx-express-ovoff,baseline,adminDeleteUser:baseline:alice:60ff09027a07,legit,DELETE /api/v1/admin/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",True,True,True,True,True,True,True,True
+E7,ngx-express-ovoff,baseline,health:baseline:alice:f674509d34b7,legit,GET /api/v1/health,GET /api/v1/health {},True,True,True,True,True,True,True,True
+E7,ngx-express-ovoff,baseline,publicFile:baseline:alice:d9423b1589da,legit,GET /api/v1/public/logo.png,"GET /api/v1/public/{file} {""file"": ""logo.png""}",True,True,True,True,True,True,True,True
+E7,ngx-express-ovoff,baseline,getAccountV2:baseline:alice:a49803859d25,legit,GET /api/v2/accounts/acc-alice-1,"GET /api/v2/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-express-ovoff,G1-query,accountAction.freeze:g1-op-freeze-to-close:alice:b4ba45197e11,witness,POST /api/v1/accounts/acc-alice-1/actions?op=close,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-express-ovoff,G1-query,accountAction.freeze:g1-op-freeze-to-unknown:alice:e2b011248e4d,witness,POST /api/v1/accounts/acc-alice-1/actions?op=wipe,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-express-ovoff,G1-query,accountAction.freeze:g1-op-remove:alice:1ba840b3e6c2,witness,POST /api/v1/accounts/acc-alice-1/actions,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-express-ovoff,G1-query,accountAction.freeze:g1-op-dup-close:alice:05b1d325b576,witness,POST /api/v1/accounts/acc-alice-1/actions?op=freeze&op=close,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-express-ovoff,G1-query,accountAction.freeze:g1-op-case-close:alice:70bd6687d8e5,witness,POST /api/v1/accounts/acc-alice-1/actions?op=CLOSE,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-express-ovoff,G1-body,graphql.getProfile:g1-fmethod-put:alice:f884faee7ee2,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-express-ovoff,G1-body,graphql.getProfile:g1-fmethod-delete:alice:22993e846ee6,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-express-ovoff,G1-body,graphql.getProfile:g1-fmethod-post:alice:8b577a7d73c8,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-express-ovoff,G1-body,graphql.getProfile:g1-fmethod-patch:alice:034a09c69a76,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-express-ovoff,G1-body,graphql.getProfile:g1-fmethod-get:alice:a4d4d59a7629,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-express-ovoff,G1-body,graphql.getProfile:g1-ct-urlencoded:alice:45765f710853,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-express-ovoff,G1-body,graphql.getProfile:g1-ct-textplain:alice:a66929c0db68,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-express-ovoff,G1-body,graphql.getProfile:g1-gql-to-deleteProfile:alice:87f436958aca,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-express-ovoff,G1-body,graphql.getProfile:g1-gql-to-unknown:alice:785a0e930ec4,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-express-ovoff,G1-body,graphql.getProfile:g1-gql-null:alice:5ac1af0ebcf1,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-express-ovoff,baseline,postAccount:baseline:alice:aaa6f9a4ba00,legit,POST /api/v1/accounts/acc-alice-1,"POST /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-express-ovoff,baseline,getStatements:baseline:alice:4146410e62f1,legit,GET /api/v1/accounts/acc-alice-1/statements,"GET /api/v1/accounts/{id}/statements {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-express-ovoff,baseline,deleteStatement:baseline:alice:80c6d64a166a,legit,DELETE /api/v1/accounts/acc-alice-1/statements/stmt-1,"DELETE /api/v1/accounts/{id}/statements/{sid} {""id"": ""acc-alice-1"", ""sid"": ""stmt-1""}",True,True,True,True,True,True,True,True
+E7,ngx-express-ovoff,baseline,catchAllFile:baseline:alice:56e758837c94,legit,GET /api/v1/files/reports/logo.png,"GET /api/v1/files/{path} {""0"": ""eports/logo.png"", ""path"": ""reports/logo.png""}",False,True,False,False,False,False,False,True
+E7,ngx-express-ovoff,G2-dot,catchAllFile:g2-dot-literal:alice:c7873b6e01ee,witness,GET /api/v1/files/reports/./logo.png,"GET /api/v1/files/{path} {""0"": ""eports/./logo.png"", ""path"": ""reports/./logo.png""}",False,True,False,False,False,False,False,True
+E7,ngx-express-ovoff,G2-dot,catchAllFile:g2-dot-enc:alice:bad45d36b871,witness,GET /api/v1/files/reports/%2e/logo.png,"GET /api/v1/files/{path} {""0"": ""eports/./logo.png"", ""path"": ""reports/./logo.png""}",False,True,False,False,False,False,False,True
+E7,ngx-express-ovon,baseline,listAccounts:baseline:alice:4dfd65063bbe,legit,GET /api/v1/accounts,GET /api/v1/accounts {},True,True,True,True,True,True,True,True
+E7,ngx-express-ovon,baseline,getAccount:baseline:alice:a21ea02ca88e,legit,GET /api/v1/accounts/acc-alice-1,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-express-ovon,baseline,updateAccount:baseline:alice:8cd74f6aa2fd,legit,PUT /api/v1/accounts/acc-alice-1,"PUT /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-express-ovon,baseline,deleteAccount:baseline:alice:ca01b6994798,legit,DELETE /api/v1/accounts/acc-alice-1,"DELETE /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-express-ovon,baseline,accountAction.freeze:baseline:alice:da80e402ea4b,legit,POST /api/v1/accounts/acc-alice-1/actions?op=freeze,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-express-ovon,baseline,createTransfer:baseline:alice:1c14d87e125e,legit,POST /api/v1/transfers,POST /api/v1/transfers {},True,True,True,True,True,True,True,True
+E7,ngx-express-ovon,baseline,graphql.getProfile:baseline:alice:d81bf8f616e4,legit,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-express-ovon,baseline,me:baseline:alice:e40f9ef298fb,legit,GET /api/v1/me,GET /api/v1/me {},True,True,True,True,True,True,True,True
+E7,ngx-express-ovon,baseline,adminListUsers:baseline:alice:a7e7d4a4211e,legit,GET /api/v1/admin/users,GET /api/v1/admin/users {},True,True,True,True,True,True,True,True
+E7,ngx-express-ovon,baseline,adminDeleteUser:baseline:alice:60ff09027a07,legit,DELETE /api/v1/admin/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",True,True,True,True,True,True,True,True
+E7,ngx-express-ovon,baseline,health:baseline:alice:f674509d34b7,legit,GET /api/v1/health,GET /api/v1/health {},True,True,True,True,True,True,True,True
+E7,ngx-express-ovon,baseline,publicFile:baseline:alice:d9423b1589da,legit,GET /api/v1/public/logo.png,"GET /api/v1/public/{file} {""file"": ""logo.png""}",True,True,True,True,True,True,True,True
+E7,ngx-express-ovon,baseline,getAccountV2:baseline:alice:a49803859d25,legit,GET /api/v2/accounts/acc-alice-1,"GET /api/v2/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-express-ovon,G1-query,accountAction.freeze:g1-op-freeze-to-close:alice:b4ba45197e11,witness,POST /api/v1/accounts/acc-alice-1/actions?op=close,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-express-ovon,G1-query,accountAction.freeze:g1-op-freeze-to-unknown:alice:e2b011248e4d,witness,POST /api/v1/accounts/acc-alice-1/actions?op=wipe,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-express-ovon,G1-query,accountAction.freeze:g1-op-remove:alice:1ba840b3e6c2,witness,POST /api/v1/accounts/acc-alice-1/actions,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-express-ovon,G1-query,accountAction.freeze:g1-op-dup-close:alice:05b1d325b576,witness,POST /api/v1/accounts/acc-alice-1/actions?op=freeze&op=close,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-express-ovon,G1-query,accountAction.freeze:g1-op-case-close:alice:70bd6687d8e5,witness,POST /api/v1/accounts/acc-alice-1/actions?op=CLOSE,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-express-ovon,G1-body,graphql.getProfile:g1-fmethod-post:alice:8b577a7d73c8,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-express-ovon,G1-body,graphql.getProfile:g1-ct-urlencoded:alice:45765f710853,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-express-ovon,G1-body,graphql.getProfile:g1-ct-textplain:alice:a66929c0db68,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-express-ovon,G1-body,graphql.getProfile:g1-gql-to-deleteProfile:alice:87f436958aca,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-express-ovon,G1-body,graphql.getProfile:g1-gql-to-unknown:alice:785a0e930ec4,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-express-ovon,G1-body,graphql.getProfile:g1-gql-null:alice:5ac1af0ebcf1,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-express-ovon,baseline,postAccount:baseline:alice:aaa6f9a4ba00,legit,POST /api/v1/accounts/acc-alice-1,"POST /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-express-ovon,G1-override,postAccount:g1-hdr-xhmo-put:alice:6ece570f5fb8,witness,POST /api/v1/accounts/acc-alice-1,"PUT /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,True,False
+E7,ngx-express-ovon,G1-override,postAccount:g1-hdr-xhmo-delete:alice:386355476602,witness,POST /api/v1/accounts/acc-alice-1,"DELETE /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,True,False
+E7,ngx-express-ovon,G1-override,postAccount:g1-hdr-xhmo-get:alice:10fa118d02ae,witness,POST /api/v1/accounts/acc-alice-1,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,True,False
+E7,ngx-express-ovon,G1-override,postAccount:g1-qmethod-put:alice:0d1ba14baeb9,witness,POST /api/v1/accounts/acc-alice-1?_method=PUT,"PUT /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,True,False
+E7,ngx-express-ovon,G1-override,postAccount:g1-qmethod-delete:alice:88a8e6835445,witness,POST /api/v1/accounts/acc-alice-1?_method=DELETE,"DELETE /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,True,False
+E7,ngx-express-ovon,G1-override,postAccount:g1-qmethod-get:alice:003cc6542ebc,witness,POST /api/v1/accounts/acc-alice-1?_method=GET,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,True,False
+E7,ngx-express-ovon,G1-override,postAccount:g1-fmethod-put:alice:8875cd2188fc,witness,POST /api/v1/accounts/acc-alice-1,"PUT /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,True,False
+E7,ngx-express-ovon,G1-override,postAccount:g1-fmethod-delete:alice:eb43d4e59e8a,witness,POST /api/v1/accounts/acc-alice-1,"DELETE /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,True,False
+E7,ngx-express-ovon,G1-override,postAccount:g1-fmethod-get:alice:822a189523f7,witness,POST /api/v1/accounts/acc-alice-1,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,True,False
+E7,ngx-express-ovon,baseline,getStatements:baseline:alice:4146410e62f1,legit,GET /api/v1/accounts/acc-alice-1/statements,"GET /api/v1/accounts/{id}/statements {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-express-ovon,baseline,deleteStatement:baseline:alice:80c6d64a166a,legit,DELETE /api/v1/accounts/acc-alice-1/statements/stmt-1,"DELETE /api/v1/accounts/{id}/statements/{sid} {""id"": ""acc-alice-1"", ""sid"": ""stmt-1""}",True,True,True,True,True,True,True,True
+E7,ngx-express-ovon,baseline,catchAllFile:baseline:alice:56e758837c94,legit,GET /api/v1/files/reports/logo.png,"GET /api/v1/files/{path} {""0"": ""eports/logo.png"", ""path"": ""reports/logo.png""}",False,True,False,False,False,False,False,True
+E7,ngx-express-ovon,G2-dot,catchAllFile:g2-dot-literal:alice:c7873b6e01ee,witness,GET /api/v1/files/reports/./logo.png,"GET /api/v1/files/{path} {""0"": ""eports/./logo.png"", ""path"": ""reports/./logo.png""}",False,True,False,False,False,False,False,True
+E7,ngx-express-ovon,G2-dot,catchAllFile:g2-dot-enc:alice:bad45d36b871,witness,GET /api/v1/files/reports/%2e/logo.png,"GET /api/v1/files/{path} {""0"": ""eports/./logo.png"", ""path"": ""reports/./logo.png""}",False,True,False,False,False,False,False,True
+E7,ngx-fastapi-ovoff,baseline,listAccounts:baseline:alice:4dfd65063bbe,legit,GET /api/v1/accounts,GET /api/v1/accounts {},True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovoff,baseline,getAccount:baseline:alice:a21ea02ca88e,legit,GET /api/v1/accounts/acc-alice-1,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovoff,baseline,updateAccount:baseline:alice:8cd74f6aa2fd,legit,PUT /api/v1/accounts/acc-alice-1,"PUT /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovoff,baseline,deleteAccount:baseline:alice:ca01b6994798,legit,DELETE /api/v1/accounts/acc-alice-1,"DELETE /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovoff,baseline,accountAction.freeze:baseline:alice:da80e402ea4b,legit,POST /api/v1/accounts/acc-alice-1/actions?op=freeze,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovoff,baseline,createTransfer:baseline:alice:1c14d87e125e,legit,POST /api/v1/transfers,POST /api/v1/transfers {},True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovoff,baseline,graphql.getProfile:baseline:alice:d81bf8f616e4,legit,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovoff,baseline,me:baseline:alice:e40f9ef298fb,legit,GET /api/v1/me,GET /api/v1/me {},True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovoff,baseline,adminListUsers:baseline:alice:a7e7d4a4211e,legit,GET /api/v1/admin/users,GET /api/v1/admin/users {},True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovoff,baseline,adminDeleteUser:baseline:alice:60ff09027a07,legit,DELETE /api/v1/admin/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovoff,baseline,health:baseline:alice:f674509d34b7,legit,GET /api/v1/health,GET /api/v1/health {},True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovoff,baseline,publicFile:baseline:alice:d9423b1589da,legit,GET /api/v1/public/logo.png,"GET /api/v1/public/{file} {""file"": ""logo.png""}",True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovoff,baseline,getAccountV2:baseline:alice:a49803859d25,legit,GET /api/v2/accounts/acc-alice-1,"GET /api/v2/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovoff,G2-#,getAccount:g2-fragment:alice:3821accb50a4,witness,GET /api/v1/accounts/acc-alice-1#frag,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1#frag""}",False,True,False,False,False,False,False,True
+E7,ngx-fastapi-ovoff,G2-#,updateAccount:g2-fragment:alice:488c6397c417,witness,PUT /api/v1/accounts/acc-alice-1#frag,"PUT /api/v1/accounts/{id} {""id"": ""acc-alice-1#frag""}",False,True,False,False,False,False,False,True
+E7,ngx-fastapi-ovoff,G2-#,deleteAccount:g2-fragment:alice:d1f045c8213b,witness,DELETE /api/v1/accounts/acc-alice-1#frag,"DELETE /api/v1/accounts/{id} {""id"": ""acc-alice-1#frag""}",False,True,False,False,False,False,False,True
+E7,ngx-fastapi-ovoff,G1-query,accountAction.freeze:g1-op-freeze-to-close:alice:b4ba45197e11,witness,POST /api/v1/accounts/acc-alice-1/actions?op=close,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovoff,G1-query,accountAction.freeze:g1-op-freeze-to-unknown:alice:e2b011248e4d,witness,POST /api/v1/accounts/acc-alice-1/actions?op=wipe,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovoff,G1-query,accountAction.freeze:g1-op-remove:alice:1ba840b3e6c2,witness,POST /api/v1/accounts/acc-alice-1/actions,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovoff,G1-query,accountAction.freeze:g1-op-dup-close:alice:05b1d325b576,witness,POST /api/v1/accounts/acc-alice-1/actions?op=freeze&op=close,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovoff,G1-query,accountAction.freeze:g1-op-case-close:alice:70bd6687d8e5,witness,POST /api/v1/accounts/acc-alice-1/actions?op=CLOSE,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovoff,G1-query(frag-in-query),accountAction.freeze:g2-fragment:alice:8c66fa6aaefa,witness,POST /api/v1/accounts/acc-alice-1/actions?op=freeze#frag,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovoff,G1-body,graphql.getProfile:g1-fmethod-put:alice:f884faee7ee2,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovoff,G1-body,graphql.getProfile:g1-fmethod-delete:alice:22993e846ee6,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovoff,G1-body,graphql.getProfile:g1-fmethod-post:alice:8b577a7d73c8,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovoff,G1-body,graphql.getProfile:g1-fmethod-patch:alice:034a09c69a76,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovoff,G1-body,graphql.getProfile:g1-fmethod-get:alice:a4d4d59a7629,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovoff,G1-body,graphql.getProfile:g1-gql-to-deleteProfile:alice:87f436958aca,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovoff,G1-body,graphql.getProfile:g1-gql-to-unknown:alice:785a0e930ec4,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovoff,G1-body,graphql.getProfile:g1-gql-null:alice:5ac1af0ebcf1,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovoff,G2-#,adminDeleteUser:g2-fragment:alice:01108de983fd,witness,DELETE /api/v1/admin/users/u-1#frag,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1#frag""}",False,True,False,False,False,False,False,True
+E7,ngx-fastapi-ovoff,G2-#,publicFile:g2-fragment:alice:0915bffac09c,witness,GET /api/v1/public/logo.png#frag,"GET /api/v1/public/{file} {""file"": ""logo.png#frag""}",False,True,False,False,False,False,False,True
+E7,ngx-fastapi-ovoff,G2-#,getAccountV2:g2-fragment:alice:5376c9b1ae70,witness,GET /api/v2/accounts/acc-alice-1#frag,"GET /api/v2/accounts/{id} {""id"": ""acc-alice-1#frag""}",False,True,False,False,False,False,False,True
+E7,ngx-fastapi-ovoff,G2-#,getAccount:x-frag-statements:alice:3c09a67ee069,witness,GET /api/v1/accounts/acc-alice-1#/statements,"GET /api/v1/accounts/{id}/statements {""id"": ""acc-alice-1#""}",False,True,False,False,False,False,False,True
+E7,ngx-fastapi-ovoff,G2-#,deleteAccount:x-frag-statements-sid:alice:e11ee1107fbf,witness,DELETE /api/v1/accounts/acc-alice-1#/statements/s-evil,"DELETE /api/v1/accounts/{id}/statements/{sid} {""id"": ""acc-alice-1#"", ""sid"": ""s-evil""}",False,True,False,False,False,False,False,True
+E7,ngx-fastapi-ovoff,baseline,postAccount:baseline:alice:aaa6f9a4ba00,legit,POST /api/v1/accounts/acc-alice-1,"POST /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovoff,G2-#,postAccount:g2-fragment:alice:3b03c42c821b,witness,POST /api/v1/accounts/acc-alice-1#frag,"POST /api/v1/accounts/{id} {""id"": ""acc-alice-1#frag""}",False,True,False,False,False,False,False,True
+E7,ngx-fastapi-ovoff,baseline,getStatements:baseline:alice:4146410e62f1,legit,GET /api/v1/accounts/acc-alice-1/statements,"GET /api/v1/accounts/{id}/statements {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovoff,baseline,deleteStatement:baseline:alice:80c6d64a166a,legit,DELETE /api/v1/accounts/acc-alice-1/statements/stmt-1,"DELETE /api/v1/accounts/{id}/statements/{sid} {""id"": ""acc-alice-1"", ""sid"": ""stmt-1""}",True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovoff,G2-#,deleteStatement:g2-fragment:alice:e1906b2fbf04,witness,DELETE /api/v1/accounts/acc-alice-1/statements/stmt-1#frag,"DELETE /api/v1/accounts/{id}/statements/{sid} {""id"": ""acc-alice-1"", ""sid"": ""stmt-1#frag""}",False,True,False,False,False,False,False,True
+E7,ngx-fastapi-ovoff,baseline,catchAllFile:baseline:alice:56e758837c94,legit,GET /api/v1/files/reports/logo.png,"GET /api/v1/files/{path} {""path"": ""reports/logo.png""}",False,True,False,False,False,False,False,True
+E7,ngx-fastapi-ovoff,G2-dot,catchAllFile:g2-dot-literal:alice:c7873b6e01ee,witness,GET /api/v1/files/reports/./logo.png,"GET /api/v1/files/{path} {""path"": ""reports/./logo.png""}",False,True,False,False,False,False,False,True
+E7,ngx-fastapi-ovoff,G2-dot,catchAllFile:g2-dot-enc:alice:bad45d36b871,witness,GET /api/v1/files/reports/%2e/logo.png,"GET /api/v1/files/{path} {""path"": ""reports/./logo.png""}",False,True,False,False,False,False,False,True
+E7,ngx-fastapi-ovoff,G2-#,catchAllFile:g2-fragment:alice:0904f5a20d0f,witness,GET /api/v1/files/reports/logo.png#frag,"GET /api/v1/files/{path} {""path"": ""reports/logo.png#frag""}",False,True,False,False,False,False,False,True
+E7,ngx-fastapi-ovon,baseline,listAccounts:baseline:alice:4dfd65063bbe,legit,GET /api/v1/accounts,GET /api/v1/accounts {},True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovon,baseline,getAccount:baseline:alice:a21ea02ca88e,legit,GET /api/v1/accounts/acc-alice-1,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovon,baseline,updateAccount:baseline:alice:8cd74f6aa2fd,legit,PUT /api/v1/accounts/acc-alice-1,"PUT /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovon,baseline,deleteAccount:baseline:alice:ca01b6994798,legit,DELETE /api/v1/accounts/acc-alice-1,"DELETE /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovon,baseline,accountAction.freeze:baseline:alice:da80e402ea4b,legit,POST /api/v1/accounts/acc-alice-1/actions?op=freeze,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovon,baseline,createTransfer:baseline:alice:1c14d87e125e,legit,POST /api/v1/transfers,POST /api/v1/transfers {},True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovon,baseline,graphql.getProfile:baseline:alice:d81bf8f616e4,legit,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovon,baseline,me:baseline:alice:e40f9ef298fb,legit,GET /api/v1/me,GET /api/v1/me {},True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovon,baseline,adminListUsers:baseline:alice:a7e7d4a4211e,legit,GET /api/v1/admin/users,GET /api/v1/admin/users {},True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovon,baseline,adminDeleteUser:baseline:alice:60ff09027a07,legit,DELETE /api/v1/admin/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovon,baseline,health:baseline:alice:f674509d34b7,legit,GET /api/v1/health,GET /api/v1/health {},True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovon,baseline,publicFile:baseline:alice:d9423b1589da,legit,GET /api/v1/public/logo.png,"GET /api/v1/public/{file} {""file"": ""logo.png""}",True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovon,baseline,getAccountV2:baseline:alice:a49803859d25,legit,GET /api/v2/accounts/acc-alice-1,"GET /api/v2/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovon,G1-override,getAccount:g1-hdr-xhmo-put:alice:57ccf68c9411,witness,GET /api/v1/accounts/acc-alice-1,"PUT /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,True,False
+E7,ngx-fastapi-ovon,G1-override,getAccount:g1-hdr-xhmo-delete:alice:06f5703c3425,witness,GET /api/v1/accounts/acc-alice-1,"DELETE /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,True,False
+E7,ngx-fastapi-ovon,G2-#,getAccount:g2-fragment:alice:3821accb50a4,witness,GET /api/v1/accounts/acc-alice-1#frag,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1#frag""}",False,True,False,False,False,False,False,True
+E7,ngx-fastapi-ovon,G1-override,updateAccount:g1-hdr-xhmo-delete:alice:01ad3be80815,witness,PUT /api/v1/accounts/acc-alice-1,"DELETE /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,True,False
+E7,ngx-fastapi-ovon,G1-override,updateAccount:g1-hdr-xhmo-get:alice:92792c19487a,witness,PUT /api/v1/accounts/acc-alice-1,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,True,False
+E7,ngx-fastapi-ovon,G2-#,updateAccount:g2-fragment:alice:488c6397c417,witness,PUT /api/v1/accounts/acc-alice-1#frag,"PUT /api/v1/accounts/{id} {""id"": ""acc-alice-1#frag""}",False,True,False,False,False,False,False,True
+E7,ngx-fastapi-ovon,G1-override,deleteAccount:g1-hdr-xhmo-put:alice:d0e71c55e2a7,witness,DELETE /api/v1/accounts/acc-alice-1,"PUT /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,True,False
+E7,ngx-fastapi-ovon,G1-override,deleteAccount:g1-hdr-xhmo-get:alice:9fc762b8f583,witness,DELETE /api/v1/accounts/acc-alice-1,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,True,False
+E7,ngx-fastapi-ovon,G2-#,deleteAccount:g2-fragment:alice:d1f045c8213b,witness,DELETE /api/v1/accounts/acc-alice-1#frag,"DELETE /api/v1/accounts/{id} {""id"": ""acc-alice-1#frag""}",False,True,False,False,False,False,False,True
+E7,ngx-fastapi-ovon,G1-query,accountAction.freeze:g1-op-freeze-to-close:alice:b4ba45197e11,witness,POST /api/v1/accounts/acc-alice-1/actions?op=close,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovon,G1-query,accountAction.freeze:g1-op-freeze-to-unknown:alice:e2b011248e4d,witness,POST /api/v1/accounts/acc-alice-1/actions?op=wipe,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovon,G1-query,accountAction.freeze:g1-op-remove:alice:1ba840b3e6c2,witness,POST /api/v1/accounts/acc-alice-1/actions,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovon,G1-query,accountAction.freeze:g1-op-dup-close:alice:05b1d325b576,witness,POST /api/v1/accounts/acc-alice-1/actions?op=freeze&op=close,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovon,G1-query,accountAction.freeze:g1-op-case-close:alice:70bd6687d8e5,witness,POST /api/v1/accounts/acc-alice-1/actions?op=CLOSE,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovon,G1-query(frag-in-query),accountAction.freeze:g2-fragment:alice:8c66fa6aaefa,witness,POST /api/v1/accounts/acc-alice-1/actions?op=freeze#frag,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovon,G1-body,graphql.getProfile:g1-fmethod-put:alice:f884faee7ee2,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovon,G1-body,graphql.getProfile:g1-fmethod-delete:alice:22993e846ee6,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovon,G1-body,graphql.getProfile:g1-fmethod-post:alice:8b577a7d73c8,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovon,G1-body,graphql.getProfile:g1-fmethod-patch:alice:034a09c69a76,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovon,G1-body,graphql.getProfile:g1-fmethod-get:alice:a4d4d59a7629,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovon,G1-body,graphql.getProfile:g1-gql-to-deleteProfile:alice:87f436958aca,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovon,G1-body,graphql.getProfile:g1-gql-to-unknown:alice:785a0e930ec4,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovon,G1-body,graphql.getProfile:g1-gql-null:alice:5ac1af0ebcf1,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovon,G2-#,adminDeleteUser:g2-fragment:alice:01108de983fd,witness,DELETE /api/v1/admin/users/u-1#frag,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1#frag""}",False,True,False,False,False,False,False,True
+E7,ngx-fastapi-ovon,G2-#,publicFile:g2-fragment:alice:0915bffac09c,witness,GET /api/v1/public/logo.png#frag,"GET /api/v1/public/{file} {""file"": ""logo.png#frag""}",False,True,False,False,False,False,False,True
+E7,ngx-fastapi-ovon,G2-#,getAccountV2:g2-fragment:alice:5376c9b1ae70,witness,GET /api/v2/accounts/acc-alice-1#frag,"GET /api/v2/accounts/{id} {""id"": ""acc-alice-1#frag""}",False,True,False,False,False,False,False,True
+E7,ngx-fastapi-ovon,G1-override,getAccount:g1-hdr-xhmo-post:alice:875fca093c6f,witness,GET /api/v1/accounts/acc-alice-1,"POST /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,True,False
+E7,ngx-fastapi-ovon,G2-#,getAccount:x-frag-statements:alice:3c09a67ee069,witness,GET /api/v1/accounts/acc-alice-1#/statements,"GET /api/v1/accounts/{id}/statements {""id"": ""acc-alice-1#""}",False,True,False,False,False,False,False,True
+E7,ngx-fastapi-ovon,G1-override,updateAccount:g1-hdr-xhmo-post:alice:3de407cd0d7d,witness,PUT /api/v1/accounts/acc-alice-1,"POST /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,True,False
+E7,ngx-fastapi-ovon,G1-override,deleteAccount:g1-hdr-xhmo-post:alice:ff4e8677d191,witness,DELETE /api/v1/accounts/acc-alice-1,"POST /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,True,False
+E7,ngx-fastapi-ovon,G2-#,deleteAccount:x-frag-statements-sid:alice:e11ee1107fbf,witness,DELETE /api/v1/accounts/acc-alice-1#/statements/s-evil,"DELETE /api/v1/accounts/{id}/statements/{sid} {""id"": ""acc-alice-1#"", ""sid"": ""s-evil""}",False,True,False,False,False,False,False,True
+E7,ngx-fastapi-ovon,baseline,postAccount:baseline:alice:aaa6f9a4ba00,legit,POST /api/v1/accounts/acc-alice-1,"POST /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovon,G1-override,postAccount:g1-hdr-xhmo-put:alice:6ece570f5fb8,witness,POST /api/v1/accounts/acc-alice-1,"PUT /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,True,False
+E7,ngx-fastapi-ovon,G1-override,postAccount:g1-hdr-xhmo-delete:alice:386355476602,witness,POST /api/v1/accounts/acc-alice-1,"DELETE /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,True,False
+E7,ngx-fastapi-ovon,G1-override,postAccount:g1-hdr-xhmo-get:alice:10fa118d02ae,witness,POST /api/v1/accounts/acc-alice-1,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,True,False
+E7,ngx-fastapi-ovon,G2-#,postAccount:g2-fragment:alice:3b03c42c821b,witness,POST /api/v1/accounts/acc-alice-1#frag,"POST /api/v1/accounts/{id} {""id"": ""acc-alice-1#frag""}",False,True,False,False,False,False,False,True
+E7,ngx-fastapi-ovon,baseline,getStatements:baseline:alice:4146410e62f1,legit,GET /api/v1/accounts/acc-alice-1/statements,"GET /api/v1/accounts/{id}/statements {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovon,baseline,deleteStatement:baseline:alice:80c6d64a166a,legit,DELETE /api/v1/accounts/acc-alice-1/statements/stmt-1,"DELETE /api/v1/accounts/{id}/statements/{sid} {""id"": ""acc-alice-1"", ""sid"": ""stmt-1""}",True,True,True,True,True,True,True,True
+E7,ngx-fastapi-ovon,G2-#,deleteStatement:g2-fragment:alice:e1906b2fbf04,witness,DELETE /api/v1/accounts/acc-alice-1/statements/stmt-1#frag,"DELETE /api/v1/accounts/{id}/statements/{sid} {""id"": ""acc-alice-1"", ""sid"": ""stmt-1#frag""}",False,True,False,False,False,False,False,True
+E7,ngx-fastapi-ovon,baseline,catchAllFile:baseline:alice:56e758837c94,legit,GET /api/v1/files/reports/logo.png,"GET /api/v1/files/{path} {""path"": ""reports/logo.png""}",False,True,False,False,False,False,False,True
+E7,ngx-fastapi-ovon,G2-dot,catchAllFile:g2-dot-literal:alice:c7873b6e01ee,witness,GET /api/v1/files/reports/./logo.png,"GET /api/v1/files/{path} {""path"": ""reports/./logo.png""}",False,True,False,False,False,False,False,True
+E7,ngx-fastapi-ovon,G2-dot,catchAllFile:g2-dot-enc:alice:bad45d36b871,witness,GET /api/v1/files/reports/%2e/logo.png,"GET /api/v1/files/{path} {""path"": ""reports/./logo.png""}",False,True,False,False,False,False,False,True
+E7,ngx-fastapi-ovon,G2-#,catchAllFile:g2-fragment:alice:0904f5a20d0f,witness,GET /api/v1/files/reports/logo.png#frag,"GET /api/v1/files/{path} {""path"": ""reports/logo.png#frag""}",False,True,False,False,False,False,False,True
+E7,ngx-spring-ovoff,baseline,listAccounts:baseline:alice:4dfd65063bbe,legit,GET /api/v1/accounts,GET /api/v1/accounts {},True,True,True,True,True,True,True,True
+E7,ngx-spring-ovoff,baseline,getAccount:baseline:alice:a21ea02ca88e,legit,GET /api/v1/accounts/acc-alice-1,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-spring-ovoff,baseline,updateAccount:baseline:alice:8cd74f6aa2fd,legit,PUT /api/v1/accounts/acc-alice-1,"PUT /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-spring-ovoff,baseline,deleteAccount:baseline:alice:ca01b6994798,legit,DELETE /api/v1/accounts/acc-alice-1,"DELETE /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-spring-ovoff,baseline,accountAction.freeze:baseline:alice:da80e402ea4b,legit,POST /api/v1/accounts/acc-alice-1/actions?op=freeze,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-spring-ovoff,baseline,createTransfer:baseline:alice:1c14d87e125e,legit,POST /api/v1/transfers,POST /api/v1/transfers {},True,True,True,True,True,True,True,True
+E7,ngx-spring-ovoff,baseline,graphql.getProfile:baseline:alice:d81bf8f616e4,legit,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-spring-ovoff,baseline,me:baseline:alice:e40f9ef298fb,legit,GET /api/v1/me,GET /api/v1/me {},True,True,True,True,True,True,True,True
+E7,ngx-spring-ovoff,baseline,adminListUsers:baseline:alice:a7e7d4a4211e,legit,GET /api/v1/admin/users,GET /api/v1/admin/users {},True,True,True,True,True,True,True,True
+E7,ngx-spring-ovoff,baseline,adminDeleteUser:baseline:alice:60ff09027a07,legit,DELETE /api/v1/admin/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",True,True,True,True,True,True,True,True
+E7,ngx-spring-ovoff,baseline,health:baseline:alice:f674509d34b7,legit,GET /api/v1/health,GET /api/v1/health {},True,True,True,True,True,True,True,True
+E7,ngx-spring-ovoff,baseline,publicFile:baseline:alice:d9423b1589da,legit,GET /api/v1/public/logo.png,"GET /api/v1/public/{file} {""file"": ""logo.png""}",True,True,True,True,True,True,True,True
+E7,ngx-spring-ovoff,baseline,getAccountV2:baseline:alice:a49803859d25,legit,GET /api/v2/accounts/acc-alice-1,"GET /api/v2/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-spring-ovoff,G1-query,accountAction.freeze:g1-op-freeze-to-close:alice:b4ba45197e11,witness,POST /api/v1/accounts/acc-alice-1/actions?op=close,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-spring-ovoff,G1-query,accountAction.freeze:g1-op-freeze-to-unknown:alice:e2b011248e4d,witness,POST /api/v1/accounts/acc-alice-1/actions?op=wipe,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-spring-ovoff,G1-query,accountAction.freeze:g1-op-remove:alice:1ba840b3e6c2,witness,POST /api/v1/accounts/acc-alice-1/actions,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-spring-ovoff,G1-query,accountAction.freeze:g1-op-dup-close:alice:05b1d325b576,witness,POST /api/v1/accounts/acc-alice-1/actions?op=freeze&op=close,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-spring-ovoff,G1-query,accountAction.freeze:g1-op-case-close:alice:70bd6687d8e5,witness,POST /api/v1/accounts/acc-alice-1/actions?op=CLOSE,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-spring-ovoff,G1-body,graphql.getProfile:g1-fmethod-put:alice:f884faee7ee2,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-spring-ovoff,G1-body,graphql.getProfile:g1-fmethod-delete:alice:22993e846ee6,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-spring-ovoff,G1-body,graphql.getProfile:g1-fmethod-post:alice:8b577a7d73c8,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-spring-ovoff,G1-body,graphql.getProfile:g1-fmethod-patch:alice:034a09c69a76,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-spring-ovoff,G1-body,graphql.getProfile:g1-fmethod-get:alice:a4d4d59a7629,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-spring-ovoff,G1-body,graphql.getProfile:g1-ct-urlencoded:alice:45765f710853,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-spring-ovoff,G1-body,graphql.getProfile:g1-gql-to-deleteProfile:alice:87f436958aca,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-spring-ovoff,G1-body,graphql.getProfile:g1-gql-to-unknown:alice:785a0e930ec4,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-spring-ovoff,G1-body,graphql.getProfile:g1-gql-null:alice:5ac1af0ebcf1,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-spring-ovoff,baseline,postAccount:baseline:alice:aaa6f9a4ba00,legit,POST /api/v1/accounts/acc-alice-1,"POST /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-spring-ovoff,baseline,getStatements:baseline:alice:4146410e62f1,legit,GET /api/v1/accounts/acc-alice-1/statements,"GET /api/v1/accounts/{id}/statements {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-spring-ovoff,baseline,deleteStatement:baseline:alice:80c6d64a166a,legit,DELETE /api/v1/accounts/acc-alice-1/statements/stmt-1,"DELETE /api/v1/accounts/{id}/statements/{sid} {""id"": ""acc-alice-1"", ""sid"": ""stmt-1""}",True,True,True,True,True,True,True,True
+E7,ngx-spring-ovoff,baseline,catchAllFile:baseline:alice:56e758837c94,legit,GET /api/v1/files/reports/logo.png,"GET /api/v1/files/{path} {""path"": ""/reports/logo.png""}",False,False,False,False,False,False,False,True
+E7,ngx-spring-ovoff,G2-dot,catchAllFile:g2-dot-literal:alice:c7873b6e01ee,witness,GET /api/v1/files/reports/./logo.png,"GET /api/v1/files/{path} {""path"": ""/reports/./logo.png""}",False,False,False,False,False,False,False,True
+E7,ngx-spring-ovoff,G2-dot,catchAllFile:g2-dot-enc:alice:bad45d36b871,witness,GET /api/v1/files/reports/%2e/logo.png,"GET /api/v1/files/{path} {""path"": ""/reports/./logo.png""}",False,False,False,False,False,False,False,True
+E7,ngx-spring-ovon,baseline,listAccounts:baseline:alice:4dfd65063bbe,legit,GET /api/v1/accounts,GET /api/v1/accounts {},True,True,True,True,True,True,True,True
+E7,ngx-spring-ovon,baseline,getAccount:baseline:alice:a21ea02ca88e,legit,GET /api/v1/accounts/acc-alice-1,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-spring-ovon,baseline,updateAccount:baseline:alice:8cd74f6aa2fd,legit,PUT /api/v1/accounts/acc-alice-1,"PUT /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-spring-ovon,baseline,deleteAccount:baseline:alice:ca01b6994798,legit,DELETE /api/v1/accounts/acc-alice-1,"DELETE /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-spring-ovon,baseline,accountAction.freeze:baseline:alice:da80e402ea4b,legit,POST /api/v1/accounts/acc-alice-1/actions?op=freeze,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-spring-ovon,baseline,createTransfer:baseline:alice:1c14d87e125e,legit,POST /api/v1/transfers,POST /api/v1/transfers {},True,True,True,True,True,True,True,True
+E7,ngx-spring-ovon,baseline,graphql.getProfile:baseline:alice:d81bf8f616e4,legit,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-spring-ovon,baseline,me:baseline:alice:e40f9ef298fb,legit,GET /api/v1/me,GET /api/v1/me {},True,True,True,True,True,True,True,True
+E7,ngx-spring-ovon,baseline,adminListUsers:baseline:alice:a7e7d4a4211e,legit,GET /api/v1/admin/users,GET /api/v1/admin/users {},True,True,True,True,True,True,True,True
+E7,ngx-spring-ovon,baseline,adminDeleteUser:baseline:alice:60ff09027a07,legit,DELETE /api/v1/admin/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",True,True,True,True,True,True,True,True
+E7,ngx-spring-ovon,baseline,health:baseline:alice:f674509d34b7,legit,GET /api/v1/health,GET /api/v1/health {},True,True,True,True,True,True,True,True
+E7,ngx-spring-ovon,baseline,publicFile:baseline:alice:d9423b1589da,legit,GET /api/v1/public/logo.png,"GET /api/v1/public/{file} {""file"": ""logo.png""}",True,True,True,True,True,True,True,True
+E7,ngx-spring-ovon,baseline,getAccountV2:baseline:alice:a49803859d25,legit,GET /api/v2/accounts/acc-alice-1,"GET /api/v2/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-spring-ovon,G1-query,accountAction.freeze:g1-op-freeze-to-close:alice:b4ba45197e11,witness,POST /api/v1/accounts/acc-alice-1/actions?op=close,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-spring-ovon,G1-query,accountAction.freeze:g1-op-freeze-to-unknown:alice:e2b011248e4d,witness,POST /api/v1/accounts/acc-alice-1/actions?op=wipe,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-spring-ovon,G1-query,accountAction.freeze:g1-op-remove:alice:1ba840b3e6c2,witness,POST /api/v1/accounts/acc-alice-1/actions,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-spring-ovon,G1-query,accountAction.freeze:g1-op-dup-close:alice:05b1d325b576,witness,POST /api/v1/accounts/acc-alice-1/actions?op=freeze&op=close,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-spring-ovon,G1-query,accountAction.freeze:g1-op-case-close:alice:70bd6687d8e5,witness,POST /api/v1/accounts/acc-alice-1/actions?op=CLOSE,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-spring-ovon,G1-body,graphql.getProfile:g1-fmethod-post:alice:8b577a7d73c8,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-spring-ovon,G1-body,graphql.getProfile:g1-fmethod-get:alice:a4d4d59a7629,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-spring-ovon,G1-body,graphql.getProfile:g1-ct-urlencoded:alice:45765f710853,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-spring-ovon,G1-body,graphql.getProfile:g1-gql-to-deleteProfile:alice:87f436958aca,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-spring-ovon,G1-body,graphql.getProfile:g1-gql-to-unknown:alice:785a0e930ec4,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-spring-ovon,G1-body,graphql.getProfile:g1-gql-null:alice:5ac1af0ebcf1,witness,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+E7,ngx-spring-ovon,baseline,postAccount:baseline:alice:aaa6f9a4ba00,legit,POST /api/v1/accounts/acc-alice-1,"POST /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-spring-ovon,G1-override,postAccount:g1-qmethod-put:alice:0d1ba14baeb9,witness,POST /api/v1/accounts/acc-alice-1?_method=PUT,"PUT /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,True,False
+E7,ngx-spring-ovon,G1-override,postAccount:g1-qmethod-delete:alice:88a8e6835445,witness,POST /api/v1/accounts/acc-alice-1?_method=DELETE,"DELETE /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,True,False
+E7,ngx-spring-ovon,G1-override,postAccount:g1-fmethod-put:alice:8875cd2188fc,witness,POST /api/v1/accounts/acc-alice-1,"PUT /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,True,False
+E7,ngx-spring-ovon,G1-override,postAccount:g1-fmethod-delete:alice:eb43d4e59e8a,witness,POST /api/v1/accounts/acc-alice-1,"DELETE /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,True,False
+E7,ngx-spring-ovon,baseline,getStatements:baseline:alice:4146410e62f1,legit,GET /api/v1/accounts/acc-alice-1/statements,"GET /api/v1/accounts/{id}/statements {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+E7,ngx-spring-ovon,baseline,deleteStatement:baseline:alice:80c6d64a166a,legit,DELETE /api/v1/accounts/acc-alice-1/statements/stmt-1,"DELETE /api/v1/accounts/{id}/statements/{sid} {""id"": ""acc-alice-1"", ""sid"": ""stmt-1""}",True,True,True,True,True,True,True,True
+E7,ngx-spring-ovon,baseline,catchAllFile:baseline:alice:56e758837c94,legit,GET /api/v1/files/reports/logo.png,"GET /api/v1/files/{path} {""path"": ""/reports/logo.png""}",False,False,False,False,False,False,False,True
+E7,ngx-spring-ovon,G2-dot,catchAllFile:g2-dot-literal:alice:c7873b6e01ee,witness,GET /api/v1/files/reports/./logo.png,"GET /api/v1/files/{path} {""path"": ""/reports/./logo.png""}",False,False,False,False,False,False,False,True
+E7,ngx-spring-ovon,G2-dot,catchAllFile:g2-dot-enc:alice:bad45d36b871,witness,GET /api/v1/files/reports/%2e/logo.png,"GET /api/v1/files/{path} {""path"": ""/reports/./logo.png""}",False,False,False,False,False,False,False,True
+FRR,aspnet,FRR-S0-identity,/api/v1/accounts,legit,GET /api/v1/accounts,GET /api/v1/accounts {},True,True,True,True,True,True,True,True
+FRR,aspnet,FRR-S1-strip-prefix,/svc/api/v1/accounts,legit,GET /svc/api/v1/accounts,GET /api/v1/accounts {},False,False,False,False,False,False,False,False
+FRR,aspnet,FRR-S2-version-rewrite,/api/latest/accounts,legit,GET /api/latest/accounts,GET /api/v1/accounts {},False,False,False,False,False,False,False,False
+FRR,aspnet,FRR-S3-trailing-slash,/api/v1/accounts/,legit,GET /api/v1/accounts/,GET /api/v1/accounts {},False,False,False,False,False,False,False,False
+FRR,aspnet,FRR-S5-h2-to-h1,/api/v1/accounts,legit,GET /api/v1/accounts,GET /api/v1/accounts {},True,True,True,True,True,True,True,True
+FRR,aspnet,FRR-S0-identity,/api/v1/accounts/acc-alice-1,legit,GET /api/v1/accounts/acc-alice-1,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,aspnet,FRR-S1-strip-prefix,/svc/api/v1/accounts/acc-alice-1,legit,GET /svc/api/v1/accounts/acc-alice-1,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,aspnet,FRR-S2-version-rewrite,/api/latest/accounts/acc-alice-1,legit,GET /api/latest/accounts/acc-alice-1,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,aspnet,FRR-S3-trailing-slash,/api/v1/accounts/acc-alice-1/,legit,GET /api/v1/accounts/acc-alice-1/,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,aspnet,FRR-S4-pct-id,/api/v1/accounts/acc%2Dalice%2D1,legit,GET /api/v1/accounts/acc%2Dalice%2D1,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,aspnet,FRR-S4-pct-id,/api/v1/accounts/acc%2dalice%2d1,legit,GET /api/v1/accounts/acc%2dalice%2d1,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,aspnet,FRR-S4-pct-id,/api/v1/accounts/acc%20alice%201,legit,GET /api/v1/accounts/acc%20alice%201,"GET /api/v1/accounts/{id} {""id"": ""acc alice 1""}",True,False,True,True,True,True,True,False
+FRR,aspnet,FRR-S4-pct-id,/api/v1/accounts/acc-%C3%A9-1,legit,GET /api/v1/accounts/acc-%C3%A9-1,"GET /api/v1/accounts/{id} {""id"": ""acc-\u00e9-1""}",True,False,True,True,True,True,True,False
+FRR,aspnet,FRR-S4-pct-id,/api/v1/accounts/acc%2Falice%2F1,legit,GET /api/v1/accounts/acc%2Falice%2F1,"GET /api/v1/accounts/{id} {""id"": ""acc%2Falice%2F1""}",False,True,False,False,False,False,False,True
+FRR,aspnet,FRR-S5-h2-to-h1,/api/v1/accounts/acc-alice-1,legit,GET /api/v1/accounts/acc-alice-1,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,aspnet,FRR-S0-identity,/api/v1/accounts/acc-alice-1,legit,PUT /api/v1/accounts/acc-alice-1,"PUT /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,aspnet,FRR-S1-strip-prefix,/svc/api/v1/accounts/acc-alice-1,legit,PUT /svc/api/v1/accounts/acc-alice-1,"PUT /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,aspnet,FRR-S2-version-rewrite,/api/latest/accounts/acc-alice-1,legit,PUT /api/latest/accounts/acc-alice-1,"PUT /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,aspnet,FRR-S3-trailing-slash,/api/v1/accounts/acc-alice-1/,legit,PUT /api/v1/accounts/acc-alice-1/,"PUT /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,aspnet,FRR-S4-pct-id,/api/v1/accounts/acc%2Dalice%2D1,legit,PUT /api/v1/accounts/acc%2Dalice%2D1,"PUT /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,aspnet,FRR-S4-pct-id,/api/v1/accounts/acc%2dalice%2d1,legit,PUT /api/v1/accounts/acc%2dalice%2d1,"PUT /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,aspnet,FRR-S4-pct-id,/api/v1/accounts/acc%20alice%201,legit,PUT /api/v1/accounts/acc%20alice%201,"PUT /api/v1/accounts/{id} {""id"": ""acc alice 1""}",True,False,True,True,True,True,True,False
+FRR,aspnet,FRR-S4-pct-id,/api/v1/accounts/acc-%C3%A9-1,legit,PUT /api/v1/accounts/acc-%C3%A9-1,"PUT /api/v1/accounts/{id} {""id"": ""acc-\u00e9-1""}",True,False,True,True,True,True,True,False
+FRR,aspnet,FRR-S4-pct-id,/api/v1/accounts/acc%2Falice%2F1,legit,PUT /api/v1/accounts/acc%2Falice%2F1,"PUT /api/v1/accounts/{id} {""id"": ""acc%2Falice%2F1""}",False,True,False,False,False,False,False,True
+FRR,aspnet,FRR-S5-h2-to-h1,/api/v1/accounts/acc-alice-1,legit,PUT /api/v1/accounts/acc-alice-1,"PUT /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,aspnet,FRR-S0-identity,/api/v1/accounts/acc-alice-1,legit,DELETE /api/v1/accounts/acc-alice-1,"DELETE /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,aspnet,FRR-S1-strip-prefix,/svc/api/v1/accounts/acc-alice-1,legit,DELETE /svc/api/v1/accounts/acc-alice-1,"DELETE /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,aspnet,FRR-S2-version-rewrite,/api/latest/accounts/acc-alice-1,legit,DELETE /api/latest/accounts/acc-alice-1,"DELETE /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,aspnet,FRR-S3-trailing-slash,/api/v1/accounts/acc-alice-1/,legit,DELETE /api/v1/accounts/acc-alice-1/,"DELETE /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,aspnet,FRR-S4-pct-id,/api/v1/accounts/acc%2Dalice%2D1,legit,DELETE /api/v1/accounts/acc%2Dalice%2D1,"DELETE /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,aspnet,FRR-S4-pct-id,/api/v1/accounts/acc%2dalice%2d1,legit,DELETE /api/v1/accounts/acc%2dalice%2d1,"DELETE /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,aspnet,FRR-S4-pct-id,/api/v1/accounts/acc%20alice%201,legit,DELETE /api/v1/accounts/acc%20alice%201,"DELETE /api/v1/accounts/{id} {""id"": ""acc alice 1""}",True,False,True,True,True,True,True,False
+FRR,aspnet,FRR-S4-pct-id,/api/v1/accounts/acc-%C3%A9-1,legit,DELETE /api/v1/accounts/acc-%C3%A9-1,"DELETE /api/v1/accounts/{id} {""id"": ""acc-\u00e9-1""}",True,False,True,True,True,True,True,False
+FRR,aspnet,FRR-S4-pct-id,/api/v1/accounts/acc%2Falice%2F1,legit,DELETE /api/v1/accounts/acc%2Falice%2F1,"DELETE /api/v1/accounts/{id} {""id"": ""acc%2Falice%2F1""}",False,True,False,False,False,False,False,True
+FRR,aspnet,FRR-S5-h2-to-h1,/api/v1/accounts/acc-alice-1,legit,DELETE /api/v1/accounts/acc-alice-1,"DELETE /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,aspnet,FRR-S0-identity,/api/v1/accounts/acc-alice-1,legit,POST /api/v1/accounts/acc-alice-1,"POST /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,aspnet,FRR-S1-strip-prefix,/svc/api/v1/accounts/acc-alice-1,legit,POST /svc/api/v1/accounts/acc-alice-1,"POST /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,aspnet,FRR-S2-version-rewrite,/api/latest/accounts/acc-alice-1,legit,POST /api/latest/accounts/acc-alice-1,"POST /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,aspnet,FRR-S3-trailing-slash,/api/v1/accounts/acc-alice-1/,legit,POST /api/v1/accounts/acc-alice-1/,"POST /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,aspnet,FRR-S4-pct-id,/api/v1/accounts/acc%2Dalice%2D1,legit,POST /api/v1/accounts/acc%2Dalice%2D1,"POST /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,aspnet,FRR-S4-pct-id,/api/v1/accounts/acc%2dalice%2d1,legit,POST /api/v1/accounts/acc%2dalice%2d1,"POST /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,aspnet,FRR-S4-pct-id,/api/v1/accounts/acc%20alice%201,legit,POST /api/v1/accounts/acc%20alice%201,"POST /api/v1/accounts/{id} {""id"": ""acc alice 1""}",True,False,True,True,True,True,True,False
+FRR,aspnet,FRR-S4-pct-id,/api/v1/accounts/acc-%C3%A9-1,legit,POST /api/v1/accounts/acc-%C3%A9-1,"POST /api/v1/accounts/{id} {""id"": ""acc-\u00e9-1""}",True,False,True,True,True,True,True,False
+FRR,aspnet,FRR-S4-pct-id,/api/v1/accounts/acc%2Falice%2F1,legit,POST /api/v1/accounts/acc%2Falice%2F1,"POST /api/v1/accounts/{id} {""id"": ""acc%2Falice%2F1""}",False,True,False,False,False,False,False,True
+FRR,aspnet,FRR-S5-h2-to-h1,/api/v1/accounts/acc-alice-1,legit,POST /api/v1/accounts/acc-alice-1,"POST /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,aspnet,FRR-S0-identity,/api/v1/accounts/acc-alice-1/statements,legit,GET /api/v1/accounts/acc-alice-1/statements,"GET /api/v1/accounts/{id}/statements {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,aspnet,FRR-S1-strip-prefix,/svc/api/v1/accounts/acc-alice-1/statements,legit,GET /svc/api/v1/accounts/acc-alice-1/statements,"GET /api/v1/accounts/{id}/statements {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,aspnet,FRR-S2-version-rewrite,/api/latest/accounts/acc-alice-1/statements,legit,GET /api/latest/accounts/acc-alice-1/statements,"GET /api/v1/accounts/{id}/statements {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,aspnet,FRR-S3-trailing-slash,/api/v1/accounts/acc-alice-1/statements/,legit,GET /api/v1/accounts/acc-alice-1/statements/,"GET /api/v1/accounts/{id}/statements {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,aspnet,FRR-S4-pct-id,/api/v1/accounts/acc%2Dalice%2D1/statements,legit,GET /api/v1/accounts/acc%2Dalice%2D1/statements,"GET /api/v1/accounts/{id}/statements {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,aspnet,FRR-S4-pct-id,/api/v1/accounts/acc%2dalice%2d1/statements,legit,GET /api/v1/accounts/acc%2dalice%2d1/statements,"GET /api/v1/accounts/{id}/statements {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,aspnet,FRR-S4-pct-id,/api/v1/accounts/acc%20alice%201/statements,legit,GET /api/v1/accounts/acc%20alice%201/statements,"GET /api/v1/accounts/{id}/statements {""id"": ""acc alice 1""}",True,False,True,True,True,True,True,False
+FRR,aspnet,FRR-S4-pct-id,/api/v1/accounts/acc-%C3%A9-1/statements,legit,GET /api/v1/accounts/acc-%C3%A9-1/statements,"GET /api/v1/accounts/{id}/statements {""id"": ""acc-\u00e9-1""}",True,False,True,True,True,True,True,False
+FRR,aspnet,FRR-S4-pct-id,/api/v1/accounts/acc%2Falice%2F1/statements,legit,GET /api/v1/accounts/acc%2Falice%2F1/statements,"GET /api/v1/accounts/{id}/statements {""id"": ""acc%2Falice%2F1""}",False,True,False,False,False,False,False,True
+FRR,aspnet,FRR-S5-h2-to-h1,/api/v1/accounts/acc-alice-1/statements,legit,GET /api/v1/accounts/acc-alice-1/statements,"GET /api/v1/accounts/{id}/statements {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,aspnet,FRR-S0-identity,/api/v1/accounts/acc-alice-1/statements/stmt-1,legit,DELETE /api/v1/accounts/acc-alice-1/statements/stmt-1,"DELETE /api/v1/accounts/{id}/statements/{sid} {""id"": ""acc-alice-1"", ""sid"": ""stmt-1""}",True,True,True,True,True,True,True,True
+FRR,aspnet,FRR-S1-strip-prefix,/svc/api/v1/accounts/acc-alice-1/statements/stmt-1,legit,DELETE /svc/api/v1/accounts/acc-alice-1/statements/stmt-1,"DELETE /api/v1/accounts/{id}/statements/{sid} {""id"": ""acc-alice-1"", ""sid"": ""stmt-1""}",False,False,False,False,False,False,False,False
+FRR,aspnet,FRR-S2-version-rewrite,/api/latest/accounts/acc-alice-1/statements/stmt-1,legit,DELETE /api/latest/accounts/acc-alice-1/statements/stmt-1,"DELETE /api/v1/accounts/{id}/statements/{sid} {""id"": ""acc-alice-1"", ""sid"": ""stmt-1""}",False,False,False,False,False,False,False,False
+FRR,aspnet,FRR-S3-trailing-slash,/api/v1/accounts/acc-alice-1/statements/stmt-1/,legit,DELETE /api/v1/accounts/acc-alice-1/statements/stmt-1/,"DELETE /api/v1/accounts/{id}/statements/{sid} {""id"": ""acc-alice-1"", ""sid"": ""stmt-1""}",False,False,False,False,False,False,False,False
+FRR,aspnet,FRR-S4-pct-id,/api/v1/accounts/acc%2Dalice%2D1/statements/stmt-1,legit,DELETE /api/v1/accounts/acc%2Dalice%2D1/statements/stmt-1,"DELETE /api/v1/accounts/{id}/statements/{sid} {""id"": ""acc-alice-1"", ""sid"": ""stmt-1""}",True,True,True,True,True,True,True,True
+FRR,aspnet,FRR-S4-pct-id,/api/v1/accounts/acc%2dalice%2d1/statements/stmt-1,legit,DELETE /api/v1/accounts/acc%2dalice%2d1/statements/stmt-1,"DELETE /api/v1/accounts/{id}/statements/{sid} {""id"": ""acc-alice-1"", ""sid"": ""stmt-1""}",True,True,True,True,True,True,True,True
+FRR,aspnet,FRR-S4-pct-id,/api/v1/accounts/acc%20alice%201/statements/stmt-1,legit,DELETE /api/v1/accounts/acc%20alice%201/statements/stmt-1,"DELETE /api/v1/accounts/{id}/statements/{sid} {""id"": ""acc alice 1"", ""sid"": ""stmt-1""}",True,False,True,True,True,True,True,False
+FRR,aspnet,FRR-S4-pct-id,/api/v1/accounts/acc-%C3%A9-1/statements/stmt-1,legit,DELETE /api/v1/accounts/acc-%C3%A9-1/statements/stmt-1,"DELETE /api/v1/accounts/{id}/statements/{sid} {""id"": ""acc-\u00e9-1"", ""sid"": ""stmt-1""}",True,False,True,True,True,True,True,False
+FRR,aspnet,FRR-S4-pct-id,/api/v1/accounts/acc%2Falice%2F1/statements/stmt-1,legit,DELETE /api/v1/accounts/acc%2Falice%2F1/statements/stmt-1,"DELETE /api/v1/accounts/{id}/statements/{sid} {""id"": ""acc%2Falice%2F1"", ""sid"": ""stmt-1""}",False,True,False,False,False,False,False,True
+FRR,aspnet,FRR-S5-h2-to-h1,/api/v1/accounts/acc-alice-1/statements/stmt-1,legit,DELETE /api/v1/accounts/acc-alice-1/statements/stmt-1,"DELETE /api/v1/accounts/{id}/statements/{sid} {""id"": ""acc-alice-1"", ""sid"": ""stmt-1""}",True,True,True,True,True,True,True,True
+FRR,aspnet,FRR-S0-identity,/api/v1/files/reports/logo.png,legit,GET /api/v1/files/reports/logo.png,"GET /api/v1/files/{path} {""path"": ""reports/logo.png""}",False,True,False,False,False,False,False,True
+FRR,aspnet,FRR-S1-strip-prefix,/svc/api/v1/files/reports/logo.png,legit,GET /svc/api/v1/files/reports/logo.png,"GET /api/v1/files/{path} {""path"": ""reports/logo.png""}",False,False,False,False,False,False,False,False
+FRR,aspnet,FRR-S2-version-rewrite,/api/latest/files/reports/logo.png,legit,GET /api/latest/files/reports/logo.png,"GET /api/v1/files/{path} {""path"": ""reports/logo.png""}",False,False,False,False,False,False,False,False
+FRR,aspnet,FRR-S3-trailing-slash,/api/v1/files/reports/logo.png/,legit,GET /api/v1/files/reports/logo.png/,"GET /api/v1/files/{path} {""path"": ""reports/logo.png""}",False,False,False,False,False,False,False,False
+FRR,aspnet,FRR-S5-h2-to-h1,/api/v1/files/reports/logo.png,legit,GET /api/v1/files/reports/logo.png,"GET /api/v1/files/{path} {""path"": ""reports/logo.png""}",False,True,False,False,False,False,False,True
+FRR,aspnet,FRR-S0-identity,/api/v1/accounts/acc-alice-1/actions?op=freeze,legit,POST /api/v1/accounts/acc-alice-1/actions?op=freeze,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,aspnet,FRR-S1-strip-prefix,/svc/api/v1/accounts/acc-alice-1/actions?op=freeze,legit,POST /svc/api/v1/accounts/acc-alice-1/actions?op=freeze,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,aspnet,FRR-S2-version-rewrite,/api/latest/accounts/acc-alice-1/actions?op=freeze,legit,POST /api/latest/accounts/acc-alice-1/actions?op=freeze,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,aspnet,FRR-S3-trailing-slash,/api/v1/accounts/acc-alice-1/actions/?op=freeze,legit,POST /api/v1/accounts/acc-alice-1/actions/?op=freeze,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,aspnet,FRR-S4-pct-id,/api/v1/accounts/acc%2Dalice%2D1/actions?op=freeze,legit,POST /api/v1/accounts/acc%2Dalice%2D1/actions?op=freeze,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,aspnet,FRR-S4-pct-id,/api/v1/accounts/acc%2dalice%2d1/actions?op=freeze,legit,POST /api/v1/accounts/acc%2dalice%2d1/actions?op=freeze,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,aspnet,FRR-S4-pct-id,/api/v1/accounts/acc%20alice%201/actions?op=freeze,legit,POST /api/v1/accounts/acc%20alice%201/actions?op=freeze,"POST /api/v1/accounts/{id}/actions {""id"": ""acc alice 1""}",True,False,True,True,True,True,True,False
+FRR,aspnet,FRR-S4-pct-id,/api/v1/accounts/acc-%C3%A9-1/actions?op=freeze,legit,POST /api/v1/accounts/acc-%C3%A9-1/actions?op=freeze,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-\u00e9-1""}",True,False,True,True,True,True,True,False
+FRR,aspnet,FRR-S4-pct-id,/api/v1/accounts/acc%2Falice%2F1/actions?op=freeze,legit,POST /api/v1/accounts/acc%2Falice%2F1/actions?op=freeze,"POST /api/v1/accounts/{id}/actions {""id"": ""acc%2Falice%2F1""}",False,True,False,False,False,False,False,True
+FRR,aspnet,FRR-S5-h2-to-h1,/api/v1/accounts/acc-alice-1/actions?op=freeze,legit,POST /api/v1/accounts/acc-alice-1/actions?op=freeze,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,aspnet,FRR-S0-identity,/api/v1/transfers,legit,POST /api/v1/transfers,POST /api/v1/transfers {},True,True,True,True,True,True,True,True
+FRR,aspnet,FRR-S1-strip-prefix,/svc/api/v1/transfers,legit,POST /svc/api/v1/transfers,POST /api/v1/transfers {},False,False,False,False,False,False,False,False
+FRR,aspnet,FRR-S2-version-rewrite,/api/latest/transfers,legit,POST /api/latest/transfers,POST /api/v1/transfers {},False,False,False,False,False,False,False,False
+FRR,aspnet,FRR-S3-trailing-slash,/api/v1/transfers/,legit,POST /api/v1/transfers/,POST /api/v1/transfers {},False,False,False,False,False,False,False,False
+FRR,aspnet,FRR-S5-h2-to-h1,/api/v1/transfers,legit,POST /api/v1/transfers,POST /api/v1/transfers {},True,True,True,True,True,True,True,True
+FRR,aspnet,FRR-S0-identity,/api/v1/graphql,legit,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+FRR,aspnet,FRR-S1-strip-prefix,/svc/api/v1/graphql,legit,POST /svc/api/v1/graphql,POST /api/v1/graphql {},False,False,False,False,False,False,False,False
+FRR,aspnet,FRR-S2-version-rewrite,/api/latest/graphql,legit,POST /api/latest/graphql,POST /api/v1/graphql {},False,False,False,False,False,False,False,False
+FRR,aspnet,FRR-S3-trailing-slash,/api/v1/graphql/,legit,POST /api/v1/graphql/,POST /api/v1/graphql {},False,False,False,False,False,False,False,False
+FRR,aspnet,FRR-S5-h2-to-h1,/api/v1/graphql,legit,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+FRR,aspnet,FRR-S0-identity,/api/v1/me,legit,GET /api/v1/me,GET /api/v1/me {},True,True,True,True,True,True,True,True
+FRR,aspnet,FRR-S1-strip-prefix,/svc/api/v1/me,legit,GET /svc/api/v1/me,GET /api/v1/me {},False,False,False,False,False,False,False,False
+FRR,aspnet,FRR-S2-version-rewrite,/api/latest/me,legit,GET /api/latest/me,GET /api/v1/me {},False,False,False,False,False,False,False,False
+FRR,aspnet,FRR-S3-trailing-slash,/api/v1/me/,legit,GET /api/v1/me/,GET /api/v1/me {},False,False,False,False,False,False,False,False
+FRR,aspnet,FRR-S5-h2-to-h1,/api/v1/me,legit,GET /api/v1/me,GET /api/v1/me {},True,True,True,True,True,True,True,True
+FRR,aspnet,FRR-S0-identity,/api/v1/admin/users,legit,GET /api/v1/admin/users,GET /api/v1/admin/users {},True,True,True,True,True,True,True,True
+FRR,aspnet,FRR-S1-strip-prefix,/svc/api/v1/admin/users,legit,GET /svc/api/v1/admin/users,GET /api/v1/admin/users {},False,False,False,False,False,False,False,False
+FRR,aspnet,FRR-S2-version-rewrite,/api/latest/admin/users,legit,GET /api/latest/admin/users,GET /api/v1/admin/users {},False,False,False,False,False,False,False,False
+FRR,aspnet,FRR-S3-trailing-slash,/api/v1/admin/users/,legit,GET /api/v1/admin/users/,GET /api/v1/admin/users {},False,False,False,False,False,False,False,False
+FRR,aspnet,FRR-S5-h2-to-h1,/api/v1/admin/users,legit,GET /api/v1/admin/users,GET /api/v1/admin/users {},True,True,True,True,True,True,True,True
+FRR,aspnet,FRR-S0-identity,/api/v1/admin/users/u-1,legit,DELETE /api/v1/admin/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",True,True,True,True,True,True,True,True
+FRR,aspnet,FRR-S1-strip-prefix,/svc/api/v1/admin/users/u-1,legit,DELETE /svc/api/v1/admin/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",False,False,False,False,False,False,False,False
+FRR,aspnet,FRR-S2-version-rewrite,/api/latest/admin/users/u-1,legit,DELETE /api/latest/admin/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",False,False,False,False,False,False,False,False
+FRR,aspnet,FRR-S3-trailing-slash,/api/v1/admin/users/u-1/,legit,DELETE /api/v1/admin/users/u-1/,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",False,False,False,False,False,False,False,False
+FRR,aspnet,FRR-S4-pct-id,/api/v1/admin/users/u-1,legit,DELETE /api/v1/admin/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",True,True,True,True,True,True,True,True
+FRR,aspnet,FRR-S4-pct-id,/api/v1/admin/users/u-1,legit,DELETE /api/v1/admin/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",True,True,True,True,True,True,True,True
+FRR,aspnet,FRR-S4-pct-id,/api/v1/admin/users/u-1,legit,DELETE /api/v1/admin/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",True,True,True,True,True,True,True,True
+FRR,aspnet,FRR-S4-pct-id,/api/v1/admin/users/u-1,legit,DELETE /api/v1/admin/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",True,True,True,True,True,True,True,True
+FRR,aspnet,FRR-S4-pct-id,/api/v1/admin/users/u-1,legit,DELETE /api/v1/admin/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",True,True,True,True,True,True,True,True
+FRR,aspnet,FRR-S5-h2-to-h1,/api/v1/admin/users/u-1,legit,DELETE /api/v1/admin/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",True,True,True,True,True,True,True,True
+FRR,aspnet,FRR-S0-identity,/api/v1/health,legit,GET /api/v1/health,GET /api/v1/health {},True,True,True,True,True,True,True,True
+FRR,aspnet,FRR-S1-strip-prefix,/svc/api/v1/health,legit,GET /svc/api/v1/health,GET /api/v1/health {},False,False,False,False,False,False,False,False
+FRR,aspnet,FRR-S2-version-rewrite,/api/latest/health,legit,GET /api/latest/health,GET /api/v1/health {},False,False,False,False,False,False,False,False
+FRR,aspnet,FRR-S3-trailing-slash,/api/v1/health/,legit,GET /api/v1/health/,GET /api/v1/health {},False,False,False,False,False,False,False,False
+FRR,aspnet,FRR-S5-h2-to-h1,/api/v1/health,legit,GET /api/v1/health,GET /api/v1/health {},True,True,True,True,True,True,True,True
+FRR,aspnet,FRR-S0-identity,/api/v1/public/logo.png,legit,GET /api/v1/public/logo.png,"GET /api/v1/public/{file} {""file"": ""logo.png""}",True,True,True,True,True,True,True,True
+FRR,aspnet,FRR-S1-strip-prefix,/svc/api/v1/public/logo.png,legit,GET /svc/api/v1/public/logo.png,"GET /api/v1/public/{file} {""file"": ""logo.png""}",False,False,False,False,False,False,False,False
+FRR,aspnet,FRR-S2-version-rewrite,/api/latest/public/logo.png,legit,GET /api/latest/public/logo.png,"GET /api/v1/public/{file} {""file"": ""logo.png""}",False,False,False,False,False,False,False,False
+FRR,aspnet,FRR-S3-trailing-slash,/api/v1/public/logo.png/,legit,GET /api/v1/public/logo.png/,"GET /api/v1/public/{file} {""file"": ""logo.png""}",False,False,False,False,False,False,False,False
+FRR,aspnet,FRR-S5-h2-to-h1,/api/v1/public/logo.png,legit,GET /api/v1/public/logo.png,"GET /api/v1/public/{file} {""file"": ""logo.png""}",True,True,True,True,True,True,True,True
+FRR,aspnet,FRR-S0-identity,/api/v2/accounts/acc-alice-1,legit,GET /api/v2/accounts/acc-alice-1,"GET /api/v2/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,aspnet,FRR-S1-strip-prefix,/svc/api/v2/accounts/acc-alice-1,legit,GET /svc/api/v2/accounts/acc-alice-1,"GET /api/v2/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,aspnet,FRR-S3-trailing-slash,/api/v2/accounts/acc-alice-1/,legit,GET /api/v2/accounts/acc-alice-1/,"GET /api/v2/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,aspnet,FRR-S4-pct-id,/api/v2/accounts/acc%2Dalice%2D1,legit,GET /api/v2/accounts/acc%2Dalice%2D1,"GET /api/v2/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,aspnet,FRR-S4-pct-id,/api/v2/accounts/acc%2dalice%2d1,legit,GET /api/v2/accounts/acc%2dalice%2d1,"GET /api/v2/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,aspnet,FRR-S4-pct-id,/api/v2/accounts/acc%20alice%201,legit,GET /api/v2/accounts/acc%20alice%201,"GET /api/v2/accounts/{id} {""id"": ""acc alice 1""}",True,False,True,True,True,True,True,False
+FRR,aspnet,FRR-S4-pct-id,/api/v2/accounts/acc-%C3%A9-1,legit,GET /api/v2/accounts/acc-%C3%A9-1,"GET /api/v2/accounts/{id} {""id"": ""acc-\u00e9-1""}",True,False,True,True,True,True,True,False
+FRR,aspnet,FRR-S4-pct-id,/api/v2/accounts/acc%2Falice%2F1,legit,GET /api/v2/accounts/acc%2Falice%2F1,"GET /api/v2/accounts/{id} {""id"": ""acc%2Falice%2F1""}",False,True,False,False,False,False,False,True
+FRR,aspnet,FRR-S5-h2-to-h1,/api/v2/accounts/acc-alice-1,legit,GET /api/v2/accounts/acc-alice-1,"GET /api/v2/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,express,FRR-S0-identity,/api/v1/accounts,legit,GET /api/v1/accounts,GET /api/v1/accounts {},True,True,True,True,True,True,True,True
+FRR,express,FRR-S1-strip-prefix,/svc/api/v1/accounts,legit,GET /svc/api/v1/accounts,GET /api/v1/accounts {},False,False,False,False,False,False,False,False
+FRR,express,FRR-S2-version-rewrite,/api/latest/accounts,legit,GET /api/latest/accounts,GET /api/v1/accounts {},False,False,False,False,False,False,False,False
+FRR,express,FRR-S3-trailing-slash,/api/v1/accounts/,legit,GET /api/v1/accounts/,GET /api/v1/accounts {},False,False,False,False,False,False,False,False
+FRR,express,FRR-S5-h2-to-h1,/api/v1/accounts,legit,GET /api/v1/accounts,GET /api/v1/accounts {},True,True,True,True,True,True,True,True
+FRR,express,FRR-S0-identity,/api/v1/accounts/acc-alice-1,legit,GET /api/v1/accounts/acc-alice-1,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,express,FRR-S1-strip-prefix,/svc/api/v1/accounts/acc-alice-1,legit,GET /svc/api/v1/accounts/acc-alice-1,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,express,FRR-S2-version-rewrite,/api/latest/accounts/acc-alice-1,legit,GET /api/latest/accounts/acc-alice-1,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,express,FRR-S3-trailing-slash,/api/v1/accounts/acc-alice-1/,legit,GET /api/v1/accounts/acc-alice-1/,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,express,FRR-S4-pct-id,/api/v1/accounts/acc%2Dalice%2D1,legit,GET /api/v1/accounts/acc%2Dalice%2D1,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,express,FRR-S4-pct-id,/api/v1/accounts/acc%2dalice%2d1,legit,GET /api/v1/accounts/acc%2dalice%2d1,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,express,FRR-S4-pct-id,/api/v1/accounts/acc%20alice%201,legit,GET /api/v1/accounts/acc%20alice%201,"GET /api/v1/accounts/{id} {""id"": ""acc alice 1""}",True,False,True,True,True,True,True,False
+FRR,express,FRR-S4-pct-id,/api/v1/accounts/acc-%C3%A9-1,legit,GET /api/v1/accounts/acc-%C3%A9-1,"GET /api/v1/accounts/{id} {""id"": ""acc-\u00e9-1""}",True,False,True,True,True,True,True,False
+FRR,express,FRR-S4-pct-id,/api/v1/accounts/acc%2Falice%2F1,legit,GET /api/v1/accounts/acc%2Falice%2F1,"GET /api/v1/accounts/{id} {""id"": ""acc/alice/1""}",True,False,True,True,True,True,True,False
+FRR,express,FRR-S5-h2-to-h1,/api/v1/accounts/acc-alice-1,legit,GET /api/v1/accounts/acc-alice-1,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,express,FRR-S0-identity,/api/v1/accounts/acc-alice-1,legit,PUT /api/v1/accounts/acc-alice-1,"PUT /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,express,FRR-S1-strip-prefix,/svc/api/v1/accounts/acc-alice-1,legit,PUT /svc/api/v1/accounts/acc-alice-1,"PUT /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,express,FRR-S2-version-rewrite,/api/latest/accounts/acc-alice-1,legit,PUT /api/latest/accounts/acc-alice-1,"PUT /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,express,FRR-S3-trailing-slash,/api/v1/accounts/acc-alice-1/,legit,PUT /api/v1/accounts/acc-alice-1/,"PUT /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,express,FRR-S4-pct-id,/api/v1/accounts/acc%2Dalice%2D1,legit,PUT /api/v1/accounts/acc%2Dalice%2D1,"PUT /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,express,FRR-S4-pct-id,/api/v1/accounts/acc%2dalice%2d1,legit,PUT /api/v1/accounts/acc%2dalice%2d1,"PUT /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,express,FRR-S4-pct-id,/api/v1/accounts/acc%20alice%201,legit,PUT /api/v1/accounts/acc%20alice%201,"PUT /api/v1/accounts/{id} {""id"": ""acc alice 1""}",True,False,True,True,True,True,True,False
+FRR,express,FRR-S4-pct-id,/api/v1/accounts/acc-%C3%A9-1,legit,PUT /api/v1/accounts/acc-%C3%A9-1,"PUT /api/v1/accounts/{id} {""id"": ""acc-\u00e9-1""}",True,False,True,True,True,True,True,False
+FRR,express,FRR-S4-pct-id,/api/v1/accounts/acc%2Falice%2F1,legit,PUT /api/v1/accounts/acc%2Falice%2F1,"PUT /api/v1/accounts/{id} {""id"": ""acc/alice/1""}",True,False,True,True,True,True,True,False
+FRR,express,FRR-S5-h2-to-h1,/api/v1/accounts/acc-alice-1,legit,PUT /api/v1/accounts/acc-alice-1,"PUT /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,express,FRR-S0-identity,/api/v1/accounts/acc-alice-1,legit,DELETE /api/v1/accounts/acc-alice-1,"DELETE /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,express,FRR-S1-strip-prefix,/svc/api/v1/accounts/acc-alice-1,legit,DELETE /svc/api/v1/accounts/acc-alice-1,"DELETE /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,express,FRR-S2-version-rewrite,/api/latest/accounts/acc-alice-1,legit,DELETE /api/latest/accounts/acc-alice-1,"DELETE /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,express,FRR-S3-trailing-slash,/api/v1/accounts/acc-alice-1/,legit,DELETE /api/v1/accounts/acc-alice-1/,"DELETE /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,express,FRR-S4-pct-id,/api/v1/accounts/acc%2Dalice%2D1,legit,DELETE /api/v1/accounts/acc%2Dalice%2D1,"DELETE /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,express,FRR-S4-pct-id,/api/v1/accounts/acc%2dalice%2d1,legit,DELETE /api/v1/accounts/acc%2dalice%2d1,"DELETE /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,express,FRR-S4-pct-id,/api/v1/accounts/acc%20alice%201,legit,DELETE /api/v1/accounts/acc%20alice%201,"DELETE /api/v1/accounts/{id} {""id"": ""acc alice 1""}",True,False,True,True,True,True,True,False
+FRR,express,FRR-S4-pct-id,/api/v1/accounts/acc-%C3%A9-1,legit,DELETE /api/v1/accounts/acc-%C3%A9-1,"DELETE /api/v1/accounts/{id} {""id"": ""acc-\u00e9-1""}",True,False,True,True,True,True,True,False
+FRR,express,FRR-S4-pct-id,/api/v1/accounts/acc%2Falice%2F1,legit,DELETE /api/v1/accounts/acc%2Falice%2F1,"DELETE /api/v1/accounts/{id} {""id"": ""acc/alice/1""}",True,False,True,True,True,True,True,False
+FRR,express,FRR-S5-h2-to-h1,/api/v1/accounts/acc-alice-1,legit,DELETE /api/v1/accounts/acc-alice-1,"DELETE /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,express,FRR-S0-identity,/api/v1/accounts/acc-alice-1,legit,POST /api/v1/accounts/acc-alice-1,"POST /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,express,FRR-S1-strip-prefix,/svc/api/v1/accounts/acc-alice-1,legit,POST /svc/api/v1/accounts/acc-alice-1,"POST /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,express,FRR-S2-version-rewrite,/api/latest/accounts/acc-alice-1,legit,POST /api/latest/accounts/acc-alice-1,"POST /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,express,FRR-S3-trailing-slash,/api/v1/accounts/acc-alice-1/,legit,POST /api/v1/accounts/acc-alice-1/,"POST /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,express,FRR-S4-pct-id,/api/v1/accounts/acc%2Dalice%2D1,legit,POST /api/v1/accounts/acc%2Dalice%2D1,"POST /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,express,FRR-S4-pct-id,/api/v1/accounts/acc%2dalice%2d1,legit,POST /api/v1/accounts/acc%2dalice%2d1,"POST /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,express,FRR-S4-pct-id,/api/v1/accounts/acc%20alice%201,legit,POST /api/v1/accounts/acc%20alice%201,"POST /api/v1/accounts/{id} {""id"": ""acc alice 1""}",True,False,True,True,True,True,True,False
+FRR,express,FRR-S4-pct-id,/api/v1/accounts/acc-%C3%A9-1,legit,POST /api/v1/accounts/acc-%C3%A9-1,"POST /api/v1/accounts/{id} {""id"": ""acc-\u00e9-1""}",True,False,True,True,True,True,True,False
+FRR,express,FRR-S4-pct-id,/api/v1/accounts/acc%2Falice%2F1,legit,POST /api/v1/accounts/acc%2Falice%2F1,"POST /api/v1/accounts/{id} {""id"": ""acc/alice/1""}",True,False,True,True,True,True,True,False
+FRR,express,FRR-S5-h2-to-h1,/api/v1/accounts/acc-alice-1,legit,POST /api/v1/accounts/acc-alice-1,"POST /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,express,FRR-S0-identity,/api/v1/accounts/acc-alice-1/statements,legit,GET /api/v1/accounts/acc-alice-1/statements,"GET /api/v1/accounts/{id}/statements {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,express,FRR-S1-strip-prefix,/svc/api/v1/accounts/acc-alice-1/statements,legit,GET /svc/api/v1/accounts/acc-alice-1/statements,"GET /api/v1/accounts/{id}/statements {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,express,FRR-S2-version-rewrite,/api/latest/accounts/acc-alice-1/statements,legit,GET /api/latest/accounts/acc-alice-1/statements,"GET /api/v1/accounts/{id}/statements {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,express,FRR-S3-trailing-slash,/api/v1/accounts/acc-alice-1/statements/,legit,GET /api/v1/accounts/acc-alice-1/statements/,"GET /api/v1/accounts/{id}/statements {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,express,FRR-S4-pct-id,/api/v1/accounts/acc%2Dalice%2D1/statements,legit,GET /api/v1/accounts/acc%2Dalice%2D1/statements,"GET /api/v1/accounts/{id}/statements {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,express,FRR-S4-pct-id,/api/v1/accounts/acc%2dalice%2d1/statements,legit,GET /api/v1/accounts/acc%2dalice%2d1/statements,"GET /api/v1/accounts/{id}/statements {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,express,FRR-S4-pct-id,/api/v1/accounts/acc%20alice%201/statements,legit,GET /api/v1/accounts/acc%20alice%201/statements,"GET /api/v1/accounts/{id}/statements {""id"": ""acc alice 1""}",True,False,True,True,True,True,True,False
+FRR,express,FRR-S4-pct-id,/api/v1/accounts/acc-%C3%A9-1/statements,legit,GET /api/v1/accounts/acc-%C3%A9-1/statements,"GET /api/v1/accounts/{id}/statements {""id"": ""acc-\u00e9-1""}",True,False,True,True,True,True,True,False
+FRR,express,FRR-S4-pct-id,/api/v1/accounts/acc%2Falice%2F1/statements,legit,GET /api/v1/accounts/acc%2Falice%2F1/statements,"GET /api/v1/accounts/{id}/statements {""id"": ""acc/alice/1""}",True,False,True,True,True,True,True,False
+FRR,express,FRR-S5-h2-to-h1,/api/v1/accounts/acc-alice-1/statements,legit,GET /api/v1/accounts/acc-alice-1/statements,"GET /api/v1/accounts/{id}/statements {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,express,FRR-S0-identity,/api/v1/accounts/acc-alice-1/statements/stmt-1,legit,DELETE /api/v1/accounts/acc-alice-1/statements/stmt-1,"DELETE /api/v1/accounts/{id}/statements/{sid} {""id"": ""acc-alice-1"", ""sid"": ""stmt-1""}",True,True,True,True,True,True,True,True
+FRR,express,FRR-S1-strip-prefix,/svc/api/v1/accounts/acc-alice-1/statements/stmt-1,legit,DELETE /svc/api/v1/accounts/acc-alice-1/statements/stmt-1,"DELETE /api/v1/accounts/{id}/statements/{sid} {""id"": ""acc-alice-1"", ""sid"": ""stmt-1""}",False,False,False,False,False,False,False,False
+FRR,express,FRR-S2-version-rewrite,/api/latest/accounts/acc-alice-1/statements/stmt-1,legit,DELETE /api/latest/accounts/acc-alice-1/statements/stmt-1,"DELETE /api/v1/accounts/{id}/statements/{sid} {""id"": ""acc-alice-1"", ""sid"": ""stmt-1""}",False,False,False,False,False,False,False,False
+FRR,express,FRR-S3-trailing-slash,/api/v1/accounts/acc-alice-1/statements/stmt-1/,legit,DELETE /api/v1/accounts/acc-alice-1/statements/stmt-1/,"DELETE /api/v1/accounts/{id}/statements/{sid} {""id"": ""acc-alice-1"", ""sid"": ""stmt-1""}",False,False,False,False,False,False,False,False
+FRR,express,FRR-S4-pct-id,/api/v1/accounts/acc%2Dalice%2D1/statements/stmt-1,legit,DELETE /api/v1/accounts/acc%2Dalice%2D1/statements/stmt-1,"DELETE /api/v1/accounts/{id}/statements/{sid} {""id"": ""acc-alice-1"", ""sid"": ""stmt-1""}",True,True,True,True,True,True,True,True
+FRR,express,FRR-S4-pct-id,/api/v1/accounts/acc%2dalice%2d1/statements/stmt-1,legit,DELETE /api/v1/accounts/acc%2dalice%2d1/statements/stmt-1,"DELETE /api/v1/accounts/{id}/statements/{sid} {""id"": ""acc-alice-1"", ""sid"": ""stmt-1""}",True,True,True,True,True,True,True,True
+FRR,express,FRR-S4-pct-id,/api/v1/accounts/acc%20alice%201/statements/stmt-1,legit,DELETE /api/v1/accounts/acc%20alice%201/statements/stmt-1,"DELETE /api/v1/accounts/{id}/statements/{sid} {""id"": ""acc alice 1"", ""sid"": ""stmt-1""}",True,False,True,True,True,True,True,False
+FRR,express,FRR-S4-pct-id,/api/v1/accounts/acc-%C3%A9-1/statements/stmt-1,legit,DELETE /api/v1/accounts/acc-%C3%A9-1/statements/stmt-1,"DELETE /api/v1/accounts/{id}/statements/{sid} {""id"": ""acc-\u00e9-1"", ""sid"": ""stmt-1""}",True,False,True,True,True,True,True,False
+FRR,express,FRR-S4-pct-id,/api/v1/accounts/acc%2Falice%2F1/statements/stmt-1,legit,DELETE /api/v1/accounts/acc%2Falice%2F1/statements/stmt-1,"DELETE /api/v1/accounts/{id}/statements/{sid} {""id"": ""acc/alice/1"", ""sid"": ""stmt-1""}",True,False,True,True,True,True,True,False
+FRR,express,FRR-S5-h2-to-h1,/api/v1/accounts/acc-alice-1/statements/stmt-1,legit,DELETE /api/v1/accounts/acc-alice-1/statements/stmt-1,"DELETE /api/v1/accounts/{id}/statements/{sid} {""id"": ""acc-alice-1"", ""sid"": ""stmt-1""}",True,True,True,True,True,True,True,True
+FRR,express,FRR-S0-identity,/api/v1/files/reports/logo.png,legit,GET /api/v1/files/reports/logo.png,"GET /api/v1/files/{path} {""0"": ""eports/logo.png"", ""path"": ""reports/logo.png""}",False,True,False,False,False,False,False,True
+FRR,express,FRR-S1-strip-prefix,/svc/api/v1/files/reports/logo.png,legit,GET /svc/api/v1/files/reports/logo.png,"GET /api/v1/files/{path} {""0"": ""eports/logo.png"", ""path"": ""reports/logo.png""}",False,False,False,False,False,False,False,False
+FRR,express,FRR-S2-version-rewrite,/api/latest/files/reports/logo.png,legit,GET /api/latest/files/reports/logo.png,"GET /api/v1/files/{path} {""0"": ""eports/logo.png"", ""path"": ""reports/logo.png""}",False,False,False,False,False,False,False,False
+FRR,express,FRR-S3-trailing-slash,/api/v1/files/reports/logo.png/,legit,GET /api/v1/files/reports/logo.png/,"GET /api/v1/files/{path} {""0"": ""eports/logo.png"", ""path"": ""reports/logo.png""}",False,False,False,False,False,False,False,False
+FRR,express,FRR-S5-h2-to-h1,/api/v1/files/reports/logo.png,legit,GET /api/v1/files/reports/logo.png,"GET /api/v1/files/{path} {""0"": ""eports/logo.png"", ""path"": ""reports/logo.png""}",False,True,False,False,False,False,False,True
+FRR,express,FRR-S0-identity,/api/v1/accounts/acc-alice-1/actions?op=freeze,legit,POST /api/v1/accounts/acc-alice-1/actions?op=freeze,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,express,FRR-S1-strip-prefix,/svc/api/v1/accounts/acc-alice-1/actions?op=freeze,legit,POST /svc/api/v1/accounts/acc-alice-1/actions?op=freeze,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,express,FRR-S2-version-rewrite,/api/latest/accounts/acc-alice-1/actions?op=freeze,legit,POST /api/latest/accounts/acc-alice-1/actions?op=freeze,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,express,FRR-S3-trailing-slash,/api/v1/accounts/acc-alice-1/actions/?op=freeze,legit,POST /api/v1/accounts/acc-alice-1/actions/?op=freeze,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,express,FRR-S4-pct-id,/api/v1/accounts/acc%2Dalice%2D1/actions?op=freeze,legit,POST /api/v1/accounts/acc%2Dalice%2D1/actions?op=freeze,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,express,FRR-S4-pct-id,/api/v1/accounts/acc%2dalice%2d1/actions?op=freeze,legit,POST /api/v1/accounts/acc%2dalice%2d1/actions?op=freeze,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,express,FRR-S4-pct-id,/api/v1/accounts/acc%20alice%201/actions?op=freeze,legit,POST /api/v1/accounts/acc%20alice%201/actions?op=freeze,"POST /api/v1/accounts/{id}/actions {""id"": ""acc alice 1""}",True,False,True,True,True,True,True,False
+FRR,express,FRR-S4-pct-id,/api/v1/accounts/acc-%C3%A9-1/actions?op=freeze,legit,POST /api/v1/accounts/acc-%C3%A9-1/actions?op=freeze,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-\u00e9-1""}",True,False,True,True,True,True,True,False
+FRR,express,FRR-S4-pct-id,/api/v1/accounts/acc%2Falice%2F1/actions?op=freeze,legit,POST /api/v1/accounts/acc%2Falice%2F1/actions?op=freeze,"POST /api/v1/accounts/{id}/actions {""id"": ""acc/alice/1""}",True,False,True,True,True,True,True,False
+FRR,express,FRR-S5-h2-to-h1,/api/v1/accounts/acc-alice-1/actions?op=freeze,legit,POST /api/v1/accounts/acc-alice-1/actions?op=freeze,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,express,FRR-S0-identity,/api/v1/transfers,legit,POST /api/v1/transfers,POST /api/v1/transfers {},True,True,True,True,True,True,True,True
+FRR,express,FRR-S1-strip-prefix,/svc/api/v1/transfers,legit,POST /svc/api/v1/transfers,POST /api/v1/transfers {},False,False,False,False,False,False,False,False
+FRR,express,FRR-S2-version-rewrite,/api/latest/transfers,legit,POST /api/latest/transfers,POST /api/v1/transfers {},False,False,False,False,False,False,False,False
+FRR,express,FRR-S3-trailing-slash,/api/v1/transfers/,legit,POST /api/v1/transfers/,POST /api/v1/transfers {},False,False,False,False,False,False,False,False
+FRR,express,FRR-S5-h2-to-h1,/api/v1/transfers,legit,POST /api/v1/transfers,POST /api/v1/transfers {},True,True,True,True,True,True,True,True
+FRR,express,FRR-S0-identity,/api/v1/graphql,legit,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+FRR,express,FRR-S1-strip-prefix,/svc/api/v1/graphql,legit,POST /svc/api/v1/graphql,POST /api/v1/graphql {},False,False,False,False,False,False,False,False
+FRR,express,FRR-S2-version-rewrite,/api/latest/graphql,legit,POST /api/latest/graphql,POST /api/v1/graphql {},False,False,False,False,False,False,False,False
+FRR,express,FRR-S3-trailing-slash,/api/v1/graphql/,legit,POST /api/v1/graphql/,POST /api/v1/graphql {},False,False,False,False,False,False,False,False
+FRR,express,FRR-S5-h2-to-h1,/api/v1/graphql,legit,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+FRR,express,FRR-S0-identity,/api/v1/me,legit,GET /api/v1/me,GET /api/v1/me {},True,True,True,True,True,True,True,True
+FRR,express,FRR-S1-strip-prefix,/svc/api/v1/me,legit,GET /svc/api/v1/me,GET /api/v1/me {},False,False,False,False,False,False,False,False
+FRR,express,FRR-S2-version-rewrite,/api/latest/me,legit,GET /api/latest/me,GET /api/v1/me {},False,False,False,False,False,False,False,False
+FRR,express,FRR-S3-trailing-slash,/api/v1/me/,legit,GET /api/v1/me/,GET /api/v1/me {},False,False,False,False,False,False,False,False
+FRR,express,FRR-S5-h2-to-h1,/api/v1/me,legit,GET /api/v1/me,GET /api/v1/me {},True,True,True,True,True,True,True,True
+FRR,express,FRR-S0-identity,/api/v1/admin/users,legit,GET /api/v1/admin/users,GET /api/v1/admin/users {},True,True,True,True,True,True,True,True
+FRR,express,FRR-S1-strip-prefix,/svc/api/v1/admin/users,legit,GET /svc/api/v1/admin/users,GET /api/v1/admin/users {},False,False,False,False,False,False,False,False
+FRR,express,FRR-S2-version-rewrite,/api/latest/admin/users,legit,GET /api/latest/admin/users,GET /api/v1/admin/users {},False,False,False,False,False,False,False,False
+FRR,express,FRR-S3-trailing-slash,/api/v1/admin/users/,legit,GET /api/v1/admin/users/,GET /api/v1/admin/users {},False,False,False,False,False,False,False,False
+FRR,express,FRR-S5-h2-to-h1,/api/v1/admin/users,legit,GET /api/v1/admin/users,GET /api/v1/admin/users {},True,True,True,True,True,True,True,True
+FRR,express,FRR-S0-identity,/api/v1/admin/users/u-1,legit,DELETE /api/v1/admin/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",True,True,True,True,True,True,True,True
+FRR,express,FRR-S1-strip-prefix,/svc/api/v1/admin/users/u-1,legit,DELETE /svc/api/v1/admin/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",False,False,False,False,False,False,False,False
+FRR,express,FRR-S2-version-rewrite,/api/latest/admin/users/u-1,legit,DELETE /api/latest/admin/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",False,False,False,False,False,False,False,False
+FRR,express,FRR-S3-trailing-slash,/api/v1/admin/users/u-1/,legit,DELETE /api/v1/admin/users/u-1/,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",False,False,False,False,False,False,False,False
+FRR,express,FRR-S4-pct-id,/api/v1/admin/users/u-1,legit,DELETE /api/v1/admin/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",True,True,True,True,True,True,True,True
+FRR,express,FRR-S4-pct-id,/api/v1/admin/users/u-1,legit,DELETE /api/v1/admin/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",True,True,True,True,True,True,True,True
+FRR,express,FRR-S4-pct-id,/api/v1/admin/users/u-1,legit,DELETE /api/v1/admin/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",True,True,True,True,True,True,True,True
+FRR,express,FRR-S4-pct-id,/api/v1/admin/users/u-1,legit,DELETE /api/v1/admin/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",True,True,True,True,True,True,True,True
+FRR,express,FRR-S4-pct-id,/api/v1/admin/users/u-1,legit,DELETE /api/v1/admin/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",True,True,True,True,True,True,True,True
+FRR,express,FRR-S5-h2-to-h1,/api/v1/admin/users/u-1,legit,DELETE /api/v1/admin/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",True,True,True,True,True,True,True,True
+FRR,express,FRR-S0-identity,/api/v1/health,legit,GET /api/v1/health,GET /api/v1/health {},True,True,True,True,True,True,True,True
+FRR,express,FRR-S1-strip-prefix,/svc/api/v1/health,legit,GET /svc/api/v1/health,GET /api/v1/health {},False,False,False,False,False,False,False,False
+FRR,express,FRR-S2-version-rewrite,/api/latest/health,legit,GET /api/latest/health,GET /api/v1/health {},False,False,False,False,False,False,False,False
+FRR,express,FRR-S3-trailing-slash,/api/v1/health/,legit,GET /api/v1/health/,GET /api/v1/health {},False,False,False,False,False,False,False,False
+FRR,express,FRR-S5-h2-to-h1,/api/v1/health,legit,GET /api/v1/health,GET /api/v1/health {},True,True,True,True,True,True,True,True
+FRR,express,FRR-S0-identity,/api/v1/public/logo.png,legit,GET /api/v1/public/logo.png,"GET /api/v1/public/{file} {""file"": ""logo.png""}",True,True,True,True,True,True,True,True
+FRR,express,FRR-S1-strip-prefix,/svc/api/v1/public/logo.png,legit,GET /svc/api/v1/public/logo.png,"GET /api/v1/public/{file} {""file"": ""logo.png""}",False,False,False,False,False,False,False,False
+FRR,express,FRR-S2-version-rewrite,/api/latest/public/logo.png,legit,GET /api/latest/public/logo.png,"GET /api/v1/public/{file} {""file"": ""logo.png""}",False,False,False,False,False,False,False,False
+FRR,express,FRR-S3-trailing-slash,/api/v1/public/logo.png/,legit,GET /api/v1/public/logo.png/,"GET /api/v1/public/{file} {""file"": ""logo.png""}",False,False,False,False,False,False,False,False
+FRR,express,FRR-S5-h2-to-h1,/api/v1/public/logo.png,legit,GET /api/v1/public/logo.png,"GET /api/v1/public/{file} {""file"": ""logo.png""}",True,True,True,True,True,True,True,True
+FRR,express,FRR-S0-identity,/api/v2/accounts/acc-alice-1,legit,GET /api/v2/accounts/acc-alice-1,"GET /api/v2/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,express,FRR-S1-strip-prefix,/svc/api/v2/accounts/acc-alice-1,legit,GET /svc/api/v2/accounts/acc-alice-1,"GET /api/v2/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,express,FRR-S3-trailing-slash,/api/v2/accounts/acc-alice-1/,legit,GET /api/v2/accounts/acc-alice-1/,"GET /api/v2/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,express,FRR-S4-pct-id,/api/v2/accounts/acc%2Dalice%2D1,legit,GET /api/v2/accounts/acc%2Dalice%2D1,"GET /api/v2/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,express,FRR-S4-pct-id,/api/v2/accounts/acc%2dalice%2d1,legit,GET /api/v2/accounts/acc%2dalice%2d1,"GET /api/v2/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,express,FRR-S4-pct-id,/api/v2/accounts/acc%20alice%201,legit,GET /api/v2/accounts/acc%20alice%201,"GET /api/v2/accounts/{id} {""id"": ""acc alice 1""}",True,False,True,True,True,True,True,False
+FRR,express,FRR-S4-pct-id,/api/v2/accounts/acc-%C3%A9-1,legit,GET /api/v2/accounts/acc-%C3%A9-1,"GET /api/v2/accounts/{id} {""id"": ""acc-\u00e9-1""}",True,False,True,True,True,True,True,False
+FRR,express,FRR-S4-pct-id,/api/v2/accounts/acc%2Falice%2F1,legit,GET /api/v2/accounts/acc%2Falice%2F1,"GET /api/v2/accounts/{id} {""id"": ""acc/alice/1""}",True,False,True,True,True,True,True,False
+FRR,express,FRR-S5-h2-to-h1,/api/v2/accounts/acc-alice-1,legit,GET /api/v2/accounts/acc-alice-1,"GET /api/v2/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,fastapi,FRR-S0-identity,/api/v1/accounts,legit,GET /api/v1/accounts,GET /api/v1/accounts {},True,True,True,True,True,True,True,True
+FRR,fastapi,FRR-S1-strip-prefix,/svc/api/v1/accounts,legit,GET /svc/api/v1/accounts,GET /api/v1/accounts {},False,False,False,False,False,False,False,False
+FRR,fastapi,FRR-S2-version-rewrite,/api/latest/accounts,legit,GET /api/latest/accounts,GET /api/v1/accounts {},False,False,False,False,False,False,False,False
+FRR,fastapi,FRR-S3-trailing-slash,/api/v1/accounts/,legit,GET /api/v1/accounts/,GET /api/v1/accounts {},False,False,False,False,False,False,False,False
+FRR,fastapi,FRR-S5-h2-to-h1,/api/v1/accounts,legit,GET /api/v1/accounts,GET /api/v1/accounts {},True,True,True,True,True,True,True,True
+FRR,fastapi,FRR-S0-identity,/api/v1/accounts/acc-alice-1,legit,GET /api/v1/accounts/acc-alice-1,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,fastapi,FRR-S1-strip-prefix,/svc/api/v1/accounts/acc-alice-1,legit,GET /svc/api/v1/accounts/acc-alice-1,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,fastapi,FRR-S2-version-rewrite,/api/latest/accounts/acc-alice-1,legit,GET /api/latest/accounts/acc-alice-1,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,fastapi,FRR-S3-trailing-slash,/api/v1/accounts/acc-alice-1/,legit,GET /api/v1/accounts/acc-alice-1/,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,fastapi,FRR-S4-pct-id,/api/v1/accounts/acc%2Dalice%2D1,legit,GET /api/v1/accounts/acc%2Dalice%2D1,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,fastapi,FRR-S4-pct-id,/api/v1/accounts/acc%2dalice%2d1,legit,GET /api/v1/accounts/acc%2dalice%2d1,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,fastapi,FRR-S4-pct-id,/api/v1/accounts/acc%20alice%201,legit,GET /api/v1/accounts/acc%20alice%201,"GET /api/v1/accounts/{id} {""id"": ""acc alice 1""}",True,False,True,True,True,True,True,False
+FRR,fastapi,FRR-S4-pct-id,/api/v1/accounts/acc-%C3%A9-1,legit,GET /api/v1/accounts/acc-%C3%A9-1,"GET /api/v1/accounts/{id} {""id"": ""acc-\u00e9-1""}",True,False,True,True,True,True,True,False
+FRR,fastapi,FRR-S5-h2-to-h1,/api/v1/accounts/acc-alice-1,legit,GET /api/v1/accounts/acc-alice-1,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,fastapi,FRR-S0-identity,/api/v1/accounts/acc-alice-1,legit,PUT /api/v1/accounts/acc-alice-1,"PUT /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,fastapi,FRR-S1-strip-prefix,/svc/api/v1/accounts/acc-alice-1,legit,PUT /svc/api/v1/accounts/acc-alice-1,"PUT /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,fastapi,FRR-S2-version-rewrite,/api/latest/accounts/acc-alice-1,legit,PUT /api/latest/accounts/acc-alice-1,"PUT /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,fastapi,FRR-S3-trailing-slash,/api/v1/accounts/acc-alice-1/,legit,PUT /api/v1/accounts/acc-alice-1/,"PUT /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,fastapi,FRR-S4-pct-id,/api/v1/accounts/acc%2Dalice%2D1,legit,PUT /api/v1/accounts/acc%2Dalice%2D1,"PUT /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,fastapi,FRR-S4-pct-id,/api/v1/accounts/acc%2dalice%2d1,legit,PUT /api/v1/accounts/acc%2dalice%2d1,"PUT /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,fastapi,FRR-S4-pct-id,/api/v1/accounts/acc%20alice%201,legit,PUT /api/v1/accounts/acc%20alice%201,"PUT /api/v1/accounts/{id} {""id"": ""acc alice 1""}",True,False,True,True,True,True,True,False
+FRR,fastapi,FRR-S4-pct-id,/api/v1/accounts/acc-%C3%A9-1,legit,PUT /api/v1/accounts/acc-%C3%A9-1,"PUT /api/v1/accounts/{id} {""id"": ""acc-\u00e9-1""}",True,False,True,True,True,True,True,False
+FRR,fastapi,FRR-S5-h2-to-h1,/api/v1/accounts/acc-alice-1,legit,PUT /api/v1/accounts/acc-alice-1,"PUT /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,fastapi,FRR-S0-identity,/api/v1/accounts/acc-alice-1,legit,DELETE /api/v1/accounts/acc-alice-1,"DELETE /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,fastapi,FRR-S1-strip-prefix,/svc/api/v1/accounts/acc-alice-1,legit,DELETE /svc/api/v1/accounts/acc-alice-1,"DELETE /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,fastapi,FRR-S2-version-rewrite,/api/latest/accounts/acc-alice-1,legit,DELETE /api/latest/accounts/acc-alice-1,"DELETE /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,fastapi,FRR-S3-trailing-slash,/api/v1/accounts/acc-alice-1/,legit,DELETE /api/v1/accounts/acc-alice-1/,"DELETE /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,fastapi,FRR-S4-pct-id,/api/v1/accounts/acc%2Dalice%2D1,legit,DELETE /api/v1/accounts/acc%2Dalice%2D1,"DELETE /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,fastapi,FRR-S4-pct-id,/api/v1/accounts/acc%2dalice%2d1,legit,DELETE /api/v1/accounts/acc%2dalice%2d1,"DELETE /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,fastapi,FRR-S4-pct-id,/api/v1/accounts/acc%20alice%201,legit,DELETE /api/v1/accounts/acc%20alice%201,"DELETE /api/v1/accounts/{id} {""id"": ""acc alice 1""}",True,False,True,True,True,True,True,False
+FRR,fastapi,FRR-S4-pct-id,/api/v1/accounts/acc-%C3%A9-1,legit,DELETE /api/v1/accounts/acc-%C3%A9-1,"DELETE /api/v1/accounts/{id} {""id"": ""acc-\u00e9-1""}",True,False,True,True,True,True,True,False
+FRR,fastapi,FRR-S5-h2-to-h1,/api/v1/accounts/acc-alice-1,legit,DELETE /api/v1/accounts/acc-alice-1,"DELETE /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,fastapi,FRR-S0-identity,/api/v1/accounts/acc-alice-1,legit,POST /api/v1/accounts/acc-alice-1,"POST /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,fastapi,FRR-S1-strip-prefix,/svc/api/v1/accounts/acc-alice-1,legit,POST /svc/api/v1/accounts/acc-alice-1,"POST /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,fastapi,FRR-S2-version-rewrite,/api/latest/accounts/acc-alice-1,legit,POST /api/latest/accounts/acc-alice-1,"POST /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,fastapi,FRR-S3-trailing-slash,/api/v1/accounts/acc-alice-1/,legit,POST /api/v1/accounts/acc-alice-1/,"POST /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,fastapi,FRR-S4-pct-id,/api/v1/accounts/acc%2Dalice%2D1,legit,POST /api/v1/accounts/acc%2Dalice%2D1,"POST /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,fastapi,FRR-S4-pct-id,/api/v1/accounts/acc%2dalice%2d1,legit,POST /api/v1/accounts/acc%2dalice%2d1,"POST /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,fastapi,FRR-S4-pct-id,/api/v1/accounts/acc%20alice%201,legit,POST /api/v1/accounts/acc%20alice%201,"POST /api/v1/accounts/{id} {""id"": ""acc alice 1""}",True,False,True,True,True,True,True,False
+FRR,fastapi,FRR-S4-pct-id,/api/v1/accounts/acc-%C3%A9-1,legit,POST /api/v1/accounts/acc-%C3%A9-1,"POST /api/v1/accounts/{id} {""id"": ""acc-\u00e9-1""}",True,False,True,True,True,True,True,False
+FRR,fastapi,FRR-S5-h2-to-h1,/api/v1/accounts/acc-alice-1,legit,POST /api/v1/accounts/acc-alice-1,"POST /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,fastapi,FRR-S0-identity,/api/v1/accounts/acc-alice-1/statements,legit,GET /api/v1/accounts/acc-alice-1/statements,"GET /api/v1/accounts/{id}/statements {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,fastapi,FRR-S1-strip-prefix,/svc/api/v1/accounts/acc-alice-1/statements,legit,GET /svc/api/v1/accounts/acc-alice-1/statements,"GET /api/v1/accounts/{id}/statements {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,fastapi,FRR-S2-version-rewrite,/api/latest/accounts/acc-alice-1/statements,legit,GET /api/latest/accounts/acc-alice-1/statements,"GET /api/v1/accounts/{id}/statements {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,fastapi,FRR-S3-trailing-slash,/api/v1/accounts/acc-alice-1/statements/,legit,GET /api/v1/accounts/acc-alice-1/statements/,"GET /api/v1/accounts/{id}/statements {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,fastapi,FRR-S4-pct-id,/api/v1/accounts/acc%2Dalice%2D1/statements,legit,GET /api/v1/accounts/acc%2Dalice%2D1/statements,"GET /api/v1/accounts/{id}/statements {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,fastapi,FRR-S4-pct-id,/api/v1/accounts/acc%2dalice%2d1/statements,legit,GET /api/v1/accounts/acc%2dalice%2d1/statements,"GET /api/v1/accounts/{id}/statements {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,fastapi,FRR-S4-pct-id,/api/v1/accounts/acc%20alice%201/statements,legit,GET /api/v1/accounts/acc%20alice%201/statements,"GET /api/v1/accounts/{id}/statements {""id"": ""acc alice 1""}",True,False,True,True,True,True,True,False
+FRR,fastapi,FRR-S4-pct-id,/api/v1/accounts/acc-%C3%A9-1/statements,legit,GET /api/v1/accounts/acc-%C3%A9-1/statements,"GET /api/v1/accounts/{id}/statements {""id"": ""acc-\u00e9-1""}",True,False,True,True,True,True,True,False
+FRR,fastapi,FRR-S5-h2-to-h1,/api/v1/accounts/acc-alice-1/statements,legit,GET /api/v1/accounts/acc-alice-1/statements,"GET /api/v1/accounts/{id}/statements {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,fastapi,FRR-S0-identity,/api/v1/accounts/acc-alice-1/statements/stmt-1,legit,DELETE /api/v1/accounts/acc-alice-1/statements/stmt-1,"DELETE /api/v1/accounts/{id}/statements/{sid} {""id"": ""acc-alice-1"", ""sid"": ""stmt-1""}",True,True,True,True,True,True,True,True
+FRR,fastapi,FRR-S1-strip-prefix,/svc/api/v1/accounts/acc-alice-1/statements/stmt-1,legit,DELETE /svc/api/v1/accounts/acc-alice-1/statements/stmt-1,"DELETE /api/v1/accounts/{id}/statements/{sid} {""id"": ""acc-alice-1"", ""sid"": ""stmt-1""}",False,False,False,False,False,False,False,False
+FRR,fastapi,FRR-S2-version-rewrite,/api/latest/accounts/acc-alice-1/statements/stmt-1,legit,DELETE /api/latest/accounts/acc-alice-1/statements/stmt-1,"DELETE /api/v1/accounts/{id}/statements/{sid} {""id"": ""acc-alice-1"", ""sid"": ""stmt-1""}",False,False,False,False,False,False,False,False
+FRR,fastapi,FRR-S3-trailing-slash,/api/v1/accounts/acc-alice-1/statements/stmt-1/,legit,DELETE /api/v1/accounts/acc-alice-1/statements/stmt-1/,"DELETE /api/v1/accounts/{id}/statements/{sid} {""id"": ""acc-alice-1"", ""sid"": ""stmt-1""}",False,False,False,False,False,False,False,False
+FRR,fastapi,FRR-S4-pct-id,/api/v1/accounts/acc%2Dalice%2D1/statements/stmt-1,legit,DELETE /api/v1/accounts/acc%2Dalice%2D1/statements/stmt-1,"DELETE /api/v1/accounts/{id}/statements/{sid} {""id"": ""acc-alice-1"", ""sid"": ""stmt-1""}",True,True,True,True,True,True,True,True
+FRR,fastapi,FRR-S4-pct-id,/api/v1/accounts/acc%2dalice%2d1/statements/stmt-1,legit,DELETE /api/v1/accounts/acc%2dalice%2d1/statements/stmt-1,"DELETE /api/v1/accounts/{id}/statements/{sid} {""id"": ""acc-alice-1"", ""sid"": ""stmt-1""}",True,True,True,True,True,True,True,True
+FRR,fastapi,FRR-S4-pct-id,/api/v1/accounts/acc%20alice%201/statements/stmt-1,legit,DELETE /api/v1/accounts/acc%20alice%201/statements/stmt-1,"DELETE /api/v1/accounts/{id}/statements/{sid} {""id"": ""acc alice 1"", ""sid"": ""stmt-1""}",True,False,True,True,True,True,True,False
+FRR,fastapi,FRR-S4-pct-id,/api/v1/accounts/acc-%C3%A9-1/statements/stmt-1,legit,DELETE /api/v1/accounts/acc-%C3%A9-1/statements/stmt-1,"DELETE /api/v1/accounts/{id}/statements/{sid} {""id"": ""acc-\u00e9-1"", ""sid"": ""stmt-1""}",True,False,True,True,True,True,True,False
+FRR,fastapi,FRR-S5-h2-to-h1,/api/v1/accounts/acc-alice-1/statements/stmt-1,legit,DELETE /api/v1/accounts/acc-alice-1/statements/stmt-1,"DELETE /api/v1/accounts/{id}/statements/{sid} {""id"": ""acc-alice-1"", ""sid"": ""stmt-1""}",True,True,True,True,True,True,True,True
+FRR,fastapi,FRR-S0-identity,/api/v1/files/reports/logo.png,legit,GET /api/v1/files/reports/logo.png,"GET /api/v1/files/{path} {""path"": ""reports/logo.png""}",False,True,False,False,False,False,False,True
+FRR,fastapi,FRR-S1-strip-prefix,/svc/api/v1/files/reports/logo.png,legit,GET /svc/api/v1/files/reports/logo.png,"GET /api/v1/files/{path} {""path"": ""reports/logo.png""}",False,False,False,False,False,False,False,False
+FRR,fastapi,FRR-S2-version-rewrite,/api/latest/files/reports/logo.png,legit,GET /api/latest/files/reports/logo.png,"GET /api/v1/files/{path} {""path"": ""reports/logo.png""}",False,False,False,False,False,False,False,False
+FRR,fastapi,FRR-S3-trailing-slash,/api/v1/files/reports/logo.png/,legit,GET /api/v1/files/reports/logo.png/,"GET /api/v1/files/{path} {""path"": ""reports/logo.png""}",False,False,False,False,False,False,False,False
+FRR,fastapi,FRR-S5-h2-to-h1,/api/v1/files/reports/logo.png,legit,GET /api/v1/files/reports/logo.png,"GET /api/v1/files/{path} {""path"": ""reports/logo.png""}",False,True,False,False,False,False,False,True
+FRR,fastapi,FRR-S0-identity,/api/v1/accounts/acc-alice-1/actions?op=freeze,legit,POST /api/v1/accounts/acc-alice-1/actions?op=freeze,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,fastapi,FRR-S1-strip-prefix,/svc/api/v1/accounts/acc-alice-1/actions?op=freeze,legit,POST /svc/api/v1/accounts/acc-alice-1/actions?op=freeze,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,fastapi,FRR-S2-version-rewrite,/api/latest/accounts/acc-alice-1/actions?op=freeze,legit,POST /api/latest/accounts/acc-alice-1/actions?op=freeze,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,fastapi,FRR-S3-trailing-slash,/api/v1/accounts/acc-alice-1/actions/?op=freeze,legit,POST /api/v1/accounts/acc-alice-1/actions/?op=freeze,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,fastapi,FRR-S4-pct-id,/api/v1/accounts/acc%2Dalice%2D1/actions?op=freeze,legit,POST /api/v1/accounts/acc%2Dalice%2D1/actions?op=freeze,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,fastapi,FRR-S4-pct-id,/api/v1/accounts/acc%2dalice%2d1/actions?op=freeze,legit,POST /api/v1/accounts/acc%2dalice%2d1/actions?op=freeze,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,fastapi,FRR-S4-pct-id,/api/v1/accounts/acc%20alice%201/actions?op=freeze,legit,POST /api/v1/accounts/acc%20alice%201/actions?op=freeze,"POST /api/v1/accounts/{id}/actions {""id"": ""acc alice 1""}",True,False,True,True,True,True,True,False
+FRR,fastapi,FRR-S4-pct-id,/api/v1/accounts/acc-%C3%A9-1/actions?op=freeze,legit,POST /api/v1/accounts/acc-%C3%A9-1/actions?op=freeze,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-\u00e9-1""}",True,False,True,True,True,True,True,False
+FRR,fastapi,FRR-S5-h2-to-h1,/api/v1/accounts/acc-alice-1/actions?op=freeze,legit,POST /api/v1/accounts/acc-alice-1/actions?op=freeze,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,fastapi,FRR-S0-identity,/api/v1/transfers,legit,POST /api/v1/transfers,POST /api/v1/transfers {},True,True,True,True,True,True,True,True
+FRR,fastapi,FRR-S1-strip-prefix,/svc/api/v1/transfers,legit,POST /svc/api/v1/transfers,POST /api/v1/transfers {},False,False,False,False,False,False,False,False
+FRR,fastapi,FRR-S2-version-rewrite,/api/latest/transfers,legit,POST /api/latest/transfers,POST /api/v1/transfers {},False,False,False,False,False,False,False,False
+FRR,fastapi,FRR-S3-trailing-slash,/api/v1/transfers/,legit,POST /api/v1/transfers/,POST /api/v1/transfers {},False,False,False,False,False,False,False,False
+FRR,fastapi,FRR-S5-h2-to-h1,/api/v1/transfers,legit,POST /api/v1/transfers,POST /api/v1/transfers {},True,True,True,True,True,True,True,True
+FRR,fastapi,FRR-S0-identity,/api/v1/graphql,legit,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+FRR,fastapi,FRR-S1-strip-prefix,/svc/api/v1/graphql,legit,POST /svc/api/v1/graphql,POST /api/v1/graphql {},False,False,False,False,False,False,False,False
+FRR,fastapi,FRR-S2-version-rewrite,/api/latest/graphql,legit,POST /api/latest/graphql,POST /api/v1/graphql {},False,False,False,False,False,False,False,False
+FRR,fastapi,FRR-S3-trailing-slash,/api/v1/graphql/,legit,POST /api/v1/graphql/,POST /api/v1/graphql {},False,False,False,False,False,False,False,False
+FRR,fastapi,FRR-S5-h2-to-h1,/api/v1/graphql,legit,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+FRR,fastapi,FRR-S0-identity,/api/v1/me,legit,GET /api/v1/me,GET /api/v1/me {},True,True,True,True,True,True,True,True
+FRR,fastapi,FRR-S1-strip-prefix,/svc/api/v1/me,legit,GET /svc/api/v1/me,GET /api/v1/me {},False,False,False,False,False,False,False,False
+FRR,fastapi,FRR-S2-version-rewrite,/api/latest/me,legit,GET /api/latest/me,GET /api/v1/me {},False,False,False,False,False,False,False,False
+FRR,fastapi,FRR-S3-trailing-slash,/api/v1/me/,legit,GET /api/v1/me/,GET /api/v1/me {},False,False,False,False,False,False,False,False
+FRR,fastapi,FRR-S5-h2-to-h1,/api/v1/me,legit,GET /api/v1/me,GET /api/v1/me {},True,True,True,True,True,True,True,True
+FRR,fastapi,FRR-S0-identity,/api/v1/admin/users,legit,GET /api/v1/admin/users,GET /api/v1/admin/users {},True,True,True,True,True,True,True,True
+FRR,fastapi,FRR-S1-strip-prefix,/svc/api/v1/admin/users,legit,GET /svc/api/v1/admin/users,GET /api/v1/admin/users {},False,False,False,False,False,False,False,False
+FRR,fastapi,FRR-S2-version-rewrite,/api/latest/admin/users,legit,GET /api/latest/admin/users,GET /api/v1/admin/users {},False,False,False,False,False,False,False,False
+FRR,fastapi,FRR-S3-trailing-slash,/api/v1/admin/users/,legit,GET /api/v1/admin/users/,GET /api/v1/admin/users {},False,False,False,False,False,False,False,False
+FRR,fastapi,FRR-S5-h2-to-h1,/api/v1/admin/users,legit,GET /api/v1/admin/users,GET /api/v1/admin/users {},True,True,True,True,True,True,True,True
+FRR,fastapi,FRR-S0-identity,/api/v1/admin/users/u-1,legit,DELETE /api/v1/admin/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",True,True,True,True,True,True,True,True
+FRR,fastapi,FRR-S1-strip-prefix,/svc/api/v1/admin/users/u-1,legit,DELETE /svc/api/v1/admin/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",False,False,False,False,False,False,False,False
+FRR,fastapi,FRR-S2-version-rewrite,/api/latest/admin/users/u-1,legit,DELETE /api/latest/admin/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",False,False,False,False,False,False,False,False
+FRR,fastapi,FRR-S3-trailing-slash,/api/v1/admin/users/u-1/,legit,DELETE /api/v1/admin/users/u-1/,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",False,False,False,False,False,False,False,False
+FRR,fastapi,FRR-S4-pct-id,/api/v1/admin/users/u-1,legit,DELETE /api/v1/admin/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",True,True,True,True,True,True,True,True
+FRR,fastapi,FRR-S4-pct-id,/api/v1/admin/users/u-1,legit,DELETE /api/v1/admin/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",True,True,True,True,True,True,True,True
+FRR,fastapi,FRR-S4-pct-id,/api/v1/admin/users/u-1,legit,DELETE /api/v1/admin/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",True,True,True,True,True,True,True,True
+FRR,fastapi,FRR-S4-pct-id,/api/v1/admin/users/u-1,legit,DELETE /api/v1/admin/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",True,True,True,True,True,True,True,True
+FRR,fastapi,FRR-S4-pct-id,/api/v1/admin/users/u-1,legit,DELETE /api/v1/admin/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",True,True,True,True,True,True,True,True
+FRR,fastapi,FRR-S5-h2-to-h1,/api/v1/admin/users/u-1,legit,DELETE /api/v1/admin/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",True,True,True,True,True,True,True,True
+FRR,fastapi,FRR-S0-identity,/api/v1/health,legit,GET /api/v1/health,GET /api/v1/health {},True,True,True,True,True,True,True,True
+FRR,fastapi,FRR-S1-strip-prefix,/svc/api/v1/health,legit,GET /svc/api/v1/health,GET /api/v1/health {},False,False,False,False,False,False,False,False
+FRR,fastapi,FRR-S2-version-rewrite,/api/latest/health,legit,GET /api/latest/health,GET /api/v1/health {},False,False,False,False,False,False,False,False
+FRR,fastapi,FRR-S3-trailing-slash,/api/v1/health/,legit,GET /api/v1/health/,GET /api/v1/health {},False,False,False,False,False,False,False,False
+FRR,fastapi,FRR-S5-h2-to-h1,/api/v1/health,legit,GET /api/v1/health,GET /api/v1/health {},True,True,True,True,True,True,True,True
+FRR,fastapi,FRR-S0-identity,/api/v1/public/logo.png,legit,GET /api/v1/public/logo.png,"GET /api/v1/public/{file} {""file"": ""logo.png""}",True,True,True,True,True,True,True,True
+FRR,fastapi,FRR-S1-strip-prefix,/svc/api/v1/public/logo.png,legit,GET /svc/api/v1/public/logo.png,"GET /api/v1/public/{file} {""file"": ""logo.png""}",False,False,False,False,False,False,False,False
+FRR,fastapi,FRR-S2-version-rewrite,/api/latest/public/logo.png,legit,GET /api/latest/public/logo.png,"GET /api/v1/public/{file} {""file"": ""logo.png""}",False,False,False,False,False,False,False,False
+FRR,fastapi,FRR-S3-trailing-slash,/api/v1/public/logo.png/,legit,GET /api/v1/public/logo.png/,"GET /api/v1/public/{file} {""file"": ""logo.png""}",False,False,False,False,False,False,False,False
+FRR,fastapi,FRR-S5-h2-to-h1,/api/v1/public/logo.png,legit,GET /api/v1/public/logo.png,"GET /api/v1/public/{file} {""file"": ""logo.png""}",True,True,True,True,True,True,True,True
+FRR,fastapi,FRR-S0-identity,/api/v2/accounts/acc-alice-1,legit,GET /api/v2/accounts/acc-alice-1,"GET /api/v2/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,fastapi,FRR-S1-strip-prefix,/svc/api/v2/accounts/acc-alice-1,legit,GET /svc/api/v2/accounts/acc-alice-1,"GET /api/v2/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,fastapi,FRR-S3-trailing-slash,/api/v2/accounts/acc-alice-1/,legit,GET /api/v2/accounts/acc-alice-1/,"GET /api/v2/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,fastapi,FRR-S4-pct-id,/api/v2/accounts/acc%2Dalice%2D1,legit,GET /api/v2/accounts/acc%2Dalice%2D1,"GET /api/v2/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,fastapi,FRR-S4-pct-id,/api/v2/accounts/acc%2dalice%2d1,legit,GET /api/v2/accounts/acc%2dalice%2d1,"GET /api/v2/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,fastapi,FRR-S4-pct-id,/api/v2/accounts/acc%20alice%201,legit,GET /api/v2/accounts/acc%20alice%201,"GET /api/v2/accounts/{id} {""id"": ""acc alice 1""}",True,False,True,True,True,True,True,False
+FRR,fastapi,FRR-S4-pct-id,/api/v2/accounts/acc-%C3%A9-1,legit,GET /api/v2/accounts/acc-%C3%A9-1,"GET /api/v2/accounts/{id} {""id"": ""acc-\u00e9-1""}",True,False,True,True,True,True,True,False
+FRR,fastapi,FRR-S5-h2-to-h1,/api/v2/accounts/acc-alice-1,legit,GET /api/v2/accounts/acc-alice-1,"GET /api/v2/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,spring,FRR-S0-identity,/api/v1/accounts,legit,GET /api/v1/accounts,GET /api/v1/accounts {},True,True,True,True,True,True,True,True
+FRR,spring,FRR-S1-strip-prefix,/svc/api/v1/accounts,legit,GET /svc/api/v1/accounts,GET /api/v1/accounts {},False,False,False,False,False,False,False,False
+FRR,spring,FRR-S2-version-rewrite,/api/latest/accounts,legit,GET /api/latest/accounts,GET /api/v1/accounts {},False,False,False,False,False,False,False,False
+FRR,spring,FRR-S3-trailing-slash,/api/v1/accounts/,legit,GET /api/v1/accounts/,GET /api/v1/accounts {},False,False,False,False,False,False,False,False
+FRR,spring,FRR-S5-h2-to-h1,/api/v1/accounts,legit,GET /api/v1/accounts,GET /api/v1/accounts {},True,True,True,True,True,True,True,True
+FRR,spring,FRR-S0-identity,/api/v1/accounts/acc-alice-1,legit,GET /api/v1/accounts/acc-alice-1,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,spring,FRR-S1-strip-prefix,/svc/api/v1/accounts/acc-alice-1,legit,GET /svc/api/v1/accounts/acc-alice-1,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,spring,FRR-S2-version-rewrite,/api/latest/accounts/acc-alice-1,legit,GET /api/latest/accounts/acc-alice-1,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,spring,FRR-S3-trailing-slash,/api/v1/accounts/acc-alice-1/,legit,GET /api/v1/accounts/acc-alice-1/,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,spring,FRR-S4-pct-id,/api/v1/accounts/acc%2Dalice%2D1,legit,GET /api/v1/accounts/acc%2Dalice%2D1,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,spring,FRR-S4-pct-id,/api/v1/accounts/acc%2dalice%2d1,legit,GET /api/v1/accounts/acc%2dalice%2d1,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,spring,FRR-S4-pct-id,/api/v1/accounts/acc%20alice%201,legit,GET /api/v1/accounts/acc%20alice%201,"GET /api/v1/accounts/{id} {""id"": ""acc alice 1""}",True,False,True,True,True,True,True,False
+FRR,spring,FRR-S4-pct-id,/api/v1/accounts/acc-%C3%A9-1,legit,GET /api/v1/accounts/acc-%C3%A9-1,"GET /api/v1/accounts/{id} {""id"": ""acc-\u00e9-1""}",True,False,True,True,True,True,True,False
+FRR,spring,FRR-S5-h2-to-h1,/api/v1/accounts/acc-alice-1,legit,GET /api/v1/accounts/acc-alice-1,"GET /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,spring,FRR-S0-identity,/api/v1/accounts/acc-alice-1,legit,PUT /api/v1/accounts/acc-alice-1,"PUT /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,spring,FRR-S1-strip-prefix,/svc/api/v1/accounts/acc-alice-1,legit,PUT /svc/api/v1/accounts/acc-alice-1,"PUT /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,spring,FRR-S2-version-rewrite,/api/latest/accounts/acc-alice-1,legit,PUT /api/latest/accounts/acc-alice-1,"PUT /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,spring,FRR-S3-trailing-slash,/api/v1/accounts/acc-alice-1/,legit,PUT /api/v1/accounts/acc-alice-1/,"PUT /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,spring,FRR-S4-pct-id,/api/v1/accounts/acc%2Dalice%2D1,legit,PUT /api/v1/accounts/acc%2Dalice%2D1,"PUT /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,spring,FRR-S4-pct-id,/api/v1/accounts/acc%2dalice%2d1,legit,PUT /api/v1/accounts/acc%2dalice%2d1,"PUT /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,spring,FRR-S4-pct-id,/api/v1/accounts/acc%20alice%201,legit,PUT /api/v1/accounts/acc%20alice%201,"PUT /api/v1/accounts/{id} {""id"": ""acc alice 1""}",True,False,True,True,True,True,True,False
+FRR,spring,FRR-S4-pct-id,/api/v1/accounts/acc-%C3%A9-1,legit,PUT /api/v1/accounts/acc-%C3%A9-1,"PUT /api/v1/accounts/{id} {""id"": ""acc-\u00e9-1""}",True,False,True,True,True,True,True,False
+FRR,spring,FRR-S5-h2-to-h1,/api/v1/accounts/acc-alice-1,legit,PUT /api/v1/accounts/acc-alice-1,"PUT /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,spring,FRR-S0-identity,/api/v1/accounts/acc-alice-1,legit,DELETE /api/v1/accounts/acc-alice-1,"DELETE /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,spring,FRR-S1-strip-prefix,/svc/api/v1/accounts/acc-alice-1,legit,DELETE /svc/api/v1/accounts/acc-alice-1,"DELETE /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,spring,FRR-S2-version-rewrite,/api/latest/accounts/acc-alice-1,legit,DELETE /api/latest/accounts/acc-alice-1,"DELETE /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,spring,FRR-S3-trailing-slash,/api/v1/accounts/acc-alice-1/,legit,DELETE /api/v1/accounts/acc-alice-1/,"DELETE /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,spring,FRR-S4-pct-id,/api/v1/accounts/acc%2Dalice%2D1,legit,DELETE /api/v1/accounts/acc%2Dalice%2D1,"DELETE /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,spring,FRR-S4-pct-id,/api/v1/accounts/acc%2dalice%2d1,legit,DELETE /api/v1/accounts/acc%2dalice%2d1,"DELETE /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,spring,FRR-S4-pct-id,/api/v1/accounts/acc%20alice%201,legit,DELETE /api/v1/accounts/acc%20alice%201,"DELETE /api/v1/accounts/{id} {""id"": ""acc alice 1""}",True,False,True,True,True,True,True,False
+FRR,spring,FRR-S4-pct-id,/api/v1/accounts/acc-%C3%A9-1,legit,DELETE /api/v1/accounts/acc-%C3%A9-1,"DELETE /api/v1/accounts/{id} {""id"": ""acc-\u00e9-1""}",True,False,True,True,True,True,True,False
+FRR,spring,FRR-S5-h2-to-h1,/api/v1/accounts/acc-alice-1,legit,DELETE /api/v1/accounts/acc-alice-1,"DELETE /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,spring,FRR-S0-identity,/api/v1/accounts/acc-alice-1,legit,POST /api/v1/accounts/acc-alice-1,"POST /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,spring,FRR-S1-strip-prefix,/svc/api/v1/accounts/acc-alice-1,legit,POST /svc/api/v1/accounts/acc-alice-1,"POST /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,spring,FRR-S2-version-rewrite,/api/latest/accounts/acc-alice-1,legit,POST /api/latest/accounts/acc-alice-1,"POST /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,spring,FRR-S3-trailing-slash,/api/v1/accounts/acc-alice-1/,legit,POST /api/v1/accounts/acc-alice-1/,"POST /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,spring,FRR-S4-pct-id,/api/v1/accounts/acc%2Dalice%2D1,legit,POST /api/v1/accounts/acc%2Dalice%2D1,"POST /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,spring,FRR-S4-pct-id,/api/v1/accounts/acc%2dalice%2d1,legit,POST /api/v1/accounts/acc%2dalice%2d1,"POST /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,spring,FRR-S4-pct-id,/api/v1/accounts/acc%20alice%201,legit,POST /api/v1/accounts/acc%20alice%201,"POST /api/v1/accounts/{id} {""id"": ""acc alice 1""}",True,False,True,True,True,True,True,False
+FRR,spring,FRR-S4-pct-id,/api/v1/accounts/acc-%C3%A9-1,legit,POST /api/v1/accounts/acc-%C3%A9-1,"POST /api/v1/accounts/{id} {""id"": ""acc-\u00e9-1""}",True,False,True,True,True,True,True,False
+FRR,spring,FRR-S5-h2-to-h1,/api/v1/accounts/acc-alice-1,legit,POST /api/v1/accounts/acc-alice-1,"POST /api/v1/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,spring,FRR-S0-identity,/api/v1/accounts/acc-alice-1/statements,legit,GET /api/v1/accounts/acc-alice-1/statements,"GET /api/v1/accounts/{id}/statements {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,spring,FRR-S1-strip-prefix,/svc/api/v1/accounts/acc-alice-1/statements,legit,GET /svc/api/v1/accounts/acc-alice-1/statements,"GET /api/v1/accounts/{id}/statements {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,spring,FRR-S2-version-rewrite,/api/latest/accounts/acc-alice-1/statements,legit,GET /api/latest/accounts/acc-alice-1/statements,"GET /api/v1/accounts/{id}/statements {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,spring,FRR-S3-trailing-slash,/api/v1/accounts/acc-alice-1/statements/,legit,GET /api/v1/accounts/acc-alice-1/statements/,"GET /api/v1/accounts/{id}/statements {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,spring,FRR-S4-pct-id,/api/v1/accounts/acc%2Dalice%2D1/statements,legit,GET /api/v1/accounts/acc%2Dalice%2D1/statements,"GET /api/v1/accounts/{id}/statements {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,spring,FRR-S4-pct-id,/api/v1/accounts/acc%2dalice%2d1/statements,legit,GET /api/v1/accounts/acc%2dalice%2d1/statements,"GET /api/v1/accounts/{id}/statements {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,spring,FRR-S4-pct-id,/api/v1/accounts/acc%20alice%201/statements,legit,GET /api/v1/accounts/acc%20alice%201/statements,"GET /api/v1/accounts/{id}/statements {""id"": ""acc alice 1""}",True,False,True,True,True,True,True,False
+FRR,spring,FRR-S4-pct-id,/api/v1/accounts/acc-%C3%A9-1/statements,legit,GET /api/v1/accounts/acc-%C3%A9-1/statements,"GET /api/v1/accounts/{id}/statements {""id"": ""acc-\u00e9-1""}",True,False,True,True,True,True,True,False
+FRR,spring,FRR-S5-h2-to-h1,/api/v1/accounts/acc-alice-1/statements,legit,GET /api/v1/accounts/acc-alice-1/statements,"GET /api/v1/accounts/{id}/statements {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,spring,FRR-S0-identity,/api/v1/accounts/acc-alice-1/statements/stmt-1,legit,DELETE /api/v1/accounts/acc-alice-1/statements/stmt-1,"DELETE /api/v1/accounts/{id}/statements/{sid} {""id"": ""acc-alice-1"", ""sid"": ""stmt-1""}",True,True,True,True,True,True,True,True
+FRR,spring,FRR-S1-strip-prefix,/svc/api/v1/accounts/acc-alice-1/statements/stmt-1,legit,DELETE /svc/api/v1/accounts/acc-alice-1/statements/stmt-1,"DELETE /api/v1/accounts/{id}/statements/{sid} {""id"": ""acc-alice-1"", ""sid"": ""stmt-1""}",False,False,False,False,False,False,False,False
+FRR,spring,FRR-S2-version-rewrite,/api/latest/accounts/acc-alice-1/statements/stmt-1,legit,DELETE /api/latest/accounts/acc-alice-1/statements/stmt-1,"DELETE /api/v1/accounts/{id}/statements/{sid} {""id"": ""acc-alice-1"", ""sid"": ""stmt-1""}",False,False,False,False,False,False,False,False
+FRR,spring,FRR-S3-trailing-slash,/api/v1/accounts/acc-alice-1/statements/stmt-1/,legit,DELETE /api/v1/accounts/acc-alice-1/statements/stmt-1/,"DELETE /api/v1/accounts/{id}/statements/{sid} {""id"": ""acc-alice-1"", ""sid"": ""stmt-1""}",False,False,False,False,False,False,False,False
+FRR,spring,FRR-S4-pct-id,/api/v1/accounts/acc%2Dalice%2D1/statements/stmt-1,legit,DELETE /api/v1/accounts/acc%2Dalice%2D1/statements/stmt-1,"DELETE /api/v1/accounts/{id}/statements/{sid} {""id"": ""acc-alice-1"", ""sid"": ""stmt-1""}",True,True,True,True,True,True,True,True
+FRR,spring,FRR-S4-pct-id,/api/v1/accounts/acc%2dalice%2d1/statements/stmt-1,legit,DELETE /api/v1/accounts/acc%2dalice%2d1/statements/stmt-1,"DELETE /api/v1/accounts/{id}/statements/{sid} {""id"": ""acc-alice-1"", ""sid"": ""stmt-1""}",True,True,True,True,True,True,True,True
+FRR,spring,FRR-S4-pct-id,/api/v1/accounts/acc%20alice%201/statements/stmt-1,legit,DELETE /api/v1/accounts/acc%20alice%201/statements/stmt-1,"DELETE /api/v1/accounts/{id}/statements/{sid} {""id"": ""acc alice 1"", ""sid"": ""stmt-1""}",True,False,True,True,True,True,True,False
+FRR,spring,FRR-S4-pct-id,/api/v1/accounts/acc-%C3%A9-1/statements/stmt-1,legit,DELETE /api/v1/accounts/acc-%C3%A9-1/statements/stmt-1,"DELETE /api/v1/accounts/{id}/statements/{sid} {""id"": ""acc-\u00e9-1"", ""sid"": ""stmt-1""}",True,False,True,True,True,True,True,False
+FRR,spring,FRR-S5-h2-to-h1,/api/v1/accounts/acc-alice-1/statements/stmt-1,legit,DELETE /api/v1/accounts/acc-alice-1/statements/stmt-1,"DELETE /api/v1/accounts/{id}/statements/{sid} {""id"": ""acc-alice-1"", ""sid"": ""stmt-1""}",True,True,True,True,True,True,True,True
+FRR,spring,FRR-S0-identity,/api/v1/files/reports/logo.png,legit,GET /api/v1/files/reports/logo.png,"GET /api/v1/files/{path} {""path"": ""/reports/logo.png""}",False,False,False,False,False,False,False,True
+FRR,spring,FRR-S1-strip-prefix,/svc/api/v1/files/reports/logo.png,legit,GET /svc/api/v1/files/reports/logo.png,"GET /api/v1/files/{path} {""path"": ""/reports/logo.png""}",False,False,False,False,False,False,False,False
+FRR,spring,FRR-S2-version-rewrite,/api/latest/files/reports/logo.png,legit,GET /api/latest/files/reports/logo.png,"GET /api/v1/files/{path} {""path"": ""/reports/logo.png""}",False,False,False,False,False,False,False,False
+FRR,spring,FRR-S3-trailing-slash,/api/v1/files/reports/logo.png/,legit,GET /api/v1/files/reports/logo.png/,"GET /api/v1/files/{path} {""path"": ""/reports/logo.png""}",False,False,False,False,False,False,False,False
+FRR,spring,FRR-S5-h2-to-h1,/api/v1/files/reports/logo.png,legit,GET /api/v1/files/reports/logo.png,"GET /api/v1/files/{path} {""path"": ""/reports/logo.png""}",False,False,False,False,False,False,False,True
+FRR,spring,FRR-S0-identity,/api/v1/accounts/acc-alice-1/actions?op=freeze,legit,POST /api/v1/accounts/acc-alice-1/actions?op=freeze,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,spring,FRR-S1-strip-prefix,/svc/api/v1/accounts/acc-alice-1/actions?op=freeze,legit,POST /svc/api/v1/accounts/acc-alice-1/actions?op=freeze,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,spring,FRR-S2-version-rewrite,/api/latest/accounts/acc-alice-1/actions?op=freeze,legit,POST /api/latest/accounts/acc-alice-1/actions?op=freeze,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,spring,FRR-S3-trailing-slash,/api/v1/accounts/acc-alice-1/actions/?op=freeze,legit,POST /api/v1/accounts/acc-alice-1/actions/?op=freeze,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,spring,FRR-S4-pct-id,/api/v1/accounts/acc%2Dalice%2D1/actions?op=freeze,legit,POST /api/v1/accounts/acc%2Dalice%2D1/actions?op=freeze,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,spring,FRR-S4-pct-id,/api/v1/accounts/acc%2dalice%2d1/actions?op=freeze,legit,POST /api/v1/accounts/acc%2dalice%2d1/actions?op=freeze,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,spring,FRR-S4-pct-id,/api/v1/accounts/acc%20alice%201/actions?op=freeze,legit,POST /api/v1/accounts/acc%20alice%201/actions?op=freeze,"POST /api/v1/accounts/{id}/actions {""id"": ""acc alice 1""}",True,False,True,True,True,True,True,False
+FRR,spring,FRR-S4-pct-id,/api/v1/accounts/acc-%C3%A9-1/actions?op=freeze,legit,POST /api/v1/accounts/acc-%C3%A9-1/actions?op=freeze,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-\u00e9-1""}",True,False,True,True,True,True,True,False
+FRR,spring,FRR-S5-h2-to-h1,/api/v1/accounts/acc-alice-1/actions?op=freeze,legit,POST /api/v1/accounts/acc-alice-1/actions?op=freeze,"POST /api/v1/accounts/{id}/actions {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,spring,FRR-S0-identity,/api/v1/transfers,legit,POST /api/v1/transfers,POST /api/v1/transfers {},True,True,True,True,True,True,True,True
+FRR,spring,FRR-S1-strip-prefix,/svc/api/v1/transfers,legit,POST /svc/api/v1/transfers,POST /api/v1/transfers {},False,False,False,False,False,False,False,False
+FRR,spring,FRR-S2-version-rewrite,/api/latest/transfers,legit,POST /api/latest/transfers,POST /api/v1/transfers {},False,False,False,False,False,False,False,False
+FRR,spring,FRR-S3-trailing-slash,/api/v1/transfers/,legit,POST /api/v1/transfers/,POST /api/v1/transfers {},False,False,False,False,False,False,False,False
+FRR,spring,FRR-S5-h2-to-h1,/api/v1/transfers,legit,POST /api/v1/transfers,POST /api/v1/transfers {},True,True,True,True,True,True,True,True
+FRR,spring,FRR-S0-identity,/api/v1/graphql,legit,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+FRR,spring,FRR-S1-strip-prefix,/svc/api/v1/graphql,legit,POST /svc/api/v1/graphql,POST /api/v1/graphql {},False,False,False,False,False,False,False,False
+FRR,spring,FRR-S2-version-rewrite,/api/latest/graphql,legit,POST /api/latest/graphql,POST /api/v1/graphql {},False,False,False,False,False,False,False,False
+FRR,spring,FRR-S3-trailing-slash,/api/v1/graphql/,legit,POST /api/v1/graphql/,POST /api/v1/graphql {},False,False,False,False,False,False,False,False
+FRR,spring,FRR-S5-h2-to-h1,/api/v1/graphql,legit,POST /api/v1/graphql,POST /api/v1/graphql {},True,True,True,True,True,True,True,True
+FRR,spring,FRR-S0-identity,/api/v1/me,legit,GET /api/v1/me,GET /api/v1/me {},True,True,True,True,True,True,True,True
+FRR,spring,FRR-S1-strip-prefix,/svc/api/v1/me,legit,GET /svc/api/v1/me,GET /api/v1/me {},False,False,False,False,False,False,False,False
+FRR,spring,FRR-S2-version-rewrite,/api/latest/me,legit,GET /api/latest/me,GET /api/v1/me {},False,False,False,False,False,False,False,False
+FRR,spring,FRR-S3-trailing-slash,/api/v1/me/,legit,GET /api/v1/me/,GET /api/v1/me {},False,False,False,False,False,False,False,False
+FRR,spring,FRR-S5-h2-to-h1,/api/v1/me,legit,GET /api/v1/me,GET /api/v1/me {},True,True,True,True,True,True,True,True
+FRR,spring,FRR-S0-identity,/api/v1/admin/users,legit,GET /api/v1/admin/users,GET /api/v1/admin/users {},True,True,True,True,True,True,True,True
+FRR,spring,FRR-S1-strip-prefix,/svc/api/v1/admin/users,legit,GET /svc/api/v1/admin/users,GET /api/v1/admin/users {},False,False,False,False,False,False,False,False
+FRR,spring,FRR-S2-version-rewrite,/api/latest/admin/users,legit,GET /api/latest/admin/users,GET /api/v1/admin/users {},False,False,False,False,False,False,False,False
+FRR,spring,FRR-S3-trailing-slash,/api/v1/admin/users/,legit,GET /api/v1/admin/users/,GET /api/v1/admin/users {},False,False,False,False,False,False,False,False
+FRR,spring,FRR-S5-h2-to-h1,/api/v1/admin/users,legit,GET /api/v1/admin/users,GET /api/v1/admin/users {},True,True,True,True,True,True,True,True
+FRR,spring,FRR-S0-identity,/api/v1/admin/users/u-1,legit,DELETE /api/v1/admin/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",True,True,True,True,True,True,True,True
+FRR,spring,FRR-S1-strip-prefix,/svc/api/v1/admin/users/u-1,legit,DELETE /svc/api/v1/admin/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",False,False,False,False,False,False,False,False
+FRR,spring,FRR-S2-version-rewrite,/api/latest/admin/users/u-1,legit,DELETE /api/latest/admin/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",False,False,False,False,False,False,False,False
+FRR,spring,FRR-S3-trailing-slash,/api/v1/admin/users/u-1/,legit,DELETE /api/v1/admin/users/u-1/,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",False,False,False,False,False,False,False,False
+FRR,spring,FRR-S4-pct-id,/api/v1/admin/users/u-1,legit,DELETE /api/v1/admin/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",True,True,True,True,True,True,True,True
+FRR,spring,FRR-S4-pct-id,/api/v1/admin/users/u-1,legit,DELETE /api/v1/admin/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",True,True,True,True,True,True,True,True
+FRR,spring,FRR-S4-pct-id,/api/v1/admin/users/u-1,legit,DELETE /api/v1/admin/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",True,True,True,True,True,True,True,True
+FRR,spring,FRR-S4-pct-id,/api/v1/admin/users/u-1,legit,DELETE /api/v1/admin/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",True,True,True,True,True,True,True,True
+FRR,spring,FRR-S4-pct-id,/api/v1/admin/users/u-1,legit,DELETE /api/v1/admin/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",True,True,True,True,True,True,True,True
+FRR,spring,FRR-S5-h2-to-h1,/api/v1/admin/users/u-1,legit,DELETE /api/v1/admin/users/u-1,"DELETE /api/v1/admin/users/{id} {""id"": ""u-1""}",True,True,True,True,True,True,True,True
+FRR,spring,FRR-S0-identity,/api/v1/health,legit,GET /api/v1/health,GET /api/v1/health {},True,True,True,True,True,True,True,True
+FRR,spring,FRR-S1-strip-prefix,/svc/api/v1/health,legit,GET /svc/api/v1/health,GET /api/v1/health {},False,False,False,False,False,False,False,False
+FRR,spring,FRR-S2-version-rewrite,/api/latest/health,legit,GET /api/latest/health,GET /api/v1/health {},False,False,False,False,False,False,False,False
+FRR,spring,FRR-S3-trailing-slash,/api/v1/health/,legit,GET /api/v1/health/,GET /api/v1/health {},False,False,False,False,False,False,False,False
+FRR,spring,FRR-S5-h2-to-h1,/api/v1/health,legit,GET /api/v1/health,GET /api/v1/health {},True,True,True,True,True,True,True,True
+FRR,spring,FRR-S0-identity,/api/v1/public/logo.png,legit,GET /api/v1/public/logo.png,"GET /api/v1/public/{file} {""file"": ""logo.png""}",True,True,True,True,True,True,True,True
+FRR,spring,FRR-S1-strip-prefix,/svc/api/v1/public/logo.png,legit,GET /svc/api/v1/public/logo.png,"GET /api/v1/public/{file} {""file"": ""logo.png""}",False,False,False,False,False,False,False,False
+FRR,spring,FRR-S2-version-rewrite,/api/latest/public/logo.png,legit,GET /api/latest/public/logo.png,"GET /api/v1/public/{file} {""file"": ""logo.png""}",False,False,False,False,False,False,False,False
+FRR,spring,FRR-S3-trailing-slash,/api/v1/public/logo.png/,legit,GET /api/v1/public/logo.png/,"GET /api/v1/public/{file} {""file"": ""logo.png""}",False,False,False,False,False,False,False,False
+FRR,spring,FRR-S5-h2-to-h1,/api/v1/public/logo.png,legit,GET /api/v1/public/logo.png,"GET /api/v1/public/{file} {""file"": ""logo.png""}",True,True,True,True,True,True,True,True
+FRR,spring,FRR-S0-identity,/api/v2/accounts/acc-alice-1,legit,GET /api/v2/accounts/acc-alice-1,"GET /api/v2/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,spring,FRR-S1-strip-prefix,/svc/api/v2/accounts/acc-alice-1,legit,GET /svc/api/v2/accounts/acc-alice-1,"GET /api/v2/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,spring,FRR-S3-trailing-slash,/api/v2/accounts/acc-alice-1/,legit,GET /api/v2/accounts/acc-alice-1/,"GET /api/v2/accounts/{id} {""id"": ""acc-alice-1""}",False,False,False,False,False,False,False,False
+FRR,spring,FRR-S4-pct-id,/api/v2/accounts/acc%2Dalice%2D1,legit,GET /api/v2/accounts/acc%2Dalice%2D1,"GET /api/v2/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,spring,FRR-S4-pct-id,/api/v2/accounts/acc%2dalice%2d1,legit,GET /api/v2/accounts/acc%2dalice%2d1,"GET /api/v2/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True
+FRR,spring,FRR-S4-pct-id,/api/v2/accounts/acc%20alice%201,legit,GET /api/v2/accounts/acc%20alice%201,"GET /api/v2/accounts/{id} {""id"": ""acc alice 1""}",True,False,True,True,True,True,True,False
+FRR,spring,FRR-S4-pct-id,/api/v2/accounts/acc-%C3%A9-1,legit,GET /api/v2/accounts/acc-%C3%A9-1,"GET /api/v2/accounts/{id} {""id"": ""acc-\u00e9-1""}",True,False,True,True,True,True,True,False
+FRR,spring,FRR-S5-h2-to-h1,/api/v2/accounts/acc-alice-1,legit,GET /api/v2/accounts/acc-alice-1,"GET /api/v2/accounts/{id} {""id"": ""acc-alice-1""}",True,True,True,True,True,True,True,True

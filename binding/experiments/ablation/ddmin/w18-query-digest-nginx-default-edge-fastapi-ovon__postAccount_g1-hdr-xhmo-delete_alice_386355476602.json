@@ -1,0 +1,28 @@
+{
+ "topology": "w18-query-digest-nginx-default-edge-fastapi-ovon",
+ "case_id": "postAccount:g1-hdr-xhmo-delete:alice:386355476602",
+ "primitive_ids": [
+  "g1-hdr-xhmo-delete"
+ ],
+ "exec_op_id": "deleteAccount",
+ "exec_path_params": {
+  "id": "acc-alice-1"
+ },
+ "full_units": 1,
+ "minimal_units": 1,
+ "still_hit": true,
+ "canonical_request": "POST /api/v1/accounts/acc-alice-1 HTTP/1.1\r\nHost: api.bench.test\r\nAuthorization: @@AUTHZ@@\r\nDPoP: @@PROOF@@\r\nAccept: application/json\r\nUser-Agent: bind-harness/1.0\r\nContent-Type: application/json\r\nContent-Length: 16\r\nConnection: close\r\n\r\n{\"nickname\":\"x\"}",
+ "minimal_request": "POST /api/v1/accounts/acc-alice-1 HTTP/1.1\r\nHost: api.bench.test\r\nAuthorization: @@AUTHZ@@\r\nDPoP: @@PROOF@@\r\nAccept: application/json\r\nUser-Agent: bind-harness/1.0\r\nContent-Type: application/json\r\nContent-Length: 16\r\nConnection: close\r\nX-HTTP-Method-Override: DELETE\r\n\r\n{\"nickname\":\"x\"}",
+ "trials": [
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": true
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": true
+  }
+ ]
+}

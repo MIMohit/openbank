@@ -1,0 +1,1 @@
+oracle[w18-query-nginx-default-edge-laravel-ovon] {'topology': 'w18-query-nginx-default-edge-laravel-ovon', 'cases': 41, 'accepted': 41, 'hits_raw': 24, 'hits_confirmed': 0, 'S1': 18, 'S2': 6, 'S3': 0, 'signatures': 16, 'max_res_hat': 5, 'b0': 0, 'propagation': 0, 'uncorrelated': 1}

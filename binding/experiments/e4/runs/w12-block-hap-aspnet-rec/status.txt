@@ -1,0 +1,1 @@
+w12-block-hap-aspnet-rec runner_rc=0 secs=16 violations=4 e4_runner[w12-block-hap-aspnet-rec] wrote /Users/mimohit/openbank/binding/harness/logs/w12-block-hap-aspnet-rec/runner.jsonl: {'sent': 29, 'errors': 0}

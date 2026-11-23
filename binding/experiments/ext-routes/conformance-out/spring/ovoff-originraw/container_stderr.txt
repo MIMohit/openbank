@@ -1,0 +1,2 @@
+2026-11-23T05:21:26.256Z  WARN 1 --- [nio-8080-exec-2] o.s.web.servlet.PageNotFound             : No mapping for GET /api/v1/does-not-exist
+2026-11-23T05:21:26.263Z  WARN 1 --- [nio-8080-exec-4] o.s.web.servlet.PageNotFound             : No mapping for GET /api/v2/transfers

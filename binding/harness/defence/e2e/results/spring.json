@@ -1,0 +1,156 @@
+[
+ {
+  "case": "benign_get",
+  "framework": "spring",
+  "defence_db": {
+   "verifier_status": 200,
+   "x_verified_view_sent": "one",
+   "status": 200,
+   "op_id": "getAccount",
+   "denied": false,
+   "reason": null,
+   "method": "GET"
+  },
+  "defence_off": {
+   "verifier_status": 200,
+   "x_verified_view_sent": "one",
+   "status": 200,
+   "op_id": "getAccount",
+   "denied": false,
+   "reason": null,
+   "method": "GET"
+  }
+ },
+ {
+  "case": "benign_v2_prefix",
+  "framework": "spring",
+  "defence_db": {
+   "verifier_status": 200,
+   "x_verified_view_sent": "one",
+   "status": 200,
+   "op_id": "getAccountV2",
+   "denied": false,
+   "reason": null,
+   "method": "GET"
+  },
+  "defence_off": {
+   "verifier_status": 200,
+   "x_verified_view_sent": "one",
+   "status": 200,
+   "op_id": "getAccountV2",
+   "denied": false,
+   "reason": null,
+   "method": "GET"
+  }
+ },
+ {
+  "case": "g1_method_override",
+  "framework": "spring",
+  "defence_db": {
+   "verifier_status": 200,
+   "x_verified_view_sent": "one",
+   "status": 401,
+   "op_id": "deleteAccount",
+   "denied": true,
+   "reason": "view_mac_mismatch",
+   "method": null
+  },
+  "defence_off": {
+   "verifier_status": 200,
+   "x_verified_view_sent": "one",
+   "status": 200,
+   "op_id": "deleteAccount",
+   "denied": false,
+   "reason": null,
+   "method": "DELETE"
+  }
+ },
+ {
+  "case": "g1_query_dispatch",
+  "framework": "spring",
+  "defence_db": {
+   "verifier_status": 200,
+   "x_verified_view_sent": "one",
+   "status": 200,
+   "op_id": "accountAction.close",
+   "denied": false,
+   "reason": null,
+   "method": "POST"
+  },
+  "defence_off": {
+   "verifier_status": 200,
+   "x_verified_view_sent": "one",
+   "status": 200,
+   "op_id": "accountAction.close",
+   "denied": false,
+   "reason": null,
+   "method": "POST"
+  }
+ },
+ {
+  "case": "header_lifted_to_other_id",
+  "framework": "spring",
+  "defence_db": {
+   "verifier_status": 200,
+   "x_verified_view_sent": "one",
+   "status": 401,
+   "op_id": "getAccount",
+   "denied": true,
+   "reason": "view_mac_mismatch",
+   "method": null
+  },
+  "defence_off": {
+   "verifier_status": 200,
+   "x_verified_view_sent": "one",
+   "status": 200,
+   "op_id": "getAccount",
+   "denied": false,
+   "reason": null,
+   "method": "GET"
+  }
+ },
+ {
+  "case": "missing_view_header",
+  "framework": "spring",
+  "defence_db": {
+   "verifier_status": 200,
+   "x_verified_view_sent": "none",
+   "status": 401,
+   "op_id": "me",
+   "denied": true,
+   "reason": "view_mac_missing",
+   "method": null
+  },
+  "defence_off": {
+   "verifier_status": 200,
+   "x_verified_view_sent": "none",
+   "status": 200,
+   "op_id": "me",
+   "denied": false,
+   "reason": null,
+   "method": "GET"
+  }
+ },
+ {
+  "case": "g3_duplicate_view_header",
+  "framework": "spring",
+  "defence_db": {
+   "verifier_status": 200,
+   "x_verified_view_sent": "dup",
+   "status": 401,
+   "op_id": "me",
+   "denied": true,
+   "reason": "view_mac_multiple",
+   "method": null
+  },
+  "defence_off": {
+   "verifier_status": 200,
+   "x_verified_view_sent": "dup",
+   "status": 200,
+   "op_id": "me",
+   "denied": false,
+   "reason": null,
+   "method": "GET"
+  }
+ }
+]

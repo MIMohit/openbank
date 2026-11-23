@@ -1,0 +1,4 @@
+{"path": "/authz/orig", "method": "GET", "jti": null, "x_original_method": "GET", "x_original_uri": "/api/v1/health", "x_original_host": "127.0.0.1:18580", "authorization": false, "dpop": false}
+{"path": "/authz/orig", "method": "GET", "jti": "form-origin-raw", "x_original_method": "POST", "x_original_uri": "/api/v1/accounts/acc-alice-1?x=1", "x_original_host": "api.bench.test", "authorization": true, "dpop": true}
+{"path": "/authz/orig", "method": "GET", "jti": null, "x_original_method": "GET", "x_original_uri": "/api/v1/health", "x_original_host": "127.0.0.1:18580", "authorization": false, "dpop": false}
+{"path": "/authz/orig", "method": "GET", "jti": "form-origin-routed", "x_original_method": "DELETE", "x_original_uri": "/api/v1/accounts/acc-alice-1", "x_original_host": "api.bench.test", "authorization": true, "dpop": true}

@@ -1,0 +1,1 @@
+dc RC6 w17-dc-e4rc6-rails runner_rc=0 secs=13 hits=0 e4_runner[w17-dc-e4rc6-rails] wrote /Users/mimohit/openbank/binding/harness/logs/w17-dc-e4rc6-rails/runner.jsonl: {'sent': 29, 'errors': 0}

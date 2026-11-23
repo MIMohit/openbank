@@ -1,0 +1,20 @@
+framework,url,phrase,status,found,fetched_at
+spring,https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/filter/HiddenHttpMethodFilter.html,_method,200,True,2026-11-22T19:10:11+00:00
+spring,https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.2-Release-Notes,hiddenmethod.filter.enabled,200,True,2026-11-22T19:10:11+00:00
+spring,https://docs.spring.io/spring-boot/appendix/application-properties/index.html,spring.mvc.hiddenmethod.filter.enabled,200,True,2026-11-22T19:10:12+00:00
+aspnetcore,https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.builder.httpmethodoverrideextensions.usehttpmethodoverride,X-HTTP-Method-Override,200,True,2026-11-22T19:10:12+00:00
+aspnetcore,https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.builder.httpmethodoverrideoptions.formfieldname,FormFieldName,200,True,2026-11-22T19:10:13+00:00
+express,https://expressjs.com/en/resources/middleware/method-override.html,X-HTTP-Method-Override,200,True,2026-11-22T19:10:13+00:00
+rails,https://guides.rubyonrails.org/rails_on_rack.html,Rack::MethodOverride,200,True,2026-11-22T19:10:14+00:00
+rails,https://guides.rubyonrails.org/api_app.html,Rack::MethodOverride,200,True,2026-11-22T19:10:15+00:00
+rails,https://guides.rubyonrails.org/form_helpers.html,_method,200,True,2026-11-22T19:10:17+00:00
+laravel,https://laravel.com/docs/routing,_method,200,True,2026-11-22T19:10:19+00:00
+symfony,https://symfony.com/doc/current/reference/configuration/framework.html,http_method_override,200,True,2026-11-22T19:10:22+00:00
+go-gorilla,https://pkg.go.dev/github.com/gorilla/handlers,HTTPMethodOverrideHandler,200,True,2026-11-22T19:10:24+00:00
+go-chi,https://pkg.go.dev/github.com/go-chi/chi/v5/middleware,RealIP,200,True,2026-11-22T19:10:24+00:00
+starlette,https://www.starlette.dev/middleware/,TrustedHostMiddleware,200,True,2026-11-22T19:10:25+00:00
+django,https://docs.djangoproject.com/en/stable/ref/middleware/,CommonMiddleware,200,True,2026-11-22T19:10:25+00:00
+go-nethttp,https://pkg.go.dev/net/http,matches both GET and HEAD,200,True,2026-11-22T19:10:25+00:00
+go-chi,https://pkg.go.dev/github.com/go-chi/chi/v5/middleware,GetHead,200,True,2026-11-22T19:10:27+00:00
+hono,https://hono.dev/docs/middleware/builtin/method-override,_method,200,True,2026-11-22T19:10:27+00:00
+jersey,https://eclipse-ee4j.github.io/jersey.github.io/apidocs/latest/jersey/org/glassfish/jersey/server/filter/HttpMethodOverrideFilter.html,X-HTTP-Method-Override,200,True,2026-11-22T19:10:27+00:00

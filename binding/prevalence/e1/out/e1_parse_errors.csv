@@ -1,0 +1,133 @@
+file,error
+adyen.com/CheckoutService-v71/71/openapi.yaml,"ParserError: while parsing a block mapping
+  in ""<byte string>"", line 4772, column 11
+did not find expected key
+  in ""<byte string>"", line 4774, column 13"
+adyen.com/CheckoutService/37/openapi.yaml,"ParserError: while parsing a block mapping
+  in ""<byte string>"", line 4971, column 11
+did not find expected key
+  in ""<byte string>"", line 4973, column 13"
+adyen.com/CheckoutService/40/openapi.yaml,"ParserError: while parsing a block mapping
+  in ""<byte string>"", line 5279, column 11
+did not find expected key
+  in ""<byte string>"", line 5281, column 13"
+adyen.com/CheckoutService/41/openapi.yaml,"ParserError: while parsing a block mapping
+  in ""<byte string>"", line 5364, column 11
+did not find expected key
+  in ""<byte string>"", line 5366, column 13"
+adyen.com/CheckoutService/46/openapi.yaml,"ParserError: while parsing a block mapping
+  in ""<byte string>"", line 5365, column 11
+did not find expected key
+  in ""<byte string>"", line 5367, column 13"
+adyen.com/CheckoutService/49/openapi.yaml,"ParserError: while parsing a block mapping
+  in ""<byte string>"", line 5375, column 11
+did not find expected key
+  in ""<byte string>"", line 5377, column 13"
+adyen.com/CheckoutService/50/openapi.yaml,"ParserError: while parsing a block mapping
+  in ""<byte string>"", line 5433, column 11
+did not find expected key
+  in ""<byte string>"", line 5435, column 13"
+adyen.com/CheckoutService/51/openapi.yaml,"ParserError: while parsing a block mapping
+  in ""<byte string>"", line 5435, column 11
+did not find expected key
+  in ""<byte string>"", line 5437, column 13"
+adyen.com/CheckoutService/52/openapi.yaml,"ParserError: while parsing a block mapping
+  in ""<byte string>"", line 5441, column 11
+did not find expected key
+  in ""<byte string>"", line 5443, column 13"
+adyen.com/CheckoutService/53/openapi.yaml,"ParserError: while parsing a block mapping
+  in ""<byte string>"", line 5441, column 11
+did not find expected key
+  in ""<byte string>"", line 5443, column 13"
+adyen.com/CheckoutService/64/openapi.yaml,"ParserError: while parsing a block mapping
+  in ""<byte string>"", line 5441, column 11
+did not find expected key
+  in ""<byte string>"", line 5443, column 13"
+adyen.com/CheckoutService/65/openapi.yaml,"ParserError: while parsing a block mapping
+  in ""<byte string>"", line 5456, column 11
+did not find expected key
+  in ""<byte string>"", line 5458, column 13"
+adyen.com/CheckoutService/66/openapi.yaml,"ParserError: while parsing a block mapping
+  in ""<byte string>"", line 5456, column 11
+did not find expected key
+  in ""<byte string>"", line 5458, column 13"
+adyen.com/CheckoutService/67/openapi.yaml,"ParserError: while parsing a block mapping
+  in ""<byte string>"", line 5410, column 11
+did not find expected key
+  in ""<byte string>"", line 5412, column 13"
+adyen.com/CheckoutService/68/openapi.yaml,"ParserError: while parsing a block mapping
+  in ""<byte string>"", line 4685, column 11
+did not find expected key
+  in ""<byte string>"", line 4687, column 13"
+adyen.com/CheckoutService/69/openapi.yaml,"ParserError: while parsing a block mapping
+  in ""<byte string>"", line 4730, column 11
+did not find expected key
+  in ""<byte string>"", line 4732, column 13"
+adyen.com/CheckoutService/70/openapi.yaml,"ParserError: while parsing a block mapping
+  in ""<byte string>"", line 4776, column 11
+did not find expected key
+  in ""<byte string>"", line 4778, column 13"
+adyen.com/PaymentService/25/openapi.yaml,"ParserError: while parsing a block mapping
+  in ""<byte string>"", line 964, column 11
+did not find expected key
+  in ""<byte string>"", line 966, column 13"
+adyen.com/PaymentService/30/openapi.yaml,"ParserError: while parsing a block mapping
+  in ""<byte string>"", line 1158, column 11
+did not find expected key
+  in ""<byte string>"", line 1160, column 13"
+adyen.com/PaymentService/40/openapi.yaml,"ParserError: while parsing a block mapping
+  in ""<byte string>"", line 1562, column 11
+did not find expected key
+  in ""<byte string>"", line 1564, column 13"
+adyen.com/PaymentService/46/openapi.yaml,"ParserError: while parsing a block mapping
+  in ""<byte string>"", line 1562, column 11
+did not find expected key
+  in ""<byte string>"", line 1564, column 13"
+adyen.com/PaymentService/49/openapi.yaml,"ParserError: while parsing a block mapping
+  in ""<byte string>"", line 1562, column 11
+did not find expected key
+  in ""<byte string>"", line 1564, column 13"
+adyen.com/PaymentService/50/openapi.yaml,"ParserError: while parsing a block mapping
+  in ""<byte string>"", line 1575, column 11
+did not find expected key
+  in ""<byte string>"", line 1577, column 13"
+adyen.com/PaymentService/51/openapi.yaml,"ParserError: while parsing a block mapping
+  in ""<byte string>"", line 1647, column 11
+did not find expected key
+  in ""<byte string>"", line 1649, column 13"
+adyen.com/PaymentService/52/openapi.yaml,"ParserError: while parsing a block mapping
+  in ""<byte string>"", line 1647, column 11
+did not find expected key
+  in ""<byte string>"", line 1649, column 13"
+adyen.com/PaymentService/64/openapi.yaml,"ParserError: while parsing a block mapping
+  in ""<byte string>"", line 1647, column 11
+did not find expected key
+  in ""<byte string>"", line 1649, column 13"
+adyen.com/PaymentService/67/openapi.yaml,"ParserError: while parsing a block mapping
+  in ""<byte string>"", line 1647, column 11
+did not find expected key
+  in ""<byte string>"", line 1649, column 13"
+adyen.com/PaymentService/68/openapi.yaml,"ParserError: while parsing a block mapping
+  in ""<byte string>"", line 1808, column 11
+did not find expected key
+  in ""<byte string>"", line 1810, column 13"
+adyen.com/PayoutService/46/openapi.yaml,"ParserError: while parsing a block mapping
+  in ""<byte string>"", line 541, column 11
+did not find expected key
+  in ""<byte string>"", line 543, column 13"
+adyen.com/PayoutService/49/openapi.yaml,"ParserError: while parsing a block mapping
+  in ""<byte string>"", line 541, column 11
+did not find expected key
+  in ""<byte string>"", line 543, column 13"
+amadeus.com/amadeus-trip-parser/3.0.1/openapi.yaml,"ParserError: while parsing a block mapping
+  in ""<byte string>"", line 275, column 7
+did not find expected key
+  in ""<byte string>"", line 277, column 9"
+bunq.com/1.0/openapi.yaml,"ParserError: while parsing a block mapping
+  in ""<byte string>"", line 1, column 1
+did not find expected key
+  in ""<byte string>"", line 1143, column 2"
+codat.io/accounting/2.1.0/openapi.yaml,"ParserError: while parsing a block mapping
+  in ""<byte string>"", line 43981, column 15
+did not find expected key
+  in ""<byte string>"", line 43983, column 17"

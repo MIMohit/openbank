@@ -1,0 +1,1 @@
+oracle[w17-db-ngx-fastapi-ovoff] {'topology': 'w17-db-ngx-fastapi-ovoff', 'cases': 44, 'accepted': 44, 'hits_raw': 14, 'hits_confirmed': 0, 'S1': 7, 'S2': 7, 'S3': 0, 'signatures': 14, 'max_res_hat': 3, 'b0': 0, 'propagation': 0, 'uncorrelated': 1}

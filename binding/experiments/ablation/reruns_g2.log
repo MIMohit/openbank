@@ -1,0 +1,52 @@
+w18-g2-ngx-fastapi-str rep1 , 'accepted': 29, 'hits_raw': 12, 'hits_confirmed': 0, 'S1': 11, 'S2': 1, 'S3': 0, 'signatures': 4, 'max_res_hat': 3, '
+w18-g2-ngx-fastapi-str rep2 , 'accepted': 29, 'hits_raw': 12, 'hits_confirmed': 0, 'S1': 11, 'S2': 1, 'S3': 0, 'signatures': 4, 'max_res_hat': 3, '
+w18-g2-ngx-fastapi-str rep3 , 'accepted': 29, 'hits_raw': 12, 'hits_confirmed': 0, 'S1': 11, 'S2': 1, 'S3': 0, 'signatures': 4, 'max_res_hat': 3, '
+w18-g2-trf-fastapi-str rep1 , 'accepted': 18, 'hits_raw': 1, 'hits_confirmed': 0, 'S1': 1, 'S2': 0, 'S3': 0, 'signatures': 1, 'max_res_hat': 2, 'b0
+w18-g2-trf-fastapi-str rep2 , 'accepted': 18, 'hits_raw': 1, 'hits_confirmed': 0, 'S1': 1, 'S2': 0, 'S3': 0, 'signatures': 1, 'max_res_hat': 2, 'b0
+w18-g2-trf-fastapi-str rep3 , 'accepted': 18, 'hits_raw': 1, 'hits_confirmed': 0, 'S1': 1, 'S2': 0, 'S3': 0, 'signatures': 1, 'max_res_hat': 2, 'b0
+w18-g2-kng-fastapi-str rep1 , 'accepted': 28, 'hits_raw': 11, 'hits_confirmed': 0, 'S1': 10, 'S2': 1, 'S3': 0, 'signatures': 3, 'max_res_hat': 3, '
+w18-g2-kng-fastapi-str rep2 , 'accepted': 28, 'hits_raw': 11, 'hits_confirmed': 0, 'S1': 10, 'S2': 1, 'S3': 0, 'signatures': 3, 'max_res_hat': 3, '
+w18-g2-kng-fastapi-str rep3 , 'accepted': 28, 'hits_raw': 11, 'hits_confirmed': 0, 'S1': 10, 'S2': 1, 'S3': 0, 'signatures': 3, 'max_res_hat': 3, '
+w18-g2-ngx-fastapi-def rep1 , 'accepted': 31, 'hits_raw': 14, 'hits_confirmed': 0, 'S1': 13, 'S2': 1, 'S3': 0, 'signatures': 6, 'max_res_hat': 3, '
+w18-g2-ngx-fastapi-def rep2 , 'accepted': 31, 'hits_raw': 14, 'hits_confirmed': 0, 'S1': 13, 'S2': 1, 'S3': 0, 'signatures': 6, 'max_res_hat': 3, '
+w18-g2-ngx-fastapi-def rep3 , 'accepted': 31, 'hits_raw': 14, 'hits_confirmed': 0, 'S1': 13, 'S2': 1, 'S3': 0, 'signatures': 6, 'max_res_hat': 3, '
+w18-g2-ngx-spring-def rep1 'accepted': 19, 'hits_raw': 2, 'hits_confirmed': 0, 'S1': 2, 'S2': 0, 'S3': 0, 'signatures': 2, 'max_res_hat': 2, 'b0':
+w18-g2-ngx-spring-def rep2 'accepted': 19, 'hits_raw': 2, 'hits_confirmed': 0, 'S1': 2, 'S2': 0, 'S3': 0, 'signatures': 2, 'max_res_hat': 2, 'b0':
+w18-g2-ngx-spring-def rep3 'accepted': 19, 'hits_raw': 2, 'hits_confirmed': 0, 'S1': 2, 'S2': 0, 'S3': 0, 'signatures': 2, 'max_res_hat': 2, 'b0':
+w18-g2-env-fastapi-def rep1 , 'accepted': 19, 'hits_raw': 2, 'hits_confirmed': 0, 'S1': 2, 'S2': 0, 'S3': 0, 'signatures': 2, 'max_res_hat': 2, 'b0
+w18-g2-env-fastapi-def rep2 , 'accepted': 19, 'hits_raw': 2, 'hits_confirmed': 0, 'S1': 2, 'S2': 0, 'S3': 0, 'signatures': 2, 'max_res_hat': 2, 'b0
+w18-g2-env-fastapi-def rep3 , 'accepted': 19, 'hits_raw': 2, 'hits_confirmed': 0, 'S1': 2, 'S2': 0, 'S3': 0, 'signatures': 2, 'max_res_hat': 2, 'b0
+w18-g2-env-spring-def rep1 'accepted': 19, 'hits_raw': 2, 'hits_confirmed': 0, 'S1': 2, 'S2': 0, 'S3': 0, 'signatures': 2, 'max_res_hat': 2, 'b0':
+w18-g2-env-spring-def rep2 'accepted': 19, 'hits_raw': 2, 'hits_confirmed': 0, 'S1': 2, 'S2': 0, 'S3': 0, 'signatures': 2, 'max_res_hat': 2, 'b0':
+w18-g2-env-spring-def rep3 'accepted': 19, 'hits_raw': 2, 'hits_confirmed': 0, 'S1': 2, 'S2': 0, 'S3': 0, 'signatures': 2, 'max_res_hat': 2, 'b0':
+w18-g2-trf-fastapi-def rep1 , 'accepted': 18, 'hits_raw': 1, 'hits_confirmed': 0, 'S1': 1, 'S2': 0, 'S3': 0, 'signatures': 1, 'max_res_hat': 2, 'b0
+w18-g2-trf-fastapi-def rep2 , 'accepted': 18, 'hits_raw': 1, 'hits_confirmed': 0, 'S1': 1, 'S2': 0, 'S3': 0, 'signatures': 1, 'max_res_hat': 2, 'b0
+w18-g2-trf-fastapi-def rep3 , 'accepted': 18, 'hits_raw': 1, 'hits_confirmed': 0, 'S1': 1, 'S2': 0, 'S3': 0, 'signatures': 1, 'max_res_hat': 2, 'b0
+w18-g2-kng-fastapi-def rep1 , 'accepted': 28, 'hits_raw': 11, 'hits_confirmed': 0, 'S1': 10, 'S2': 1, 'S3': 0, 'signatures': 3, 'max_res_hat': 3, '
+w18-g2-kng-fastapi-def rep2 , 'accepted': 28, 'hits_raw': 11, 'hits_confirmed': 0, 'S1': 10, 'S2': 1, 'S3': 0, 'signatures': 3, 'max_res_hat': 3, '
+w18-g2-kng-fastapi-def rep3 , 'accepted': 28, 'hits_raw': 11, 'hits_confirmed': 0, 'S1': 10, 'S2': 1, 'S3': 0, 'signatures': 3, 'max_res_hat': 3, '
+w18-g2-apx-fastapi-def rep1 , 'accepted': 19, 'hits_raw': 2, 'hits_confirmed': 0, 'S1': 2, 'S2': 0, 'S3': 0, 'signatures': 2, 'max_res_hat': 2, 'b0
+w18-g2-apx-fastapi-def rep2 , 'accepted': 19, 'hits_raw': 2, 'hits_confirmed': 0, 'S1': 2, 'S2': 0, 'S3': 0, 'signatures': 2, 'max_res_hat': 2, 'b0
+w18-g2-apx-fastapi-def rep3 , 'accepted': 19, 'hits_raw': 2, 'hits_confirmed': 0, 'S1': 2, 'S2': 0, 'S3': 0, 'signatures': 2, 'max_res_hat': 2, 'b0
+w18-g2-apx-aspnet-def rep1 'accepted': 26, 'hits_raw': 9, 'hits_confirmed': 0, 'S1': 9, 'S2': 0, 'S3': 0, 'signatures': 1, 'max_res_hat': 2, 'b0':
+w18-g2-apx-aspnet-def rep2 'accepted': 26, 'hits_raw': 9, 'hits_confirmed': 0, 'S1': 9, 'S2': 0, 'S3': 0, 'signatures': 1, 'max_res_hat': 2, 'b0':
+w18-g2-apx-aspnet-def rep3 'accepted': 26, 'hits_raw': 9, 'hits_confirmed': 0, 'S1': 9, 'S2': 0, 'S3': 0, 'signatures': 1, 'max_res_hat': 2, 'b0':
+w18-g2-ngx-fastapi-rec rep1 , 'accepted': 31, 'hits_raw': 14, 'hits_confirmed': 0, 'S1': 13, 'S2': 1, 'S3': 0, 'signatures': 6, 'max_res_hat': 3, '
+w18-g2-ngx-fastapi-rec rep2 , 'accepted': 31, 'hits_raw': 14, 'hits_confirmed': 0, 'S1': 13, 'S2': 1, 'S3': 0, 'signatures': 6, 'max_res_hat': 3, '
+w18-g2-ngx-fastapi-rec rep3 , 'accepted': 31, 'hits_raw': 14, 'hits_confirmed': 0, 'S1': 13, 'S2': 1, 'S3': 0, 'signatures': 6, 'max_res_hat': 3, '
+w18-g2-ngx-spring-rec rep1 'accepted': 19, 'hits_raw': 2, 'hits_confirmed': 0, 'S1': 2, 'S2': 0, 'S3': 0, 'signatures': 2, 'max_res_hat': 2, 'b0':
+w18-g2-ngx-spring-rec rep2 'accepted': 19, 'hits_raw': 2, 'hits_confirmed': 0, 'S1': 2, 'S2': 0, 'S3': 0, 'signatures': 2, 'max_res_hat': 2, 'b0':
+w18-g2-ngx-spring-rec rep3 'accepted': 19, 'hits_raw': 2, 'hits_confirmed': 0, 'S1': 2, 'S2': 0, 'S3': 0, 'signatures': 2, 'max_res_hat': 2, 'b0':
+w18-g2-trf-fastapi-rec rep1 , 'accepted': 18, 'hits_raw': 1, 'hits_confirmed': 0, 'S1': 1, 'S2': 0, 'S3': 0, 'signatures': 1, 'max_res_hat': 2, 'b0
+w18-g2-trf-fastapi-rec rep2 , 'accepted': 18, 'hits_raw': 1, 'hits_confirmed': 0, 'S1': 1, 'S2': 0, 'S3': 0, 'signatures': 1, 'max_res_hat': 2, 'b0
+w18-g2-trf-fastapi-rec rep3 , 'accepted': 18, 'hits_raw': 1, 'hits_confirmed': 0, 'S1': 1, 'S2': 0, 'S3': 0, 'signatures': 1, 'max_res_hat': 2, 'b0
+w18-g2-kng-fastapi-rec rep1 , 'accepted': 28, 'hits_raw': 11, 'hits_confirmed': 0, 'S1': 10, 'S2': 1, 'S3': 0, 'signatures': 3, 'max_res_hat': 3, '
+w18-g2-kng-fastapi-rec rep2 , 'accepted': 28, 'hits_raw': 11, 'hits_confirmed': 0, 'S1': 10, 'S2': 1, 'S3': 0, 'signatures': 3, 'max_res_hat': 3, '
+w18-g2-kng-fastapi-rec rep3 , 'accepted': 28, 'hits_raw': 11, 'hits_confirmed': 0, 'S1': 10, 'S2': 1, 'S3': 0, 'signatures': 3, 'max_res_hat': 3, '
+w18-g2-apx-fastapi-rec rep1 , 'accepted': 19, 'hits_raw': 2, 'hits_confirmed': 0, 'S1': 2, 'S2': 0, 'S3': 0, 'signatures': 2, 'max_res_hat': 2, 'b0
+w18-g2-apx-fastapi-rec rep2 , 'accepted': 19, 'hits_raw': 2, 'hits_confirmed': 0, 'S1': 2, 'S2': 0, 'S3': 0, 'signatures': 2, 'max_res_hat': 2, 'b0
+w18-g2-apx-fastapi-rec rep3 , 'accepted': 19, 'hits_raw': 2, 'hits_confirmed': 0, 'S1': 2, 'S2': 0, 'S3': 0, 'signatures': 2, 'max_res_hat': 2, 'b0
+w18-g2-apx-aspnet-rec rep1 'accepted': 26, 'hits_raw': 9, 'hits_confirmed': 0, 'S1': 9, 'S2': 0, 'S3': 0, 'signatures': 1, 'max_res_hat': 2, 'b0':
+w18-g2-apx-aspnet-rec rep2 'accepted': 26, 'hits_raw': 9, 'hits_confirmed': 0, 'S1': 9, 'S2': 0, 'S3': 0, 'signatures': 1, 'max_res_hat': 2, 'b0':
+w18-g2-apx-aspnet-rec rep3 'accepted': 26, 'hits_raw': 9, 'hits_confirmed': 0, 'S1': 9, 'S2': 0, 'S3': 0, 'signatures': 1, 'max_res_hat': 2, 'b0':
+RERUNDONE

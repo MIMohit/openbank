@@ -1,0 +1,32 @@
+=== spring OVERRIDE=on VERIFY_MODE=off
+# conformance: http://127.0.0.1:18580
+PASS  listAccounts                         GET    /api/v1/accounts                                 -> 200 listAccounts  
+PASS  getAccount                           GET    /api/v1/accounts/acc-alice-1                     -> 200 getAccount  
+PASS  updateAccount                        PUT    /api/v1/accounts/acc-alice-1                     -> 200 updateAccount  
+PASS  deleteAccount                        DELETE /api/v1/accounts/acc-alice-1                     -> 200 deleteAccount  
+PASS  accountAction.freeze                 POST   /api/v1/accounts/acc-alice-1/actions?op=freeze   -> 200 accountAction.freeze  
+PASS  accountAction.close                  POST   /api/v1/accounts/acc-alice-1/actions?op=close    -> 200 accountAction.close  
+PASS  accountAction.unknown(op=bogus)      POST   /api/v1/accounts/acc-alice-1/actions?op=bogus    -> 200 accountAction.unknown  
+PASS  accountAction.unknown(no op)         POST   /api/v1/accounts/acc-alice-1/actions             -> 200 accountAction.unknown  
+PASS  createTransfer                       POST   /api/v1/transfers                                -> 200 createTransfer  
+PASS  graphql.getProfile                   POST   /api/v1/graphql                                  -> 200 graphql.getProfile  
+PASS  graphql.deleteProfile                POST   /api/v1/graphql                                  -> 200 graphql.deleteProfile  
+PASS  graphql.unknown(other name)          POST   /api/v1/graphql                                  -> 200 graphql.unknown  
+PASS  graphql.unknown(no name)             POST   /api/v1/graphql                                  -> 200 graphql.unknown  
+PASS  graphql.unknown(bad json)            POST   /api/v1/graphql                                  -> 200 graphql.unknown  
+PASS  me                                   GET    /api/v1/me                                       -> 200 me  
+PASS  adminListUsers                       GET    /api/v1/admin/users                              -> 200 adminListUsers  
+PASS  adminDeleteUser                      DELETE /api/v1/admin/users/u-123                        -> 200 adminDeleteUser  
+PASS  health                               GET    /api/v1/health                                   -> 200 health  
+PASS  publicFile                           GET    /api/v1/public/terms.txt                         -> 200 publicFile  
+PASS  getAccountV2                         GET    /api/v2/accounts/acc-alice-1                     -> 200 getAccountV2  
+PASS  NOT_FOUND(unknown path)              GET    /api/v1/does-not-exist                           -> 404 NOT_FOUND  
+PASS  NOT_FOUND(method mismatch PATCH)     PATCH  /api/v1/accounts/acc-alice-1                     -> 404 NOT_FOUND  
+PASS  NOT_FOUND(v2 unknown)                GET    /api/v2/transfers                                -> 404 NOT_FOUND  
+PASS  trust-header capture  
+PASS  jti=null without DPoP header
+INFO  override: header X-HTTP-Method-Override: DELETE POST /api/v1/accounts/acc-alice-1 -> 404 NOT_FOUND
+INFO  override: query ?_method=DELETE                POST /api/v1/accounts/acc-alice-1?_method=DELETE -> 200 deleteAccount
+INFO  override: form body _method=DELETE             POST /api/v1/accounts/acc-alice-1 -> 200 deleteAccount
+INFO  override: header on GET (non-POST origin)      GET /api/v1/accounts/acc-alice-1 -> 200 getAccount
+# 25/25 required checks passed

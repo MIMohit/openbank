@@ -1,0 +1,413 @@
+{
+ "topology": "w15r-nginx-default-edge-express-ovon",
+ "case_id": "postAccount:g1-fmethod-delete:alice:eb43d4e59e8a",
+ "primitive_ids": [
+  "g1-fmethod-delete"
+ ],
+ "base_op_id": "postAccount",
+ "exec_op_id": "deleteAccount",
+ "exec_path_params": {
+  "id": "acc-alice-1"
+ },
+ "deviation_kinds": [
+  "method",
+  "route"
+ ],
+ "full_units": 15,
+ "minimal_units": 15,
+ "still_hit": true,
+ "canonical_request": "POST /api/v1/accounts/acc-alice-1 HTTP/1.1\r\nHost: api.bench.test\r\nAuthorization: @@AUTHZ@@\r\nDPoP: @@PROOF@@\r\nAccept: application/json\r\nUser-Agent: bind-harness/1.0\r\nContent-Type: application/json\r\nContent-Length: 16\r\nConnection: close\r\n\r\n{\"nickname\":\"x\"}",
+ "minimal_request": "POST /api/v1/accounts/acc-alice-1 HTTP/1.1\r\nHost: api.bench.test\r\nAuthorization: @@AUTHZ@@\r\nDPoP: @@PROOF@@\r\nAccept: application/json\r\nUser-Agent: bind-harness/1.0\r\nContent-Type: application/x-www-form-urlencoded\r\nContent-Length: 14\r\nConnection: close\r\n\r\n_method=DELETE",
+ "trials": [
+  {
+   "n_units": 15,
+   "status": 200,
+   "hit": true
+  },
+  {
+   "n_units": 8,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 8,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 14,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 7,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 7,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 12,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 12,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 12,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 12,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 12,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 3,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 3,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 3,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 3,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 3,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 14,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 14,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 14,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 14,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 14,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 14,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 14,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 14,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 14,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 14,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 14,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 14,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 14,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 14,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 14,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 14,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 14,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 14,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 14,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 14,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 14,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 14,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 14,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 14,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 14,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 14,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 14,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 14,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 14,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 14,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 15,
+   "status": 200,
+   "hit": true
+  }
+ ]
+}

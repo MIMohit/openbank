@@ -1,0 +1,88 @@
+{
+ "topology": "w13-apisix-default-edge-aspnet-ovoff",
+ "case_id": "deleteAccount:g2-pct2f-before-last:alice:bf8b98fbd922",
+ "primitive_ids": [
+  "g2-pct2f-before-last"
+ ],
+ "exec_op_id": "deleteAccount",
+ "exec_path_params": {
+  "id": "%2facc-alice-1"
+ },
+ "full_units": 3,
+ "minimal_units": 3,
+ "still_hit": true,
+ "canonical_request": "DELETE /api/v1/accounts/acc-alice-1 HTTP/1.1\r\nHost: api.bench.test\r\nAuthorization: @@AUTHZ@@\r\nDPoP: @@PROOF@@\r\nAccept: application/json\r\nUser-Agent: bind-harness/1.0\r\nConnection: close\r\n\r\n",
+ "minimal_request": "DELETE /api/v1/accounts/%2facc-alice-1 HTTP/1.1\r\nHost: api.bench.test\r\nAuthorization: @@AUTHZ@@\r\nDPoP: @@PROOF@@\r\nAccept: application/json\r\nUser-Agent: bind-harness/1.0\r\nConnection: close\r\n\r\n",
+ "trials": [
+  {
+   "n_units": 3,
+   "status": 200,
+   "hit": true
+  },
+  {
+   "n_units": 2,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 2,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 2,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 2,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 2,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 2,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 3,
+   "status": 200,
+   "hit": true
+  }
+ ]
+}

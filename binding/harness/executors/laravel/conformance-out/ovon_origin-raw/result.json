@@ -1,0 +1,358 @@
+{
+  "base_url": "http://127.0.0.1:18580",
+  "required": [
+    {
+      "case": "listAccounts",
+      "method": "GET",
+      "target": "/api/v1/accounts",
+      "status": 200,
+      "op_id": "listAccounts",
+      "ok": true,
+      "errors": [],
+      "log_ok": true,
+      "log_errors": []
+    },
+    {
+      "case": "getAccount",
+      "method": "GET",
+      "target": "/api/v1/accounts/acc-alice-1",
+      "status": 200,
+      "op_id": "getAccount",
+      "ok": true,
+      "errors": [],
+      "log_ok": true,
+      "log_errors": []
+    },
+    {
+      "case": "updateAccount",
+      "method": "PUT",
+      "target": "/api/v1/accounts/acc-alice-1",
+      "status": 200,
+      "op_id": "updateAccount",
+      "ok": true,
+      "errors": [],
+      "log_ok": true,
+      "log_errors": []
+    },
+    {
+      "case": "deleteAccount",
+      "method": "DELETE",
+      "target": "/api/v1/accounts/acc-alice-1",
+      "status": 200,
+      "op_id": "deleteAccount",
+      "ok": true,
+      "errors": [],
+      "log_ok": true,
+      "log_errors": []
+    },
+    {
+      "case": "accountAction.freeze",
+      "method": "POST",
+      "target": "/api/v1/accounts/acc-alice-1/actions?op=freeze",
+      "status": 200,
+      "op_id": "accountAction.freeze",
+      "ok": true,
+      "errors": [],
+      "log_ok": true,
+      "log_errors": []
+    },
+    {
+      "case": "accountAction.close",
+      "method": "POST",
+      "target": "/api/v1/accounts/acc-alice-1/actions?op=close",
+      "status": 200,
+      "op_id": "accountAction.close",
+      "ok": true,
+      "errors": [],
+      "log_ok": true,
+      "log_errors": []
+    },
+    {
+      "case": "accountAction.unknown(op=bogus)",
+      "method": "POST",
+      "target": "/api/v1/accounts/acc-alice-1/actions?op=bogus",
+      "status": 200,
+      "op_id": "accountAction.unknown",
+      "ok": true,
+      "errors": [],
+      "log_ok": true,
+      "log_errors": []
+    },
+    {
+      "case": "accountAction.unknown(no op)",
+      "method": "POST",
+      "target": "/api/v1/accounts/acc-alice-1/actions",
+      "status": 200,
+      "op_id": "accountAction.unknown",
+      "ok": true,
+      "errors": [],
+      "log_ok": true,
+      "log_errors": []
+    },
+    {
+      "case": "createTransfer",
+      "method": "POST",
+      "target": "/api/v1/transfers",
+      "status": 200,
+      "op_id": "createTransfer",
+      "ok": true,
+      "errors": [],
+      "log_ok": true,
+      "log_errors": []
+    },
+    {
+      "case": "graphql.getProfile",
+      "method": "POST",
+      "target": "/api/v1/graphql",
+      "status": 200,
+      "op_id": "graphql.getProfile",
+      "ok": true,
+      "errors": [],
+      "log_ok": true,
+      "log_errors": []
+    },
+    {
+      "case": "graphql.deleteProfile",
+      "method": "POST",
+      "target": "/api/v1/graphql",
+      "status": 200,
+      "op_id": "graphql.deleteProfile",
+      "ok": true,
+      "errors": [],
+      "log_ok": true,
+      "log_errors": []
+    },
+    {
+      "case": "graphql.unknown(other name)",
+      "method": "POST",
+      "target": "/api/v1/graphql",
+      "status": 200,
+      "op_id": "graphql.unknown",
+      "ok": true,
+      "errors": [],
+      "log_ok": true,
+      "log_errors": []
+    },
+    {
+      "case": "graphql.unknown(no name)",
+      "method": "POST",
+      "target": "/api/v1/graphql",
+      "status": 200,
+      "op_id": "graphql.unknown",
+      "ok": true,
+      "errors": [],
+      "log_ok": true,
+      "log_errors": []
+    },
+    {
+      "case": "graphql.unknown(bad json)",
+      "method": "POST",
+      "target": "/api/v1/graphql",
+      "status": 200,
+      "op_id": "graphql.unknown",
+      "ok": true,
+      "errors": [],
+      "log_ok": true,
+      "log_errors": []
+    },
+    {
+      "case": "me",
+      "method": "GET",
+      "target": "/api/v1/me",
+      "status": 200,
+      "op_id": "me",
+      "ok": true,
+      "errors": [],
+      "log_ok": true,
+      "log_errors": []
+    },
+    {
+      "case": "adminListUsers",
+      "method": "GET",
+      "target": "/api/v1/admin/users",
+      "status": 200,
+      "op_id": "adminListUsers",
+      "ok": true,
+      "errors": [],
+      "log_ok": true,
+      "log_errors": []
+    },
+    {
+      "case": "adminDeleteUser",
+      "method": "DELETE",
+      "target": "/api/v1/admin/users/u-123",
+      "status": 200,
+      "op_id": "adminDeleteUser",
+      "ok": true,
+      "errors": [],
+      "log_ok": true,
+      "log_errors": []
+    },
+    {
+      "case": "health",
+      "method": "GET",
+      "target": "/api/v1/health",
+      "status": 200,
+      "op_id": "health",
+      "ok": true,
+      "errors": [],
+      "log_ok": true,
+      "log_errors": []
+    },
+    {
+      "case": "publicFile",
+      "method": "GET",
+      "target": "/api/v1/public/terms.txt",
+      "status": 200,
+      "op_id": "publicFile",
+      "ok": true,
+      "errors": [],
+      "log_ok": true,
+      "log_errors": []
+    },
+    {
+      "case": "getAccountV2",
+      "method": "GET",
+      "target": "/api/v2/accounts/acc-alice-1",
+      "status": 200,
+      "op_id": "getAccountV2",
+      "ok": true,
+      "errors": [],
+      "log_ok": true,
+      "log_errors": []
+    },
+    {
+      "case": "NOT_FOUND(unknown path)",
+      "method": "GET",
+      "target": "/api/v1/does-not-exist",
+      "status": 404,
+      "op_id": "NOT_FOUND",
+      "ok": true,
+      "errors": [],
+      "log_ok": true,
+      "log_errors": []
+    },
+    {
+      "case": "NOT_FOUND(method mismatch PATCH)",
+      "method": "PATCH",
+      "target": "/api/v1/accounts/acc-alice-1",
+      "status": 404,
+      "op_id": "NOT_FOUND",
+      "ok": true,
+      "errors": [],
+      "log_ok": true,
+      "log_errors": []
+    },
+    {
+      "case": "NOT_FOUND(v2 unknown)",
+      "method": "GET",
+      "target": "/api/v2/transfers",
+      "status": 404,
+      "op_id": "NOT_FOUND",
+      "ok": true,
+      "errors": [],
+      "log_ok": true,
+      "log_errors": []
+    }
+  ],
+  "override": [
+    {
+      "probe": "header X-HTTP-Method-Override: DELETE",
+      "method": "POST",
+      "target": "/api/v1/accounts/acc-alice-1",
+      "status": 200,
+      "op_id": "deleteAccount",
+      "jti": "3a66f29b-188f-4d95-ae14-ef248e7f1ddc"
+    },
+    {
+      "probe": "query ?_method=DELETE",
+      "method": "POST",
+      "target": "/api/v1/accounts/acc-alice-1?_method=DELETE",
+      "status": 200,
+      "op_id": "deleteAccount",
+      "jti": "387d3eec-ef2d-48d9-b77d-43c6853ba015"
+    },
+    {
+      "probe": "form body _method=DELETE",
+      "method": "POST",
+      "target": "/api/v1/accounts/acc-alice-1",
+      "status": 200,
+      "op_id": "deleteAccount",
+      "jti": "239f00bf-0df5-4995-9fd0-7cc7b16dce9e"
+    },
+    {
+      "probe": "header on GET (non-POST origin)",
+      "method": "GET",
+      "target": "/api/v1/accounts/acc-alice-1",
+      "status": 200,
+      "op_id": "getAccount",
+      "jti": "b0a2e0a2-bc81-4151-994f-3f4597c6ac4b"
+    }
+  ],
+  "verify": [
+    {
+      "case": "allow getAccount",
+      "status": 200,
+      "op_id": "getAccount",
+      "view": {
+        "path": "/authz/orig",
+        "method": "GET",
+        "jti": "ac63e8a5-b4e4-414a-bb5a-f20865d87565",
+        "x_original_method": "GET",
+        "x_original_uri": "/api/v1/accounts/acc-alice-1?x=1",
+        "x_original_host": "api.bench.test",
+        "authorization": true,
+        "dpop": true,
+        "executor_op_id": "getAccount"
+      },
+      "ok": true,
+      "errors": []
+    },
+    {
+      "case": "deny deleteAccount",
+      "status": 401,
+      "op_id": "deleteAccount",
+      "view": {
+        "path": "/authz/orig",
+        "method": "GET",
+        "jti": "deny-8de46b7e-beaa-4594-94ad-f3a57cbd2050",
+        "x_original_method": "DELETE",
+        "x_original_uri": "/api/v1/accounts/acc-alice-1",
+        "x_original_host": "api.bench.test",
+        "authorization": true,
+        "dpop": true,
+        "executor_op_id": "deleteAccount"
+      },
+      "ok": true,
+      "errors": []
+    },
+    {
+      "case": "allow override POST->DELETE",
+      "status": 200,
+      "op_id": "deleteAccount",
+      "view": {
+        "path": "/authz/orig",
+        "method": "GET",
+        "jti": "2c6acae0-2971-4d96-9e53-f85f56ffab02",
+        "x_original_method": "POST",
+        "x_original_uri": "/api/v1/accounts/acc-alice-1",
+        "x_original_host": "api.bench.test",
+        "authorization": true,
+        "dpop": true,
+        "executor_op_id": "deleteAccount"
+      },
+      "ok": true,
+      "errors": []
+    }
+  ],
+  "trust": {
+    "status": 200,
+    "ok": true,
+    "errors": []
+  },
+  "jti_null": {
+    "ok": true
+  },
+  "passed": 28,
+  "total": 28
+}

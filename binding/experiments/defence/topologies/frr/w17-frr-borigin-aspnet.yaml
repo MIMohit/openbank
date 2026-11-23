@@ -1,0 +1,13 @@
+id: w17-frr-borigin-aspnet
+gateway: nginx
+profile: recommended
+placement: origin
+framework: aspnet
+executor_image: bh-exec-aspnet:v2
+override: 'off'
+verifier:
+  image: bh-verifier:latest
+  canon: rfc3986
+  view_mac: 'off'
+host_port: 29113
+verify_mode: origin-raw

@@ -1,0 +1,1 @@
+w12-block-kng-rails-def runner_rc=0 secs=28 violations=12 e4_runner[w12-block-kng-rails-def] wrote /Users/mimohit/openbank/binding/harness/logs/w12-block-kng-rails-def/runner.jsonl: {'sent': 29, 'errors': 0}

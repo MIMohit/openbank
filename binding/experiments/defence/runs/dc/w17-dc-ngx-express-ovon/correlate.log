@@ -1,0 +1,1 @@
+oracle[w17-dc-ngx-express-ovon] {'topology': 'w17-dc-ngx-express-ovon', 'cases': 39, 'accepted': 37, 'hits_raw': 20, 'hits_confirmed': 0, 'S1': 12, 'S2': 8, 'S3': 0, 'signatures': 20, 'max_res_hat': 4, 'b0': 0, 'propagation': 0, 'uncorrelated': 1}

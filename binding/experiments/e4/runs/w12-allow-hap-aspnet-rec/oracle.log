@@ -1,0 +1,1 @@
+e4_oracle[w12-allow-hap-aspnet-rec] {'topology': 'w12-allow-hap-aspnet-rec', 'gateway': 'haproxy', 'profile': 'recommended', 'framework': 'aspnet', 'verifier_image': 'bh-pdp-allow:latest', 'cases': 29, 'pdp_allow': 6, 'violations': 2, 'admin': 1, 'bob': 1, 'vectors_hit': 'encdotseg-admin-list,encdotseg-bob-get'}

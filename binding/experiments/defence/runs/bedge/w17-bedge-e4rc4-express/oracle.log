@@ -1,0 +1,1 @@
+e4_oracle[w17-bedge-e4rc4-express] {'topology': 'w17-bedge-e4rc4-express', 'gateway': 'nginx', 'profile': 'default', 'framework': 'express', 'verifier_image': 'bh-pdp-block:latest', 'cases': 29, 'pdp_allow': 20, 'violations': 2, 'admin': 2, 'bob': 0, 'vectors_hit': 'case-admin-del,case-admin-list'}

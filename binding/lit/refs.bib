@@ -1,0 +1,480 @@
+% refs.bib -- W1 literature review bibliography (binding/lit/).
+% Every entry carries a DOI or URL that was seen during the review (2026-11-23).
+% "Crossref" = metadata taken from the Crossref record of the DOI (search_log/dois.json).
+% Fields marked "UNVERIFIED" in a comment were not confirmed against a primary source.
+% W2's ../paper/extra.bib uses "w2:" keys. Overlaps with W2: w2:rfc9449 = rfc9449,
+% w2:rfc9421 = rfc9421, w2:fapi2am = fapiam2025, w2:hosseyni2024fapi2 = ePrint of hosseyni2024csf.
+% Deduplicate at camera-ready (cite only one key per work in any section).
+
+% ---------------------------------------------------------------- formal analyses
+@inproceedings{hosseyni2024csf,
+  author    = {Pedram Hosseyni and Ralf K{\"u}sters and Tim W{\"u}rtele},
+  title     = {Formal Security Analysis of the {OpenID} {FAPI} 2.0: Accompanying a Standardization Process},
+  booktitle = {2024 IEEE 37th Computer Security Foundations Symposium (CSF)},
+  pages     = {589--604},
+  publisher = {IEEE},
+  year      = {2024},
+  doi       = {10.1109/CSF61375.2024.00002},
+  note      = {Full version: IACR Cryptology ePrint Archive 2024/078, \url{https://eprint.iacr.org/2024/078}}
+}
+% Crossref verified; ePrint full version read (Wayback copy, 86 pp).
+
+@article{hosseyni2024tops,
+  author    = {Pedram Hosseyni and Ralf K{\"u}sters and Tim W{\"u}rtele},
+  title     = {Formal Security Analysis of the {OpenID} {FAPI} 2.0 Family of Protocols: Accompanying a Standardization Process},
+  journal   = {ACM Transactions on Privacy and Security},
+  volume    = {28},
+  number    = {1},
+  pages     = {1--36},
+  year      = {2024},
+  doi       = {10.1145/3699716},
+  note      = {Full version: IACR Cryptology ePrint Archive 2024/1540, \url{https://eprint.iacr.org/2024/1540}}
+}
+% Crossref verified (title, journal, pages, year). Volume/issue 28(1) from prior review: UNVERIFIED.
+
+@techreport{hosseyni2022tr,
+  author      = {Pedram Hosseyni and Ralf K{\"u}sters and Tim W{\"u}rtele},
+  title       = {Formal Security Analysis of the {OpenID} Financial-grade {API} 2.0},
+  institution = {OpenID Foundation / University of Stuttgart},
+  type        = {Technical Report},
+  number      = {WP 1(b)},
+  year        = {2022},
+  url         = {https://openid.net/wordpress-content/uploads/2022/12/Formal-Security-Analysis-of-FAPI-2.0_FINAL_2022-10.pdf}
+}
+% Full text read. Report number label "WP 1(b)" as printed in the PDF.
+
+@inproceedings{fett2019fapi,
+  author    = {Daniel Fett and Pedram Hosseyni and Ralf K{\"u}sters},
+  title     = {An Extensive Formal Security Analysis of the {OpenID} Financial-Grade {API}},
+  booktitle = {2019 IEEE Symposium on Security and Privacy (SP)},
+  pages     = {453--471},
+  publisher = {IEEE},
+  year      = {2019},
+  doi       = {10.1109/SP.2019.00067}
+}
+
+@inproceedings{fett2016oauth,
+  author    = {Daniel Fett and Ralf K{\"u}sters and Guido Schmitz},
+  title     = {A Comprehensive Formal Security Analysis of {OAuth} 2.0},
+  booktitle = {Proceedings of the 2016 ACM SIGSAC Conference on Computer and Communications Security (CCS)},
+  pages     = {1204--1215},
+  publisher = {ACM},
+  year      = {2016},
+  doi       = {10.1145/2976749.2978385}
+}
+
+% ---------------------------------------------------------------- specifications
+@techreport{rfc9449,
+  author      = {Daniel Fett and Brian Campbell and John Bradley and Torsten Lodderstedt and Michael Jones and David Waite},
+  title       = {{OAuth} 2.0 Demonstrating Proof of Possession ({DPoP})},
+  type        = {RFC},
+  number      = {9449},
+  institution = {RFC Editor},
+  year        = {2023},
+  doi         = {10.17487/RFC9449}
+}
+
+@techreport{rfc8705,
+  author      = {Brian Campbell and John Bradley and Nat Sakimura and Torsten Lodderstedt},
+  title       = {{OAuth} 2.0 Mutual-{TLS} Client Authentication and Certificate-Bound Access Tokens},
+  type        = {RFC},
+  number      = {8705},
+  institution = {RFC Editor},
+  year        = {2020},
+  doi         = {10.17487/RFC8705}
+}
+
+@techreport{rfc9421,
+  author      = {Annabelle Backman and Justin Richer and Manu Sporny},
+  title       = {{HTTP} Message Signatures},
+  type        = {RFC},
+  number      = {9421},
+  institution = {RFC Editor},
+  year        = {2024},
+  doi         = {10.17487/RFC9421},
+  url         = {https://www.rfc-editor.org/rfc/rfc9421}
+}
+% Crossref lists only "M. Sporny"; Backman/Richer from screening record and W2 extra.bib, not re-checked: UNVERIFIED.
+
+@techreport{rfc9440,
+  author      = {Brian Campbell and Mike Bishop},
+  title       = {Client-Cert {HTTP} Header Field},
+  type        = {RFC},
+  number      = {9440},
+  institution = {RFC Editor},
+  year        = {2023},
+  doi         = {10.17487/RFC9440}
+}
+
+@techreport{rfc9700,
+  author      = {Torsten Lodderstedt and John Bradley and Andrey Labunets and Daniel Fett},
+  title       = {Best Current Practice for {OAuth} 2.0 Security},
+  type        = {RFC},
+  number      = {9700 (BCP 240)},
+  institution = {RFC Editor},
+  year        = {2025},
+  doi         = {10.17487/RFC9700}
+}
+% Author first names expanded from Crossref initials (T., J., A., D.): UNVERIFIED expansion.
+
+@misc{fapiam2025,
+  author       = {Daniel Fett},
+  title        = {{FAPI} 2.0 Attacker Model (Final)},
+  howpublished = {OpenID Foundation},
+  year         = {2025},
+  url          = {https://openid.net/specs/fapi-attacker-model-2_0-final.html},
+  note         = {22 February 2025; accessed 2026-11-23}
+}
+
+@misc{fapisp2025,
+  author       = {{OpenID Foundation FAPI Working Group}},
+  title        = {{FAPI} 2.0 Security Profile (Final)},
+  howpublished = {OpenID Foundation},
+  year         = {2025},
+  url          = {https://openid.net/specs/fapi-security-profile-2_0-final.html},
+  note         = {Accessed 2026-11-23}
+}
+% Landing page seen (HTTP 200). Named editors and exact date not recorded: UNVERIFIED.
+
+@misc{nygren2025binding,
+  author       = {Erik Nygren and Mike Bishop},
+  title        = {{HTTP/1.1} Request Smuggling Defense using Cryptographic Message Binding},
+  howpublished = {IETF Internet-Draft draft-nygren-httpbis-http11-request-binding},
+  year         = {2025},
+  url          = {https://datatracker.ietf.org/doc/draft-nygren-httpbis-http11-request-binding/}
+}
+% Datatracker page seen; year, version and first names from prior review: UNVERIFIED.
+
+% ---------------------------------------------------------------- HTTP differentials and defences
+@inproceedings{jabiyev2021treqs,
+  author    = {Bahruz Jabiyev and Steven Sprecher and Kaan Onarlioglu and Engin Kirda},
+  title     = {{T-Reqs}: {HTTP} Request Smuggling with Differential Fuzzing},
+  booktitle = {Proceedings of the 2021 ACM SIGSAC Conference on Computer and Communications Security (CCS)},
+  pages     = {1805--1820},
+  publisher = {ACM},
+  year      = {2021},
+  doi       = {10.1145/3460120.3485384}
+}
+
+@inproceedings{jabiyev2024gudifu,
+  author    = {Bahruz Jabiyev and Anthony Gavazzi and Kaan Onarlioglu and Engin Kirda},
+  title     = {Gudifu: Guided Differential Fuzzing for {HTTP} Request Parsing Discrepancies},
+  booktitle = {Proceedings of the 27th International Symposium on Research in Attacks, Intrusions and Defenses (RAID)},
+  pages     = {235--247},
+  publisher = {ACM},
+  year      = {2024},
+  doi       = {10.1145/3678890.3678904}
+}
+
+@inproceedings{mu2025hdhunter,
+  author    = {Keran Mu and Jianjun Chen and Jianwei Zhuge and Qi Li and Haixin Duan and Nick Feamster},
+  title     = {The Silent Danger in {HTTP}: Identifying {HTTP} Desync Vulnerabilities with Gray-box Testing},
+  booktitle = {34th USENIX Security Symposium (USENIX Security 25)},
+  publisher = {USENIX Association},
+  year      = {2025},
+  url       = {https://www.usenix.org/conference/usenixsecurity25/presentation/mu}
+}
+% USENIX page seen (200). Author first names (Keran, Jianwei, Qi, Nick) and pages: UNVERIFIED (screening has initials only).
+
+@misc{kallus2024garden,
+  author        = {Ben Kallus and Prashant Anantharaman and Michael E. Locasto and Sean W. Smith},
+  title         = {The {HTTP} Garden: Discovering Parsing Vulnerabilities in {HTTP/1.1} Implementations by Differential Fuzzing of Request Streams},
+  year          = {2024},
+  eprint        = {2405.17737},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2405.17737}
+}
+% Peer-reviewed venue not found. First names Prashant/Michael/Sean: UNVERIFIED (initials in screening).
+
+@inproceedings{jabiyev2022frameshifter,
+  author    = {Bahruz Jabiyev and Steven Sprecher and Anthony Gavazzi and Tommaso Innocenti and Kaan Onarlioglu and Engin Kirda},
+  title     = {{FRAMESHIFTER}: Security Implications of {HTTP/2}-to-{HTTP/1} Conversion Anomalies},
+  booktitle = {31st USENIX Security Symposium (USENIX Security 22)},
+  publisher = {USENIX Association},
+  year      = {2022},
+  url       = {https://www.usenix.org/conference/usenixsecurity22/presentation/jabiyev}
+}
+% USENIX page title verified; pages UNVERIFIED; first name Tommaso UNVERIFIED.
+
+@inproceedings{gavazzi2025h2fuzz,
+  author    = {Anthony Gavazzi and Weixin Kong and Engin Kirda},
+  title     = {{H2Fuzz}: Guided, Black-box, Differential Fuzzing for {HTTP/2}-to-{HTTP/1} Conversion Anomalies},
+  booktitle = {2025 28th International Symposium on Research in Attacks, Intrusions and Defenses (RAID)},
+  pages     = {920--934},
+  publisher = {IEEE},
+  year      = {2025},
+  doi       = {10.1109/RAID67961.2025.00059}
+}
+
+@inproceedings{shen2022hdiff,
+  author    = {Kaiwen Shen and Jianyu Lu and Yaru Yang and Jianjun Chen and Mingming Zhang and Haixin Duan and Jia Zhang and Xiaofeng Zheng},
+  title     = {{HDiff}: A Semi-automatic Framework for Discovering Semantic Gap Attack in {HTTP} Implementations},
+  booktitle = {2022 52nd Annual IEEE/IFIP International Conference on Dependable Systems and Networks (DSN)},
+  pages     = {1--13},
+  publisher = {IEEE},
+  year      = {2022},
+  doi       = {10.1109/DSN53405.2022.00014}
+}
+
+@inproceedings{chen2016host,
+  author    = {Jianjun Chen and Jian Jiang and Haixin Duan and Nicholas Weaver and Tao Wan and Vern Paxson},
+  title     = {Host of Troubles: Multiple Host Ambiguities in {HTTP} Implementations},
+  booktitle = {Proceedings of the 2016 ACM SIGSAC Conference on Computer and Communications Security (CCS)},
+  pages     = {1516--1527},
+  publisher = {ACM},
+  year      = {2016},
+  doi       = {10.1145/2976749.2978394}
+}
+% Crossref title is "Host of Troubles"; subtitle from prior review: UNVERIFIED.
+
+@inproceedings{mirheidari2020cached,
+  author    = {Seyed Ali Mirheidari and Sajjad Arshad and Kaan Onarlioglu and Bruno Crispo and Engin Kirda and William Robertson},
+  title     = {Cached and Confused: Web Cache Deception in the Wild},
+  booktitle = {29th USENIX Security Symposium (USENIX Security 20)},
+  publisher = {USENIX Association},
+  year      = {2020},
+  url       = {https://www.usenix.org/conference/usenixsecurity20/presentation/mirheidari}
+}
+% USENIX page title verified; pages UNVERIFIED; first names expanded from initials in screening: UNVERIFIED.
+
+@inproceedings{nguyen2019cpdos,
+  author    = {Hoai Viet Nguyen and Luigi {Lo Iacono} and Hannes Federrath},
+  title     = {Your Cache Has Fallen: Cache-Poisoned Denial-of-Service Attack},
+  booktitle = {Proceedings of the 2019 ACM SIGSAC Conference on Computer and Communications Security (CCS)},
+  pages     = {1915--1936},
+  publisher = {ACM},
+  year      = {2019},
+  doi       = {10.1145/3319535.3354215}
+}
+
+@inproceedings{reynolds2022equivocal,
+  author    = {Joshua Reynolds and Adam Bates and Michael Bailey},
+  title     = {Equivocal {URLs}: Understanding the Fragmented Space of {URL} Parser Implementations},
+  booktitle = {Computer Security -- ESORICS 2022},
+  series    = {Lecture Notes in Computer Science},
+  pages     = {166--185},
+  publisher = {Springer},
+  year      = {2022},
+  doi       = {10.1007/978-3-031-17143-7_9}
+}
+
+@inproceedings{buttner2021whitelisting,
+  author    = {Andre B{\"u}ttner and Hoai Viet Nguyen and Nils Gruschka and Luigi {Lo Iacono}},
+  title     = {Less is Often More: Header Whitelisting as Semantic Gap Mitigation in {HTTP}-Based Software Systems},
+  booktitle = {ICT Systems Security and Privacy Protection (IFIP SEC 2021)},
+  series    = {IFIP Advances in Information and Communication Technology},
+  volume    = {625},
+  pages     = {332--347},
+  publisher = {Springer},
+  year      = {2021},
+  doi       = {10.1007/978-3-030-78120-0_22}
+}
+% Volume 625 from screening record; booktitle wording UNVERIFIED.
+
+@inproceedings{nguyen2020crehma,
+  author    = {Hoai Viet Nguyen and Luigi {Lo Iacono}},
+  title     = {{CREHMA}: Cache-aware {REST}-ful {HTTP} Message Authentication},
+  booktitle = {Proceedings of the Tenth ACM Conference on Data and Application Security and Privacy (CODASPY)},
+  pages     = {49--60},
+  publisher = {ACM},
+  year      = {2020},
+  doi       = {10.1145/3374664.3375750}
+}
+% Crossref title is "CREHMA"; subtitle from search snippet: UNVERIFIED.
+
+@inproceedings{akhavani2025waffled,
+  author    = {Seyed Ali Akhavani and Bahruz Jabiyev and Ben Kallus and Cem Topcuoglu and Sergey Bratus and Engin Kirda},
+  title     = {{WAFFLED}: Exploiting Parsing Discrepancies to Bypass Web Application Firewalls},
+  booktitle = {2025 Annual Computer Security Applications Conference (ACSAC)},
+  pages     = {689--702},
+  publisher = {IEEE},
+  year      = {2025},
+  doi       = {10.1109/ACSAC67867.2025.00062},
+  note      = {arXiv:2503.10846}
+}
+
+@misc{topcuoglu2025sync,
+  author        = {Cem Topcuoglu and Kaan Onarlioglu and Steven Sprecher and Engin Kirda},
+  title         = {{HTTP} Request Synchronization Defeats Discrepancy Attacks},
+  year          = {2025},
+  eprint        = {2510.09952},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2510.09952}
+}
+% Full text read (v1). Artefact URL in the paper returned 404 on 2026-11-23.
+
+@inproceedings{somorovsky2012saml,
+  author    = {Juraj Somorovsky and Andreas Mayer and J{\"o}rg Schwenk and Marco Kampmann and Meiko Jensen},
+  title     = {On Breaking {SAML}: Be Whoever You Want to Be},
+  booktitle = {21st USENIX Security Symposium (USENIX Security 12)},
+  publisher = {USENIX Association},
+  year      = {2012},
+  url       = {https://www.usenix.org/conference/usenixsecurity12/technical-sessions/presentation/somorovsky}
+}
+% USENIX page title verified; first names expanded from initials: UNVERIFIED; pages UNVERIFIED.
+
+% ---------------------------------------------------------------- execution semantics, deployment, measurement
+@misc{golinelli2026post,
+  author        = {Matteo Golinelli and S. E. Hannachi and Bruno Crispo},
+  title         = {When {POST} Becomes {GET}: Investigating {HTTP} Method Interchangeability and Its Security Implications},
+  year          = {2026},
+  eprint        = {2610.37474},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2610.37474}
+}
+% Full text read. First names Matteo/Bruno: UNVERIFIED (initials in screening); second author initials only.
+
+@misc{mancinas2026,
+  author       = {Sergio E. {Mancinas Fontalvo}},
+  title        = {Operational Realities of Sender-Constrained {OAuth}: Replay-State Scaling Thresholds and Silent Binding Failures in Distributed Resource-Server Deployments},
+  howpublished = {Preprint, author website},
+  year         = {2026},
+  url          = {https://sergioemancinas.com/papers/mancinas-sender-constrained-oauth-2026.pdf},
+  note         = {PDF dated 2026-07-28; no venue found}
+}
+% Full text read. First name "Sergio" inferred from the website domain: UNVERIFIED.
+
+@inproceedings{yang2026jwteemo,
+  author    = {J. Yang and E. Wang and J. Chen and Q. Wang and Y. Zhang and H. Duan and W. Xie and B. Wang},
+  title     = {Token Time Bomb: Evaluating {JWT} Implementations for Vulnerability Discovery},
+  booktitle = {Network and Distributed System Security Symposium (NDSS)},
+  year      = {2026},
+  url       = {https://www.ndss-symposium.org/ndss-paper/token-time-bomb-evaluating-jwt-implementations-for-vulnerability-discovery/}
+}
+% Full text read. Full first names and DOI: UNVERIFIED.
+
+@inproceedings{philippaerts2022oauch,
+  author    = {Pieter Philippaerts and Davy Preuveneers and Wouter Joosen},
+  title     = {{OAuch}: Exploring Security Compliance in the {OAuth} 2.0 Ecosystem},
+  booktitle = {Proceedings of the 25th International Symposium on Research in Attacks, Intrusions and Defenses (RAID)},
+  pages     = {460--481},
+  publisher = {ACM},
+  year      = {2022},
+  doi       = {10.1145/3545948.3545955}
+}
+
+@misc{zhou2026mcp,
+  author        = {H. Zhou and X. Zhang and H. Zhang and H. Zhang and M. Zhang and M. Yang},
+  title         = {A First Measurement Study on Authentication Security in Real-World Remote {MCP} Servers},
+  year          = {2026},
+  eprint        = {2605.22333},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2605.22333}
+}
+% Full first names: UNVERIFIED.
+
+@misc{padilla2026mcp,
+  author        = {N. Padilla},
+  title         = {Exposed by Design: A Dynamic Security Assessment of Internet-Facing {MCP} Servers at Scale},
+  year          = {2026},
+  eprint        = {2608.00150},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2608.00150}
+}
+% Full first name: UNVERIFIED.
+
+@misc{gallo2026continuity,
+  author        = {N. Gallo},
+  title         = {Proof-of-Continuity: A Temporal Model for Authority Propagation in Distributed Systems and {AI} Agents},
+  year          = {2026},
+  eprint        = {2607.08906},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2607.08906}
+}
+
+@misc{gallo2026relational,
+  author        = {N. Gallo},
+  title         = {Beyond Proof of Possession: A Relational Theory of Authority},
+  year          = {2026},
+  eprint        = {2611.07159},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2611.07159}
+}
+
+@misc{kim2026tbsg,
+  author        = {D. Kim and J.-Y. Choi and J. Lee},
+  title         = {Trust Boundary Semantic Gaps: A Multi-dimensional Analysis and Mitigation for Security-by-Design},
+  year          = {2026},
+  eprint        = {2607.01711},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2607.01711}
+}
+
+% ---------------------------------------------------------------- standards discussion
+@misc{allam2026thread,
+  author       = {B. Allam},
+  title        = {[{OAUTH-WG}] rfc9449 (proposal: Making htm and htu Optional to Enable Wider Adoption)},
+  howpublished = {Message to the IETF OAuth WG mailing list},
+  year         = {2026},
+  url          = {https://www.mail-archive.com/oauth@ietf.org/msg26175.html},
+  note         = {29 June 2026; accessed 2026-11-23}
+}
+
+@misc{madden2025thread,
+  author       = {Neil Madden and Yaron Zehavi},
+  title        = {[{OAUTH-WG}] {DPoP} tokens vs downstream resource servers},
+  howpublished = {IETF OAuth WG mailing-list thread},
+  year         = {2025},
+  url          = {https://go.mail-archive.com/oauth@ietf.org/msg24959.html},
+  note         = {Messages of 16 and 18 October 2025; accessed 2026-11-23}
+}
+
+@misc{sep1932,
+  author       = {{PieterKas (GitHub)}},
+  title        = {{SEP-1932}: {DPoP} Profile for {MCP}},
+  howpublished = {Model Context Protocol specification enhancement proposal, GitHub pull request \#1932 (open)},
+  year         = {2025},
+  url          = {https://github.com/modelcontextprotocol/modelcontextprotocol/pull/1932},
+  note         = {Opened 5 December 2025; accessed 2026-11-23}
+}
+% Real name of the GitHub user not confirmed on the page: UNVERIFIED, so the handle is used.
+
+@misc{mcpconf369,
+  author       = {{PieterKas (GitHub)}},
+  title        = {Server Auth: {DPoP} Proof Validation ({SEP-1932})},
+  howpublished = {modelcontextprotocol/conformance, GitHub issue \#369 (open)},
+  year         = {2026},
+  url          = {https://github.com/modelcontextprotocol/conformance/issues/369},
+  note         = {Opened 25 June 2026; accessed 2026-11-23}
+}
+
+% ---------------------------------------------------------------- advisories
+@misc{traefik2026cve40912,
+  author       = {{NIST NVD}},
+  title        = {{CVE-2026-40912}: {Traefik} {StripPrefixRegex} and {ForwardAuth} dot-segment authorization bypass},
+  year         = {2026},
+  url          = {https://nvd.nist.gov/vuln/detail/CVE-2026-40912},
+  note         = {GHSA-6jwx-7vp4-9847; accessed 2026-11-23}
+}
+% NVD page seen (200); technical details from secondary sources: UNVERIFIED at primary.
+
+@misc{istio2021cve31920,
+  author       = {{Istio}},
+  title        = {{ISTIO-SECURITY-2021-005} ({CVE-2021-31920}): Authorization policy bypass via multiple or escaped slashes},
+  year         = {2021},
+  url          = {https://istio.io/latest/news/security/istio-security-2021-005/}
+}
+
+@misc{opaenvoy2026cve26205,
+  author       = {{NIST NVD}},
+  title        = {{CVE-2026-26205}: opa-envoy-plugin input.parsed\_path double-slash misinterpretation},
+  year         = {2026},
+  url          = {https://nvd.nist.gov/vuln/detail/CVE-2026-26205},
+  note         = {GHSA-9f29-v6mm-pw6w}
+}
+
+@misc{envoy2019ghsa,
+  author       = {{Envoy maintainers}},
+  title        = {{GHSA-xcx5-93pw-jw2w}: Unnormalized paths seen by routing and all {L7} filters},
+  year         = {2019},
+  url          = {https://github.com/envoyproxy/envoy/security/advisories/GHSA-xcx5-93pw-jw2w}
+}
+% Year 2019 from advisory context: UNVERIFIED (exact publication date not recorded).
+
+@misc{grpcgw2026cve37236,
+  author       = {{OSV / NIST NVD}},
+  title        = {{CVE-2026-37236}: grpc-gateway {X-HTTP-Method-Override} handling bypasses upstream method-based access controls},
+  year         = {2026},
+  url          = {https://osv.dev/vulnerability/CVE-2026-37236},
+  note         = {Published 28 August 2026; fix commit 72123cd in grpc-ecosystem/grpc-gateway}
+}

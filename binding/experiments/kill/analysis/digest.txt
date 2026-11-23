@@ -1,0 +1,33 @@
+# digest: 48 runs present, 0 missing []
+raw hits: 680; cross-topology signatures: 30
+res_hat distribution: {1: 492, 2: 18, 3: 108, 4: 6}
+12 | g1 | g1-ct-textplain | graphql.getProfile -> graphql.unknown [dispatch]  | gw=envoy|nginx|traefik prof=default|recommended fw=express ov=off|on | direct=express/off|express/on
+30 | g1 | g1-ct-urlencoded | graphql.getProfile -> graphql.unknown [dispatch]  | gw=envoy|nginx|traefik prof=default|recommended fw=aspnet|express|spring ov=off|on | direct=express/off|express/on|spring/off|spring/on|aspnet/on
+30 | g1 | g1-fmethod-delete | graphql.getProfile -> graphql.unknown [dispatch]  | gw=envoy|nginx|traefik prof=default|recommended fw=aspnet|express|fastapi|spring ov=off|on | direct=fastapi/off|fastapi/on|express/off|spring/off|aspnet/off
+36 | g1 | g1-fmethod-get | graphql.getProfile -> graphql.unknown [dispatch]  | gw=envoy|nginx|traefik prof=default|recommended fw=aspnet|express|fastapi|spring ov=off|on | direct=fastapi/off|fastapi/on|express/off|spring/off|spring/on|aspnet/off
+30 | g1 | g1-fmethod-patch | graphql.getProfile -> graphql.unknown [dispatch]  | gw=envoy|nginx|traefik prof=default|recommended fw=aspnet|express|fastapi|spring ov=off|on | direct=fastapi/off|fastapi/on|express/off|spring/off|aspnet/off
+48 | g1 | g1-fmethod-post | graphql.getProfile -> graphql.unknown [dispatch]  | gw=envoy|nginx|traefik prof=default|recommended fw=aspnet|express|fastapi|spring ov=off|on | direct=fastapi/off|fastapi/on|express/off|express/on|spring/off|spring/on|aspnet/off|aspnet/on
+30 | g1 | g1-fmethod-put | graphql.getProfile -> graphql.unknown [dispatch]  | gw=envoy|nginx|traefik prof=default|recommended fw=aspnet|express|fastapi|spring ov=off|on | direct=fastapi/off|fastapi/on|express/off|spring/off|aspnet/off
+12 | g1 | g1-gql-dup-deleteProfile | graphql.getProfile -> graphql.unknown [dispatch]  | gw=envoy|nginx|traefik prof=default|recommended fw=aspnet ov=off|on | direct=aspnet/off|aspnet/on
+48 | g1 | g1-gql-null | graphql.getProfile -> graphql.unknown [dispatch]  | gw=envoy|nginx|traefik prof=default|recommended fw=aspnet|express|fastapi|spring ov=off|on | direct=fastapi/off|fastapi/on|express/off|express/on|spring/off|spring/on|aspnet/off|aspnet/on
+48 | g1 | g1-gql-to-deleteProfile | graphql.getProfile -> graphql.deleteProfile [dispatch]  | gw=envoy|nginx|traefik prof=default|recommended fw=aspnet|express|fastapi|spring ov=off|on | direct=fastapi/off|fastapi/on|express/off|express/on|spring/off|spring/on|aspnet/off|aspnet/on
+48 | g1 | g1-gql-to-unknown | graphql.getProfile -> graphql.unknown [dispatch]  | gw=envoy|nginx|traefik prof=default|recommended fw=aspnet|express|fastapi|spring ov=off|on | direct=fastapi/off|fastapi/on|express/off|express/on|spring/off|spring/on|aspnet/off|aspnet/on
+ 6 | g1 | g1-hdr-xhmo-delete | getAccount -> deleteAccount [method+route]  | gw=envoy|nginx|traefik prof=default|recommended fw=fastapi ov=on | direct=fastapi/on
+ 6 | g1 | g1-hdr-xhmo-delete | updateAccount -> deleteAccount [method+route]  | gw=envoy|nginx|traefik prof=default|recommended fw=fastapi ov=on | direct=fastapi/on
+ 6 | g1 | g1-hdr-xhmo-get | deleteAccount -> getAccount [method+route]  | gw=envoy|nginx|traefik prof=default|recommended fw=fastapi ov=on | direct=fastapi/on
+ 6 | g1 | g1-hdr-xhmo-get | updateAccount -> getAccount [method+route]  | gw=envoy|nginx|traefik prof=default|recommended fw=fastapi ov=on | direct=fastapi/on
+ 6 | g1 | g1-hdr-xhmo-put | deleteAccount -> updateAccount [method+route]  | gw=envoy|nginx|traefik prof=default|recommended fw=fastapi ov=on | direct=fastapi/on
+ 6 | g1 | g1-hdr-xhmo-put | getAccount -> updateAccount [method+route]  | gw=envoy|nginx|traefik prof=default|recommended fw=fastapi ov=on | direct=fastapi/on
+48 | g1 | g1-op-case-close | accountAction.freeze -> accountAction.unknown [dispatch]  | gw=envoy|nginx|traefik prof=default|recommended fw=aspnet|express|fastapi|spring ov=off|on | direct=fastapi/off|fastapi/on|express/off|express/on|spring/off|spring/on|aspnet/off|aspnet/on
+12 | g1 | g1-op-dup-close | accountAction.freeze -> accountAction.close [dispatch]  | gw=envoy|nginx|traefik prof=default|recommended fw=fastapi ov=off|on | direct=fastapi/off|fastapi/on
+36 | g1 | g1-op-dup-close | accountAction.freeze -> accountAction.unknown [dispatch]  | gw=envoy|nginx|traefik prof=default|recommended fw=aspnet|express|spring ov=off|on | direct=express/off|express/on|spring/off|spring/on|aspnet/off|aspnet/on
+48 | g1 | g1-op-freeze-to-close | accountAction.freeze -> accountAction.close [dispatch]  | gw=envoy|nginx|traefik prof=default|recommended fw=aspnet|express|fastapi|spring ov=off|on | direct=fastapi/off|fastapi/on|express/off|express/on|spring/off|spring/on|aspnet/off|aspnet/on
+48 | g1 | g1-op-freeze-to-unknown | accountAction.freeze -> accountAction.unknown [dispatch]  | gw=envoy|nginx|traefik prof=default|recommended fw=aspnet|express|fastapi|spring ov=off|on | direct=fastapi/off|fastapi/on|express/off|express/on|spring/off|spring/on|aspnet/off|aspnet/on
+48 | g1 | g1-op-remove | accountAction.freeze -> accountAction.unknown [dispatch]  | gw=envoy|nginx|traefik prof=default|recommended fw=aspnet|express|fastapi|spring ov=off|on | direct=fastapi/off|fastapi/on|express/off|express/on|spring/off|spring/on|aspnet/off|aspnet/on
+ 8 | g2 | g2-fragment | accountAction.freeze -> accountAction.unknown [dispatch]  | gw=nginx|traefik prof=default|recommended fw=fastapi ov=off|on | direct=fastapi/off|fastapi/on
+ 4 | g2 | g2-fragment | adminDeleteUser -> adminDeleteUser [resource] id:u-1->u-1#frag | gw=nginx prof=default|recommended fw=fastapi ov=off|on | direct=fastapi/off|fastapi/on
+ 4 | g2 | g2-fragment | deleteAccount -> deleteAccount [resource] id:acc-alice-1->acc-alice-1#frag | gw=nginx prof=default|recommended fw=fastapi ov=off|on | direct=fastapi/off|fastapi/on
+ 4 | g2 | g2-fragment | getAccount -> getAccount [resource] id:acc-alice-1->acc-alice-1#frag | gw=nginx prof=default|recommended fw=fastapi ov=off|on | direct=fastapi/off|fastapi/on
+ 4 | g2 | g2-fragment | getAccountV2 -> getAccountV2 [resource] id:acc-alice-1->acc-alice-1#frag | gw=nginx prof=default|recommended fw=fastapi ov=off|on | direct=fastapi/off|fastapi/on
+ 4 | g2 | g2-fragment | publicFile -> publicFile [resource] file:logo.png->logo.png#frag | gw=nginx prof=default|recommended fw=fastapi ov=off|on | direct=fastapi/off|fastapi/on
+ 4 | g2 | g2-fragment | updateAccount -> updateAccount [resource] id:acc-alice-1->acc-alice-1#frag | gw=nginx prof=default|recommended fw=fastapi ov=off|on | direct=fastapi/off|fastapi/on

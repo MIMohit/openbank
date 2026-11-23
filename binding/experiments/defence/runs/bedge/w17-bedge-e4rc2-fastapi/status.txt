@@ -1,0 +1,1 @@
+bedge RC2 w17-bedge-e4rc2-fastapi runner_rc=0 secs=19 hits=9 e4_runner[w17-bedge-e4rc2-fastapi] wrote /Users/mimohit/openbank/binding/harness/logs/w17-bedge-e4rc2-fastapi/runner.jsonl: {'sent': 29, 'errors': 0}

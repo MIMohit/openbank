@@ -1,0 +1,10 @@
+id: w14-nginx-default-origin-express-ovon
+gateway: nginx
+gateway_image: nginx:1.30.7-alpine
+profile: default
+placement: origin
+framework: express
+executor_image: bh-exec-express:latest
+override: 'on'
+verifier: {image: 'bh-verifier:latest', canon: rfc3986, view_mac: 'off'}
+host_port: 34201

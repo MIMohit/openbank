@@ -1,0 +1,1 @@
+e4_oracle[w12-allow-ngx-spring-rec] {'topology': 'w12-allow-ngx-spring-rec', 'gateway': 'nginx', 'profile': 'recommended', 'framework': 'spring', 'verifier_image': 'bh-pdp-allow:latest', 'cases': 29, 'pdp_allow': 13, 'violations': 0, 'admin': 0, 'bob': 0, 'vectors_hit': ''}

@@ -1,0 +1,1 @@
+w12-nat-env-aspnet-norm runner_rc=0 secs=8 violations=9 e4_runner[w12-nat-env-aspnet-norm] wrote /Users/mimohit/openbank/binding/harness/logs/w12-nat-env-aspnet-norm/runner.jsonl: {'sent': 29, 'errors': 0}

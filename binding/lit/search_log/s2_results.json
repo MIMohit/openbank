@@ -1,0 +1,3045 @@
+{
+ "A1": {
+  "query": "DPoP OAuth demonstrating proof of possession",
+  "total": "ERR",
+  "items": []
+ },
+ "A2": {
+  "query": "sender-constrained access tokens",
+  "total": "ERR",
+  "items": []
+ },
+ "A3": {
+  "query": "proof-of-possession token resource server",
+  "total": "ERR",
+  "items": []
+ },
+ "A4": {
+  "query": "mutual TLS certificate-bound access tokens",
+  "total": 86,
+  "items": [
+   {
+    "paperId": "5e3a8e73c070c3aef216746c90dc2bb87b947a79",
+    "externalIds": {
+     "MAG": "2918693378",
+     "DBLP": "journals/rfc/rfc8705",
+     "DOI": "10.17487/RFC8705",
+     "CorpusId": 86740208
+    },
+    "url": "https://www.semanticscholar.org/paper/5e3a8e73c070c3aef216746c90dc2bb87b947a79",
+    "title": "OAuth 2.0 Mutual-TLS Client Authentication and Certificate-Bound Access Tokens",
+    "venue": "Request for Comments",
+    "year": 2020,
+    "authors": [
+     {
+      "authorId": "35678076",
+      "name": "B. Campbell"
+     },
+     {
+      "authorId": "145556159",
+      "name": "J. Bradley"
+     },
+     {
+      "authorId": "37539422",
+      "name": "N. Sakimura"
+     },
+     {
+      "authorId": "2317954",
+      "name": "T. Lodderstedt"
+     }
+    ]
+   },
+   {
+    "paperId": "db009d117a2e51958949264b6ff873f3c379a251",
+    "externalIds": {
+     "DOI": "10.15680/ijircce.2026.1407054",
+     "CorpusId": 290824255
+    },
+    "url": "https://www.semanticscholar.org/paper/db009d117a2e51958949264b6ff873f3c379a251",
+    "title": "A Zero-Trust Secure Remote Access Framework Using Mutual TLS and Device Posture Verification",
+    "venue": "International Journal of Innovative Research in Computer and Communication Engineering",
+    "year": 2026,
+    "authors": [
+     {
+      "authorId": "2455395013",
+      "name": "Syed Sufyaanuddin"
+     },
+     {
+      "authorId": "2077073901",
+      "name": "R. Sridevi"
+     }
+    ]
+   },
+   {
+    "paperId": "0a7bbdfdea37da8bac83596e897b6ea4569ef3b3",
+    "externalIds": {
+     "DBLP": "conf/secdev/PhadkeS26",
+     "DOI": "10.1145/3805773.3806639",
+     "CorpusId": 289806352
+    },
+    "url": "https://www.semanticscholar.org/paper/0a7bbdfdea37da8bac83596e897b6ea4569ef3b3",
+    "title": "Augment Mutual TLS Authentication with HW Rooted Identity: Simplified Device Lifecycle and Interoperability",
+    "venue": "IEEE Cybersecurity Development",
+    "year": 2026,
+    "authors": [
+     {
+      "authorId": "2270934711",
+      "name": "D. Phadke"
+     },
+     {
+      "authorId": "2112426877",
+      "name": "Xi-Ling Sun"
+     }
+    ]
+   },
+   {
+    "paperId": "71f56a468d4b029931ffa50e1f7d126ff099306e",
+    "externalIds": {
+     "DBLP": "journals/iacr/ZhengZAL25",
+     "CorpusId": 281821737
+    },
+    "url": "https://www.semanticscholar.org/paper/71f56a468d4b029931ffa50e1f7d126ff099306e",
+    "title": "Adaptive-Controlled Mutual TLS for Large Language Model Systems",
+    "venue": "IACR Cryptology ePrint Archive",
+    "year": 2025,
+    "authors": [
+     {
+      "authorId": "2383947064",
+      "name": "Lui Zheng"
+     },
+     {
+      "authorId": "94299116",
+      "name": "R. Zhu"
+     },
+     {
+      "authorId": "2075308044",
+      "name": "Amit Agrawal"
+     },
+     {
+      "authorId": "2383862323",
+      "name": "Carol Lamore"
+     }
+    ]
+   },
+   {
+    "paperId": "b416c4cf39f00afd9dc0e87f579efd73889c3b3c",
+    "externalIds": {
+     "ArXiv": "2604.06693",
+     "DBLP": "journals/corr/abs-2604-06693",
+     "DOI": "10.48550/arXiv.2604.06693",
+     "CorpusId": 287247808
+    },
+    "url": "https://www.semanticscholar.org/paper/b416c4cf39f00afd9dc0e87f579efd73889c3b3c",
+    "title": "Aegon: Auditable AI Content Access with Ledger-Bound Tokens and Hardware-Attested Mobile Receipts",
+    "venue": "arXiv.org",
+    "year": 2026,
+    "authors": [
+     {
+      "authorId": "40019974",
+      "name": "Amrish Baskaran"
+     },
+     {
+      "authorId": "66788364",
+      "name": "Nirbhay Pherwani"
+     },
+     {
+      "authorId": "2506800419",
+      "name": "R. Krishnan"
+     }
+    ]
+   },
+   {
+    "paperId": "bb468a38565b380c85bf272dc8c385119a24cab7",
+    "externalIds": {
+     "DBLP": "conf/free5gc/ChengTLL25",
+     "DOI": "10.1145/3733814.3765500",
+     "CorpusId": 288015827
+    },
+    "url": "https://www.semanticscholar.org/paper/bb468a38565b380c85bf272dc8c385119a24cab7",
+    "title": "Implementing EAP-TLS in free5GC for Non-SIM Device Connectivity",
+    "venue": "free5GC@CCS",
+    "year": 2025,
+    "authors": [
+     {
+      "authorId": "2339664442",
+      "name": "Chuan-Yi Cheng"
+     },
+     {
+      "authorId": "2446371166",
+      "name": "Yu-Xun Tang"
+     },
+     {
+      "authorId": "2254909096",
+      "name": "Ping Liu"
+     },
+     {
+      "authorId": "2275283616",
+      "name": "Chi-Yu Li"
+     }
+    ]
+   },
+   {
+    "paperId": "d75eea75045cd5d7e0bf7a37e3742946eaa39bb3",
+    "externalIds": {
+     "DBLP": "conf/ict/XiaC0GLLX21",
+     "DOI": "10.1109/ICT52184.2021.9511513",
+     "CorpusId": 237296154
+    },
+    "url": "https://www.semanticscholar.org/paper/d75eea75045cd5d7e0bf7a37e3742946eaa39bb3",
+    "title": "Illuminate the Shadow: A Comprehensive Study of TLS Client Certificate Ecosystem in the Wild",
+    "venue": "International Conference on Telecommunications",
+    "year": 2021,
+    "authors": [
+     {
+      "authorId": "2061908392",
+      "name": "Wei Xia"
+     },
+     {
+      "authorId": "12317074",
+      "name": "Ming-Xin Cui"
+     },
+     {
+      "authorId": "47825073",
+      "name": "Wen Wang"
+     },
+     {
+      "authorId": "2069570044",
+      "name": "Yangyang Guan"
+     },
+     {
+      "authorId": "1471688381",
+      "name": "Zhenzhen Li"
+     },
+     {
+      "authorId": "1630618407",
+      "name": "Zhen Li"
+     },
+     {
+      "authorId": "143972400",
+      "name": "G. Xiong"
+     }
+    ]
+   },
+   {
+    "paperId": "4e6e75c29f3576dcb58da871ea3eeef32c0893f0",
+    "externalIds": {
+     "MAG": "2765903003",
+     "CorpusId": 168665752
+    },
+    "url": "https://www.semanticscholar.org/paper/4e6e75c29f3576dcb58da871ea3eeef32c0893f0",
+    "title": "Mutual TLS Profiles for OAuth Clients",
+    "venue": "",
+    "year": 2017,
+    "authors": [
+     {
+      "authorId": "145556159",
+      "name": "J. Bradley"
+     },
+     {
+      "authorId": "35678076",
+      "name": "B. Campbell"
+     },
+     {
+      "authorId": "2317954",
+      "name": "T. Lodderstedt"
+     },
+     {
+      "authorId": "37539422",
+      "name": "N. Sakimura"
+     }
+    ]
+   },
+   {
+    "paperId": "870ade54afe8b656e79c5bef20860d882ab2bc7b",
+    "externalIds": {
+     "DOI": "10.36948/ijfmr.2025.v07i06.61588",
+     "CorpusId": 283685524
+    },
+    "url": "https://www.semanticscholar.org/paper/870ade54afe8b656e79c5bef20860d882ab2bc7b",
+    "title": "Mutual Trust Establishment in Cloud Storage through Minimal-Step Handshake and Adaptive Token Control",
+    "venue": "International Journal For Multidisciplinary Research",
+    "year": 2025,
+    "authors": [
+     {
+      "authorId": "2458580270",
+      "name": "Kalyani Girase"
+     },
+     {
+      "authorId": "104522117",
+      "name": "Indrabhan S. Borse"
+     },
+     {
+      "authorId": "144845522",
+      "name": "Rajendra Patil"
+     }
+    ]
+   },
+   {
+    "paperId": "3c9412aadb60be9c4a69f81035a6998cd529f177",
+    "externalIds": {
+     "DOI": "10.51583/ijltemas.2026.150900094",
+     "CorpusId": 293729486
+    },
+    "url": "https://www.semanticscholar.org/paper/3c9412aadb60be9c4a69f81035a6998cd529f177",
+    "title": "Behaviour Aware Hybrid Edge-Cloud ALPR for Secure and Privacy Preserving Residential Gate Access Control",
+    "venue": "International Journal of Latest Technology in Engineering, Management &amp; Applied Science",
+    "year": 2026,
+    "authors": [
+     {
+      "authorId": "2580943453",
+      "name": "Tadiwanashe Shamba"
+     },
+     {
+      "authorId": "2515749562",
+      "name": "A. Janga"
+     }
+    ]
+   },
+   {
+    "paperId": "fd173d8188c264e48f9208aec95bbf755e1ad5b2",
+    "externalIds": {
+     "DOI": "10.1109/PCDS70463.2026.00026",
+     "CorpusId": 295775814
+    },
+    "url": "https://www.semanticscholar.org/paper/fd173d8188c264e48f9208aec95bbf755e1ad5b2",
+    "title": "TrustChannel: Attestation-Bound Secure Channel Establishment for Cross-Domain Data Sharing",
+    "venue": "2026 12th IEEE International Conference on Privacy Computing and Data Security (PCDS)",
+    "year": 2026,
+    "authors": [
+     {
+      "authorId": "2108045884",
+      "name": "Jing-Hui Zhang"
+     },
+     {
+      "authorId": "2447573895",
+      "name": "Hai Liu"
+     },
+     {
+      "authorId": "2160857795",
+      "name": "Wen-Long Kou"
+     },
+     {
+      "authorId": "46493994",
+      "name": "Feng-Hua Li"
+     },
+     {
+      "authorId": "2315400672",
+      "name": "Yun-Chuan Guo"
+     },
+     {
+      "authorId": "2118274751",
+      "name": "Zi-Fu Li"
+     }
+    ]
+   },
+   {
+    "paperId": "37e611e3ffe001b89e44bca57ea79cce986679af",
+    "externalIds": {
+     "DOI": "10.1109/ICECET65726.2026.11632553",
+     "CorpusId": 291040806
+    },
+    "url": "https://www.semanticscholar.org/paper/37e611e3ffe001b89e44bca57ea79cce986679af",
+    "title": "Design and Implementation of a Secure MQTT Architecture for IoT Systems Using TLS and Token-Based Authorization",
+    "venue": "2026 6th International Conference on Electrical, Computer and Energy Technologies (ICECET)",
+    "year": 2026,
+    "authors": [
+     {
+      "authorId": "2381361323",
+      "name": "H. Minasyan"
+     },
+     {
+      "authorId": "2553861895",
+      "name": "Hripsime Hakobyan"
+     }
+    ]
+   },
+   {
+    "paperId": "c192b89e70f850c2a9eecdeed32fd246c1de6966",
+    "externalIds": {
+     "DBLP": "journals/sensors/SekerDC23",
+     "PubMedCentral": "10303054",
+     "DOI": "10.3390/s23125674",
+     "CorpusId": 259294162,
+     "PubMed": "37420839"
+    },
+    "url": "https://www.semanticscholar.org/paper/c192b89e70f850c2a9eecdeed32fd246c1de6966",
+    "title": "MARAS: Mutual Authentication and Role-Based Authorization Scheme for Lightweight Internet of Things Applications",
+    "venue": "Italian National Conference on Sensors",
+    "year": 2023,
+    "authors": [
+     {
+      "authorId": "2489687180",
+      "name": "\u00d6zlem \u015eeker"
+     },
+     {
+      "authorId": "1808153",
+      "name": "G\u00f6khan Dalk\u0131l\u0131\u00e7"
+     },
+     {
+      "authorId": "17857170",
+      "name": "U. \u00c7abuk"
+     }
+    ]
+   },
+   {
+    "paperId": "62c2631dfe404a031e784e4ec9ebdcd51c7892b0",
+    "externalIds": {
+     "DBLP": "journals/corr/abs-2608-25144",
+     "ArXiv": "2608.25144",
+     "DOI": "10.48550/arXiv.2608.25144",
+     "CorpusId": 291367454
+    },
+    "url": "https://www.semanticscholar.org/paper/62c2631dfe404a031e784e4ec9ebdcd51c7892b0",
+    "title": "CA-less Mutual Co-Signing of Documents over a Unidirectional Visual Channel with Transported Hardware Attestation",
+    "venue": "arXiv.org",
+    "year": 2026,
+    "authors": [
+     {
+      "authorId": "2459500093",
+      "name": "Dmytro Diikun"
+     }
+    ]
+   },
+   {
+    "paperId": "4fc722e384453f90b946ae8d299ca2eeab8e1337",
+    "externalIds": {
+     "DOI": "10.1142/s0218126626501781",
+     "CorpusId": 286476525
+    },
+    "url": "https://www.semanticscholar.org/paper/4fc722e384453f90b946ae8d299ca2eeab8e1337",
+    "title": "Optimal Key Generation and Secure Authentication Scheme for Data Sharing and Access Control in Blockchain Cloud Systems",
+    "venue": "Journal of Circuits, Systems and Computers",
+    "year": 2026,
+    "authors": [
+     {
+      "authorId": "11884913",
+      "name": "D. Thamaraiselvi"
+     },
+     {
+      "authorId": "153736361",
+      "name": "K. S. Patil"
+     },
+     {
+      "authorId": "2527027870",
+      "name": "K. Ramya"
+     },
+     {
+      "authorId": "2315370071",
+      "name": "S. Chandramohan"
+     }
+    ]
+   },
+   {
+    "paperId": "19a1b40a1869f034ae1eb3e81f884c85a01613d6",
+    "externalIds": {
+     "DOI": "10.1117/12.3129886",
+     "CorpusId": 291924756
+    },
+    "url": "https://www.semanticscholar.org/paper/19a1b40a1869f034ae1eb3e81f884c85a01613d6",
+    "title": "Edge-computing-based lightweight identity authentication and automated access control for distribution Internet of Things",
+    "venue": "International Conference on Intelligent Transportation Systems and Automation Control",
+    "year": 2026,
+    "authors": [
+     {
+      "authorId": "2497017848",
+      "name": "Xiao-He Yue"
+     },
+     {
+      "authorId": "2390880205",
+      "name": "Sen Gao"
+     },
+     {
+      "authorId": "2486841404",
+      "name": "Guang-Yue Liu"
+     }
+    ]
+   },
+   {
+    "paperId": "983d269750dbfff9e75391b46bf6c8db8fa069ff",
+    "externalIds": {
+     "DOI": "10.22399/ijcesen.5319",
+     "CorpusId": 289665189
+    },
+    "url": "https://www.semanticscholar.org/paper/983d269750dbfff9e75391b46bf6c8db8fa069ff",
+    "title": "Secure API Gateway Framework Using Zero Trust Architecture and OAuth 2.0 for Enterprise Systems",
+    "venue": "International Journal of Computational and Experimental Science and Engineering",
+    "year": 2025,
+    "authors": [
+     {
+      "authorId": "2393669811",
+      "name": "Ajmal Ali Kannu"
+     }
+    ]
+   },
+   {
+    "paperId": "f4086c8ed9c8ed000ae61eef3866f577f0f713c3",
+    "externalIds": {
+     "DOI": "10.1109/ICCA66035.2025.11431026",
+     "CorpusId": 286645579
+    },
+    "url": "https://www.semanticscholar.org/paper/f4086c8ed9c8ed000ae61eef3866f577f0f713c3",
+    "title": "SPIFFE-Based Zero-Trust Authentication for AI Agent Ecosystems",
+    "venue": "International Conferences on Computing Advancements",
+    "year": 2025,
+    "authors": [
+     {
+      "authorId": "40181349",
+      "name": "Karthik Pappu"
+     },
+     {
+      "authorId": "2381882448",
+      "name": "Badal Bhushan"
+     },
+     {
+      "authorId": "2377584013",
+      "name": "Akshay Mittal"
+     }
+    ]
+   },
+   {
+    "paperId": "6615bc788791948e8b66b54d50499573846b0e78",
+    "externalIds": {
+     "DOI": "10.1109/ICAISET66439.2026.11541783",
+     "CorpusId": 288907844
+    },
+    "url": "https://www.semanticscholar.org/paper/6615bc788791948e8b66b54d50499573846b0e78",
+    "title": "Future-Proofing Identity Security for Agentic AI Systems: Design, Implementation, and Evaluation of an Identity Fabric",
+    "venue": "2026 International Conference on Artificial Intelligence, Systems, and Emerging Technologies (ICAISET)",
+    "year": 2026,
+    "authors": [
+     {
+      "authorId": "40181349",
+      "name": "Karthik Pappu"
+     },
+     {
+      "authorId": "2381882448",
+      "name": "Badal Bhushan"
+     },
+     {
+      "authorId": "2440187966",
+      "name": "Nilesh Jaiswal"
+     }
+    ]
+   },
+   {
+    "paperId": "bc307de5acf8b0a4e6d91f67d9c1e7ac0d98a9fa",
+    "externalIds": {
+     "MAG": "2766509743",
+     "CorpusId": 65510655
+    },
+    "url": "https://www.semanticscholar.org/paper/bc307de5acf8b0a4e6d91f67d9c1e7ac0d98a9fa",
+    "title": "MQTT-TLS profile of ACE",
+    "venue": "",
+    "year": 2020,
+    "authors": [
+     {
+      "authorId": "144977170",
+      "name": "P. Fremantle"
+     },
+     {
+      "authorId": "123589314",
+      "name": "Anthony Kirby"
+     },
+     {
+      "authorId": "2228724",
+      "name": "C. Sengul"
+     }
+    ]
+   },
+   {
+    "paperId": "1d6db25f3656ce6ffe58177a0130dc4713cf012c",
+    "externalIds": {
+     "MAG": "2530478005",
+     "CorpusId": 63261441
+    },
+    "url": "https://www.semanticscholar.org/paper/1d6db25f3656ce6ffe58177a0130dc4713cf012c",
+    "title": "Mutual X.509 Transport Layer Security (TLS) Authentication for OAuth Clients",
+    "venue": "",
+    "year": 2016,
+    "authors": [
+     {
+      "authorId": "145556159",
+      "name": "J. Bradley"
+     },
+     {
+      "authorId": "35678076",
+      "name": "B. Campbell"
+     }
+    ]
+   },
+   {
+    "paperId": "6928181244f403dddf65df40a3ca7c2438e59edd",
+    "externalIds": {
+     "DBLP": "conf/cns/WangSRM25",
+     "DOI": "10.1109/CNS66487.2025.11195028",
+     "CorpusId": 282105781
+    },
+    "url": "https://www.semanticscholar.org/paper/6928181244f403dddf65df40a3ca7c2438e59edd",
+    "title": "A Minimal Overlay-Based Framework for Transitioning Legacy Infrastructure to Zero Trust",
+    "venue": "IEEE Conference on Communications and Network Security",
+    "year": 2025,
+    "authors": [
+     {
+      "authorId": "2212210030",
+      "name": "Wen-Jia Wang"
+     },
+     {
+      "authorId": "1706972",
+      "name": "S. Sadjadi"
+     },
+     {
+      "authorId": "1719172",
+      "name": "N. Rishe"
+     },
+     {
+      "authorId": "2222073623",
+      "name": "Arpan Mahara"
+     }
+    ]
+   },
+   {
+    "paperId": "b08f6b10cdf00663b996a2065f27f1718b5d78c5",
+    "externalIds": {
+     "DOI": "10.1109/ICETC66579.2025.11387075",
+     "CorpusId": 285805461
+    },
+    "url": "https://www.semanticscholar.org/paper/b08f6b10cdf00663b996a2065f27f1718b5d78c5",
+    "title": "Design and Implementation of a Blockchain-Based Mutual Recognition Platform for Higher Education Credit Banks",
+    "venue": "International Conference on Education Technology and Computer",
+    "year": 2025,
+    "authors": [
+     {
+      "authorId": "2413073464",
+      "name": "Jian-Xun Guo"
+     },
+     {
+      "authorId": "2205140053",
+      "name": "Meng-Qi Xu"
+     }
+    ]
+   },
+   {
+    "paperId": "31368885bac3ad312eb770d59804dbf108c3359b",
+    "externalIds": {
+     "ArXiv": "2605.20022",
+     "DBLP": "journals/corr/abs-2605-20022",
+     "DOI": "10.48550/arXiv.2605.20022",
+     "CorpusId": 288650365
+    },
+    "url": "https://www.semanticscholar.org/paper/31368885bac3ad312eb770d59804dbf108c3359b",
+    "title": "FlexDraft: Flexible Speculative Decoding via Attention Tuning and Bonus-Guided Calibration",
+    "venue": "arXiv.org",
+    "year": 2026,
+    "authors": [
+     {
+      "authorId": "2366157045",
+      "name": "Yao-Jie Zhang"
+     },
+     {
+      "authorId": "2342512196",
+      "name": "Jia-Nuo Huang"
+     },
+     {
+      "authorId": "2313373678",
+      "name": "Junlong Ke"
+     },
+     {
+      "authorId": "2333231681",
+      "name": "Yu-Hang Han"
+     },
+     {
+      "authorId": "2160376394",
+      "name": "Yong-Ji Long"
+     },
+     {
+      "authorId": "153276638",
+      "name": "Tianchen Zhao"
+     },
+     {
+      "authorId": "2374477173",
+      "name": "Bi-Qing Qi"
+     },
+     {
+      "authorId": "2385425564",
+      "name": "Lin-Feng Zhang"
+     }
+    ]
+   },
+   {
+    "paperId": "4fe4ed143de5beea14a7166f1748c7f253566bd6",
+    "externalIds": {
+     "DBLP": "conf/iceccs/YangLFH17",
+     "MAG": "2785892563",
+     "DOI": "10.1109/ICECCS.2017.24",
+     "CorpusId": 4761193
+    },
+    "url": "https://www.semanticscholar.org/paper/4fe4ed143de5beea14a7166f1748c7f253566bd6",
+    "title": "TLSsem: A TLS Security-Enhanced Mechanism against MITM Attacks in Public WiFis",
+    "venue": "IEEE International Conference on Engineering of Complex Computer Systems",
+    "year": 2017,
+    "authors": [
+     {
+      "authorId": "2150080996",
+      "name": "Wei Yang"
+     },
+     {
+      "authorId": "2118890069",
+      "name": "Xiaohong Li"
+     },
+     {
+      "authorId": "145774078",
+      "name": "Zhiyong Feng"
+     },
+     {
+      "authorId": "40513470",
+      "name": "Jian-Ye Hao"
+     }
+    ]
+   },
+   {
+    "paperId": "c775be587c4ae0e5a9d1f33509daeb9eebcb2df4",
+    "externalIds": {
+     "DOI": "10.3390/electronics12030576",
+     "CorpusId": 256263426
+    },
+    "url": "https://www.semanticscholar.org/paper/c775be587c4ae0e5a9d1f33509daeb9eebcb2df4",
+    "title": "A Business Process-Based Security Enhancement Scheme for the Network Function Service Access Procedure in the 5G Core Network",
+    "venue": "Electronics",
+    "year": 2023,
+    "authors": [
+     {
+      "authorId": "2117827165",
+      "name": "Ying Zhu"
+     },
+     {
+      "authorId": "2116166",
+      "name": "Caixia Liu"
+     },
+     {
+      "authorId": "2056089100",
+      "name": "Wei You"
+     },
+     {
+      "authorId": "2145113850",
+      "name": "Yi-Ming Zhang"
+     },
+     {
+      "authorId": "2450719520",
+      "name": "Weicheng Zhang"
+     }
+    ]
+   },
+   {
+    "paperId": "2887ae1eb12c17f4f44f3ee3a30190e80331f8b6",
+    "externalIds": {
+     "DOI": "10.62127/aijmr.2025.v03i01.1373",
+     "CorpusId": 288911156
+    },
+    "url": "https://www.semanticscholar.org/paper/2887ae1eb12c17f4f44f3ee3a30190e80331f8b6",
+    "title": "ZTAM-SF: Zero-Trust Access Management for Enterprise Salesforce CRM \u2014 Continuous Verification, Least-Privilege Enforcement, and Adaptive Session Control",
+    "venue": "Advanced International Journal of Multidisciplinary Research",
+    "year": 2025,
+    "authors": [
+     {
+      "authorId": "2438640936",
+      "name": "Lalith Chandra Bandaru"
+     }
+    ]
+   },
+   {
+    "paperId": "ea2b38d57cce9c068ecf6f950c8bade4e90cd796",
+    "externalIds": {
+     "DOI": "10.70003/160792642026052703004",
+     "CorpusId": 288664428
+    },
+    "url": "https://www.semanticscholar.org/paper/ea2b38d57cce9c068ecf6f950c8bade4e90cd796",
+    "title": "The NFT Transition for Certificates of Mobile Network",
+    "venue": "Journal of Internet Technology",
+    "year": 2026,
+    "authors": [
+     {
+      "authorId": "2109136771",
+      "name": "Dowon Kim"
+     },
+     {
+      "authorId": "2118885714",
+      "name": "Seongmin Park"
+     },
+     {
+      "authorId": "2130574073",
+      "name": "Daeun Kim"
+     },
+     {
+      "authorId": "144026287",
+      "name": "I. You"
+     }
+    ]
+   },
+   {
+    "paperId": "fbcc36352a80525563f8f96bcfd1b1ead89f0a9e",
+    "externalIds": {
+     "DOI": "10.3390/app16073583",
+     "CorpusId": 287318257
+    },
+    "url": "https://www.semanticscholar.org/paper/fbcc36352a80525563f8f96bcfd1b1ead89f0a9e",
+    "title": "Experimental Quantification of Authentication Enforcement Correctness and ACL Misconfiguration Impact in Standards-Compliant MQTT Deployments",
+    "venue": "Applied Sciences",
+    "year": 2026,
+    "authors": [
+     {
+      "authorId": "2144006837",
+      "name": "Nael M. Radwan"
+     },
+     {
+      "authorId": "2297426429",
+      "name": "Frederick T. Sheldon"
+     }
+    ]
+   },
+   {
+    "paperId": "06f114712d8357e91fda13a891d0d3faa4c2dab0",
+    "externalIds": {
+     "DOI": "10.30574/wjaets.2025.15.3.1094",
+     "CorpusId": 279492727
+    },
+    "url": "https://www.semanticscholar.org/paper/06f114712d8357e91fda13a891d0d3faa4c2dab0",
+    "title": "Zero Trust Architectures in FinTech: A Web-First Approach to Secure Cloud Systems",
+    "venue": "World Journal of Advanced Engineering Technology and Sciences",
+    "year": 2025,
+    "authors": [
+     {
+      "authorId": "2368012222",
+      "name": "Vamshikrishna Monagari"
+     }
+    ]
+   },
+   {
+    "paperId": "00e9cf066a0410970ed3d6ae6d34635f39b6afe1",
+    "externalIds": {
+     "DBLP": "journals/corr/abs-2606-23277",
+     "ArXiv": "2606.23277",
+     "DOI": "10.48550/arXiv.2606.23277",
+     "CorpusId": 289628670
+    },
+    "url": "https://www.semanticscholar.org/paper/00e9cf066a0410970ed3d6ae6d34635f39b6afe1",
+    "title": "GIF: Locally Sound Geometric Information Flow Control for LLMs",
+    "venue": "arXiv.org",
+    "year": 2026,
+    "authors": [
+     {
+      "authorId": "2305486680",
+      "name": "Adam Storek"
+     },
+     {
+      "authorId": "2305683996",
+      "name": "N. Holzer"
+     },
+     {
+      "authorId": "2220690905",
+      "name": "Zhuo Zhang"
+     },
+     {
+      "authorId": "2261083199",
+      "name": "Suman Jana"
+     }
+    ]
+   },
+   {
+    "paperId": "4314a21ca541b778f3fefe4ba5a57fcea0f1f216",
+    "externalIds": {
+     "DOI": "10.4271/2026-28-0203",
+     "CorpusId": 295636127
+    },
+    "url": "https://www.semanticscholar.org/paper/4314a21ca541b778f3fefe4ba5a57fcea0f1f216",
+    "title": "BlockChain- Anchored Unified Identity Framework for Secure Electric Vehicle Charging Authentication",
+    "venue": "SAE technical paper series",
+    "year": 2026,
+    "authors": [
+     {
+      "authorId": "2527524265",
+      "name": "Sayali Ashok Tumram"
+     }
+    ]
+   },
+   {
+    "paperId": "b7ef7feadbf2d4d9d8b9a52dbf5c2e0b7413122f",
+    "externalIds": {
+     "DOI": "10.1049/qtc2.70035",
+     "CorpusId": 289058293
+    },
+    "url": "https://www.semanticscholar.org/paper/b7ef7feadbf2d4d9d8b9a52dbf5c2e0b7413122f",
+    "title": "Centralised Key Management System Architecture for Topology\u2010Aware and Quantum\u2010Resilient Security in QKD\u2010Integrated SDN Control Planes",
+    "venue": "IET Quantum Communication",
+    "year": 2026,
+    "authors": [
+     {
+      "authorId": "1761501",
+      "name": "Raied A. R. Ibrahim"
+     },
+     {
+      "authorId": "9262200",
+      "name": "Ibrahim Khider"
+     },
+     {
+      "authorId": "70664027",
+      "name": "Salaheldin Edam"
+     },
+     {
+      "authorId": "2441095887",
+      "name": "Mohamed Burai"
+     }
+    ]
+   },
+   {
+    "paperId": "9526c2dceb598709bfddad795064a5975fd22c1f",
+    "externalIds": {
+     "DOI": "10.1145/3837730.3837746",
+     "CorpusId": 293003168
+    },
+    "url": "https://www.semanticscholar.org/paper/9526c2dceb598709bfddad795064a5975fd22c1f",
+    "title": "Secure OIDC Based User and Job Level Authentication and Authorization Architecture for Slingshot Hardware Collectives",
+    "venue": "Proceedings of the Cray User Group",
+    "year": 2026,
+    "authors": [
+     {
+      "authorId": "2511799064",
+      "name": "Seung-Bong Han"
+     },
+     {
+      "authorId": "2511808188",
+      "name": "Lan-Ce Lu"
+     },
+     {
+      "authorId": "2511768788",
+      "name": "James Nordby"
+     }
+    ]
+   },
+   {
+    "paperId": "223b0faf141337b1dc06026d82e5143c4f24b431",
+    "externalIds": {
+     "DOI": "10.1109/ICAISET66439.2026.11541308",
+     "CorpusId": 288906305
+    },
+    "url": "https://www.semanticscholar.org/paper/223b0faf141337b1dc06026d82e5143c4f24b431",
+    "title": "TBIVL: A Unified Identity Verification Layer for Secure Agent-to-Service Context Exchange",
+    "venue": "2026 International Conference on Artificial Intelligence, Systems, and Emerging Technologies (ICAISET)",
+    "year": 2026,
+    "authors": [
+     {
+      "authorId": "2428580960",
+      "name": "Siva Bayyavarapu"
+     },
+     {
+      "authorId": "2440184901",
+      "name": "Srinivasateja Songa"
+     },
+     {
+      "authorId": "2358850704",
+      "name": "Siva Prasad Nandi"
+     }
+    ]
+   },
+   {
+    "paperId": "7601713df663e9eff4a9e95f236df9f9aabb6d8f",
+    "externalIds": {
+     "DBLP": "journals/ijmi/UngureanGLD26",
+     "DOI": "10.1016/j.ijmedinf.2026.106477",
+     "CorpusId": 288178750,
+     "PubMed": "42114371"
+    },
+    "url": "https://www.semanticscholar.org/paper/7601713df663e9eff4a9e95f236df9f9aabb6d8f",
+    "title": "A privacy-centric microservice framework for secure FHIR-based integration of heterogeneous medical data",
+    "venue": "Int. J. Medical Informatics",
+    "year": 2026,
+    "authors": [
+     {
+      "authorId": "2283757",
+      "name": "I. Ungurean"
+     },
+     {
+      "authorId": "2790509",
+      "name": "O. Gherman"
+     },
+     {
+      "authorId": "97205014",
+      "name": "A. Lavric"
+     },
+     {
+      "authorId": "1824955",
+      "name": "M. Dimian"
+     }
+    ]
+   },
+   {
+    "paperId": "a8e940ef44a4eb8c9ac3652c6f658d0f14012f2c",
+    "externalIds": {
+     "DOI": "10.1109/YEF-ECE70590.2026.11614646",
+     "CorpusId": 290649603
+    },
+    "url": "https://www.semanticscholar.org/paper/a8e940ef44a4eb8c9ac3652c6f658d0f14012f2c",
+    "title": "A Layered Secure Messaging Architecture for Cross-Organizational Manufacturing-as-a-Service",
+    "venue": "2026 10th International Young Engineers Forum on Electrical and Computer Engineering (YEF-ECE)",
+    "year": 2026,
+    "authors": [
+     {
+      "authorId": "2454117342",
+      "name": "Marina Case"
+     },
+     {
+      "authorId": "50531199",
+      "name": "R. Costa"
+     },
+     {
+      "authorId": "2335881929",
+      "name": "Lu\u00eds Louren\u00e7o"
+     },
+     {
+      "authorId": "1398998656",
+      "name": "R. Jardim-Gon\u00e7alves"
+     }
+    ]
+   },
+   {
+    "paperId": "0c12d82937da93773da51fa71df4de9210a6664b",
+    "externalIds": {
+     "DOI": "10.1109/IPAPS69408.2026.11499733",
+     "CorpusId": 287984490
+    },
+    "url": "https://www.semanticscholar.org/paper/0c12d82937da93773da51fa71df4de9210a6664b",
+    "title": "Lightweight Security Framework for IEC 61850 GOOSE and MMS with Sub-Millisecond Cryptographic Overhead in Digital Substations",
+    "venue": "2026 International Conference on Protection and Automation of Power Systems (IPAPS)",
+    "year": 2026,
+    "authors": [
+     {
+      "authorId": "2433135531",
+      "name": "Farshid Jafari"
+     },
+     {
+      "authorId": "2433135120",
+      "name": "Hamid Hajirahimi Kashani"
+     }
+    ]
+   },
+   {
+    "paperId": "117f63b0d220394ca22ca378e3841d3f2c7d9559",
+    "externalIds": {
+     "DBLP": "journals/soco/QinHL20",
+     "MAG": "3040488977",
+     "DOI": "10.1007/s00500-020-05117-x",
+     "CorpusId": 220510443
+    },
+    "url": "https://www.semanticscholar.org/paper/117f63b0d220394ca22ca378e3841d3f2c7d9559",
+    "title": "An ECC-based access control scheme with lightweight decryption and conditional authentication for data sharing in vehicular networks",
+    "venue": "Soft Computing - A Fusion of Foundations, Methodologies and Applications",
+    "year": 2020,
+    "authors": [
+     {
+      "authorId": "152424475",
+      "name": "Xuan-Mei Qin"
+     },
+     {
+      "authorId": "1731776",
+      "name": "Yongfeng Huang"
+     },
+     {
+      "authorId": "2430474",
+      "name": "Xing Li"
+     }
+    ]
+   },
+   {
+    "paperId": "33cc993b69ac78bccb40ef8bfd80c6bb31954a5a",
+    "externalIds": {
+     "ArXiv": "2607.13090",
+     "CorpusId": 290178743
+    },
+    "url": "https://www.semanticscholar.org/paper/33cc993b69ac78bccb40ef8bfd80c6bb31954a5a",
+    "title": "Loophole-Robust Certification of Quantum Advantage",
+    "venue": "",
+    "year": 2026,
+    "authors": [
+     {
+      "authorId": "2264121249",
+      "name": "P. Pal"
+     },
+     {
+      "authorId": "2304611370",
+      "name": "G. Sharma"
+     },
+     {
+      "authorId": "2503007519",
+      "name": "Ramakrishna Podila"
+     }
+    ]
+   },
+   {
+    "paperId": "b037740cbe0e6ad7bfc40db14a3777c9e0ba9c50",
+    "externalIds": {
+     "MAG": "2923757563",
+     "DOI": "10.33555/ACMIT.V1I1.11",
+     "CorpusId": 108350073
+    },
+    "url": "https://www.semanticscholar.org/paper/b037740cbe0e6ad7bfc40db14a3777c9e0ba9c50",
+    "title": "Wireless access point protection from un-authorized user in an office environment",
+    "venue": "ACMIT Proceedings",
+    "year": 2019,
+    "authors": [
+     {
+      "authorId": "2535745282",
+      "name": "Ignasius Irawan Budi P"
+     }
+    ]
+   },
+   {
+    "paperId": "089630191c3720badc10cb166591b41399f60001",
+    "externalIds": {
+     "DOI": "10.22399/ijcesen.3853",
+     "CorpusId": 281371619
+    },
+    "url": "https://www.semanticscholar.org/paper/089630191c3720badc10cb166591b41399f60001",
+    "title": "Bridging IoT and Healthcare: Secure, Real-Time Data Exchange with Aerospike and Salesforce Marketing Cloud",
+    "venue": "International Journal of Computational and Experimental Science and Engineering",
+    "year": 2025,
+    "authors": [
+     {
+      "authorId": "2352466777",
+      "name": "Jiten Sardana"
+     },
+     {
+      "authorId": "2358718688",
+      "name": "Mukesh Reddy Dhanagari"
+     }
+    ]
+   },
+   {
+    "paperId": "31ba7d837a0655de9acaeab8253fe95510ef3fdb",
+    "externalIds": {
+     "DBLP": "conf/IEEEcloud/SonparoteM26",
+     "DOI": "10.1109/CLOUD72782.2026.00063",
+     "CorpusId": 291396279
+    },
+    "url": "https://www.semanticscholar.org/paper/31ba7d837a0655de9acaeab8253fe95510ef3fdb",
+    "title": "Kernel-Anchored Zero-Trust: A Sidecar-less Service Mesh for Low-Latency Financial Edge Applications",
+    "venue": "IEEE International Conference on Cloud Computing",
+    "year": 2026,
+    "authors": [
+     {
+      "authorId": "2457078505",
+      "name": "Shrikant Sonparote"
+     },
+     {
+      "authorId": "2228987980",
+      "name": "Sudhanshu Maurya"
+     }
+    ]
+   },
+   {
+    "paperId": "1a067884b367eac04e1bbd1da7de0fd4a50754d7",
+    "externalIds": {
+     "DOI": "10.63282/3117-5481/aijcst-v8i2p102",
+     "CorpusId": 288958740
+    },
+    "url": "https://www.semanticscholar.org/paper/1a067884b367eac04e1bbd1da7de0fd4a50754d7",
+    "title": "Securing Microservice Communication across WCF, JAX-RS, and Spring Boot: Authentication, Authorization, and Audit Patterns for Healthcare Interoperability",
+    "venue": "American International Journal of Computer Science and Technology",
+    "year": 2026,
+    "authors": [
+     {
+      "authorId": "66099188",
+      "name": "Srivenkata Gantikota"
+     }
+    ]
+   },
+   {
+    "paperId": "06cea5007349b46ab9f384588d0627ca68a8cd27",
+    "externalIds": {
+     "DOI": "10.22399/ijcesen.5550",
+     "CorpusId": 295348541
+    },
+    "url": "https://www.semanticscholar.org/paper/06cea5007349b46ab9f384588d0627ca68a8cd27",
+    "title": "Secure Multi-Tenant API Architectures Using OAuth 2.0 and JWT for Cloud-Native Platforms",
+    "venue": "International Journal of Computational and Experimental Science and Engineering",
+    "year": 2025,
+    "authors": [
+     {
+      "authorId": "2429456628",
+      "name": "Voolla Sandeep Kumar"
+     }
+    ]
+   },
+   {
+    "paperId": "d6cd2035d78e1f4be2a1d5b508621380ccd57384",
+    "externalIds": {
+     "DOI": "10.54938/ijemdcsai.2026.04.2.666",
+     "CorpusId": 290297165
+    },
+    "url": "https://www.semanticscholar.org/paper/d6cd2035d78e1f4be2a1d5b508621380ccd57384",
+    "title": "Towards Behaviour-Aware Adaptive Zero Trust Architecture",
+    "venue": "International Journal of Emerging Multidisciplinaries: Computer Science &amp; Artificial Intelligence",
+    "year": 2026,
+    "authors": [
+     {
+      "authorId": "2533629066",
+      "name": "Fatiha Azzwa Binti Ab Hadi, Kazi Samir Miah"
+     },
+     {
+      "authorId": "2533165367",
+      "name": "Ahmad I. M. All Muhammad Musyrif Mifzal Bin Jefry"
+     },
+     {
+      "authorId": "2532664850",
+      "name": "Brendon Chong Zi Yeung, Adwin Chee Hansen"
+     },
+     {
+      "authorId": "2530670741",
+      "name": "Vasha Jahangir, Siva Raja Sindiramutty Shahzad"
+     }
+    ]
+   },
+   {
+    "paperId": "1886b67f49d4eef3eb433b282fdd700a502bafb4",
+    "externalIds": {
+     "DOI": "10.47813/2782-5280-2025-4-4-3022-3030",
+     "CorpusId": 283018166
+    },
+    "url": "https://www.semanticscholar.org/paper/1886b67f49d4eef3eb433b282fdd700a502bafb4",
+    "title": "Key data security issues in mobile apps",
+    "venue": "\u0418\u043d\u0444\u043e\u0440\u043c\u0430\u0442\u0438\u043a\u0430. \u042d\u043a\u043e\u043d\u043e\u043c\u0438\u043a\u0430. \u0423\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435 - Informatics. Economics. Management",
+    "year": 2025,
+    "authors": [
+     {
+      "authorId": "2355994585",
+      "name": "A. Grace"
+     },
+     {
+      "authorId": "2356001132",
+      "name": "D. R. Idrisova"
+     },
+     {
+      "authorId": "2356001196",
+      "name": "D. M. Skryabin"
+     }
+    ]
+   },
+   {
+    "paperId": "cf2dd655e87cf92561a8199d5eb5fe58df210dc6",
+    "externalIds": {
+     "DOI": "10.3791/73288",
+     "CorpusId": 292984407,
+     "PubMed": "42872724"
+    },
+    "url": "https://www.semanticscholar.org/paper/cf2dd655e87cf92561a8199d5eb5fe58df210dc6",
+    "title": "SecureHealthKey+: Integrating Explainable TinyML Anomaly Detection Into Lightweight Authentication Protocols in IoT-Enabled Healthcare Systems.",
+    "venue": "Journal of Visualized Experiments",
+    "year": 2026,
+    "authors": [
+     {
+      "authorId": "73919754",
+      "name": "Shital Pawar"
+     },
+     {
+      "authorId": "2340704271",
+      "name": "S. Patil"
+     },
+     {
+      "authorId": "2410058376",
+      "name": "Ashwini Sengar"
+     },
+     {
+      "authorId": "71103785",
+      "name": "Khushal Khairnar"
+     },
+     {
+      "authorId": "2258753034",
+      "name": "Sandip Thite"
+     },
+     {
+      "authorId": "2274579870",
+      "name": "Mohammad Israr"
+     }
+    ]
+   },
+   {
+    "paperId": "305c0db69f804e2adfb1b97ea7f1f146875ffef4",
+    "externalIds": {
+     "ArXiv": "2610.41444",
+     "CorpusId": 295401729
+    },
+    "url": "https://www.semanticscholar.org/paper/305c0db69f804e2adfb1b97ea7f1f146875ffef4",
+    "title": "Almost-Quantum Correlations Violate Information Causality",
+    "venue": "",
+    "year": 2026,
+    "authors": [
+     {
+      "authorId": "2499855203",
+      "name": "Anandamay Das Bhowmik"
+     },
+     {
+      "authorId": "2134671",
+      "name": "Manik Banik"
+     }
+    ]
+   },
+   {
+    "paperId": "b1c038707cc0777035e0b54cb174ba12517d55ee",
+    "externalIds": {
+     "ArXiv": "2609.13075",
+     "CorpusId": 291960034
+    },
+    "url": "https://www.semanticscholar.org/paper/b1c038707cc0777035e0b54cb174ba12517d55ee",
+    "title": "Certification of Absolutely Entangled Sets in the Prepare-and-Measure Scenario",
+    "venue": "",
+    "year": 2026,
+    "authors": [
+     {
+      "authorId": "2066403022",
+      "name": "Ram krishna Patra"
+     },
+     {
+      "authorId": "93193614",
+      "name": "A. Taoutioui"
+     },
+     {
+      "authorId": "5060564",
+      "name": "T. V\u00e9rtesi"
+     }
+    ]
+   }
+  ]
+ },
+ "B1": {
+  "query": "HTTP request smuggling differential fuzzing",
+  "total": 11,
+  "items": [
+   {
+    "paperId": "e6e00d0dedde9b5408839b0326d5c948af1f55a6",
+    "externalIds": {
+     "DBLP": "conf/ccs/JabiyevSOK21",
+     "DOI": "10.1145/3460120.3485384",
+     "CorpusId": 244077790
+    },
+    "url": "https://www.semanticscholar.org/paper/e6e00d0dedde9b5408839b0326d5c948af1f55a6",
+    "title": "T-Reqs: HTTP Request Smuggling with Differential Fuzzing",
+    "venue": "Conference on Computer and Communications Security",
+    "year": 2021,
+    "authors": [
+     {
+      "authorId": "93833482",
+      "name": "Bahruz Jabiyev"
+     },
+     {
+      "authorId": "1580685571",
+      "name": "Steven Sprecher"
+     },
+     {
+      "authorId": "2948856",
+      "name": "Kaan Onarlioglu"
+     },
+     {
+      "authorId": "1707794",
+      "name": "E. Kirda"
+     }
+    ]
+   },
+   {
+    "paperId": "d0b437feb68199c693a1c128de0563ddbd01f909",
+    "externalIds": {
+     "DOI": "10.1109/ITIoTSC60379.2023.00043",
+     "CorpusId": 271939748
+    },
+    "url": "https://www.semanticscholar.org/paper/d0b437feb68199c693a1c128de0563ddbd01f909",
+    "title": "Request Smuggling Via HTTP/2 Cleartext in the Wild: Empirical Testing with Differential Fuzzing",
+    "venue": "International Conference on Information Technology",
+    "year": 2023,
+    "authors": [
+     {
+      "authorId": "2316780505",
+      "name": "Ying-Bo Li"
+     },
+     {
+      "authorId": "2219430470",
+      "name": "Zhensong Huai"
+     },
+     {
+      "authorId": "2312709336",
+      "name": "Xiaolong Yan"
+     },
+     {
+      "authorId": "2312914097",
+      "name": "Jing Liu"
+     }
+    ]
+   },
+   {
+    "paperId": "a577e557a3a7b412c2bfa28da2ae929950a8813b",
+    "externalIds": {
+     "DBLP": "conf/raid/JabiyevGOK24",
+     "DOI": "10.1145/3678890.3678904",
+     "CorpusId": 272984359
+    },
+    "url": "https://www.semanticscholar.org/paper/a577e557a3a7b412c2bfa28da2ae929950a8813b",
+    "title": "Gudifu: Guided Differential Fuzzing for HTTP Request Parsing Discrepancies",
+    "venue": "International Symposium on Recent Advances in Intrusion Detection",
+    "year": 2024,
+    "authors": [
+     {
+      "authorId": "93833482",
+      "name": "Bahruz Jabiyev"
+     },
+     {
+      "authorId": "2184309275",
+      "name": "Anthony Gavazzi"
+     },
+     {
+      "authorId": "2948856",
+      "name": "Kaan Onarlioglu"
+     },
+     {
+      "authorId": "1707794",
+      "name": "E. Kirda"
+     }
+    ]
+   },
+   {
+    "paperId": "1173434ddc2547776f30b699794d7df2b13fa0b0",
+    "externalIds": {
+     "ArXiv": "2405.17737",
+     "DBLP": "journals/corr/abs-2405-17737",
+     "DOI": "10.48550/arXiv.2405.17737",
+     "CorpusId": 270068352
+    },
+    "url": "https://www.semanticscholar.org/paper/1173434ddc2547776f30b699794d7df2b13fa0b0",
+    "title": "The HTTP Garden: Discovering Parsing Vulnerabilities in HTTP/1.1 Implementations by Differential Fuzzing of Request Streams",
+    "venue": "arXiv.org",
+    "year": 2024,
+    "authors": [
+     {
+      "authorId": "2290413146",
+      "name": "Ben Kallus"
+     },
+     {
+      "authorId": "48101583",
+      "name": "Prashant Anantharaman"
+     },
+     {
+      "authorId": "1689221",
+      "name": "Michael E. Locasto"
+     },
+     {
+      "authorId": "2290451194",
+      "name": "Sean W. Smith"
+     }
+    ]
+   },
+   {
+    "paperId": "8eb6b5ece147f93cb982b819a36db0c52f0e99de",
+    "externalIds": {
+     "DBLP": "conf/raid/GavazziKK25",
+     "DOI": "10.1109/RAID67961.2025.00059",
+     "CorpusId": 285178652
+    },
+    "url": "https://www.semanticscholar.org/paper/8eb6b5ece147f93cb982b819a36db0c52f0e99de",
+    "title": "H2Fuzz: Guided, Black-box, Differential Fuzzing for HTTP/2-to-HTTP/1 Conversion Anomalies",
+    "venue": "International Symposium on Recent Advances in Intrusion Detection",
+    "year": 2025,
+    "authors": [
+     {
+      "authorId": "2184309275",
+      "name": "Anthony Gavazzi"
+     },
+     {
+      "authorId": "2238191514",
+      "name": "Wei-Xin Kong"
+     },
+     {
+      "authorId": "1707794",
+      "name": "E. Kirda"
+     }
+    ]
+   },
+   {
+    "paperId": "2b22b6d93a18ff81382ac6988a18ab651c03973d",
+    "externalIds": {
+     "DBLP": "conf/uss/Mu0Z0DF25",
+     "CorpusId": 278824931
+    },
+    "url": "https://www.semanticscholar.org/paper/2b22b6d93a18ff81382ac6988a18ab651c03973d",
+    "title": "The Silent Danger in HTTP: Identifying HTTP Desync Vulnerabilities with Gray-box Testing",
+    "venue": "USENIX Security Symposium",
+    "year": 2025,
+    "authors": [
+     {
+      "authorId": "2228451483",
+      "name": "Ke-Ran Mu"
+     },
+     {
+      "authorId": "2312337635",
+      "name": "Jianjun Chen"
+     },
+     {
+      "authorId": "144279461",
+      "name": "Jian-Wei Zhuge"
+     },
+     {
+      "authorId": "2437958004",
+      "name": "Qi Li"
+     },
+     {
+      "authorId": "2254236651",
+      "name": "Hai-Xin Duan"
+     },
+     {
+      "authorId": "1800154",
+      "name": "N. Feamster"
+     }
+    ]
+   },
+   {
+    "paperId": "4316d64762302677c48496431a9ca9ed5273402c",
+    "externalIds": {
+     "DBLP": "conf/uss/JabiyevSGIOK22",
+     "CorpusId": 252124258
+    },
+    "url": "https://www.semanticscholar.org/paper/4316d64762302677c48496431a9ca9ed5273402c",
+    "title": "FRAMESHIFTER: Security Implications of HTTP/2-to-HTTP/1 Conversion Anomalies",
+    "venue": "USENIX Security Symposium",
+    "year": 2022,
+    "authors": [
+     {
+      "authorId": "93833482",
+      "name": "Bahruz Jabiyev"
+     },
+     {
+      "authorId": "1580685571",
+      "name": "Steven Sprecher"
+     },
+     {
+      "authorId": "2184309275",
+      "name": "Anthony Gavazzi"
+     },
+     {
+      "authorId": "2091383433",
+      "name": "Tommaso Innocenti"
+     },
+     {
+      "authorId": "2948856",
+      "name": "Kaan Onarlioglu"
+     },
+     {
+      "authorId": "1707794",
+      "name": "E. Kirda"
+     }
+    ]
+   },
+   {
+    "paperId": "09e6c7530debfb27612e002000c86f18b1b92e36",
+    "externalIds": {
+     "DBLP": "journals/corr/abs-2503-10846",
+     "ArXiv": "2503.10846",
+     "DOI": "10.1109/ACSAC67867.2025.00062",
+     "CorpusId": 277043531
+    },
+    "url": "https://www.semanticscholar.org/paper/09e6c7530debfb27612e002000c86f18b1b92e36",
+    "title": "WAFFLED: Exploiting Parsing Discrepancies to Bypass Web Application Firewalls",
+    "venue": "Asia-Pacific Computer Systems Architecture Conference",
+    "year": 2025,
+    "authors": [
+     {
+      "authorId": "2526831145",
+      "name": "Seyed Ali Akhavani"
+     },
+     {
+      "authorId": "93833482",
+      "name": "Bahruz Jabiyev"
+     },
+     {
+      "authorId": "2290413146",
+      "name": "Ben Kallus"
+     },
+     {
+      "authorId": "51499346",
+      "name": "Cem Topcuoglu"
+     },
+     {
+      "authorId": "1685512",
+      "name": "S. Bratus"
+     },
+     {
+      "authorId": "1707794",
+      "name": "E. Kirda"
+     }
+    ]
+   },
+   {
+    "paperId": "9615f976ce68b0af811645091b98a5ad2392e2b6",
+    "externalIds": {
+     "DBLP": "conf/issta/GodefroidLP20",
+     "MAG": "3043201130",
+     "DOI": "10.1145/3395363.3397374",
+     "CorpusId": 219978518
+    },
+    "url": "https://www.semanticscholar.org/paper/9615f976ce68b0af811645091b98a5ad2392e2b6",
+    "title": "Differential regression testing for REST APIs",
+    "venue": "International Symposium on Software Testing and Analysis",
+    "year": 2020,
+    "authors": [
+     {
+      "authorId": "1707506",
+      "name": "Patrice Godefroid"
+     },
+     {
+      "authorId": "49319703",
+      "name": "Daniel Lehmann"
+     },
+     {
+      "authorId": "144201695",
+      "name": "M. Polishchuk"
+     }
+    ]
+   },
+   {
+    "paperId": "28b1fa9cc831c45e2c3add1afe49e90216c98ecf",
+    "externalIds": {
+     "ArXiv": "2301.08700",
+     "DBLP": "journals/corr/abs-2301-08700",
+     "DOI": "10.48550/arXiv.2301.08700",
+     "CorpusId": 256080690
+    },
+    "url": "https://www.semanticscholar.org/paper/28b1fa9cc831c45e2c3add1afe49e90216c98ecf",
+    "title": "Blind Spots: Automatically detecting ignored program inputs",
+    "venue": "arXiv.org",
+    "year": 2023,
+    "authors": [
+     {
+      "authorId": "2084915543",
+      "name": "Henrik Brodin"
+     },
+     {
+      "authorId": "2174520",
+      "name": "E. Sultanik"
+     },
+     {
+      "authorId": "2202918156",
+      "name": "Marek Surovi\u010d"
+     }
+    ]
+   },
+   {
+    "paperId": "727ecc721f1411521da3c831c2c39d4e1b291b0e",
+    "externalIds": {
+     "DBLP": "conf/sp/BrodinSS23",
+     "DOI": "10.1109/SPW59333.2023.00021",
+     "CorpusId": 260172291
+    },
+    "url": "https://www.semanticscholar.org/paper/727ecc721f1411521da3c831c2c39d4e1b291b0e",
+    "title": "Blind Spots: Identifying Exploitable Program Inputs",
+    "venue": "2023 IEEE Security and Privacy Workshops (SPW)",
+    "year": 2023,
+    "authors": [
+     {
+      "authorId": "2084915543",
+      "name": "Henrik Brodin"
+     },
+     {
+      "authorId": "2202918156",
+      "name": "Marek Surovi\u010d"
+     },
+     {
+      "authorId": "2174520",
+      "name": "E. Sultanik"
+     }
+    ]
+   }
+  ]
+ },
+ "B2": {
+  "query": "HTTP parsing discrepancies proxy",
+  "total": "ERR",
+  "items": []
+ },
+ "B3": {
+  "query": "web cache deception path confusion",
+  "total": "ERR",
+  "items": []
+ },
+ "B4": {
+  "query": "host header ambiguity CDN",
+  "total": "ERR",
+  "items": []
+ },
+ "C1": {
+  "query": "API gateway authorization bypass",
+  "total": "ERR",
+  "items": []
+ },
+ "C2": {
+  "query": "reverse proxy authorization inconsistency backend",
+  "total": "ERR",
+  "items": []
+ },
+ "C3": {
+  "query": "HTTP method override security",
+  "total": "ERR",
+  "items": []
+ },
+ "D1": {
+  "query": "HTTP message signatures security analysis",
+  "total": "ERR",
+  "items": []
+ },
+ "D2": {
+  "query": "FAPI formal security analysis",
+  "total": "ERR",
+  "items": []
+ },
+ "D3": {
+  "query": "JWT library vulnerabilities differential",
+  "total": "ERR",
+  "items": []
+ },
+ "D4": {
+  "query": "OAuth security testing tool resource server",
+  "total": 2454,
+  "items": [
+   {
+    "paperId": "5d6dd61096da61c83266786a9816045838ba959b",
+    "externalIds": {
+     "DBLP": "conf/secrypt/AhmedN25",
+     "DOI": "10.5220/0013521600003979",
+     "CorpusId": 279883824
+    },
+    "url": "https://www.semanticscholar.org/paper/5d6dd61096da61c83266786a9816045838ba959b",
+    "title": "EdgeFuzz: A Middleware-Based Security Testing Tool for Vulnerability Discovery in Distributed Computing Applications",
+    "venue": "International Conference on Security and Cryptography",
+    "year": 2025,
+    "authors": [
+     {
+      "authorId": "2279661642",
+      "name": "Mishaal Ahmed"
+     },
+     {
+      "authorId": "2337212361",
+      "name": "M. Naz"
+     }
+    ]
+   },
+   {
+    "paperId": "6d83d9a672aefa78952b6b722eda0acfabe88df2",
+    "externalIds": {
+     "DBLP": "journals/ieeesp/BisegnaBCR24",
+     "DOI": "10.1109/MSEC.2024.3450277",
+     "CorpusId": 272921487
+    },
+    "url": "https://www.semanticscholar.org/paper/6d83d9a672aefa78952b6b722eda0acfabe88df2",
+    "title": "Enhancing Security Testing for Identity Management Implementations: Introducing Micro-Id-Gym Language and Micro-Id-Gym Testing Tool",
+    "venue": "IEEE Security and Privacy",
+    "year": 2024,
+    "authors": [
+     {
+      "authorId": "2034190490",
+      "name": "Andrea Bisegna"
+     },
+     {
+      "authorId": "2316771420",
+      "name": "Matteo Bitussi"
+     },
+     {
+      "authorId": "3060208",
+      "name": "R. Carbone"
+     },
+     {
+      "authorId": "1725967",
+      "name": "S. Ranise"
+     }
+    ]
+   },
+   {
+    "paperId": "ff04e78e692a3cdc15cf57ee5bc6a633c4ffa623",
+    "externalIds": {
+     "DOI": "10.1109/WorldSUAS66815.2025.11199262",
+     "CorpusId": 282148591
+    },
+    "url": "https://www.semanticscholar.org/paper/ff04e78e692a3cdc15cf57ee5bc6a633c4ffa623",
+    "title": "Automated Penetration Testing Tool",
+    "venue": "2025 World Skills Conference on Universal Data Analytics and Sciences (WorldSUAS)",
+    "year": 2025,
+    "authors": [
+     {
+      "authorId": "2446884625",
+      "name": "S. K."
+     },
+     {
+      "authorId": "2922522",
+      "name": "Chandrashekhar Pomu Chavan"
+     }
+    ]
+   },
+   {
+    "paperId": "af2b7ee227526939ce4b7c638fb05751a7057691",
+    "externalIds": {
+     "DOI": "10.52783/jisem.v10i60s.13140",
+     "CorpusId": 282089684
+    },
+    "url": "https://www.semanticscholar.org/paper/af2b7ee227526939ce4b7c638fb05751a7057691",
+    "title": "AI-Driven Automated Security Testing for Secure Protocols and Web Applications: A Comprehensive Framework Analysis",
+    "venue": "Journal of Information Systems Engineering & Management",
+    "year": 2025,
+    "authors": [
+     {
+      "authorId": "2345625074",
+      "name": "Gurdeep Kaur Gill"
+     }
+    ]
+   },
+   {
+    "paperId": "a11beb0eed5e1cf8c83b14496fee8e0b3d5a3875",
+    "externalIds": {
+     "DOI": "10.18502/kss.v10i11.18754",
+     "CorpusId": 278945764
+    },
+    "url": "https://www.semanticscholar.org/paper/a11beb0eed5e1cf8c83b14496fee8e0b3d5a3875",
+    "title": "Analysis of Security on XYZ Institution's Web Server Using Penetration Testing Execution Standard",
+    "venue": "KnE Social Sciences",
+    "year": 2025,
+    "authors": [
+     {
+      "authorId": "2083060457",
+      "name": "Effan Najwaini"
+     },
+     {
+      "authorId": "153527496",
+      "name": "M. W. Wardhana"
+     },
+     {
+      "authorId": "114547251",
+      "name": "Agus Pebrianto"
+     }
+    ]
+   },
+   {
+    "paperId": "23288e7dd04b5e3c5b2166a825438092bcdc5d5a",
+    "externalIds": {
+     "DOI": "10.1109/BuildSEC68439.2025.00028",
+     "CorpusId": 286444189
+    },
+    "url": "https://www.semanticscholar.org/paper/23288e7dd04b5e3c5b2166a825438092bcdc5d5a",
+    "title": "ServerSpy: Unified Server and Database Fingerprinting Tool",
+    "venue": "2025 Conference on Building a Secure & Empowered Cyberspace (BuildSEC)",
+    "year": 2025,
+    "authors": [
+     {
+      "authorId": "144545479",
+      "name": "T. Prakash"
+     },
+     {
+      "authorId": "2166272930",
+      "name": "Naziya Aslam"
+     },
+     {
+      "authorId": "50597618",
+      "name": "S. Venkatesan"
+     }
+    ]
+   },
+   {
+    "paperId": "54682a354b9b0fa46185a2556bb490141beb2ac5",
+    "externalIds": {
+     "DOI": "10.59188/eduvest.v5i8.52084",
+     "CorpusId": 280905957
+    },
+    "url": "https://www.semanticscholar.org/paper/54682a354b9b0fa46185a2556bb490141beb2ac5",
+    "title": "Automating Server Deployment With Ansible to Improve Performance, Virtualization, and Network Security",
+    "venue": "Eduvest - Journal Of Universal Studies",
+    "year": 2025,
+    "authors": [
+     {
+      "authorId": "2377346040",
+      "name": "Abdhul Nur Hidayat"
+     },
+     {
+      "authorId": "2377469275",
+      "name": "Andi Wre"
+     }
+    ]
+   },
+   {
+    "paperId": "ed03fe91063ad826962234a17a18fd62c6683d68",
+    "externalIds": {
+     "ArXiv": "2604.21477",
+     "DBLP": "journals/corr/abs-2604-21477",
+     "DOI": "10.48550/arXiv.2604.21477",
+     "CorpusId": 287701829
+    },
+    "url": "https://www.semanticscholar.org/paper/ed03fe91063ad826962234a17a18fd62c6683d68",
+    "title": "MCP Pitfall Lab: Exposing Developer Pitfalls in MCP Tool Server Security under Multi-Vector Attacks",
+    "venue": "arXiv.org",
+    "year": 2026,
+    "authors": [
+     {
+      "authorId": "2316061708",
+      "name": "Runzhe Hao"
+     },
+     {
+      "authorId": "2331869198",
+      "name": "Zhuo-Ran Tan"
+     }
+    ]
+   },
+   {
+    "paperId": "5657ab61e291b9d247f62815d65db0a58db64c8e",
+    "externalIds": {
+     "ArXiv": "2605.24248",
+     "DBLP": "journals/corr/abs-2605-24248",
+     "DOI": "10.48550/arXiv.2605.24248",
+     "CorpusId": 288669516
+    },
+    "url": "https://www.semanticscholar.org/paper/5657ab61e291b9d247f62815d65db0a58db64c8e",
+    "title": "Attested Tool-Server Admission: A Security Extension to the Model Context Protocol",
+    "venue": "arXiv.org",
+    "year": 2026,
+    "authors": [
+     {
+      "authorId": "14884619",
+      "name": "A. Metere"
+     }
+    ]
+   },
+   {
+    "paperId": "f3304869810b5160fc6d91625c5984922b52cf4d",
+    "externalIds": {
+     "DOI": "10.51244/ijrsi.2026.1306000306",
+     "CorpusId": 290113983
+    },
+    "url": "https://www.semanticscholar.org/paper/f3304869810b5160fc6d91625c5984922b52cf4d",
+    "title": "Automated Fuzzing Tool for Testing Web Application Security",
+    "venue": "International journal of research and scientific innovation",
+    "year": 2026,
+    "authors": [
+     {
+      "authorId": "89611824",
+      "name": "Pooja Dahiya"
+     },
+     {
+      "authorId": "2449410206",
+      "name": "Shalini Bhadola"
+     },
+     {
+      "authorId": "2310827424",
+      "name": "Kavita Rathi"
+     }
+    ]
+   },
+   {
+    "paperId": "f7ccc71c46c8f372e685d5818acaeeff773325be",
+    "externalIds": {
+     "DOI": "10.1109/ITC-Egypt66095.2025.11186573",
+     "CorpusId": 282085189
+    },
+    "url": "https://www.semanticscholar.org/paper/f7ccc71c46c8f372e685d5818acaeeff773325be",
+    "title": "Adversarial Generation of Modbus TCP Packets Using WGANs for ICS Security Testing",
+    "venue": "2025 International Telecommunications Conference (ITC-Egypt)",
+    "year": 2025,
+    "authors": [
+     {
+      "authorId": "2310825650",
+      "name": "Mohamed Tawfik"
+     },
+     {
+      "authorId": "2267652201",
+      "name": "Wael M. Badawy"
+     }
+    ]
+   },
+   {
+    "paperId": "3f876ca913aa6ebddac7ea5215ff427f013053be",
+    "externalIds": {
+     "DOI": "10.30871/jaic.v8i1.3884",
+     "CorpusId": 271805793
+    },
+    "url": "https://www.semanticscholar.org/paper/3f876ca913aa6ebddac7ea5215ff427f013053be",
+    "title": "Comparative Study of Web Server Performance Testing with and without Docker Based on Virtual Machines",
+    "venue": "JOURNAL OF APPLIED INFORMATICS AND COMPUTING",
+    "year": 2024,
+    "authors": [
+     {
+      "authorId": "2543267514",
+      "name": "Fajar Kurnia Ramadhan"
+     },
+     {
+      "authorId": "66511534",
+      "name": "G. Garno"
+     },
+     {
+      "authorId": "66126176",
+      "name": "Arip Solehudin"
+     }
+    ]
+   },
+   {
+    "paperId": "bb9d90fae516a1e37715d1007d8cce8409346cfc",
+    "externalIds": {
+     "DBLP": "conf/iwpc/RattanukulMWRNVCS23",
+     "ArXiv": "2302.11150",
+     "DOI": "10.1109/ICPC58990.2023.00021",
+     "CorpusId": 257078769
+    },
+    "url": "https://www.semanticscholar.org/paper/bb9d90fae516a1e37715d1007d8cce8409346cfc",
+    "title": "Microusity: A testing tool for Backends for Frontends (BFF) Microservice Systems",
+    "venue": "IEEE International Conference on Program Comprehension",
+    "year": 2023,
+    "authors": [
+     {
+      "authorId": "2194635529",
+      "name": "Pattarakrit Rattanukul"
+     },
+     {
+      "authorId": "2209188708",
+      "name": "Chansida Makaranond"
+     },
+     {
+      "authorId": "2209180699",
+      "name": "Pumipat Watanakulcharus"
+     },
+     {
+      "authorId": "3460787",
+      "name": "Chaiyong Ragkhitwetsagul"
+     },
+     {
+      "authorId": "2209200379",
+      "name": "Tanapol Nearunchorn"
+     },
+     {
+      "authorId": "2282697",
+      "name": "Vasaka Visoottiviseth"
+     },
+     {
+      "authorId": "3132647",
+      "name": "Morakot Choetkiertikul"
+     },
+     {
+      "authorId": "2842075",
+      "name": "T. Sunetnanta"
+     }
+    ]
+   },
+   {
+    "paperId": "493ef008748cd5a2fe1344081140e22cbdf02c93",
+    "externalIds": {
+     "DBLP": "conf/compsac/LesiutaBL24",
+     "DOI": "10.1109/COMPSAC61105.2024.00152",
+     "CorpusId": 271972821
+    },
+    "url": "https://www.semanticscholar.org/paper/493ef008748cd5a2fe1344081140e22cbdf02c93",
+    "title": "SLIMECRAFT: State Learning for Client-Server Regression Analysis and Fault Testing",
+    "venue": "Annual International Computer Software and Applications Conference",
+    "year": 2024,
+    "authors": [
+     {
+      "authorId": "51253045",
+      "name": "Eric Lesiuta"
+     },
+     {
+      "authorId": "91767865",
+      "name": "V. Bandur"
+     },
+     {
+      "authorId": "1766205",
+      "name": "M. Lawford"
+     }
+    ]
+   },
+   {
+    "paperId": "71a878eaf0ba150a611610e3c5cbe6cebec1528d",
+    "externalIds": {
+     "ArXiv": "2512.14860",
+     "DBLP": "journals/corr/abs-2512-14860",
+     "DOI": "10.48550/arXiv.2512.14860",
+     "CorpusId": 283920891
+    },
+    "url": "https://www.semanticscholar.org/paper/71a878eaf0ba150a611610e3c5cbe6cebec1528d",
+    "title": "Penetration Testing of Agentic AI: A Comparative Security Analysis Across Models and Frameworks",
+    "venue": "arXiv.org",
+    "year": 2025,
+    "authors": [
+     {
+      "authorId": "2310675802",
+      "name": "V. Nguyen"
+     },
+     {
+      "authorId": "32052050",
+      "name": "Mohammad Iftekhar Husain"
+     }
+    ]
+   },
+   {
+    "paperId": "c6bef93d4f329ff1031edb450f253d3029351143",
+    "externalIds": {
+     "DBLP": "journals/corr/abs-2506-17317",
+     "ArXiv": "2506.17317",
+     "DOI": "10.1109/TDSC.2026.3715679",
+     "CorpusId": 290492645
+    },
+    "url": "https://www.semanticscholar.org/paper/c6bef93d4f329ff1031edb450f253d3029351143",
+    "title": "Beyond the Scope: Security Testing of Permission Management in Team Workspaces",
+    "venue": "IEEE Transactions on Dependable and Secure Computing",
+    "year": 2025,
+    "authors": [
+     {
+      "authorId": "2299462587",
+      "name": "Liu-Huo Wan"
+     },
+     {
+      "authorId": "2199358427",
+      "name": "Chuan Yan"
+     },
+     {
+      "authorId": "2266816300",
+      "name": "Zi-Han Wang"
+     },
+     {
+      "authorId": "143654918",
+      "name": "M. Meng"
+     },
+     {
+      "authorId": "2249932682",
+      "name": "Kai-Long Wang"
+     },
+     {
+      "authorId": "2268171665",
+      "name": "Hao-Yu Wang"
+     },
+     {
+      "authorId": "2261336931",
+      "name": "Guang-Dong Bai"
+     },
+     {
+      "authorId": "2280110277",
+      "name": "Jin-Song Dong"
+     }
+    ]
+   },
+   {
+    "paperId": "e38d14e754f411e030306b2e3139575ebbbf9ac8",
+    "externalIds": {
+     "DOI": "10.47001/irjiet/2025.iccis-202511",
+     "CorpusId": 279496310
+    },
+    "url": "https://www.semanticscholar.org/paper/e38d14e754f411e030306b2e3139575ebbbf9ac8",
+    "title": "Penetration Testing and Simulation for Vulnerability Assessment in Application Security",
+    "venue": "International research journal of innovations in engineering and technology",
+    "year": 2025,
+    "authors": [
+     {
+      "authorId": "2558822745",
+      "name": "T. G. Sudha"
+     },
+     {
+      "authorId": "2324121604",
+      "name": "N. Snehalatha"
+     },
+     {
+      "authorId": "1572220584",
+      "name": "A. Komala"
+     }
+    ]
+   },
+   {
+    "paperId": "12d47ac610439c116eb1c5c805abb5cacb0bfcd0",
+    "externalIds": {
+     "DOI": "10.47772/ijriss.2026.100601066",
+     "CorpusId": 290234502
+    },
+    "url": "https://www.semanticscholar.org/paper/12d47ac610439c116eb1c5c805abb5cacb0bfcd0",
+    "title": "Design and Simulation of an Internet Caf\u00e9 Network Infrastructure with Centralized Game Server, Bandwidth Management, and Security Restrictions Using Star Topology",
+    "venue": "International journal of research and innovation in social science",
+    "year": 2026,
+    "authors": [
+     {
+      "authorId": "2450352129",
+      "name": "Mariene G. Adriatico"
+     },
+     {
+      "authorId": "2408700848",
+      "name": "J. M. L. Buenafe"
+     },
+     {
+      "authorId": "2583761971",
+      "name": "Carlo B. Cortezano"
+     },
+     {
+      "authorId": "2409042611",
+      "name": "Andrei Lanz P. Domingo"
+     },
+     {
+      "authorId": "2408009881",
+      "name": "Edrian O. Gagote"
+     },
+     {
+      "authorId": "2450351543",
+      "name": "Katrina Ysabel Gruy"
+     },
+     {
+      "authorId": "2408003965",
+      "name": "Kenneth George L. Malejana"
+     },
+     {
+      "authorId": "2575214613",
+      "name": "Ma. Chelsea B. Parale"
+     },
+     {
+      "authorId": "2408010402",
+      "name": "Harvey U. Velasquez"
+     },
+     {
+      "authorId": "2409023084",
+      "name": "E. M. C. Zoleta"
+     }
+    ]
+   },
+   {
+    "paperId": "f8a40e084cf618d4baf7a7f0ca67ba2ccefdf6e5",
+    "externalIds": {
+     "DOI": "10.1109/ICRAIE59459.2023.10468317",
+     "CorpusId": 268547909
+    },
+    "url": "https://www.semanticscholar.org/paper/f8a40e084cf618d4baf7a7f0ca67ba2ccefdf6e5",
+    "title": "Enhancing Web Application Penetration Testing with a Static Application Security Testing (SAST) Tool",
+    "venue": "International Conference on Recent Advances and Innovations in Engineering",
+    "year": 2023,
+    "authors": [
+     {
+      "authorId": "10077254",
+      "name": "M. Darus"
+     },
+     {
+      "authorId": "2537840831",
+      "name": "Muhammad Farhan Bin Bolhan"
+     },
+     {
+      "authorId": "2188494980",
+      "name": "Aditya Kurniawan"
+     },
+     {
+      "authorId": "52276950",
+      "name": "Yohan Muliono"
+     },
+     {
+      "authorId": "2188489942",
+      "name": "Chrisando Ryan Pardomuan"
+     },
+     {
+      "authorId": "71921116",
+      "name": "Mohsen Mohamad Hata"
+     }
+    ]
+   },
+   {
+    "paperId": "1a45b314cb5f0f8cfee857c5cfb69c39854d3a71",
+    "externalIds": {
+     "DOI": "10.2139/ssrn.6454142",
+     "CorpusId": 287096734
+    },
+    "url": "https://www.semanticscholar.org/paper/1a45b314cb5f0f8cfee857c5cfb69c39854d3a71",
+    "title": "OAuth 1.0, 2.0 & Beyond: A Complete Technical Research on History, Architecture, CVEs, Lab Deployment & Security Hardening",
+    "venue": "Social Science Research Network",
+    "year": 2026,
+    "authors": [
+     {
+      "authorId": "2576839711",
+      "name": "Fazel Mohammad Ali Pour"
+     }
+    ]
+   },
+   {
+    "paperId": "63ebd812cf97643ba35e945ca2c79a5b29ed2ee8",
+    "externalIds": {
+     "DOI": "10.25258/ijddt.16.45s.83",
+     "CorpusId": 289043561
+    },
+    "url": "https://www.semanticscholar.org/paper/63ebd812cf97643ba35e945ca2c79a5b29ed2ee8",
+    "title": "Flipper Clone-X: A Cost-Effective Penetration Testing Tool In Puducherry, India",
+    "venue": "International Journal of Drug Delivery Technology",
+    "year": 2026,
+    "authors": [
+     {
+      "authorId": "2353289882",
+      "name": "V. Kumaraguru"
+     },
+     {
+      "authorId": "2281340069",
+      "name": "N. Palanivel"
+     },
+     {
+      "authorId": "2416520930",
+      "name": "H. V"
+     },
+     {
+      "authorId": "2441028774",
+      "name": "Kishore. Sk"
+     },
+     {
+      "authorId": "2545685272",
+      "name": "Mohamed Suhail Y"
+     },
+     {
+      "authorId": "2466650334",
+      "name": "V. K"
+     },
+     {
+      "authorId": "2382376194",
+      "name": "V. K"
+     }
+    ]
+   },
+   {
+    "paperId": "89130e2b3e2a6ee9c706d79e6545ab58b131712d",
+    "externalIds": {
+     "DOI": "10.22214/ijraset.2025.72290",
+     "CorpusId": 279364012
+    },
+    "url": "https://www.semanticscholar.org/paper/89130e2b3e2a6ee9c706d79e6545ab58b131712d",
+    "title": "Cloud Security Posture Management in Server-less Environment",
+    "venue": "International Journal for Research in Applied Science and Engineering Technology",
+    "year": 2025,
+    "authors": [
+     {
+      "authorId": "2279256433",
+      "name": "Ashish Kumar Singh"
+     }
+    ]
+   },
+   {
+    "paperId": "43f61ada051e3bcc8e8a64c5e828324cc19ee9fb",
+    "externalIds": {
+     "DBLP": "conf/sigsoft/LiCFFLLLC23",
+     "DOI": "10.1145/3611643.3616262",
+     "CorpusId": 265021533
+    },
+    "url": "https://www.semanticscholar.org/paper/43f61ada051e3bcc8e8a64c5e828324cc19ee9fb",
+    "title": "Comparison and Evaluation on Static Application Security Testing (SAST) Tools for Java",
+    "venue": "ESEC/SIGSOFT FSE",
+    "year": 2023,
+    "authors": [
+     {
+      "authorId": "2269018807",
+      "name": "Kai-Xuan Li"
+     },
+     {
+      "authorId": "2268794846",
+      "name": "Sen Chen"
+     },
+     {
+      "authorId": "41075481",
+      "name": "Ling-Ling Fan"
+     },
+     {
+      "authorId": "1758019",
+      "name": "Rui-Tao Feng"
+     },
+     {
+      "authorId": "2268851264",
+      "name": "Han Liu"
+     },
+     {
+      "authorId": "2158155335",
+      "name": "Cheng-Wei Liu"
+     },
+     {
+      "authorId": "2265753296",
+      "name": "Yang Liu"
+     },
+     {
+      "authorId": "2124921992",
+      "name": "Yi-Xiang Chen"
+     }
+    ]
+   },
+   {
+    "paperId": "3a51852d24a9fff411e79fa1e9436bd0d9c2dd09",
+    "externalIds": {
+     "MAG": "2413512611",
+     "CorpusId": 63277186
+    },
+    "url": "https://www.semanticscholar.org/paper/3a51852d24a9fff411e79fa1e9436bd0d9c2dd09",
+    "title": "Empirical Testing of the CySeMoL Tool for Cyber Security Assessment \u2013 Case Study of Linux Server and MySQL",
+    "venue": "",
+    "year": 2016,
+    "authors": [
+     {
+      "authorId": "2563554992",
+      "name": "Talvia Rabbani"
+     }
+    ]
+   },
+   {
+    "paperId": "454fa186316100a2704d26067380894c3689f939",
+    "externalIds": {
+     "DOI": "10.35314/shxy2045",
+     "CorpusId": 274362230
+    },
+    "url": "https://www.semanticscholar.org/paper/454fa186316100a2704d26067380894c3689f939",
+    "title": "The Use of PFSense and Suricata as a Network Security Attack Detection and Prevention Tool on Web servers",
+    "venue": "INOVTEK Polbeng - Seri Informatika",
+    "year": 2024,
+    "authors": [
+     {
+      "authorId": "2332850790",
+      "name": "Devander Benaryanta Sufardy"
+     },
+     {
+      "authorId": "40241239",
+      "name": "I. Widiasari"
+     }
+    ]
+   },
+   {
+    "paperId": "aced222db9c6ed575605297d6a36687c044273ca",
+    "externalIds": {
+     "DOI": "10.1109/APWiMob64015.2024.10792961",
+     "CorpusId": 274894260
+    },
+    "url": "https://www.semanticscholar.org/paper/aced222db9c6ed575605297d6a36687c044273ca",
+    "title": "Testing the Security and Performance of MQTT Protocol on Raspberry Pi for IoT Applications",
+    "venue": "2024 IEEE Asia Pacific Conference on Wireless and Mobile (APWiMob)",
+    "year": 2024,
+    "authors": [
+     {
+      "authorId": "2336299500",
+      "name": "Mohammed El-hajj"
+     },
+     {
+      "authorId": "2336307967",
+      "name": "Danil Vorotilov"
+     }
+    ]
+   },
+   {
+    "paperId": "11e065e83923021a65884a867576c351c0156e84",
+    "externalIds": {
+     "CorpusId": 261960816
+    },
+    "url": "https://www.semanticscholar.org/paper/11e065e83923021a65884a867576c351c0156e84",
+    "title": "Visualization of Home Security Sensor System Based on IoT Server",
+    "venue": "",
+    "year": 2023,
+    "authors": [
+     {
+      "authorId": "2242306139",
+      "name": "Mayhendra Pandya Sahasika"
+     },
+     {
+      "authorId": "2341544274",
+      "name": "D. Pratiwi"
+     },
+     {
+      "authorId": "2076553442",
+      "name": "G. Santoso"
+     }
+    ]
+   },
+   {
+    "paperId": "d08014d7a169c8a1e8db049be09ad65689134c66",
+    "externalIds": {
+     "DOI": "10.13164/eeict.2021.21",
+     "CorpusId": 254487156
+    },
+    "url": "https://www.semanticscholar.org/paper/d08014d7a169c8a1e8db049be09ad65689134c66",
+    "title": "Web Server Security Analyzation Tool",
+    "venue": "Proceedings II of the 27st Conference STUDENT EEICT 2021",
+    "year": 2021,
+    "authors": [
+     {
+      "authorId": "2557007003",
+      "name": "Samuel Kopeck\u00fd"
+     }
+    ]
+   },
+   {
+    "paperId": "8679fa24609f51ec61576b93d3d09ed75dd6dd76",
+    "externalIds": {
+     "DOI": "10.52783/rlj.v11i3.1050",
+     "CorpusId": 259567762
+    },
+    "url": "https://www.semanticscholar.org/paper/8679fa24609f51ec61576b93d3d09ed75dd6dd76",
+    "title": "PERFORMANCE EVALUATION OF THE SECURITY LEVEL OF OAUTH 2.0 IN THE IMPLEMENTATION OF AUTHORIZATION SYSTEMS FOR ACCESS TO WEB RESOURCES ON CLOUD-BASED PLATFORMS",
+    "venue": "Russian Law Journal",
+    "year": 2023,
+    "authors": [
+     {
+      "authorId": "2223901621",
+      "name": "Diego Veloz Ch\u00e9rrez"
+     }
+    ]
+   },
+   {
+    "paperId": "69b3c6308f3a1f722e8c533076fede7c3a1cda39",
+    "externalIds": {
+     "DBLP": "journals/saem/KhatriKM24",
+     "DOI": "10.1007/s13198-024-02329-4",
+     "CorpusId": 269317638
+    },
+    "url": "https://www.semanticscholar.org/paper/69b3c6308f3a1f722e8c533076fede7c3a1cda39",
+    "title": "Artificial intelligence techniques and tools for performance testing & monitoring of server-less computing",
+    "venue": "International Journal of System Assurance Engineering and Management",
+    "year": 2024,
+    "authors": [
+     {
+      "authorId": "2081925559",
+      "name": "Deepak Khatri"
+     },
+     {
+      "authorId": "2871903",
+      "name": "S. Khatri"
+     },
+     {
+      "authorId": "2082316497",
+      "name": "Deepti Mishra"
+     }
+    ]
+   },
+   {
+    "paperId": "3a37f189cdeb9b95529f182976e06491098bd5e6",
+    "externalIds": {
+     "DBLP": "conf/dese/SinghYN21",
+     "DOI": "10.1109/DeSE54285.2021.9719338",
+     "CorpusId": 247192872
+    },
+    "url": "https://www.semanticscholar.org/paper/3a37f189cdeb9b95529f182976e06491098bd5e6",
+    "title": "EAGLE: GUI-Based Penetration Testing Tool for Scanning and Enumeration",
+    "venue": "International Conference on Developments in eSystems Engineering",
+    "year": 2021,
+    "authors": [
+     {
+      "authorId": "2157312316",
+      "name": "Ammrish Singh Beker Singh"
+     },
+     {
+      "authorId": "2068384974",
+      "name": "Yusnita Yusof"
+     },
+     {
+      "authorId": "148403154",
+      "name": "Yogeswaran Nathan"
+     }
+    ]
+   },
+   {
+    "paperId": "537ca4f31128740f3c7a0324e05635e7506eb596",
+    "externalIds": {
+     "DOI": "10.3390/telecom7010022",
+     "CorpusId": 285561150
+    },
+    "url": "https://www.semanticscholar.org/paper/537ca4f31128740f3c7a0324e05635e7506eb596",
+    "title": "Methodology for Studying the Level of Network Security of an IP PBX Server",
+    "venue": "Telecom",
+    "year": 2026,
+    "authors": [
+     {
+      "authorId": "122755370",
+      "name": "Ivan Nedyalkov"
+     }
+    ]
+   },
+   {
+    "paperId": "7a44a42e2d07f4c756630d99af2f2abfea86cb58",
+    "externalIds": {
+     "DOI": "10.21608/ijci.2021.207747",
+     "CorpusId": 245183622
+    },
+    "url": "https://www.semanticscholar.org/paper/7a44a42e2d07f4c756630d99af2f2abfea86cb58",
+    "title": "Security Testing of IOT Smart Applications",
+    "venue": "IJCI. International Journal of Computers and Information",
+    "year": 2021,
+    "authors": [
+     {
+      "authorId": "2145650096",
+      "name": "Shymaa S. Shaban"
+     },
+     {
+      "authorId": "153283789",
+      "name": "Eman M. Mohamed"
+     },
+     {
+      "authorId": "2035398",
+      "name": "A. Keshk"
+     }
+    ]
+   },
+   {
+    "paperId": "7717e55b2547b3e77ddfb9396d7fa7eb2d8f169c",
+    "externalIds": {
+     "DOI": "10.32877/bt.v9i1.3841",
+     "CorpusId": 291053944
+    },
+    "url": "https://www.semanticscholar.org/paper/7717e55b2547b3e77ddfb9396d7fa7eb2d8f169c",
+    "title": "Analyzing Wazuh-Based File Integrity Monitoring for Layered Academic Server Security",
+    "venue": "bit-Tech",
+    "year": 2026,
+    "authors": [
+     {
+      "authorId": "2457145046",
+      "name": "Engie Ramadhani"
+     },
+     {
+      "authorId": "145999819",
+      "name": "A. Agussalim"
+     },
+     {
+      "authorId": "2074451594",
+      "name": "N. Wibowo"
+     }
+    ]
+   },
+   {
+    "paperId": "cfe94063a3f1e8da4b4308512cae3715e543ac8b",
+    "externalIds": {
+     "DBLP": "conf/hp3c/TongD00Y25",
+     "DOI": "10.1145/3774949.3774955",
+     "CorpusId": 284977102
+    },
+    "url": "https://www.semanticscholar.org/paper/cfe94063a3f1e8da4b4308512cae3715e543ac8b",
+    "title": "Resource Orchestration Method for Industrial Control Software Security Crowdsourcing Platform",
+    "venue": "HP3C",
+    "year": 2025,
+    "authors": [
+     {
+      "authorId": "2058071331",
+      "name": "Feng-Hua Tong"
+     },
+     {
+      "authorId": "2394476462",
+      "name": "Jiming Dong"
+     },
+     {
+      "authorId": "2186230986",
+      "name": "Da-Wei Zhao"
+     },
+     {
+      "authorId": "2287339584",
+      "name": "Li-Juan Xu"
+     },
+     {
+      "authorId": "2298752716",
+      "name": "Fu-Qiang Yu"
+     }
+    ]
+   },
+   {
+    "paperId": "06e1b0dd27a185a4d33ed7ca95292e48b63ca5f4",
+    "externalIds": {
+     "DOI": "10.63282/3050-922x.ijeret-v6i2p117",
+     "CorpusId": 288966077
+    },
+    "url": "https://www.semanticscholar.org/paper/06e1b0dd27a185a4d33ed7ca95292e48b63ca5f4",
+    "title": "JMeter-Driven Performance and Security Validation: A Combined Load Testing and Vulnerability Discovery Methodology for Legacy Java Services",
+    "venue": "International Journal of Emerging Research in Engineering and Technology",
+    "year": 2025,
+    "authors": [
+     {
+      "authorId": "66099188",
+      "name": "Srivenkata Gantikota"
+     }
+    ]
+   },
+   {
+    "paperId": "5e39c4f17ac03031206860880a07819ecf0b1980",
+    "externalIds": {
+     "DOI": "10.34021/ve.2023.06.01(5)",
+     "CorpusId": 259734403
+    },
+    "url": "https://www.semanticscholar.org/paper/5e39c4f17ac03031206860880a07819ecf0b1980",
+    "title": "Modelling the Level of the Enterprise\u2019 Resource Security Using Artificial Neural Networks",
+    "venue": "Virtual Economics",
+    "year": 2023,
+    "authors": [
+     {
+      "authorId": "2089886523",
+      "name": "Mariia Pankova"
+     },
+     {
+      "authorId": "122889456",
+      "name": "A. Kwilinski"
+     },
+     {
+      "authorId": "123718142",
+      "name": "N. Dalevska"
+     },
+     {
+      "authorId": "151245977",
+      "name": "V. Khobta"
+     }
+    ]
+   },
+   {
+    "paperId": "cbada7878ccb15ae470fefec6988c7ec310e0f5a",
+    "externalIds": {
+     "DBLP": "journals/corr/abs-2508-13220",
+     "ArXiv": "2508.13220",
+     "DOI": "10.48550/arXiv.2508.13220",
+     "CorpusId": 280686005
+    },
+    "url": "https://www.semanticscholar.org/paper/cbada7878ccb15ae470fefec6988c7ec310e0f5a",
+    "title": "MCPSecBench: A Systematic Security Benchmark and Playground for Testing Model Context Protocols",
+    "venue": "arXiv.org",
+    "year": 2025,
+    "authors": [
+     {
+      "authorId": "2380940374",
+      "name": "Yi-Xuan Yang"
+     },
+     {
+      "authorId": "2283643304",
+      "name": "Cui-Feng Gao"
+     },
+     {
+      "authorId": "2287132882",
+      "name": "Dao-Yuan Wu"
+     },
+     {
+      "authorId": "2309673966",
+      "name": "Yufan Chen"
+     },
+     {
+      "authorId": "2305625014",
+      "name": "Yingjiu Li"
+     },
+     {
+      "authorId": "2243949366",
+      "name": "Shuai Wang"
+     }
+    ]
+   },
+   {
+    "paperId": "910cae5776fa2e5cdb74fbcda3f6cb10d01df996",
+    "externalIds": {
+     "DOI": "10.1109/ICoAC59537.2023.10249544",
+     "CorpusId": 262074730
+    },
+    "url": "https://www.semanticscholar.org/paper/910cae5776fa2e5cdb74fbcda3f6cb10d01df996",
+    "title": "A Case Study Using Companies to Examine the Nmap Tool\u2019s Applicability for Network Security Assessment",
+    "venue": "International Conference on Advanced Computing",
+    "year": 2023,
+    "authors": [
+     {
+      "authorId": "2292321441",
+      "name": "J. Asokan"
+     },
+     {
+      "authorId": "31828431",
+      "name": "A. Rahuman"
+     },
+     {
+      "authorId": "70045080",
+      "name": "B. Suganthi"
+     },
+     {
+      "authorId": "2090444187",
+      "name": "S. Fairooz"
+     },
+     {
+      "authorId": "51912424",
+      "name": "M. Balaji"
+     },
+     {
+      "authorId": "9365314",
+      "name": "V. Elamaran"
+     }
+    ]
+   },
+   {
+    "paperId": "4b8c07ac5e58c5921ab52f9a4fdad8debba2e798",
+    "externalIds": {
+     "DOI": "10.52783/jisem.v10i49s.9890",
+     "CorpusId": 278974907
+    },
+    "url": "https://www.semanticscholar.org/paper/4b8c07ac5e58c5921ab52f9a4fdad8debba2e798",
+    "title": "A Context Aware Framework for Secure Fintech APIs: Leveraging Java Spring Boot and OAuth 2.0 with Dynamic Token Adaptation",
+    "venue": "Journal of Information Systems Engineering & Management",
+    "year": 2025,
+    "authors": [
+     {
+      "authorId": "2356888754",
+      "name": "Aravind Raghu"
+     }
+    ]
+   },
+   {
+    "paperId": "e9d5aadbc94205a01dc39029051bd3286d4bdf81",
+    "externalIds": {
+     "DOI": "10.52783/jisem.v10i24s.3933",
+     "CorpusId": 277362892
+    },
+    "url": "https://www.semanticscholar.org/paper/e9d5aadbc94205a01dc39029051bd3286d4bdf81",
+    "title": "Predictive Algorithms for Resource Utilization and Server Overload Management in Dynamic Cloud Environments",
+    "venue": "Journal of Information Systems Engineering & Management",
+    "year": 2025,
+    "authors": [
+     {
+      "authorId": null,
+      "name": "M. Seshanna"
+     }
+    ]
+   },
+   {
+    "paperId": "ca6ad761516920e3f7935960781a23b10f75d78b",
+    "externalIds": {
+     "DBLP": "journals/corr/abs-2602-20196",
+     "ArXiv": "2602.20196",
+     "DOI": "10.48550/arXiv.2602.20196",
+     "CorpusId": 286001393
+    },
+    "url": "https://www.semanticscholar.org/paper/ca6ad761516920e3f7935960781a23b10f75d78b",
+    "title": "OpenPort Protocol: A Security Governance Specification for AI Agent Tool Access",
+    "venue": "arXiv.org",
+    "year": 2026,
+    "authors": [
+     {
+      "authorId": "2279421818",
+      "name": "Gen-Liang Zhu"
+     },
+     {
+      "authorId": "2408736800",
+      "name": "Chu Wang"
+     },
+     {
+      "authorId": "2291735236",
+      "name": "Zi-Ying Wang"
+     },
+     {
+      "authorId": "2157134625",
+      "name": "Zhida Li"
+     },
+     {
+      "authorId": "2329381994",
+      "name": "Qiang Li"
+     }
+    ]
+   },
+   {
+    "paperId": "c1c695a0259f2837fd6ceb68ede22f75aa321782",
+    "externalIds": {
+     "DOI": "10.3390/app15158721",
+     "CorpusId": 280554954
+    },
+    "url": "https://www.semanticscholar.org/paper/c1c695a0259f2837fd6ceb68ede22f75aa321782",
+    "title": "Multi-Layered Security Assessment in mHealth Environments: Case Study on Server, Mobile and Wearable Components in the PHGL-COVID Platform",
+    "venue": "Applied Sciences",
+    "year": 2025,
+    "authors": [
+     {
+      "authorId": "2304018807",
+      "name": "E. Timofte"
+     },
+     {
+      "authorId": "1824955",
+      "name": "M. Dimian"
+     },
+     {
+      "authorId": "3295852",
+      "name": "S. Mangul"
+     },
+     {
+      "authorId": "9263738",
+      "name": "A. Potorac"
+     },
+     {
+      "authorId": "2790509",
+      "name": "O. Gherman"
+     },
+     {
+      "authorId": "40655024",
+      "name": "D. Balan"
+     },
+     {
+      "authorId": "2368041150",
+      "name": "M. Pu\u0219ca\u0219u"
+     }
+    ]
+   },
+   {
+    "paperId": "8f190f914feeb8fc41e0ec29d696a96b71d10af7",
+    "externalIds": {
+     "DOI": "10.7256/2454-0714.2025.4.77322",
+     "CorpusId": 284576502
+    },
+    "url": "https://www.semanticscholar.org/paper/8f190f914feeb8fc41e0ec29d696a96b71d10af7",
+    "title": "Methods for Enhancing Security in Linux Server Administration: A Study of Protection Practices in Server Management - Permission Configuration, Auditing, Two-Factor Authentication, SSH Access Control",
+    "venue": "\u041f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u043d\u044b\u0435 \u0441\u0438\u0441\u0442\u0435\u043c\u044b \u0438 \u0432\u044b\u0447\u0438\u0441\u043b\u0438\u0442\u0435\u043b\u044c\u043d\u044b\u0435 \u043c\u0435\u0442\u043e\u0434\u044b",
+    "year": 2025,
+    "authors": [
+     {
+      "authorId": "2403250049",
+      "name": "Mihail Aleksandrovich Romanov"
+     },
+     {
+      "authorId": "2403385866",
+      "name": "Anton Olegovich Badalin"
+     },
+     {
+      "authorId": "2403391965",
+      "name": "Dmitrii Vital'evich Ribalka"
+     },
+     {
+      "authorId": "2403400775",
+      "name": "Vitalii Valerievich Borisov"
+     },
+     {
+      "authorId": "2440292212",
+      "name": "D. Novikova"
+     }
+    ]
+   },
+   {
+    "paperId": "da2b40c0b006108ea1a80f2cf474378626160648",
+    "externalIds": {
+     "DBLP": "conf/sp/LuoWFL26",
+     "DOI": "10.1109/SP63933.2026.00128",
+     "CorpusId": 289702693
+    },
+    "url": "https://www.semanticscholar.org/paper/da2b40c0b006108ea1a80f2cf474378626160648",
+    "title": "Demystifying the (In)Security of Oauth-Based Account Linking in Connector Ecosystems",
+    "venue": "IEEE Symposium on Security and Privacy",
+    "year": 2026,
+    "authors": [
+     {
+      "authorId": "2290045891",
+      "name": "Kaixuan Luo"
+     },
+     {
+      "authorId": "2107982813",
+      "name": "Xian-Bo Wang"
+     },
+     {
+      "authorId": "145253253",
+      "name": "Pui Fung"
+     },
+     {
+      "authorId": "2289954493",
+      "name": "Wing Cheong Lau"
+     }
+    ]
+   },
+   {
+    "paperId": "b3ad3ae14417445438bc0c7a53aafd5d237a9880",
+    "externalIds": {
+     "DBLP": "journals/corr/abs-2508-20816",
+     "ArXiv": "2508.20816",
+     "DOI": "10.48550/arXiv.2508.20816",
+     "CorpusId": 280949654
+    },
+    "url": "https://www.semanticscholar.org/paper/b3ad3ae14417445438bc0c7a53aafd5d237a9880",
+    "title": "Multi-Agent Penetration Testing AI for the Web",
+    "venue": "arXiv.org",
+    "year": 2025,
+    "authors": [
+     {
+      "authorId": "2349638383",
+      "name": "Isaac David"
+     },
+     {
+      "authorId": "39000631",
+      "name": "Arthur Gervais"
+     }
+    ]
+   },
+   {
+    "paperId": "1804b06547d5a923bf857fae080c03f1ab349301",
+    "externalIds": {
+     "DOI": "10.57028/c55-119-z1026",
+     "CorpusId": 254818124
+    },
+    "url": "https://www.semanticscholar.org/paper/1804b06547d5a923bf857fae080c03f1ab349301",
+    "title": "WEB SECURITY: A QUICK START INTRODUCTION TO OAUTH 2.0 AND KEYCLOAK 19.X AUTHORIZATION SCENARIOS",
+    "venue": "Communication &amp; Cognition",
+    "year": 2022,
+    "authors": [
+     {
+      "authorId": "7461468",
+      "name": "P. Kaczmarski"
+     },
+     {
+      "authorId": "1953594",
+      "name": "F. Vandamme"
+     }
+    ]
+   },
+   {
+    "paperId": "1e58910b07c13386740f6bcfa59584a627db0538",
+    "externalIds": {
+     "ArXiv": "2606.28139",
+     "CorpusId": 289669656
+    },
+    "url": "https://www.semanticscholar.org/paper/1e58910b07c13386740f6bcfa59584a627db0538",
+    "title": "Optimizing Resource Costs: A Practical Guide to Achieving Target Security in Verifiable Blind Quantum Computing",
+    "venue": "",
+    "year": 2026,
+    "authors": [
+     {
+      "authorId": "2552618638",
+      "name": "J. van Dam"
+     },
+     {
+      "authorId": "2510066336",
+      "name": "M. van Hooft"
+     },
+     {
+      "authorId": "1866274",
+      "name": "S. Wehner"
+     }
+    ]
+   },
+   {
+    "paperId": "9ebd1f0a4fb1c0bf6d4d2b5f875821ebe91a4d6e",
+    "externalIds": {
+     "DOI": "10.33480/pilar.v22i1.8267",
+     "CorpusId": 287308020
+    },
+    "url": "https://www.semanticscholar.org/paper/9ebd1f0a4fb1c0bf6d4d2b5f875821ebe91a4d6e",
+    "title": "SECURITY ANALYSIS OF PAYROLL SYSTEM USING THE PENETRATION TESTING EXECUTION STANDARD (PTES) AND OWASP TOP 10 2021",
+    "venue": "Jurnal Pilar Nusa Mandiri",
+    "year": 2026,
+    "authors": [
+     {
+      "authorId": "2428725838",
+      "name": "Monas Tarigan"
+     }
+    ]
+   },
+   {
+    "paperId": "68a9675f7e554dcc1a66278806ff8cf62d53b8ae",
+    "externalIds": {
+     "DOI": "10.1109/ICNTE66387.2026.11437459",
+     "CorpusId": 286780815
+    },
+    "url": "https://www.semanticscholar.org/paper/68a9675f7e554dcc1a66278806ff8cf62d53b8ae",
+    "title": "ScanDroidX: A Mobile-Native Security Tool with MITRE ATT&CK Mobile Integration for Pre-Deployment Web Application Assessment",
+    "venue": "International Conference on Nascent Technologies in Engineering",
+    "year": 2026,
+    "authors": [
+     {
+      "authorId": "2425513975",
+      "name": "Alisha Anthony"
+     },
+     {
+      "authorId": "2058638268",
+      "name": "A. Daniel"
+     },
+     {
+      "authorId": "2299032864",
+      "name": "Rishabh Tiwari"
+     },
+     {
+      "authorId": "2294759275",
+      "name": "Dhanashree Huddedar"
+     }
+    ]
+   }
+  ]
+ },
+ "D5": {
+  "query": "GraphQL authorization vulnerabilities",
+  "total": "ERR",
+  "items": []
+ }
+}

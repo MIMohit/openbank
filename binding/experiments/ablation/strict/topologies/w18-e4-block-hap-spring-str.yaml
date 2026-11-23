@@ -1,0 +1,10 @@
+id: w18-e4-block-hap-spring-str
+gateway: haproxy
+gateway_image: haproxy:3.2.27
+profile: strict
+placement: edge
+framework: spring
+executor_image: bh-exec-spring:latest
+override: 'off'
+verifier: {image: 'bh-pdp-block:latest', canon: rfc3986, view_mac: 'off'}
+host_port: 29883

@@ -1,0 +1,1 @@
+oracle[w18-g2-ngx-fastapi-def] {'topology': 'w18-g2-ngx-fastapi-def', 'cases': 31, 'accepted': 31, 'hits_raw': 14, 'hits_confirmed': 0, 'S1': 13, 'S2': 1, 'S3': 0, 'signatures': 6, 'max_res_hat': 3, 'b0': 0, 'propagation': 0, 'uncorrelated': 1}

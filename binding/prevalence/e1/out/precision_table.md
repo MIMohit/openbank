@@ -1,0 +1,12 @@
+| stratum | stratum_size | sampled | tp | fp | unclear | precision | ci_lo | ci_hi | precision_excl_unclear | est_true_flagged_ops |
+|---|---|---|---|---|---|---|---|---|---|---|
+| M1-query-in-path | 9227 | 30 | 30 | 0 | 0 | 1.0 | 0.8865 | 1.0 | 1.0 | 9227.0 |
+| M2-dispatch-param | 34 | 30 | 12 | 18 | 0 | 0.4 | 0.2459 | 0.5768 | 0.4 | 13.6 |
+| M4-body-discriminator | 156 | 37 | 11 | 25 | 1 | 0.2973 | 0.1749 | 0.4578 | 0.3056 | 46.4 |
+| M5-rpc-endpoint | 3 | 3 | 2 | 1 | 0 | 0.6667 | 0.2077 | 0.9385 | 0.6667 | 2.0 |
+| ALL (unweighted sample) | 9420 | 100 | 55 | 44 | 1 | 0.55 | 0.4524 | 0.6439 |  |  |
+| ALL (stratum-weighted) | 9420 | 100 |  |  |  | 0.9861 |  |  | 0.9862 | 9289.0 |
+| non-M1 (M2+M4+M5) unweighted sample | 193 | 70 | 25 |  |  | 0.3571 | 0.255 | 0.4741 |  |  |
+| non-M1 (M2+M4+M5) stratum-weighted | 193 | 70 |  |  |  | 0.3211 |  |  |  | 62.0 |
+
+finance census: 4/9 flagged ops TP; APIs with >=1 TP: ['stripe.com', 'zuora.com'] of ['rebilly.com', 'sinao.app', 'stripe.com', 'zuora.com'] flagged

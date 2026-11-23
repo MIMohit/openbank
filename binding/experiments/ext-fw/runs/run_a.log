@@ -1,0 +1,109 @@
+[1/48] 11:14:28 w14-nginx-default-edge-django-ovoff
+w14-nginx-default-edge-django-ovoff runner_rc=0 secs=15 runner[w14-nginx-default-edge-django-ovoff/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-nginx-default-edge-django-ovoff/runner.jsonl: {'sent': 948, 'errors': 0}
+[2/48] 11:14:43 w14-nginx-default-edge-django-ovon
+w14-nginx-default-edge-django-ovon runner_rc=0 secs=14 runner[w14-nginx-default-edge-django-ovon/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-nginx-default-edge-django-ovon/runner.jsonl: {'sent': 948, 'errors': 0}
+[3/48] 11:14:57 w14-nginx-default-edge-go-chi-ovoff
+w14-nginx-default-edge-go-chi-ovoff runner_rc=0 secs=15 runner[w14-nginx-default-edge-go-chi-ovoff/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-nginx-default-edge-go-chi-ovoff/runner.jsonl: {'sent': 948, 'errors': 0}
+[4/48] 11:15:12 w14-nginx-default-edge-go-chi-ovon
+w14-nginx-default-edge-go-chi-ovon runner_rc=0 secs=16 runner[w14-nginx-default-edge-go-chi-ovon/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-nginx-default-edge-go-chi-ovon/runner.jsonl: {'sent': 948, 'errors': 0}
+[5/48] 11:15:28 w14-nginx-default-edge-rails-ovoff
+w14-nginx-default-edge-rails-ovoff runner_rc=0 secs=15 runner[w14-nginx-default-edge-rails-ovoff/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-nginx-default-edge-rails-ovoff/runner.jsonl: {'sent': 948, 'errors': 0}
+[6/48] 11:15:43 w14-nginx-default-edge-rails-ovon
+w14-nginx-default-edge-rails-ovon runner_rc=0 secs=15 runner[w14-nginx-default-edge-rails-ovon/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-nginx-default-edge-rails-ovon/runner.jsonl: {'sent': 948, 'errors': 0}
+[7/48] 11:15:58 w14-nginx-default-edge-laravel-ovoff
+UP FAILED w14-nginx-default-edge-laravel-ovoff
+  !! run_one failed for w14-nginx-default-edge-laravel-ovoff
+[8/48] 11:17:36 w14-nginx-default-edge-laravel-ovon
+UP FAILED w14-nginx-default-edge-laravel-ovon
+  !! run_one failed for w14-nginx-default-edge-laravel-ovon
+[9/48] 11:19:14 w14-nginx-recommended-edge-django-ovoff
+w14-nginx-recommended-edge-django-ovoff runner_rc=0 secs=14 runner[w14-nginx-recommended-edge-django-ovoff/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-nginx-recommended-edge-django-ovoff/runner.jsonl: {'sent': 948, 'errors': 0}
+[10/48] 11:19:28 w14-nginx-recommended-edge-django-ovon
+w14-nginx-recommended-edge-django-ovon runner_rc=0 secs=15 runner[w14-nginx-recommended-edge-django-ovon/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-nginx-recommended-edge-django-ovon/runner.jsonl: {'sent': 948, 'errors': 0}
+[11/48] 11:19:43 w14-nginx-recommended-edge-go-chi-ovoff
+w14-nginx-recommended-edge-go-chi-ovoff runner_rc=0 secs=14 runner[w14-nginx-recommended-edge-go-chi-ovoff/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-nginx-recommended-edge-go-chi-ovoff/runner.jsonl: {'sent': 948, 'errors': 0}
+[12/48] 11:19:57 w14-nginx-recommended-edge-go-chi-ovon
+w14-nginx-recommended-edge-go-chi-ovon runner_rc=0 secs=14 runner[w14-nginx-recommended-edge-go-chi-ovon/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-nginx-recommended-edge-go-chi-ovon/runner.jsonl: {'sent': 948, 'errors': 0}
+[13/48] 11:20:11 w14-nginx-recommended-edge-rails-ovoff
+w14-nginx-recommended-edge-rails-ovoff runner_rc=0 secs=15 runner[w14-nginx-recommended-edge-rails-ovoff/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-nginx-recommended-edge-rails-ovoff/runner.jsonl: {'sent': 948, 'errors': 0}
+[14/48] 11:20:26 w14-nginx-recommended-edge-rails-ovon
+w14-nginx-recommended-edge-rails-ovon runner_rc=0 secs=16 runner[w14-nginx-recommended-edge-rails-ovon/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-nginx-recommended-edge-rails-ovon/runner.jsonl: {'sent': 948, 'errors': 0}
+[15/48] 11:20:42 w14-nginx-recommended-edge-laravel-ovoff
+UP FAILED w14-nginx-recommended-edge-laravel-ovoff
+  !! run_one failed for w14-nginx-recommended-edge-laravel-ovoff
+[16/48] 11:22:19 w14-nginx-recommended-edge-laravel-ovon
+UP FAILED w14-nginx-recommended-edge-laravel-ovon
+  !! run_one failed for w14-nginx-recommended-edge-laravel-ovon
+[17/48] 11:23:58 w14-traefik-default-edge-django-ovoff
+w14-traefik-default-edge-django-ovoff runner_rc=0 secs=54 runner[w14-traefik-default-edge-django-ovoff/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-traefik-default-edge-django-ovoff/runner.jsonl: {'sent': 948, 'errors': 0}
+[18/48] 11:24:52 w14-traefik-default-edge-django-ovon
+w14-traefik-default-edge-django-ovon runner_rc=0 secs=62 runner[w14-traefik-default-edge-django-ovon/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-traefik-default-edge-django-ovon/runner.jsonl: {'sent': 948, 'errors': 0}
+[19/48] 11:25:54 w14-traefik-default-edge-go-chi-ovoff
+w14-traefik-default-edge-go-chi-ovoff runner_rc=0 secs=92 runner[w14-traefik-default-edge-go-chi-ovoff/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-traefik-default-edge-go-chi-ovoff/runner.jsonl: {'sent': 948, 'errors': 0}
+[20/48] 11:27:27 w14-traefik-default-edge-go-chi-ovon
+w14-traefik-default-edge-go-chi-ovon runner_rc=0 secs=120 runner[w14-traefik-default-edge-go-chi-ovon/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-traefik-default-edge-go-chi-ovon/runner.jsonl: {'sent': 948, 'errors': 0}
+[21/48] 11:29:28 w14-traefik-default-edge-rails-ovoff
+w14-traefik-default-edge-rails-ovoff runner_rc=0 secs=93 runner[w14-traefik-default-edge-rails-ovoff/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-traefik-default-edge-rails-ovoff/runner.jsonl: {'sent': 948, 'errors': 0}
+[22/48] 11:31:01 w14-traefik-default-edge-rails-ovon
+w14-traefik-default-edge-rails-ovon runner_rc=0 secs=68 runner[w14-traefik-default-edge-rails-ovon/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-traefik-default-edge-rails-ovon/runner.jsonl: {'sent': 948, 'errors': 0}
+[23/48] 11:32:09 w14-traefik-default-edge-laravel-ovoff
+UP FAILED w14-traefik-default-edge-laravel-ovoff
+  !! run_one failed for w14-traefik-default-edge-laravel-ovoff
+[24/48] 11:33:49 w14-traefik-default-edge-laravel-ovon
+UP FAILED w14-traefik-default-edge-laravel-ovon
+  !! run_one failed for w14-traefik-default-edge-laravel-ovon
+[25/48] 11:35:33 w14-traefik-recommended-edge-django-ovoff
+w14-traefik-recommended-edge-django-ovoff runner_rc=0 secs=58 runner[w14-traefik-recommended-edge-django-ovoff/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-traefik-recommended-edge-django-ovoff/runner.jsonl: {'sent': 948, 'errors': 0}
+[26/48] 11:36:32 w14-traefik-recommended-edge-django-ovon
+w14-traefik-recommended-edge-django-ovon runner_rc=0 secs=82 runner[w14-traefik-recommended-edge-django-ovon/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-traefik-recommended-edge-django-ovon/runner.jsonl: {'sent': 948, 'errors': 0}
+[27/48] 11:37:54 w14-traefik-recommended-edge-go-chi-ovoff
+w14-traefik-recommended-edge-go-chi-ovoff runner_rc=0 secs=57 runner[w14-traefik-recommended-edge-go-chi-ovoff/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-traefik-recommended-edge-go-chi-ovoff/runner.jsonl: {'sent': 948, 'errors': 0}
+[28/48] 11:38:53 w14-traefik-recommended-edge-go-chi-ovon
+w14-traefik-recommended-edge-go-chi-ovon runner_rc=0 secs=72 runner[w14-traefik-recommended-edge-go-chi-ovon/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-traefik-recommended-edge-go-chi-ovon/runner.jsonl: {'sent': 948, 'errors': 0}
+[29/48] 11:40:05 w14-traefik-recommended-edge-rails-ovoff
+w14-traefik-recommended-edge-rails-ovoff runner_rc=0 secs=61 runner[w14-traefik-recommended-edge-rails-ovoff/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-traefik-recommended-edge-rails-ovoff/runner.jsonl: {'sent': 948, 'errors': 0}
+[30/48] 11:41:06 w14-traefik-recommended-edge-rails-ovon
+w14-traefik-recommended-edge-rails-ovon runner_rc=0 secs=101 runner[w14-traefik-recommended-edge-rails-ovon/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-traefik-recommended-edge-rails-ovon/runner.jsonl: {'sent': 948, 'errors': 0}
+[31/48] 11:42:48 w14-traefik-recommended-edge-laravel-ovoff
+UP FAILED w14-traefik-recommended-edge-laravel-ovoff
+  !! run_one failed for w14-traefik-recommended-edge-laravel-ovoff
+[32/48] 11:44:48 w14-traefik-recommended-edge-laravel-ovon
+UP FAILED w14-traefik-recommended-edge-laravel-ovon
+  !! run_one failed for w14-traefik-recommended-edge-laravel-ovon
+[33/48] 11:46:39 w14-envoy-default-edge-django-ovoff
+w14-envoy-default-edge-django-ovoff runner_rc=0 secs=68 runner[w14-envoy-default-edge-django-ovoff/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-envoy-default-edge-django-ovoff/runner.jsonl: {'sent': 948, 'errors': 0}
+[34/48] 11:47:48 w14-envoy-default-edge-django-ovon
+w14-envoy-default-edge-django-ovon runner_rc=0 secs=46 runner[w14-envoy-default-edge-django-ovon/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-envoy-default-edge-django-ovon/runner.jsonl: {'sent': 948, 'errors': 0}
+[35/48] 11:48:34 w14-envoy-default-edge-go-chi-ovoff
+w14-envoy-default-edge-go-chi-ovoff runner_rc=0 secs=33 runner[w14-envoy-default-edge-go-chi-ovoff/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-envoy-default-edge-go-chi-ovoff/runner.jsonl: {'sent': 948, 'errors': 0}
+[36/48] 11:49:07 w14-envoy-default-edge-go-chi-ovon
+w14-envoy-default-edge-go-chi-ovon runner_rc=0 secs=32 runner[w14-envoy-default-edge-go-chi-ovon/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-envoy-default-edge-go-chi-ovon/runner.jsonl: {'sent': 948, 'errors': 0}
+[37/48] 11:49:39 w14-envoy-default-edge-rails-ovoff
+w14-envoy-default-edge-rails-ovoff runner_rc=0 secs=37 runner[w14-envoy-default-edge-rails-ovoff/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-envoy-default-edge-rails-ovoff/runner.jsonl: {'sent': 948, 'errors': 0}
+[38/48] 11:50:16 w14-envoy-default-edge-rails-ovon
+w14-envoy-default-edge-rails-ovon runner_rc=0 secs=31 runner[w14-envoy-default-edge-rails-ovon/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-envoy-default-edge-rails-ovon/runner.jsonl: {'sent': 948, 'errors': 0}
+[39/48] 11:50:47 w14-envoy-default-edge-laravel-ovoff
+UP FAILED w14-envoy-default-edge-laravel-ovoff
+  !! run_one failed for w14-envoy-default-edge-laravel-ovoff
+[40/48] 11:52:26 w14-envoy-default-edge-laravel-ovon
+UP FAILED w14-envoy-default-edge-laravel-ovon
+  !! run_one failed for w14-envoy-default-edge-laravel-ovon
+[41/48] 11:54:03 w14-envoy-recommended-edge-django-ovoff
+w14-envoy-recommended-edge-django-ovoff runner_rc=0 secs=25 runner[w14-envoy-recommended-edge-django-ovoff/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-envoy-recommended-edge-django-ovoff/runner.jsonl: {'sent': 948, 'errors': 0}
+[42/48] 11:54:28 w14-envoy-recommended-edge-django-ovon
+w14-envoy-recommended-edge-django-ovon runner_rc=0 secs=25 runner[w14-envoy-recommended-edge-django-ovon/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-envoy-recommended-edge-django-ovon/runner.jsonl: {'sent': 948, 'errors': 0}
+[43/48] 11:54:53 w14-envoy-recommended-edge-go-chi-ovoff
+w14-envoy-recommended-edge-go-chi-ovoff runner_rc=0 secs=24 runner[w14-envoy-recommended-edge-go-chi-ovoff/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-envoy-recommended-edge-go-chi-ovoff/runner.jsonl: {'sent': 948, 'errors': 0}
+[44/48] 11:55:18 w14-envoy-recommended-edge-go-chi-ovon
+w14-envoy-recommended-edge-go-chi-ovon runner_rc=0 secs=24 runner[w14-envoy-recommended-edge-go-chi-ovon/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-envoy-recommended-edge-go-chi-ovon/runner.jsonl: {'sent': 948, 'errors': 0}
+[45/48] 11:55:42 w14-envoy-recommended-edge-rails-ovoff
+w14-envoy-recommended-edge-rails-ovoff runner_rc=0 secs=26 runner[w14-envoy-recommended-edge-rails-ovoff/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-envoy-recommended-edge-rails-ovoff/runner.jsonl: {'sent': 948, 'errors': 0}
+[46/48] 11:56:08 w14-envoy-recommended-edge-rails-ovon
+w14-envoy-recommended-edge-rails-ovon runner_rc=0 secs=27 runner[w14-envoy-recommended-edge-rails-ovon/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-envoy-recommended-edge-rails-ovon/runner.jsonl: {'sent': 948, 'errors': 0}
+[47/48] 11:56:35 w14-envoy-recommended-edge-laravel-ovoff
+UP FAILED w14-envoy-recommended-edge-laravel-ovoff
+  !! run_one failed for w14-envoy-recommended-edge-laravel-ovoff
+[48/48] 11:58:12 w14-envoy-recommended-edge-laravel-ovon
+UP FAILED w14-envoy-recommended-edge-laravel-ovon
+  !! run_one failed for w14-envoy-recommended-edge-laravel-ovon
+ALL DONE (48 topologies)

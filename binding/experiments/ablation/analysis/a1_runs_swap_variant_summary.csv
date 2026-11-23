@@ -1,0 +1,9 @@
+variant,topologies,cases,verifier_allow,gate_deny,hits,g1,g2,other,S1,max_res_hat,mean_max_res_hat,baseline_false_reject,mechanisms
+full,8,2856,136,0,0,0,0,0,0,1,1.0,0,0
+no-htm,8,2856,776,0,192,0,0,192,96,4,4.0,0,2
+no-htu,8,2856,856,0,720,0,0,720,160,9,9.0,0,1
+no-ath,8,2856,136,0,0,0,0,0,0,1,1.0,0,0
+query,8,2856,136,0,0,0,0,0,0,1,1.0,0,0
+digest-nogate,8,2856,136,0,0,0,0,0,0,1,1.0,0,0
+digest,8,2856,136,0,0,0,0,0,0,1,1.0,0,0
+query-digest,8,2856,136,0,0,0,0,0,0,1,1.0,0,0

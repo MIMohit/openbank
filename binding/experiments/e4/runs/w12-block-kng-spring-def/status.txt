@@ -1,0 +1,1 @@
+w12-block-kng-spring-def runner_rc=0 secs=72 violations=15 e4_runner[w12-block-kng-spring-def] wrote /Users/mimohit/openbank/binding/harness/logs/w12-block-kng-spring-def/runner.jsonl: {'sent': 29, 'errors': 0}

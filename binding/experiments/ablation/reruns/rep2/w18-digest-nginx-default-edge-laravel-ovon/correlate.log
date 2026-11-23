@@ -1,0 +1,1 @@
+oracle[w18-digest-nginx-default-edge-laravel-ovon] {'topology': 'w18-digest-nginx-default-edge-laravel-ovon', 'cases': 42, 'accepted': 42, 'hits_raw': 25, 'hits_confirmed': 0, 'S1': 22, 'S2': 3, 'S3': 0, 'signatures': 17, 'max_res_hat': 5, 'b0': 0, 'propagation': 0, 'uncorrelated': 5}

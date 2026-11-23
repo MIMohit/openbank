@@ -1,0 +1,1 @@
+oracle[w13-apisix-default-edge-rails-ovoff] {'topology': 'w13-apisix-default-edge-rails-ovoff', 'cases': 948, 'accepted': 698, 'hits_raw': 20, 'hits_confirmed': 0, 'S1': 12, 'S2': 8, 'S3': 0, 'signatures': 15, 'max_res_hat': 3, 'b0': 0, 'propagation': 143, 'uncorrelated': 23}

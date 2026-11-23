@@ -1,0 +1,10 @@
+id: traefik-strict-origin-fastapi-ovon
+gateway: traefik
+gateway_image: traefik:v3.7.19
+profile: strict
+placement: origin
+framework: fastapi
+executor_image: bh-exec-fastapi:latest
+override: 'on'
+verifier: {image: 'bh-verifier:latest', canon: rfc3986, view_mac: 'off'}
+host_port: 18257

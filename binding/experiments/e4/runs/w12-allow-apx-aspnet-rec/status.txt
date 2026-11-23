@@ -1,0 +1,1 @@
+w12-allow-apx-aspnet-rec runner_rc=0 secs=19 violations=0 e4_runner[w12-allow-apx-aspnet-rec] wrote /Users/mimohit/openbank/binding/harness/logs/w12-allow-apx-aspnet-rec/runner.jsonl: {'sent': 29, 'errors': 0}

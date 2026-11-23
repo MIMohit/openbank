@@ -1,0 +1,1 @@
+oracle[w18-query-nginx-default-edge-rails-ovon] {'topology': 'w18-query-nginx-default-edge-rails-ovon', 'cases': 1239, 'accepted': 771, 'hits_raw': 13, 'hits_confirmed': 0, 'S1': 7, 'S2': 6, 'S3': 0, 'signatures': 13, 'max_res_hat': 4, 'b0': 0, 'propagation': 153, 'uncorrelated': 3}

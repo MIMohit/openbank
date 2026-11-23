@@ -1,0 +1,1 @@
+w12-block-ngx-aspnet-def runner_rc=0 secs=14 violations=11 e4_runner[w12-block-ngx-aspnet-def] wrote /Users/mimohit/openbank/binding/harness/logs/w12-block-ngx-aspnet-def/runner.jsonl: {'sent': 29, 'errors': 0}

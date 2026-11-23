@@ -1,0 +1,7 @@
+row,aspnet/ovoff,aspnet/ovon,django/ovoff,django/ovon,express/ovoff,express/ovon,fastapi/ovoff,fastapi/ovon,go-chi/ovoff,go-chi/ovon,laravel/ovoff,laravel/ovon,rails/ovoff,rails/ovon,spring/ovoff,spring/ovon
+apisix/default,20,17,13,9,21,17,14,20,19,17,14,10,20,16,14,11
+apisix/recommended,20,17,13,9,21,17,14,20,19,17,14,10,20,16,14,11
+haproxy/default,14,11,13,9,15,11,13,19,12,10,13,9,14,10,14,11
+haproxy/recommended,14,11,13,9,15,11,13,19,12,10,13,9,14,10,14,11
+kong/default,14,11,13,9,15,11,19,25,18,16,19,15,14,10,14,11
+kong/recommended,14,11,13,9,15,11,19,25,18,16,19,15,14,10,14,11

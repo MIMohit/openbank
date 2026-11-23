@@ -1,0 +1,8 @@
+fastapi/.venv/
+express/node_modules/
+spring/target/
+aspnet/**/bin/
+aspnet/**/obj/
+aspnet/**/TestResults/
+__pycache__/
+.pytest_cache/

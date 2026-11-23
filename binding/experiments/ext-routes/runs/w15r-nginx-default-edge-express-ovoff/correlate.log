@@ -1,0 +1,1 @@
+oracle[w15r-nginx-default-edge-express-ovoff] {'topology': 'w15r-nginx-default-edge-express-ovoff', 'cases': 581, 'accepted': 401, 'hits_raw': 2, 'hits_confirmed': 0, 'S1': 2, 'S2': 0, 'S3': 0, 'signatures': 2, 'max_res_hat': 2, 'b0': 0, 'propagation': 72, 'uncorrelated': 7}

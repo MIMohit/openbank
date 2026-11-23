@@ -1,0 +1,849 @@
+{
+  "label": "aspnet OVERRIDE=on",
+  "results": [
+    {
+      "id": "canon",
+      "desc": "canonical getAccount",
+      "method": "GET",
+      "target": "/api/v1/accounts/acc-alice-1",
+      "headers": {},
+      "body": null,
+      "status": 200,
+      "status_line": "HTTP/1.1 200 OK",
+      "op_id": "getAccount",
+      "eff_method": "GET",
+      "path_params": {
+        "id": "acc-alice-1"
+      }
+    },
+    {
+      "id": "enc-slash",
+      "desc": "%2F inside {id}",
+      "method": "GET",
+      "target": "/api/v1/accounts/acc%2Falice",
+      "headers": {},
+      "body": null,
+      "status": 200,
+      "status_line": "HTTP/1.1 200 OK",
+      "op_id": "getAccount",
+      "eff_method": "GET",
+      "path_params": {
+        "id": "acc%2Falice"
+      }
+    },
+    {
+      "id": "enc-slash-lc",
+      "desc": "%2f inside {id}",
+      "method": "GET",
+      "target": "/api/v1/accounts/acc%2falice",
+      "headers": {},
+      "body": null,
+      "status": 200,
+      "status_line": "HTTP/1.1 200 OK",
+      "op_id": "getAccount",
+      "eff_method": "GET",
+      "path_params": {
+        "id": "acc%2falice"
+      }
+    },
+    {
+      "id": "enc-unreserved",
+      "desc": "%61 (a) in a literal segment",
+      "method": "GET",
+      "target": "/api/v1/%61ccounts/acc-alice-1",
+      "headers": {},
+      "body": null,
+      "status": 200,
+      "status_line": "HTTP/1.1 200 OK",
+      "op_id": "getAccount",
+      "eff_method": "GET",
+      "path_params": {
+        "id": "acc-alice-1"
+      }
+    },
+    {
+      "id": "enc-id",
+      "desc": "%2D in {id}",
+      "method": "GET",
+      "target": "/api/v1/accounts/acc%2Dalice-1",
+      "headers": {},
+      "body": null,
+      "status": 200,
+      "status_line": "HTTP/1.1 200 OK",
+      "op_id": "getAccount",
+      "eff_method": "GET",
+      "path_params": {
+        "id": "acc-alice-1"
+      }
+    },
+    {
+      "id": "dot-seg",
+      "desc": "/../ dot segment",
+      "method": "GET",
+      "target": "/api/v1/admin/../accounts/acc-alice-1",
+      "headers": {},
+      "body": null,
+      "status": 200,
+      "status_line": "HTTP/1.1 200 OK",
+      "op_id": "getAccount",
+      "eff_method": "GET",
+      "path_params": {
+        "id": "acc-alice-1"
+      }
+    },
+    {
+      "id": "dot-seg-enc",
+      "desc": "%2e%2e dot segment",
+      "method": "GET",
+      "target": "/api/v1/admin/%2e%2e/accounts/acc-alice-1",
+      "headers": {},
+      "body": null,
+      "status": 200,
+      "status_line": "HTTP/1.1 200 OK",
+      "op_id": "getAccount",
+      "eff_method": "GET",
+      "path_params": {
+        "id": "acc-alice-1"
+      }
+    },
+    {
+      "id": "dot-single",
+      "desc": "/./ segment",
+      "method": "GET",
+      "target": "/api/v1/./accounts/acc-alice-1",
+      "headers": {},
+      "body": null,
+      "status": 200,
+      "status_line": "HTTP/1.1 200 OK",
+      "op_id": "getAccount",
+      "eff_method": "GET",
+      "path_params": {
+        "id": "acc-alice-1"
+      }
+    },
+    {
+      "id": "matrix-lit",
+      "desc": ";x=1 on a literal segment",
+      "method": "GET",
+      "target": "/api/v1/accounts;x=1/acc-alice-1",
+      "headers": {},
+      "body": null,
+      "status": 404,
+      "status_line": "HTTP/1.1 404 Not Found",
+      "op_id": "NOT_FOUND",
+      "eff_method": "GET",
+      "path_params": {}
+    },
+    {
+      "id": "matrix-var",
+      "desc": ";x=1 on {id}",
+      "method": "GET",
+      "target": "/api/v1/accounts/acc-alice-1;x=1",
+      "headers": {},
+      "body": null,
+      "status": 200,
+      "status_line": "HTTP/1.1 200 OK",
+      "op_id": "getAccount",
+      "eff_method": "GET",
+      "path_params": {
+        "id": "acc-alice-1;x=1"
+      }
+    },
+    {
+      "id": "matrix-admin",
+      "desc": ";x on admin segment (DELETE)",
+      "method": "DELETE",
+      "target": "/api/v1/admin;x=1/users/u-1",
+      "headers": {},
+      "body": null,
+      "status": 404,
+      "status_line": "HTTP/1.1 404 Not Found",
+      "op_id": "NOT_FOUND",
+      "eff_method": "DELETE",
+      "path_params": {}
+    },
+    {
+      "id": "trail-coll",
+      "desc": "trailing slash on collection",
+      "method": "GET",
+      "target": "/api/v1/accounts/",
+      "headers": {},
+      "body": null,
+      "status": 200,
+      "status_line": "HTTP/1.1 200 OK",
+      "op_id": "listAccounts",
+      "eff_method": "GET",
+      "path_params": {}
+    },
+    {
+      "id": "trail-item",
+      "desc": "trailing slash on item",
+      "method": "GET",
+      "target": "/api/v1/accounts/acc-alice-1/",
+      "headers": {},
+      "body": null,
+      "status": 200,
+      "status_line": "HTTP/1.1 200 OK",
+      "op_id": "getAccount",
+      "eff_method": "GET",
+      "path_params": {
+        "id": "acc-alice-1"
+      }
+    },
+    {
+      "id": "dbl-mid",
+      "desc": "double slash mid-path",
+      "method": "GET",
+      "target": "/api/v1//accounts/acc-alice-1",
+      "headers": {},
+      "body": null,
+      "status": 404,
+      "status_line": "HTTP/1.1 404 Not Found",
+      "op_id": "NOT_FOUND",
+      "eff_method": "GET",
+      "path_params": {}
+    },
+    {
+      "id": "dbl-lead",
+      "desc": "double leading slash",
+      "method": "GET",
+      "target": "//api/v1/accounts",
+      "headers": {},
+      "body": null,
+      "status": 404,
+      "status_line": "HTTP/1.1 404 Not Found",
+      "op_id": "NOT_FOUND",
+      "eff_method": "GET",
+      "path_params": {}
+    },
+    {
+      "id": "case-lit",
+      "desc": "upper-case literal segment",
+      "method": "GET",
+      "target": "/api/v1/ACCOUNTS",
+      "headers": {},
+      "body": null,
+      "status": 200,
+      "status_line": "HTTP/1.1 200 OK",
+      "op_id": "listAccounts",
+      "eff_method": "GET",
+      "path_params": {}
+    },
+    {
+      "id": "case-prefix",
+      "desc": "upper-case /API prefix",
+      "method": "GET",
+      "target": "/API/v1/accounts",
+      "headers": {},
+      "body": null,
+      "status": 200,
+      "status_line": "HTTP/1.1 200 OK",
+      "op_id": "listAccounts",
+      "eff_method": "GET",
+      "path_params": {}
+    },
+    {
+      "id": "suffix",
+      "desc": ".json suffix on {id}",
+      "method": "GET",
+      "target": "/api/v1/accounts/acc-alice-1.json",
+      "headers": {},
+      "body": null,
+      "status": 200,
+      "status_line": "HTTP/1.1 200 OK",
+      "op_id": "getAccount",
+      "eff_method": "GET",
+      "path_params": {
+        "id": "acc-alice-1.json"
+      }
+    },
+    {
+      "id": "suffix-coll",
+      "desc": ".json suffix on collection",
+      "method": "GET",
+      "target": "/api/v1/accounts.json",
+      "headers": {},
+      "body": null,
+      "status": 404,
+      "status_line": "HTTP/1.1 404 Not Found",
+      "op_id": "NOT_FOUND",
+      "eff_method": "GET",
+      "path_params": {}
+    },
+    {
+      "id": "backslash",
+      "desc": "backslash separator",
+      "method": "GET",
+      "target": "/api/v1\\accounts",
+      "headers": {},
+      "body": null,
+      "status": 404,
+      "status_line": "HTTP/1.1 404 Not Found",
+      "op_id": "NOT_FOUND",
+      "eff_method": "GET",
+      "path_params": {}
+    },
+    {
+      "id": "enc-backslash",
+      "desc": "%5C separator",
+      "method": "GET",
+      "target": "/api/v1%5Caccounts",
+      "headers": {},
+      "body": null,
+      "status": 404,
+      "status_line": "HTTP/1.1 404 Not Found",
+      "op_id": "NOT_FOUND",
+      "eff_method": "GET",
+      "path_params": {}
+    },
+    {
+      "id": "enc-qmark",
+      "desc": "%3F inside {id}",
+      "method": "GET",
+      "target": "/api/v1/accounts/acc%3Fx",
+      "headers": {},
+      "body": null,
+      "status": 200,
+      "status_line": "HTTP/1.1 200 OK",
+      "op_id": "getAccount",
+      "eff_method": "GET",
+      "path_params": {
+        "id": "acc?x"
+      }
+    },
+    {
+      "id": "nul",
+      "desc": "%00 inside {id}",
+      "method": "GET",
+      "target": "/api/v1/accounts/acc%00x",
+      "headers": {},
+      "body": null,
+      "status": 400,
+      "status_line": "HTTP/1.1 400 Bad Request",
+      "op_id": null,
+      "eff_method": null,
+      "path_params": null
+    },
+    {
+      "id": "fragment",
+      "desc": "#fragment in target",
+      "method": "GET",
+      "target": "/api/v1/me#frag",
+      "headers": {},
+      "body": null,
+      "status": 400,
+      "status_line": "HTTP/1.1 400 Bad Request",
+      "op_id": null,
+      "eff_method": null,
+      "path_params": null
+    },
+    {
+      "id": "abs-form",
+      "desc": "absolute-form request-target",
+      "method": "GET",
+      "target": "http://api.bench.test/api/v1/me",
+      "headers": {},
+      "body": null,
+      "status": 200,
+      "status_line": "HTTP/1.1 200 OK",
+      "op_id": "me",
+      "eff_method": "GET",
+      "path_params": {}
+    },
+    {
+      "id": "v2-prefix",
+      "desc": "v2 prefix mount",
+      "method": "GET",
+      "target": "/api/v2/accounts/acc-alice-1",
+      "headers": {},
+      "body": null,
+      "status": 200,
+      "status_line": "HTTP/1.1 200 OK",
+      "op_id": "getAccountV2",
+      "eff_method": "GET",
+      "path_params": {
+        "id": "acc-alice-1"
+      }
+    },
+    {
+      "id": "v2-dotdot",
+      "desc": "v2 prefix then ../ into v1 admin",
+      "method": "GET",
+      "target": "/api/v2/../v1/admin/users",
+      "headers": {},
+      "body": null,
+      "status": 200,
+      "status_line": "HTTP/1.1 200 OK",
+      "op_id": "adminListUsers",
+      "eff_method": "GET",
+      "path_params": {}
+    },
+    {
+      "id": "v2-dbl",
+      "desc": "double slash after v2 mount",
+      "method": "GET",
+      "target": "/api/v2//accounts/acc-alice-1",
+      "headers": {},
+      "body": null,
+      "status": 404,
+      "status_line": "HTTP/1.1 404 Not Found",
+      "op_id": "NOT_FOUND",
+      "eff_method": "GET",
+      "path_params": {}
+    },
+    {
+      "id": "v2-case",
+      "desc": "upper-case V2 mount",
+      "method": "GET",
+      "target": "/api/V2/accounts/acc-alice-1",
+      "headers": {},
+      "body": null,
+      "status": 200,
+      "status_line": "HTTP/1.1 200 OK",
+      "op_id": "getAccountV2",
+      "eff_method": "GET",
+      "path_params": {
+        "id": "acc-alice-1"
+      }
+    },
+    {
+      "id": "method-lc",
+      "desc": "lower-case method token",
+      "method": "get",
+      "target": "/api/v1/accounts/acc-alice-1",
+      "headers": {},
+      "body": null,
+      "status": 200,
+      "status_line": "HTTP/1.1 200 OK",
+      "op_id": "getAccount",
+      "eff_method": "get",
+      "path_params": {
+        "id": "acc-alice-1"
+      }
+    },
+    {
+      "id": "head",
+      "desc": "HEAD on GET route",
+      "method": "HEAD",
+      "target": "/api/v1/accounts/acc-alice-1",
+      "headers": {},
+      "body": null,
+      "status": 404,
+      "status_line": "HTTP/1.1 404 Not Found",
+      "op_id": "NOT_FOUND",
+      "eff_method": "HEAD",
+      "path_params": {}
+    },
+    {
+      "id": "options",
+      "desc": "OPTIONS on item",
+      "method": "OPTIONS",
+      "target": "/api/v1/accounts/acc-alice-1",
+      "headers": {},
+      "body": null,
+      "status": 404,
+      "status_line": "HTTP/1.1 404 Not Found",
+      "op_id": "NOT_FOUND",
+      "eff_method": "OPTIONS",
+      "path_params": {}
+    },
+    {
+      "id": "op-dup-fc",
+      "desc": "?op=freeze&op=close",
+      "method": "POST",
+      "target": "/api/v1/accounts/acc-alice-1/actions?op=freeze&op=close",
+      "headers": {},
+      "body": "{}",
+      "status": 200,
+      "status_line": "HTTP/1.1 200 OK",
+      "op_id": "accountAction.unknown",
+      "eff_method": "POST",
+      "path_params": {
+        "id": "acc-alice-1"
+      }
+    },
+    {
+      "id": "op-dup-cf",
+      "desc": "?op=close&op=freeze",
+      "method": "POST",
+      "target": "/api/v1/accounts/acc-alice-1/actions?op=close&op=freeze",
+      "headers": {},
+      "body": "{}",
+      "status": 200,
+      "status_line": "HTTP/1.1 200 OK",
+      "op_id": "accountAction.unknown",
+      "eff_method": "POST",
+      "path_params": {
+        "id": "acc-alice-1"
+      }
+    },
+    {
+      "id": "op-arr",
+      "desc": "?op[]=close",
+      "method": "POST",
+      "target": "/api/v1/accounts/acc-alice-1/actions?op[]=close",
+      "headers": {},
+      "body": "{}",
+      "status": 200,
+      "status_line": "HTTP/1.1 200 OK",
+      "op_id": "accountAction.unknown",
+      "eff_method": "POST",
+      "path_params": {
+        "id": "acc-alice-1"
+      }
+    },
+    {
+      "id": "op-enc",
+      "desc": "?%6Fp=close (encoded name)",
+      "method": "POST",
+      "target": "/api/v1/accounts/acc-alice-1/actions?%6Fp=close",
+      "headers": {},
+      "body": "{}",
+      "status": 200,
+      "status_line": "HTTP/1.1 200 OK",
+      "op_id": "accountAction.close",
+      "eff_method": "POST",
+      "path_params": {
+        "id": "acc-alice-1"
+      }
+    },
+    {
+      "id": "op-form",
+      "desc": "op=close in form body, no query",
+      "method": "POST",
+      "target": "/api/v1/accounts/acc-alice-1/actions",
+      "headers": {},
+      "body": "op=close",
+      "status": 200,
+      "status_line": "HTTP/1.1 200 OK",
+      "op_id": "accountAction.unknown",
+      "eff_method": "POST",
+      "path_params": {
+        "id": "acc-alice-1"
+      }
+    },
+    {
+      "id": "op-form-vs-q",
+      "desc": "?op=freeze + form body op=close",
+      "method": "POST",
+      "target": "/api/v1/accounts/acc-alice-1/actions?op=freeze",
+      "headers": {},
+      "body": "op=close",
+      "status": 200,
+      "status_line": "HTTP/1.1 200 OK",
+      "op_id": "accountAction.freeze",
+      "eff_method": "POST",
+      "path_params": {
+        "id": "acc-alice-1"
+      }
+    },
+    {
+      "id": "op-json",
+      "desc": "op=close in JSON body, no query",
+      "method": "POST",
+      "target": "/api/v1/accounts/acc-alice-1/actions",
+      "headers": {},
+      "body": "{\"op\":\"close\"}",
+      "status": 200,
+      "status_line": "HTTP/1.1 200 OK",
+      "op_id": "accountAction.unknown",
+      "eff_method": "POST",
+      "path_params": {
+        "id": "acc-alice-1"
+      }
+    },
+    {
+      "id": "op-semicolon",
+      "desc": "?x=1;op=close (; separator)",
+      "method": "POST",
+      "target": "/api/v1/accounts/acc-alice-1/actions?x=1;op=close",
+      "headers": {},
+      "body": "{}",
+      "status": 200,
+      "status_line": "HTTP/1.1 200 OK",
+      "op_id": "accountAction.unknown",
+      "eff_method": "POST",
+      "path_params": {
+        "id": "acc-alice-1"
+      }
+    },
+    {
+      "id": "gql-dupkey",
+      "desc": "graphql duplicate operationName keys",
+      "method": "POST",
+      "target": "/api/v1/graphql",
+      "headers": {},
+      "body": "{\"operationName\":\"getProfile\",\"operationName\":\"deleteProfile\"}",
+      "status": 200,
+      "status_line": "HTTP/1.1 200 OK",
+      "op_id": "graphql.unknown",
+      "eff_method": "POST",
+      "path_params": {}
+    },
+    {
+      "id": "gql-text",
+      "desc": "graphql JSON body sent as text/plain",
+      "method": "POST",
+      "target": "/api/v1/graphql",
+      "headers": {},
+      "body": "{\"operationName\":\"deleteProfile\"}",
+      "status": 200,
+      "status_line": "HTTP/1.1 200 OK",
+      "op_id": "graphql.deleteProfile",
+      "eff_method": "POST",
+      "path_params": {}
+    },
+    {
+      "id": "ov-hdr",
+      "desc": "POST + X-HTTP-Method-Override: DELETE",
+      "method": "POST",
+      "target": "/api/v1/accounts/acc-alice-1",
+      "headers": {
+        "X-HTTP-Method-Override": "DELETE"
+      },
+      "body": "{}",
+      "status": 200,
+      "status_line": "HTTP/1.1 200 OK",
+      "op_id": "deleteAccount",
+      "eff_method": "DELETE",
+      "path_params": {
+        "id": "acc-alice-1"
+      }
+    },
+    {
+      "id": "ov-hdr-put",
+      "desc": "POST + X-HTTP-Method-Override: PUT",
+      "method": "POST",
+      "target": "/api/v1/accounts/acc-alice-1",
+      "headers": {
+        "X-HTTP-Method-Override": "PUT"
+      },
+      "body": "{}",
+      "status": 200,
+      "status_line": "HTTP/1.1 200 OK",
+      "op_id": "updateAccount",
+      "eff_method": "PUT",
+      "path_params": {
+        "id": "acc-alice-1"
+      }
+    },
+    {
+      "id": "ov-hdr-get",
+      "desc": "POST + X-HTTP-Method-Override: GET",
+      "method": "POST",
+      "target": "/api/v1/accounts/acc-alice-1",
+      "headers": {
+        "X-HTTP-Method-Override": "GET"
+      },
+      "body": "{}",
+      "status": 200,
+      "status_line": "HTTP/1.1 200 OK",
+      "op_id": "getAccount",
+      "eff_method": "GET",
+      "path_params": {
+        "id": "acc-alice-1"
+      }
+    },
+    {
+      "id": "ov-hdr-lc",
+      "desc": "POST + X-HTTP-Method-Override: delete",
+      "method": "POST",
+      "target": "/api/v1/accounts/acc-alice-1",
+      "headers": {
+        "X-HTTP-Method-Override": "delete"
+      },
+      "body": "{}",
+      "status": 200,
+      "status_line": "HTTP/1.1 200 OK",
+      "op_id": "deleteAccount",
+      "eff_method": "delete",
+      "path_params": {
+        "id": "acc-alice-1"
+      }
+    },
+    {
+      "id": "ov-hdr-onget",
+      "desc": "GET + X-HTTP-Method-Override: DELETE",
+      "method": "GET",
+      "target": "/api/v1/accounts/acc-alice-1",
+      "headers": {
+        "X-HTTP-Method-Override": "DELETE"
+      },
+      "body": null,
+      "status": 200,
+      "status_line": "HTTP/1.1 200 OK",
+      "op_id": "getAccount",
+      "eff_method": "GET",
+      "path_params": {
+        "id": "acc-alice-1"
+      }
+    },
+    {
+      "id": "ov-hdr-onput",
+      "desc": "PUT + X-HTTP-Method-Override: DELETE",
+      "method": "PUT",
+      "target": "/api/v1/accounts/acc-alice-1",
+      "headers": {
+        "X-HTTP-Method-Override": "DELETE"
+      },
+      "body": "{}",
+      "status": 200,
+      "status_line": "HTTP/1.1 200 OK",
+      "op_id": "updateAccount",
+      "eff_method": "PUT",
+      "path_params": {
+        "id": "acc-alice-1"
+      }
+    },
+    {
+      "id": "ov-xhm",
+      "desc": "POST + X-HTTP-Method: DELETE",
+      "method": "POST",
+      "target": "/api/v1/accounts/acc-alice-1",
+      "headers": {
+        "X-HTTP-Method": "DELETE"
+      },
+      "body": "{}",
+      "status": 404,
+      "status_line": "HTTP/1.1 404 Not Found",
+      "op_id": "NOT_FOUND",
+      "eff_method": "POST",
+      "path_params": {}
+    },
+    {
+      "id": "ov-xmo",
+      "desc": "POST + X-Method-Override: DELETE",
+      "method": "POST",
+      "target": "/api/v1/accounts/acc-alice-1",
+      "headers": {
+        "X-Method-Override": "DELETE"
+      },
+      "body": "{}",
+      "status": 404,
+      "status_line": "HTTP/1.1 404 Not Found",
+      "op_id": "NOT_FOUND",
+      "eff_method": "POST",
+      "path_params": {}
+    },
+    {
+      "id": "ov-q",
+      "desc": "POST ?_method=DELETE",
+      "method": "POST",
+      "target": "/api/v1/accounts/acc-alice-1?_method=DELETE",
+      "headers": {},
+      "body": "{}",
+      "status": 404,
+      "status_line": "HTTP/1.1 404 Not Found",
+      "op_id": "NOT_FOUND",
+      "eff_method": "POST",
+      "path_params": {}
+    },
+    {
+      "id": "ov-form",
+      "desc": "POST form _method=DELETE",
+      "method": "POST",
+      "target": "/api/v1/accounts/acc-alice-1",
+      "headers": {},
+      "body": "_method=DELETE",
+      "status": 200,
+      "status_line": "HTTP/1.1 200 OK",
+      "op_id": "deleteAccount",
+      "eff_method": "DELETE",
+      "path_params": {
+        "id": "acc-alice-1"
+      }
+    },
+    {
+      "id": "ov-form-lc",
+      "desc": "POST form _method=delete",
+      "method": "POST",
+      "target": "/api/v1/accounts/acc-alice-1",
+      "headers": {},
+      "body": "_method=delete",
+      "status": 200,
+      "status_line": "HTTP/1.1 200 OK",
+      "op_id": "deleteAccount",
+      "eff_method": "delete",
+      "path_params": {
+        "id": "acc-alice-1"
+      }
+    },
+    {
+      "id": "ov-form-get",
+      "desc": "POST form _method=GET",
+      "method": "POST",
+      "target": "/api/v1/accounts/acc-alice-1",
+      "headers": {},
+      "body": "_method=GET",
+      "status": 200,
+      "status_line": "HTTP/1.1 200 OK",
+      "op_id": "getAccount",
+      "eff_method": "GET",
+      "path_params": {
+        "id": "acc-alice-1"
+      }
+    },
+    {
+      "id": "ov-json",
+      "desc": "POST JSON {\"_method\":\"DELETE\"}",
+      "method": "POST",
+      "target": "/api/v1/accounts/acc-alice-1",
+      "headers": {},
+      "body": "{\"_method\":\"DELETE\"}",
+      "status": 404,
+      "status_line": "HTTP/1.1 404 Not Found",
+      "op_id": "NOT_FOUND",
+      "eff_method": "POST",
+      "path_params": {}
+    },
+    {
+      "id": "ov-form-admin",
+      "desc": "POST form _method=DELETE on admin user",
+      "method": "POST",
+      "target": "/api/v1/admin/users/u-1",
+      "headers": {},
+      "body": "_method=DELETE",
+      "status": 200,
+      "status_line": "HTTP/1.1 200 OK",
+      "op_id": "adminDeleteUser",
+      "eff_method": "DELETE",
+      "path_params": {
+        "id": "u-1"
+      }
+    },
+    {
+      "id": "ov-hdr-admin",
+      "desc": "POST + header DELETE on admin user",
+      "method": "POST",
+      "target": "/api/v1/admin/users/u-1",
+      "headers": {
+        "X-HTTP-Method-Override": "DELETE"
+      },
+      "body": "{}",
+      "status": 200,
+      "status_line": "HTTP/1.1 200 OK",
+      "op_id": "adminDeleteUser",
+      "eff_method": "DELETE",
+      "path_params": {
+        "id": "u-1"
+      }
+    },
+    {
+      "id": "ov-both",
+      "desc": "form _method=PUT + header DELETE",
+      "method": "POST",
+      "target": "/api/v1/accounts/acc-alice-1",
+      "headers": {
+        "X-HTTP-Method-Override": "DELETE"
+      },
+      "body": "_method=PUT",
+      "status": 200,
+      "status_line": "HTTP/1.1 200 OK",
+      "op_id": "updateAccount",
+      "eff_method": "PUT",
+      "path_params": {
+        "id": "acc-alice-1"
+      }
+    }
+  ]
+}

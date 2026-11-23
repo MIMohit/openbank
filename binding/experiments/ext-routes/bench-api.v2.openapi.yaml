@@ -1,0 +1,231 @@
+openapi: 3.1.0
+info:
+  title: Binding-soundness bench API (executors), v2 route space
+  version: 2.0.0
+  description: |
+    Richer route-space variant of the bench API (W15 ext-routes). Identical to v1 except
+    that four extra v1 operations are present ONLY when the executor runs with env `ROUTES=v2`
+    (default `off`, in which case behaviour is byte-identical to the v1 spec / `:latest` images):
+
+      * `postAccount`   POST /api/v1/accounts/{id}            — a POST sharing a path with
+        GET/PUT/DELETE, so that the standard POST-only method-override of express, spring,
+        aspnet, rails and laravel can flip a POST proof into updateAccount/deleteAccount.
+      * `getStatements` GET /api/v1/accounts/{id}/statements  — a nested same-method route.
+      * `deleteStatement` DELETE /api/v1/accounts/{id}/statements/{sid} — a deeper nested route.
+      * `catchAllFile`  GET /api/v1/files/{path}              — a catch-all that binds the
+        remainder (including '/') literally, so dot-segment / encoded-slash differentials that
+        404 in the v1 space become an executed op with a substituted path param.
+
+    Base (W4) definition below (binding/CONTRACT.md section 3).
+
+    * `operationId` == the CONTRACT `op_id` that executors log and return.
+    * Two operations dispatch to one of several op_ids from request content that a DPoP proof
+      does not cover (G1, under-binding by design). OpenAPI allows a single operationId per
+      operation, so the operationId is the dispatch family (`accountAction`, `graphql`) and the
+      extension `x-bench-dispatch` lists the concrete op_ids that are logged:
+        - `accountAction`: query parameter `op` -> `freeze` => `accountAction.freeze`,
+          `close` => `accountAction.close`, anything else (absent, other value, repeated key
+          that the framework resolves to something other than freeze/close, array syntax)
+          => `accountAction.unknown`. Which value wins for a repeated `op` key is
+          framework-specific and is recorded in each executor README.
+        - `graphql`: JSON body field `operationName` -> `getProfile` => `graphql.getProfile`,
+          `deleteProfile` => `graphql.deleteProfile`, anything else (absent, non-string,
+          body not a JSON object, malformed JSON) => `graphql.unknown`.
+    * Any request that matches no (method, path) pair below, including a known path with a
+      wrong method, returns 404 with `op_id: NOT_FOUND` and is logged.
+    * DPoP `htu` for an operation is `http://api.bench.test` + the path below (no query);
+      `htm` is the method below.
+    * `/api/v2/...` is served by a sub-application / sub-router mounted at the `/api/v2`
+      prefix (`x-bench-prefix-mount: true`).
+    * Security is described for documentation only: executors run with `VERIFY_MODE=off` by
+      default and never verify DPoP themselves; in `origin-*` modes they delegate to the
+      verifier at `http://verifier:9100/authz/orig` (CONTRACT section 3).
+  x-bench-contract: binding/CONTRACT.md#3-bench-api-identical-in-every-framework-executors
+servers:
+  - url: http://api.bench.test
+security:
+  - dpop: []
+paths:
+  /api/v1/accounts:
+    get:
+      operationId: listAccounts
+      x-bench-severity-class: read
+      responses: {"200": {$ref: "#/components/responses/Op"}, "404": {$ref: "#/components/responses/NotFound"}}
+  /api/v1/accounts/{id}:
+    parameters: [{$ref: "#/components/parameters/id"}]
+    get:
+      operationId: getAccount
+      x-bench-severity-class: read
+      responses: {"200": {$ref: "#/components/responses/Op"}, "404": {$ref: "#/components/responses/NotFound"}}
+    put:
+      operationId: updateAccount
+      x-bench-severity-class: state-changing
+      requestBody:
+        required: false
+        content: {application/json: {schema: {type: object}}}
+      responses: {"200": {$ref: "#/components/responses/Op"}, "404": {$ref: "#/components/responses/NotFound"}}
+    delete:
+      operationId: deleteAccount
+      x-bench-severity-class: state-changing
+      responses: {"200": {$ref: "#/components/responses/Op"}, "404": {$ref: "#/components/responses/NotFound"}}
+    post:
+      operationId: postAccount
+      x-bench-routes: v2
+      x-bench-severity-class: state-changing
+      requestBody:
+        required: false
+        content: {application/json: {schema: {type: object}}}
+      responses: {"200": {$ref: "#/components/responses/Op"}, "404": {$ref: "#/components/responses/NotFound"}}
+  /api/v1/accounts/{id}/statements:
+    parameters: [{$ref: "#/components/parameters/id"}]
+    get:
+      operationId: getStatements
+      x-bench-routes: v2
+      x-bench-severity-class: read
+      responses: {"200": {$ref: "#/components/responses/Op"}, "404": {$ref: "#/components/responses/NotFound"}}
+  /api/v1/accounts/{id}/statements/{sid}:
+    parameters:
+      - {$ref: "#/components/parameters/id"}
+      - {name: sid, in: path, required: true, schema: {type: string}}
+    delete:
+      operationId: deleteStatement
+      x-bench-routes: v2
+      x-bench-severity-class: state-changing
+      responses: {"200": {$ref: "#/components/responses/Op"}, "404": {$ref: "#/components/responses/NotFound"}}
+  /api/v1/files/{path}:
+    parameters:
+      - {name: path, in: path, required: true, schema: {type: string}, description: "catch-all; may contain '/'"}
+    get:
+      operationId: catchAllFile
+      x-bench-routes: v2
+      x-bench-catch-all: true
+      x-bench-severity-class: low
+      responses: {"200": {$ref: "#/components/responses/Op"}, "404": {$ref: "#/components/responses/NotFound"}}
+  /api/v1/accounts/{id}/actions:
+    parameters: [{$ref: "#/components/parameters/id"}]
+    post:
+      operationId: accountAction
+      x-bench-severity-class: state-changing
+      x-bench-dispatch:
+        source: query
+        parameter: op
+        map: {freeze: accountAction.freeze, close: accountAction.close}
+        default: accountAction.unknown
+        op_ids: [accountAction.freeze, accountAction.close, accountAction.unknown]
+      parameters:
+        - name: op
+          in: query
+          required: false
+          schema: {type: string, enum: [freeze, close]}
+      requestBody:
+        required: false
+        content: {application/json: {schema: {type: object}}}
+      responses: {"200": {$ref: "#/components/responses/Op"}, "404": {$ref: "#/components/responses/NotFound"}}
+  /api/v1/transfers:
+    post:
+      operationId: createTransfer
+      x-bench-severity-class: state-changing
+      requestBody:
+        required: false
+        content: {application/json: {schema: {type: object}}}
+      responses: {"200": {$ref: "#/components/responses/Op"}, "404": {$ref: "#/components/responses/NotFound"}}
+  /api/v1/graphql:
+    post:
+      operationId: graphql
+      x-bench-severity-class: depends-on-dispatch   # graphql.deleteProfile is state-changing
+      x-bench-dispatch:
+        source: json-body
+        field: operationName
+        map: {getProfile: graphql.getProfile, deleteProfile: graphql.deleteProfile}
+        default: graphql.unknown
+        op_ids: [graphql.getProfile, graphql.deleteProfile, graphql.unknown]
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                operationName: {type: string, enum: [getProfile, deleteProfile]}
+                query: {type: string}
+      responses: {"200": {$ref: "#/components/responses/Op"}, "404": {$ref: "#/components/responses/NotFound"}}
+  /api/v1/me:
+    get:
+      operationId: me
+      x-bench-severity-class: read
+      responses: {"200": {$ref: "#/components/responses/Op"}, "404": {$ref: "#/components/responses/NotFound"}}
+  /api/v1/admin/users:
+    get:
+      operationId: adminListUsers
+      x-bench-severity-class: state-changing   # admin* counts as S1 (CONTRACT section 6)
+      responses: {"200": {$ref: "#/components/responses/Op"}, "404": {$ref: "#/components/responses/NotFound"}}
+  /api/v1/admin/users/{id}:
+    parameters: [{$ref: "#/components/parameters/id"}]
+    delete:
+      operationId: adminDeleteUser
+      x-bench-severity-class: state-changing
+      responses: {"200": {$ref: "#/components/responses/Op"}, "404": {$ref: "#/components/responses/NotFound"}}
+  /api/v1/health:
+    get:
+      operationId: health
+      x-bench-severity-class: low
+      responses: {"200": {$ref: "#/components/responses/Op"}, "404": {$ref: "#/components/responses/NotFound"}}
+  /api/v1/public/{file}:
+    parameters:
+      - {name: file, in: path, required: true, schema: {type: string}}
+    get:
+      operationId: publicFile
+      x-bench-severity-class: low
+      responses: {"200": {$ref: "#/components/responses/Op"}, "404": {$ref: "#/components/responses/NotFound"}}
+  /api/v2/accounts/{id}:
+    parameters: [{$ref: "#/components/parameters/id"}]
+    get:
+      operationId: getAccountV2
+      x-bench-prefix-mount: true
+      x-bench-severity-class: read
+      responses: {"200": {$ref: "#/components/responses/Op"}, "404": {$ref: "#/components/responses/NotFound"}}
+components:
+  securitySchemes:
+    dpop:
+      type: http
+      scheme: DPoP
+      description: "RFC 9449. `Authorization: DPoP <at>` plus a `DPoP: <proof>` header."
+  parameters:
+    id:
+      name: id
+      in: path
+      required: true
+      schema: {type: string}
+      example: acc-alice-1
+  schemas:
+    OpResult:
+      type: object
+      required: [op_id, framework, method, path_params]
+      properties:
+        op_id: {type: string, description: "CONTRACT op_id, including dispatched ones such as accountAction.freeze"}
+        framework: {type: string, description: "FRAMEWORK_TAG"}
+        method: {type: string, description: "effective method, after any method-override resolution"}
+        path_params: {type: object, additionalProperties: {type: string}, description: "as the framework extracted them"}
+    NotFound:
+      type: object
+      required: [op_id]
+      properties:
+        op_id: {const: NOT_FOUND}
+        framework: {type: string}
+    Denied:
+      type: object
+      description: VERIFY_MODE origin-* only; logged with denied=true
+      properties:
+        op_id: {type: string}
+        framework: {type: string}
+        denied: {const: true}
+  responses:
+    Op:
+      description: The operation executed.
+      content: {application/json: {schema: {$ref: "#/components/schemas/OpResult"}}}
+    NotFound:
+      description: No route matched (path or method).
+      content: {application/json: {schema: {$ref: "#/components/schemas/NotFound"}}}
+    Denied:
+      description: The origin verifier denied the request (VERIFY_MODE origin-raw / origin-routed).
+      content: {application/json: {schema: {$ref: "#/components/schemas/Denied"}}}

@@ -1,0 +1,15 @@
+sanity status=200
+perf done w17-perf-bedge-fastapi Mon Nov 23 17:42:18 +06 2026
+sanity status=200
+perf done w17-perf-borigin-fastapi Mon Nov 23 18:27:00 +06 2026
+sanity status=200
+../experiments/defence/scripts/phase2.sh: line 8: 25438 Terminated: 15          MAXDUR=30s $D/scripts/run_perf.sh $cfg $fw 5 60s
+sanity status=200
+--- resumed (phase2b, caffeinate) Mon Nov 23 20:51:57 +06 2026
+sanity status=200
+perf done w17-perf-da-fastapi Mon Nov 23 21:11:55 +06 2026
+sanity status=200
+perf done w17-perf-db-fastapi Mon Nov 23 21:36:16 +06 2026
+sanity status=200
+perf done w17-perf-bedge-spring Mon Nov 23 21:58:38 +06 2026
+sanity status=200

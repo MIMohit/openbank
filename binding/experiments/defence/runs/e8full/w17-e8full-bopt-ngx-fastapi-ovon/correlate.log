@@ -1,0 +1,1 @@
+oracle[w17-e8full-bopt-ngx-fastapi-ovon] {'topology': 'w17-e8full-bopt-ngx-fastapi-ovon', 'cases': 581, 'accepted': 509, 'hits_raw': 52, 'hits_confirmed': 0, 'S1': 43, 'S2': 9, 'S3': 0, 'signatures': 20, 'max_res_hat': 10, 'b0': 0, 'propagation': 72, 'uncorrelated': 1}

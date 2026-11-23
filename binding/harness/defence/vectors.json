@@ -1,0 +1,1027 @@
+{
+ "generator": "defence/vectors/gen_vectors.py (reference: verifier.core.view_mac, verifier.canon.canon_path, verifier.jose.thumbprint)",
+ "contract": "CONTRACT section 8 + section 10: X-Verified-View: v1;b64url(HMAC-SHA256(key, jti\\nUPPER(method)\\ncanon_path\\njkt)); key = UTF-8 bytes of VIEW_MAC_KEY",
+ "canon_path": [
+  {
+   "in": "/api/v1/accounts",
+   "out": "/api/v1/accounts"
+  },
+  {
+   "in": "/api/v1/accounts?x=1#f",
+   "out": "/api/v1/accounts"
+  },
+  {
+   "in": "",
+   "out": "/"
+  },
+  {
+   "in": "/",
+   "out": "/"
+  },
+  {
+   "in": "/a/./b/../c",
+   "out": "/a/c"
+  },
+  {
+   "in": "/a/%2e%2E/b",
+   "out": "/b"
+  },
+  {
+   "in": "/a%2fb",
+   "out": "/a%2Fb"
+  },
+  {
+   "in": "/a%2Fb",
+   "out": "/a%2Fb"
+  },
+  {
+   "in": "/%7Euser/%41%42",
+   "out": "/~user/AB"
+  },
+  {
+   "in": "/a//b",
+   "out": "/a//b"
+  },
+  {
+   "in": "/a/b/..",
+   "out": "/a/"
+  },
+  {
+   "in": "/..",
+   "out": "/"
+  },
+  {
+   "in": "http://API.bench.test:80/x/../y?q",
+   "out": "/y"
+  },
+  {
+   "in": "https://h",
+   "out": "/"
+  },
+  {
+   "in": "/a;b=c/d",
+   "out": "/a;b=c/d"
+  },
+  {
+   "in": "/%c3%bc",
+   "out": "/%C3%BC"
+  },
+  {
+   "in": "/a%2",
+   "out": "/a%2"
+  },
+  {
+   "in": "/a/%2E",
+   "out": "/a/"
+  },
+  {
+   "in": "/A/B",
+   "out": "/A/B"
+  }
+ ],
+ "thumbprint": [
+  {
+   "jwk": {
+    "kty": "EC",
+    "crv": "P-256",
+    "x": "Pme28ClAaqJs9MfUjY_qKQZEeBsfFEs-QU7sRyWw62Y",
+    "y": "LANkYlK-cy7-ag2vHpzx90PQmpt7pcliLW6skHE265o"
+   },
+   "jkt": "kLiQcqMnBFDqv7eHJrdh4ubOOuvBys2P1sRTzUUBm98"
+  },
+  {
+   "jwk": {
+    "kty": "EC",
+    "crv": "P-256",
+    "x": "HR_fRgNQol9HDocLDPcdQnAXIqpxqP_QW2_pIjHpf9U",
+    "y": "fuNv6eidyk-6vdvEKg_6jQRmJ49VRusDqhTc2Cn1nQ4"
+   },
+   "jkt": "zksz7OULmVvr6leWNxRJi253geaScifQPp8lGoLcjvM"
+  },
+  {
+   "jwk": {
+    "kty": "RSA",
+    "e": "AQAB",
+    "n": "3d28Iutfk-ikC-l84fSc_LhHSUVkZm7WLCm-4gL3zfPgNj0Fn9fcGujr9vpHt7x8Pem2H1IhKMLYMez3_iCDnUj55ksvqD0aadXDQKo5fSbxhPgm8yhdyakcH9UfrR6ys4TMrzxwcW6ELStSJwDdPbeLTkxfipv_Vk1r1IoP-_CBuWVtpoWIqAj-WM-bIl5oa8SBYvzc5s1VjOhVhk_xXL4MTIHcFrBloahXhJ-xcHe_Qxj3URt9WwuBiKHkwrA5WJ-Bdq-9LJUbXy99jvrB_t2ZP94RaZiWaGwE7DFqLU1uB1sZUvtGyus6ezviuBp6IkeUu1VCnlFAy1RdMzNpeQ"
+   },
+   "jkt": "9x6tpXgOzbwY5Rt63b9UlmibcpgF0wWHL5-xB_ove74"
+  },
+  {
+   "jwk": {
+    "kty": "OKP",
+    "crv": "Ed25519",
+    "x": "11qYAYKxCrfVS_7TyWQHOg7hcvPapiMlrwIaaPcHURo"
+   },
+   "jkt": "kPrK_qmxVWaYVA9wwBF6Iuo3vVzz7TxHCTwXBygrS4k"
+  }
+ ],
+ "mac": [
+  {
+   "key": "k",
+   "jti": "j",
+   "method": "get",
+   "uri": "/api/v1/me",
+   "jkt": "t",
+   "out": "v1;j0fzzb3XZBqCxyphn9SSfG__m3dxpAyEofRIrkKnrYo"
+  },
+  {
+   "key": "w11-test-view-mac-key",
+   "jti": "6f1c2b9e-0d3a-4c55-9a43-2f5d6e7a8b90",
+   "method": "DELETE",
+   "uri": "/api/v1/accounts/acc-alice-1",
+   "jkt": "kLiQcqMnBFDqv7eHJrdh4ubOOuvBys2P1sRTzUUBm98",
+   "out": "v1;YrhUsp9leo3p50tP-Pq0-RMFdgqHPLscNd047WZGAwA"
+  },
+  {
+   "key": "w11-test-view-mac-key",
+   "jti": "6f1c2b9e-0d3a-4c55-9a43-2f5d6e7a8b90",
+   "method": "POST",
+   "uri": "/api/v1/x/../transfers?y=1",
+   "jkt": "kLiQcqMnBFDqv7eHJrdh4ubOOuvBys2P1sRTzUUBm98",
+   "out": "v1;Ut0yhE9_ADSePyLSXfmvsupesnx3x3o_bcp2YCvsqkQ"
+  },
+  {
+   "key": "été",
+   "jti": "jüti",
+   "method": "PUT",
+   "uri": "/a%2fb",
+   "jkt": "jkt",
+   "out": "v1;ookq8FQeeHJvUToAmCm-eXezUmDSrVye1rujuq1dFOA"
+  }
+ ],
+ "substitute": [
+  {
+   "template": "/api/v1/accounts/{id}",
+   "params": {
+    "id": "acc-alice-1"
+   },
+   "out": "/api/v1/accounts/acc-alice-1"
+  },
+  {
+   "template": "/api/v1/accounts/{id}",
+   "params": {
+    "id": "a b"
+   },
+   "out": "/api/v1/accounts/a%20b"
+  },
+  {
+   "template": "/api/v1/accounts/{id}",
+   "params": {
+    "id": "a/b"
+   },
+   "out": "/api/v1/accounts/a%2Fb"
+  },
+  {
+   "template": "/api/v1/accounts/{id}",
+   "params": {
+    "id": "100%"
+   },
+   "out": "/api/v1/accounts/100%25"
+  },
+  {
+   "template": "/api/v1/accounts/{id}",
+   "params": {
+    "id": "ü"
+   },
+   "out": "/api/v1/accounts/%C3%BC"
+  },
+  {
+   "template": "/api/v1/accounts/{id}",
+   "params": {
+    "id": "a:b@c;d=e!$&'()*+,"
+   },
+   "out": "/api/v1/accounts/a:b@c;d=e!$&'()*+,"
+  },
+  {
+   "template": "/api/v1/accounts/{id}",
+   "params": {
+    "id": "a?b#c"
+   },
+   "out": "/api/v1/accounts/a%3Fb%23c"
+  },
+  {
+   "template": "/api/v1/accounts/{id}",
+   "params": {
+    "id": "~-._"
+   },
+   "out": "/api/v1/accounts/~-._"
+  },
+  {
+   "template": "/api/v1/accounts/{id}",
+   "params": {
+    "id": "\"<>\\^`{|}"
+   },
+   "out": "/api/v1/accounts/%22%3C%3E%5C%5E%60%7B%7C%7D"
+  }
+ ],
+ "check": [
+  {
+   "name": "benign_get",
+   "note": "same view on both sides",
+   "key": "w11-test-view-mac-key",
+   "verifier_view": {
+    "method": "GET",
+    "uri": "/api/v1/accounts/acc-alice-1"
+   },
+   "headers": {
+    "x-verified-view": [
+     "v1;LRI0v4jZ9k-dxigAqClfg443Akpa_ek2DDuu4va7S3U"
+    ],
+    "dpop": [
+     "eyJ0eXAiOiJkcG9wK2p3dCIsImFsZyI6IkVTMjU2IiwiandrIjp7Imt0eSI6IkVDIiwiY3J2IjoiUC0yNTYiLCJ4IjoiUG1lMjhDbEFhcUpzOU1mVWpZX3FLUVpFZUJzZkZFcy1RVTdzUnlXdzYyWSIsInkiOiJMQU5rWWxLLWN5Ny1hZzJ2SHB6eDkwUFFtcHQ3cGNsaUxXNnNrSEUyNjVvIn19.eyJqdGkiOiI2ZjFjMmI5ZS0wZDNhLTRjNTUtOWE0My0yZjVkNmU3YThiOTAiLCJodG0iOiJHRVQiLCJodHUiOiJodHRwOi8vYXBpLmJlbmNoLnRlc3QvYXBpL3YxL2FjY291bnRzL2FjYy1hbGljZS0xIiwiaWF0IjoxNzk1MDAwMDAwLCJhdGgiOiJ4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4In0.WJvMkdE9cywatgWjVmajn2osbVTUojHZiPun_SD3jDCqKe3jbpsk18v7tCC0xQJ-e20K8lTVlV-keTKrtD8dXQ"
+    ]
+   },
+   "method": "GET",
+   "template": "/api/v1/accounts/{id}",
+   "params": {
+    "id": "acc-alice-1"
+   },
+   "expect": {
+    "ok": true,
+    "reason": "ok",
+    "path": "/api/v1/accounts/acc-alice-1"
+   }
+  },
+  {
+   "name": "benign_query_ignored",
+   "note": "query is outside the MAC (path only)",
+   "key": "w11-test-view-mac-key",
+   "verifier_view": {
+    "method": "GET",
+    "uri": "/api/v1/accounts?limit=5"
+   },
+   "headers": {
+    "x-verified-view": [
+     "v1;Y_l7H8qMOttn8yLIu1592lYXHT3n7o1CRn92dJW6_IA"
+    ],
+    "dpop": [
+     "eyJ0eXAiOiJkcG9wK2p3dCIsImFsZyI6IkVTMjU2IiwiandrIjp7Imt0eSI6IkVDIiwiY3J2IjoiUC0yNTYiLCJ4IjoiUG1lMjhDbEFhcUpzOU1mVWpZX3FLUVpFZUJzZkZFcy1RVTdzUnlXdzYyWSIsInkiOiJMQU5rWWxLLWN5Ny1hZzJ2SHB6eDkwUFFtcHQ3cGNsaUxXNnNrSEUyNjVvIn19.eyJqdGkiOiI2ZjFjMmI5ZS0wZDNhLTRjNTUtOWE0My0yZjVkNmU3YThiOTAiLCJodG0iOiJHRVQiLCJodHUiOiJodHRwOi8vYXBpLmJlbmNoLnRlc3QvYXBpL3YxL2FjY291bnRzL2FjYy1hbGljZS0xIiwiaWF0IjoxNzk1MDAwMDAwLCJhdGgiOiJ4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4In0.WJvMkdE9cywatgWjVmajn2osbVTUojHZiPun_SD3jDCqKe3jbpsk18v7tCC0xQJ-e20K8lTVlV-keTKrtD8dXQ"
+    ]
+   },
+   "method": "GET",
+   "template": "/api/v1/accounts",
+   "params": {},
+   "expect": {
+    "ok": true,
+    "reason": "ok",
+    "path": "/api/v1/accounts"
+   }
+  },
+  {
+   "name": "view_absolute_form",
+   "note": "absolute-form view URI",
+   "key": "w11-test-view-mac-key",
+   "verifier_view": {
+    "method": "GET",
+    "uri": "http://api.bench.test/api/v1/me"
+   },
+   "headers": {
+    "x-verified-view": [
+     "v1;dKRD1W1TU5eP0NL7dDKd57mF04GCEr6ylUINnBEZnv4"
+    ],
+    "dpop": [
+     "eyJ0eXAiOiJkcG9wK2p3dCIsImFsZyI6IkVTMjU2IiwiandrIjp7Imt0eSI6IkVDIiwiY3J2IjoiUC0yNTYiLCJ4IjoiUG1lMjhDbEFhcUpzOU1mVWpZX3FLUVpFZUJzZkZFcy1RVTdzUnlXdzYyWSIsInkiOiJMQU5rWWxLLWN5Ny1hZzJ2SHB6eDkwUFFtcHQ3cGNsaUxXNnNrSEUyNjVvIn19.eyJqdGkiOiI2ZjFjMmI5ZS0wZDNhLTRjNTUtOWE0My0yZjVkNmU3YThiOTAiLCJodG0iOiJHRVQiLCJodHUiOiJodHRwOi8vYXBpLmJlbmNoLnRlc3QvYXBpL3YxL2FjY291bnRzL2FjYy1hbGljZS0xIiwiaWF0IjoxNzk1MDAwMDAwLCJhdGgiOiJ4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4In0.WJvMkdE9cywatgWjVmajn2osbVTUojHZiPun_SD3jDCqKe3jbpsk18v7tCC0xQJ-e20K8lTVlV-keTKrtD8dXQ"
+    ]
+   },
+   "method": "GET",
+   "template": "/api/v1/me",
+   "params": {},
+   "expect": {
+    "ok": true,
+    "reason": "ok",
+    "path": "/api/v1/me"
+   }
+  },
+  {
+   "name": "view_lowercase_method",
+   "note": "view method is upper-cased in the MAC",
+   "key": "w11-test-view-mac-key",
+   "verifier_view": {
+    "method": "get",
+    "uri": "/api/v1/me"
+   },
+   "headers": {
+    "x-verified-view": [
+     "v1;dKRD1W1TU5eP0NL7dDKd57mF04GCEr6ylUINnBEZnv4"
+    ],
+    "dpop": [
+     "eyJ0eXAiOiJkcG9wK2p3dCIsImFsZyI6IkVTMjU2IiwiandrIjp7Imt0eSI6IkVDIiwiY3J2IjoiUC0yNTYiLCJ4IjoiUG1lMjhDbEFhcUpzOU1mVWpZX3FLUVpFZUJzZkZFcy1RVTdzUnlXdzYyWSIsInkiOiJMQU5rWWxLLWN5Ny1hZzJ2SHB6eDkwUFFtcHQ3cGNsaUxXNnNrSEUyNjVvIn19.eyJqdGkiOiI2ZjFjMmI5ZS0wZDNhLTRjNTUtOWE0My0yZjVkNmU3YThiOTAiLCJodG0iOiJHRVQiLCJodHUiOiJodHRwOi8vYXBpLmJlbmNoLnRlc3QvYXBpL3YxL2FjY291bnRzL2FjYy1hbGljZS0xIiwiaWF0IjoxNzk1MDAwMDAwLCJhdGgiOiJ4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4In0.WJvMkdE9cywatgWjVmajn2osbVTUojHZiPun_SD3jDCqKe3jbpsk18v7tCC0xQJ-e20K8lTVlV-keTKrtD8dXQ"
+    ]
+   },
+   "method": "GET",
+   "template": "/api/v1/me",
+   "params": {},
+   "expect": {
+    "ok": true,
+    "reason": "ok",
+    "path": "/api/v1/me"
+   }
+  },
+  {
+   "name": "view_pct_unreserved",
+   "note": "%2D decodes to '-' under RFC 3986 normalisation",
+   "key": "w11-test-view-mac-key",
+   "verifier_view": {
+    "method": "GET",
+    "uri": "/api/v1/accounts/acc%2Dalice-1"
+   },
+   "headers": {
+    "x-verified-view": [
+     "v1;LRI0v4jZ9k-dxigAqClfg443Akpa_ek2DDuu4va7S3U"
+    ],
+    "dpop": [
+     "eyJ0eXAiOiJkcG9wK2p3dCIsImFsZyI6IkVTMjU2IiwiandrIjp7Imt0eSI6IkVDIiwiY3J2IjoiUC0yNTYiLCJ4IjoiUG1lMjhDbEFhcUpzOU1mVWpZX3FLUVpFZUJzZkZFcy1RVTdzUnlXdzYyWSIsInkiOiJMQU5rWWxLLWN5Ny1hZzJ2SHB6eDkwUFFtcHQ3cGNsaUxXNnNrSEUyNjVvIn19.eyJqdGkiOiI2ZjFjMmI5ZS0wZDNhLTRjNTUtOWE0My0yZjVkNmU3YThiOTAiLCJodG0iOiJHRVQiLCJodHUiOiJodHRwOi8vYXBpLmJlbmNoLnRlc3QvYXBpL3YxL2FjY291bnRzL2FjYy1hbGljZS0xIiwiaWF0IjoxNzk1MDAwMDAwLCJhdGgiOiJ4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4In0.WJvMkdE9cywatgWjVmajn2osbVTUojHZiPun_SD3jDCqKe3jbpsk18v7tCC0xQJ-e20K8lTVlV-keTKrtD8dXQ"
+    ]
+   },
+   "method": "GET",
+   "template": "/api/v1/accounts/{id}",
+   "params": {
+    "id": "acc-alice-1"
+   },
+   "expect": {
+    "ok": true,
+    "reason": "ok",
+    "path": "/api/v1/accounts/acc-alice-1"
+   }
+  },
+  {
+   "name": "view_dot_segments",
+   "note": "benign dot-segments removed on the verifier side",
+   "key": "w11-test-view-mac-key",
+   "verifier_view": {
+    "method": "GET",
+    "uri": "/api/v1/x/../accounts"
+   },
+   "headers": {
+    "x-verified-view": [
+     "v1;Y_l7H8qMOttn8yLIu1592lYXHT3n7o1CRn92dJW6_IA"
+    ],
+    "dpop": [
+     "eyJ0eXAiOiJkcG9wK2p3dCIsImFsZyI6IkVTMjU2IiwiandrIjp7Imt0eSI6IkVDIiwiY3J2IjoiUC0yNTYiLCJ4IjoiUG1lMjhDbEFhcUpzOU1mVWpZX3FLUVpFZUJzZkZFcy1RVTdzUnlXdzYyWSIsInkiOiJMQU5rWWxLLWN5Ny1hZzJ2SHB6eDkwUFFtcHQ3cGNsaUxXNnNrSEUyNjVvIn19.eyJqdGkiOiI2ZjFjMmI5ZS0wZDNhLTRjNTUtOWE0My0yZjVkNmU3YThiOTAiLCJodG0iOiJHRVQiLCJodHUiOiJodHRwOi8vYXBpLmJlbmNoLnRlc3QvYXBpL3YxL2FjY291bnRzL2FjYy1hbGljZS0xIiwiaWF0IjoxNzk1MDAwMDAwLCJhdGgiOiJ4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4In0.WJvMkdE9cywatgWjVmajn2osbVTUojHZiPun_SD3jDCqKe3jbpsk18v7tCC0xQJ-e20K8lTVlV-keTKrtD8dXQ"
+    ]
+   },
+   "method": "GET",
+   "template": "/api/v1/accounts",
+   "params": {},
+   "expect": {
+    "ok": true,
+    "reason": "ok",
+    "path": "/api/v1/accounts"
+   }
+  },
+  {
+   "name": "param_space",
+   "note": "decoded param re-encoded as %20",
+   "key": "w11-test-view-mac-key",
+   "verifier_view": {
+    "method": "GET",
+    "uri": "/api/v1/accounts/a%20b"
+   },
+   "headers": {
+    "x-verified-view": [
+     "v1;7VBmV3k7FJnQKKSxpJwgSMv4aLe-63gFTLL9fP_Fx0s"
+    ],
+    "dpop": [
+     "eyJ0eXAiOiJkcG9wK2p3dCIsImFsZyI6IkVTMjU2IiwiandrIjp7Imt0eSI6IkVDIiwiY3J2IjoiUC0yNTYiLCJ4IjoiUG1lMjhDbEFhcUpzOU1mVWpZX3FLUVpFZUJzZkZFcy1RVTdzUnlXdzYyWSIsInkiOiJMQU5rWWxLLWN5Ny1hZzJ2SHB6eDkwUFFtcHQ3cGNsaUxXNnNrSEUyNjVvIn19.eyJqdGkiOiI2ZjFjMmI5ZS0wZDNhLTRjNTUtOWE0My0yZjVkNmU3YThiOTAiLCJodG0iOiJHRVQiLCJodHUiOiJodHRwOi8vYXBpLmJlbmNoLnRlc3QvYXBpL3YxL2FjY291bnRzL2FjYy1hbGljZS0xIiwiaWF0IjoxNzk1MDAwMDAwLCJhdGgiOiJ4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4In0.WJvMkdE9cywatgWjVmajn2osbVTUojHZiPun_SD3jDCqKe3jbpsk18v7tCC0xQJ-e20K8lTVlV-keTKrtD8dXQ"
+    ]
+   },
+   "method": "GET",
+   "template": "/api/v1/accounts/{id}",
+   "params": {
+    "id": "a b"
+   },
+   "expect": {
+    "ok": true,
+    "reason": "ok",
+    "path": "/api/v1/accounts/a%20b"
+   }
+  },
+  {
+   "name": "param_utf8_lowerhex",
+   "note": "lower-case hex upper-cased by the verifier canon",
+   "key": "w11-test-view-mac-key",
+   "verifier_view": {
+    "method": "GET",
+    "uri": "/api/v1/accounts/%c3%bc"
+   },
+   "headers": {
+    "x-verified-view": [
+     "v1;EawfM5WrcCjHYsMjr4WD-9MQPBorIKWckiExRBXKpQk"
+    ],
+    "dpop": [
+     "eyJ0eXAiOiJkcG9wK2p3dCIsImFsZyI6IkVTMjU2IiwiandrIjp7Imt0eSI6IkVDIiwiY3J2IjoiUC0yNTYiLCJ4IjoiUG1lMjhDbEFhcUpzOU1mVWpZX3FLUVpFZUJzZkZFcy1RVTdzUnlXdzYyWSIsInkiOiJMQU5rWWxLLWN5Ny1hZzJ2SHB6eDkwUFFtcHQ3cGNsaUxXNnNrSEUyNjVvIn19.eyJqdGkiOiI2ZjFjMmI5ZS0wZDNhLTRjNTUtOWE0My0yZjVkNmU3YThiOTAiLCJodG0iOiJHRVQiLCJodHUiOiJodHRwOi8vYXBpLmJlbmNoLnRlc3QvYXBpL3YxL2FjY291bnRzL2FjYy1hbGljZS0xIiwiaWF0IjoxNzk1MDAwMDAwLCJhdGgiOiJ4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4In0.WJvMkdE9cywatgWjVmajn2osbVTUojHZiPun_SD3jDCqKe3jbpsk18v7tCC0xQJ-e20K8lTVlV-keTKrtD8dXQ"
+    ]
+   },
+   "method": "GET",
+   "template": "/api/v1/accounts/{id}",
+   "params": {
+    "id": "ü"
+   },
+   "expect": {
+    "ok": true,
+    "reason": "ok",
+    "path": "/api/v1/accounts/%C3%BC"
+   }
+  },
+  {
+   "name": "param_encoded_slash",
+   "note": "decoded '/' in a param re-encoded as %2F",
+   "key": "w11-test-view-mac-key",
+   "verifier_view": {
+    "method": "GET",
+    "uri": "/api/v1/public/a%2Fb"
+   },
+   "headers": {
+    "x-verified-view": [
+     "v1;oGBq2CWP3hWr8i08ju981SS-p-lJoBKyWu5XQpAzk0M"
+    ],
+    "dpop": [
+     "eyJ0eXAiOiJkcG9wK2p3dCIsImFsZyI6IkVTMjU2IiwiandrIjp7Imt0eSI6IkVDIiwiY3J2IjoiUC0yNTYiLCJ4IjoiUG1lMjhDbEFhcUpzOU1mVWpZX3FLUVpFZUJzZkZFcy1RVTdzUnlXdzYyWSIsInkiOiJMQU5rWWxLLWN5Ny1hZzJ2SHB6eDkwUFFtcHQ3cGNsaUxXNnNrSEUyNjVvIn19.eyJqdGkiOiI2ZjFjMmI5ZS0wZDNhLTRjNTUtOWE0My0yZjVkNmU3YThiOTAiLCJodG0iOiJHRVQiLCJodHUiOiJodHRwOi8vYXBpLmJlbmNoLnRlc3QvYXBpL3YxL2FjY291bnRzL2FjYy1hbGljZS0xIiwiaWF0IjoxNzk1MDAwMDAwLCJhdGgiOiJ4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4In0.WJvMkdE9cywatgWjVmajn2osbVTUojHZiPun_SD3jDCqKe3jbpsk18v7tCC0xQJ-e20K8lTVlV-keTKrtD8dXQ"
+    ]
+   },
+   "method": "GET",
+   "template": "/api/v1/public/{file}",
+   "params": {
+    "file": "a/b"
+   },
+   "expect": {
+    "ok": true,
+    "reason": "ok",
+    "path": "/api/v1/public/a%2Fb"
+   }
+  },
+  {
+   "name": "param_subdelims_literal",
+   "note": "sub-delims and ':' '@' stay literal",
+   "key": "w11-test-view-mac-key",
+   "verifier_view": {
+    "method": "GET",
+    "uri": "/api/v1/accounts/a:b@c;d=e"
+   },
+   "headers": {
+    "x-verified-view": [
+     "v1;yX9rXePjXxqZSMFpsdoGXebeuy9DHfzXTb4ynQ8pQA8"
+    ],
+    "dpop": [
+     "eyJ0eXAiOiJkcG9wK2p3dCIsImFsZyI6IkVTMjU2IiwiandrIjp7Imt0eSI6IkVDIiwiY3J2IjoiUC0yNTYiLCJ4IjoiUG1lMjhDbEFhcUpzOU1mVWpZX3FLUVpFZUJzZkZFcy1RVTdzUnlXdzYyWSIsInkiOiJMQU5rWWxLLWN5Ny1hZzJ2SHB6eDkwUFFtcHQ3cGNsaUxXNnNrSEUyNjVvIn19.eyJqdGkiOiI2ZjFjMmI5ZS0wZDNhLTRjNTUtOWE0My0yZjVkNmU3YThiOTAiLCJodG0iOiJHRVQiLCJodHUiOiJodHRwOi8vYXBpLmJlbmNoLnRlc3QvYXBpL3YxL2FjY291bnRzL2FjYy1hbGljZS0xIiwiaWF0IjoxNzk1MDAwMDAwLCJhdGgiOiJ4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4In0.WJvMkdE9cywatgWjVmajn2osbVTUojHZiPun_SD3jDCqKe3jbpsk18v7tCC0xQJ-e20K8lTVlV-keTKrtD8dXQ"
+    ]
+   },
+   "method": "GET",
+   "template": "/api/v1/accounts/{id}",
+   "params": {
+    "id": "a:b@c;d=e"
+   },
+   "expect": {
+    "ok": true,
+    "reason": "ok",
+    "path": "/api/v1/accounts/a:b@c;d=e"
+   }
+  },
+  {
+   "name": "param_percent",
+   "note": "a literal '%' in a decoded param becomes %25",
+   "key": "w11-test-view-mac-key",
+   "verifier_view": {
+    "method": "GET",
+    "uri": "/api/v1/accounts/100%25"
+   },
+   "headers": {
+    "x-verified-view": [
+     "v1;M3NV0q0RzdqxwcrT1UuMxTerUnHzZpWiU43XxLDfmZ8"
+    ],
+    "dpop": [
+     "eyJ0eXAiOiJkcG9wK2p3dCIsImFsZyI6IkVTMjU2IiwiandrIjp7Imt0eSI6IkVDIiwiY3J2IjoiUC0yNTYiLCJ4IjoiUG1lMjhDbEFhcUpzOU1mVWpZX3FLUVpFZUJzZkZFcy1RVTdzUnlXdzYyWSIsInkiOiJMQU5rWWxLLWN5Ny1hZzJ2SHB6eDkwUFFtcHQ3cGNsaUxXNnNrSEUyNjVvIn19.eyJqdGkiOiI2ZjFjMmI5ZS0wZDNhLTRjNTUtOWE0My0yZjVkNmU3YThiOTAiLCJodG0iOiJHRVQiLCJodHUiOiJodHRwOi8vYXBpLmJlbmNoLnRlc3QvYXBpL3YxL2FjY291bnRzL2FjYy1hbGljZS0xIiwiaWF0IjoxNzk1MDAwMDAwLCJhdGgiOiJ4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4In0.WJvMkdE9cywatgWjVmajn2osbVTUojHZiPun_SD3jDCqKe3jbpsk18v7tCC0xQJ-e20K8lTVlV-keTKrtD8dXQ"
+    ]
+   },
+   "method": "GET",
+   "template": "/api/v1/accounts/{id}",
+   "params": {
+    "id": "100%"
+   },
+   "expect": {
+    "ok": true,
+    "reason": "ok",
+    "path": "/api/v1/accounts/100%25"
+   }
+  },
+  {
+   "name": "prefix_mount_v2",
+   "note": "sub-router prefix is part of the template",
+   "key": "w11-test-view-mac-key",
+   "verifier_view": {
+    "method": "GET",
+    "uri": "/api/v2/accounts/acc-alice-1"
+   },
+   "headers": {
+    "x-verified-view": [
+     "v1;84Re3hNrOkMogv_PkU79poFHvhqh5EqjvCciafx7fGg"
+    ],
+    "dpop": [
+     "eyJ0eXAiOiJkcG9wK2p3dCIsImFsZyI6IkVTMjU2IiwiandrIjp7Imt0eSI6IkVDIiwiY3J2IjoiUC0yNTYiLCJ4IjoiUG1lMjhDbEFhcUpzOU1mVWpZX3FLUVpFZUJzZkZFcy1RVTdzUnlXdzYyWSIsInkiOiJMQU5rWWxLLWN5Ny1hZzJ2SHB6eDkwUFFtcHQ3cGNsaUxXNnNrSEUyNjVvIn19.eyJqdGkiOiI2ZjFjMmI5ZS0wZDNhLTRjNTUtOWE0My0yZjVkNmU3YThiOTAiLCJodG0iOiJHRVQiLCJodHUiOiJodHRwOi8vYXBpLmJlbmNoLnRlc3QvYXBpL3YxL2FjY291bnRzL2FjYy1hbGljZS0xIiwiaWF0IjoxNzk1MDAwMDAwLCJhdGgiOiJ4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4In0.WJvMkdE9cywatgWjVmajn2osbVTUojHZiPun_SD3jDCqKe3jbpsk18v7tCC0xQJ-e20K8lTVlV-keTKrtD8dXQ"
+    ]
+   },
+   "method": "GET",
+   "template": "/api/v2/accounts/{id}",
+   "params": {
+    "id": "acc-alice-1"
+   },
+   "expect": {
+    "ok": true,
+    "reason": "ok",
+    "path": "/api/v2/accounts/acc-alice-1"
+   }
+  },
+  {
+   "name": "g1_query_dispatch_not_covered",
+   "note": "G1: op=freeze vs op=close is NOT covered by D-B (path-only MAC)",
+   "key": "w11-test-view-mac-key",
+   "verifier_view": {
+    "method": "POST",
+    "uri": "/api/v1/accounts/acc-alice-1/actions?op=freeze"
+   },
+   "headers": {
+    "x-verified-view": [
+     "v1;K_K8Y9VOQ068JrcZt-ikXjz3WY27j8F1DCuqWYjK-_0"
+    ],
+    "dpop": [
+     "eyJ0eXAiOiJkcG9wK2p3dCIsImFsZyI6IkVTMjU2IiwiandrIjp7Imt0eSI6IkVDIiwiY3J2IjoiUC0yNTYiLCJ4IjoiUG1lMjhDbEFhcUpzOU1mVWpZX3FLUVpFZUJzZkZFcy1RVTdzUnlXdzYyWSIsInkiOiJMQU5rWWxLLWN5Ny1hZzJ2SHB6eDkwUFFtcHQ3cGNsaUxXNnNrSEUyNjVvIn19.eyJqdGkiOiI2ZjFjMmI5ZS0wZDNhLTRjNTUtOWE0My0yZjVkNmU3YThiOTAiLCJodG0iOiJHRVQiLCJodHUiOiJodHRwOi8vYXBpLmJlbmNoLnRlc3QvYXBpL3YxL2FjY291bnRzL2FjYy1hbGljZS0xIiwiaWF0IjoxNzk1MDAwMDAwLCJhdGgiOiJ4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4In0.WJvMkdE9cywatgWjVmajn2osbVTUojHZiPun_SD3jDCqKe3jbpsk18v7tCC0xQJ-e20K8lTVlV-keTKrtD8dXQ"
+    ]
+   },
+   "method": "POST",
+   "template": "/api/v1/accounts/{id}/actions",
+   "params": {
+    "id": "acc-alice-1"
+   },
+   "expect": {
+    "ok": true,
+    "reason": "ok",
+    "path": "/api/v1/accounts/acc-alice-1/actions"
+   }
+  },
+  {
+   "name": "g1_method_override",
+   "note": "G1: verifier saw POST, executor dispatched DELETE after override",
+   "key": "w11-test-view-mac-key",
+   "verifier_view": {
+    "method": "POST",
+    "uri": "/api/v1/accounts/acc-alice-1"
+   },
+   "headers": {
+    "x-verified-view": [
+     "v1;N4s7QHYaDb3aQUPoQooW4DgF1ewMac5ooXCCAP6W7gM"
+    ],
+    "dpop": [
+     "eyJ0eXAiOiJkcG9wK2p3dCIsImFsZyI6IkVTMjU2IiwiandrIjp7Imt0eSI6IkVDIiwiY3J2IjoiUC0yNTYiLCJ4IjoiUG1lMjhDbEFhcUpzOU1mVWpZX3FLUVpFZUJzZkZFcy1RVTdzUnlXdzYyWSIsInkiOiJMQU5rWWxLLWN5Ny1hZzJ2SHB6eDkwUFFtcHQ3cGNsaUxXNnNrSEUyNjVvIn19.eyJqdGkiOiI2ZjFjMmI5ZS0wZDNhLTRjNTUtOWE0My0yZjVkNmU3YThiOTAiLCJodG0iOiJHRVQiLCJodHUiOiJodHRwOi8vYXBpLmJlbmNoLnRlc3QvYXBpL3YxL2FjY291bnRzL2FjYy1hbGljZS0xIiwiaWF0IjoxNzk1MDAwMDAwLCJhdGgiOiJ4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4In0.WJvMkdE9cywatgWjVmajn2osbVTUojHZiPun_SD3jDCqKe3jbpsk18v7tCC0xQJ-e20K8lTVlV-keTKrtD8dXQ"
+    ]
+   },
+   "method": "DELETE",
+   "template": "/api/v1/accounts/{id}",
+   "params": {
+    "id": "acc-alice-1"
+   },
+   "expect": {
+    "ok": false,
+    "reason": "view_mac_mismatch",
+    "path": "/api/v1/accounts/acc-alice-1"
+   }
+  },
+  {
+   "name": "g2_route_differs",
+   "note": "G2: verifier view publicFile, router matched adminListUsers",
+   "key": "w11-test-view-mac-key",
+   "verifier_view": {
+    "method": "GET",
+    "uri": "/api/v1/public/..%2Fadmin/users"
+   },
+   "headers": {
+    "x-verified-view": [
+     "v1;RxcVAAEFEd3BjZF8cjjqAV04D-YtJgpzNIo_df8TSlI"
+    ],
+    "dpop": [
+     "eyJ0eXAiOiJkcG9wK2p3dCIsImFsZyI6IkVTMjU2IiwiandrIjp7Imt0eSI6IkVDIiwiY3J2IjoiUC0yNTYiLCJ4IjoiUG1lMjhDbEFhcUpzOU1mVWpZX3FLUVpFZUJzZkZFcy1RVTdzUnlXdzYyWSIsInkiOiJMQU5rWWxLLWN5Ny1hZzJ2SHB6eDkwUFFtcHQ3cGNsaUxXNnNrSEUyNjVvIn19.eyJqdGkiOiI2ZjFjMmI5ZS0wZDNhLTRjNTUtOWE0My0yZjVkNmU3YThiOTAiLCJodG0iOiJHRVQiLCJodHUiOiJodHRwOi8vYXBpLmJlbmNoLnRlc3QvYXBpL3YxL2FjY291bnRzL2FjYy1hbGljZS0xIiwiaWF0IjoxNzk1MDAwMDAwLCJhdGgiOiJ4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4In0.WJvMkdE9cywatgWjVmajn2osbVTUojHZiPun_SD3jDCqKe3jbpsk18v7tCC0xQJ-e20K8lTVlV-keTKrtD8dXQ"
+    ]
+   },
+   "method": "GET",
+   "template": "/api/v1/admin/users",
+   "params": {},
+   "expect": {
+    "ok": false,
+    "reason": "view_mac_mismatch",
+    "path": "/api/v1/admin/users"
+   }
+  },
+  {
+   "name": "g2_trailing_slash",
+   "note": "G2: trailing-slash tolerant router",
+   "key": "w11-test-view-mac-key",
+   "verifier_view": {
+    "method": "GET",
+    "uri": "/api/v1/accounts/"
+   },
+   "headers": {
+    "x-verified-view": [
+     "v1;J0aZBiQ8nSYPtvr9F3utI37iHU_EGmFkXcuVBXEkpCs"
+    ],
+    "dpop": [
+     "eyJ0eXAiOiJkcG9wK2p3dCIsImFsZyI6IkVTMjU2IiwiandrIjp7Imt0eSI6IkVDIiwiY3J2IjoiUC0yNTYiLCJ4IjoiUG1lMjhDbEFhcUpzOU1mVWpZX3FLUVpFZUJzZkZFcy1RVTdzUnlXdzYyWSIsInkiOiJMQU5rWWxLLWN5Ny1hZzJ2SHB6eDkwUFFtcHQ3cGNsaUxXNnNrSEUyNjVvIn19.eyJqdGkiOiI2ZjFjMmI5ZS0wZDNhLTRjNTUtOWE0My0yZjVkNmU3YThiOTAiLCJodG0iOiJHRVQiLCJodHUiOiJodHRwOi8vYXBpLmJlbmNoLnRlc3QvYXBpL3YxL2FjY291bnRzL2FjYy1hbGljZS0xIiwiaWF0IjoxNzk1MDAwMDAwLCJhdGgiOiJ4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4In0.WJvMkdE9cywatgWjVmajn2osbVTUojHZiPun_SD3jDCqKe3jbpsk18v7tCC0xQJ-e20K8lTVlV-keTKrtD8dXQ"
+    ]
+   },
+   "method": "GET",
+   "template": "/api/v1/accounts",
+   "params": {},
+   "expect": {
+    "ok": false,
+    "reason": "view_mac_mismatch",
+    "path": "/api/v1/accounts"
+   }
+  },
+  {
+   "name": "g2_case_insensitive_router",
+   "note": "G2: case-insensitive router",
+   "key": "w11-test-view-mac-key",
+   "verifier_view": {
+    "method": "GET",
+    "uri": "/API/v1/accounts"
+   },
+   "headers": {
+    "x-verified-view": [
+     "v1;RAUD4eKsBfWNJ6SiYmCkKr0JZdCPTsZi-S6nQtbY4SQ"
+    ],
+    "dpop": [
+     "eyJ0eXAiOiJkcG9wK2p3dCIsImFsZyI6IkVTMjU2IiwiandrIjp7Imt0eSI6IkVDIiwiY3J2IjoiUC0yNTYiLCJ4IjoiUG1lMjhDbEFhcUpzOU1mVWpZX3FLUVpFZUJzZkZFcy1RVTdzUnlXdzYyWSIsInkiOiJMQU5rWWxLLWN5Ny1hZzJ2SHB6eDkwUFFtcHQ3cGNsaUxXNnNrSEUyNjVvIn19.eyJqdGkiOiI2ZjFjMmI5ZS0wZDNhLTRjNTUtOWE0My0yZjVkNmU3YThiOTAiLCJodG0iOiJHRVQiLCJodHUiOiJodHRwOi8vYXBpLmJlbmNoLnRlc3QvYXBpL3YxL2FjY291bnRzL2FjYy1hbGljZS0xIiwiaWF0IjoxNzk1MDAwMDAwLCJhdGgiOiJ4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4In0.WJvMkdE9cywatgWjVmajn2osbVTUojHZiPun_SD3jDCqKe3jbpsk18v7tCC0xQJ-e20K8lTVlV-keTKrtD8dXQ"
+    ]
+   },
+   "method": "GET",
+   "template": "/api/v1/accounts",
+   "params": {},
+   "expect": {
+    "ok": false,
+    "reason": "view_mac_mismatch",
+    "path": "/api/v1/accounts"
+   }
+  },
+  {
+   "name": "g2_semicolon_param",
+   "note": "G2: router strips ;matrix params, verifier keeps them",
+   "key": "w11-test-view-mac-key",
+   "verifier_view": {
+    "method": "GET",
+    "uri": "/api/v1/accounts/acc-alice-1;x=1"
+   },
+   "headers": {
+    "x-verified-view": [
+     "v1;2-y7AVtafzDMGqrwDMlzdTRURs003OfVcCEm9Z_gJ38"
+    ],
+    "dpop": [
+     "eyJ0eXAiOiJkcG9wK2p3dCIsImFsZyI6IkVTMjU2IiwiandrIjp7Imt0eSI6IkVDIiwiY3J2IjoiUC0yNTYiLCJ4IjoiUG1lMjhDbEFhcUpzOU1mVWpZX3FLUVpFZUJzZkZFcy1RVTdzUnlXdzYyWSIsInkiOiJMQU5rWWxLLWN5Ny1hZzJ2SHB6eDkwUFFtcHQ3cGNsaUxXNnNrSEUyNjVvIn19.eyJqdGkiOiI2ZjFjMmI5ZS0wZDNhLTRjNTUtOWE0My0yZjVkNmU3YThiOTAiLCJodG0iOiJHRVQiLCJodHUiOiJodHRwOi8vYXBpLmJlbmNoLnRlc3QvYXBpL3YxL2FjY291bnRzL2FjYy1hbGljZS0xIiwiaWF0IjoxNzk1MDAwMDAwLCJhdGgiOiJ4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4In0.WJvMkdE9cywatgWjVmajn2osbVTUojHZiPun_SD3jDCqKe3jbpsk18v7tCC0xQJ-e20K8lTVlV-keTKrtD8dXQ"
+    ]
+   },
+   "method": "GET",
+   "template": "/api/v1/accounts/{id}",
+   "params": {
+    "id": "acc-alice-1"
+   },
+   "expect": {
+    "ok": false,
+    "reason": "view_mac_mismatch",
+    "path": "/api/v1/accounts/acc-alice-1"
+   }
+  },
+  {
+   "name": "g2_other_id",
+   "note": "different {id}",
+   "key": "w11-test-view-mac-key",
+   "verifier_view": {
+    "method": "GET",
+    "uri": "/api/v1/accounts/acc-alice-1"
+   },
+   "headers": {
+    "x-verified-view": [
+     "v1;LRI0v4jZ9k-dxigAqClfg443Akpa_ek2DDuu4va7S3U"
+    ],
+    "dpop": [
+     "eyJ0eXAiOiJkcG9wK2p3dCIsImFsZyI6IkVTMjU2IiwiandrIjp7Imt0eSI6IkVDIiwiY3J2IjoiUC0yNTYiLCJ4IjoiUG1lMjhDbEFhcUpzOU1mVWpZX3FLUVpFZUJzZkZFcy1RVTdzUnlXdzYyWSIsInkiOiJMQU5rWWxLLWN5Ny1hZzJ2SHB6eDkwUFFtcHQ3cGNsaUxXNnNrSEUyNjVvIn19.eyJqdGkiOiI2ZjFjMmI5ZS0wZDNhLTRjNTUtOWE0My0yZjVkNmU3YThiOTAiLCJodG0iOiJHRVQiLCJodHUiOiJodHRwOi8vYXBpLmJlbmNoLnRlc3QvYXBpL3YxL2FjY291bnRzL2FjYy1hbGljZS0xIiwiaWF0IjoxNzk1MDAwMDAwLCJhdGgiOiJ4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4In0.WJvMkdE9cywatgWjVmajn2osbVTUojHZiPun_SD3jDCqKe3jbpsk18v7tCC0xQJ-e20K8lTVlV-keTKrtD8dXQ"
+    ]
+   },
+   "method": "GET",
+   "template": "/api/v1/accounts/{id}",
+   "params": {
+    "id": "acc-bob-1"
+   },
+   "expect": {
+    "ok": false,
+    "reason": "view_mac_mismatch",
+    "path": "/api/v1/accounts/acc-bob-1"
+   }
+  },
+  {
+   "name": "param_dot_dot",
+   "note": "a decoded '..' param would collapse under canon: fail closed",
+   "key": "w11-test-view-mac-key",
+   "verifier_view": {
+    "method": "GET",
+    "uri": "/api/v1/public/%2E%2E"
+   },
+   "headers": {
+    "x-verified-view": [
+     "v1;gSoc9gk15ONi0e1ZbihnjJyk9XyhBEKPji1_2iEDdqg"
+    ],
+    "dpop": [
+     "eyJ0eXAiOiJkcG9wK2p3dCIsImFsZyI6IkVTMjU2IiwiandrIjp7Imt0eSI6IkVDIiwiY3J2IjoiUC0yNTYiLCJ4IjoiUG1lMjhDbEFhcUpzOU1mVWpZX3FLUVpFZUJzZkZFcy1RVTdzUnlXdzYyWSIsInkiOiJMQU5rWWxLLWN5Ny1hZzJ2SHB6eDkwUFFtcHQ3cGNsaUxXNnNrSEUyNjVvIn19.eyJqdGkiOiI2ZjFjMmI5ZS0wZDNhLTRjNTUtOWE0My0yZjVkNmU3YThiOTAiLCJodG0iOiJHRVQiLCJodHUiOiJodHRwOi8vYXBpLmJlbmNoLnRlc3QvYXBpL3YxL2FjY291bnRzL2FjYy1hbGljZS0xIiwiaWF0IjoxNzk1MDAwMDAwLCJhdGgiOiJ4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4In0.WJvMkdE9cywatgWjVmajn2osbVTUojHZiPun_SD3jDCqKe3jbpsk18v7tCC0xQJ-e20K8lTVlV-keTKrtD8dXQ"
+    ]
+   },
+   "method": "GET",
+   "template": "/api/v1/public/{file}",
+   "params": {
+    "file": ".."
+   },
+   "expect": {
+    "ok": false,
+    "reason": "view_param_dot_segment",
+    "path": null
+   }
+  },
+  {
+   "name": "param_dot",
+   "note": "a decoded '.' param: fail closed",
+   "key": "w11-test-view-mac-key",
+   "verifier_view": {
+    "method": "GET",
+    "uri": "/api/v1/public/%2E"
+   },
+   "headers": {
+    "x-verified-view": [
+     "v1;nMYekkJkASsxbk4CwCkDHOqrzMMnWnOCkdXXqfKHfZc"
+    ],
+    "dpop": [
+     "eyJ0eXAiOiJkcG9wK2p3dCIsImFsZyI6IkVTMjU2IiwiandrIjp7Imt0eSI6IkVDIiwiY3J2IjoiUC0yNTYiLCJ4IjoiUG1lMjhDbEFhcUpzOU1mVWpZX3FLUVpFZUJzZkZFcy1RVTdzUnlXdzYyWSIsInkiOiJMQU5rWWxLLWN5Ny1hZzJ2SHB6eDkwUFFtcHQ3cGNsaUxXNnNrSEUyNjVvIn19.eyJqdGkiOiI2ZjFjMmI5ZS0wZDNhLTRjNTUtOWE0My0yZjVkNmU3YThiOTAiLCJodG0iOiJHRVQiLCJodHUiOiJodHRwOi8vYXBpLmJlbmNoLnRlc3QvYXBpL3YxL2FjY291bnRzL2FjYy1hbGljZS0xIiwiaWF0IjoxNzk1MDAwMDAwLCJhdGgiOiJ4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4In0.WJvMkdE9cywatgWjVmajn2osbVTUojHZiPun_SD3jDCqKe3jbpsk18v7tCC0xQJ-e20K8lTVlV-keTKrtD8dXQ"
+    ]
+   },
+   "method": "GET",
+   "template": "/api/v1/public/{file}",
+   "params": {
+    "file": "."
+   },
+   "expect": {
+    "ok": false,
+    "reason": "view_param_dot_segment",
+    "path": null
+   }
+  },
+  {
+   "name": "missing_header",
+   "note": "no X-Verified-View (verifier bypassed)",
+   "key": "w11-test-view-mac-key",
+   "verifier_view": null,
+   "headers": {
+    "x-verified-view": [],
+    "dpop": [
+     "eyJ0eXAiOiJkcG9wK2p3dCIsImFsZyI6IkVTMjU2IiwiandrIjp7Imt0eSI6IkVDIiwiY3J2IjoiUC0yNTYiLCJ4IjoiUG1lMjhDbEFhcUpzOU1mVWpZX3FLUVpFZUJzZkZFcy1RVTdzUnlXdzYyWSIsInkiOiJMQU5rWWxLLWN5Ny1hZzJ2SHB6eDkwUFFtcHQ3cGNsaUxXNnNrSEUyNjVvIn19.eyJqdGkiOiI2ZjFjMmI5ZS0wZDNhLTRjNTUtOWE0My0yZjVkNmU3YThiOTAiLCJodG0iOiJHRVQiLCJodHUiOiJodHRwOi8vYXBpLmJlbmNoLnRlc3QvYXBpL3YxL2FjY291bnRzL2FjYy1hbGljZS0xIiwiaWF0IjoxNzk1MDAwMDAwLCJhdGgiOiJ4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4In0.WJvMkdE9cywatgWjVmajn2osbVTUojHZiPun_SD3jDCqKe3jbpsk18v7tCC0xQJ-e20K8lTVlV-keTKrtD8dXQ"
+    ]
+   },
+   "method": "GET",
+   "template": "/api/v1/me",
+   "params": {},
+   "expect": {
+    "ok": false,
+    "reason": "view_mac_missing",
+    "path": null
+   }
+  },
+  {
+   "name": "g3_duplicate_header",
+   "note": "G3: client-injected copy plus the gateway's",
+   "key": "w11-test-view-mac-key",
+   "verifier_view": null,
+   "headers": {
+    "x-verified-view": [
+     "v1;Qqei1_xSJjIFsG6G4i0QZ1WZLHZiVKp-CM6iXklHIJQ",
+     "v1;dKRD1W1TU5eP0NL7dDKd57mF04GCEr6ylUINnBEZnv4"
+    ],
+    "dpop": [
+     "eyJ0eXAiOiJkcG9wK2p3dCIsImFsZyI6IkVTMjU2IiwiandrIjp7Imt0eSI6IkVDIiwiY3J2IjoiUC0yNTYiLCJ4IjoiUG1lMjhDbEFhcUpzOU1mVWpZX3FLUVpFZUJzZkZFcy1RVTdzUnlXdzYyWSIsInkiOiJMQU5rWWxLLWN5Ny1hZzJ2SHB6eDkwUFFtcHQ3cGNsaUxXNnNrSEUyNjVvIn19.eyJqdGkiOiI2ZjFjMmI5ZS0wZDNhLTRjNTUtOWE0My0yZjVkNmU3YThiOTAiLCJodG0iOiJHRVQiLCJodHUiOiJodHRwOi8vYXBpLmJlbmNoLnRlc3QvYXBpL3YxL2FjY291bnRzL2FjYy1hbGljZS0xIiwiaWF0IjoxNzk1MDAwMDAwLCJhdGgiOiJ4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4In0.WJvMkdE9cywatgWjVmajn2osbVTUojHZiPun_SD3jDCqKe3jbpsk18v7tCC0xQJ-e20K8lTVlV-keTKrtD8dXQ"
+    ]
+   },
+   "method": "GET",
+   "template": "/api/v1/me",
+   "params": {},
+   "expect": {
+    "ok": false,
+    "reason": "view_mac_multiple",
+    "path": null
+   }
+  },
+  {
+   "name": "malformed_version",
+   "note": "unknown version prefix",
+   "key": "w11-test-view-mac-key",
+   "verifier_view": null,
+   "headers": {
+    "x-verified-view": [
+     "v2;dKRD1W1TU5eP0NL7dDKd57mF04GCEr6ylUINnBEZnv4"
+    ],
+    "dpop": [
+     "eyJ0eXAiOiJkcG9wK2p3dCIsImFsZyI6IkVTMjU2IiwiandrIjp7Imt0eSI6IkVDIiwiY3J2IjoiUC0yNTYiLCJ4IjoiUG1lMjhDbEFhcUpzOU1mVWpZX3FLUVpFZUJzZkZFcy1RVTdzUnlXdzYyWSIsInkiOiJMQU5rWWxLLWN5Ny1hZzJ2SHB6eDkwUFFtcHQ3cGNsaUxXNnNrSEUyNjVvIn19.eyJqdGkiOiI2ZjFjMmI5ZS0wZDNhLTRjNTUtOWE0My0yZjVkNmU3YThiOTAiLCJodG0iOiJHRVQiLCJodHUiOiJodHRwOi8vYXBpLmJlbmNoLnRlc3QvYXBpL3YxL2FjY291bnRzL2FjYy1hbGljZS0xIiwiaWF0IjoxNzk1MDAwMDAwLCJhdGgiOiJ4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4In0.WJvMkdE9cywatgWjVmajn2osbVTUojHZiPun_SD3jDCqKe3jbpsk18v7tCC0xQJ-e20K8lTVlV-keTKrtD8dXQ"
+    ]
+   },
+   "method": "GET",
+   "template": "/api/v1/me",
+   "params": {},
+   "expect": {
+    "ok": false,
+    "reason": "view_mac_malformed",
+    "path": null
+   }
+  },
+  {
+   "name": "malformed_padding",
+   "note": "padded base64url",
+   "key": "w11-test-view-mac-key",
+   "verifier_view": null,
+   "headers": {
+    "x-verified-view": [
+     "v1;dKRD1W1TU5eP0NL7dDKd57mF04GCEr6ylUINnBEZnv4="
+    ],
+    "dpop": [
+     "eyJ0eXAiOiJkcG9wK2p3dCIsImFsZyI6IkVTMjU2IiwiandrIjp7Imt0eSI6IkVDIiwiY3J2IjoiUC0yNTYiLCJ4IjoiUG1lMjhDbEFhcUpzOU1mVWpZX3FLUVpFZUJzZkZFcy1RVTdzUnlXdzYyWSIsInkiOiJMQU5rWWxLLWN5Ny1hZzJ2SHB6eDkwUFFtcHQ3cGNsaUxXNnNrSEUyNjVvIn19.eyJqdGkiOiI2ZjFjMmI5ZS0wZDNhLTRjNTUtOWE0My0yZjVkNmU3YThiOTAiLCJodG0iOiJHRVQiLCJodHUiOiJodHRwOi8vYXBpLmJlbmNoLnRlc3QvYXBpL3YxL2FjY291bnRzL2FjYy1hbGljZS0xIiwiaWF0IjoxNzk1MDAwMDAwLCJhdGgiOiJ4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4In0.WJvMkdE9cywatgWjVmajn2osbVTUojHZiPun_SD3jDCqKe3jbpsk18v7tCC0xQJ-e20K8lTVlV-keTKrtD8dXQ"
+    ]
+   },
+   "method": "GET",
+   "template": "/api/v1/me",
+   "params": {},
+   "expect": {
+    "ok": false,
+    "reason": "view_mac_malformed",
+    "path": null
+   }
+  },
+  {
+   "name": "ows_trimmed",
+   "note": "surrounding OWS is ignored",
+   "key": "w11-test-view-mac-key",
+   "verifier_view": null,
+   "headers": {
+    "x-verified-view": [
+     " v1;dKRD1W1TU5eP0NL7dDKd57mF04GCEr6ylUINnBEZnv4 "
+    ],
+    "dpop": [
+     "eyJ0eXAiOiJkcG9wK2p3dCIsImFsZyI6IkVTMjU2IiwiandrIjp7Imt0eSI6IkVDIiwiY3J2IjoiUC0yNTYiLCJ4IjoiUG1lMjhDbEFhcUpzOU1mVWpZX3FLUVpFZUJzZkZFcy1RVTdzUnlXdzYyWSIsInkiOiJMQU5rWWxLLWN5Ny1hZzJ2SHB6eDkwUFFtcHQ3cGNsaUxXNnNrSEUyNjVvIn19.eyJqdGkiOiI2ZjFjMmI5ZS0wZDNhLTRjNTUtOWE0My0yZjVkNmU3YThiOTAiLCJodG0iOiJHRVQiLCJodHUiOiJodHRwOi8vYXBpLmJlbmNoLnRlc3QvYXBpL3YxL2FjY291bnRzL2FjYy1hbGljZS0xIiwiaWF0IjoxNzk1MDAwMDAwLCJhdGgiOiJ4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4In0.WJvMkdE9cywatgWjVmajn2osbVTUojHZiPun_SD3jDCqKe3jbpsk18v7tCC0xQJ-e20K8lTVlV-keTKrtD8dXQ"
+    ]
+   },
+   "method": "GET",
+   "template": "/api/v1/me",
+   "params": {},
+   "expect": {
+    "ok": true,
+    "reason": "ok",
+    "path": "/api/v1/me"
+   }
+  },
+  {
+   "name": "wrong_key",
+   "note": "MAC forged with another key",
+   "key": "w11-test-view-mac-key",
+   "verifier_view": null,
+   "headers": {
+    "x-verified-view": [
+     "v1;eyjQp2IVj8c8nWySjivOMlk0yrPA9hR4M4-g7TgNG4k"
+    ],
+    "dpop": [
+     "eyJ0eXAiOiJkcG9wK2p3dCIsImFsZyI6IkVTMjU2IiwiandrIjp7Imt0eSI6IkVDIiwiY3J2IjoiUC0yNTYiLCJ4IjoiUG1lMjhDbEFhcUpzOU1mVWpZX3FLUVpFZUJzZkZFcy1RVTdzUnlXdzYyWSIsInkiOiJMQU5rWWxLLWN5Ny1hZzJ2SHB6eDkwUFFtcHQ3cGNsaUxXNnNrSEUyNjVvIn19.eyJqdGkiOiI2ZjFjMmI5ZS0wZDNhLTRjNTUtOWE0My0yZjVkNmU3YThiOTAiLCJodG0iOiJHRVQiLCJodHUiOiJodHRwOi8vYXBpLmJlbmNoLnRlc3QvYXBpL3YxL2FjY291bnRzL2FjYy1hbGljZS0xIiwiaWF0IjoxNzk1MDAwMDAwLCJhdGgiOiJ4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4In0.WJvMkdE9cywatgWjVmajn2osbVTUojHZiPun_SD3jDCqKe3jbpsk18v7tCC0xQJ-e20K8lTVlV-keTKrtD8dXQ"
+    ]
+   },
+   "method": "GET",
+   "template": "/api/v1/me",
+   "params": {},
+   "expect": {
+    "ok": false,
+    "reason": "view_mac_mismatch",
+    "path": "/api/v1/me"
+   }
+  },
+  {
+   "name": "dpop_swapped_jti",
+   "note": "DPoP header replaced by a proof with another jti",
+   "key": "w11-test-view-mac-key",
+   "verifier_view": {
+    "method": "GET",
+    "uri": "/api/v1/me"
+   },
+   "headers": {
+    "x-verified-view": [
+     "v1;dKRD1W1TU5eP0NL7dDKd57mF04GCEr6ylUINnBEZnv4"
+    ],
+    "dpop": [
+     "eyJ0eXAiOiJkcG9wK2p3dCIsImFsZyI6IkVTMjU2IiwiandrIjp7Imt0eSI6IkVDIiwiY3J2IjoiUC0yNTYiLCJ4IjoiUG1lMjhDbEFhcUpzOU1mVWpZX3FLUVpFZUJzZkZFcy1RVTdzUnlXdzYyWSIsInkiOiJMQU5rWWxLLWN5Ny1hZzJ2SHB6eDkwUFFtcHQ3cGNsaUxXNnNrSEUyNjVvIn19.eyJqdGkiOiIxMTExMTExMS0yMjIyLTQzMzMtODQ0NC01NTU1NTU1NTU1NTUiLCJodG0iOiJHRVQiLCJodHUiOiJodHRwOi8vYXBpLmJlbmNoLnRlc3QveCIsImlhdCI6MTc5NTAwMDAwMCwiYXRoIjoieHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eCJ9.5AAcQrp6guc9ujHDSLuBeXXUarorjCFkHmtI1MJFj0sViwH9qsMGcGqAKP6EYT2mG4640DIHFIPYRdRzwHIo3Q"
+    ]
+   },
+   "method": "GET",
+   "template": "/api/v1/me",
+   "params": {},
+   "expect": {
+    "ok": false,
+    "reason": "view_mac_mismatch",
+    "path": "/api/v1/me"
+   }
+  },
+  {
+   "name": "dpop_swapped_key",
+   "note": "DPoP header replaced by a proof with another key",
+   "key": "w11-test-view-mac-key",
+   "verifier_view": {
+    "method": "GET",
+    "uri": "/api/v1/me"
+   },
+   "headers": {
+    "x-verified-view": [
+     "v1;dKRD1W1TU5eP0NL7dDKd57mF04GCEr6ylUINnBEZnv4"
+    ],
+    "dpop": [
+     "eyJ0eXAiOiJkcG9wK2p3dCIsImFsZyI6IkVTMjU2IiwiandrIjp7Imt0eSI6IkVDIiwiY3J2IjoiUC0yNTYiLCJ4IjoiSFJfZlJnTlFvbDlIRG9jTERQY2RRbkFYSXFweHFQX1FXMl9wSWpIcGY5VSIsInkiOiJmdU52NmVpZHlrLTZ2ZHZFS2dfNmpRUm1KNDlWUnVzRHFoVGMyQ24xblE0In19.eyJqdGkiOiI2ZjFjMmI5ZS0wZDNhLTRjNTUtOWE0My0yZjVkNmU3YThiOTAiLCJodG0iOiJHRVQiLCJodHUiOiJodHRwOi8vYXBpLmJlbmNoLnRlc3QveCIsImlhdCI6MTc5NTAwMDAwMCwiYXRoIjoieHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eCJ9.EdbFf4mYvQkl4-YnpB7gntcghNwRPFs32iVLCzmAZ8j1yLjaIvIy8eUPLl__f184nSZ4rtIUgpCT0HavUHDYZQ"
+    ]
+   },
+   "method": "GET",
+   "template": "/api/v1/me",
+   "params": {},
+   "expect": {
+    "ok": false,
+    "reason": "view_mac_mismatch",
+    "path": "/api/v1/me"
+   }
+  },
+  {
+   "name": "dpop_missing",
+   "note": "no DPoP header",
+   "key": "w11-test-view-mac-key",
+   "verifier_view": {
+    "method": "GET",
+    "uri": "/api/v1/me"
+   },
+   "headers": {
+    "x-verified-view": [
+     "v1;dKRD1W1TU5eP0NL7dDKd57mF04GCEr6ylUINnBEZnv4"
+    ],
+    "dpop": []
+   },
+   "method": "GET",
+   "template": "/api/v1/me",
+   "params": {},
+   "expect": {
+    "ok": false,
+    "reason": "view_mac_no_dpop",
+    "path": null
+   }
+  },
+  {
+   "name": "dpop_multiple",
+   "note": "two DPoP headers",
+   "key": "w11-test-view-mac-key",
+   "verifier_view": {
+    "method": "GET",
+    "uri": "/api/v1/me"
+   },
+   "headers": {
+    "x-verified-view": [
+     "v1;dKRD1W1TU5eP0NL7dDKd57mF04GCEr6ylUINnBEZnv4"
+    ],
+    "dpop": [
+     "eyJ0eXAiOiJkcG9wK2p3dCIsImFsZyI6IkVTMjU2IiwiandrIjp7Imt0eSI6IkVDIiwiY3J2IjoiUC0yNTYiLCJ4IjoiUG1lMjhDbEFhcUpzOU1mVWpZX3FLUVpFZUJzZkZFcy1RVTdzUnlXdzYyWSIsInkiOiJMQU5rWWxLLWN5Ny1hZzJ2SHB6eDkwUFFtcHQ3cGNsaUxXNnNrSEUyNjVvIn19.eyJqdGkiOiI2ZjFjMmI5ZS0wZDNhLTRjNTUtOWE0My0yZjVkNmU3YThiOTAiLCJodG0iOiJHRVQiLCJodHUiOiJodHRwOi8vYXBpLmJlbmNoLnRlc3QvYXBpL3YxL2FjY291bnRzL2FjYy1hbGljZS0xIiwiaWF0IjoxNzk1MDAwMDAwLCJhdGgiOiJ4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4In0.WJvMkdE9cywatgWjVmajn2osbVTUojHZiPun_SD3jDCqKe3jbpsk18v7tCC0xQJ-e20K8lTVlV-keTKrtD8dXQ",
+     "eyJ0eXAiOiJkcG9wK2p3dCIsImFsZyI6IkVTMjU2IiwiandrIjp7Imt0eSI6IkVDIiwiY3J2IjoiUC0yNTYiLCJ4IjoiUG1lMjhDbEFhcUpzOU1mVWpZX3FLUVpFZUJzZkZFcy1RVTdzUnlXdzYyWSIsInkiOiJMQU5rWWxLLWN5Ny1hZzJ2SHB6eDkwUFFtcHQ3cGNsaUxXNnNrSEUyNjVvIn19.eyJqdGkiOiI2ZjFjMmI5ZS0wZDNhLTRjNTUtOWE0My0yZjVkNmU3YThiOTAiLCJodG0iOiJHRVQiLCJodHUiOiJodHRwOi8vYXBpLmJlbmNoLnRlc3QvYXBpL3YxL2FjY291bnRzL2FjYy1hbGljZS0xIiwiaWF0IjoxNzk1MDAwMDAwLCJhdGgiOiJ4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4In0.WJvMkdE9cywatgWjVmajn2osbVTUojHZiPun_SD3jDCqKe3jbpsk18v7tCC0xQJ-e20K8lTVlV-keTKrtD8dXQ"
+    ]
+   },
+   "method": "GET",
+   "template": "/api/v1/me",
+   "params": {},
+   "expect": {
+    "ok": false,
+    "reason": "view_mac_no_dpop",
+    "path": null
+   }
+  },
+  {
+   "name": "dpop_garbage",
+   "note": "unparseable DPoP header",
+   "key": "w11-test-view-mac-key",
+   "verifier_view": {
+    "method": "GET",
+    "uri": "/api/v1/me"
+   },
+   "headers": {
+    "x-verified-view": [
+     "v1;dKRD1W1TU5eP0NL7dDKd57mF04GCEr6ylUINnBEZnv4"
+    ],
+    "dpop": [
+     "not.a.jwt"
+    ]
+   },
+   "method": "GET",
+   "template": "/api/v1/me",
+   "params": {},
+   "expect": {
+    "ok": false,
+    "reason": "view_mac_no_dpop",
+    "path": null
+   }
+  }
+ ]
+}

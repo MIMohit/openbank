@@ -1,0 +1,58 @@
+time="2026-11-23T13:11:47+06:00" level=warning msg="Warning: No resource found to remove for project \"w15r-bh-w15r-envoy-default-edge-spring-ovoff\"."
+
+$ /Users/mimohit/openbank/binding/harness/orchestrator/.venv/bin/python -m orchestrator.down /Users/mimohit/openbank/binding/experiments/ext-routes/topologies/w15r-envoy-default-edge-spring-ovoff.yaml
+ Network w15r-bh-w15r-envoy-default-edge-spring-ovoff_default Creating 
+ Network w15r-bh-w15r-envoy-default-edge-spring-ovoff_default Created 
+ Container w15r-bh-w15r-envoy-default-edge-spring-ovoff-executor-1 Creating 
+ Container w15r-bh-w15r-envoy-default-edge-spring-ovoff-verifier-1 Creating 
+ Container w15r-bh-w15r-envoy-default-edge-spring-ovoff-executor-1 Created 
+ Container w15r-bh-w15r-envoy-default-edge-spring-ovoff-verifier-1 Created 
+ Container w15r-bh-w15r-envoy-default-edge-spring-ovoff-gateway-1 Creating 
+ Container w15r-bh-w15r-envoy-default-edge-spring-ovoff-gateway-1 Created 
+ Container w15r-bh-w15r-envoy-default-edge-spring-ovoff-probe-1 Creating 
+ Container w15r-bh-w15r-envoy-default-edge-spring-ovoff-probe-1 Created 
+ Container w15r-bh-w15r-envoy-default-edge-spring-ovoff-executor-1 Starting 
+ Container w15r-bh-w15r-envoy-default-edge-spring-ovoff-verifier-1 Starting 
+ Container w15r-bh-w15r-envoy-default-edge-spring-ovoff-executor-1 Started 
+ Container w15r-bh-w15r-envoy-default-edge-spring-ovoff-verifier-1 Started 
+ Container w15r-bh-w15r-envoy-default-edge-spring-ovoff-gateway-1 Starting 
+ Container w15r-bh-w15r-envoy-default-edge-spring-ovoff-gateway-1 Started 
+ Container w15r-bh-w15r-envoy-default-edge-spring-ovoff-probe-1 Starting 
+ Container w15r-bh-w15r-envoy-default-edge-spring-ovoff-probe-1 Started 
+ Container w15r-bh-w15r-envoy-default-edge-spring-ovoff-gateway-1 Waiting 
+ Container w15r-bh-w15r-envoy-default-edge-spring-ovoff-verifier-1 Waiting 
+ Container w15r-bh-w15r-envoy-default-edge-spring-ovoff-executor-1 Waiting 
+ Container w15r-bh-w15r-envoy-default-edge-spring-ovoff-probe-1 Waiting 
+ Container w15r-bh-w15r-envoy-default-edge-spring-ovoff-executor-1 Healthy 
+ Container w15r-bh-w15r-envoy-default-edge-spring-ovoff-gateway-1 Healthy 
+ Container w15r-bh-w15r-envoy-default-edge-spring-ovoff-verifier-1 Healthy 
+ Container w15r-bh-w15r-envoy-default-edge-spring-ovoff-probe-1 Healthy 
+29124
+
+$ /Users/mimohit/openbank/binding/harness/orchestrator/.venv/bin/python -m orchestrator.up /Users/mimohit/openbank/binding/experiments/ext-routes/topologies/w15r-envoy-default-edge-spring-ovoff.yaml --stubs off --fresh-logs --timeout 300
+[ext_run_matrix] w15r-envoy-default-edge-spring-ovoff/gateway: {'sent': 10, 'errors': 0}
+
+$ /Users/mimohit/openbank/binding/harness/orchestrator/.venv/bin/python /Users/mimohit/openbank/binding/experiments/ext-routes/scripts/ext_run_matrix.py --topology /Users/mimohit/openbank/binding/experiments/ext-routes/topologies/w15r-envoy-default-edge-spring-ovoff.yaml --cases /Users/mimohit/openbank/binding/experiments/ext-routes/reruns/w15r-envoy-default-edge-spring-ovoff/cases.jsonl --out logs/w15r-envoy-default-edge-spring-ovoff/runner.jsonl --minter w3
+ Container w15r-bh-w15r-envoy-default-edge-spring-ovoff-probe-1 Stopping 
+ Container w15r-bh-w15r-envoy-default-edge-spring-ovoff-probe-1 Stopped 
+ Container w15r-bh-w15r-envoy-default-edge-spring-ovoff-probe-1 Removing 
+ Container w15r-bh-w15r-envoy-default-edge-spring-ovoff-probe-1 Removed 
+ Container w15r-bh-w15r-envoy-default-edge-spring-ovoff-gateway-1 Stopping 
+ Container w15r-bh-w15r-envoy-default-edge-spring-ovoff-gateway-1 Stopped 
+ Container w15r-bh-w15r-envoy-default-edge-spring-ovoff-gateway-1 Removing 
+ Container w15r-bh-w15r-envoy-default-edge-spring-ovoff-gateway-1 Removed 
+ Container w15r-bh-w15r-envoy-default-edge-spring-ovoff-executor-1 Stopping 
+ Container w15r-bh-w15r-envoy-default-edge-spring-ovoff-verifier-1 Stopping 
+ Container w15r-bh-w15r-envoy-default-edge-spring-ovoff-executor-1 Stopped 
+ Container w15r-bh-w15r-envoy-default-edge-spring-ovoff-executor-1 Removing 
+ Container w15r-bh-w15r-envoy-default-edge-spring-ovoff-executor-1 Removed 
+ Container w15r-bh-w15r-envoy-default-edge-spring-ovoff-verifier-1 Stopped 
+ Container w15r-bh-w15r-envoy-default-edge-spring-ovoff-verifier-1 Removing 
+ Container w15r-bh-w15r-envoy-default-edge-spring-ovoff-verifier-1 Removed 
+ Network w15r-bh-w15r-envoy-default-edge-spring-ovoff_default Removing 
+ Network w15r-bh-w15r-envoy-default-edge-spring-ovoff_default Removed 
+
+$ /Users/mimohit/openbank/binding/harness/orchestrator/.venv/bin/python -m orchestrator.down /Users/mimohit/openbank/binding/experiments/ext-routes/topologies/w15r-envoy-default-edge-spring-ovoff.yaml
+oracle[w15r-envoy-default-edge-spring-ovoff] {'topology': 'w15r-envoy-default-edge-spring-ovoff', 'cases': 10, 'accepted': 10, 'hits_raw': 2, 'hits_confirmed': 0, 'S1': 2, 'S2': 0, 'S3': 0, 'signatures': 2, 'max_res_hat': 2, 'b0': 0, 'propagation': 0, 'uncorrelated': 1}
+
+$ /Users/mimohit/openbank/binding/harness/orchestrator/.venv/bin/python -m oracle.correlate --log-dir /Users/mimohit/openbank/binding/experiments/ext-routes/reruns/w15r-envoy-default-edge-spring-ovoff/rep2 --topology /Users/mimohit/openbank/binding/experiments/ext-routes/topologies/w15r-envoy-default-edge-spring-ovoff.yaml --ground-truth /Users/mimohit/openbank/binding/experiments/ext-routes/groundtruth/spring-ovoff.jsonl

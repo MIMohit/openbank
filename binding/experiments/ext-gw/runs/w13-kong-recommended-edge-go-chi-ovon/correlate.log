@@ -1,0 +1,1 @@
+oracle[w13-kong-recommended-edge-go-chi-ovon] {'topology': 'w13-kong-recommended-edge-go-chi-ovon', 'cases': 948, 'accepted': 672, 'hits_raw': 16, 'hits_confirmed': 0, 'S1': 11, 'S2': 5, 'S3': 0, 'signatures': 11, 'max_res_hat': 3, 'b0': 0, 'propagation': 130, 'uncorrelated': 22}

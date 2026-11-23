@@ -1,0 +1,503 @@
+% sections/harness.tex -- Section 5: differential harness (E3--E6).
+% Owner: W10 (wave 2). Methodology is written from the component READMEs in
+% binding/harness/* (minter, verifier, gateways, orchestrator, executors/*, mutator,
+% runner, rawhttp, oracle) and executors/*/CONFORMANCE.md. Results subsections are
+% Results (W19, wave 3) are written from binding/experiments/{kill,ext-gw,ext-fw,ext-routes,e4}/
+% REPORT.md and GATE_DECISION.md; every number is a numbers.tex macro naming its source.
+\section{A Binding Oracle for Layered Deployments}\label{sec:harness}
+
+The prevalence study shows where a proof \emph{could} be ambiguous. The harness
+tests whether real gateways, a correct verifier and real frameworks let one
+proof select more than one operation. Its oracle is the definition itself:
+the verifier accepts a request under a proof $\pi$, and the executor runs an
+operation other than $\op(\pi)$.
+
+\subsection{Architecture}\label{sec:harness:arch}
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[font=\scriptsize,
+  box/.style={draw, rounded corners=2pt, align=center, inner sep=2.5pt, minimum height=0.8cm},
+  >={Stealth[length=3.5pt]}]
+\node[box] (M) at (0,0) {Mutator\\ \NumPrimitives{} primitives\\ $\times$ \NumBenchOps{} base ops};
+\node[box] (R) at (3.0,0) {Runner\\ raw TCP, no\\ HTTP library};
+\node[box] (K) at (5.9,0) {Minter\\ test AS, $T$, fresh $\pi$\\ for the \emph{base} op};
+\node[box] (G) at (0,-1.75) {Gateway\\ profile, adapter};
+\node[box] (E) at (4.1,-1.75) {Executor\\ \texttt{OVERRIDE}, \texttt{VERIFY\_MODE}};
+\node[box] (V) at (0,-3.0) {Reference verifier\\ RFC~9449 \S4.3};
+\begin{scope}[on background layer]
+\node[draw, dashed, rounded corners=3pt, fit=(G)(E)(V), inner sep=5pt,
+  label={[anchor=south east, inner sep=1pt]south east:{topology (docker compose)}}] (T) {};
+\end{scope}
+\node[box] (O) at (3.0,-4.55) {Oracle: join on \jti,\\ compare with $\op(\pi)$};
+\node[align=left, anchor=west] (H) at (4.55,-4.55) {hits, $\widehat{\res}$,\\ \GC propagation};
+\draw[->] (M) -- node[above]{cases} (R);
+\draw[->] (K) -- node[above]{$T,\pi$} (R);
+\draw[->] ([xshift=-6pt]R.south) -- ++(0,-0.45) -| node[pos=0.25, above]{raw bytes} (G.north);
+\draw[->] (G) -- node[above]{$\tau_D(r)$} (E);
+\draw[->] ([xshift=-4pt]G.south) -- ([xshift=-4pt]V.north);
+\draw[->] ([xshift=4pt]V.north) -- node[right]{allow/deny} ([xshift=4pt]G.south);
+\draw[->, dashed] ([xshift=10pt]E.south) |- node[pos=0.3, right]{origin} (V.east);
+\draw[->, densely dotted] (R.south east) -- node[right]{direct: $\op(\pi)$} ([xshift=-8pt]E.north);
+\draw[->] (T.south -| O.north) -- node[right]{\texttt{*.jsonl}} (O.north);
+\draw[->] (O) -- (H);
+\end{tikzpicture}
+\Description{Block diagram of the harness: mutator and minter feed the runner, which sends raw bytes into a topology of gateway, reference verifier and executor; a dotted path sends canonical requests directly to the executor for ground truth; logs flow into the oracle, which outputs hits, resolution and propagation findings.}
+\caption{Harness. For every case the runner mints a fresh proof for the base
+operation, applies the case's primitives to the canonical bytes and sends
+them through the topology. The oracle joins the runner, verifier and executor
+logs on the proof's \jti. Ground truth comes from sending each canonical
+request directly to the executor (dotted).}
+\label{fig:harness}
+\end{figure}
+
+Figure~\ref{fig:harness} shows the components. All of them are containers on
+one host, and every request carries \hdr{Host: api.bench.test}.
+
+\paragraph{Tokens and proofs.} A test authorization server issues ES256 access
+tokens (\texttt{typ at+jwt}) with \jkt bound to one of two clients, each owning
+one account. For every case the minter creates a fresh RFC~9449 proof bound to
+the canonical $(\htm, \htu)$ of the case's \emph{base} operation, so the
+proof is valid for exactly one operation and the request is then mutated. The
+proof's \jti is the correlation key in every log.
+
+\paragraph{Reference verifier.} One verifier implements every check of
+RFC~9449 \S4.3 and the resource-server checks of \S7 in a fixed order, and
+logs the view it checked and its decision. Three adapters build the view the
+way real gateways deliver it: from \hdr{X-Forwarded-*} headers (Traefik
+ForwardAuth, APISIX), from \hdr{X-Original-*} headers (NGINX
+\texttt{auth\_request}, Kong, HAProxy and the executors in origin placement),
+or from the Envoy \texttt{ext\_authz} check request itself. The \htu
+comparison is a parameter: exact (\texttt{none}), RFC~3986 syntax- and
+scheme-based normalisation (\texttt{rfc3986}, the default), or a
+\texttt{strict} mode that first rejects dot-segments, encoded separators,
+empty segments and similar inputs. Query and fragment are ignored in every
+mode, as RFC~9449 specifies. The \jti cache can be switched off, and with
+\texttt{VIEW\_MAC} on the verifier emits the D-B header of
+\S\ref{sec:defence}. A single verifier for all gateways means that a
+witness can be attributed to the deployment, not to a verifier bug.
+
+\paragraph{Gateways.} \NumGateways{} gateways are pinned by tag and digest:
+Envoy 1.39.6 (\texttt{ext\_authz}), Traefik 3.7.19 (ForwardAuth), NGINX 1.30.7
+(\texttt{auth\_request}), Kong OSS 3.9.5 (a serverless pre-function, since the
+open-source edition ships no forward-auth plugin), APISIX 3.21.0
+(\texttt{forward-auth}) and HAProxy 3.2.27 (a Lua action). Each has
+\NumGatewayProfiles{} profiles. \emph{Default} uses the vendor defaults plus
+what is needed to route and to call the verifier. \emph{Recommended} adds the
+settings the vendor documents for path normalisation and header hygiene, each
+with its documentation link. \emph{Strict} adds the strictest native options
+and, where a gateway has none, a harness-defined rule in its own configuration
+language that rejects encoded separators, dot-segments, empty segments and
+unusual methods; we report it as a baseline, not as a vendor setting.
+
+\paragraph{Executors.} \NumFrameworks{} frameworks implement the same bench API
+(Table~\ref{tab:exec}): \NumBenchOps{} canonical operations under
+\texttt{/api}, logged as \NumBenchOpIds{} operation identifiers because one
+action endpoint dispatches on the query parameter \texttt{op} and one GraphQL
+endpoint dispatches on the body field \texttt{operationName}; one version is
+mounted as a prefix sub-router. With \texttt{OVERRIDE=on} each executor enables
+the framework's own or de-facto standard override mechanism, never custom code;
+for Rails and Laravel this is the stock configuration and \texttt{OVERRIDE=off}
+removes it through the documented switch. With \texttt{VERIFY\_MODE} the
+executor calls the verifier itself, either with the raw request line
+(\texttt{origin-raw}) or with the effective method and the route it actually
+matched (\texttt{origin-routed}, defence D-A). Each executor logs, per
+request, the raw and effective method, the raw target, the matched template,
+the path parameters as the framework extracted them, and any trust headers.
+
+\begin{table}[t]
+\caption{Executors and the override mechanism enabled by \texttt{OVERRIDE=on}
+(versions read from the built images).}
+\label{tab:exec}
+\scriptsize
+\begin{tabular}{@{}l l l@{}}
+\toprule
+Framework & Version & Override mechanism (source) \\
+\midrule
+FastAPI & 0.165.0 / Starlette 1.10.0 & Flask-documented pattern, header only \\
+Express & 4.22.3 & \texttt{method-override} 3.0.0, header and \texttt{?\_method} \\
+Django & 6.1.3 & \texttt{django-method-override} 1.0.4 \\
+Go chi & 5.5.0 & gorilla/handlers 1.5.2, \texttt{\_method} form/query \\
+Spring Boot & 3.5.16 / Framework 6.2.19 & \texttt{HiddenHttpMethodFilter}, \texttt{\_method} \\
+ASP.NET Core & 9.0.23 & \texttt{UseHttpMethodOverride}, header \\
+Rails & 8.1.4 / Rack 3.2.9 & \texttt{Rack::MethodOverride} (default on) \\
+Laravel & 12.73.0 / Symfony 7.4.23 & Symfony \texttt{getMethod} (always on) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Mutations.} The catalogue has \NumPrimitives{} primitives
+(\NumPrimitivesGOne{} \GA, \NumPrimitivesGTwo{} \GB, \NumPrimitivesGThree{}
+\GC), each with a citation to the paper, advisory or RFC it comes from
+(Appendix~\ref{app:primitives}). \GA primitives add method-override headers,
+\texttt{\_method} in the query or the form body, switch the \texttt{op} query
+parameter (including duplicates and case variants), and swap the GraphQL
+\texttt{operationName}. \GB primitives cover dot-segments raw and encoded,
+encoded slashes, duplicate slashes, matrix parameters, trailing slashes, case,
+absolute-form targets, backslashes, fragments, NUL and overlong encodings,
+prefix rewrites, and duplicate \hdr{Host}. \GC primitives inject or alias view,
+identity and certificate headers by case, underscore and duplication,
+including a forged \hdr{X-Verified-View}. Depth-1 cases apply every primitive to
+every compatible base operation; depth-2 cases are a seeded sample of
+compatible pairs. The runner writes the exact bytes to a TCP socket, because
+any HTTP library would normalise the path, re-case headers or fold duplicates
+and destroy the mutation.
+
+\paragraph{Orchestration.} A topology is one gateway, profile, placement,
+framework and override setting; the orchestrator renders it to a compose
+project with its own log directory and waits for health. In edge placement
+the gateway calls the verifier and the executor does not; in origin placement
+the gateway is a plain proxy and the executor calls the verifier; \emph{both}
+does both.
+
+\subsection{Oracle}\label{sec:harness:oracle}
+
+\paragraph{Ground truth.} $\op(\pi)$ is measured, not assumed: each canonical
+request is sent directly to the executor with verification off and the
+topology's override setting. An executor whose ground truth disagrees with
+the bench API is marked non-conformant and its cases are excluded.
+
+\paragraph{Hits.} Records are joined on \jti. A case is a hit when (A) the
+request was accepted: the verifier logged \textsf{allow} in edge placement,
+the executor's own verifier call allowed it in origin placement, or both
+in \emph{both}; (B) the executor ran a different operation, either
+$\op_x \notin \{b, \textsf{NOT\_FOUND}\}$ for base operation $b$, or the same
+$\op_x$ with different path parameters (\emph{resource substitution}); and
+(C) the executor's status is below 400. Each hit records its deviation
+kinds (method, route, dispatch, resource). Severity follows the executed
+record: S1 for state-changing or privileged operations and for resource
+substitution, S2 for another read, S3 for health or public files
+(Appendix~\ref{app:oracle}). A hit is a witness that $\res_D(\pi) \ge 2$; per
+topology and base operation the oracle reports $\widehat{\res}$, the number
+of distinct executed operations under accepted proofs for that base, which is
+a lower bound on $\res_D$.
+
+\paragraph{What is not a hit.} A spoofed identity or certificate header that
+reaches the executor without changing the operation is reported by a separate
+\GC \emph{propagation} predicate. An executed request with no verifier record
+in edge placement is a verifier bypass (class B0). Neither is counted as a
+binding hit.
+
+\paragraph{Signatures and reruns.} Hits are deduplicated by a root-cause
+signature: the topology factors, the minimal primitive set (found by delta
+debugging over primitives and bytes), the class and the deviation kind. Each
+hit is rerun three times, each with a fresh proof against a freshly started
+topology; only hits confirmed in all three reruns are counted. The oracle is a
+pure function of the logs, and re-running it yields byte-identical output.
+
+\subsection{Validation}\label{sec:harness:validation}
+
+Each component was validated before any measurement.
+\begin{itemize}[leftmargin=*,itemsep=1pt]
+\item \emph{Verifier.} \NumVerifierTests{} unit and integration tests pass,
+including one negative test per item of the OpenID conformance suite's DPoP
+negative list and a matrix of canonicalisation inputs for each \htu mode.
+\item \emph{Executors.} A shared conformance test sends the
+\NumConformanceCases{} canonical and not-found requests and checks the
+operation, the response and the log line for each, plus the view each executor
+sends to the verifier in both origin modes. All \NumFrameworks{} executors pass
+all required checks in every configuration. The one exception is expected:
+Spring has no header override, so the header-based override probe never
+reaches Spring's verifier call; the equivalent form-field probe behaves as
+specified.
+\item \emph{Gateways.} The rendered configurations were checked with each
+gateway's offline validator where one exists (HAProxy, NGINX, Envoy, Kong). Each gateway and profile was brought up at the
+edge and sent one canonical request, once with a logging stub verifier and once
+with the reference verifier; all \NumSmokePass{} of \NumSmokeRuns{} runs
+reached the right adapter, view and operation.
+\item \emph{Pipeline.} On a pilot topology (NGINX, default, edge, FastAPI) the
+runner sent the \NumDepthOneCasesPilot{} depth-1 cases with no transport
+error and the oracle joined every record. Its raw hits are not counted, since
+they predate the rerun protocol.
+\item \emph{Honest path.} In every topology the canonical request must be
+accepted and execute $\op(\pi)$; a topology that fails this is excluded rather
+than counted.
+\end{itemize}
+
+The conformance probes already show that the executors disagree on covered
+components even without a gateway. Express matches paths case-insensitively and
+accepts trailing slashes; FastAPI and Django decode \texttt{\%6D} in a path
+segment before routing; Express and chi route an encoded slash inside a path
+parameter. In the FastAPI override pattern a \emph{GET} with an override header
+runs \texttt{deleteAccount}. Whether a verifier in front of them accepts such
+requests is what the matrix measures.
+
+\subsection{Experiment matrix}\label{sec:harness:matrix}
+
+The full design space has \NumMatrixTopologies{} topologies: \NumGateways{} gateways
+$\times$ \NumGatewayProfiles{} profiles $\times$ \NumPlacements{} placements $\times$
+\NumFrameworks{} frameworks $\times$ override off/on. We ran four slices of it
+under \Aleak, plus one under \Aclient (Table~\ref{tab:campaign}). The
+\emph{edge} slice covers every gateway, every framework, the default and
+recommended profiles and both override settings (\NumTopoVOneEdge{}
+topologies, \NumCasesVOne{} depth-1 cases each). The \emph{placement} slice
+(\Abl{3}) moves the verifier into the executor. The \emph{route} slice adds
+\NumNewRoutes{} routes to every executor, behind a switch that leaves the
+other slices unchanged: a POST that shares its path with GET, PUT and DELETE, a nested
+same-method route, a deeper nested DELETE and a catch-all file route. The
+first three slices use the v1 bench API, so they test what a sparse route
+space allows; the fourth tests what a richer one turns into an operation
+change. All runs used the real verifier and executors, at most one topology
+per worker at a time on one 16\,GB, 10-core host.
+
+\begin{table}[t]
+\caption{Campaign. Requests are raw-socket cases; every hit was re-run
+three times on a freshly started topology.}
+\label{tab:campaign}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}l l r r r r@{}}
+\toprule
+Slice & Factors & Topol. & Requests & Hits & G2 \\
+\midrule
+Edge, 3 gw & NGINX, Traefik, Envoy $\times$ 4 fw & \NumTopoKill & \NumCasesKill & \NumHitsKill & \NumGTwoKill \\
+Edge, 3 gw & Kong, APISIX, HAProxy $\times$ 8 fw & \NumTopoExtGw & \NumCasesExtGw & \NumHitsExtGw & \NumGTwoExtGw \\
+Edge + \Abl{3} & 3 gw $\times$ 4 fw; origin/both $\times$ 8 fw & \NumTopoExtFw & \NumCasesExtFw & \NumHitsExtFw & \NumGTwoExtFw \\
+Routes (v2) & NGINX, Envoy $\times$ 8 fw & \NumTopoExtRoutes & \NumCasesExtRoutes & \NumHitsExtRoutes & \NumGTwoExtRoutes \\
+\midrule
+\Aleak total & & \NumTopologies & \NumCases & \NumHits & \NumHitsGTwo \\
+\Aclient{} + PDP & 6 gw $\times$ 6 fw $\times$ 2 policies & \NumEFourTopologies & \NumEFourCases & \NumEFourViolations$^{a}$ & -- \\
+\bottomrule
+\end{tabular}\\[1pt]
+{\scriptsize $^{a}$authorization-soundness violations, not binding hits (\S\ref{sec:harness:e4}).}
+\end{table}
+
+\subsection{Binding soundness under \Aleak}\label{sec:harness:results}
+
+\paragraph{Totals.} The \NumTopologies{} \Aleak topologies received
+\NumCases{} requests with \NumTransportErrors{} transport errors, neither on a
+hit case. The oracle reported \NumHits{} hits (\NumSOneHits{} S1,
+\NumSTwoHits{} S2, none S3), and \NumVulnTopologies{} topologies have
+$\widehat{\res}>1$ for at least one base operation. Every hit reproduced in
+three of three reruns on a freshly started topology, each with a fresh proof
+(\NumConfirmedHits{} hits re-run directly; for Kong, APISIX and HAProxy only
+the default-profile hits were re-run, because the recommended-profile runs
+were byte-identical). We saw no flaky hit and no verifier bypass. Delta
+debugging reduced each root cause to a 1-minimal request; the witnesses in
+Table~\ref{tab:rc} are those outputs.
+
+\paragraph{By class.} By the oracle's label, which is the class of the
+primitive, there are \NumHitsGOneOracle{} \GA and \NumHitsGTwoOracle{} \GB hits.
+Minimisation moved \NumHitsRCSeven{} of the \GB-labelled hits to \GA: a
+\texttt{\#} that lands in the \emph{query} turns \texttt{op=freeze} into
+\texttt{op=freeze\#frag}, and the witness shrinks to one extra byte in the
+unbound \texttt{op} value. By mechanism, \NumHitsGOne{} hits are \GA and
+\NumHitsGTwo{} are \GB, in \NumGTwoTopologies{} topologies. There are
+\NumHitsGThree{} \GC binding hits. Figure~\ref{fig:heatmap} shows the edge
+slice by gateway and framework. \GA is constant down every column: the
+gateway never changes it, and the default and recommended profiles gave
+identical hits in all \NumTopoVOneEdge{} edge topologies. \GB is confined to
+three gateways and depends on the backend.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figs/hits_heatmap.pdf}
+\Description{Two heatmaps with gateways as rows and frameworks as columns. The left one, G1 hits, has values between 44 and 68 in every cell, the same down each column. The right one, G2 hits, is zero except for 24 in six-by-eight cells: NGINX and Kong with FastAPI, chi and Laravel, and APISIX with Express, chi, ASP.NET and Rails.}
+\caption{Confirmed binding hits under \Aleak, edge placement, v1 route space.
+Each cell sums four topologies (default and recommended profile, override
+off and on). (a)~\GA hits are the same for every gateway; the extra four
+hits for FastAPI, chi and Laravel behind NGINX, Traefik and APISIX are
+fragment-in-query hits, which minimise to query dispatch. (b)~\GB hits:
+\texttt{\#} kept in the path (NGINX, Kong) and the APISIX \texttt{\%2f}
+observation, whose mechanism is not yet confirmed. Generated by \texttt{figs/make\_figs.py} from the recorded hit logs.}
+\label{fig:heatmap}
+\end{figure*}
+
+\begin{table*}[t]
+\caption{Root causes, one row per independent mechanism (resolving component
+$\times$ differential). All hold on current releases under the default
+profile and are unchanged by the recommended one, unless stated. Witnesses
+are ddmin outputs; \texttt{.../a1} stands for \texttt{/api/v1/accounts/acc-alice-1}.
+``Allow-list'': whether the class defeats a default-deny per-tenant allow-list.
+$^{\dagger}$Measured observation; mechanism not yet confirmed (\S\ref{sec:harness:results}).}
+\label{tab:rc}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}l l p{5.3cm} p{3.6cm} r c p{3.7cm}@{}}
+\toprule
+ID & Cl. & Mechanism (verifier or PDP view vs.\ executor) & Where & Hits & Allow-list & Minimal witness \\
+\midrule
+\multicolumn{7}{@{}l}{\emph{Binding soundness, \Aleak: one leaked proof, the executor runs an operation other than $\op(\pi)$}} \\
+B1 & \GB & verifier drops \texttt{\#\ldots} as a fragment; gateway forwards it raw; server keeps it in the path & NGINX, Kong $\times$ uvicorn/h11, Go \texttt{net/http}, FrankenPHP & \NumHitsFragAll & n/a & \texttt{DELETE .../a1\#/statements/s-evil} $\to$ \texttt{deleteStatement} \\
+B2$^{\dagger}$ & \GB & verifier view lacks the \texttt{\%2f}; upstream receives it raw (mechanism unconfirmed) & APISIX $\times$ ASP.NET, Express, chi, Rails & \NumHitsApisixPct & n/a & \texttt{DELETE /api/v1/accounts/}\allowbreak\texttt{\%2facc-alice-1} \\
+B3 & \GB & verifier removes \texttt{./}; catch-all route keeps it (low impact: \texttt{..} is denied) & NGINX, Envoy $\times$ 7 fw (v2) & \NumHitsXThree & n/a & \texttt{GET /api/v1/files/}\allowbreak\texttt{reports/./logo.png} \\
+G1-d & \GA & query \texttt{op}, JSON \texttt{operationName} or Content-Type not covered & all 6 gw $\times$ 8 fw & -- & n/a & \texttt{POST .../a1/actions?op=close} \\
+G1-o & \GA & override rewrites \htm after the check: POST $\to$ PUT/DELETE & 8/8 fw with override on; default in Rails (non-API), Laravel & -- & n/a & \texttt{POST .../a1}, body \texttt{\_method=DELETE} \\
+\midrule
+\multicolumn{7}{@{}l}{\emph{Authorization soundness, \Aclient: own valid proof, the DPoP check passes, a path policy is split from the executor}} \\
+RC1 & \GB & Kestrel resolves \texttt{/../} before routing & ASP.NET behind NGINX, Envoy (def.), HAProxy & \EFourRCOneViol & \textbf{yes} & \texttt{GET .../a1/../acc-bob-1} \\
+RC2 & \GB & Kong authorizes the raw target, proxies the normalised path: \texttt{/../} & Kong $\times$ all 6 fw & \EFourRCTwoViol & \textbf{yes} & \texttt{GET .../a1/../acc-bob-1} \\
+RC3 & \GB & case-insensitive routing & ASP.NET, all 6 gw & \EFourRCThreeViol & no & \texttt{GET /api/v1/ADMIN/users} \\
+RC4 & \GB & case-insensitive routing & Express, all 6 gw & \EFourRCFourViol & no & as RC3 \\
+RC5 & \GB & matrix parameters stripped before matching & Spring, all 6 gw & \EFourRCFiveViol & no & \texttt{GET /api/v1/accounts;/acc-bob-1} \\
+RC6 & \GB & \texttt{//} collapsed before routing & Rails behind NGINX, Envoy, HAProxy & \EFourRCSixViol & no & \texttt{GET /api/v1//accounts/acc-bob-1} \\
+RC7 & \GB & as RC2, for \texttt{//} & Kong $\times$ 4 fw & \EFourRCSevenViol & no & as RC6 \\
+\midrule
+\multicolumn{7}{@{}l}{\emph{Propagation (\GC), conditional: matters only if the backend trusts the header}} \\
+P1 & \GC & client \hdr{Client-Cert}, \hdr{X-Forwarded-Client-Cert} reach the executor & all gw (Envoy strips XFCC) & 0 & n/a & -- \\
+P2 & \GC & client \hdr{X-Verified-View} (D-B MAC) reaches the executor & Envoy, Kong, HAProxy & 0 & n/a & -- \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\paragraph{Binding-soundness mechanisms.} Three mechanisms make a leaked
+proof select another operation (Table~\ref{tab:rc}, B1--B3).
+\emph{B1, fragment in the path.} RFC~9112 does not allow \texttt{\#} in an
+origin-form target, but NGINX and Kong forward it. The verifier parses it as
+a fragment, which RFC~9449 excludes from the comparison, and accepts. Three
+backend servers keep it in the path: uvicorn's h11 protocol splits the target
+only at \texttt{?}, Go's \texttt{net/http} keeps it, and FrankenPHP
+percent-encodes it into the path parameter. Traefik and Envoy reject the
+request, and Tomcat and Kestrel answer 400. In the v1 route space this only
+appends a suffix to the last path parameter (\NumHitsFragPath{} hits,
+oracle severity S1 but low practical impact). With a nested route it
+changes the operation: a leaked \texttt{deleteAccount} proof runs
+\texttt{deleteStatement}, and a leaked \texttt{getAccount} proof runs
+\texttt{getStatements} (\NumHitsXOne{} hits, default profile, override off).
+The attacker cannot choose the target resource, whose identifier stays the
+mangled \texttt{acc-alice-1\#}; the operation is still not the one the proof
+names. The lenient handling of \texttt{\#} by these servers is known~\cite{w2:uvicorn1222};
+the new element is that it breaks the binding to the operation.
+\emph{B2, encoded slash (observation).} Behind APISIX, for
+\texttt{DELETE /api/v1/accounts/\%2facc-alice-1} the verifier logged the view
+\texttt{/api/v1/accounts/acc-alice-1} and allowed it, while the executor
+received the raw \texttt{\%2f}. Express and Rails decode it into a different
+identifier, and ASP.NET and chi keep it literally (\NumHitsApisixPct{} hits,
+default and recommended profiles). We have not confirmed the mechanism.
+APISIX's published \texttt{forward-auth} plugin builds \hdr{X-Forwarded-Uri}
+from \texttt{ctx.var.request\_uri}, which should be the raw target, and this
+contradicts the view we logged. Until the bytes the plugin sends are traced
+locally, we report B2 as a measured observation, not as a gateway that
+checks one representation and forwards another. \todo{Confirm the B2
+mechanism (\texttt{X-Forwarded-Uri} bytes vs.\ \texttt{ngx.var.request\_uri}
+/ \texttt{ngx.var.uri}); see disclosure/TRIAGE.md.} Kong sends the raw
+target and the verifier denies it. HAProxy uses one parsed URI for both the
+check and the upstream request and has no \GB hit. \emph{B3, dot segment.} RFC~3986
+normalisation removes \texttt{./}; the v1 routers then return 404
+(\NumLatentDot{} accepted-then-404 cases), but a catch-all route executes the
+raw path. Only the no-op segment passes, since the verifier denies every
+traversal, so we list B3 for completeness, not for impact.
+
+\paragraph{\GA.} Query and body dispatch change the operation on every one of
+the \NumGateways{} gateways and \NumFrameworks{} frameworks. This is the
+scope RFC~9449 states, measured; \S\ref{sec:prevalence} estimates how common
+such keys are. Method override is the framework-level lever. With the v1
+routes it reached another operation only through FastAPI's Flask-style
+middleware, which honours the header on any method. The standard
+middlewares of the other seven frameworks override only POST, and no v1 POST
+route shares a path. The v2 route \texttt{POST /accounts/\{id\}} closes this
+gap: a leaked POST proof runs \texttt{updateAccount} or
+\texttt{deleteAccount} in all \NumFrameworks{} frameworks with override on
+(\NumHitsOverrideVTwo{} \GA hits in the route slice). In Rails, whose
+non-API stack includes \texttt{Rack::MethodOverride}, and in Laravel, which
+has no switch to turn it off, this is the default configuration
+(\S\ref{sec:prev:e2}).
+
+\paragraph{\GC.} No \GC primitive changed the executed operation. The gateways
+overwrite \hdr{X-Verified-Sub} and \hdr{X-Verified-Jkt} from the verifier's
+response, and the underscore and case variants did not get through.
+Certificate headers pass through every gateway except Envoy, which sanitises
+\hdr{X-Forwarded-Client-Cert} by default. A forged \hdr{X-Verified-View}
+reaches the executor behind Envoy (when the verifier emits none), Kong and
+HAProxy. Both are authorization problems only for a backend that trusts the
+header, so we report them as conditional propagation findings (P1, P2).
+The \GC propagation predicate also flags \hdr{X-Verified-Sub: alice}, but
+that marker equals the subject the gateway sets itself, so these flags are
+false positives.
+
+\paragraph{Resolution.} Over the \NumResPairs{} (topology, base operation)
+pairs, $\widehat{\res}$ is 1 for \NumResOne{}, 2 for \NumResTwo{}, 3 for
+\NumResThree{}, 4 for \NumResFour{}, 5 for \NumResFive{} and 6 for
+\NumResSix{}. The action and GraphQL bases have $\widehat{\res}=3$ in every
+v1 topology (\GA). The maximum in the v1 route space is
+\MaxResolutionVOne{}, where FastAPI's any-method override and B1 combine. In
+the v2 space it is \MaxResolution{}, for \texttt{getAccount},
+\texttt{updateAccount} and \texttt{deleteAccount} (override, nested route and
+suffix). \texttt{adminDeleteUser}, \texttt{getAccountV2} and
+\texttt{publicFile} have no query, body or override lever. Their resolution
+rises above 1 only behind NGINX and Kong (B1) and APISIX (B2), which
+isolates the contribution of \GB.
+
+\paragraph{Placement (\Abl{3}).} Verifying at the executor on the raw request
+(\texttt{origin-raw}) removes no \GA hit: behind Envoy all \NumFrameworks{}
+frameworks keep their dispatch hits (\NumHitsEnvoyOrigin{} hits), because
+the executor's verifier sees the same method and path as the edge verifier.
+Behind NGINX the origin placement also keeps B1, since the executor's
+verifier call strips the fragment before the handler binds it
+(\NumHitsNginxOriginFixed{} hits, all confirmed). Two apparent zeros were
+artefacts. NGINX's default \texttt{proxy\_pass} rewrites \hdr{Host}, so
+every origin check failed \htu, including the honest one; we
+fixed the \hdr{Host} header locally and re-ran. \emph{Both} placement calls one verifier twice with one
+single-use \jti, so the origin call fails as a replay (e.g.\
+\NumJtiReplayEnvoyBoth{} of \NumCasesVOne{} cases behind Envoy). Re-checking the
+same proof at the origin is thus no defence: the origin must check the
+\emph{routed} view (D-A) or trust a bound edge decision (D-B,
+\S\ref{sec:defence}).
+
+\paragraph{Other ablations.} \todo{\Abl{1} binding claims (\AblOneResult),
+\Abl{4} class leave-one-out (\AblFourResult) and \Abl{5} profiles including
+\emph{strict} (\AblFiveResult): W18. The default and recommended profiles
+above are already identical.}
+
+\subsection{Authorization soundness under \Aclient}\label{sec:harness:e4}
+
+\paragraph{Setup.} The kill rule for \GB/\GC asked for two independent
+classes on current releases; under \Aleak we found the three above, but
+no path mutation reached another \emph{owner} or an admin route, because
+there was no authorization layer above the proof whose decision a
+differential could split. This experiment adds one. A policy decision point
+runs the reference verifier and then matches the \emph{same view} against a path
+policy: a default-deny allow-list of \texttt{alice}'s resources (segment-aware
+prefix and exact rules), or a default-allow block-list of regexes for admin
+routes and foreign accounts. \texttt{alice} mints a fresh, valid proof for
+every mutated request, so the DPoP check always passes and only the policy
+stands in the way. The battery has \NumEFourVectors{} vectors (dot segments
+raw and encoded, matrix parameters, \texttt{//}, case, \texttt{.json},
+trailing slash, \texttt{\%2F}) plus forbidden and own-resource controls. A
+violation is a permit for \texttt{alice} and an executor that ran an admin
+operation, or acted on an identifier whose decoded value is exactly
+\texttt{acc-bob-1}, with status below 400.
+
+\paragraph{Results.} \NumEFourViolations{} violations (\NumEFourAdmin{} admin,
+\NumEFourBob{} cross-tenant) occurred in \NumEFourVulnTopologies{} of
+\NumEFourTopologies{} topologies, in \NumEFourClasses{} classes over
+\NumEFourComponents{} resolving components (Table~\ref{tab:rc}, RC1--RC7). One
+topology per class was re-run three times; every vector reproduced. Controls
+behaved: forbidden requests were denied and own-resource requests allowed in every topology.
+Two classes defeat the strict allow-list. RC1 is
+framework-resolved: NGINX, HAProxy and Envoy's default profile forward
+\texttt{/../} raw to both the policy and ASP.NET, and Kestrel resolves it
+before routing. RC2 is gateway-resolved and backend-independent: Kong gives
+the policy the raw \texttt{\$request\_uri} but proxies the normalised path,
+so it fires for all six frameworks, both policies and both profiles. The
+other five classes defeat only the block-list. Traefik, APISIX and Envoy's
+recommended profile normalise before the check, so \texttt{alice}'s proof
+no longer matched (\NumEFourHtuMismatch{} \htu denials): they are sound
+against the dot-segment and \texttt{//} vectors.
+
+Authorizing on the \emph{routing} view helps. NGINX's own \texttt{location}
+ACL closed the dot-segment classes and enforced ownership; only its
+case-sensitive admin regex let \NumNativeNginx{} requests through. Envoy RBAC
+was bypassed by \NumNativeEnvoyRaw{} vectors with the vendor default
+\texttt{normalize\_path: false}; with normalisation on, the dot-segment route
+to admin closed, and the \NumNativeEnvoyNorm{} that remained were outside
+the admin-only rule or used case. Running the verifier's RFC~3986
+canonicaliser in the policy closes RC1 and RC2 but not case, matrix or
+\texttt{//}: a sound policy must canonicalise with the union of what
+every downstream router does.
+
+\paragraph{Calibration.} RC3--RC6 are instances of path-normalisation
+differentials already known from advisories such as Istio
+CVE-2021-31920~\cite{istio2021cve31920} and Traefik
+CVE-2026-40912~\cite{traefik2026cve40912}; we report them as evidence of
+prevalence, not as discoveries. The Kong split behind RC2 and RC7 is also
+documented: Kong states that its raw request variables are not normalised,
+and authorization on them has been a known hazard since
+2021~\cite{w2:xvnpw2021kong,w2:kongcve27306}. What our results add is the
+composition: a correctly verified DPoP proof, and a strict allow-list, do not
+prevent the bypass. All seven need a path-based policy keyed on the gateway's view;
+none involves a forged or replayed proof. The matrix ran \NumEFourTopologies{} of
+\NumEFourCells{} cells: Laravel and FastAPI were tested only against the
+allow-list under the default profile, and absolute-form targets and
+\hdr{X-Original-URL}/\hdr{X-Rewrite-URL} were not in the battery
+(\S\ref{sec:discussion}).

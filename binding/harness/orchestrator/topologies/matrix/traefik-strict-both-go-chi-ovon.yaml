@@ -1,0 +1,10 @@
+id: traefik-strict-both-go-chi-ovon
+gateway: traefik
+gateway_image: traefik:v3.7.19
+profile: strict
+placement: both
+framework: go-chi
+executor_image: bh-exec-go-chi:latest
+override: 'on'
+verifier: {image: 'bh-verifier:latest', canon: rfc3986, view_mac: 'off'}
+host_port: 18279

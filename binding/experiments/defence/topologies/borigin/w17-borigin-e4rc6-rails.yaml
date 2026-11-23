@@ -1,0 +1,13 @@
+id: w17-borigin-e4rc6-rails
+gateway: nginx
+profile: recommended
+placement: origin
+framework: rails
+executor_image: bh-exec-rails:v2
+override: 'off'
+verifier:
+  image: bh-pdp-block:latest
+  canon: rfc3986
+  view_mac: 'off'
+host_port: 28911
+verify_mode: origin-raw

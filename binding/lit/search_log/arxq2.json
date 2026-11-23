@@ -1,0 +1,5 @@
+{"AxB":"(all:DPoP OR all:\"proof-of-possession\" OR all:\"sender-constrained\" OR all:\"message signatures\" OR all:\"request signing\") AND (all:smuggling OR all:discrepancy OR all:discrepancies OR all:differential OR all:desync OR all:confusion)",
+"AxC":"(all:DPoP OR all:\"proof-of-possession\" OR all:\"sender-constrained\" OR all:\"certificate-bound\" OR all:\"message signatures\") AND (all:gateway OR all:\"reverse proxy\" OR all:\"service mesh\" OR all:intermediary OR all:proxy)",
+"AxD":"(all:DPoP OR all:\"proof-of-possession\" OR all:\"sender-constrained\" OR all:OAuth) AND (all:\"method override\" OR all:GraphQL OR all:\"access control bypass\" OR all:\"authorization bypass\")",
+"BxCxD":"(all:discrepancy OR all:discrepancies OR all:differential OR all:\"semantic gap\") AND (all:gateway OR all:proxy OR all:WAF OR all:firewall) AND (all:authorization OR all:\"access control\" OR all:bypass)",
+"CxD":"(all:\"API gateway\" OR all:\"reverse proxy\" OR all:\"ext_authz\" OR all:\"forward auth\") AND (all:\"access control\" OR all:authorization)"}

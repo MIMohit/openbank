@@ -1,0 +1,1 @@
+oracle[w14-traefik-recommended-edge-rails-ovon] {'topology': 'w14-traefik-recommended-edge-rails-ovon', 'cases': 948, 'accepted': 660, 'hits_raw': 10, 'hits_confirmed': 0, 'S1': 6, 'S2': 4, 'S3': 0, 'signatures': 10, 'max_res_hat': 3, 'b0': 0, 'propagation': 143, 'uncorrelated': 26}

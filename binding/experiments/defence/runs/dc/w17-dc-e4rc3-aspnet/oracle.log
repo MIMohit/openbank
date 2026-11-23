@@ -1,0 +1,1 @@
+e4_oracle[w17-dc-e4rc3-aspnet] {'topology': 'w17-dc-e4rc3-aspnet', 'gateway': 'nginx', 'profile': 'strict', 'framework': 'aspnet', 'verifier_image': 'bh-pdp-block:latest', 'cases': 29, 'pdp_allow': 5, 'violations': 2, 'admin': 2, 'bob': 0, 'vectors_hit': 'case-admin-del,case-admin-list'}

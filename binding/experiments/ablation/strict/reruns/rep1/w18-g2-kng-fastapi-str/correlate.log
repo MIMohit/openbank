@@ -1,0 +1,1 @@
+oracle[w18-g2-kng-fastapi-str] {'topology': 'w18-g2-kng-fastapi-str', 'cases': 28, 'accepted': 28, 'hits_raw': 11, 'hits_confirmed': 0, 'S1': 10, 'S2': 1, 'S3': 0, 'signatures': 3, 'max_res_hat': 3, 'b0': 0, 'propagation': 0, 'uncorrelated': 4}

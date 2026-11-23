@@ -1,0 +1,10 @@
+id: w18-digest-nginx-default-edge-fastapi-ovon
+gateway: nginx
+gateway_image: nginx:1.30.7-alpine
+profile: default
+placement: edge
+framework: fastapi
+executor_image: bh-exec-fastapi:v2
+override: 'on'
+verifier: {image: 'bh-verifier:ablate-digest', canon: rfc3986, view_mac: 'off'}
+host_port: 29881

@@ -1,0 +1,1 @@
+w18-g2-ngx-aspnet-str rc=0 secs=14 oracle[w18-g2-ngx-aspnet-str] {'topology': 'w18-g2-ngx-aspnet-str', 'cases': 176, 'accepted': 17, 'hits_raw': 0, 'hits_confirmed': 0, 'S1': 0, 'S2': 0, 'S3': 0, 'signatures': 0, 'max_res_hat': 1, 'b0'

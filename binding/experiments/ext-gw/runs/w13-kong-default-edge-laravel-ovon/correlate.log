@@ -1,0 +1,1 @@
+oracle[w13-kong-default-edge-laravel-ovon] {'topology': 'w13-kong-default-edge-laravel-ovon', 'cases': 948, 'accepted': 672, 'hits_raw': 15, 'hits_confirmed': 0, 'S1': 12, 'S2': 3, 'S3': 0, 'signatures': 10, 'max_res_hat': 3, 'b0': 0, 'propagation': 130, 'uncorrelated': 24}

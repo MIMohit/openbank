@@ -1,0 +1,33 @@
+{
+ "topology": "w15r-nginx-default-edge-fastapi-ovon",
+ "case_id": "getAccount:g1-hdr-xhmo-delete:alice:06f5703c3425",
+ "primitive_ids": [
+  "g1-hdr-xhmo-delete"
+ ],
+ "base_op_id": "getAccount",
+ "exec_op_id": "deleteAccount",
+ "exec_path_params": {
+  "id": "acc-alice-1"
+ },
+ "deviation_kinds": [
+  "method",
+  "route"
+ ],
+ "full_units": 1,
+ "minimal_units": 1,
+ "still_hit": true,
+ "canonical_request": "GET /api/v1/accounts/acc-alice-1 HTTP/1.1\r\nHost: api.bench.test\r\nAuthorization: @@AUTHZ@@\r\nDPoP: @@PROOF@@\r\nAccept: application/json\r\nUser-Agent: bind-harness/1.0\r\nConnection: close\r\n\r\n",
+ "minimal_request": "GET /api/v1/accounts/acc-alice-1 HTTP/1.1\r\nHost: api.bench.test\r\nAuthorization: @@AUTHZ@@\r\nDPoP: @@PROOF@@\r\nAccept: application/json\r\nUser-Agent: bind-harness/1.0\r\nConnection: close\r\nX-HTTP-Method-Override: DELETE\r\n\r\n",
+ "trials": [
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": true
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": true
+  }
+ ]
+}

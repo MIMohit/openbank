@@ -1,0 +1,145 @@
+w18-full-nginx-default-edge-fastapi-ovoff rep1 d=full gate=0 runner_rc=0 secs=14 [ab_run_matrix] w18-full-nginx-default-edge-fastapi-ovoff bind=full: sent=44 errors=0
+w18-full-nginx-default-edge-fastapi-ovoff rep2 d=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w18-full-nginx-default-edge-fastapi-ovoff bind=full: sent=44 errors=0
+w18-full-nginx-default-edge-fastapi-ovoff rep3 d=full gate=0 runner_rc=0 secs=14 [ab_run_matrix] w18-full-nginx-default-edge-fastapi-ovoff bind=full: sent=44 errors=0
+w18-full-nginx-default-edge-fastapi-ovon rep1 nd=full gate=0 runner_rc=0 secs=14 [ab_run_matrix] w18-full-nginx-default-edge-fastapi-ovon bind=full: sent=56 errors=0
+w18-full-nginx-default-edge-fastapi-ovon rep2 nd=full gate=0 runner_rc=0 secs=14 [ab_run_matrix] w18-full-nginx-default-edge-fastapi-ovon bind=full: sent=56 errors=0
+w18-full-nginx-default-edge-fastapi-ovon rep3 nd=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w18-full-nginx-default-edge-fastapi-ovon bind=full: sent=56 errors=0
+w18-full-nginx-default-edge-spring-ovoff rep1 nd=full gate=0 runner_rc=0 secs=14 [ab_run_matrix] w18-full-nginx-default-edge-spring-ovoff bind=full: sent=33 errors=0
+w18-full-nginx-default-edge-spring-ovoff rep2 nd=full gate=0 runner_rc=0 secs=14 [ab_run_matrix] w18-full-nginx-default-edge-spring-ovoff bind=full: sent=33 errors=0
+w18-full-nginx-default-edge-spring-ovoff rep3 nd=full gate=0 runner_rc=0 secs=14 [ab_run_matrix] w18-full-nginx-default-edge-spring-ovoff bind=full: sent=33 errors=0
+w18-full-nginx-default-edge-spring-ovon rep1 ind=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w18-full-nginx-default-edge-spring-ovon bind=full: sent=34 errors=0
+w18-full-nginx-default-edge-spring-ovon rep2 ind=full gate=0 runner_rc=0 secs=14 [ab_run_matrix] w18-full-nginx-default-edge-spring-ovon bind=full: sent=34 errors=0
+w18-full-nginx-default-edge-spring-ovon rep3 ind=full gate=0 runner_rc=0 secs=14 [ab_run_matrix] w18-full-nginx-default-edge-spring-ovon bind=full: sent=34 errors=0
+w18-full-nginx-default-edge-rails-ovoff rep1 ind=full gate=0 runner_rc=0 secs=14 [ab_run_matrix] w18-full-nginx-default-edge-rails-ovoff bind=full: sent=33 errors=0
+w18-full-nginx-default-edge-rails-ovoff rep2 ind=full gate=0 runner_rc=0 secs=14 [ab_run_matrix] w18-full-nginx-default-edge-rails-ovoff bind=full: sent=33 errors=0
+w18-full-nginx-default-edge-rails-ovoff rep3 ind=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w18-full-nginx-default-edge-rails-ovoff bind=full: sent=33 errors=0
+w18-full-nginx-default-edge-rails-ovon rep1 bind=full gate=0 runner_rc=0 secs=14 [ab_run_matrix] w18-full-nginx-default-edge-rails-ovon bind=full: sent=35 errors=0
+w18-full-nginx-default-edge-rails-ovon rep2 bind=full gate=0 runner_rc=0 secs=14 [ab_run_matrix] w18-full-nginx-default-edge-rails-ovon bind=full: sent=35 errors=0
+w18-full-nginx-default-edge-rails-ovon rep3 bind=full gate=0 runner_rc=0 secs=14 [ab_run_matrix] w18-full-nginx-default-edge-rails-ovon bind=full: sent=35 errors=0
+w18-full-nginx-default-edge-laravel-ovoff rep1 d=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w18-full-nginx-default-edge-laravel-ovoff bind=full: sent=44 errors=0
+w18-full-nginx-default-edge-laravel-ovoff rep2 d=full gate=0 runner_rc=0 secs=14 [ab_run_matrix] w18-full-nginx-default-edge-laravel-ovoff bind=full: sent=44 errors=0
+w18-full-nginx-default-edge-laravel-ovoff rep3 d=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w18-full-nginx-default-edge-laravel-ovoff bind=full: sent=44 errors=0
+w18-full-nginx-default-edge-laravel-ovon rep1 nd=full gate=0 runner_rc=0 secs=14 [ab_run_matrix] w18-full-nginx-default-edge-laravel-ovon bind=full: sent=49 errors=0
+w18-full-nginx-default-edge-laravel-ovon rep2 nd=full gate=0 runner_rc=0 secs=14 [ab_run_matrix] w18-full-nginx-default-edge-laravel-ovon bind=full: sent=49 errors=0
+w18-full-nginx-default-edge-laravel-ovon rep3 nd=full gate=0 runner_rc=0 secs=16 [ab_run_matrix] w18-full-nginx-default-edge-laravel-ovon bind=full: sent=49 errors=0
+w18-no-htu-nginx-default-edge-fastapi-ovoff rep1 full gate=0 runner_rc=0 secs=17 [ab_run_matrix] w18-no-htu-nginx-default-edge-fastapi-ovoff bind=full: sent=80 errors=0
+w18-no-htu-nginx-default-edge-fastapi-ovoff rep2 full gate=0 runner_rc=0 secs=17 [ab_run_matrix] w18-no-htu-nginx-default-edge-fastapi-ovoff bind=full: sent=80 errors=0
+w18-no-htu-nginx-default-edge-fastapi-ovoff rep3 full gate=0 runner_rc=0 secs=17 [ab_run_matrix] w18-no-htu-nginx-default-edge-fastapi-ovoff bind=full: sent=80 errors=0
+w18-no-htu-nginx-default-edge-fastapi-ovon rep1 =full gate=0 runner_rc=0 secs=18 [ab_run_matrix] w18-no-htu-nginx-default-edge-fastapi-ovon bind=full: sent=92 errors=0
+w18-no-htu-nginx-default-edge-fastapi-ovon rep2 =full gate=0 runner_rc=0 secs=19 [ab_run_matrix] w18-no-htu-nginx-default-edge-fastapi-ovon bind=full: sent=92 errors=0
+w18-no-htu-nginx-default-edge-fastapi-ovon rep3 =full gate=0 runner_rc=0 secs=18 [ab_run_matrix] w18-no-htu-nginx-default-edge-fastapi-ovon bind=full: sent=92 errors=0
+w18-no-htu-nginx-default-edge-spring-ovoff rep1 =full gate=0 runner_rc=0 secs=17 [ab_run_matrix] w18-no-htu-nginx-default-edge-spring-ovoff bind=full: sent=39 errors=0
+w18-no-htu-nginx-default-edge-spring-ovoff rep2 =full gate=0 runner_rc=0 secs=18 [ab_run_matrix] w18-no-htu-nginx-default-edge-spring-ovoff bind=full: sent=39 errors=0
+w18-no-htu-nginx-default-edge-spring-ovoff rep3 =full gate=0 runner_rc=0 secs=19 [ab_run_matrix] w18-no-htu-nginx-default-edge-spring-ovoff bind=full: sent=39 errors=0
+w18-no-htu-nginx-default-edge-spring-ovon rep1 d=full gate=0 runner_rc=0 secs=18 [ab_run_matrix] w18-no-htu-nginx-default-edge-spring-ovon bind=full: sent=40 errors=0
+w18-no-htu-nginx-default-edge-spring-ovon rep2 d=full gate=0 runner_rc=0 secs=17 [ab_run_matrix] w18-no-htu-nginx-default-edge-spring-ovon bind=full: sent=40 errors=0
+w18-no-htu-nginx-default-edge-spring-ovon rep3 d=full gate=0 runner_rc=0 secs=18 [ab_run_matrix] w18-no-htu-nginx-default-edge-spring-ovon bind=full: sent=40 errors=0
+w18-no-htu-nginx-default-edge-rails-ovoff rep1 d=full gate=0 runner_rc=0 secs=18 [ab_run_matrix] w18-no-htu-nginx-default-edge-rails-ovoff bind=full: sent=76 errors=0
+w18-no-htu-nginx-default-edge-rails-ovoff rep2 d=full gate=0 runner_rc=0 secs=18 [ab_run_matrix] w18-no-htu-nginx-default-edge-rails-ovoff bind=full: sent=76 errors=0
+w18-no-htu-nginx-default-edge-rails-ovoff rep3 d=full gate=0 runner_rc=0 secs=18 [ab_run_matrix] w18-no-htu-nginx-default-edge-rails-ovoff bind=full: sent=76 errors=0
+w18-no-htu-nginx-default-edge-rails-ovon rep1 nd=full gate=0 runner_rc=0 secs=21 [ab_run_matrix] w18-no-htu-nginx-default-edge-rails-ovon bind=full: sent=78 errors=0
+w18-no-htu-nginx-default-edge-rails-ovon rep2 nd=full gate=0 runner_rc=0 secs=20 [ab_run_matrix] w18-no-htu-nginx-default-edge-rails-ovon bind=full: sent=78 errors=0
+w18-no-htu-nginx-default-edge-rails-ovon rep3 nd=full gate=0 runner_rc=0 secs=18 [ab_run_matrix] w18-no-htu-nginx-default-edge-rails-ovon bind=full: sent=78 errors=0
+w18-no-htu-nginx-default-edge-laravel-ovoff rep1 full gate=0 runner_rc=0 secs=19 [ab_run_matrix] w18-no-htu-nginx-default-edge-laravel-ovoff bind=full: sent=79 errors=0
+w18-no-htu-nginx-default-edge-laravel-ovoff rep2 full gate=0 runner_rc=0 secs=19 [ab_run_matrix] w18-no-htu-nginx-default-edge-laravel-ovoff bind=full: sent=79 errors=0
+w18-no-htu-nginx-default-edge-laravel-ovoff rep3 full gate=0 runner_rc=0 secs=19 [ab_run_matrix] w18-no-htu-nginx-default-edge-laravel-ovoff bind=full: sent=79 errors=0
+w18-no-htu-nginx-default-edge-laravel-ovon rep1 =full gate=0 runner_rc=0 secs=19 [ab_run_matrix] w18-no-htu-nginx-default-edge-laravel-ovon bind=full: sent=84 errors=0
+w18-no-htu-nginx-default-edge-laravel-ovon rep2 =full gate=0 runner_rc=0 secs=19 [ab_run_matrix] w18-no-htu-nginx-default-edge-laravel-ovon bind=full: sent=84 errors=0
+w18-no-htu-nginx-default-edge-laravel-ovon rep3 =full gate=0 runner_rc=0 secs=19 [ab_run_matrix] w18-no-htu-nginx-default-edge-laravel-ovon bind=full: sent=84 errors=0
+w18-query-nginx-default-edge-fastapi-ovoff rep1 uery gate=0 runner_rc=0 secs=19 [ab_run_matrix] w18-query-nginx-default-edge-fastapi-ovoff bind=query: sent=39 errors=0
+w18-query-nginx-default-edge-fastapi-ovoff rep2 uery gate=0 runner_rc=0 secs=18 [ab_run_matrix] w18-query-nginx-default-edge-fastapi-ovoff bind=query: sent=39 errors=0
+w18-query-nginx-default-edge-fastapi-ovoff rep3 uery gate=0 runner_rc=0 secs=19 [ab_run_matrix] w18-query-nginx-default-edge-fastapi-ovoff bind=query: sent=39 errors=0
+w18-query-nginx-default-edge-fastapi-ovon rep1 query gate=0 runner_rc=0 secs=18 [ab_run_matrix] w18-query-nginx-default-edge-fastapi-ovon bind=query: sent=51 errors=0
+w18-query-nginx-default-edge-fastapi-ovon rep2 query gate=0 runner_rc=0 secs=18 [ab_run_matrix] w18-query-nginx-default-edge-fastapi-ovon bind=query: sent=51 errors=0
+w18-query-nginx-default-edge-fastapi-ovon rep3 query gate=0 runner_rc=0 secs=18 [ab_run_matrix] w18-query-nginx-default-edge-fastapi-ovon bind=query: sent=51 errors=0
+w18-query-nginx-default-edge-spring-ovoff rep1 query gate=0 runner_rc=0 secs=19 [ab_run_matrix] w18-query-nginx-default-edge-spring-ovoff bind=query: sent=28 errors=0
+w18-query-nginx-default-edge-spring-ovoff rep2 query gate=0 runner_rc=0 secs=20 [ab_run_matrix] w18-query-nginx-default-edge-spring-ovoff bind=query: sent=28 errors=0
+w18-query-nginx-default-edge-spring-ovoff rep3 query gate=0 runner_rc=0 secs=20 [ab_run_matrix] w18-query-nginx-default-edge-spring-ovoff bind=query: sent=28 errors=0
+w18-query-nginx-default-edge-spring-ovon rep1 =query gate=0 runner_rc=0 secs=18 [ab_run_matrix] w18-query-nginx-default-edge-spring-ovon bind=query: sent=27 errors=0
+w18-query-nginx-default-edge-spring-ovon rep2 query gate=0 runner_rc=0 secs=408 [ab_run_matrix] w18-query-nginx-default-edge-spring-ovon bind=query: sent=27 errors=0
+w18-query-nginx-default-edge-spring-ovon rep3 =query gate=0 runner_rc=0 secs=39 [ab_run_matrix] w18-query-nginx-default-edge-spring-ovon bind=query: sent=27 errors=0
+w18-query-nginx-default-edge-rails-ovoff rep1 =query gate=0 runner_rc=0 secs=30 [ab_run_matrix] w18-query-nginx-default-edge-rails-ovoff bind=query: sent=28 errors=0
+w18-query-nginx-default-edge-rails-ovoff rep2 query gate=0 runner_rc=0 secs=871 [ab_run_matrix] w18-query-nginx-default-edge-rails-ovoff bind=query: sent=28 errors=0
+w18-query-nginx-default-edge-rails-ovoff rep3 query gate=0 runner_rc=0 secs=314 [ab_run_matrix] w18-query-nginx-default-edge-rails-ovoff bind=query: sent=28 errors=0
+w18-query-nginx-default-edge-rails-ovon rep1 d=query gate=0 runner_rc=0 secs=25 [ab_run_matrix] w18-query-nginx-default-edge-rails-ovon bind=query: sent=30 errors=0
+w18-query-nginx-default-edge-rails-ovon rep2 =query gate=0 runner_rc=0 secs=658 [ab_run_matrix] w18-query-nginx-default-edge-rails-ovon bind=query: sent=30 errors=0
+w18-query-nginx-default-edge-rails-ovon rep3 d=query gate=0 runner_rc=0 secs=19 [ab_run_matrix] w18-query-nginx-default-edge-rails-ovon bind=query: sent=30 errors=0
+w18-query-nginx-default-edge-laravel-ovoff rep1 ery gate=0 runner_rc=0 secs=750 [ab_run_matrix] w18-query-nginx-default-edge-laravel-ovoff bind=query: sent=39 errors=0
+w18-query-nginx-default-edge-laravel-ovoff rep2 uery gate=0 runner_rc=0 secs=23 [ab_run_matrix] w18-query-nginx-default-edge-laravel-ovoff bind=query: sent=39 errors=0
+w18-query-nginx-default-edge-laravel-ovoff rep3 ery gate=0 runner_rc=0 secs=932 [ab_run_matrix] w18-query-nginx-default-edge-laravel-ovoff bind=query: sent=39 errors=0
+w18-query-nginx-default-edge-laravel-ovon rep1 query gate=0 runner_rc=0 secs=19 [ab_run_matrix] w18-query-nginx-default-edge-laravel-ovon bind=query: sent=41 errors=0
+w18-query-nginx-default-edge-laravel-ovon rep2 ery gate=0 runner_rc=0 secs=3084 [ab_run_matrix] w18-query-nginx-default-edge-laravel-ovon bind=query: sent=41 errors=0
+w18-query-nginx-default-edge-laravel-ovon rep3 query gate=0 runner_rc=0 secs=21 [ab_run_matrix] w18-query-nginx-default-edge-laravel-ovon bind=query: sent=41 errors=0
+w18-digest-nogate-nginx-default-edge-fastapi-ovoff rep1  runner_rc=0 secs=2171 [ab_run_matrix] w18-digest-nogate-nginx-default-edge-fastapi-ovoff bind=digest: sent=44 errors=0
+w18-digest-nogate-nginx-default-edge-fastapi-ovoff rep2 =0 runner_rc=0 secs=28 [ab_run_matrix] w18-digest-nogate-nginx-default-edge-fastapi-ovoff bind=digest: sent=44 errors=0
+w18-digest-nogate-nginx-default-edge-fastapi-ovoff rep3 =0 runner_rc=0 secs=22 [ab_run_matrix] w18-digest-nogate-nginx-default-edge-fastapi-ovoff bind=digest: sent=44 errors=0
+w18-digest-nogate-nginx-default-edge-fastapi-ovon rep1 e=0 runner_rc=0 secs=19 [ab_run_matrix] w18-digest-nogate-nginx-default-edge-fastapi-ovon bind=digest: sent=56 errors=0
+w18-digest-nogate-nginx-default-edge-fastapi-ovon rep2 e=0 runner_rc=0 secs=18 [ab_run_matrix] w18-digest-nogate-nginx-default-edge-fastapi-ovon bind=digest: sent=56 errors=0
+w18-digest-nogate-nginx-default-edge-fastapi-ovon rep3 =0 runner_rc=0 secs=603 [ab_run_matrix] w18-digest-nogate-nginx-default-edge-fastapi-ovon bind=digest: sent=56 errors=0
+w18-digest-nogate-nginx-default-edge-spring-ovoff rep1 e=0 runner_rc=0 secs=15 [ab_run_matrix] w18-digest-nogate-nginx-default-edge-spring-ovoff bind=digest: sent=33 errors=0
+w18-digest-nogate-nginx-default-edge-spring-ovoff rep2 e=0 runner_rc=0 secs=16 [ab_run_matrix] w18-digest-nogate-nginx-default-edge-spring-ovoff bind=digest: sent=33 errors=0
+w18-digest-nogate-nginx-default-edge-spring-ovoff rep3 e=0 runner_rc=0 secs=15 [ab_run_matrix] w18-digest-nogate-nginx-default-edge-spring-ovoff bind=digest: sent=33 errors=0
+w18-digest-nogate-nginx-default-edge-spring-ovon rep1 te=0 runner_rc=0 secs=15 [ab_run_matrix] w18-digest-nogate-nginx-default-edge-spring-ovon bind=digest: sent=34 errors=0
+w18-digest-nogate-nginx-default-edge-spring-ovon rep2 te=0 runner_rc=0 secs=16 [ab_run_matrix] w18-digest-nogate-nginx-default-edge-spring-ovon bind=digest: sent=34 errors=0
+w18-digest-nogate-nginx-default-edge-spring-ovon rep3 te=0 runner_rc=0 secs=16 [ab_run_matrix] w18-digest-nogate-nginx-default-edge-spring-ovon bind=digest: sent=34 errors=0
+w18-digest-nogate-nginx-default-edge-rails-ovoff rep1 te=0 runner_rc=0 secs=16 [ab_run_matrix] w18-digest-nogate-nginx-default-edge-rails-ovoff bind=digest: sent=33 errors=0
+w18-digest-nogate-nginx-default-edge-rails-ovoff rep2 te=0 runner_rc=0 secs=16 [ab_run_matrix] w18-digest-nogate-nginx-default-edge-rails-ovoff bind=digest: sent=33 errors=0
+w18-digest-nogate-nginx-default-edge-rails-ovoff rep3 te=0 runner_rc=0 secs=16 [ab_run_matrix] w18-digest-nogate-nginx-default-edge-rails-ovoff bind=digest: sent=33 errors=0
+w18-digest-nogate-nginx-default-edge-rails-ovon rep1 ate=0 runner_rc=0 secs=17 [ab_run_matrix] w18-digest-nogate-nginx-default-edge-rails-ovon bind=digest: sent=35 errors=0
+w18-digest-nogate-nginx-default-edge-rails-ovon rep2 ate=0 runner_rc=0 secs=17 [ab_run_matrix] w18-digest-nogate-nginx-default-edge-rails-ovon bind=digest: sent=35 errors=0
+w18-digest-nogate-nginx-default-edge-rails-ovon rep3 ate=0 runner_rc=0 secs=16 [ab_run_matrix] w18-digest-nogate-nginx-default-edge-rails-ovon bind=digest: sent=35 errors=0
+w18-digest-nogate-nginx-default-edge-laravel-ovoff rep1 =0 runner_rc=0 secs=19 [ab_run_matrix] w18-digest-nogate-nginx-default-edge-laravel-ovoff bind=digest: sent=44 errors=0
+w18-digest-nogate-nginx-default-edge-laravel-ovoff rep2 =0 runner_rc=0 secs=16 [ab_run_matrix] w18-digest-nogate-nginx-default-edge-laravel-ovoff bind=digest: sent=44 errors=0
+w18-digest-nogate-nginx-default-edge-laravel-ovoff rep3 =0 runner_rc=0 secs=14 [ab_run_matrix] w18-digest-nogate-nginx-default-edge-laravel-ovoff bind=digest: sent=44 errors=0
+w18-digest-nogate-nginx-default-edge-laravel-ovon rep1 e=0 runner_rc=0 secs=16 [ab_run_matrix] w18-digest-nogate-nginx-default-edge-laravel-ovon bind=digest: sent=49 errors=0
+w18-digest-nogate-nginx-default-edge-laravel-ovon rep2 e=0 runner_rc=0 secs=15 [ab_run_matrix] w18-digest-nogate-nginx-default-edge-laravel-ovon bind=digest: sent=49 errors=0
+w18-digest-nogate-nginx-default-edge-laravel-ovon rep3 e=0 runner_rc=0 secs=17 [ab_run_matrix] w18-digest-nogate-nginx-default-edge-laravel-ovon bind=digest: sent=49 errors=0
+w18-digest-nginx-default-edge-fastapi-ovoff rep1 st gate=1 runner_rc=0 secs=21 [ab_run_matrix] w18-digest-nginx-default-edge-fastapi-ovoff bind=digest: sent=36 errors=0
+w18-digest-nginx-default-edge-fastapi-ovoff rep2 st gate=1 runner_rc=0 secs=20 [ab_run_matrix] w18-digest-nginx-default-edge-fastapi-ovoff bind=digest: sent=36 errors=0
+w18-digest-nginx-default-edge-fastapi-ovoff rep3 st gate=1 runner_rc=0 secs=22 [ab_run_matrix] w18-digest-nginx-default-edge-fastapi-ovoff bind=digest: sent=36 errors=0
+w18-digest-nginx-default-edge-fastapi-ovon rep1 est gate=1 runner_rc=0 secs=19 [ab_run_matrix] w18-digest-nginx-default-edge-fastapi-ovon bind=digest: sent=48 errors=0
+w18-digest-nginx-default-edge-fastapi-ovon rep2 est gate=1 runner_rc=0 secs=22 [ab_run_matrix] w18-digest-nginx-default-edge-fastapi-ovon bind=digest: sent=48 errors=0
+w18-digest-nginx-default-edge-fastapi-ovon rep3 est gate=1 runner_rc=0 secs=20 [ab_run_matrix] w18-digest-nginx-default-edge-fastapi-ovon bind=digest: sent=48 errors=0
+w18-digest-nginx-default-edge-spring-ovoff rep1 est gate=1 runner_rc=0 secs=20 [ab_run_matrix] w18-digest-nginx-default-edge-spring-ovoff bind=digest: sent=25 errors=0
+w18-digest-nginx-default-edge-spring-ovoff rep2 est gate=1 runner_rc=0 secs=22 [ab_run_matrix] w18-digest-nginx-default-edge-spring-ovoff bind=digest: sent=25 errors=0
+w18-digest-nginx-default-edge-spring-ovoff rep3 est gate=1 runner_rc=0 secs=22 [ab_run_matrix] w18-digest-nginx-default-edge-spring-ovoff bind=digest: sent=25 errors=0
+w18-digest-nginx-default-edge-spring-ovon rep1 gest gate=1 runner_rc=0 secs=22 [ab_run_matrix] w18-digest-nginx-default-edge-spring-ovon bind=digest: sent=27 errors=0
+w18-digest-nginx-default-edge-spring-ovon rep2 gest gate=1 runner_rc=0 secs=22 [ab_run_matrix] w18-digest-nginx-default-edge-spring-ovon bind=digest: sent=27 errors=0
+w18-digest-nginx-default-edge-spring-ovon rep3 gest gate=1 runner_rc=0 secs=24 [ab_run_matrix] w18-digest-nginx-default-edge-spring-ovon bind=digest: sent=27 errors=0
+w18-digest-nginx-default-edge-rails-ovoff rep1 gest gate=1 runner_rc=0 secs=21 [ab_run_matrix] w18-digest-nginx-default-edge-rails-ovoff bind=digest: sent=24 errors=0
+w18-digest-nginx-default-edge-rails-ovoff rep2 gest gate=1 runner_rc=0 secs=26 [ab_run_matrix] w18-digest-nginx-default-edge-rails-ovoff bind=digest: sent=24 errors=0
+w18-digest-nginx-default-edge-rails-ovoff rep3 gest gate=1 runner_rc=0 secs=26 [ab_run_matrix] w18-digest-nginx-default-edge-rails-ovoff bind=digest: sent=24 errors=0
+w18-digest-nginx-default-edge-rails-ovon rep1 igest gate=1 runner_rc=0 secs=27 [ab_run_matrix] w18-digest-nginx-default-edge-rails-ovon bind=digest: sent=27 errors=0
+w18-digest-nginx-default-edge-rails-ovon rep2 igest gate=1 runner_rc=0 secs=28 [ab_run_matrix] w18-digest-nginx-default-edge-rails-ovon bind=digest: sent=27 errors=0
+w18-digest-nginx-default-edge-rails-ovon rep3 igest gate=1 runner_rc=0 secs=31 [ab_run_matrix] w18-digest-nginx-default-edge-rails-ovon bind=digest: sent=27 errors=0
+w18-digest-nginx-default-edge-laravel-ovoff rep1 st gate=1 runner_rc=0 secs=29 [ab_run_matrix] w18-digest-nginx-default-edge-laravel-ovoff bind=digest: sent=36 errors=0
+w18-digest-nginx-default-edge-laravel-ovoff rep2 st gate=1 runner_rc=0 secs=32 [ab_run_matrix] w18-digest-nginx-default-edge-laravel-ovoff bind=digest: sent=36 errors=0
+w18-digest-nginx-default-edge-laravel-ovoff rep3 st gate=1 runner_rc=0 secs=30 [ab_run_matrix] w18-digest-nginx-default-edge-laravel-ovoff bind=digest: sent=36 errors=0
+w18-digest-nginx-default-edge-laravel-ovon rep1 est gate=1 runner_rc=0 secs=36 [ab_run_matrix] w18-digest-nginx-default-edge-laravel-ovon bind=digest: sent=42 errors=0
+w18-digest-nginx-default-edge-laravel-ovon rep2 est gate=1 runner_rc=0 secs=33 [ab_run_matrix] w18-digest-nginx-default-edge-laravel-ovon bind=digest: sent=42 errors=0
+w18-digest-nginx-default-edge-laravel-ovon rep3 est gate=1 runner_rc=0 secs=34 [ab_run_matrix] w18-digest-nginx-default-edge-laravel-ovon bind=digest: sent=42 errors=0
+w18-query-digest-nginx-default-edge-fastapi-ovoff rep1 nner_rc=0 secs=44 [ab_run_matrix] w18-query-digest-nginx-default-edge-fastapi-ovoff bind=query-digest: sent=31 errors=0
+w18-query-digest-nginx-default-edge-fastapi-ovoff rep2 nner_rc=0 secs=36 [ab_run_matrix] w18-query-digest-nginx-default-edge-fastapi-ovoff bind=query-digest: sent=31 errors=0
+w18-query-digest-nginx-default-edge-fastapi-ovoff rep3 nner_rc=0 secs=33 [ab_run_matrix] w18-query-digest-nginx-default-edge-fastapi-ovoff bind=query-digest: sent=31 errors=0
+w18-query-digest-nginx-default-edge-fastapi-ovon rep1 unner_rc=0 secs=33 [ab_run_matrix] w18-query-digest-nginx-default-edge-fastapi-ovon bind=query-digest: sent=43 errors=0
+w18-query-digest-nginx-default-edge-fastapi-ovon rep2 unner_rc=0 secs=35 [ab_run_matrix] w18-query-digest-nginx-default-edge-fastapi-ovon bind=query-digest: sent=43 errors=0
+w18-query-digest-nginx-default-edge-fastapi-ovon rep3 unner_rc=0 secs=30 [ab_run_matrix] w18-query-digest-nginx-default-edge-fastapi-ovon bind=query-digest: sent=43 errors=0
+w18-query-digest-nginx-default-edge-spring-ovoff rep1 unner_rc=0 secs=37 [ab_run_matrix] w18-query-digest-nginx-default-edge-spring-ovoff bind=query-digest: sent=20 errors=0
+w18-query-digest-nginx-default-edge-spring-ovoff rep2 unner_rc=0 secs=27 [ab_run_matrix] w18-query-digest-nginx-default-edge-spring-ovoff bind=query-digest: sent=20 errors=0
+w18-query-digest-nginx-default-edge-spring-ovoff rep3 unner_rc=0 secs=24 [ab_run_matrix] w18-query-digest-nginx-default-edge-spring-ovoff bind=query-digest: sent=20 errors=0
+w18-query-digest-nginx-default-edge-spring-ovon rep1 runner_rc=0 secs=27 [ab_run_matrix] w18-query-digest-nginx-default-edge-spring-ovon bind=query-digest: sent=20 errors=0
+w18-query-digest-nginx-default-edge-spring-ovon rep2 runner_rc=0 secs=31 [ab_run_matrix] w18-query-digest-nginx-default-edge-spring-ovon bind=query-digest: sent=20 errors=0
+w18-query-digest-nginx-default-edge-spring-ovon rep3 runner_rc=0 secs=29 [ab_run_matrix] w18-query-digest-nginx-default-edge-spring-ovon bind=query-digest: sent=20 errors=0
+w18-query-digest-nginx-default-edge-rails-ovoff rep1 runner_rc=0 secs=27 [ab_run_matrix] w18-query-digest-nginx-default-edge-rails-ovoff bind=query-digest: sent=19 errors=0
+w18-query-digest-nginx-default-edge-rails-ovoff rep2 runner_rc=0 secs=24 [ab_run_matrix] w18-query-digest-nginx-default-edge-rails-ovoff bind=query-digest: sent=19 errors=0
+w18-query-digest-nginx-default-edge-rails-ovoff rep3 runner_rc=0 secs=23 [ab_run_matrix] w18-query-digest-nginx-default-edge-rails-ovoff bind=query-digest: sent=19 errors=0
+w18-query-digest-nginx-default-edge-rails-ovon rep1  runner_rc=0 secs=24 [ab_run_matrix] w18-query-digest-nginx-default-edge-rails-ovon bind=query-digest: sent=22 errors=0
+w18-query-digest-nginx-default-edge-rails-ovon rep2  runner_rc=0 secs=23 [ab_run_matrix] w18-query-digest-nginx-default-edge-rails-ovon bind=query-digest: sent=22 errors=0
+w18-query-digest-nginx-default-edge-rails-ovon rep3  runner_rc=0 secs=21 [ab_run_matrix] w18-query-digest-nginx-default-edge-rails-ovon bind=query-digest: sent=22 errors=0
+w18-query-digest-nginx-default-edge-laravel-ovoff rep1 nner_rc=0 secs=19 [ab_run_matrix] w18-query-digest-nginx-default-edge-laravel-ovoff bind=query-digest: sent=31 errors=0
+w18-query-digest-nginx-default-edge-laravel-ovoff rep2 nner_rc=0 secs=19 [ab_run_matrix] w18-query-digest-nginx-default-edge-laravel-ovoff bind=query-digest: sent=31 errors=0
+w18-query-digest-nginx-default-edge-laravel-ovoff rep3 nner_rc=0 secs=21 [ab_run_matrix] w18-query-digest-nginx-default-edge-laravel-ovoff bind=query-digest: sent=31 errors=0
+w18-query-digest-nginx-default-edge-laravel-ovon rep1 unner_rc=0 secs=19 [ab_run_matrix] w18-query-digest-nginx-default-edge-laravel-ovon bind=query-digest: sent=34 errors=0
+w18-query-digest-nginx-default-edge-laravel-ovon rep2 unner_rc=0 secs=19 [ab_run_matrix] w18-query-digest-nginx-default-edge-laravel-ovon bind=query-digest: sent=34 errors=0
+w18-query-digest-nginx-default-edge-laravel-ovon rep3 unner_rc=0 secs=20 [ab_run_matrix] w18-query-digest-nginx-default-edge-laravel-ovon bind=query-digest: sent=34 errors=0
+RERUNDONE

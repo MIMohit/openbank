@@ -1,0 +1,2 @@
+topology,gateway,profile,framework,verifier_image,cases,pdp_allow,violations,admin,bob,vectors_hit
+w12-allow-ngx-aspnet-def,nginx,default,aspnet,bh-pdp-allow:latest,29,13,9,4,5,"dotseg-admin-del,dotseg-admin-list,dotseg-bob-del,dotseg-bob-get,dotseg-bob-getv2,dotseg-bob-put,dotseg-v2v1-admin,encdotseg-admin-list,encdotseg-bob-get"

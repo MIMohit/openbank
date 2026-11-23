@@ -1,0 +1,1 @@
+oracle[w13-apisix-default-edge-go-chi-ovon] {'topology': 'w13-apisix-default-edge-go-chi-ovon', 'cases': 948, 'accepted': 698, 'hits_raw': 17, 'hits_confirmed': 0, 'S1': 12, 'S2': 5, 'S3': 0, 'signatures': 12, 'max_res_hat': 3, 'b0': 0, 'propagation': 117, 'uncorrelated': 20}

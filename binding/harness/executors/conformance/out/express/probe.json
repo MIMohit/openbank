@@ -1,0 +1,298 @@
+[
+  {
+    "probe": "baseline",
+    "method": "GET",
+    "target": "/api/v1/accounts/acc-alice-1",
+    "status": 200,
+    "op_id": "getAccount",
+    "path_params": {
+      "id": "acc-alice-1"
+    },
+    "location": null,
+    "allow": null
+  },
+  {
+    "probe": "trailing slash (static)",
+    "method": "GET",
+    "target": "/api/v1/accounts/",
+    "status": 200,
+    "op_id": "listAccounts",
+    "path_params": {},
+    "location": null,
+    "allow": null
+  },
+  {
+    "probe": "trailing slash (param)",
+    "method": "GET",
+    "target": "/api/v1/accounts/acc-alice-1/",
+    "status": 200,
+    "op_id": "getAccount",
+    "path_params": {
+      "id": "acc-alice-1"
+    },
+    "location": null,
+    "allow": null
+  },
+  {
+    "probe": "leading double slash",
+    "method": "GET",
+    "target": "//api/v1/me",
+    "status": 404,
+    "op_id": "NOT_FOUND",
+    "path_params": null,
+    "location": null,
+    "allow": null
+  },
+  {
+    "probe": "inner double slash",
+    "method": "GET",
+    "target": "/api//v1/me",
+    "status": 404,
+    "op_id": "NOT_FOUND",
+    "path_params": null,
+    "location": null,
+    "allow": null
+  },
+  {
+    "probe": "dot segment /./",
+    "method": "GET",
+    "target": "/api/v1/./me",
+    "status": 404,
+    "op_id": "NOT_FOUND",
+    "path_params": null,
+    "location": null,
+    "allow": null
+  },
+  {
+    "probe": "dot-dot segment",
+    "method": "GET",
+    "target": "/api/v1/x/../me",
+    "status": 404,
+    "op_id": "NOT_FOUND",
+    "path_params": null,
+    "location": null,
+    "allow": null
+  },
+  {
+    "probe": "encoded dot-dot %2e%2e",
+    "method": "GET",
+    "target": "/api/v1/x/%2e%2e/me",
+    "status": 404,
+    "op_id": "NOT_FOUND",
+    "path_params": null,
+    "location": null,
+    "allow": null
+  },
+  {
+    "probe": "upper-case path",
+    "method": "GET",
+    "target": "/API/V1/ME",
+    "status": 200,
+    "op_id": "me",
+    "path_params": {},
+    "location": null,
+    "allow": null
+  },
+  {
+    "probe": "pct-encoded static char %6D",
+    "method": "GET",
+    "target": "/api/v1/%6De",
+    "status": 404,
+    "op_id": "NOT_FOUND",
+    "path_params": null,
+    "location": null,
+    "allow": null
+  },
+  {
+    "probe": "pct-encoded unreserved in param",
+    "method": "GET",
+    "target": "/api/v1/accounts/acc%2Dalice-1",
+    "status": 200,
+    "op_id": "getAccount",
+    "path_params": {
+      "id": "acc-alice-1"
+    },
+    "location": null,
+    "allow": null
+  },
+  {
+    "probe": "encoded slash in param %2F",
+    "method": "GET",
+    "target": "/api/v1/accounts/acc-alice-1%2Fx",
+    "status": 200,
+    "op_id": "getAccount",
+    "path_params": {
+      "id": "acc-alice-1/x"
+    },
+    "location": null,
+    "allow": null
+  },
+  {
+    "probe": "encoded slash public %2F",
+    "method": "GET",
+    "target": "/api/v1/public/a%2F..%2Fb",
+    "status": 200,
+    "op_id": "publicFile",
+    "path_params": {
+      "file": "a/../b"
+    },
+    "location": null,
+    "allow": null
+  },
+  {
+    "probe": "matrix param on static ;x=1",
+    "method": "GET",
+    "target": "/api/v1/me;x=1",
+    "status": 404,
+    "op_id": "NOT_FOUND",
+    "path_params": null,
+    "location": null,
+    "allow": null
+  },
+  {
+    "probe": "matrix param on param ;x=1",
+    "method": "GET",
+    "target": "/api/v1/accounts/acc-alice-1;x=1",
+    "status": 200,
+    "op_id": "getAccount",
+    "path_params": {
+      "id": "acc-alice-1;x=1"
+    },
+    "location": null,
+    "allow": null
+  },
+  {
+    "probe": "utf-8 pct in param",
+    "method": "GET",
+    "target": "/api/v1/accounts/caf%C3%A9",
+    "status": 200,
+    "op_id": "getAccount",
+    "path_params": {
+      "id": "caf\u00e9"
+    },
+    "location": null,
+    "allow": null
+  },
+  {
+    "probe": "backslash",
+    "method": "GET",
+    "target": "/api/v1\\me",
+    "status": 404,
+    "op_id": "NOT_FOUND",
+    "path_params": null,
+    "location": null,
+    "allow": null
+  },
+  {
+    "probe": "v2 mount double slash",
+    "method": "GET",
+    "target": "/api/v2//accounts/acc-alice-1",
+    "status": 200,
+    "op_id": "getAccountV2",
+    "path_params": {
+      "id": "acc-alice-1"
+    },
+    "location": null,
+    "allow": null
+  },
+  {
+    "probe": "v2 mount trailing slash",
+    "method": "GET",
+    "target": "/api/v2/accounts/acc-alice-1/",
+    "status": 200,
+    "op_id": "getAccountV2",
+    "path_params": {
+      "id": "acc-alice-1"
+    },
+    "location": null,
+    "allow": null
+  },
+  {
+    "probe": "absolute-form target",
+    "method": "GET",
+    "target": "http://api.bench.test/api/v1/me",
+    "status": 200,
+    "op_id": "me",
+    "path_params": {},
+    "location": null,
+    "allow": null
+  },
+  {
+    "probe": "HEAD on GET route",
+    "method": "HEAD",
+    "target": "/api/v1/me",
+    "status": 200,
+    "op_id": null,
+    "path_params": null,
+    "location": null,
+    "allow": null
+  },
+  {
+    "probe": "OPTIONS on GET route",
+    "method": "OPTIONS",
+    "target": "/api/v1/me",
+    "status": 404,
+    "op_id": "NOT_FOUND",
+    "path_params": null,
+    "location": null,
+    "allow": null
+  },
+  {
+    "probe": "lower-case method",
+    "method": "get",
+    "target": "/api/v1/me",
+    "status": 400,
+    "op_id": null,
+    "path_params": null,
+    "location": null,
+    "allow": null
+  },
+  {
+    "probe": "HPP op=freeze&op=close",
+    "method": "POST",
+    "target": "/api/v1/accounts/acc-alice-1/actions?op=freeze&op=close",
+    "status": 200,
+    "op_id": "accountAction.unknown",
+    "path_params": {
+      "id": "acc-alice-1"
+    },
+    "location": null,
+    "allow": null
+  },
+  {
+    "probe": "HPP op=close&op=freeze",
+    "method": "POST",
+    "target": "/api/v1/accounts/acc-alice-1/actions?op=close&op=freeze",
+    "status": 200,
+    "op_id": "accountAction.unknown",
+    "path_params": {
+      "id": "acc-alice-1"
+    },
+    "location": null,
+    "allow": null
+  },
+  {
+    "probe": "query ;-separated op",
+    "method": "POST",
+    "target": "/api/v1/accounts/acc-alice-1/actions?x=1;op=close",
+    "status": 200,
+    "op_id": "accountAction.unknown",
+    "path_params": {
+      "id": "acc-alice-1"
+    },
+    "location": null,
+    "allow": null
+  },
+  {
+    "probe": "query op[]=close",
+    "method": "POST",
+    "target": "/api/v1/accounts/acc-alice-1/actions?op[]=close",
+    "status": 200,
+    "op_id": "accountAction.unknown",
+    "path_params": {
+      "id": "acc-alice-1"
+    },
+    "location": null,
+    "allow": null
+  }
+]

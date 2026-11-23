@@ -1,0 +1,1 @@
+bstrict ngx-spring-ovoff w17-bstrict-ngx-spring-ovoff runner_rc=0 secs=12 hits=14 [ext_run_matrix] w17-bstrict-ngx-spring-ovoff/gateway: {'sent': 33, 'errors': 0}

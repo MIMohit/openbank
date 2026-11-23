@@ -1,0 +1,79 @@
+% appendix/hypotheses.tex -- Owner: W2. Full hypothesis/experiment mapping (Table~\ref{tab:hyp}).
+\section{Hypotheses, Experiments and Ablations}\label{app:hyp}
+
+\begin{description}[leftmargin=0pt,itemsep=3pt]
+\item[\Hyp{1} (\GA).] In real API descriptions, a non-trivial fraction of
+state-changing operations are not determined by (method, path without query),
+and documented method-override or dispatch features in mainstream frameworks
+make $m_x \neq \htm$ reachable.
+\emph{Tests:} \Exp{1} (corpus measurement over OpenAPI and GraphQL descriptions),
+\Exp{2} (override and dispatch survey across frameworks), the \GA primitives
+of \Exp{3}, \Exp{6} (the same question for signatures), and \Exp{9}
+(\Abl{1}, binding claims).
+\emph{Falsified if:} nearly all operations in the finance and health
+descriptions are uniquely identified by (method, path), and no mainstream
+framework enables override in any common configuration.
+
+\item[\Hyp{2} (\GB).] For a meaningful subset of gateway $\times$ framework
+topologies with edge verification, some requests accepted under $\pi$ have
+$\mathit{route}_x \neq \mathit{route}(\htu)$.
+\emph{Tests:} \Exp{3} (differential matrix with the binding oracle),
+\Exp{6}, \Exp{8} (strict normalisation baseline), \Abl{1} (drop \htu),
+\Abl{3} (placement) and \Abl{5} (gateway profile).
+\emph{Falsified if:} current versions of all tested combinations normalise
+consistently against the full primitive set.
+
+\item[\Hyp{3} (\GC, confused deputy).] In at least one mainstream gateway--PDP
+integration, \Aclient can obtain execution on $\rho' \notin R$, or can spoof a
+propagated binding or certificate header.
+\emph{Tests:} \Exp{4} (confused-deputy tests with a path-keyed PDP at the
+edge), \Exp{5} (header-trust matrix: injection, aliasing by case,
+\texttt{\_}/\texttt{-} and duplicates, under default and documented configurations),
+\Abl{3} (placement) and \Abl{4} (with and without the \GC primitives).
+\emph{Falsified if:} all patched versions resist.
+
+\item[\Hyp{4} (defence).] Verifier-to-executor canonical binding, either
+D-A (the executor re-checks against its routed view) or D-B (the verifier emits a
+MAC over its canonical view, \hdr{X-Verified-View}), removes \GB and \GC with
+low overhead and few false rejections of legitimate proxied traffic.
+\emph{Tests:} \Exp{7} (security re-run of \Exp{3}--\Exp{5}; p50/p99 latency;
+false rejection on legitimate rewriting such as strip-prefix and path
+versioning), \Exp{8} (baselines: origin-only verification, HTTP request
+synchronisation if an artefact is available, strict normalisation),
+\Abl{2} (which D-B canonicalisation step removes which \GB witnesses) and
+\Abl{3} (D-A at the origin against edge-only verification).
+\emph{Falsified if:} legitimate rewriting topologies cause a high false-rejection rate.
+
+\item[\Hyp{5} (optional, formal).] In a symbolic model, the resource-access
+property holds with origin verification, fails with edge verification under
+a non-injective normalisation, and is restored by canonical binding.
+\emph{Tests:} \Exp{10}. \emph{Falsified if:} the model shows a gap in the defence.
+\end{description}
+
+\paragraph{Ablations.} Each ablation varies one factor and re-measures
+empirical resolution $\widehat{\res}$ over the same cases, holding every other
+factor at its matrix value. \Abl{1} instantiates \Exp{9}.
+\begin{center}\small
+\begin{tabular}{@{}l p{5.0cm} l@{}}
+\toprule
+& Factor varied (levels) & Hypothesis \\
+\midrule
+\Abl{1} & binding claims of the reference verifier: drop \htm; drop \htu;
+  drop \ath; add query binding; add body digest (RFC~9530) & \Hyp{1}, \Hyp{2} \\
+\Abl{2} & D-B canonicalisation, leave one step out: percent-decoding;
+  dot-segment removal; case normalisation; slash merging; prefix map & \Hyp{4} \\
+\Abl{3} & verifier placement: edge; origin; both & \Hyp{2}--\Hyp{4} \\
+\Abl{4} & primitive classes, leave one out: without \GA; without \GB; without \GC & \Hyp{1}--\Hyp{3} \\
+\Abl{5} & gateway configuration profile: default; recommended; strict & \Hyp{2} \\
+\bottomrule
+\end{tabular}
+\end{center}
+In \Abl{1}, adding the query or a body digest extends the proof beyond
+RFC~9449 (its \S11.7 permits additional claims); dropping \htm or \htu gives
+the first data relevant to proposals to make them optional. \Abl{2} tells
+which canonicalisation steps the defence actually needs, and which ones cause
+its false rejections. \Abl{4} tests whether the classes are independent: a
+witness that disappears when either of two classes is left out needs both,
+and is attributed to both. \Abl{5} separates vendor defaults from documented
+hardening and from the harness-defined strict deny rules.
+\todo{Ablation results (W9 / campaign); none are measured yet.}

@@ -1,0 +1,12 @@
+id: w17-frr-db-spring
+gateway: nginx
+profile: default
+placement: edge
+framework: spring
+executor_image: bh-exec-spring:defence
+override: 'off'
+verifier:
+  image: bh-verifier:latest
+  canon: rfc3986
+  view_mac: 'on'
+host_port: 29142

@@ -1,0 +1,1 @@
+oracle[w9-envoy-default-edge-fastapi-ovon] {'topology': 'w9-envoy-default-edge-fastapi-ovon', 'cases': 948, 'accepted': 659, 'hits_raw': 19, 'hits_confirmed': 0, 'S1': 10, 'S2': 9, 'S3': 0, 'signatures': 16, 'max_res_hat': 3, 'b0': 0, 'propagation': 78, 'uncorrelated': 8}

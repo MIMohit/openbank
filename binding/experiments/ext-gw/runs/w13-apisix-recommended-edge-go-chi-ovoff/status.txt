@@ -1,0 +1,1 @@
+w13-apisix-recommended-edge-go-chi-ovoff runner_rc=0 secs=95 runner[w13-apisix-recommended-edge-go-chi-ovoff/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w13-apisix-recommended-edge-go-chi-ovoff/runner.jsonl: {'sent': 948, 'errors': 0}

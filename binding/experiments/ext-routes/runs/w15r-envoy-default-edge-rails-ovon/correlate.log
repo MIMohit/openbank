@@ -1,0 +1,1 @@
+oracle[w15r-envoy-default-edge-rails-ovon] {'topology': 'w15r-envoy-default-edge-rails-ovon', 'cases': 581, 'accepted': 395, 'hits_raw': 8, 'hits_confirmed': 0, 'S1': 6, 'S2': 2, 'S3': 0, 'signatures': 8, 'max_res_hat': 4, 'b0': 0, 'propagation': 64, 'uncorrelated': 6}

@@ -1,0 +1,13 @@
+id: w17-da-e4rc5-spring
+gateway: nginx
+profile: recommended
+placement: origin
+framework: spring
+executor_image: bh-exec-spring:v2
+override: 'off'
+verifier:
+  image: bh-pdp-block:latest
+  canon: rfc3986
+  view_mac: 'off'
+host_port: 28889
+verify_mode: origin-routed

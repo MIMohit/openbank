@@ -1,0 +1,5 @@
+[2026-11-23 05:21:03 +0000] [1] [INFO] Starting gunicorn 27.0.1
+[2026-11-23 05:21:03 +0000] [1] [INFO] Listening at: http://0.0.0.0:8080 (1)
+[2026-11-23 05:21:03 +0000] [1] [INFO] Using worker: gthread
+[2026-11-23 05:21:03 +0000] [7] [INFO] Booting worker with pid: 7
+[2026-11-23 05:21:03 +0000] [8] [INFO] Booting worker with pid: 8

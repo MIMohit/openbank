@@ -1,0 +1,11 @@
+mechanism,name,class,hits,families,experiments,gateways,frameworks
+M1,query-dispatch,G1,975,query-dispatch-switch,ext-fw|ext-gw|kill,apisix|envoy|haproxy|kong|nginx|traefik,aspnet|django|express|fastapi|go-chi|laravel|rails|spring
+M2,body-dispatch,G1,650,graphql-operation-switch,ext-fw|ext-gw|kill,apisix|envoy|haproxy|kong|nginx|traefik,aspnet|django|express|fastapi|go-chi|laravel|rails|spring
+M3,content-type-switch,G1,101,content-type-switch,ext-fw|ext-gw|kill,apisix|envoy|haproxy|kong|nginx|traefik,aspnet|express|go-chi|spring
+M4,form-body-replace,G1,662,method-override-body,ext-fw|ext-gw|kill,apisix|envoy|haproxy|kong|nginx|traefik,aspnet|django|express|fastapi|go-chi|laravel|rails|spring
+M5a,override-any-method,G1,96,method-override-header,ext-fw|ext-gw|ext-routes|kill,apisix|envoy|haproxy|kong|nginx|traefik,fastapi
+M5b,override-post,G1,98,method-override-body|method-override-header|method-override-query,ext-routes,envoy|nginx,aspnet|django|express|fastapi|go-chi|laravel|rails|spring
+M6,fragment-in-path,G2,198,fragment,ext-fw|ext-gw|ext-routes|kill,kong|nginx,fastapi|go-chi|laravel
+M7,fragment-in-query,G1*,36,fragment,ext-fw|ext-gw|kill,apisix|nginx|traefik,fastapi|go-chi|laravel
+M8,decoded-view-split,G2,96,encoded-slash,ext-gw,apisix,aspnet|express|go-chi|rails
+M9,dot-segment-catchall,G2,56,dot-segment,ext-routes,envoy|nginx,django|express|fastapi|go-chi|laravel|rails|spring

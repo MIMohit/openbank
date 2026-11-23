@@ -1,0 +1,11 @@
+{
+  "name": "bh-defence-viewmac-express",
+  "version": "1.0.0",
+  "private": true,
+  "main": "viewmac.js",
+  "scripts": { "test": "node --test test/" },
+  "devDependencies": {
+    "express": "4.22.3",
+    "method-override": "3.0.0"
+  }
+}

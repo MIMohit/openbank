@@ -1,0 +1,9 @@
+topology,cases,accepted,hits_raw,hits_confirmed,S1,S2,S3,signatures,max_res_hat,b0,propagation,uncorrelated
+w14-nginx-default-origin-aspnet-ovon,948,818,11,0,6,5,0,11,3,0,182,17
+w14-nginx-default-origin-django-ovon,948,831,9,0,6,3,0,9,3,0,182,2
+w14-nginx-default-origin-express-ovon,948,831,11,0,6,5,0,11,3,0,182,2
+w14-nginx-default-origin-fastapi-ovon,948,831,26,0,17,9,0,18,4,0,182,2
+w14-nginx-default-origin-go-chi-ovon,948,831,17,0,12,5,0,12,3,0,182,16
+w14-nginx-default-origin-laravel-ovon,948,831,10,0,7,3,0,10,3,0,182,2
+w14-nginx-default-origin-rails-ovon,948,818,10,0,6,4,0,10,3,0,182,2
+w14-nginx-default-origin-spring-ovon,948,766,11,0,6,5,0,11,3,0,182,10

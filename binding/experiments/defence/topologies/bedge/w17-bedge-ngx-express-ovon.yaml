@@ -1,0 +1,12 @@
+id: w17-bedge-ngx-express-ovon
+gateway: nginx
+profile: default
+placement: edge
+framework: express
+executor_image: bh-exec-express:v2
+override: 'on'
+verifier:
+  image: bh-verifier:latest
+  canon: rfc3986
+  view_mac: 'off'
+host_port: 28804

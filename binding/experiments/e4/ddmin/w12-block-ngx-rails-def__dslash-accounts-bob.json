@@ -1,0 +1,46 @@
+{
+ "topology": "w12-block-ngx-rails-def",
+ "vector_id": "dslash-accounts-bob",
+ "canonical_vector": "direct-bob-get",
+ "primitive_ids": [
+  "e4-dslash-accounts-bob"
+ ],
+ "forbidden_op": "getAccount",
+ "forbidden_kind": "bob",
+ "canonical_target": "/api/v1/accounts/acc-bob-1",
+ "mutated_target": "/api/v1//accounts/acc-bob-1",
+ "full_units": 1,
+ "minimal_units": 1,
+ "canonical_denied_ok": true,
+ "full_hit": true,
+ "minimal_target": "/api/v1//accounts/acc-bob-1",
+ "minimal_method": "GET",
+ "minimal_request_line": "GET /api/v1//accounts/acc-bob-1",
+ "still_hit": true,
+ "trials": [
+  {
+   "n_units": 0,
+   "status": 401,
+   "allowed": false,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "allowed": true,
+   "hit": true
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "allowed": true,
+   "hit": true
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "allowed": true,
+   "hit": true
+  }
+ ]
+}

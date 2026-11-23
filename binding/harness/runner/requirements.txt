@@ -1,0 +1,3 @@
+# runner: raw-socket matrix runner.
+PyYAML>=6.0
+cryptography>=42.0   # only for runner/minter_shim.py fallback (W3 minter preferred)

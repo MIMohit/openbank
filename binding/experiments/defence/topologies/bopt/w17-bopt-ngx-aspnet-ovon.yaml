@@ -1,0 +1,12 @@
+id: w17-bopt-ngx-aspnet-ovon
+gateway: nginx
+profile: default
+placement: edge
+framework: aspnet
+executor_image: bh-exec-aspnet:v2
+override: 'on'
+verifier:
+  image: bh-verifier:w17-optional
+  canon: rfc3986
+  view_mac: 'off'
+host_port: 28874

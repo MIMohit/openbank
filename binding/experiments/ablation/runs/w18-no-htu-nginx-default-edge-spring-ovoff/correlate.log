@@ -1,0 +1,1 @@
+oracle[w18-no-htu-nginx-default-edge-spring-ovoff] {'topology': 'w18-no-htu-nginx-default-edge-spring-ovoff', 'cases': 1239, 'accepted': 995, 'hits_raw': 22, 'hits_confirmed': 0, 'S1': 11, 'S2': 11, 'S3': 0, 'signatures': 22, 'max_res_hat': 4, 'b0': 0, 'propagation': 153, 'uncorrelated': 3}

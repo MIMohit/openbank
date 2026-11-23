@@ -1,0 +1,2 @@
+# oracle: correlator + ddmin minimiser.
+PyYAML>=6.0

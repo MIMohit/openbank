@@ -1,0 +1,10 @@
+id: apisix-strict-edge-laravel-ovon
+gateway: apisix
+gateway_image: apache/apisix:3.21.0-debian
+profile: strict
+placement: edge
+framework: laravel
+executor_image: bh-exec-laravel:latest
+override: 'on'
+verifier: {image: 'bh-verifier:latest', canon: rfc3986, view_mac: 'off'}
+host_port: 18687

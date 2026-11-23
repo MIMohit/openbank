@@ -1,0 +1,1 @@
+oracle[w18-digest-nginx-default-edge-fastapi-ovon] {'topology': 'w18-digest-nginx-default-edge-fastapi-ovon', 'cases': 1239, 'accepted': 772, 'hits_raw': 31, 'hits_confirmed': 0, 'S1': 24, 'S2': 7, 'S3': 0, 'signatures': 15, 'max_res_hat': 6, 'b0': 0, 'propagation': 153, 'uncorrelated': 5}

@@ -1,0 +1,52 @@
+{
+ "topology": "w15r-nginx-default-edge-fastapi-ovon",
+ "case_id": "catchAllFile:g2-dot-literal:alice:c7873b6e01ee",
+ "primitive_ids": [
+  "g2-dot-literal"
+ ],
+ "base_op_id": "catchAllFile",
+ "exec_op_id": "catchAllFile",
+ "exec_path_params": {
+  "path": "reports/./logo.png"
+ },
+ "deviation_kinds": [
+  "resource"
+ ],
+ "full_units": 2,
+ "minimal_units": 2,
+ "still_hit": true,
+ "canonical_request": "GET /api/v1/files/reports/logo.png HTTP/1.1\r\nHost: api.bench.test\r\nAuthorization: @@AUTHZ@@\r\nDPoP: @@PROOF@@\r\nAccept: application/json\r\nUser-Agent: bind-harness/1.0\r\nConnection: close\r\n\r\n",
+ "minimal_request": "GET /api/v1/files/reports/./logo.png HTTP/1.1\r\nHost: api.bench.test\r\nAuthorization: @@AUTHZ@@\r\nDPoP: @@PROOF@@\r\nAccept: application/json\r\nUser-Agent: bind-harness/1.0\r\nConnection: close\r\n\r\n",
+ "trials": [
+  {
+   "n_units": 2,
+   "status": 200,
+   "hit": true
+  },
+  {
+   "n_units": 1,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 2,
+   "status": 200,
+   "hit": true
+  }
+ ]
+}

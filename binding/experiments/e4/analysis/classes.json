@@ -1,0 +1,287 @@
+{
+  "framework:aspnet:case-fold": {
+    "frameworks": [
+      "aspnet"
+    ],
+    "gateways": [
+      "apisix",
+      "envoy",
+      "haproxy",
+      "kong",
+      "nginx",
+      "traefik"
+    ],
+    "kinds": [
+      "admin"
+    ],
+    "policies": [
+      "block"
+    ],
+    "profiles": [
+      "default",
+      "recommended"
+    ],
+    "topologies": [
+      "w12-block-apx-aspnet-def",
+      "w12-block-apx-aspnet-rec",
+      "w12-block-env-aspnet-def",
+      "w12-block-env-aspnet-rec",
+      "w12-block-hap-aspnet-def",
+      "w12-block-hap-aspnet-rec",
+      "w12-block-kng-aspnet-def",
+      "w12-block-kng-aspnet-rec",
+      "w12-block-ngx-aspnet-def",
+      "w12-block-ngx-aspnet-rec",
+      "w12-block-trf-aspnet-def",
+      "w12-block-trf-aspnet-rec"
+    ],
+    "vectors": [
+      "case-admin-del",
+      "case-admin-list"
+    ]
+  },
+  "framework:aspnet:dot-segment": {
+    "frameworks": [
+      "aspnet"
+    ],
+    "gateways": [
+      "envoy",
+      "haproxy",
+      "nginx"
+    ],
+    "kinds": [
+      "admin",
+      "bob"
+    ],
+    "policies": [
+      "allow",
+      "block"
+    ],
+    "profiles": [
+      "default",
+      "recommended"
+    ],
+    "topologies": [
+      "w12-allow-env-aspnet-def",
+      "w12-allow-hap-aspnet-def",
+      "w12-allow-hap-aspnet-rec",
+      "w12-allow-ngx-aspnet-def",
+      "w12-allow-ngx-aspnet-rec",
+      "w12-block-env-aspnet-def",
+      "w12-block-hap-aspnet-def",
+      "w12-block-hap-aspnet-rec",
+      "w12-block-ngx-aspnet-def",
+      "w12-block-ngx-aspnet-rec"
+    ],
+    "vectors": [
+      "dotseg-admin-del",
+      "dotseg-admin-list",
+      "dotseg-bob-del",
+      "dotseg-bob-get",
+      "dotseg-bob-getv2",
+      "dotseg-bob-put",
+      "dotseg-v2v1-admin",
+      "encdotseg-admin-list",
+      "encdotseg-bob-get"
+    ]
+  },
+  "framework:express:case-fold": {
+    "frameworks": [
+      "express"
+    ],
+    "gateways": [
+      "apisix",
+      "envoy",
+      "haproxy",
+      "kong",
+      "nginx",
+      "traefik"
+    ],
+    "kinds": [
+      "admin"
+    ],
+    "policies": [
+      "block"
+    ],
+    "profiles": [
+      "default"
+    ],
+    "topologies": [
+      "w12-block-apx-express-def",
+      "w12-block-env-express-def",
+      "w12-block-hap-express-def",
+      "w12-block-kng-express-def",
+      "w12-block-ngx-express-def",
+      "w12-block-trf-express-def"
+    ],
+    "vectors": [
+      "case-admin-del",
+      "case-admin-list"
+    ]
+  },
+  "framework:rails:double-slash": {
+    "frameworks": [
+      "rails"
+    ],
+    "gateways": [
+      "envoy",
+      "haproxy",
+      "nginx"
+    ],
+    "kinds": [
+      "admin",
+      "bob"
+    ],
+    "policies": [
+      "block"
+    ],
+    "profiles": [
+      "default",
+      "recommended"
+    ],
+    "topologies": [
+      "w12-block-env-rails-def",
+      "w12-block-hap-rails-def",
+      "w12-block-ngx-rails-def",
+      "w12-block-ngx-rails-rec"
+    ],
+    "vectors": [
+      "dslash-accounts-bob",
+      "dslash-admin-del",
+      "dslash-admin-list"
+    ]
+  },
+  "framework:spring:matrix-param": {
+    "frameworks": [
+      "spring"
+    ],
+    "gateways": [
+      "apisix",
+      "envoy",
+      "haproxy",
+      "kong",
+      "nginx",
+      "traefik"
+    ],
+    "kinds": [
+      "admin",
+      "bob"
+    ],
+    "policies": [
+      "block"
+    ],
+    "profiles": [
+      "default",
+      "recommended"
+    ],
+    "topologies": [
+      "w12-block-apx-spring-def",
+      "w12-block-apx-spring-rec",
+      "w12-block-env-spring-def",
+      "w12-block-env-spring-rec",
+      "w12-block-hap-spring-def",
+      "w12-block-hap-spring-rec",
+      "w12-block-kng-spring-def",
+      "w12-block-kng-spring-rec",
+      "w12-block-ngx-spring-def",
+      "w12-block-ngx-spring-rec",
+      "w12-block-trf-spring-def",
+      "w12-block-trf-spring-rec"
+    ],
+    "vectors": [
+      "matrix-accounts-bob",
+      "matrix-admin-del",
+      "matrix-admin-list"
+    ]
+  },
+  "gateway:kong:dot-segment": {
+    "frameworks": [
+      "aspnet",
+      "express",
+      "fastapi",
+      "laravel",
+      "rails",
+      "spring"
+    ],
+    "gateways": [
+      "kong"
+    ],
+    "kinds": [
+      "admin",
+      "bob"
+    ],
+    "policies": [
+      "allow",
+      "block"
+    ],
+    "profiles": [
+      "default",
+      "recommended"
+    ],
+    "topologies": [
+      "w12-allow-kng-aspnet-def",
+      "w12-allow-kng-aspnet-rec",
+      "w12-allow-kng-express-def",
+      "w12-allow-kng-fastapi-def",
+      "w12-allow-kng-laravel-def",
+      "w12-allow-kng-rails-def",
+      "w12-allow-kng-rails-rec",
+      "w12-allow-kng-spring-def",
+      "w12-allow-kng-spring-rec",
+      "w12-block-kng-aspnet-def",
+      "w12-block-kng-aspnet-rec",
+      "w12-block-kng-express-def",
+      "w12-block-kng-rails-def",
+      "w12-block-kng-rails-rec",
+      "w12-block-kng-spring-def",
+      "w12-block-kng-spring-rec"
+    ],
+    "vectors": [
+      "dotseg-admin-del",
+      "dotseg-admin-list",
+      "dotseg-bob-del",
+      "dotseg-bob-get",
+      "dotseg-bob-getv2",
+      "dotseg-bob-put",
+      "dotseg-v2v1-admin",
+      "encdotseg-admin-list",
+      "encdotseg-bob-get"
+    ]
+  },
+  "gateway:kong:double-slash": {
+    "frameworks": [
+      "aspnet",
+      "express",
+      "rails",
+      "spring"
+    ],
+    "gateways": [
+      "kong"
+    ],
+    "kinds": [
+      "admin",
+      "bob"
+    ],
+    "policies": [
+      "block"
+    ],
+    "profiles": [
+      "default",
+      "recommended"
+    ],
+    "topologies": [
+      "w12-block-kng-aspnet-def",
+      "w12-block-kng-aspnet-rec",
+      "w12-block-kng-express-def",
+      "w12-block-kng-rails-def",
+      "w12-block-kng-rails-rec",
+      "w12-block-kng-spring-def",
+      "w12-block-kng-spring-rec"
+    ],
+    "vectors": [
+      "dslash-accounts-bob",
+      "dslash-admin-del",
+      "dslash-admin-list"
+    ]
+  }
+}

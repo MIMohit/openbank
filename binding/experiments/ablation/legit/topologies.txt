@@ -1,0 +1,12 @@
+w18-legit-ngxdef-full
+w18-legit-ngxdef-query-exact
+w18-legit-ngxdef-query
+w18-legit-ngxdef-query-sorted
+w18-legit-ngxdef-digest
+w18-legit-ngxdef-query-digest
+w18-legit-haprec-full
+w18-legit-haprec-query-exact
+w18-legit-haprec-query
+w18-legit-haprec-query-sorted
+w18-legit-haprec-digest
+w18-legit-haprec-query-digest

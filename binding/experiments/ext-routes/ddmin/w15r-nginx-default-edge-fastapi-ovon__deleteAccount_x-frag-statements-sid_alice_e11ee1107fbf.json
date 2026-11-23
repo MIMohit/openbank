@@ -1,0 +1,593 @@
+{
+ "topology": "w15r-nginx-default-edge-fastapi-ovon",
+ "case_id": "deleteAccount:x-frag-statements-sid:alice:e11ee1107fbf",
+ "primitive_ids": [
+  "x-frag-statements-sid"
+ ],
+ "base_op_id": "deleteAccount",
+ "exec_op_id": "deleteStatement",
+ "exec_path_params": {
+  "id": "acc-alice-1#",
+  "sid": "s-evil"
+ },
+ "deviation_kinds": [
+  "dispatch"
+ ],
+ "full_units": 19,
+ "minimal_units": 19,
+ "still_hit": true,
+ "canonical_request": "DELETE /api/v1/accounts/acc-alice-1 HTTP/1.1\r\nHost: api.bench.test\r\nAuthorization: @@AUTHZ@@\r\nDPoP: @@PROOF@@\r\nAccept: application/json\r\nUser-Agent: bind-harness/1.0\r\nConnection: close\r\n\r\n",
+ "minimal_request": "DELETE /api/v1/accounts/acc-alice-1#/statements/s-evil HTTP/1.1\r\nHost: api.bench.test\r\nAuthorization: @@AUTHZ@@\r\nDPoP: @@PROOF@@\r\nAccept: application/json\r\nUser-Agent: bind-harness/1.0\r\nConnection: close\r\n\r\n",
+ "trials": [
+  {
+   "n_units": 19,
+   "status": 200,
+   "hit": true
+  },
+  {
+   "n_units": 10,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 10,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 18,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 9,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 9,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 15,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 15,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 15,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 15,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 16,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 4,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 4,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 4,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 4,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 3,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 17,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 17,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 17,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 17,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 17,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 17,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 17,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 17,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 17,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 18,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 2,
+   "status": 307,
+   "hit": false
+  },
+  {
+   "n_units": 2,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 2,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 2,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 2,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 2,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 2,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 2,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 2,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 18,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 18,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 18,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 18,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 18,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 18,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 18,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 18,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 18,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 18,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 18,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 18,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 18,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 18,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 18,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 18,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 18,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 18,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 18,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 18,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 18,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 18,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 18,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 18,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 18,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 18,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 18,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 18,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 18,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 18,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 18,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 18,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 18,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 18,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 18,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 18,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 18,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 18,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 401,
+   "hit": false
+  },
+  {
+   "n_units": 19,
+   "status": 200,
+   "hit": true
+  }
+ ]
+}

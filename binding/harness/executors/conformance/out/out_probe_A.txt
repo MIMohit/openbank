@@ -1,0 +1,112 @@
+### fastapi
+baseline                           GET     /api/v1/accounts/acc-alice-1                               -> 200 getAccount path_params={'id': 'acc-alice-1'}
+trailing slash (static)            GET     /api/v1/accounts/                                          -> 307 None location=http://api.bench.test/api/v1/accounts
+trailing slash (param)             GET     /api/v1/accounts/acc-alice-1/                              -> 307 None location=http://api.bench.test/api/v1/accounts/acc-alice-1
+leading double slash               GET     //api/v1/me                                                -> 404 NOT_FOUND 
+inner double slash                 GET     /api//v1/me                                                -> 404 NOT_FOUND 
+dot segment /./                    GET     /api/v1/./me                                               -> 404 NOT_FOUND 
+dot-dot segment                    GET     /api/v1/x/../me                                            -> 404 NOT_FOUND 
+encoded dot-dot %2e%2e             GET     /api/v1/x/%2e%2e/me                                        -> 404 NOT_FOUND 
+upper-case path                    GET     /API/V1/ME                                                 -> 404 NOT_FOUND 
+pct-encoded static char %6D        GET     /api/v1/%6De                                               -> 200 me 
+pct-encoded unreserved in param    GET     /api/v1/accounts/acc%2Dalice-1                             -> 200 getAccount path_params={'id': 'acc-alice-1'}
+encoded slash in param %2F         GET     /api/v1/accounts/acc-alice-1%2Fx                           -> 404 NOT_FOUND 
+encoded slash public %2F           GET     /api/v1/public/a%2F..%2Fb                                  -> 404 NOT_FOUND 
+matrix param on static ;x=1        GET     /api/v1/me;x=1                                             -> 404 NOT_FOUND 
+matrix param on param ;x=1         GET     /api/v1/accounts/acc-alice-1;x=1                           -> 200 getAccount path_params={'id': 'acc-alice-1;x=1'}
+utf-8 pct in param                 GET     /api/v1/accounts/caf%C3%A9                                 -> 200 getAccount path_params={'id': 'café'}
+backslash                          GET     /api/v1\me                                                 -> 404 NOT_FOUND 
+v2 mount double slash              GET     /api/v2//accounts/acc-alice-1                              -> 404 NOT_FOUND 
+v2 mount trailing slash            GET     /api/v2/accounts/acc-alice-1/                              -> 307 None location=http://api.bench.test/api/v2/accounts/acc-alice-1
+absolute-form target               GET     http://api.bench.test/api/v1/me                            -> 404 NOT_FOUND 
+HEAD on GET route                  HEAD    /api/v1/me                                                 -> 404 None 
+OPTIONS on GET route               OPTIONS /api/v1/me                                                 -> 404 NOT_FOUND 
+lower-case method                  get     /api/v1/me                                                 -> 404 NOT_FOUND 
+HPP op=freeze&op=close             POST    /api/v1/accounts/acc-alice-1/actions?op=freeze&op=close    -> 200 accountAction.close path_params={'id': 'acc-alice-1'}
+HPP op=close&op=freeze             POST    /api/v1/accounts/acc-alice-1/actions?op=close&op=freeze    -> 200 accountAction.freeze path_params={'id': 'acc-alice-1'}
+query ;-separated op               POST    /api/v1/accounts/acc-alice-1/actions?x=1;op=close          -> 200 accountAction.unknown path_params={'id': 'acc-alice-1'}
+query op[]=close                   POST    /api/v1/accounts/acc-alice-1/actions?op[]=close            -> 200 accountAction.unknown path_params={'id': 'acc-alice-1'}
+### express
+baseline                           GET     /api/v1/accounts/acc-alice-1                               -> 200 getAccount path_params={'id': 'acc-alice-1'}
+trailing slash (static)            GET     /api/v1/accounts/                                          -> 200 listAccounts 
+trailing slash (param)             GET     /api/v1/accounts/acc-alice-1/                              -> 200 getAccount path_params={'id': 'acc-alice-1'}
+leading double slash               GET     //api/v1/me                                                -> 404 NOT_FOUND 
+inner double slash                 GET     /api//v1/me                                                -> 404 NOT_FOUND 
+dot segment /./                    GET     /api/v1/./me                                               -> 404 NOT_FOUND 
+dot-dot segment                    GET     /api/v1/x/../me                                            -> 404 NOT_FOUND 
+encoded dot-dot %2e%2e             GET     /api/v1/x/%2e%2e/me                                        -> 404 NOT_FOUND 
+upper-case path                    GET     /API/V1/ME                                                 -> 200 me 
+pct-encoded static char %6D        GET     /api/v1/%6De                                               -> 404 NOT_FOUND 
+pct-encoded unreserved in param    GET     /api/v1/accounts/acc%2Dalice-1                             -> 200 getAccount path_params={'id': 'acc-alice-1'}
+encoded slash in param %2F         GET     /api/v1/accounts/acc-alice-1%2Fx                           -> 200 getAccount path_params={'id': 'acc-alice-1/x'}
+encoded slash public %2F           GET     /api/v1/public/a%2F..%2Fb                                  -> 200 publicFile path_params={'file': 'a/../b'}
+matrix param on static ;x=1        GET     /api/v1/me;x=1                                             -> 404 NOT_FOUND 
+matrix param on param ;x=1         GET     /api/v1/accounts/acc-alice-1;x=1                           -> 200 getAccount path_params={'id': 'acc-alice-1;x=1'}
+utf-8 pct in param                 GET     /api/v1/accounts/caf%C3%A9                                 -> 200 getAccount path_params={'id': 'café'}
+backslash                          GET     /api/v1\me                                                 -> 404 NOT_FOUND 
+v2 mount double slash              GET     /api/v2//accounts/acc-alice-1                              -> 200 getAccountV2 path_params={'id': 'acc-alice-1'}
+v2 mount trailing slash            GET     /api/v2/accounts/acc-alice-1/                              -> 200 getAccountV2 path_params={'id': 'acc-alice-1'}
+absolute-form target               GET     http://api.bench.test/api/v1/me                            -> 200 me 
+HEAD on GET route                  HEAD    /api/v1/me                                                 -> 200 None 
+OPTIONS on GET route               OPTIONS /api/v1/me                                                 -> 404 NOT_FOUND 
+lower-case method                  get     /api/v1/me                                                 -> 400 None 
+HPP op=freeze&op=close             POST    /api/v1/accounts/acc-alice-1/actions?op=freeze&op=close    -> 200 accountAction.unknown path_params={'id': 'acc-alice-1'}
+HPP op=close&op=freeze             POST    /api/v1/accounts/acc-alice-1/actions?op=close&op=freeze    -> 200 accountAction.unknown path_params={'id': 'acc-alice-1'}
+query ;-separated op               POST    /api/v1/accounts/acc-alice-1/actions?x=1;op=close          -> 200 accountAction.unknown path_params={'id': 'acc-alice-1'}
+query op[]=close                   POST    /api/v1/accounts/acc-alice-1/actions?op[]=close            -> 200 accountAction.unknown path_params={'id': 'acc-alice-1'}
+### django
+baseline                           GET     /api/v1/accounts/acc-alice-1                               -> 200 getAccount path_params={'id': 'acc-alice-1'}
+trailing slash (static)            GET     /api/v1/accounts/                                          -> 404 NOT_FOUND 
+trailing slash (param)             GET     /api/v1/accounts/acc-alice-1/                              -> 404 NOT_FOUND 
+leading double slash               GET     //api/v1/me                                                -> 404 NOT_FOUND 
+inner double slash                 GET     /api//v1/me                                                -> 404 NOT_FOUND 
+dot segment /./                    GET     /api/v1/./me                                               -> 404 NOT_FOUND 
+dot-dot segment                    GET     /api/v1/x/../me                                            -> 404 NOT_FOUND 
+encoded dot-dot %2e%2e             GET     /api/v1/x/%2e%2e/me                                        -> 404 NOT_FOUND 
+upper-case path                    GET     /API/V1/ME                                                 -> 404 NOT_FOUND 
+pct-encoded static char %6D        GET     /api/v1/%6De                                               -> 200 me 
+pct-encoded unreserved in param    GET     /api/v1/accounts/acc%2Dalice-1                             -> 200 getAccount path_params={'id': 'acc-alice-1'}
+encoded slash in param %2F         GET     /api/v1/accounts/acc-alice-1%2Fx                           -> 404 NOT_FOUND 
+encoded slash public %2F           GET     /api/v1/public/a%2F..%2Fb                                  -> 404 NOT_FOUND 
+matrix param on static ;x=1        GET     /api/v1/me;x=1                                             -> 404 NOT_FOUND 
+matrix param on param ;x=1         GET     /api/v1/accounts/acc-alice-1;x=1                           -> 200 getAccount path_params={'id': 'acc-alice-1;x=1'}
+utf-8 pct in param                 GET     /api/v1/accounts/caf%C3%A9                                 -> 200 getAccount path_params={'id': 'café'}
+backslash                          GET     /api/v1\me                                                 -> 404 NOT_FOUND 
+v2 mount double slash              GET     /api/v2//accounts/acc-alice-1                              -> 404 NOT_FOUND 
+v2 mount trailing slash            GET     /api/v2/accounts/acc-alice-1/                              -> 404 NOT_FOUND 
+absolute-form target               GET     http://api.bench.test/api/v1/me                            -> 200 me 
+HEAD on GET route                  HEAD    /api/v1/me                                                 -> 200 None 
+OPTIONS on GET route               OPTIONS /api/v1/me                                                 -> 200 None allow=GET, HEAD, OPTIONS
+lower-case method                  get     /api/v1/me                                                 -> 400 None 
+HPP op=freeze&op=close             POST    /api/v1/accounts/acc-alice-1/actions?op=freeze&op=close    -> 200 accountAction.close path_params={'id': 'acc-alice-1'}
+HPP op=close&op=freeze             POST    /api/v1/accounts/acc-alice-1/actions?op=close&op=freeze    -> 200 accountAction.freeze path_params={'id': 'acc-alice-1'}
+query ;-separated op               POST    /api/v1/accounts/acc-alice-1/actions?x=1;op=close          -> 200 accountAction.unknown path_params={'id': 'acc-alice-1'}
+query op[]=close                   POST    /api/v1/accounts/acc-alice-1/actions?op[]=close            -> 200 accountAction.unknown path_params={'id': 'acc-alice-1'}
+### go-chi
+baseline                           GET     /api/v1/accounts/acc-alice-1                               -> 200 getAccount path_params={'id': 'acc-alice-1'}
+trailing slash (static)            GET     /api/v1/accounts/                                          -> 404 NOT_FOUND 
+trailing slash (param)             GET     /api/v1/accounts/acc-alice-1/                              -> 404 NOT_FOUND 
+leading double slash               GET     //api/v1/me                                                -> 404 NOT_FOUND 
+inner double slash                 GET     /api//v1/me                                                -> 404 NOT_FOUND 
+dot segment /./                    GET     /api/v1/./me                                               -> 404 NOT_FOUND 
+dot-dot segment                    GET     /api/v1/x/../me                                            -> 404 NOT_FOUND 
+encoded dot-dot %2e%2e             GET     /api/v1/x/%2e%2e/me                                        -> 404 NOT_FOUND 
+upper-case path                    GET     /API/V1/ME                                                 -> 404 NOT_FOUND 
+pct-encoded static char %6D        GET     /api/v1/%6De                                               -> 404 NOT_FOUND 
+pct-encoded unreserved in param    GET     /api/v1/accounts/acc%2Dalice-1                             -> 200 getAccount path_params={'id': 'acc%2Dalice-1'}
+encoded slash in param %2F         GET     /api/v1/accounts/acc-alice-1%2Fx                           -> 200 getAccount path_params={'id': 'acc-alice-1%2Fx'}
+encoded slash public %2F           GET     /api/v1/public/a%2F..%2Fb                                  -> 200 publicFile path_params={'file': 'a%2F..%2Fb'}
+matrix param on static ;x=1        GET     /api/v1/me;x=1                                             -> 404 NOT_FOUND 
+matrix param on param ;x=1         GET     /api/v1/accounts/acc-alice-1;x=1                           -> 200 getAccount path_params={'id': 'acc-alice-1;x=1'}
+utf-8 pct in param                 GET     /api/v1/accounts/caf%C3%A9                                 -> 200 getAccount path_params={'id': 'café'}
+backslash                          GET     /api/v1\me                                                 -> 404 NOT_FOUND 
+v2 mount double slash              GET     /api/v2//accounts/acc-alice-1                              -> 404 NOT_FOUND 
+v2 mount trailing slash            GET     /api/v2/accounts/acc-alice-1/                              -> 404 NOT_FOUND 
+absolute-form target               GET     http://api.bench.test/api/v1/me                            -> 200 me 
+HEAD on GET route                  HEAD    /api/v1/me                                                 -> 404 None 
+OPTIONS on GET route               OPTIONS /api/v1/me                                                 -> 404 NOT_FOUND 
+lower-case method                  get     /api/v1/me                                                 -> 404 NOT_FOUND 
+HPP op=freeze&op=close             POST    /api/v1/accounts/acc-alice-1/actions?op=freeze&op=close    -> 200 accountAction.freeze path_params={'id': 'acc-alice-1'}
+HPP op=close&op=freeze             POST    /api/v1/accounts/acc-alice-1/actions?op=close&op=freeze    -> 200 accountAction.close path_params={'id': 'acc-alice-1'}
+query ;-separated op               POST    /api/v1/accounts/acc-alice-1/actions?x=1;op=close          -> 200 accountAction.unknown path_params={'id': 'acc-alice-1'}
+query op[]=close                   POST    /api/v1/accounts/acc-alice-1/actions?op[]=close            -> 200 accountAction.unknown path_params={'id': 'acc-alice-1'}

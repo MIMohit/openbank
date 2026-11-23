@@ -1,0 +1,15 @@
+{
+  "confirmed": [
+    "case-admin-del",
+    "case-admin-list"
+  ],
+  "flaky": [],
+  "n_confirmed": 2,
+  "n_flaky": 0,
+  "per_vector_counts": {
+    "case-admin-del": 3,
+    "case-admin-list": 3
+  },
+  "reps": 3,
+  "topology": "w12-block-ngx-express-def"
+}

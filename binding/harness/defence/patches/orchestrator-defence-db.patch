@@ -1,0 +1,28 @@
+diff -ruN a/orchestrator/compose.py b/orchestrator/compose.py
+--- a/orchestrator/compose.py	2026-11-23 10:40:10
++++ b/orchestrator/compose.py	2026-11-23 10:40:10
+@@ -87,6 +87,8 @@
+ 
+     eenv = {"OVERRIDE": t["override"], "VERIFY_MODE": t["verify_mode"],
+             "FRAMEWORK_TAG": t["framework"], "LOG_PATH": "/logs/executor.jsonl"}
++    if t.get("defence", "off") != "off":  # D-B: same key as the verifier's VIEW_MAC_KEY
++        eenv.update({"DEFENCE": t["defence"], "VIEW_MAC_KEY": v["view_mac_key"]})
+     if use_stub["executor"]:
+         executor = {"image": STUB_PY_IMAGE, "command": ["python", "-u", "/stub/stub_executor.py"],
+                     "volumes": [f"{logdir}:/logs", f"{ORCH / 'stub_executor'}:/stub:ro"],
+diff -ruN a/orchestrator/topology.py b/orchestrator/topology.py
+--- a/orchestrator/topology.py	2026-11-23 10:40:10
++++ b/orchestrator/topology.py	2026-11-23 10:40:10
+@@ -52,6 +52,12 @@
+     t["verify_mode"] = t.get("verify_mode", default_vm)
+     if t["verify_mode"] not in ("off", "origin-raw", "origin-routed"):
+         raise ValueError(f"{path}: bad verify_mode")
++    # Defence D-B (binding/harness/defence): executor-side view-binding MAC check.
++    t["defence"] = t.get("defence", "off")
++    if t["defence"] not in ("off", "db"):
++        raise ValueError(f"{path}: bad defence")
++    if t["defence"] == "db" and t["verifier"]["view_mac"] != "on":
++        raise ValueError(f"{path}: defence=db needs verifier.view_mac=on")
+     t["host_port"] = int(t["host_port"])
+     return t
+ 

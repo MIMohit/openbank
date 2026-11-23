@@ -1,0 +1,10 @@
+id: kong-default-edge-go-chi-ovon
+gateway: kong
+gateway_image: kong:3.9.5
+profile: default
+placement: edge
+framework: go-chi
+executor_image: bh-exec-go-chi:latest
+override: 'on'
+verifier: {image: 'bh-verifier:latest', canon: rfc3986, view_mac: 'off'}
+host_port: 18439

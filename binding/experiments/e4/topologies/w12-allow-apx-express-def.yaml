@@ -1,0 +1,10 @@
+id: w12-allow-apx-express-def
+gateway: apisix
+gateway_image: apache/apisix:3.21.0-debian
+profile: default
+placement: edge
+framework: express
+executor_image: bh-exec-express:latest
+override: 'off'
+verifier: {image: 'bh-pdp-allow:latest', canon: rfc3986, view_mac: 'off'}
+host_port: 28527

@@ -1,0 +1,14 @@
+=== DDMIN up w12-block-ngx-aspnet-def (14:54:22) ===
+w12-block-ngx-aspnet-def dotseg-bob-get: 15->15 units  base_denied=True still_hit=True  minimal='GET /api/v1/accounts/acc-alice-1/../acc-bob-1'
+w12-block-ngx-aspnet-def case-admin-list: 5->5 units  base_denied=True still_hit=True  minimal='GET /api/v1/ADMIN/users'
+=== DDMIN down w12-block-ngx-aspnet-def ===
+=== DDMIN up w12-block-ngx-spring-def (14:55:08) ===
+w12-block-ngx-spring-def matrix-accounts-bob: 4->1 units  base_denied=True still_hit=True  minimal='GET /api/v1/accounts;/acc-bob-1'
+=== DDMIN down w12-block-ngx-spring-def ===
+=== DDMIN up w12-block-ngx-rails-def (14:55:23) ===
+w12-block-ngx-rails-def dslash-accounts-bob: 1->1 units  base_denied=True still_hit=True  minimal='GET /api/v1//accounts/acc-bob-1'
+=== DDMIN down w12-block-ngx-rails-def ===
+=== DDMIN up w12-allow-kng-fastapi-def (14:55:37) ===
+w12-allow-kng-fastapi-def dotseg-bob-get: 15->15 units  base_denied=True still_hit=True  minimal='GET /api/v1/accounts/acc-alice-1/../acc-bob-1'
+=== DDMIN down w12-allow-kng-fastapi-def ===
+DDMIN DRIVER done 14:56:20

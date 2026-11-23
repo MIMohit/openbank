@@ -1,0 +1,1 @@
+w13-kong-recommended-edge-django-ovon runner_rc=0 secs=60 runner[w13-kong-recommended-edge-django-ovon/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w13-kong-recommended-edge-django-ovon/runner.jsonl: {'sent': 948, 'errors': 0}

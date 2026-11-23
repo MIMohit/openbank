@@ -1,0 +1,1 @@
+oracle[w18-digest-nginx-default-edge-spring-ovoff] {'topology': 'w18-digest-nginx-default-edge-spring-ovoff', 'cases': 1239, 'accepted': 749, 'hits_raw': 8, 'hits_confirmed': 0, 'S1': 7, 'S2': 1, 'S3': 0, 'signatures': 8, 'max_res_hat': 3, 'b0': 0, 'propagation': 153, 'uncorrelated': 5}

@@ -1,0 +1,6 @@
+# W13 workaround: bh-exec-laravel:latest ships a HEALTHCHECK against Caddy admin
+# :2019/metrics which fails in this topology (metrics endpoint not enabled), so
+# `docker compose up --wait` times out though the app serves /api/v1/health 200 on
+# :8080. The app itself is unchanged. CONTRACT §12 permits overriding executor_image.
+FROM bh-exec-laravel:latest
+HEALTHCHECK NONE

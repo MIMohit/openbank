@@ -1,0 +1,49 @@
+time="2026-11-23T16:01:44+06:00" level=warning msg="Warning: No resource found to remove for project \"w14-bh-w14-nginx-default-origin-django-ovon\"."
+hostfix: added 'proxy_set_header Host $host;' to nginx default origin/both
+ Network w14-bh-w14-nginx-default-origin-django-ovon_default Creating 
+ Network w14-bh-w14-nginx-default-origin-django-ovon_default Created 
+ Container w14-bh-w14-nginx-default-origin-django-ovon-executor-1 Creating 
+ Container w14-bh-w14-nginx-default-origin-django-ovon-verifier-1 Creating 
+ Container w14-bh-w14-nginx-default-origin-django-ovon-executor-1 Created 
+ Container w14-bh-w14-nginx-default-origin-django-ovon-verifier-1 Created 
+ Container w14-bh-w14-nginx-default-origin-django-ovon-gateway-1 Creating 
+ Container w14-bh-w14-nginx-default-origin-django-ovon-gateway-1 Created 
+ Container w14-bh-w14-nginx-default-origin-django-ovon-probe-1 Creating 
+ Container w14-bh-w14-nginx-default-origin-django-ovon-probe-1 Created 
+ Container w14-bh-w14-nginx-default-origin-django-ovon-executor-1 Starting 
+ Container w14-bh-w14-nginx-default-origin-django-ovon-verifier-1 Starting 
+ Container w14-bh-w14-nginx-default-origin-django-ovon-verifier-1 Started 
+ Container w14-bh-w14-nginx-default-origin-django-ovon-executor-1 Started 
+ Container w14-bh-w14-nginx-default-origin-django-ovon-gateway-1 Starting 
+ Container w14-bh-w14-nginx-default-origin-django-ovon-gateway-1 Started 
+ Container w14-bh-w14-nginx-default-origin-django-ovon-probe-1 Starting 
+ Container w14-bh-w14-nginx-default-origin-django-ovon-probe-1 Started 
+ Container w14-bh-w14-nginx-default-origin-django-ovon-verifier-1 Waiting 
+ Container w14-bh-w14-nginx-default-origin-django-ovon-executor-1 Waiting 
+ Container w14-bh-w14-nginx-default-origin-django-ovon-probe-1 Waiting 
+ Container w14-bh-w14-nginx-default-origin-django-ovon-gateway-1 Waiting 
+ Container w14-bh-w14-nginx-default-origin-django-ovon-executor-1 Healthy 
+ Container w14-bh-w14-nginx-default-origin-django-ovon-gateway-1 Healthy 
+ Container w14-bh-w14-nginx-default-origin-django-ovon-verifier-1 Healthy 
+ Container w14-bh-w14-nginx-default-origin-django-ovon-probe-1 Healthy 
+34202
+runner[w14-nginx-default-origin-django-ovon/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w14-nginx-default-origin-django-ovon/runner.jsonl: {'sent': 22, 'errors': 0}
+ Container w14-bh-w14-nginx-default-origin-django-ovon-probe-1 Stopping 
+ Container w14-bh-w14-nginx-default-origin-django-ovon-probe-1 Stopped 
+ Container w14-bh-w14-nginx-default-origin-django-ovon-probe-1 Removing 
+ Container w14-bh-w14-nginx-default-origin-django-ovon-probe-1 Removed 
+ Container w14-bh-w14-nginx-default-origin-django-ovon-gateway-1 Stopping 
+ Container w14-bh-w14-nginx-default-origin-django-ovon-gateway-1 Stopped 
+ Container w14-bh-w14-nginx-default-origin-django-ovon-gateway-1 Removing 
+ Container w14-bh-w14-nginx-default-origin-django-ovon-gateway-1 Removed 
+ Container w14-bh-w14-nginx-default-origin-django-ovon-executor-1 Stopping 
+ Container w14-bh-w14-nginx-default-origin-django-ovon-verifier-1 Stopping 
+ Container w14-bh-w14-nginx-default-origin-django-ovon-executor-1 Stopped 
+ Container w14-bh-w14-nginx-default-origin-django-ovon-executor-1 Removing 
+ Container w14-bh-w14-nginx-default-origin-django-ovon-executor-1 Removed 
+ Container w14-bh-w14-nginx-default-origin-django-ovon-verifier-1 Stopped 
+ Container w14-bh-w14-nginx-default-origin-django-ovon-verifier-1 Removing 
+ Container w14-bh-w14-nginx-default-origin-django-ovon-verifier-1 Removed 
+ Network w14-bh-w14-nginx-default-origin-django-ovon_default Removing 
+ Network w14-bh-w14-nginx-default-origin-django-ovon_default Removed 
+oracle[w14-nginx-default-origin-django-ovon] {'topology': 'w14-nginx-default-origin-django-ovon', 'cases': 22, 'accepted': 22, 'hits_raw': 9, 'hits_confirmed': 0, 'S1': 6, 'S2': 3, 'S3': 0, 'signatures': 9, 'max_res_hat': 3, 'b0': 0, 'propagation': 0, 'uncorrelated': 3}

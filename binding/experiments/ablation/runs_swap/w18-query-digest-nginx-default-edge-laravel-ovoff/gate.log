@@ -1,0 +1,4 @@
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+2026/11/23 11:38:29 [notice] 37#37: signal process started
+1

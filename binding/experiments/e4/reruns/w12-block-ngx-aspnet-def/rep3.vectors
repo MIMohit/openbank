@@ -1,0 +1,11 @@
+case-admin-del
+case-admin-list
+dotseg-admin-del
+dotseg-admin-list
+dotseg-bob-del
+dotseg-bob-get
+dotseg-bob-getv2
+dotseg-bob-put
+dotseg-v2v1-admin
+encdotseg-admin-list
+encdotseg-bob-get

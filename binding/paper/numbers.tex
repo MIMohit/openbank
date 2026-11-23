@@ -1,0 +1,272 @@
+% numbers.tex -- every quantitative claim in the paper is a macro defined here.
+% Values marked TBD are not yet produced (ablations A1/A4/A5: W18).
+% Fill ONLY from recorded outputs (harness/logs/*, prevalence/*), and cite
+% the producing script next to each value. Never estimate.
+
+% --- Harness components (built and tested; NOT campaign results) ---
+% Gateways implemented, rendered and smoke-tested: harness/gateways/README.md "Pinned images"
+% table (6 rows); harness/orchestrator/SMOKE.md: 36/36 PASS rows (18 stub verifier + 18 real verifier).
+\newcommand{\NumGateways}{6}
+\newcommand{\NumGatewayProfiles}{3}            % gateways/README.md "What the profiles mean"
+\newcommand{\NumSmokePass}{36}                 % orchestrator/SMOKE.md, count of "| PASS |" rows
+\newcommand{\NumSmokeRuns}{36}                 % same file, 0 FAIL rows
+% Executors implemented and conformance-tested: executors/conformance/results_A.md (4) +
+% executors/{spring,aspnet,rails,laravel}/CONFORMANCE.md (4).
+\newcommand{\NumFrameworks}{8}
+\newcommand{\NumBenchOps}{13}                  % mutator/README.md L5 (base_ops.py: 13 canonical operations)
+\newcommand{\NumBenchOpIds}{17}                % executors/conformance/README.md "Required checks" 1 (17 op_ids)
+\newcommand{\NumConformanceCases}{23}          % same, 23 cases
+\newcommand{\NumVerifierTests}{125}            % verifier/README.md L100: 125 passed, 0 failed
+% Primitive catalogue: harness/mutator/README.md L13-14 (84 = G1 37 + G2 32 + G3 15);
+% re-counted from primitives/{g1,g2,g3}.yaml "id:" lines on 2026-11-23 (37/32/15).
+\newcommand{\NumPrimitives}{84}
+\newcommand{\NumPrimitivesGOne}{37}
+\newcommand{\NumPrimitivesGTwo}{32}
+\newcommand{\NumPrimitivesGThree}{15}
+% Planned matrix: orchestrator/README.md L56-57 (6 gw x 3 profiles x 3 placements x 8 fw x 2 override).
+\newcommand{\NumMatrixTopologies}{864}
+\newcommand{\NumPlacements}{3}               % CONTRACT.md §5 (edge, origin, both)
+\newcommand{\NumPilotTopologies}{24}           % orchestrator/README.md L59
+\newcommand{\NumDepthOneCasesPilot}{948}       % runner/README.md L55-56: depth-1 cases, fastapi pilot, 0 transport errors
+
+% --- Scope of the binding (A_leak) campaign: four experiments, all --stubs off, 2026-11-23 ---
+% Per-experiment rows: kill/G1_REPORT.md §1; ext-gw/REPORT.md §1; ext-fw/REPORT.md §1;
+% ext-routes/REPORT.md §1. Totals recomputed by paper/figs/make_figs.py -> figs/aggregate.json
+% ("leak_total", "leak"), from experiments/*/analysis/{hits_per_topology.csv,hits_all.jsonl,resolution.csv}.
+\newcommand{\NumTopologies}{256}               % aggregate.json leak_total.topologies = 48+96+80+32
+\newcommand{\NumTopoKill}{48}                  % kill/G1_REPORT.md L3
+\newcommand{\NumTopoExtGw}{96}                 % ext-gw/REPORT.md L3
+\newcommand{\NumTopoExtFw}{80}                 % ext-fw/REPORT.md L3 (48 edge + 32 A3)
+\newcommand{\NumTopoExtFwEdge}{48}             % ext-fw/REPORT.md L4-5
+\newcommand{\NumTopoExtFwAThree}{32}           % ext-fw/REPORT.md L6-8
+\newcommand{\NumTopoExtRoutes}{32}             % ext-routes/REPORT.md "Data"
+\newcommand{\NumTopoVOneEdge}{192}             % 48+96+48: full 6 gw x 8 fw x 2 profiles x 2 override grid (aggregate.json heatmap_cells_full=48 cells x 4)
+\newcommand{\NumCasesVOne}{948}                % depth-1 cases per v1 topology, kill/G1_REPORT.md L3
+\newcommand{\NumCasesVTwo}{581}                % depth-1 cases per v2 topology, ext-routes/REPORT.md "Data"
+\newcommand{\NumCases}{230{,}944}              % 45,504 + 91,008 + 75,840 + 18,592 (the four "cases sent" rows)
+\newcommand{\NumCasesKill}{45{,}504}         % kill/G1_REPORT.md §1
+\newcommand{\NumCasesExtGw}{91{,}008}          % ext-gw/REPORT.md §1
+\newcommand{\NumCasesExtFw}{75{,}840}          % ext-fw/REPORT.md §1
+\newcommand{\NumCasesExtRoutes}{18{,}592}      % ext-routes/REPORT.md §1
+\newcommand{\NumTransportErrors}{2}            % ext-gw/REPORT.md §1 (2 non-hit cases); 0 in kill, ext-fw, ext-routes
+\newcommand{\NumTopologiesAll}{352}            % \NumTopologies + \NumEFourTopologies (256 + 96)
+\newcommand{\NumCasesAll}{233{,}728}           % \NumCases + \NumEFourCases (230,944 + 2,784)
+\newcommand{\NumNewRoutes}{4}                  % ext-routes/REPORT.md route table (postAccount, getStatements, deleteStatement, catchAllFile)
+% --- E1 prevalence: binding/prevalence/E1_results.md (W8), file:line given per macro ---
+\newcommand{\NumSpecFiles}{4{,}138}            % E1_results.md L28
+\newcommand{\NumSpecFilesParsed}{4{,}105}      % L28
+\newcommand{\NumSpecFilesFailed}{33}           % L28
+\newcommand{\NumSpecs}{2{,}652}                % L29 (APIs with >=1 parsed version; denominator)
+\newcommand{\NumOps}{127{,}642}                % L31
+\newcommand{\NumStateChangingOps}{66{,}184}    % L31
+\newcommand{\NumApisWithStateOps}{2{,}063}     % L39
+\newcommand{\NumApisCollided}{234}             % L39
+\newcommand{\PctApisCollided}{8.8\%}           % L39, 95% Wilson CI [7.8, 10.0]
+\newcommand{\CIApisCollided}{[7.8, 10.0]}
+\newcommand{\NumStateOpsCollided}{7{,}577}     % L39
+\newcommand{\PctUnderBound}{11.4\%}            % L39, state-changing ops in collided keys
+\newcommand{\CIUnderBound}{[11.2, 11.7]}       % L39
+\newcommand{\NumSpecsNonAWS}{2{,}298}          % L40
+\newcommand{\NumApisCollidedNonAWS}{66}        % L40
+\newcommand{\PctApisCollidedNonAWS}{2.9\%}     % L40, CI [2.3, 3.6]
+\newcommand{\CIApisCollidedNonAWS}{[2.3, 3.6]}
+\newcommand{\NumStateOpsNonAWS}{54{,}552}      % L40
+\newcommand{\NumStateOpsCollidedNonAWS}{197}   % L40
+\newcommand{\PctUnderBoundNonAWS}{0.4\%}       % L40, CI [0.3, 0.4]
+\newcommand{\NumSpecsNonHyper}{1{,}329}        % L41 (excl. amazonaws/azure/googleapis/microsoft)
+\newcommand{\NumApisCollidedNonHyper}{47}      % L41
+\newcommand{\PctApisCollidedNonHyper}{3.5\%}   % L41, CI [2.7, 4.7]
+\newcommand{\NumStateOpsCollidedNonHyper}{149}   % L41
+\newcommand{\PctUnderBoundNonHyper}{0.5\%}     % L41 (149 of 29,700), CI [0.4, 0.6]
+\newcommand{\NumSpecsFinance}{106}             % L42
+\newcommand{\NumApisCollidedFinance}{4}        % L42
+\newcommand{\PctApisCollidedFinance}{3.8\%}     % L42, CI [1.5, 9.3]
+\newcommand{\NumStateOpsFinance}{2{,}404}      % L42
+\newcommand{\NumStateOpsCollidedFinance}{9}    % L42
+\newcommand{\PctUnderBoundFinance}{0.4\%}      % L42, CI [0.2, 0.7]
+\newcommand{\NumStateOpsCloud}{16{,}843}       % L65
+\newcommand{\NumStateOpsCollidedCloud}{7{,}407}% L65
+\newcommand{\PctUnderBoundCloud}{44.0\%}       % L65, CI [43.2, 44.7]
+\newcommand{\NumMOneOps}{9{,}227}              % L49 (M1 flagged ops)
+\newcommand{\NumMOneOpsAWS}{9{,}102}           % L49
+\newcommand{\NumEcTwoOpsPerKey}{594}           % L117 (EC2 ops on each of POST / and GET /)
+\newcommand{\NumApisDocOverride}{6}            % L58 (all Amadeus), 0.2% [0.1, 0.5]
+\newcommand{\PctApisDocOverride}{0.2\%}
+% Precision (T9), E1_results.md L89-96; seeded stratified sample, seed 20261123 (L79)
+\newcommand{\NumValidationSample}{100}         % L79
+\newcommand{\PrecMOne}{1.00}                   % L89: 30/30, CI [0.89, 1.00]
+\newcommand{\NumMOneTP}{30}                  % L89
+\newcommand{\NumMOneSample}{30}              % L89
+\newcommand{\NumMFiveFlags}{3}               % L53/L92 (M5 population = 3)
+\newcommand{\PrecMTwo}{0.40}                   % L90: 12/30, CI [0.25, 0.58]
+\newcommand{\PrecMFour}{0.30}                  % L91: 11/37 (+1 unclear counted FP), CI [0.17, 0.46]
+\newcommand{\PrecMFive}{0.67}                  % L92: 2/3, CI [0.21, 0.94]
+\newcommand{\PrecWeighted}{0.986}              % L94: stratum-weighted, ~9,289 true flagged ops
+\newcommand{\PrecNonMOneWeighted}{0.32}        % L96: ~62 true flagged ops
+\newcommand{\NumFinanceTP}{4}                  % L100: 4 of 9 flagged finance ops TP
+\newcommand{\NumFinanceFlagged}{9}             % L100
+\newcommand{\NumFinanceApisTP}{2}              % L100: in 2 of 106 finance APIs
+\newcommand{\NumConfirmedApis}{44}             % L111: hand-confirmed lower bound
+\newcommand{\NumConfirmedApisAWS}{25}          % L111
+\newcommand{\NumConfirmedApisNonAWS}{19}       % L111
+\newcommand{\PctConfirmedApisNonAWS}{0.8\%}    % L111 (19 of 2,298)
+\newcommand{\PctUnderBoundAllFiles}{9.6\%}     % L125 sensitivity, every parsed file
+\newcommand{\PctUnderBoundAllFilesNonAWS}{0.3\%}% L126
+\newcommand{\NumFhirTypesConditional}{146}     % L149: 146/146 HAPI R4 resource types
+\newcommand{\NumMcpDpopMentions}{0}            % L159
+
+% --- E2 framework survey: binding/prevalence/E2_results.md (W8) ---
+\newcommand{\NumPinnedSourcesVerified}{20}     % E2_results.md L3: 20/20 byte-identical
+\newcommand{\NumDocChecks}{19}                 % L3: 19/19 phrases found
+\newcommand{\NumTargetFrameworks}{8}           % L47 ("eight target frameworks")
+\newcommand{\NumOverrideFrameworks}{2}         % L47: default-on (Rails unless api_only; Laravel always)
+\newcommand{\NumOptInFrameworks}{3}            % L50: Spring Boot, ASP.NET Core, Express
+\newcommand{\NumNoOverrideFrameworks}{3}       % L51: FastAPI/Starlette, Django, Go
+\newcommand{\PctEnableSpring}{0.99\%}          % L107: 7,168 / 721,920
+\newcommand{\PctEnableAspnet}{0.06\%}          % L109: 225 / 383,488
+\newcommand{\PctEnableExpress}{1.87\%}         % L110: 69,760 / 3,727,360
+\newcommand{\PctEnableExpressNpm}{1.11\%}      % L112: npm downloads 9,415,448 / 845,699,176
+\newcommand{\PctExpressQueryGetter}{52.9\%}    % L113: 22,880 / 43,264
+\newcommand{\PctEnableGorilla}{1.15\%}         % L114: 98 / 8,496
+\newcommand{\PctRailsApiOnly}{13.9\%}          % L115: 26,240 / 188,416
+\newcommand{\PctRailsOverrideOn}{86\%}         % L115 (approx., complement of api_only)
+\newcommand{\PctSymfonyParamOn}{36.7\%}        % L116: 3,128 / 8,520
+
+% --- Binding-soundness findings (A_leak). Totals: figs/aggregate.json "leak_total" ---
+\newcommand{\NumHits}{2{,}968}                 % 680 + 1,368 + 694 + 226 (§1 of each report)
+\newcommand{\NumHitsKill}{680}                 % kill/G1_REPORT.md §1
+\newcommand{\NumHitsExtGw}{1{,}368}            % ext-gw/REPORT.md §1
+\newcommand{\NumHitsExtFw}{694}                % ext-fw/REPORT.md §1
+\newcommand{\NumHitsExtRoutes}{226}            % ext-routes/REPORT.md §1
+\newcommand{\NumHitsGOneOracle}{2{,}582}       % aggregate.json leak_total.oracle_g1 (label of the primitive)
+\newcommand{\NumHitsGTwoOracle}{386}           % aggregate.json leak_total.oracle_g2
+\newcommand{\NumHitsRCSeven}{36}               % oracle-g2 hits whose ddmin witness is one byte in ?op= (kill RC7 8, ext-gw §7 12, ext-fw §6 16)
+\newcommand{\NumHitsGOne}{2{,}618}             % aggregate.json leak_total.mech_g1 (= oracle g1 + RC7)
+\newcommand{\NumHitsGTwo}{350}                 % aggregate.json leak_total.mech_g2 (kill 24, ext-gw 168, ext-fw 48, ext-routes 110)
+\newcommand{\NumHitsGThree}{0}                 % G3 binding hits: 0 in all four reports
+\newcommand{\NumSOneHits}{1{,}687}             % aggregate.json leak_total.S1
+\newcommand{\NumSTwoHits}{1{,}281}             % aggregate.json leak_total.S2 (S3 = 0)
+\newcommand{\NumConfirmedHits}{2{,}284}        % rerun 3x on fresh topologies: 680 + 684 + 694 + 226
+\newcommand{\NumConfirmedExtGw}{684}           % ext-gw/REPORT.md §1: default profile; recommended byte-identical
+\newcommand{\NumFlaky}{0}                      % all four reports: 0 flaky, 0 irreproducible
+\newcommand{\NumBZero}{0}                      % B0 verifier bypass, all four reports
+\newcommand{\NumVulnTopologies}{230}           % topologies with res_hat > 1 (resolution.csv, all four); the 26 others: 24 A3 artefacts (ext-fw §A3.2-3) + 2 aspnet v2 ovoff
+\newcommand{\NumGTwoTopologies}{68}            % topologies with >= 1 G2 (mechanism) hit: kill 4, ext-gw 28, ext-fw 8, ext-routes 28
+\newcommand{\NumResPairs}{3{,}168}             % (topology, base op) pairs: 624 + 1,248 + 1,040 + 256
+\newcommand{\NumResOne}{2{,}421}               % aggregate.json leak_res_hat_total
+\newcommand{\NumResTwo}{268}
+\newcommand{\NumResThree}{446}
+\newcommand{\NumResFour}{28}
+\newcommand{\NumResFive}{3}
+\newcommand{\NumResSix}{2}
+\newcommand{\MaxResolution}{6}                 % ext-routes/REPORT.md §4 (getAccount/updateAccount/deleteAccount)
+\newcommand{\MaxResolutionVOne}{4}             % kill §4, ext-gw §4 (v1 route space)
+% G2 mechanisms (binding soundness)
+\newcommand{\NumHitsFragPath}{144}             % '#' in path, v1: nginx 24 (kill RC6) + 48 (ext-fw) + Kong 72 (ext-gw RC-W13-B)
+\newcommand{\NumHitsFragAll}{198}             % B1 total: v1 '#'-in-path 144 + ext-routes X1 12 + X2 42
+\newcommand{\NumGTwoKill}{24}                  % kill RC6 (aggregate.json leak.kill.mech_class.g2)
+\newcommand{\NumGTwoExtGw}{168}                % ext-gw §1 "genuine G2 after ddmin"
+\newcommand{\NumGTwoExtFw}{48}                 % ext-fw edge g2 64 minus 16 fragment-in-query (aggregate.json)
+\newcommand{\NumGTwoExtRoutes}{110}            % ext-routes §1
+\newcommand{\NumHitsFragKong}{72}              % ext-gw/REPORT.md §1
+\newcommand{\NumHitsApisixPct}{96}             % ext-gw/REPORT.md §1, RC-W13-A
+\newcommand{\NumFwApisixPct}{4}                % ext-gw RC-W13-A: aspnet, express, go-chi, rails
+\newcommand{\NumHitsXOne}{12}                  % ext-routes §1: fragment nested-route (operation change)
+\newcommand{\NumHitsXTwo}{42}                  % ext-routes §1: fragment id suffix
+\newcommand{\NumHitsXThree}{56}                % ext-routes §1: dot-segment catch-all
+\newcommand{\NumFwXThree}{7}                   % ext-routes §0: 7 of 8 frameworks (not aspnet)
+\newcommand{\NumFragServers}{3}                % uvicorn/h11, Go net/http, FrankenPHP (ext-fw §0, ext-routes X1)
+\newcommand{\NumHitsOverrideVTwo}{116}         % ext-routes §1: G1 method override (X4+X5)
+\newcommand{\NumLatentDot}{468}                % kill/ROOT_CAUSES.md L1: allow -> 404 per v1 matrix (nginx, envoy default)
+% A3 placement (ext-fw/REPORT.md §A3)
+\newcommand{\NumHitsEnvoyOrigin}{90}           % §1 / §A3.1: envoy-origin, 8 frameworks, all G1
+\newcommand{\NumHitsNginxOriginFixed}{105}     % §A3.2 table (26+17+10+11+11+11+9+10), all confirmed 3/3
+\newcommand{\NumJtiReplayEnvoyBoth}{606}       % §A3.3: 606/948 jti_replay on envoy-both
+\newcommand{\NumBindingGTwoClasses}{3}       % GATE_DECISION.md binding-soundness table (B1 '#', B2 APISIX %2f, B3 dot-segment catch-all)
+\newcommand{\NumDisclosures}{\TBD{NumDisclosures (W16 triage)}}
+
+% --- E4 authorization soundness (A_client + PDP): e4/REPORT.md, e4/ROOT_CAUSES.md (W12) ---
+% Totals recomputed from e4/runs/summary.csv by figs/make_figs.py -> aggregate.json "e4".
+\newcommand{\NumEFourTopologies}{96}           % REPORT.md L12; summary.csv 96 rows
+\newcommand{\NumEFourCells}{144}              % REPORT.md §13: full 6 gw x 2 policies x 2 profiles x 6 fw
+\newcommand{\NumEFourVectors}{29}              % REPORT.md §3
+\newcommand{\NumEFourCases}{2{,}784}           % summary.csv sum(cases) = 96 x 29
+\newcommand{\NumEFourViolations}{325}          % REPORT.md §5
+\newcommand{\NumEFourVulnTopologies}{50}       % REPORT.md L12
+\newcommand{\NumEFourAdmin}{180}               % summary.csv sum(admin)
+\newcommand{\NumEFourBob}{145}                 % summary.csv sum(bob)
+\newcommand{\NumEFourClasses}{7}               % REPORT.md §6
+\newcommand{\NumEFourComponents}{5}            % REPORT.md §6 (ASP.NET, Express, Spring, Rails, Kong)
+\newcommand{\NumEFourAllowBreak}{2}            % REPORT.md §6, RC1 + RC2
+\newcommand{\NumEFourHtuMismatch}{148}         % REPORT.md §5
+\newcommand{\NumEFourReruns}{7}                % REPORT.md §7: one topology per class, 3 reps each
+% per class: n_topo / n_viol (REPORT.md §6 table)
+\newcommand{\EFourRCOneTopo}{10}\newcommand{\EFourRCOneViol}{76}
+\newcommand{\EFourRCTwoTopo}{16}\newcommand{\EFourRCTwoViol}{144}
+\newcommand{\EFourRCThreeTopo}{12}\newcommand{\EFourRCThreeViol}{24}
+\newcommand{\EFourRCFourTopo}{6}\newcommand{\EFourRCFourViol}{12}
+\newcommand{\EFourRCFiveTopo}{12}\newcommand{\EFourRCFiveViol}{36}
+\newcommand{\EFourRCSixTopo}{4}\newcommand{\EFourRCSixViol}{12}
+\newcommand{\EFourRCSevenTopo}{7}\newcommand{\EFourRCSevenViol}{21}
+% native ACLs (REPORT.md §9)
+\newcommand{\NumNativeNginx}{2}
+\newcommand{\NumNativeEnvoyRaw}{13}
+\newcommand{\NumNativeEnvoyNorm}{9}
+
+% --- Ablations produced by W17/W18 (A1/A4/A5 filled by W18 from experiments/ablation/) ---
+% A1 (W18): experiments/ablation/REPORT.md §A1; analysis/a1_variant_summary.csv, a1_runs_swap_variant_summary.csv,
+% legit/runs/*/legit.jsonl. nginx default edge x {fastapi,spring,rails,laravel}:v2 x override, 1239 cases/topology.
+\newcommand{\AblOneTopos}{64}\newcommand{\AblOneCases}{1{,}239}\newcommand{\AblOneSwapCases}{357}
+\newcommand{\AblOneHitsFull}{192}       % = no-htm = no-ath = digest-nogate (identical hit sets)
+\newcommand{\AblOneHitsNoHtu}{432}\newcommand{\AblOneResNoHtu}{10}\newcommand{\AblOneResFull}{6}
+\newcommand{\AblOneHitsQuery}{147}      % -45: query dispatch 40 + ?_method 5
+\newcommand{\AblOneHitsDigest}{129}     % -63, with the body-check hop; digest-nogate = 192
+\newcommand{\AblOneHitsQueryDigest}{84} % residual: header override 18, content-type 2, '#' 48, dot-segment 16
+\newcommand{\AblOneGTwoSurvive}{60}     % G2 hits, unchanged in every binding variant
+\newcommand{\AblOneSwapNoHtm}{192}\newcommand{\AblOneSwapNoHtu}{720}\newcommand{\AblOneSwapFull}{0}
+\newcommand{\AblOneLegitN}{18}\newcommand{\AblOneLegitFRNginx}{0}
+\newcommand{\AblOneLegitFRHapExact}{4}\newcommand{\AblOneLegitFRHapRfc}{2}\newcommand{\AblOneLegitFRHapSorted}{0}
+\newcommand{\AblOneResult}{htm, htu and ath ablated and query/body binding added (\AblOneTopos{} topologies): \AblOneHitsFull{} hits with full binding; dropping htu gives \AblOneHitsNoHtu{} (and \AblOneSwapNoHtu{} cross-op replays), dropping htm \AblOneSwapNoHtm{} method-swap replays; query binding gives \AblOneHitsQuery{}, body binding (with a body-checking hop) \AblOneHitsDigest{}, both \AblOneHitsQueryDigest{}; all \AblOneGTwoSurvive{} G2 hits survive every variant}
+% A2 (W17): experiments/defence/REPORT.md §4, analysis/a2_tables.md (scripts/a2_ablation.py; offline
+% D-B decision replay, 472/472 agreement with the live D-B runs)
+\newcommand{\AblTwoResult}{the percent-encoder is load-bearing (without it all 28 \texttt{\#} and 8 of 12
+dot-segment witnesses return); method binding closes the 31 override witnesses; case- and slash-preserving
+comparison close the \NumEFourCaseSlash{} E4 case-fold and \texttt{//} violations; dot removal and the prefix map
+reopen nothing}
+\newcommand{\NumEFourCaseSlash}{10}            % a2_tables.md: E4 case 4 + dslash 6
+% A4 (W18): REPORT.md §A4; analysis/a4_binding_family_loo.csv, a4_e4_family_loo_merged.csv (existing data only)
+\newcommand{\AblFourHits}{2{,}968}\newcommand{\AblFourGOneShare}{87.0\%}\newcommand{\AblFourGTwoShare}{13.0\%}
+\newcommand{\AblFourFamiliesWithHits}{9}\newcommand{\AblFourFamilies}{29}
+\newcommand{\AblFourFragGTwoShare}{56.6\%}\newcommand{\AblFourDotsegEFourShare}{67.7\%}
+\newcommand{\AblFourResult}{\AblFourFamiliesWithHits{} of \AblFourFamilies{} primitive families produce all \AblFourHits{} binding hits (G1 primitives \AblFourGOneShare{}, G2 \AblFourGTwoShare{}); each G2 class depends on exactly one family (fragment: \AblFourFragGTwoShare{} of G2 hits), and both strict-allowlist E4 breakers depend only on dot segments (\AblFourDotsegEFourShare{} of violations)}
+% A5 (W18): REPORT.md §A5; analysis/a5_binding_profiles_existing.csv, a5_g2_profiles_new.csv, a5_e4_strict_new.csv
+\newcommand{\AblFiveGTwoTopos}{45}\newcommand{\AblFiveEFourTopos}{24}
+\newcommand{\AblFiveResult}{recommended equals default for every binding hit; strict removes the APISIX \%2f and dot-segment binding classes and both E4 allowlist breakers (RC1, RC2: 0 violations), but not the raw-\# class on nginx/kong or aspnet case folding}
+
+% --- E7/E8 defence ---
+\newcommand{\DefenceOverheadPfifty}{\TBD{DefenceOverheadP50}}
+\newcommand{\DefenceOverheadPninetynine}{\TBD{DefenceOverheadP99}}
+% FRR: experiments/defence/REPORT.md §5, analysis/frr_tables.md + frr_summary.json (scripts/frr_client.py,
+% frr_analyse.py); attributable = B-edge served it, the defence did not; 4 frameworks behind nginx.
+\newcommand{\FalseRejectionRate}{\FRRNonRewriteDAB{} on non-rewriting traffic and 100\,\% under path rewriting}
+\newcommand{\FRRNonRewriteDAB}{5.3\,\%}        % D-A = D-B: 16/300 (S0+S4+S5)
+\newcommand{\FRRNonRewriteN}{16/300}
+\newcommand{\FRRAllDAB}{43.2\,\%}              % 216/500, Wilson 95% CI [38.9, 47.6]
+\newcommand{\FRRAllStrict}{28.8\,\%}           % D-C = B-strict: 144/500, every percent-encoded id -> 400
+\newcommand{\FRRAllBOrigin}{40.0\,\%}          % 200/500
+\newcommand{\NumFRRRequests}{3{,}096}          % 516 per configuration x 6
+% E7 (A_leak) and E4 (A_client) re-runs: REPORT.md §2, analysis/e7_tables.md, e4_by_family.md
+\newcommand{\NumDefStacks}{11}
+\newcommand{\NumDefWitnesses}{229}
+\newcommand{\NumDefResidualDA}{146}            % = all G1 query/body dispatch witnesses
+\newcommand{\NumDefResidualDB}{146}
+\newcommand{\NumDefResidualDC}{205}
+\newcommand{\NumDefResidualBOrigin}{217}
+\newcommand{\NumDefResidualBStrict}{205}
+\newcommand{\NumDefEFourTotal}{52}
+\newcommand{\NumDefEFourDA}{0}
+\newcommand{\NumDefEFourDB}{36}                % all dot-segment vectors (RC1/RC2)
+\newcommand{\NumDefEFourDC}{4}                 % case-fold
+% E8: B-optional (htm/htu checks off) vs B-edge on the full 581-case depth-1 corpus (analysis/e8_full_corpus.md)
+\newcommand{\NumBOptFastapi}{52}\newcommand{\NumBEdgeFastapi}{23}
+\newcommand{\NumBOptExpress}{58}\newcommand{\NumBEdgeExpress}{11}

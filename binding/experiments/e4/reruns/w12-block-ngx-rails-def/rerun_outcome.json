@@ -1,0 +1,17 @@
+{
+  "confirmed": [
+    "dslash-accounts-bob",
+    "dslash-admin-del",
+    "dslash-admin-list"
+  ],
+  "flaky": [],
+  "n_confirmed": 3,
+  "n_flaky": 0,
+  "per_vector_counts": {
+    "dslash-accounts-bob": 3,
+    "dslash-admin-del": 3,
+    "dslash-admin-list": 3
+  },
+  "reps": 3,
+  "topology": "w12-block-ngx-rails-def"
+}

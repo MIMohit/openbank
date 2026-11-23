@@ -1,0 +1,10 @@
+id: nginx-default-edge-fastapi-ovon
+gateway: nginx
+gateway_image: nginx:1.30.7-alpine
+profile: default
+placement: edge
+framework: fastapi
+executor_image: bh-exec-fastapi:latest
+override: 'on'
+verifier: {image: 'bh-verifier:latest', canon: rfc3986, view_mac: 'off'}
+host_port: 18289

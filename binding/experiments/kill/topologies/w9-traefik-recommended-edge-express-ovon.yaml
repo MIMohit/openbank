@@ -1,0 +1,10 @@
+id: w9-traefik-recommended-edge-express-ovon
+gateway: traefik
+gateway_image: traefik:v3.7.19
+profile: recommended
+placement: edge
+framework: express
+executor_image: bh-exec-express:latest
+override: 'on'
+verifier: {image: 'bh-verifier:latest', canon: rfc3986, view_mac: 'off'}
+host_port: 28127

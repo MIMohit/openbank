@@ -1,0 +1,4 @@
+topology,gateway,profile,framework,verifier_image,cases,pdp_allow,violations,admin,bob,vectors_hit
+w12-nat-env-aspnet-norm,envoy,default,aspnet,bh-verifier:latest,29,15,9,2,7,"case-admin-del,case-admin-list,direct-bob-get,direct-bob-getv2,dotseg-bob-del,dotseg-bob-get,dotseg-bob-getv2,dotseg-bob-put,encdotseg-bob-get"
+w12-nat-env-aspnet-raw,envoy,default,aspnet,bh-verifier:latest,29,22,13,6,7,"case-admin-del,case-admin-list,direct-bob-get,direct-bob-getv2,dotseg-admin-del,dotseg-admin-list,dotseg-bob-del,dotseg-bob-get,dotseg-bob-getv2,dotseg-bob-put,dotseg-v2v1-admin,encdotseg-admin-list,encdotseg-bob-get"
+w12-nat-ngx-aspnet,nginx,default,aspnet,bh-verifier:latest,29,8,2,2,0,"case-admin-del,case-admin-list"

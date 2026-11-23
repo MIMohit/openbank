@@ -1,0 +1,9 @@
+== data/e2_trees/django_django-6.1.3
+  (non-test source hits: 0 files)
+== data/e2_trees/fastapi_fastapi0.165.0
+  (non-test source hits: 0 files)
+== data/e2_trees/go-chi_chiv5.5.0
+data/e2_trees/go-chi_chiv5.5.0/context.go:53:	// Routing path/method override used during the route search.
+  (non-test source hits: 1 files)
+== data/e2_trees/Kludex_starlette1.10.0
+  (non-test source hits: 0 files)

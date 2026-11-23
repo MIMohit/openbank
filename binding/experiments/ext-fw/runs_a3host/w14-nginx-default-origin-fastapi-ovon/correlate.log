@@ -1,0 +1,1 @@
+oracle[w14-nginx-default-origin-fastapi-ovon] {'topology': 'w14-nginx-default-origin-fastapi-ovon', 'cases': 948, 'accepted': 831, 'hits_raw': 26, 'hits_confirmed': 0, 'S1': 17, 'S2': 9, 'S3': 0, 'signatures': 18, 'max_res_hat': 4, 'b0': 0, 'propagation': 182, 'uncorrelated': 2}

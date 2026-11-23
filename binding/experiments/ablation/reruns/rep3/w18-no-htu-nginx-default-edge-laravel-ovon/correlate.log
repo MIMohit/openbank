@@ -1,0 +1,1 @@
+oracle[w18-no-htu-nginx-default-edge-laravel-ovon] {'topology': 'w18-no-htu-nginx-default-edge-laravel-ovon', 'cases': 84, 'accepted': 84, 'hits_raw': 67, 'hits_confirmed': 0, 'S1': 57, 'S2': 10, 'S3': 0, 'signatures': 35, 'max_res_hat': 8, 'b0': 0, 'propagation': 0, 'uncorrelated': 2}

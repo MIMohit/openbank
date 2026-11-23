@@ -1,0 +1,33 @@
+framework,probe,status,op_id
+fastapi,"header X-HTTP-Method-Override: DELETE",200,deleteAccount
+fastapi,"query ?_method=DELETE",200,postAccount
+fastapi,"form body _method=DELETE",200,postAccount
+fastapi,"header on GET (non-POST origin)",200,deleteAccount
+express,"header X-HTTP-Method-Override: DELETE",200,deleteAccount
+express,"query ?_method=DELETE",200,deleteAccount
+express,"form body _method=DELETE",200,deleteAccount
+express,"header on GET (non-POST origin)",200,getAccount
+django,"header X-HTTP-Method-Override: DELETE",200,deleteAccount
+django,"query ?_method=DELETE",200,postAccount
+django,"form body _method=DELETE",200,deleteAccount
+django,"header on GET (non-POST origin)",200,getAccount
+go-chi,"header X-HTTP-Method-Override: DELETE",200,deleteAccount
+go-chi,"query ?_method=DELETE",200,deleteAccount
+go-chi,"form body _method=DELETE",200,deleteAccount
+go-chi,"header on GET (non-POST origin)",200,getAccount
+spring,"header X-HTTP-Method-Override: DELETE",200,postAccount
+spring,"query ?_method=DELETE",200,deleteAccount
+spring,"form body _method=DELETE",200,deleteAccount
+spring,"header on GET (non-POST origin)",200,getAccount
+aspnet,"header X-HTTP-Method-Override: DELETE",200,deleteAccount
+aspnet,"query ?_method=DELETE",200,postAccount
+aspnet,"form body _method=DELETE",200,deleteAccount
+aspnet,"header on GET (non-POST origin)",200,getAccount
+rails,"header X-HTTP-Method-Override: DELETE",200,deleteAccount
+rails,"query ?_method=DELETE",200,postAccount
+rails,"form body _method=DELETE",200,deleteAccount
+rails,"header on GET (non-POST origin)",200,getAccount
+laravel,"header X-HTTP-Method-Override: DELETE",200,deleteAccount
+laravel,"query ?_method=DELETE",200,deleteAccount
+laravel,"form body _method=DELETE",200,deleteAccount
+laravel,"header on GET (non-POST origin)",200,getAccount

@@ -1,0 +1,10 @@
+id: kong-default-origin-fastapi-ovon
+gateway: kong
+gateway_image: kong:3.9.5
+profile: default
+placement: origin
+framework: fastapi
+executor_image: bh-exec-fastapi:latest
+override: 'on'
+verifier: {image: 'bh-verifier:latest', canon: rfc3986, view_mac: 'off'}
+host_port: 18449

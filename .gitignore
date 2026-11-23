@@ -1,0 +1,6 @@
+# This branch holds only the binding-soundness research (binding/).
+# Everything else in the working directory belongs to other branches.
+/*
+!/.gitignore
+!/README.md
+!/binding/

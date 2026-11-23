@@ -1,0 +1,4 @@
+w12-nat-ngx-aspnet runner_rc=0 secs=8 violations=2 e4_runner[w12-nat-ngx-aspnet] wrote /Users/mimohit/openbank/binding/harness/logs/w12-nat-ngx-aspnet/runner.jsonl: {'sent': 29, 'errors': 0}
+w12-nat-env-aspnet-raw runner_rc=0 secs=9 violations=13 e4_runner[w12-nat-env-aspnet-raw] wrote /Users/mimohit/openbank/binding/harness/logs/w12-nat-env-aspnet-raw/runner.jsonl: {'sent': 29, 'errors': 0}
+w12-nat-env-aspnet-norm runner_rc=0 secs=8 violations=9 e4_runner[w12-nat-env-aspnet-norm] wrote /Users/mimohit/openbank/binding/harness/logs/w12-nat-env-aspnet-norm/runner.jsonl: {'sent': 29, 'errors': 0}
+NATIVE DONE 14:57:14

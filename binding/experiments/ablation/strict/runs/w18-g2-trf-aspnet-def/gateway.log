@@ -1,0 +1,155 @@
+gateway-1  | [90m2026-11-23T11:06:53Z[0m [33mWRN[0m [1mTraefik can reject some encoded characters in the request path. When your backend is not fully compliant with [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986), it is recommended to set these options to `false` to avoid split-view situation. Refer to the documentation for more details: https://doc.traefik.io/traefik/v3.6/migrate/v3/#encoded-characters-configuration-default-values[0m
+gateway-1  | [90m2026-11-23T11:06:53Z[0m [32mINF[0m [1mTraefik version 3.7.19 built on 2026-11-13T09:24:59Z[0m [36mversion=[0m3.7.19
+gateway-1  | [90m2026-11-23T11:06:53Z[0m [32mINF[0m [1mVersion check is enabled.[0m
+gateway-1  | [90m2026-11-23T11:06:53Z[0m [32mINF[0m [1mTraefik checks for new releases to notify you if your version is out of date.[0m
+gateway-1  | [90m2026-11-23T11:06:53Z[0m [32mINF[0m [1mIt also collects usage data during this process.[0m
+gateway-1  | [90m2026-11-23T11:06:53Z[0m [32mINF[0m [1mCheck the documentation to get more info: https://doc.traefik.io/traefik/contributing/data-collection/[0m
+gateway-1  | [90m2026-11-23T11:06:53Z[0m [32mINF[0m [1m
+gateway-1  | Stats collection is disabled.
+gateway-1  | Help us improve Traefik by turning this feature on :)
+gateway-1  | More details on: https://doc.traefik.io/traefik/contributing/data-collection/
+gateway-1  | [0m
+gateway-1  | [90m2026-11-23T11:06:53Z[0m [33mWRN[0m [1maliasHeadersStrategy is not configured: the request headers whose name aliases another header name (e.g. X_Auth_User or X.Auth.User for X-Auth-User) are forwarded as is. The backends deriving variable names from the header names (CGI, WSGI, PHP, NGINX, ...) read them as the header they alias, which allows a client to spoof the headers Traefik manages. Please set it to delete or reject on the entry points fronting such backends.[0m [36mentryPointName=[0mweb
+gateway-1  | [90m2026-11-23T11:06:53Z[0m [32mINF[0m [1mStarting provider aggregator *aggregator.ProviderAggregator[0m
+gateway-1  | [90m2026-11-23T11:06:53Z[0m [32mINF[0m [1mStarting provider *file.Provider[0m
+gateway-1  | [90m2026-11-23T11:06:53Z[0m [32mINF[0m [1mStarting provider *traefik.Provider[0m
+gateway-1  | [90m2026-11-23T11:06:53Z[0m [32mINF[0m [1mStarting provider *acme.ChallengeTLSALPN[0m
+gateway-1  | [90m2026-11-23T11:06:53Z[0m [33mWRN[0m [1mmaxResponseBodySize is not configured, allowing unlimited response body size which can lead to DoS attacks and memory exhaustion. Please set an appropriate limit.[0m [36mentryPointName=[0mweb [36mmiddlewareName=[0mbh-authz@file [36mmiddlewareType=[0mForwardAuth [36mrouterName=[0mapi@file
+gateway-1  | [90m2026-11-23T11:06:53Z[0m [33mWRN[0m [1mtrustForwardHeader is not configured: this creates an inconsistent security behavior where some X-Forwarded headers (e.g. X-Forwarded-For, X-Forwarded-Proto) are removed but others (e.g. X-Forwarded-Prefix) are forwarded untouched. Please set it to false to remove all X-Forwarded headers, or true to trust them all.[0m [36mentryPointName=[0mweb [36mmiddlewareName=[0mbh-authz@file [36mmiddlewareType=[0mForwardAuth [36mrouterName=[0mapi@file
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:06:58 +0000] "GET /api/v1/accounts HTTP/1.1" 200 77 "-" "-" 1 "api@file" "http://executor:8080" 30ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:06:59 +0000] "GET /api/accounts HTTP/1.1" 401 77 "-" "-" 2 "api@file" "-" 42ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:06:59 +0000] "GET /api/v1/accounts HTTP/1.1" 200 77 "-" "-" 3 "api@file" "http://executor:8080" 45ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:06:59 +0000] "GET /api/accounts HTTP/1.1" 401 77 "-" "-" 4 "api@file" "-" 42ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:06:59 +0000] "GET /api/v1/accounts HTTP/1.1" 200 77 "-" "-" 5 "api@file" "http://executor:8080" 45ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:06:59 +0000] "GET /api/v1/..%2Faccounts HTTP/1.1" 401 77 "-" "-" 6 "api@file" "-" 42ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:06:59 +0000] "GET /api/v1/..%2Faccounts HTTP/1.1" 401 77 "-" "-" 7 "api@file" "-" 41ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:06:59 +0000] "GET /api/v1/%2Faccounts HTTP/1.1" 401 77 "-" "-" 8 "api@file" "-" 41ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:06:59 +0000] "GET /api/v1/accounts/acc-alice-1 HTTP/1.1" 200 93 "-" "-" 9 "api@file" "http://executor:8080" 50ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:06:59 +0000] "GET /api/v1/acc-alice-1 HTTP/1.1" 401 77 "-" "-" 10 "api@file" "-" 43ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:06:59 +0000] "GET /api/v1/accounts/acc-alice-1 HTTP/1.1" 200 93 "-" "-" 11 "api@file" "http://executor:8080" 42ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:06:59 +0000] "GET /api/v1/acc-alice-1 HTTP/1.1" 401 77 "-" "-" 12 "api@file" "-" 45ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:06:59 +0000] "GET /api/v1/accounts/acc-alice-1 HTTP/1.1" 200 93 "-" "-" 13 "api@file" "http://executor:8080" 45ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:06:59 +0000] "GET /api/v1/accounts/..%2Facc-alice-1 HTTP/1.1" 401 77 "-" "-" 14 "api@file" "-" 40ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:06:59 +0000] "GET /api/v1/accounts/..%2Facc-alice-1 HTTP/1.1" 401 77 "-" "-" 15 "api@file" "-" 42ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:06:59 +0000] "GET /api/v1/accounts/%2Facc-alice-1 HTTP/1.1" 401 77 "-" "-" 16 "api@file" "-" 41ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:06:59 +0000] "PUT /api/v1/accounts/acc-alice-1 HTTP/1.1" 200 96 "-" "-" 17 "api@file" "http://executor:8080" 47ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:06:59 +0000] "PUT /api/v1/acc-alice-1 HTTP/1.1" 401 77 "-" "-" 18 "api@file" "-" 42ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:06:59 +0000] "PUT /api/v1/accounts/acc-alice-1 HTTP/1.1" 200 96 "-" "-" 19 "api@file" "http://executor:8080" 49ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:06:59 +0000] "PUT /api/v1/acc-alice-1 HTTP/1.1" 401 77 "-" "-" 20 "api@file" "-" 42ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:06:59 +0000] "PUT /api/v1/accounts/acc-alice-1 HTTP/1.1" 200 96 "-" "-" 21 "api@file" "http://executor:8080" 47ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:06:59 +0000] "PUT /api/v1/accounts/..%2Facc-alice-1 HTTP/1.1" 401 77 "-" "-" 22 "api@file" "-" 42ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:00 +0000] "PUT /api/v1/accounts/..%2Facc-alice-1 HTTP/1.1" 401 77 "-" "-" 23 "api@file" "-" 45ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:00 +0000] "PUT /api/v1/accounts/%2Facc-alice-1 HTTP/1.1" 401 77 "-" "-" 24 "api@file" "-" 42ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:00 +0000] "DELETE /api/v1/accounts/acc-alice-1 HTTP/1.1" 200 99 "-" "-" 25 "api@file" "http://executor:8080" 48ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:00 +0000] "DELETE /api/v1/acc-alice-1 HTTP/1.1" 401 77 "-" "-" 26 "api@file" "-" 43ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:00 +0000] "DELETE /api/v1/accounts/acc-alice-1 HTTP/1.1" 200 99 "-" "-" 27 "api@file" "http://executor:8080" 46ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:00 +0000] "DELETE /api/v1/acc-alice-1 HTTP/1.1" 401 77 "-" "-" 28 "api@file" "-" 41ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:00 +0000] "DELETE /api/v1/accounts/acc-alice-1 HTTP/1.1" 200 99 "-" "-" 29 "api@file" "http://executor:8080" 45ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:00 +0000] "DELETE /api/v1/accounts/..%2Facc-alice-1 HTTP/1.1" 401 77 "-" "-" 30 "api@file" "-" 41ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:00 +0000] "DELETE /api/v1/accounts/..%2Facc-alice-1 HTTP/1.1" 401 77 "-" "-" 31 "api@file" "-" 41ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:00 +0000] "DELETE /api/v1/accounts/%2Facc-alice-1 HTTP/1.1" 401 77 "-" "-" 32 "api@file" "-" 41ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:00 +0000] "POST /api/v1/accounts/acc-alice-1/actions?op=freeze HTTP/1.1" 200 104 "-" "-" 33 "api@file" "http://executor:8080" 43ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:00 +0000] "POST /api/v1/accounts/actions?op=freeze HTTP/1.1" 401 77 "-" "-" 34 "api@file" "-" 41ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:00 +0000] "POST /api/v1/accounts/acc-alice-1/actions?op=freeze HTTP/1.1" 200 104 "-" "-" 35 "api@file" "http://executor:8080" 46ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:00 +0000] "POST /api/v1/accounts/actions?op=freeze HTTP/1.1" 401 77 "-" "-" 36 "api@file" "-" 40ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:00 +0000] "POST /api/v1/accounts/acc-alice-1/actions?op=freeze HTTP/1.1" 200 104 "-" "-" 37 "api@file" "http://executor:8080" 44ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:00 +0000] "POST /api/v1/accounts/acc-alice-1/..%2Factions?op=freeze HTTP/1.1" 401 77 "-" "-" 38 "api@file" "-" 41ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:00 +0000] "POST /api/v1/accounts/acc-alice-1/..%2Factions?op=freeze HTTP/1.1" 401 77 "-" "-" 39 "api@file" "-" 42ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:00 +0000] "POST /api/v1/accounts/acc-alice-1/%2Factions?op=freeze HTTP/1.1" 401 77 "-" "-" 40 "api@file" "-" 45ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:00 +0000] "POST /api/v1/accounts/acc-alice-1/actions?op=freeze#frag HTTP/1.1" 400 0 "-" "-" 41 "api@file" "http://executor:8080" 45ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:00 +0000] "POST /api/v1/transfers HTTP/1.1" 200 80 "-" "-" 42 "api@file" "http://executor:8080" 44ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:00 +0000] "POST /api/transfers HTTP/1.1" 401 77 "-" "-" 43 "api@file" "-" 41ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:01 +0000] "POST /api/v1/transfers HTTP/1.1" 200 80 "-" "-" 44 "api@file" "http://executor:8080" 45ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:01 +0000] "POST /api/transfers HTTP/1.1" 401 77 "-" "-" 45 "api@file" "-" 42ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:01 +0000] "POST /api/v1/transfers HTTP/1.1" 200 80 "-" "-" 46 "api@file" "http://executor:8080" 45ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:01 +0000] "POST /api/v1/..%2Ftransfers HTTP/1.1" 401 77 "-" "-" 47 "api@file" "-" 41ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:01 +0000] "POST /api/v1/..%2Ftransfers HTTP/1.1" 401 77 "-" "-" 48 "api@file" "-" 41ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:01 +0000] "POST /api/v1/%2Ftransfers HTTP/1.1" 401 77 "-" "-" 49 "api@file" "-" 41ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:01 +0000] "POST /api/v1/graphql HTTP/1.1" 200 84 "-" "-" 50 "api@file" "http://executor:8080" 44ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:01 +0000] "POST /api/graphql HTTP/1.1" 401 77 "-" "-" 51 "api@file" "-" 41ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:01 +0000] "POST /api/v1/graphql HTTP/1.1" 200 84 "-" "-" 52 "api@file" "http://executor:8080" 42ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:01 +0000] "POST /api/graphql HTTP/1.1" 401 77 "-" "-" 53 "api@file" "-" 41ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:01 +0000] "POST /api/v1/graphql HTTP/1.1" 200 84 "-" "-" 54 "api@file" "http://executor:8080" 42ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:01 +0000] "POST /api/v1/..%2Fgraphql HTTP/1.1" 401 77 "-" "-" 55 "api@file" "-" 41ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:01 +0000] "POST /api/v1/..%2Fgraphql HTTP/1.1" 401 77 "-" "-" 56 "api@file" "-" 40ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:01 +0000] "POST /api/v1/%2Fgraphql HTTP/1.1" 401 77 "-" "-" 57 "api@file" "-" 41ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:01 +0000] "GET /api/v1/me HTTP/1.1" 200 67 "-" "-" 58 "api@file" "http://executor:8080" 44ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:01 +0000] "GET /api/me HTTP/1.1" 401 77 "-" "-" 59 "api@file" "-" 42ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:01 +0000] "GET /api/v1/me HTTP/1.1" 200 67 "-" "-" 60 "api@file" "http://executor:8080" 46ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:01 +0000] "GET /api/me HTTP/1.1" 401 77 "-" "-" 61 "api@file" "-" 42ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:01 +0000] "GET /api/v1/me HTTP/1.1" 200 67 "-" "-" 62 "api@file" "http://executor:8080" 47ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:01 +0000] "GET /api/v1/..%2Fme HTTP/1.1" 401 77 "-" "-" 63 "api@file" "-" 41ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:01 +0000] "GET /api/v1/..%2Fme HTTP/1.1" 401 77 "-" "-" 64 "api@file" "-" 42ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:01 +0000] "GET /api/v1/%2Fme HTTP/1.1" 401 77 "-" "-" 65 "api@file" "-" 41ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:02 +0000] "GET /api/v1/admin/users HTTP/1.1" 200 79 "-" "-" 66 "api@file" "http://executor:8080" 43ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:02 +0000] "GET /api/v1/users HTTP/1.1" 401 77 "-" "-" 67 "api@file" "-" 42ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:02 +0000] "GET /api/v1/admin/users HTTP/1.1" 200 79 "-" "-" 68 "api@file" "http://executor:8080" 42ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:02 +0000] "GET /api/v1/users HTTP/1.1" 401 77 "-" "-" 69 "api@file" "-" 40ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:02 +0000] "GET /api/v1/admin/users HTTP/1.1" 200 79 "-" "-" 70 "api@file" "http://executor:8080" 42ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:02 +0000] "GET /api/v1/admin/..%2Fusers HTTP/1.1" 401 77 "-" "-" 71 "api@file" "-" 42ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:02 +0000] "GET /api/v1/admin/..%2Fusers HTTP/1.1" 401 77 "-" "-" 72 "api@file" "-" 41ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:02 +0000] "GET /api/v1/admin/%2Fusers HTTP/1.1" 401 77 "-" "-" 73 "api@file" "-" 42ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:02 +0000] "DELETE /api/v1/admin/users/u-1 HTTP/1.1" 200 93 "-" "-" 74 "api@file" "http://executor:8080" 42ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:02 +0000] "DELETE /api/v1/admin/u-1 HTTP/1.1" 401 77 "-" "-" 75 "api@file" "-" 42ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:02 +0000] "DELETE /api/v1/admin/users/u-1 HTTP/1.1" 200 93 "-" "-" 76 "api@file" "http://executor:8080" 44ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:02 +0000] "DELETE /api/v1/admin/u-1 HTTP/1.1" 401 77 "-" "-" 77 "api@file" "-" 41ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:02 +0000] "DELETE /api/v1/admin/users/u-1 HTTP/1.1" 200 93 "-" "-" 78 "api@file" "http://executor:8080" 42ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:02 +0000] "DELETE /api/v1/admin/users/..%2Fu-1 HTTP/1.1" 401 77 "-" "-" 79 "api@file" "-" 42ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:02 +0000] "DELETE /api/v1/admin/users/..%2Fu-1 HTTP/1.1" 401 77 "-" "-" 80 "api@file" "-" 41ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:02 +0000] "DELETE /api/v1/admin/users/%2Fu-1 HTTP/1.1" 401 77 "-" "-" 81 "api@file" "-" 42ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:02 +0000] "GET /api/v1/health HTTP/1.1" 200 71 "-" "-" 82 "api@file" "http://executor:8080" 45ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:02 +0000] "GET /api/health HTTP/1.1" 401 77 "-" "-" 83 "api@file" "-" 42ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:02 +0000] "GET /api/v1/health HTTP/1.1" 200 71 "-" "-" 84 "api@file" "http://executor:8080" 43ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:02 +0000] "GET /api/health HTTP/1.1" 401 77 "-" "-" 85 "api@file" "-" 41ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:02 +0000] "GET /api/v1/health HTTP/1.1" 200 71 "-" "-" 86 "api@file" "http://executor:8080" 46ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:02 +0000] "GET /api/v1/..%2Fhealth HTTP/1.1" 401 77 "-" "-" 87 "api@file" "-" 41ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:03 +0000] "GET /api/v1/..%2Fhealth HTTP/1.1" 401 77 "-" "-" 88 "api@file" "-" 41ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:03 +0000] "GET /api/v1/%2Fhealth HTTP/1.1" 401 77 "-" "-" 89 "api@file" "-" 40ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:03 +0000] "GET /api/v1/public/logo.png HTTP/1.1" 200 92 "-" "-" 90 "api@file" "http://executor:8080" 43ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:03 +0000] "GET /api/v1/logo.png HTTP/1.1" 401 77 "-" "-" 91 "api@file" "-" 41ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:03 +0000] "GET /api/v1/public/logo.png HTTP/1.1" 200 92 "-" "-" 92 "api@file" "http://executor:8080" 42ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:03 +0000] "GET /api/v1/logo.png HTTP/1.1" 401 77 "-" "-" 93 "api@file" "-" 41ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:03 +0000] "GET /api/v1/public/logo.png HTTP/1.1" 200 92 "-" "-" 94 "api@file" "http://executor:8080" 42ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:03 +0000] "GET /api/v1/public/..%2Flogo.png HTTP/1.1" 401 77 "-" "-" 95 "api@file" "-" 41ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:03 +0000] "GET /api/v1/public/..%2Flogo.png HTTP/1.1" 401 77 "-" "-" 96 "api@file" "-" 41ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:03 +0000] "GET /api/v1/public/%2Flogo.png HTTP/1.1" 401 77 "-" "-" 97 "api@file" "-" 41ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:03 +0000] "GET /api/v2/accounts/acc-alice-1 HTTP/1.1" 200 95 "-" "-" 98 "api@file" "http://executor:8080" 43ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:03 +0000] "GET /api/v2/acc-alice-1 HTTP/1.1" 401 77 "-" "-" 99 "api@file" "-" 41ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:03 +0000] "GET /api/v2/accounts/acc-alice-1 HTTP/1.1" 200 95 "-" "-" 100 "api@file" "http://executor:8080" 47ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:03 +0000] "GET /api/v2/acc-alice-1 HTTP/1.1" 401 77 "-" "-" 101 "api@file" "-" 41ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:03 +0000] "GET /api/v2/accounts/acc-alice-1 HTTP/1.1" 200 95 "-" "-" 102 "api@file" "http://executor:8080" 46ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:03 +0000] "GET /api/v2/accounts/..%2Facc-alice-1 HTTP/1.1" 401 77 "-" "-" 103 "api@file" "-" 42ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:03 +0000] "GET /api/v2/accounts/..%2Facc-alice-1 HTTP/1.1" 401 77 "-" "-" 104 "api@file" "-" 43ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:03 +0000] "GET /api/v2/accounts/%2Facc-alice-1 HTTP/1.1" 401 77 "-" "-" 105 "api@file" "-" 43ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:03 +0000] "POST /api/v1/accounts/acc-alice-1 HTTP/1.1" 200 95 "-" "-" 106 "api@file" "http://executor:8080" 45ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:03 +0000] "POST /api/v1/acc-alice-1 HTTP/1.1" 401 77 "-" "-" 107 "api@file" "-" 41ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:03 +0000] "POST /api/v1/accounts/acc-alice-1 HTTP/1.1" 200 95 "-" "-" 108 "api@file" "http://executor:8080" 42ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:04 +0000] "POST /api/v1/acc-alice-1 HTTP/1.1" 401 77 "-" "-" 109 "api@file" "-" 41ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:04 +0000] "POST /api/v1/accounts/acc-alice-1 HTTP/1.1" 200 95 "-" "-" 110 "api@file" "http://executor:8080" 45ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:04 +0000] "POST /api/v1/accounts/..%2Facc-alice-1 HTTP/1.1" 401 77 "-" "-" 111 "api@file" "-" 41ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:04 +0000] "POST /api/v1/accounts/..%2Facc-alice-1 HTTP/1.1" 401 77 "-" "-" 112 "api@file" "-" 46ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:04 +0000] "POST /api/v1/accounts/%2Facc-alice-1 HTTP/1.1" 401 77 "-" "-" 113 "api@file" "-" 42ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:04 +0000] "GET /api/v1/accounts/acc-alice-1/statements HTTP/1.1" 200 96 "-" "-" 114 "api@file" "http://executor:8080" 47ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:04 +0000] "GET /api/v1/accounts/statements HTTP/1.1" 401 77 "-" "-" 115 "api@file" "-" 43ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:04 +0000] "GET /api/v1/accounts/acc-alice-1/statements HTTP/1.1" 200 96 "-" "-" 116 "api@file" "http://executor:8080" 45ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:04 +0000] "GET /api/v1/accounts/statements HTTP/1.1" 401 77 "-" "-" 117 "api@file" "-" 43ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:04 +0000] "GET /api/v1/accounts/acc-alice-1/statements HTTP/1.1" 200 96 "-" "-" 118 "api@file" "http://executor:8080" 47ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:04 +0000] "GET /api/v1/accounts/acc-alice-1/..%2Fstatements HTTP/1.1" 401 77 "-" "-" 119 "api@file" "-" 42ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:04 +0000] "GET /api/v1/accounts/acc-alice-1/..%2Fstatements HTTP/1.1" 401 77 "-" "-" 120 "api@file" "-" 42ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:04 +0000] "GET /api/v1/accounts/acc-alice-1/%2Fstatements HTTP/1.1" 401 77 "-" "-" 121 "api@file" "-" 42ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:04 +0000] "DELETE /api/v1/accounts/acc-alice-1/statements/stmt-1 HTTP/1.1" 200 116 "-" "-" 122 "api@file" "http://executor:8080" 45ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:04 +0000] "DELETE /api/v1/accounts/acc-alice-1/stmt-1 HTTP/1.1" 401 77 "-" "-" 123 "api@file" "-" 43ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:04 +0000] "DELETE /api/v1/accounts/acc-alice-1/statements/stmt-1 HTTP/1.1" 200 116 "-" "-" 124 "api@file" "http://executor:8080" 42ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:04 +0000] "DELETE /api/v1/accounts/acc-alice-1/stmt-1 HTTP/1.1" 401 77 "-" "-" 125 "api@file" "-" 40ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:04 +0000] "DELETE /api/v1/accounts/acc-alice-1/statements/stmt-1 HTTP/1.1" 200 116 "-" "-" 126 "api@file" "http://executor:8080" 46ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:04 +0000] "DELETE /api/v1/accounts/acc-alice-1/statements/..%2Fstmt-1 HTTP/1.1" 401 77 "-" "-" 127 "api@file" "-" 42ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:04 +0000] "DELETE /api/v1/accounts/acc-alice-1/statements/..%2Fstmt-1 HTTP/1.1" 401 77 "-" "-" 128 "api@file" "-" 41ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:04 +0000] "DELETE /api/v1/accounts/acc-alice-1/statements/%2Fstmt-1 HTTP/1.1" 401 77 "-" "-" 129 "api@file" "-" 46ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:05 +0000] "GET /api/v1/files/reports/logo.png HTTP/1.1" 200 102 "-" "-" 130 "api@file" "http://executor:8080" 44ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:05 +0000] "GET /api/v1/files/logo.png HTTP/1.1" 401 77 "-" "-" 131 "api@file" "-" 43ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:05 +0000] "GET /api/v1/files/reports/logo.png HTTP/1.1" 200 102 "-" "-" 132 "api@file" "http://executor:8080" 45ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:05 +0000] "GET /api/v1/files/logo.png HTTP/1.1" 401 77 "-" "-" 133 "api@file" "-" 42ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:05 +0000] "GET /api/v1/files/reports/logo.png HTTP/1.1" 200 102 "-" "-" 134 "api@file" "http://executor:8080" 48ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:05 +0000] "GET /api/v1/files/reports/..%2Flogo.png HTTP/1.1" 401 77 "-" "-" 135 "api@file" "-" 41ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:05 +0000] "GET /api/v1/files/reports/..%2Flogo.png HTTP/1.1" 401 77 "-" "-" 136 "api@file" "-" 41ms
+gateway-1  | 172.24.0.1 - - [23/Nov/2026:11:07:05 +0000] "GET /api/v1/files/reports/%2Flogo.png HTTP/1.1" 401 77 "-" "-" 137 "api@file" "-" 42ms

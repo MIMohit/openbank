@@ -1,0 +1,10 @@
+id: traefik-recommended-edge-rails-ovon
+gateway: traefik
+gateway_image: traefik:v3.7.19
+profile: recommended
+placement: edge
+framework: rails
+executor_image: bh-exec-rails:latest
+override: 'on'
+verifier: {image: 'bh-verifier:latest', canon: rfc3986, view_mac: 'off'}
+host_port: 18205

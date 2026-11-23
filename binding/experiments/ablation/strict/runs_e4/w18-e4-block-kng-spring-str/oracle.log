@@ -1,0 +1,1 @@
+e4_oracle[w18-e4-block-kng-spring-str] {'topology': 'w18-e4-block-kng-spring-str', 'gateway': 'kong', 'profile': 'strict', 'framework': 'spring', 'verifier_image': 'bh-pdp-block:latest', 'cases': 29, 'pdp_allow': 5, 'violations': 0, 'admin': 0, 'bob': 0, 'vectors_hit': ''}

@@ -1,0 +1,97 @@
+% sections/related.tex -- Owner: W1. Every \cite key is defined in ../lit/refs.bib,
+% except the w2: keys, which live in extra.bib (used here to avoid duplicate
+% bibliography entries for works W2 already cites). Evidence for each claim:
+% ../lit/killreads.md (full-text reads, with page numbers) and ../lit/extraction.csv.
+\section{Related Work}\label{sec:related}
+
+\paragraph{Formal analyses of sender-constrained protocols.}
+Hosseyni, K\"usters and W\"urtele prove the FAPI~2.0 family secure in the Web
+Infrastructure Model, including DPoP, mTLS-bound tokens and message
+signing~\cite{hosseyni2022tr,hosseyni2024csf,hosseyni2024tops}; earlier work
+covered OAuth~2.0 and FAPI~1.0~\cite{fett2016oauth,fett2019fapi}. In these
+models the resource server is a single atomic process. It builds the URI it
+compares with \htu from the host and path of the message it serves, and it
+selects the resource from the same path. The verified view therefore \emph{is}
+the executed request by construction. No intermediary, URI normalisation or
+method override appears, and the security property is confidentiality of the
+resource rather than integrity of the executed operation. The FAPI~2.0
+attacker model leaks resource requests only \emph{after} the resource server
+has processed them~\cite{fapiam2025}. Our model keeps their checks and
+splits the resource server into a verifier and an executor. Binding soundness
+is the property their proofs assume implicitly.
+
+\paragraph{HTTP interpretation differentials.}
+A long line of work finds disagreements between HTTP components:
+\begin{itemize}[leftmargin=*,nosep]
+  \item request smuggling and desync~\cite{jabiyev2021treqs,jabiyev2024gudifu,mu2025hdhunter,kallus2024garden,shen2022hdiff};
+  \item HTTP/2-to-HTTP/1 conversion~\cite{jabiyev2022frameshifter,gavazzi2025h2fuzz};
+  \item Host ambiguity~\cite{chen2016host};
+  \item URL parsing~\cite{reynolds2022equivocal};
+  \item cache path confusion and poisoning~\cite{mirheidari2020cached,nguyen2019cpdos}.
+\end{itemize}
+WAFFLED is closest in structure: a WAF allows a request whose body the
+framework then parses and executes differently~\cite{akhavani2025waffled}.
+These works supply many of our \GB primitives, but their oracles are
+framing, caching or content-filter outcomes. Ours is a cryptographic proof
+that is accepted while a different operation executes. Two of our three
+classes, \GA and \GC, need no parsing disagreement at all.
+
+\paragraph{Defences against differentials.}
+HTTP Request Synchronization makes each hop's interpretation of the URL, the
+Host and the framing consistent along a proxy chain~\cite{topcuoglu2025sync}.
+It does not synchronise the effective method, body-level dispatch or trust
+headers, and it is not tied to the client's proof. Under \GA every hop
+already agrees, so there is nothing to synchronise. Its artefact was not
+publicly available when we checked. Other defences do not bind the client's
+proof to the executed operation either:
+\begin{itemize}[leftmargin=*,nosep]
+  \item header whitelisting~\cite{buttner2021whitelisting};
+  \item cryptographic hop binding~\cite{nygren2025binding};
+  \item cache-aware message authentication~\cite{nguyen2020crehma};
+  \item HTTP Message Signatures, whose coverage is a deployment choice~\cite{rfc9421}.
+\end{itemize}
+Our defences D-A and D-B (\S\ref{sec:defence}) bind exactly that.
+XML Signature Wrapping is the classic precedent of ``verified element $\neq$
+processed element''~\cite{somorovsky2012saml}. We show the HTTP analogue for
+proof-of-possession.
+
+\paragraph{Execution semantics and placement.}
+Golinelli et al.\ measure HTTP method interchangeability and find CSRF
+defences that are scoped to one method~\cite{golinelli2026post}. We study
+method \emph{override} and query or body dispatch under a proof that binds
+\htm, across gateway placements. Single-product advisories show that an edge
+check can see a different path or method than the backend executes:
+\begin{itemize}[leftmargin=*,nosep]
+  \item path views~\cite{traefik2026cve40912,istio2021cve31920,opaenvoy2026cve26205,envoy2019ghsa};
+  \item method override, which ``allows bypassing method-based access controls enforced by upstream proxies''~\cite{grpcgw2026cve37236}.
+\end{itemize}
+We systematise this class and show that a DPoP check inherits it.
+Mancinas Fontalvo reports silent binding failures in sender-constrained
+deployments~\cite{mancinas2026}: replay through bounded \jti caches, and lossy
+client-certificate propagation for mTLS. That author argues DPoP is immune to
+the latter because its binding lives at the application layer. By
+construction, however, an application-layer binding is still relative to the
+verifier's view of the request (\S\ref{sec:model:classes}).
+Conceptual work also argues that accepted tokens can be
+insufficient~\cite{gallo2026continuity,gallo2026relational,kim2026tbsg}.
+
+\paragraph{Testing and measurement of OAuth deployments.}
+Prior tools and studies examine different layers:
+\begin{itemize}[leftmargin=*,nosep]
+  \item OAuch tests authorization-server compliance~\cite{philippaerts2022oauch};
+  \item JWTeemo tests JOSE libraries~\cite{yang2026jwteemo};
+  \item recent studies measure MCP server authentication~\cite{zhou2026mcp,padilla2026mcp}.
+\end{itemize}
+The MCP conformance suite adds negative DPoP tests at a single
+endpoint~\cite{mcpconf369}. None of them checks whether a proof minted for
+one operation can drive another.
+
+\paragraph{Standards discussion.}
+RFC~9449 binds only the method and the query-less URI~\cite{rfc9449}.
+Recent IETF OAuth WG threads propose relaxing or dropping \htu and \htm
+because intermediaries rewrite URIs, or forwarding proofs to downstream
+servers~\cite{allam2026thread,madden2025thread}. The MCP DPoP profile does not
+require \jti tracking~\cite{sep1932}. FAPI~2.0 and the OAuth security BCP
+mandate sender-constraining but say nothing about where it is
+verified~\cite{fapisp2025,rfc9700}. Binding soundness gives these
+discussions a criterion for what a relaxed or forwarded check must preserve.

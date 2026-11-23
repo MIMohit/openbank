@@ -1,0 +1,10 @@
+id: smoke-kong-recommended-edge
+gateway: kong
+gateway_image: kong:3.9.5
+profile: recommended
+placement: edge
+framework: stub
+executor_image: stub
+override: 'off'
+verifier: {image: stub, canon: rfc3986, view_mac: 'off'}
+host_port: 19010

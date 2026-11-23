@@ -1,0 +1,1 @@
+oracle[w9-nginx-recommended-edge-aspnet-ovoff] {'topology': 'w9-nginx-recommended-edge-aspnet-ovoff', 'cases': 948, 'accepted': 646, 'hits_raw': 14, 'hits_confirmed': 0, 'S1': 6, 'S2': 8, 'S3': 0, 'signatures': 14, 'max_res_hat': 3, 'b0': 0, 'propagation': 117, 'uncorrelated': 2}

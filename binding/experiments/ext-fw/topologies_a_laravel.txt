@@ -1,0 +1,12 @@
+w14-nginx-default-edge-laravel-ovoff
+w14-nginx-default-edge-laravel-ovon
+w14-nginx-recommended-edge-laravel-ovoff
+w14-nginx-recommended-edge-laravel-ovon
+w14-traefik-default-edge-laravel-ovoff
+w14-traefik-default-edge-laravel-ovon
+w14-traefik-recommended-edge-laravel-ovoff
+w14-traefik-recommended-edge-laravel-ovon
+w14-envoy-default-edge-laravel-ovoff
+w14-envoy-default-edge-laravel-ovon
+w14-envoy-recommended-edge-laravel-ovoff
+w14-envoy-recommended-edge-laravel-ovon

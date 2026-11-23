@@ -1,0 +1,25 @@
+[12:58:16] START w13-apisix-default-edge-laravel-ovoff
+[12:59:46] DONE w13-apisix-default-edge-laravel-ovoff hits=14 runner_rc=0
+[12:59:46] START w13-apisix-default-edge-laravel-ovon
+[13:01:01] DONE w13-apisix-default-edge-laravel-ovon hits=10 runner_rc=0
+[13:01:01] START w13-apisix-recommended-edge-laravel-ovoff
+[13:02:17] DONE w13-apisix-recommended-edge-laravel-ovoff hits=14 runner_rc=0
+[13:02:18] START w13-apisix-recommended-edge-laravel-ovon
+[13:03:39] DONE w13-apisix-recommended-edge-laravel-ovon hits=10 runner_rc=0
+[13:03:39] START w13-haproxy-default-edge-laravel-ovoff
+[13:06:07] DONE w13-haproxy-default-edge-laravel-ovoff hits=13 runner_rc=0
+[13:06:07] START w13-haproxy-default-edge-laravel-ovon
+[13:07:37] DONE w13-haproxy-default-edge-laravel-ovon hits=9 runner_rc=0
+[13:07:37] START w13-haproxy-recommended-edge-laravel-ovoff
+[13:08:48] DONE w13-haproxy-recommended-edge-laravel-ovoff hits=13 runner_rc=0
+[13:08:48] START w13-haproxy-recommended-edge-laravel-ovon
+[13:09:52] DONE w13-haproxy-recommended-edge-laravel-ovon hits=9 runner_rc=0
+[13:09:52] START w13-kong-default-edge-laravel-ovoff
+[13:10:59] DONE w13-kong-default-edge-laravel-ovoff hits=19 runner_rc=0
+[13:10:59] START w13-kong-default-edge-laravel-ovon
+[13:12:08] DONE w13-kong-default-edge-laravel-ovon hits=15 runner_rc=0
+[13:12:08] START w13-kong-recommended-edge-laravel-ovoff
+[13:13:16] DONE w13-kong-recommended-edge-laravel-ovoff hits=19 runner_rc=0
+[13:13:16] START w13-kong-recommended-edge-laravel-ovon
+[13:14:28] DONE w13-kong-recommended-edge-laravel-ovon hits=15 runner_rc=0
+LARAVEL DONE

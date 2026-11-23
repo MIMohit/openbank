@@ -1,0 +1,8 @@
+row,aspnet/ovon,django/ovoff,django/ovon,express/ovon,fastapi/ovon,go-chi/ovoff,go-chi/ovon,laravel/ovoff,laravel/ovon,rails/ovoff,rails/ovon,spring/ovon
+envoy/default/edge,0,13,9,0,0,12,10,13,9,14,10,0
+envoy/default/origin,11,0,9,11,19,0,10,0,9,0,10,11
+envoy/recommended/edge,0,13,9,0,0,12,10,13,9,14,10,0
+nginx/default/edge,0,13,9,0,0,19,17,20,16,14,10,0
+nginx/recommended/edge,0,13,9,0,0,19,17,20,16,14,10,0
+traefik/default/edge,0,13,9,0,0,13,11,14,10,14,10,0
+traefik/recommended/edge,0,13,9,0,0,13,11,14,10,14,10,0

@@ -1,0 +1,101 @@
+sample_id,verdict,rationale
+S001,TP,SQS: 17 distinct actions (AddPermission/DeleteQueue/...) share GET /{AccountNumber}/{QueueName}/; Action query selects the op
+S002,TP,EC2: 594 distinct actions share GET /; selected by Action query
+S003,TP,EC2: 594 distinct actions share POST /; selected by Action query
+S004,TP,PI Web API: List / GetByName / GetByPath are 3 distinct (read) operations on GET /dataservers selected by the presence of ?name or ?path
+S005,TP,Comprehend Medical: 26 ops on POST / selected by X-Amz-Target header
+S006,TP,WAF Classic: 77 ops on POST / selected by X-Amz-Target
+S007,TP,OpsWorks: 74 ops on POST / selected by X-Amz-Target
+S008,TP,Personalize: 67 ops on POST / selected by X-Amz-Target
+S009,TP,EC2 POST / Action=DescribeKeyPairs vs 593 siblings
+S010,TP,Auto Scaling: 65 ops on POST / selected by Action
+S011,TP,CodeStar: 18 ops on POST / selected by X-Amz-Target (incl. DeleteProject)
+S012,TP,DataSync: 60 ops on POST / selected by X-Amz-Target
+S013,TP,Redshift: 123 ops on GET / selected by Action
+S014,TP,GameLift: 104 ops on POST / selected by X-Amz-Target
+S015,TP,Direct Connect: 63 ops on POST / selected by X-Amz-Target
+S016,TP,CloudHSM Classic: 20 ops on POST / selected by X-Amz-Target (incl. DeleteHsm)
+S017,TP,Glue: 202 ops on POST / selected by X-Amz-Target
+S018,TP,Lightsail: 159 ops on POST / selected by X-Amz-Target
+S019,TP,SageMaker: 304 ops on POST / selected by X-Amz-Target
+S020,TP,Kinesis Analytics: 20 ops on POST / selected by X-Amz-Target
+S021,TP,CloudFormation: 70 ops on GET / selected by Action
+S022,TP,CodeBuild: 45 ops on POST / selected by X-Amz-Target
+S023,TP,GameLift UpdateAlias vs 103 siblings
+S024,TP,CloudFormation POST / Action=ListTypeRegistrations vs siblings (CreateStack/DeleteStack...)
+S025,TP,SimpleDB: 10 ops on GET / incl. DeleteDomain selected by Action
+S026,TP,EMR: 54 ops on POST / selected by X-Amz-Target
+S027,TP,EC2 POST / Action=GetSpotPlacementScores vs siblings
+S028,TP,Service Catalog: 90 ops on POST / selected by X-Amz-Target
+S029,TP,DMS: 106 ops on POST / selected by X-Amz-Target
+S030,TP,Kendra: 66 ops on POST / selected by X-Amz-Target
+S031,FP,'method' is the payment method of a transaction (check/transfer/cash...): a data field not an operation selector
+S032,FP,same as S031 (payment method on create)
+S033,TP,cmd=change_password|lock|delete selects three different effects on POST /person/{login}
+S034,TP,action=subscribe|unsubscribe selects opposite effects on POST /hooks
+S035,TP,action=follow|unfollow|block|unblock|approve|ignore selects different relationship commands
+S036,FP,ActionType Edit|Load describes the user's typing context for spell check; one operation
+S037,FP,action describes what caused the reading-position change (bookmark/next-page); a data attribute
+S038,TP,action=APPROVE|REJECT|REJECT_BLACKLIST selects different order-feedback commands; REJECT_BLACKLIST additionally blacklists
+S039,TP,action=trash|delete selects soft vs permanent deletion of recordings
+S040,FP,action=view|browse|edit is a permission filter on a project search
+S041,FP,method=average|cumulative|percentage is an aggregation option of a report read
+S042,FP,action is a list filter on task_commands
+S043,FP,method is the stream transport type (WEBRTC_PULL...) stored on create
+S044,TP,cmd=add_user|remove_user|set_email selects distinct group modifications
+S045,FP,action=followed|unfollowed is documented as a filter
+S046,FP,action documented as 'Filters activities' (a filter even on POST)
+S047,FP,stream transport type on update (as S043)
+S048,TP,action=append|flush|setProperties|setAccessControl selects 4 distinct operations on PATCH (summary lists them)
+S049,FP,operation is the kind of token to create (runservice/rebuild/release); one create-token operation with a type attribute
+S050,FP,filter on favourites list
+S051,FP,documented as a filter
+S052,FP,filter on favourites list
+S053,FP,filter on follows list
+S054,TP,action=del|write selects delete vs write of a contact
+S055,TP,action=getAccessControl|getStatus|checkAccess selects distinct HEAD operations (summary lists them)
+S056,TP,cmd=wipe|restartbuild|killbuild|abortbuild|rebuild|unpublish|sendsysrq selects distinct build commands
+S057,FP,actionType is a filter of ListMitigationActions
+S058,TP,action=disassociate|delete selects distinct user-removal effects
+S059,TP,action=trash|delete (as S039)
+S060,FP,action is a filter on change logs
+S061,FP,'method' is the HTTP method attribute of a finding being updated
+S062,UNCLEAR,top-level 'operation' Insert|Update|Delete on the KitSpecification create DTO; undocumented; may select record operation (Acumatica-style) or be inert on create
+S063,FP,'action' is an attribute of the threat-intel indicator (allow/block/alert)
+S064,FP,'method' selects the ML model; same forecast operation
+S065,FP,as S064
+S066,FP,'op' is a match operator (in/not_in) inside a tag definition
+S067,FP,'action' allow|deny is an attribute of the stored service policy
+S068,FP,'method' sms|voice is the delivery channel of the verification code
+S069,FP,allow|deny attribute of the access rule being created
+S070,FP,match operator as S066
+S071,FP,NONE|SUPPRESS is the stored filter's action attribute
+S072,FP,'action' is the file event that triggers the notification (data)
+S073,TP,action=confirm|cancel selects opposite commands on a payroll tax return
+S074,TP,action=START|STOP selects opposite charger commands
+S075,TP,op=amend|unamend|delete|annotate selects distinct license commands (summary: Move or Delete)
+S076,FP,'Method' is the HTTP method Twilio uses for the status callback URL
+S077,FP,oneOf over network-service-config subtypes: polymorphic body of one update operation
+S078,TP,action=lockForApproval|approve|terminate on a delegated-admin request selects distinct relationship commands (Graph docs: creating the request performs the action)
+S079,FP,ALLOW|DENY attribute of an authorization policy being created
+S080,FP,'action' is an attribute of an ediscovery caseOperation status object updated via generic PATCH
+S081,TP,action=MarkAsProcessed|MarkAsProcessingFailed selects distinct status commands
+S082,FP,oneOf over KYC document subtypes: polymorphic body of one create/update
+S083,FP,indicator attribute as S063
+S084,FP,allow|block attribute of the stored rule
+S085,TP,action=approve|cancel|deny selects distinct registrant commands
+S086,TP,op=assign|unassign|delete|manage|unmanage selects distinct inventory commands
+S087,FP,generic navigation-property create of an ediscovery operation object; action is an entity attribute (as S080)
+S088,FP,oneOf allow|deny rule subtypes: polymorphic body
+S089,FP,NOOP|ARCHIVE attribute of the stored filter
+S090,FP,start|stop|terminate is what the stored trigger will do; the endpoint itself always creates a trigger
+S091,TP,type=attach|detach discriminator selects distinct volume actions on POST /v2/volumes/actions
+S092,FP,filter attribute as S089
+S093,FP,rule attribute as S084
+S094,TP,op=set|delete selects set vs delete of a VC port
+S095,TP,action=confirm|cancel (as S073)
+S096,TP,action=PUBLISH|DEPRECATE selects distinct lifecycle commands on a package version
+S097,FP,oneOf over report products: polymorphic body of one create-report operation
+S098,FP,JSON-RPC envelope but the spec documents only one method (abu); no second operation is documented
+S099,TP,GraphQL endpoint: query vs mutation and operationName selected in the body
+S100,TP,JSON-RPC endpoint documented as calling 'any Neblio RPC command'

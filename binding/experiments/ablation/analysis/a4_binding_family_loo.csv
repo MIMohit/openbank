@@ -1,0 +1,10 @@
+family,group,hits,hit_share,g2_hits,g2_hit_share,mechanisms_reached,loo_hits_left,loo_hits_left_share,loo_mechs_left,loo_mechs_lost,loo_g2_mechs_left
+query-dispatch-switch,G1,975,0.3285,0,0.0,M1,1993,0.6715,9,M1,3
+method-override-body,G1,700,0.2358,0,0.0,M4|M5b,2268,0.7642,9,M4,3
+graphql-operation-switch,G1,650,0.219,0,0.0,M2,2318,0.781,9,M2,3
+fragment,G2,234,0.0788,198,0.5657,M6|M7,2734,0.9212,8,M6|M7,2
+method-override-header,G1,136,0.0458,0,0.0,M5a|M5b,2832,0.9542,9,M5a,3
+content-type-switch,G1,101,0.034,0,0.0,M3,2867,0.966,9,M3,3
+encoded-slash,G2,96,0.0323,96,0.2743,M8,2872,0.9677,9,M8,2
+dot-segment,G2,56,0.0189,56,0.16,M9,2912,0.9811,9,M9,2
+method-override-query,G1,20,0.0067,0,0.0,M5b,2948,0.9933,10,,3

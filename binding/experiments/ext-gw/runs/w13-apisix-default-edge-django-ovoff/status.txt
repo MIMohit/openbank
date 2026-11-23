@@ -1,0 +1,1 @@
+w13-apisix-default-edge-django-ovoff runner_rc=0 secs=59 runner[w13-apisix-default-edge-django-ovoff/gateway] minter=w3 wrote /Users/mimohit/openbank/binding/harness/logs/w13-apisix-default-edge-django-ovoff/runner.jsonl: {'sent': 948, 'errors': 0}

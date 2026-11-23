@@ -1,0 +1,1 @@
+w12-allow-hap-rails-rec runner_rc=0 secs=17 violations=0 e4_runner[w12-allow-hap-rails-rec] wrote /Users/mimohit/openbank/binding/harness/logs/w12-allow-hap-rails-rec/runner.jsonl: {'sent': 29, 'errors': 0}

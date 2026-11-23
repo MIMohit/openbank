@@ -1,0 +1,288 @@
+{
+ "topology": "w9-nginx-default-edge-fastapi-ovon",
+ "case_id": "accountAction.freeze:g1-op-dup-close:alice:05b1d325b576",
+ "primitive_ids": [
+  "g1-op-dup-close"
+ ],
+ "exec_op_id": "accountAction.close",
+ "exec_path_params": {
+  "id": "acc-alice-1"
+ },
+ "full_units": 9,
+ "minimal_units": 9,
+ "still_hit": true,
+ "canonical_request": "POST /api/v1/accounts/acc-alice-1/actions?op=freeze HTTP/1.1\r\nHost: api.bench.test\r\nAuthorization: @@AUTHZ@@\r\nDPoP: @@PROOF@@\r\nAccept: application/json\r\nUser-Agent: bind-harness/1.0\r\nContent-Type: application/json\r\nContent-Length: 25\r\nConnection: close\r\n\r\n{\"reason\":\"user-request\"}",
+ "minimal_request": "POST /api/v1/accounts/acc-alice-1/actions?op=freeze&op=close HTTP/1.1\r\nHost: api.bench.test\r\nAuthorization: @@AUTHZ@@\r\nDPoP: @@PROOF@@\r\nAccept: application/json\r\nUser-Agent: bind-harness/1.0\r\nContent-Type: application/json\r\nContent-Length: 25\r\nConnection: close\r\n\r\n{\"reason\":\"user-request\"}",
+ "trials": [
+  {
+   "n_units": 9,
+   "status": 200,
+   "hit": true
+  },
+  {
+   "n_units": 5,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 5,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 8,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 4,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 4,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 7,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 7,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 7,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 7,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 8,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 2,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 2,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 2,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 2,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 8,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 8,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 8,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 8,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 8,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 8,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 8,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 8,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 8,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 8,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 8,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 8,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 8,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 8,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 8,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 8,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 8,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 8,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 200,
+   "hit": false
+  },
+  {
+   "n_units": 9,
+   "status": 200,
+   "hit": true
+  }
+ ]
+}

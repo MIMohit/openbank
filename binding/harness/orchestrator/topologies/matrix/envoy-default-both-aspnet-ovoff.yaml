@@ -1,0 +1,10 @@
+id: envoy-default-both-aspnet-ovoff
+gateway: envoy
+gateway_image: envoyproxy/envoy:v1.39.6
+profile: default
+placement: both
+framework: aspnet
+executor_image: bh-exec-aspnet:latest
+override: 'off'
+verifier: {image: 'bh-verifier:latest', canon: rfc3986, view_mac: 'off'}
+host_port: 18042

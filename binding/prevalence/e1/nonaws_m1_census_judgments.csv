@@ -1,0 +1,9 @@
+api_id,flagged_ops,verdict,rationale
+azure.com:hdinsight-job,2,FP,"GET /templeton/v1/jobs vs ?op=LISTAFTERID: two variants of the same list read"
+box.com,28,TP,"e.g. GET /files/{file_id} (get file) vs GET /files/{file_id}#get_shared_link (get shared link): distinct operations on one (method,path)"
+flickr.com,22,TP,"GET /rest?method=flickr.*: classic RPC dispatch, 22 distinct methods on GET /rest"
+formapi.io,7,TP,"POST /combined_submissions (combineSubmissions) vs ?v=2 (combinePdfs): distinct operations; other pairs are variants"
+mastercard.com:masterpassqr,5,FP,"DETECTOR ARTEFACT: '#env' is a templated path segment (/send/#env/v1/...), not a fragment; normalising at '#' wrongly merges distinct paths"
+opensuse.org:obs,10,FP,"?view=fileinfo|status|ymp selects alternative views of the same resource read"
+osisoft.com,8,TP,"List vs GetByName vs GetByPath (and GetSecurityIdentities vs ForUser) are distinct read operations"
+weatherbit.io,43,FP,"same read operation (current weather / air quality) with alternative location selectors (city, city_id, lat/lon, postal_code)"

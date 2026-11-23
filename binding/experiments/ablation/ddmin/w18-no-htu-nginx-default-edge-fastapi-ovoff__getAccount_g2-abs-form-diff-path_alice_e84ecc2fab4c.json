@@ -1,0 +1,258 @@
+{
+ "topology": "w18-no-htu-nginx-default-edge-fastapi-ovoff",
+ "case_id": "getAccount:g2-abs-form-diff-path:alice:e84ecc2fab4c",
+ "primitive_ids": [
+  "g2-abs-form-diff-path"
+ ],
+ "exec_op_id": "getAccountV2",
+ "exec_path_params": {
+  "id": "acc-alice-1"
+ },
+ "full_units": 28,
+ "minimal_units": 7,
+ "still_hit": true,
+ "canonical_request": "GET /api/v1/accounts/acc-alice-1 HTTP/1.1\r\nHost: api.bench.test\r\nAuthorization: @@AUTHZ@@\r\nDPoP: @@PROOF@@\r\nAccept: application/json\r\nUser-Agent: bind-harness/1.0\r\nConnection: close\r\n\r\n",
+ "minimal_request": "GET /api/v2/accounts/acc-alice-1 HTTP/1.1\r\nHost: api.bench.test\r\nAuthorization: @@AUTHZ@@\r\nDPoP: @@PROOF@@\r\nAccept: application/json\r\nUser-Agent: bind-harness/1.0\r\nConnection: close\r\n\r\n",
+ "trials": [
+  {
+   "n_units": 28,
+   "status": 200,
+   "hit": true
+  },
+  {
+   "n_units": 14,
+   "status": 400,
+   "hit": false
+  },
+  {
+   "n_units": 14,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 14,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 14,
+   "status": 400,
+   "hit": false
+  },
+  {
+   "n_units": 21,
+   "status": 400,
+   "hit": false
+  },
+  {
+   "n_units": 21,
+   "status": 200,
+   "hit": true
+  },
+  {
+   "n_units": 14,
+   "status": 400,
+   "hit": false
+  },
+  {
+   "n_units": 14,
+   "status": 400,
+   "hit": false
+  },
+  {
+   "n_units": 14,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 7,
+   "status": 400,
+   "hit": false
+  },
+  {
+   "n_units": 7,
+   "status": 400,
+   "hit": false
+  },
+  {
+   "n_units": 7,
+   "status": 200,
+   "hit": true
+  },
+  {
+   "n_units": 4,
+   "status": 400,
+   "hit": false
+  },
+  {
+   "n_units": 4,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 6,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 3,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 3,
+   "status": 400,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 400,
+   "hit": false
+  },
+  {
+   "n_units": 6,
+   "status": 400,
+   "hit": false
+  },
+  {
+   "n_units": 6,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 6,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 6,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 6,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 6,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 6,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 400,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 400,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 400,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 400,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 400,
+   "hit": false
+  },
+  {
+   "n_units": 6,
+   "status": 400,
+   "hit": false
+  },
+  {
+   "n_units": 6,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 6,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 6,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 6,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 6,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 6,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 400,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 400,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 400,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 404,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 400,
+   "hit": false
+  },
+  {
+   "n_units": 1,
+   "status": 400,
+   "hit": false
+  },
+  {
+   "n_units": 7,
+   "status": 200,
+   "hit": true
+  }
+ ]
+}

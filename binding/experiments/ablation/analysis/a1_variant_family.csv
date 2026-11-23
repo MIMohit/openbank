@@ -1,0 +1,15 @@
+key,full,no-htm,no-htu,no-ath,query,digest-nogate,digest,query-digest
+absolute-form,0,0,8,0,0,0,0,0
+backslash,0,0,36,0,0,0,0,0
+content-type-switch,2,2,2,2,2,2,2,2
+dot-segment,16,16,62,16,16,16,16,16
+encoded-slash,0,0,22,0,0,0,0,0
+fragment,48,48,48,48,48,48,48,48
+graphql-operation-switch,26,26,26,26,26,26,0,0
+matrix-param,0,0,108,0,0,0,0,0
+method-override-body,37,37,37,37,37,37,0,0
+method-override-header,18,18,18,18,18,18,18,18
+method-override-query,5,5,5,5,0,5,5,0
+prefix-rewrite,0,0,16,0,0,0,0,0
+query-dispatch-switch,40,40,40,40,0,40,40,0
+trailing-slash,0,0,4,0,0,0,0,0

@@ -1,0 +1,12 @@
+id: w17-dc-e4rc7-spring
+gateway: kong
+profile: strict
+placement: edge
+framework: spring
+executor_image: bh-exec-spring:v2
+override: 'off'
+verifier:
+  image: bh-pdp-block:latest
+  canon: strict
+  view_mac: 'off'
+host_port: 28905
