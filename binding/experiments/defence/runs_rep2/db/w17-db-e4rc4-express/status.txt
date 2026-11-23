@@ -1,0 +1,1 @@
+db RC4 w17-db-e4rc4-express runner_rc=0 secs=12 hits=0 e4_runner[w17-db-e4rc4-express] wrote /Users/mimohit/openbank/binding/harness/logs/w17-db-e4rc4-express/runner.jsonl: {'sent': 29, 'errors': 0}

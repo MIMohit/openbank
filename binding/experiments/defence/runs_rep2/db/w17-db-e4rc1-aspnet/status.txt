@@ -1,0 +1,1 @@
+db RC1 w17-db-e4rc1-aspnet runner_rc=0 secs=12 hits=9 e4_runner[w17-db-e4rc1-aspnet] wrote /Users/mimohit/openbank/binding/harness/logs/w17-db-e4rc1-aspnet/runner.jsonl: {'sent': 29, 'errors': 0}

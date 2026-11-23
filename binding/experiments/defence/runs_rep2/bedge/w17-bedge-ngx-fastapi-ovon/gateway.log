@@ -1,0 +1,74 @@
+gateway-1  | /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+gateway-1  | /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+gateway-1  | /docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+gateway-1  | 10-listen-on-ipv6-by-default.sh: info: Getting the checksum of /etc/nginx/conf.d/default.conf
+gateway-1  | 10-listen-on-ipv6-by-default.sh: info: Enabled listen on IPv6 in /etc/nginx/conf.d/default.conf
+gateway-1  | /docker-entrypoint.sh: Sourcing /docker-entrypoint.d/15-local-resolvers.envsh
+gateway-1  | /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+gateway-1  | /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+gateway-1  | /docker-entrypoint.sh: Configuration complete; ready for start up
+gateway-1  | 2026/11/23 16:59:40 [notice] 1#1: using the "epoll" event method
+gateway-1  | 2026/11/23 16:59:40 [notice] 1#1: nginx/1.30.7
+gateway-1  | 2026/11/23 16:59:40 [notice] 1#1: built by gcc 15.2.0 (Alpine 15.2.0) 
+gateway-1  | 2026/11/23 16:59:40 [notice] 1#1: OS: Linux 6.12.76-linuxkit
+gateway-1  | 2026/11/23 16:59:40 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+gateway-1  | 2026/11/23 16:59:40 [notice] 1#1: start worker processes
+gateway-1  | 2026/11/23 16:59:40 [notice] 1#1: start worker process 30
+gateway-1  | 2026/11/23 16:59:46 [info] 30#30: *1 client closed connection while waiting for request, client: 172.23.0.5, server: 0.0.0.0:8000
+gateway-1  | 2026/11/23 16:59:46 [info] 30#30: *2 client closed connection while waiting for request, client: 172.23.0.1, server: 0.0.0.0:8000
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:16:59:46 +0000] "GET /api/v1/accounts HTTP/1.1" 200 78 "-" "bind-harness/1.0"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:16:59:46 +0000] "GET /api/v1/accounts/acc-alice-1 HTTP/1.1" 200 94 "-" "bind-harness/1.0"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:16:59:46 +0000] "PUT /api/v1/accounts/acc-alice-1 HTTP/1.1" 200 97 "-" "bind-harness/1.0"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:16:59:46 +0000] "DELETE /api/v1/accounts/acc-alice-1 HTTP/1.1" 200 100 "-" "bind-harness/1.0"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:16:59:46 +0000] "POST /api/v1/accounts/acc-alice-1/actions?op=freeze HTTP/1.1" 200 105 "-" "bind-harness/1.0"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:16:59:46 +0000] "POST /api/v1/transfers HTTP/1.1" 200 81 "-" "bind-harness/1.0"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:16:59:46 +0000] "POST /api/v1/graphql HTTP/1.1" 200 85 "-" "bind-harness/1.0"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:16:59:46 +0000] "GET /api/v1/me HTTP/1.1" 200 68 "-" "bind-harness/1.0"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:16:59:46 +0000] "GET /api/v1/admin/users HTTP/1.1" 200 80 "-" "bind-harness/1.0"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:16:59:46 +0000] "DELETE /api/v1/admin/users/u-1 HTTP/1.1" 200 94 "-" "bind-harness/1.0"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:16:59:46 +0000] "GET /api/v1/health HTTP/1.1" 200 72 "-" "bind-harness/1.0"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:16:59:46 +0000] "GET /api/v1/public/logo.png HTTP/1.1" 200 93 "-" "bind-harness/1.0"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:16:59:46 +0000] "GET /api/v2/accounts/acc-alice-1 HTTP/1.1" 200 96 "-" "bind-harness/1.0"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:16:59:46 +0000] "GET /api/v1/accounts/acc-alice-1 HTTP/1.1" 200 97 "-" "bind-harness/1.0"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:16:59:46 +0000] "GET /api/v1/accounts/acc-alice-1 HTTP/1.1" 200 100 "-" "bind-harness/1.0"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:16:59:46 +0000] "GET /api/v1/accounts/acc-alice-1#frag HTTP/1.1" 200 99 "-" "bind-harness/1.0"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:16:59:46 +0000] "PUT /api/v1/accounts/acc-alice-1 HTTP/1.1" 200 100 "-" "bind-harness/1.0"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:16:59:46 +0000] "PUT /api/v1/accounts/acc-alice-1 HTTP/1.1" 200 94 "-" "bind-harness/1.0"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:16:59:46 +0000] "PUT /api/v1/accounts/acc-alice-1#frag HTTP/1.1" 200 102 "-" "bind-harness/1.0"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:16:59:46 +0000] "DELETE /api/v1/accounts/acc-alice-1 HTTP/1.1" 200 97 "-" "bind-harness/1.0"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:16:59:46 +0000] "DELETE /api/v1/accounts/acc-alice-1 HTTP/1.1" 200 94 "-" "bind-harness/1.0"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:16:59:46 +0000] "DELETE /api/v1/accounts/acc-alice-1#frag HTTP/1.1" 200 105 "-" "bind-harness/1.0"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:16:59:46 +0000] "POST /api/v1/accounts/acc-alice-1/actions?op=close HTTP/1.1" 200 104 "-" "bind-harness/1.0"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:16:59:46 +0000] "POST /api/v1/accounts/acc-alice-1/actions?op=wipe HTTP/1.1" 200 106 "-" "bind-harness/1.0"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:16:59:46 +0000] "POST /api/v1/accounts/acc-alice-1/actions HTTP/1.1" 200 106 "-" "bind-harness/1.0"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:16:59:46 +0000] "POST /api/v1/accounts/acc-alice-1/actions?op=freeze&op=close HTTP/1.1" 200 104 "-" "bind-harness/1.0"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:16:59:46 +0000] "POST /api/v1/accounts/acc-alice-1/actions?op=CLOSE HTTP/1.1" 200 106 "-" "bind-harness/1.0"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:16:59:46 +0000] "POST /api/v1/accounts/acc-alice-1/actions?op=freeze#frag HTTP/1.1" 200 106 "-" "bind-harness/1.0"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:16:59:46 +0000] "POST /api/v1/graphql HTTP/1.1" 200 82 "-" "bind-harness/1.0"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:16:59:46 +0000] "POST /api/v1/graphql HTTP/1.1" 200 82 "-" "bind-harness/1.0"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:16:59:46 +0000] "POST /api/v1/graphql HTTP/1.1" 200 82 "-" "bind-harness/1.0"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:16:59:46 +0000] "POST /api/v1/graphql HTTP/1.1" 200 82 "-" "bind-harness/1.0"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:16:59:46 +0000] "POST /api/v1/graphql HTTP/1.1" 200 82 "-" "bind-harness/1.0"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:16:59:46 +0000] "POST /api/v1/graphql HTTP/1.1" 200 88 "-" "bind-harness/1.0"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:16:59:46 +0000] "POST /api/v1/graphql HTTP/1.1" 200 82 "-" "bind-harness/1.0"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:16:59:46 +0000] "POST /api/v1/graphql HTTP/1.1" 200 82 "-" "bind-harness/1.0"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:16:59:46 +0000] "DELETE /api/v1/admin/users/u-1#frag HTTP/1.1" 200 99 "-" "bind-harness/1.0"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:16:59:46 +0000] "GET /api/v1/public/logo.png#frag HTTP/1.1" 200 98 "-" "bind-harness/1.0"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:16:59:46 +0000] "GET /api/v2/accounts/acc-alice-1#frag HTTP/1.1" 200 101 "-" "bind-harness/1.0"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:16:59:46 +0000] "GET /api/v1/accounts/acc-alice-1 HTTP/1.1" 200 96 "-" "bind-harness/1.0"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:16:59:46 +0000] "GET /api/v1/accounts/acc-alice-1#/statements HTTP/1.1" 200 98 "-" "bind-harness/1.0"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:16:59:46 +0000] "PUT /api/v1/accounts/acc-alice-1 HTTP/1.1" 200 96 "-" "bind-harness/1.0"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:16:59:46 +0000] "DELETE /api/v1/accounts/acc-alice-1 HTTP/1.1" 200 96 "-" "bind-harness/1.0"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:16:59:46 +0000] "DELETE /api/v1/accounts/acc-alice-1#/statements/s-evil HTTP/1.1" 200 118 "-" "bind-harness/1.0"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:16:59:46 +0000] "POST /api/v1/accounts/acc-alice-1 HTTP/1.1" 200 96 "-" "bind-harness/1.0"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:16:59:46 +0000] "POST /api/v1/accounts/acc-alice-1 HTTP/1.1" 200 97 "-" "bind-harness/1.0"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:16:59:46 +0000] "POST /api/v1/accounts/acc-alice-1 HTTP/1.1" 200 100 "-" "bind-harness/1.0"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:16:59:46 +0000] "POST /api/v1/accounts/acc-alice-1 HTTP/1.1" 200 94 "-" "bind-harness/1.0"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:16:59:46 +0000] "POST /api/v1/accounts/acc-alice-1#frag HTTP/1.1" 200 101 "-" "bind-harness/1.0"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:16:59:46 +0000] "GET /api/v1/accounts/acc-alice-1/statements HTTP/1.1" 200 97 "-" "bind-harness/1.0"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:16:59:46 +0000] "DELETE /api/v1/accounts/acc-alice-1/statements/stmt-1 HTTP/1.1" 200 117 "-" "bind-harness/1.0"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:16:59:46 +0000] "DELETE /api/v1/accounts/acc-alice-1/statements/stmt-1#frag HTTP/1.1" 200 122 "-" "bind-harness/1.0"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:16:59:46 +0000] "GET /api/v1/files/reports/logo.png HTTP/1.1" 200 103 "-" "bind-harness/1.0"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:16:59:46 +0000] "GET /api/v1/files/reports/./logo.png HTTP/1.1" 200 105 "-" "bind-harness/1.0"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:16:59:46 +0000] "GET /api/v1/files/reports/%2e/logo.png HTTP/1.1" 200 105 "-" "bind-harness/1.0"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:16:59:46 +0000] "GET /api/v1/files/reports/logo.png#frag HTTP/1.1" 200 108 "-" "bind-harness/1.0"

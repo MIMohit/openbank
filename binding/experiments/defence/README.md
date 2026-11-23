@@ -16,11 +16,11 @@ legitimate rewritten traffic. **Results: [`REPORT.md`](REPORT.md).**
 | `scripts/groundtruth.sh`, `groundtruth/` | op(π) on the `:v2` images (17 base ops × 8 framework/override pairs) |
 | `scripts/make_topologies.py`, `topologies/<cfg>/`, `worklist_*.txt` | 77 A_leak + 41 E4 topologies (7 configs) |
 | `scripts/run_one.sh`, `scripts/sweep.sh`, `runs/<cfg>/<id>/` | one run = up (`--stubs off`) → replay → down → oracle; raw logs, generated compose and gateway config |
-| `runs_rep2/` | replication 2 of the whole sweep |
+| `runs_rep2/`, `scripts/phase3.sh`, `scripts/rep2_compare.py` | replication 2 of the whole E7/E4 sweep (118/118 identical) |
 | `runs_invalid/` | the first D-A sweep, invalidated by the nginx/Kong Host rewrite (REPORT §9.1), kept for the record |
 | `cases/full-v2-depth1.jsonl`, `topologies/e8full/`, `runs/e8full/` | E8 B-optional vs B-edge on the full 581-case corpus |
 | `scripts/frr_client.py`, `scripts/frr_nginx.py`, `scripts/run_frr.sh`, `runs/frr/` | false-rejection measurement |
-| `perf/load.js`, `scripts/run_perf.sh`, `scripts/perf_csv.py`, `results/perf/raw/` | k6 load runs; per-request latencies as `.lat.npy` (float32 ms), k6 summaries and logs |
+| `perf/load.js`, `scripts/run_perf.sh`, `scripts/perf_csv.py`, `results/perf/raw/` | k6 load runs; per-request latencies as `.lat.npy` (float32 ms), k6 summaries and logs; `scripts/phase2b.sh` (resumed perf under `caffeinate`), `scripts/diag_perf.sh` + `scripts/phase4.sh` → `results/perf/diag/` (status-code diagnostic); `runs_invalid/perf_sleep_token_expiry/` (invalidated run) |
 | `scripts/analyse.py`, `a2_ablation.py`, `frr_analyse.py`, `perf_analyse.py`, `analysis/` | every table in REPORT.md (`*.md`) and its long-form data (`*.csv`) |
 
 ## How to run (from `binding/harness`; ONE topology at a time)
@@ -34,7 +34,7 @@ $X/scripts/sweep.sh $X/worklist_aleak.txt aleak; $X/scripts/sweep.sh $X/worklist
 for cfg in bedge borigin bstrict da db dc; do for fw in fastapi express spring aspnet; do $X/scripts/run_frr.sh $cfg $fw; done; done
 for fw in fastapi spring; do for cfg in bedge borigin da db; do $X/scripts/run_perf.sh $cfg $fw 5 60s; done; done
 cd $X && python3 scripts/analyse.py && python3 scripts/a2_ablation.py && \
-  build/.venv-stats/bin/python scripts/frr_analyse.py && build/.venv-stats/bin/python scripts/perf_analyse.py
+  build/.venv-stats/bin/python scripts/frr_analyse.py && build/.venv-stats/bin/python scripts/perf_analyse.py && python3 scripts/rep2_compare.py
 ```
 `build/.venv-stats` is a Python 3.12 venv with numpy 2.3.3 and scipy 1.16.2. It imports `/Users/mimohit/openbank/analysis/stats.py`.
 

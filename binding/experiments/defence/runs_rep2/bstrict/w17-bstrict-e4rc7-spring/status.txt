@@ -1,0 +1,1 @@
+bstrict RC7 w17-bstrict-e4rc7-spring runner_rc=0 secs=19 hits=0 e4_runner[w17-bstrict-e4rc7-spring] wrote /Users/mimohit/openbank/binding/harness/logs/w17-bstrict-e4rc7-spring/runner.jsonl: {'sent': 29, 'errors': 0}

@@ -1,0 +1,1 @@
+e4_oracle[w17-da-e4rc7-spring] {'topology': 'w17-da-e4rc7-spring', 'gateway': 'kong', 'profile': 'recommended', 'framework': 'spring', 'verifier_image': 'bh-pdp-block:latest', 'cases': 29, 'pdp_allow': 3, 'violations': 0, 'admin': 0, 'bob': 0, 'vectors_hit': ''}

@@ -310,14 +310,126 @@ result.
 
 ## 6. Performance (task item 5)
 
-PERF_SECTION
+> **Preliminary.** This machine is a shared 16 GB / 10-core macOS laptop running Docker Desktop. Other workers' topologies ran
+> concurrently (host load average 11–20 during the runs), so timing is noisy. All numbers here are **preliminary pending a dedicated Linux
+> server**. Only the 100 req/s rows are free of overload and errors.
+
+**Setup** (`scripts/run_perf.sh`, `perf/load.js`). nginx 1.30.7 (default profile, or recommended for origin placement; §9.1) with
+fastapi and spring, `:v2` executors (`:defence` for D-B). Configs are B-edge, B-origin, D-A and D-B. Load comes from k6 1.3.0
+(`grafana/k6:1.3.0`) in a container on the topology network. The load is one fixed request, `GET /api/v1/accounts/acc-alice-1`,
+with a pre-minted proof. The verifier runs with `JTI_CACHE=off` and a large `IAT_WINDOW`, so every request is fully re-verified
+(ES256 proof + token) and only the replay lookup is skipped. CPU pinning uses `docker update --cpuset-cpus`: gateway 0–1,
+verifier 2–3, executor 4–5, k6 6–9 (within the Docker VM; the macOS host itself cannot be pinned). There is a 20 s warm-up at
+200 req/s. Each level gets **5 runs × 60 s** at constant arrival rates 100 / 500 / 1000 req/s, plus max throughput (64 VUs, 5 × 30 s).
+The run count was reduced from 10 to 5 because of time, as the task allows. Latency is k6 `http_req_duration` over **every**
+request, failed ones included. CIs are percentile-bootstrap over the 5 per-run percentiles (`analysis/stats.py`). Mann-Whitney U
+and Cliff's δ are computed on per-request latencies against B-edge (`scripts/perf_analyse.py`; data in `analysis/perf_latency.csv`,
+`analysis/perf_tests.csv`, raw `results/perf/raw/<cfg>-<fw>/*.lat.npy` + k6 summaries).
+
+| fw | load | config | p50 ms [95% CI] | p95 ms [95% CI] | p99 ms [95% CI] | achieved req/s [95% CI] | failed |
+|---|---|---|---|---|---|---|---|
+| fastapi | 100 | B-edge | 1.67 [1.65, 1.70] | 3.97 [3.82, 4.19] | 8.29 [7.17, 9.88] | 100 [100, 100] | 0/30004 |
+| fastapi | 100 | B-origin | 1.95 [1.92, 1.98] | 5.17 [4.77, 5.57] | 13.64 [10.74, 18.68] | 100 [100, 100] | 0/30004 |
+| fastapi | 100 | D-A | 2.75 [2.53, 2.98] | 148.96 [79.50, 228.90] | 992.20 [682.83, 1314.13] | 99 [99, 100] | 0/29791 |
+| fastapi | 100 | D-B | 1.68 [1.64, 1.74] | 5.31 [4.01, 7.69] | 39.78 [7.73, 102.58] | 100 [100, 100] | 0/29996 |
+| fastapi | 500 | B-edge | 1.02 [0.99, 1.06] | 12.64 [9.94, 15.37] | 82.73 [58.49, 106.96] | 497 [494, 500] | 0/150006 |
+| fastapi | 500 | B-origin | 13.46 [3.10, 28.51] | 1263.24 [942.84, 1524.48] | 2112.50 [1916.30, 2381.30] | 477 [474, 479] | 8509/145928 |
+| fastapi | 500 | D-A | 647.97 [438.85, 819.11] | 3596.46 [3095.69, 4063.49] | 5801.50 [4343.32, 7365.45] | 438 [421, 455] | 41856/137100 |
+| fastapi | 500 | D-B | 1.55 [1.29, 1.78] | 379.80 [162.75, 621.49] | 1456.83 [754.71, 1927.08] | 404 [349, 460] | 0/148730 |
+| fastapi | 1000 | B-edge | 64.19 [36.57, 92.03] | 1677.75 [1432.81, 1922.69] | 4880.65 [4218.26, 5543.04] | 647 [642, 653] | 63043/291506 |
+| fastapi | 1000 | B-origin | 518.72 [492.57, 536.36] | 1655.58 [1586.91, 1724.25] | 2407.24 [2206.02, 2626.62] | 942 [938, 948] | 117548/292430 |
+| fastapi | 1000 | D-A | 6.42 [0.70, 17.66] | 2984.75 [2434.06, 3466.60] | 5273.73 [4031.68, 6355.83] | 896 [860, 929] | 201024/280905 |
+| fastapi | 1000 | D-B | 54.32 [26.77, 97.52] | 2046.86 [1455.26, 2884.68] | 6519.27 [4362.02, 10062.25] | 620 [591, 648] | 58416/279389 |
+| fastapi | max | B-edge | 20.40 [18.38, 23.05] | 67.27 [62.42, 72.92] | 1086.31 [1073.04, 1100.96] | 681 [506, 880] | 0/143730 |
+| fastapi | max | B-origin | 147.42 [99.92, 188.16] | 1771.19 [906.02, 2835.33] | 245413.49 [3194.65, 579680.26] | 186 [39, 376] | 8/35907 |
+| fastapi | max | D-A | 71.48 [61.19, 82.98] | 574.06 [227.32, 923.64] | 1286.10 [1179.61, 1414.89] | 491 [376, 605] | 10023/75967 |
+| fastapi | max | D-B | 21.14 [17.67, 25.53] | 72.61 [56.67, 97.02] | 1091.98 [1075.95, 1114.73] | 565 [443, 703] | 0/138241 |
+| spring | 100 | B-edge | 2.08 [2.04, 2.10] | 4.53 [4.43, 4.64] | 8.37 [7.08, 10.88] | 100 [100, 100] | 0/30003 |
+| spring | 100 | B-origin | 2.05 [2.04, 2.06] | 5.46 [4.66, 6.86] | 44.87 [9.18, 114.69] | 100 [100, 100] | 0/30003 |
+| spring | 100 | D-A | 1.99 [1.96, 2.02] | 4.57 [4.42, 4.72] | 9.33 [8.83, 9.66] | 100 [100, 100] | 0/30002 |
+| spring | 100 | D-B | 2.07 [2.03, 2.11] | 4.60 [4.48, 4.68] | 7.48 [7.15, 7.86] | 100 [100, 100] | 0/30004 |
+| spring | 500 | B-edge | 1.11 [1.08, 1.13] | 2.39 [2.04, 2.74] | 171.26 [7.49, 493.22] | 492 [480, 500] | 8/149854 |
+| spring | 500 | B-origin | 1.13 [1.11, 1.15] | 3.75 [2.81, 4.76] | 29.16 [16.39, 41.93] | 500 [500, 500] | 11589/150004 |
+| spring | 500 | D-A | 1.14 [1.12, 1.18] | 3.10 [2.56, 3.82] | 34.43 [12.90, 61.10] | 500 [500, 500] | 11539/150004 |
+| spring | 500 | D-B | 1.17 [1.15, 1.19] | 2.40 [2.11, 2.81] | 8.89 [6.22, 12.89] | 499 [496, 500] | 0/150006 |
+| spring | 1000 | B-edge | 1.32 [1.13, 1.52] | 227.38 [9.87, 643.51] | 1531.88 [449.03, 3089.24] | 788 [649, 930] | 1634/296058 |
+| spring | 1000 | B-origin | 1.13 [0.99, 1.28] | 69.14 [22.73, 127.87] | 199.07 [97.94, 300.21] | 999 [998, 1000] | 159724/300003 |
+| spring | 1000 | D-A | 1.12 [0.96, 1.27] | 50.35 [13.60, 94.14] | 297.68 [145.35, 450.01] | 999 [998, 1000] | 159695/299637 |
+| spring | 1000 | D-B | 30.21 [12.10, 48.43] | 2329.15 [1584.03, 3074.27] | 8112.09 [5530.95, 11168.05] | 624 [597, 646] | 48105/281064 |
+| spring | max | B-edge | 4.34 [3.76, 5.13] | 10.15 [8.64, 11.73] | 226.37 [17.73, 627.89] | 7776 [2933, 12618] | 1133696/1205056 |
+| spring | max | B-origin | 45.32 [44.85, 45.79] | 77.25 [69.21, 83.48] | 123.42 [113.36, 134.71] | 1401 [1375, 1427] | 137251/210508 |
+| spring | max | D-A | 48.35 [47.72, 48.99] | 84.45 [78.87, 90.04] | 138.07 [130.75, 144.98] | 1295 [1270, 1318] | 121741/194855 |
+| spring | max | D-B | 4.93 [4.00, 5.77] | 11.33 [9.48, 13.18] | 232.21 [18.51, 628.92] | 6814 [2077, 11550] | 996766/1056881 |
+
+| fw | load | config vs B-edge | Δmedian ms | Δp99 ms | MWU p | Cliff's δ |
+|---|---|---|---|---|---|---|
+| fastapi | 100 | B-origin | +0.27 | +4.85 | 0 | +0.24 (small) |
+| fastapi | 100 | D-A | +1.05 | +1119.08 | 0 | +0.54 (large) |
+| fastapi | 100 | D-B | -0.00 | +7.75 | 8.7e-24 | +0.04 (negligible) |
+| fastapi | 500 | B-origin | +2.62 | +2064.69 | 0 | +0.68 (large) |
+| fastapi | 500 | D-A | +650.85 | +5915.02 | 0 | +0.66 (large) |
+| fastapi | 500 | D-B | +0.47 | +1510.50 | 0 | +0.40 (medium) |
+| fastapi | 1000 | B-origin | +465.78 | -2418.16 | 0 | +0.20 (small) |
+| fastapi | 1000 | D-A | -56.41 | +960.14 | 0 | -0.34 (medium) |
+| fastapi | 1000 | D-B | -17.05 | +1666.79 | 3.7e-284 | -0.06 (negligible) |
+| fastapi | max | B-origin | +85.23 | +3348.74 | 0 | +0.89 (large) |
+| fastapi | max | D-A | +45.99 | +189.09 | 0 | +0.87 (large) |
+| fastapi | max | D-B | -0.01 | +1.51 | 0.0077 | -0.00 (negligible) |
+| spring | 100 | B-origin | -0.02 | +9.28 | 0.0037 | -0.02 (negligible) |
+| spring | 100 | D-A | -0.09 | +1.78 | 8.7e-25 | -0.05 (negligible) |
+| spring | 100 | D-B | -0.00 | -0.20 | 0.059 | -0.01 (negligible) |
+| spring | 500 | B-origin | +0.01 | +15.54 | 7.6e-275 | +0.07 (negligible) |
+| spring | 500 | D-A | +0.02 | +9.34 | 0 | +0.11 (negligible) |
+| spring | 500 | D-B | +0.05 | -7.46 | 0 | +0.14 (negligible) |
+| spring | 1000 | B-origin | -0.09 | -1165.65 | 0 | -0.19 (small) |
+| spring | 1000 | D-A | -0.09 | -1046.40 | 0 | -0.18 (small) |
+| spring | 1000 | D-B | +11.86 | +8220.88 | 0 | +0.60 (large) |
+| spring | max | B-origin | +41.47 | +104.07 | 0 | +0.96 (large) |
+| spring | max | D-A | +44.49 | +118.13 | 0 | +0.96 (large) |
+| spring | max | D-B | +0.66 | +0.55 | 0 | +0.17 (small) |
+
+**Failure diagnostic** (`scripts/diag_perf.sh`, `results/perf/diag/`). The raw runs record check failures, not status codes, so
+the failing cells were re-run for 20 s with the status code kept:
+
+| cell | status counts |
+|---|---|
+| B-edge fastapi 1000 | 200: 20001 |
+| D-A fastapi 500 / 1000 | 200: 10001 / 200: 14562, **502: 5437** |
+| B-origin spring 500 / 1000 / max | 200: 9718 / 200: 14831, **502: 5170** / 200: 4228, **502: 23117** |
+| B-edge spring max | 200: 35156 |
+| D-B spring 1000 / max | 200: 20000 / 200: 30138 |
+
+Every failure observed is an nginx **502** (upstream connection refused or reset). The gateway log shows `connect() failed (111:
+Connection refused)` towards the verifier/executor. There were **no 401s**, so no defence false-rejected a valid request under load.
+The failures are overload artefacts, and they are **not reproducible run to run**. B-edge spring at max failed 100 % in 3 of 5
+main runs but 0 % in the diagnostic, and B-edge fastapi at 1000 failed 10–26 % in the main runs but 0 % in the diagnostic. The
+achieved rate in those 100 %-failure runs (~12k req/s) is the rate of fast 502s, not throughput. Treat the `max` rows as
+unreliable.
+
+**Reading (cautious).**
+* **At 100 req/s (no errors), D-B costs nothing measurable.** On fastapi, Δmedian is 0.00 ms and Cliff's δ is +0.04 (negligible).
+  On spring, Δmedian is 0.00 ms, δ is −0.01 and MWU p = 0.06. The HMAC is computed by the verifier and recomputed by the executor
+  on a path it already has, so no extra network hop is added.
+* **D-A and B-origin add a second HTTP call** (executor → verifier). On spring at 100 req/s this is negligible (Δmedian −0.09 /
+  −0.02 ms; the gateway no longer calls the verifier, so the hop count is unchanged). On fastapi, D-A has a heavy tail even at
+  100 req/s (p95 149 ms vs 4 ms; δ +0.54 large). That points to the fastapi executor's origin-mode verifier call becoming a
+  bottleneck (W4's implementation), not to D-A as a design. B-origin, which uses the same call, sees a smaller effect (+0.27 ms,
+  δ +0.24).
+* **At 500–1000 req/s and max**, every stack on this laptop saturates (achieved rate below the target, multi-second p99, 502s).
+  The fastapi stacks saturate around 600–900 req/s. Under saturation the origin-placement configs (D-A, B-origin) degrade first.
+  D-B tracks B-edge most closely on fastapi; on spring the 1000 req/s row of D-B is worse than B-edge. Given the run-to-run
+  instability shown above, **no ranking among configurations above 100 req/s should be claimed** from these data.
+* One earlier D-A/fastapi run was invalidated: the host slept and the pre-minted token expired mid-run (rates fell to 1–8 req/s,
+  then 100 % 401). It is kept in `runs_invalid/perf_sleep_token_expiry/` and was re-run under `caffeinate -i`.
 
 ## 7. Determinism
 
 Every E7/E8 configuration was replayed **twice** on freshly started topologies: `runs/` and `runs_rep2/`, rep 2 queued after perf
 (`scripts/phase3.sh`). The witnesses themselves were already 3/3-confirmed upstream.
 
-REP2_SECTION
+**Result: 118/118 topologies produced identical hit / violation sets** (keyed by case_id and executed op / violation kind) in
+the two replications, with 0 up failures (`scripts/rep2_compare.py`, `analysis/rep2_compare.{md,csv}`, `rep2_progress.log`). All
+E7, E8 (witness-set) and E4 numbers above are therefore deterministic. The E8 full-corpus and FRR runs were not replicated.
 
 ## 8. Provenance
 

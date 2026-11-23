@@ -1,0 +1,1 @@
+dc RC3 w17-dc-e4rc3-aspnet runner_rc=0 secs=13 hits=2 e4_runner[w17-dc-e4rc3-aspnet] wrote /Users/mimohit/openbank/binding/harness/logs/w17-dc-e4rc3-aspnet/runner.jsonl: {'sent': 29, 'errors': 0}

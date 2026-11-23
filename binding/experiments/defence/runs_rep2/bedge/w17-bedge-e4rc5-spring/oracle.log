@@ -1,0 +1,1 @@
+e4_oracle[w17-bedge-e4rc5-spring] {'topology': 'w17-bedge-e4rc5-spring', 'gateway': 'nginx', 'profile': 'default', 'framework': 'spring', 'verifier_image': 'bh-pdp-block:latest', 'cases': 29, 'pdp_allow': 20, 'violations': 3, 'admin': 2, 'bob': 1, 'vectors_hit': 'matrix-accounts-bob,matrix-admin-del,matrix-admin-list'}

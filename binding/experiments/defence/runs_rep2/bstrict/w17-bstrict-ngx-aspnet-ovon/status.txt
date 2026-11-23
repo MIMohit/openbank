@@ -1,0 +1,1 @@
+bstrict ngx-aspnet-ovon w17-bstrict-ngx-aspnet-ovon runner_rc=0 secs=13 hits=17 [ext_run_matrix] w17-bstrict-ngx-aspnet-ovon/gateway: {'sent': 34, 'errors': 0}

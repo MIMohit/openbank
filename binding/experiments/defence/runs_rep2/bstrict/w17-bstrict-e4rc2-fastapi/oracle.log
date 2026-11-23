@@ -1,0 +1,1 @@
+e4_oracle[w17-bstrict-e4rc2-fastapi] {'topology': 'w17-bstrict-e4rc2-fastapi', 'gateway': 'kong', 'profile': 'strict', 'framework': 'fastapi', 'verifier_image': 'bh-pdp-allow:latest', 'cases': 29, 'pdp_allow': 3, 'violations': 0, 'admin': 0, 'bob': 0, 'vectors_hit': ''}

@@ -1,0 +1,47 @@
+gateway-1  | 2026/11/23 17:01:46 [warn] 1#0: the "user" directive makes sense only if the master process runs with super-user privileges, ignored in /usr/local/kong/nginx.conf:7
+gateway-1  | nginx: [warn] the "user" directive makes sense only if the master process runs with super-user privileges, ignored in /usr/local/kong/nginx.conf:7
+gateway-1  | 2026/11/23 17:01:46 [notice] 1#0: [lua] init.lua:794: init(): [request-debug] token for request debugging: f745fbb6-4171-4bed-93cb-7108e28aeac9
+gateway-1  | 2026/11/23 17:01:46 [notice] 1#0: using the "epoll" event method
+gateway-1  | 2026/11/23 17:01:46 [notice] 1#0: openresty/1.25.3.2
+gateway-1  | 2026/11/23 17:01:46 [notice] 1#0: OS: Linux 6.12.76-linuxkit
+gateway-1  | 2026/11/23 17:01:46 [notice] 1#0: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+gateway-1  | 2026/11/23 17:01:46 [notice] 1#0: start worker processes
+gateway-1  | 2026/11/23 17:01:46 [notice] 1#0: start worker process 1405
+gateway-1  | 2026/11/23 17:01:46 [notice] 1405#0: *1 [lua] broker.lua:215: init(): event broker is ready to accept connections on worker #0, context: init_worker_by_lua*
+gateway-1  | 2026/11/23 17:01:46 [notice] 1405#0: *1 [lua] init.lua:266: purge(): [DB cache] purging (local) cache, context: init_worker_by_lua*
+gateway-1  | 2026/11/23 17:01:46 [notice] 1405#0: *1 [lua] init.lua:266: purge(): [DB cache] purging (local) cache, context: init_worker_by_lua*
+gateway-1  | 2026/11/23 17:01:46 [notice] 1405#0: *1 [kong] init.lua:590 declarative config loaded from /kong/kong.yml, context: init_worker_by_lua*
+gateway-1  | 2026/11/23 17:01:46 [notice] 1405#0: *3 [lua] worker.lua:304: communicate(): worker #0 is ready to accept events from unix:/usr/local/kong/sockets/we, context: ngx.timer
+gateway-1  | 2026/11/23 17:01:46 [notice] 1405#0: *644 [lua] broker.lua:263: run(): worker #0 connected to events broker (worker pid: 1405), client: unix:, server: kong_worker_events, request: "GET / HTTP/1.1", host: "localhost"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:17:01:56 +0000] "GET /api/v1/accounts HTTP/1.1" 200 78 "-" "bind-harness/1.0" kong_request_id: "1a0c393a89e8c64d05c3c155ed8aea0b"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:17:01:56 +0000] "GET /api/v1/accounts/acc-alice-1 HTTP/1.1" 200 94 "-" "bind-harness/1.0" kong_request_id: "cbe8f877a726a059a1b01f47f5be007d"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:17:01:56 +0000] "PUT /api/v1/accounts/acc-alice-1 HTTP/1.1" 200 97 "-" "bind-harness/1.0" kong_request_id: "589ba715c5799c753d777a1b4089785a"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:17:01:56 +0000] "DELETE /api/v1/accounts/acc-alice-1 HTTP/1.1" 200 100 "-" "bind-harness/1.0" kong_request_id: "cbb49d52a8e5181be7039a4e0f8f2d19"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:17:01:56 +0000] "POST /api/v1/accounts/acc-alice-1/actions?op=freeze HTTP/1.1" 200 105 "-" "bind-harness/1.0" kong_request_id: "1783884e5af7730fec6db778f459266a"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:17:01:56 +0000] "POST /api/v1/transfers HTTP/1.1" 200 81 "-" "bind-harness/1.0" kong_request_id: "d80af527ca8ea711c3c4e8312e32025d"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:17:01:56 +0000] "POST /api/v1/graphql HTTP/1.1" 200 85 "-" "bind-harness/1.0" kong_request_id: "ad0737472bb5cb1715863b139ad4767f"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:17:01:56 +0000] "GET /api/v1/me HTTP/1.1" 200 68 "-" "bind-harness/1.0" kong_request_id: "ee20802534986138bc01613a082db95f"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:17:01:56 +0000] "GET /api/v1/admin/users HTTP/1.1" 200 80 "-" "bind-harness/1.0" kong_request_id: "bd802806c2c42210f5b7a36b8869217e"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:17:01:56 +0000] "DELETE /api/v1/admin/users/u-1 HTTP/1.1" 200 94 "-" "bind-harness/1.0" kong_request_id: "69ebc2699668c3327e28227bc1866a7f"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:17:01:57 +0000] "GET /api/v1/health HTTP/1.1" 200 72 "-" "bind-harness/1.0" kong_request_id: "5ce25f28bb9f9c160110e3592797fd7a"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:17:01:57 +0000] "GET /api/v1/public/logo.png HTTP/1.1" 200 93 "-" "bind-harness/1.0" kong_request_id: "6385b531e9137d2836262b147a083e00"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:17:01:57 +0000] "GET /api/v2/accounts/acc-alice-1 HTTP/1.1" 200 96 "-" "bind-harness/1.0" kong_request_id: "430bf1372394e20c6e62646a1c16e65f"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:17:01:57 +0000] "GET /api/v1/accounts/acc-alice-1#frag HTTP/1.1" 200 99 "-" "bind-harness/1.0" kong_request_id: "ed228a1e31274d1c4a48e83c9a2ac165"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:17:01:57 +0000] "PUT /api/v1/accounts/acc-alice-1#frag HTTP/1.1" 200 102 "-" "bind-harness/1.0" kong_request_id: "5cdc18345fce235035ff37654afd9859"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:17:01:57 +0000] "DELETE /api/v1/accounts/acc-alice-1#frag HTTP/1.1" 200 105 "-" "bind-harness/1.0" kong_request_id: "94668508f100991f522a523951e7ad0e"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:17:01:57 +0000] "POST /api/v1/accounts/acc-alice-1/actions?op=close HTTP/1.1" 200 104 "-" "bind-harness/1.0" kong_request_id: "b3c5bb2f47e2f524da50cf0c1cb17e19"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:17:01:57 +0000] "POST /api/v1/accounts/acc-alice-1/actions?op=wipe HTTP/1.1" 200 106 "-" "bind-harness/1.0" kong_request_id: "de4ab9575879f107dd37e9183a2d1900"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:17:01:57 +0000] "POST /api/v1/accounts/acc-alice-1/actions HTTP/1.1" 200 106 "-" "bind-harness/1.0" kong_request_id: "13198e1edf47cc7261c4167b769e4350"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:17:01:57 +0000] "POST /api/v1/accounts/acc-alice-1/actions?op=freeze&op=close HTTP/1.1" 200 104 "-" "bind-harness/1.0" kong_request_id: "c85b491b97ea410ff1a681500b673a53"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:17:01:57 +0000] "POST /api/v1/accounts/acc-alice-1/actions?op=CLOSE HTTP/1.1" 200 106 "-" "bind-harness/1.0" kong_request_id: "ba7e241c5f09e63a277d2033a8a1ae3a"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:17:01:57 +0000] "POST /api/v1/graphql HTTP/1.1" 200 82 "-" "bind-harness/1.0" kong_request_id: "9130335772c5087042cc6f20ed0c4c0b"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:17:01:57 +0000] "POST /api/v1/graphql HTTP/1.1" 200 82 "-" "bind-harness/1.0" kong_request_id: "d1932c4077cba705380ae56465fab148"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:17:01:57 +0000] "POST /api/v1/graphql HTTP/1.1" 200 82 "-" "bind-harness/1.0" kong_request_id: "69cc40258a34371eb7e15f571c92fc54"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:17:01:57 +0000] "POST /api/v1/graphql HTTP/1.1" 200 82 "-" "bind-harness/1.0" kong_request_id: "d2162d4391322f6439437b6eb061e61a"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:17:01:57 +0000] "POST /api/v1/graphql HTTP/1.1" 200 82 "-" "bind-harness/1.0" kong_request_id: "e9ab206c167b6407ea8eff1afcc4ae0a"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:17:01:57 +0000] "POST /api/v1/graphql HTTP/1.1" 200 88 "-" "bind-harness/1.0" kong_request_id: "f5c2307a4b5316167263f25abd1e7a15"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:17:01:57 +0000] "POST /api/v1/graphql HTTP/1.1" 200 82 "-" "bind-harness/1.0" kong_request_id: "e23d5825630a742bc985b4689dbc7c41"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:17:01:57 +0000] "POST /api/v1/graphql HTTP/1.1" 200 82 "-" "bind-harness/1.0" kong_request_id: "c3135a66f002d51b455e2b7c54448d3d"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:17:01:57 +0000] "DELETE /api/v1/admin/users/u-1#frag HTTP/1.1" 200 99 "-" "bind-harness/1.0" kong_request_id: "62c8dd0b872a9b1c4151d948345c0a4c"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:17:01:58 +0000] "GET /api/v1/public/logo.png#frag HTTP/1.1" 200 98 "-" "bind-harness/1.0" kong_request_id: "fff54222795bbe2d9956bc1468c28347"
+gateway-1  | 172.23.0.1 - - [23/Nov/2026:17:01:58 +0000] "GET /api/v2/accounts/acc-alice-1#frag HTTP/1.1" 200 101 "-" "bind-harness/1.0" kong_request_id: "0490f54b50381c6c8454801cd6a6220f"

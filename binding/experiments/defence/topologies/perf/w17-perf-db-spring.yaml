@@ -1,0 +1,14 @@
+id: w17-perf-db-spring
+gateway: nginx
+profile: default
+placement: edge
+framework: spring
+executor_image: bh-exec-spring:defence
+override: 'off'
+verifier:
+  image: bh-verifier:latest
+  canon: rfc3986
+  view_mac: 'on'
+  jti_cache: 'off'
+  iat_window: 86400
+host_port: 29031
