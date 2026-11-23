@@ -1,0 +1,107 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 1.16kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.12.8-slim-bookworm
+#2 DONE 2.5s
+
+#3 [internal] load build context
+#3 transferring context: 7.73kB done
+#3 DONE 0.0s
+
+#4 [1/7] FROM docker.io/library/python:3.12.8-slim-bookworm@sha256:2199a62885a12290dc9c5be3ca0681d367576ab7bf037da120e564723292a2f0
+#4 resolve docker.io/library/python:3.12.8-slim-bookworm@sha256:2199a62885a12290dc9c5be3ca0681d367576ab7bf037da120e564723292a2f0 done
+#4 sha256:4e22988d3ed333790f3231e5e3c87c57623c492221db601eebc5f5c2e41b37b0 0B / 13.65MB 0.2s
+#4 sha256:098e41244522393883cbb93f62147db2c32f26de2185e5db78284907a6b85a9e 0B / 3.51MB 0.2s
+#4 sha256:c29f5b76f736a8b555fd191c48d6581bb918bcd605a7cbcc76205dd6acff3260 0B / 28.21MB 0.2s
+#4 sha256:260bd0d7f5c096e7d750ac73b0a8cdd5cd6de93b69a62e0df930681effe9a539 0B / 249B 0.2s
+#4 sha256:260bd0d7f5c096e7d750ac73b0a8cdd5cd6de93b69a62e0df930681effe9a539 249B / 249B 0.3s done
+#4 sha256:4e22988d3ed333790f3231e5e3c87c57623c492221db601eebc5f5c2e41b37b0 1.05MB / 13.65MB 0.8s
+#4 sha256:4e22988d3ed333790f3231e5e3c87c57623c492221db601eebc5f5c2e41b37b0 3.15MB / 13.65MB 0.9s
+#4 sha256:4e22988d3ed333790f3231e5e3c87c57623c492221db601eebc5f5c2e41b37b0 4.19MB / 13.65MB 1.2s
+#4 sha256:4e22988d3ed333790f3231e5e3c87c57623c492221db601eebc5f5c2e41b37b0 5.24MB / 13.65MB 1.4s
+#4 sha256:4e22988d3ed333790f3231e5e3c87c57623c492221db601eebc5f5c2e41b37b0 6.29MB / 13.65MB 1.7s
+#4 sha256:4e22988d3ed333790f3231e5e3c87c57623c492221db601eebc5f5c2e41b37b0 7.34MB / 13.65MB 1.8s
+#4 sha256:098e41244522393883cbb93f62147db2c32f26de2185e5db78284907a6b85a9e 1.05MB / 3.51MB 2.0s
+#4 sha256:4e22988d3ed333790f3231e5e3c87c57623c492221db601eebc5f5c2e41b37b0 8.39MB / 13.65MB 2.1s
+#4 sha256:4e22988d3ed333790f3231e5e3c87c57623c492221db601eebc5f5c2e41b37b0 9.44MB / 13.65MB 2.3s
+#4 sha256:4e22988d3ed333790f3231e5e3c87c57623c492221db601eebc5f5c2e41b37b0 10.49MB / 13.65MB 2.6s
+#4 sha256:4e22988d3ed333790f3231e5e3c87c57623c492221db601eebc5f5c2e41b37b0 11.53MB / 13.65MB 2.9s
+#4 sha256:098e41244522393883cbb93f62147db2c32f26de2185e5db78284907a6b85a9e 2.10MB / 3.51MB 2.7s
+#4 sha256:4e22988d3ed333790f3231e5e3c87c57623c492221db601eebc5f5c2e41b37b0 12.58MB / 13.65MB 3.0s
+#4 sha256:4e22988d3ed333790f3231e5e3c87c57623c492221db601eebc5f5c2e41b37b0 13.65MB / 13.65MB 3.2s done
+#4 sha256:098e41244522393883cbb93f62147db2c32f26de2185e5db78284907a6b85a9e 3.15MB / 3.51MB 3.3s
+#4 sha256:098e41244522393883cbb93f62147db2c32f26de2185e5db78284907a6b85a9e 3.51MB / 3.51MB 3.4s done
+#4 sha256:c29f5b76f736a8b555fd191c48d6581bb918bcd605a7cbcc76205dd6acff3260 2.10MB / 28.21MB 3.9s
+#4 sha256:c29f5b76f736a8b555fd191c48d6581bb918bcd605a7cbcc76205dd6acff3260 4.19MB / 28.21MB 4.4s
+#4 sha256:c29f5b76f736a8b555fd191c48d6581bb918bcd605a7cbcc76205dd6acff3260 7.34MB / 28.21MB 4.7s
+#4 sha256:c29f5b76f736a8b555fd191c48d6581bb918bcd605a7cbcc76205dd6acff3260 9.44MB / 28.21MB 5.0s
+#4 sha256:c29f5b76f736a8b555fd191c48d6581bb918bcd605a7cbcc76205dd6acff3260 11.53MB / 28.21MB 5.3s
+#4 sha256:c29f5b76f736a8b555fd191c48d6581bb918bcd605a7cbcc76205dd6acff3260 13.63MB / 28.21MB 5.7s
+#4 sha256:c29f5b76f736a8b555fd191c48d6581bb918bcd605a7cbcc76205dd6acff3260 15.73MB / 28.21MB 6.0s
+#4 sha256:c29f5b76f736a8b555fd191c48d6581bb918bcd605a7cbcc76205dd6acff3260 17.83MB / 28.21MB 6.3s
+#4 sha256:c29f5b76f736a8b555fd191c48d6581bb918bcd605a7cbcc76205dd6acff3260 19.92MB / 28.21MB 6.6s
+#4 sha256:c29f5b76f736a8b555fd191c48d6581bb918bcd605a7cbcc76205dd6acff3260 22.02MB / 28.21MB 7.1s
+#4 sha256:c29f5b76f736a8b555fd191c48d6581bb918bcd605a7cbcc76205dd6acff3260 24.12MB / 28.21MB 7.4s
+#4 sha256:c29f5b76f736a8b555fd191c48d6581bb918bcd605a7cbcc76205dd6acff3260 27.26MB / 28.21MB 7.8s
+#4 sha256:c29f5b76f736a8b555fd191c48d6581bb918bcd605a7cbcc76205dd6acff3260 28.21MB / 28.21MB 8.0s done
+#4 extracting sha256:c29f5b76f736a8b555fd191c48d6581bb918bcd605a7cbcc76205dd6acff3260
+#4 extracting sha256:c29f5b76f736a8b555fd191c48d6581bb918bcd605a7cbcc76205dd6acff3260 0.3s done
+#4 DONE 8.3s
+
+#4 [1/7] FROM docker.io/library/python:3.12.8-slim-bookworm@sha256:2199a62885a12290dc9c5be3ca0681d367576ab7bf037da120e564723292a2f0
+#4 extracting sha256:098e41244522393883cbb93f62147db2c32f26de2185e5db78284907a6b85a9e 0.0s done
+#4 extracting sha256:4e22988d3ed333790f3231e5e3c87c57623c492221db601eebc5f5c2e41b37b0 0.1s done
+#4 DONE 8.5s
+
+#4 [1/7] FROM docker.io/library/python:3.12.8-slim-bookworm@sha256:2199a62885a12290dc9c5be3ca0681d367576ab7bf037da120e564723292a2f0
+#4 extracting sha256:260bd0d7f5c096e7d750ac73b0a8cdd5cd6de93b69a62e0df930681effe9a539 done
+#4 DONE 8.5s
+
+#5 [2/7] WORKDIR /app
+#5 DONE 0.1s
+
+#6 [3/7] COPY verifier/requirements.txt /app/verifier/requirements.txt
+#6 DONE 0.0s
+
+#7 [4/7] RUN pip install --no-cache-dir -r /app/verifier/requirements.txt
+#7 1.532 Collecting cryptography==44.0.2 (from -r /app/verifier/requirements.txt (line 1))
+#7 1.610   Downloading cryptography-44.0.2-cp39-abi3-manylinux_2_34_x86_64.whl.metadata (5.7 kB)
+#7 1.748 Collecting cffi>=1.12 (from cryptography==44.0.2->-r /app/verifier/requirements.txt (line 1))
+#7 1.763   Downloading cffi-2.1.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.5 kB)
+#7 1.785 Collecting pycparser (from cffi>=1.12->cryptography==44.0.2->-r /app/verifier/requirements.txt (line 1))
+#7 1.798   Downloading pycparser-3.12-py3-none-any.whl.metadata (9.7 kB)
+#7 1.841 Downloading cryptography-44.0.2-cp39-abi3-manylinux_2_34_x86_64.whl (4.2 MB)
+#7 3.007    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.2/4.2 MB 3.8 MB/s eta 0:00:00
+#7 3.026 Downloading cffi-2.1.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (221 kB)
+#7 3.101 Downloading pycparser-3.12-py3-none-any.whl (62 kB)
+#7 3.162 Installing collected packages: pycparser, cffi, cryptography
+#7 3.364 Successfully installed cffi-2.1.1 cryptography-44.0.2 pycparser-3.12
+#7 3.364 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable.It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+#7 3.503 
+#7 3.503 [notice] A new release of pip is available: 24.3.1 -> 26.3
+#7 3.503 [notice] To update, run: pip install --upgrade pip
+#7 DONE 3.7s
+
+#8 [5/7] COPY verifier/__init__.py verifier/core.py verifier/canon.py verifier/jose.py verifier/server.py /app/verifier/
+#8 DONE 0.0s
+
+#9 [6/7] COPY keys/as_pub.jwk /app/keys/as_pub.jwk
+#9 DONE 0.0s
+
+#10 [7/7] RUN useradd -r -u 10001 verifier && mkdir -p /logs && chown verifier /logs
+#10 0.138 useradd warning: verifier's uid 10001 is greater than SYS_UID_MAX 999
+#10 DONE 0.2s
+
+#11 exporting to image
+#11 exporting layers
+#11 exporting layers 0.5s done
+#11 exporting manifest sha256:aa3d775d4b877513e432a4642ec771f0ff68a5f76852f2071e55c7b113bad1a8
+#11 exporting manifest sha256:aa3d775d4b877513e432a4642ec771f0ff68a5f76852f2071e55c7b113bad1a8 done
+#11 exporting config sha256:866f389f3d78446d607d75b705b56b4e7bcc786f77c86a531233ebbde820fe97 done
+#11 exporting attestation manifest sha256:7a4b2b09a8a61a1e12ce3d37af212c6d397e8ccc56b8384519895b44fdff042f done
+#11 exporting manifest list sha256:82034f1922884f69513ea6fcc0a573d4b76a75fa7360b355d41caf066619037e done
+#11 naming to docker.io/library/bhperf-verifier:amd64 done
+#11 DONE 0.6s

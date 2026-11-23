@@ -194,3 +194,13 @@ Each worker runs at most ONE topology at a time. The machine is a 16 GB Mac and 
 | W17 defence evaluation (E7, E8, A2) | `binding/experiments/defence/`. May apply `binding/harness/defence/patches/` to the 4 executors ONLY by building separate images tagged `:defence` from a patched copy under its own directory. Never modify the executor source dirs or overwrite `:latest` / `:v2`. |
 | W18 binding-claim ablation (A1) + A4/A5 analysis | `binding/experiments/ablation/`. May add verifier binding-claim flags ONLY in a copy under its own directory, built as `bh-verifier:ablate`. Never touch `binding/harness/verifier/`. |
 | W19 paper results integration | `binding/paper/` (everything) |
+
+## 15. Wave 4: finish everything except paper writing (coordinator)
+| Worker | Owns |
+|---|---|
+| W20 literature pass 2 | `binding/lit/pass2/` (must not edit `binding/paper/`) |
+| W21 APISIX mechanism + G3 gaps | `binding/experiments/g3-apisix/` |
+| W22 real-application study | `binding/experiments/realapps/` |
+| W23 rerun gaps, cross-gateway FRR, defence path-map fix | `binding/experiments/gaps/`; `binding/harness/defence/` (changes behind env flags only; new images tagged `:pathmap`, never overwrite existing tags) |
+| W24 server performance re-run (remote host, strict safety rules in its spec) | `binding/experiments/perf-server/` |
+Paper writing is out of scope for this wave: no worker edits `binding/paper/`.

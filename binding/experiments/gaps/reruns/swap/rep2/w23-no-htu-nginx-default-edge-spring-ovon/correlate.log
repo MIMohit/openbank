@@ -1,0 +1,1 @@
+oracle[w23-no-htu-nginx-default-edge-spring-ovon] {'topology': 'w23-no-htu-nginx-default-edge-spring-ovon', 'cases': 357, 'accepted': 107, 'hits_raw': 90, 'hits_confirmed': 0, 'S1': 20, 'S2': 54, 'S3': 16, 'signatures': 16, 'max_res_hat': 9, 'b0': 0, 'propagation': 0, 'uncorrelated': 2}

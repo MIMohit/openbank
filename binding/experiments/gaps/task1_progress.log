@@ -1,0 +1,185 @@
+[00:19:22] TASK1 START
+[00:19:22] PHASE Q (sorted attack) START
+w23-query-sorted-nginx-default-edge-fastapi-ovoff variant=query-sorted bind=query gate=0 runner_rc=0 secs=17 [ab_run_matrix] w23-query-sorted-nginx-default-edge-fastapi-ovoff bind=query: sent=1239 errors=0
+[00:19:39] Q w23-query-sorted-nginx-default-edge-fastapi-ovoff rep1 w23-query-sorted-nginx-default-edge-fastapi-ovoff variant=query-sorted bind=query gate=0 runner_rc=0 secs=17 [ab_run_matrix] w23-query-sorted-nginx-default-edge-fastapi-ovoff bind=query: sent=1239 errors=0
+w23-query-sorted-nginx-default-edge-fastapi-ovoff variant=query-sorted bind=query gate=0 runner_rc=0 secs=16 [ab_run_matrix] w23-query-sorted-nginx-default-edge-fastapi-ovoff bind=query: sent=1239 errors=0
+[00:19:55] Q w23-query-sorted-nginx-default-edge-fastapi-ovoff rep2 w23-query-sorted-nginx-default-edge-fastapi-ovoff variant=query-sorted bind=query gate=0 runner_rc=0 secs=16 [ab_run_matrix] w23-query-sorted-nginx-default-edge-fastapi-ovoff bind=query: sent=1239 errors=0
+w23-query-sorted-nginx-default-edge-fastapi-ovoff variant=query-sorted bind=query gate=0 runner_rc=0 secs=17 [ab_run_matrix] w23-query-sorted-nginx-default-edge-fastapi-ovoff bind=query: sent=1239 errors=0
+[00:20:12] Q w23-query-sorted-nginx-default-edge-fastapi-ovoff rep3 w23-query-sorted-nginx-default-edge-fastapi-ovoff variant=query-sorted bind=query gate=0 runner_rc=0 secs=17 [ab_run_matrix] w23-query-sorted-nginx-default-edge-fastapi-ovoff bind=query: sent=1239 errors=0
+w23-query-sorted-nginx-default-edge-fastapi-ovon variant=query-sorted bind=query gate=0 runner_rc=0 secs=16 [ab_run_matrix] w23-query-sorted-nginx-default-edge-fastapi-ovon bind=query: sent=1239 errors=0
+[00:20:28] Q w23-query-sorted-nginx-default-edge-fastapi-ovon rep1 w23-query-sorted-nginx-default-edge-fastapi-ovon variant=query-sorted bind=query gate=0 runner_rc=0 secs=16 [ab_run_matrix] w23-query-sorted-nginx-default-edge-fastapi-ovon bind=query: sent=1239 errors=0
+w23-query-sorted-nginx-default-edge-fastapi-ovon variant=query-sorted bind=query gate=0 runner_rc=0 secs=17 [ab_run_matrix] w23-query-sorted-nginx-default-edge-fastapi-ovon bind=query: sent=1239 errors=0
+[00:20:45] Q w23-query-sorted-nginx-default-edge-fastapi-ovon rep2 w23-query-sorted-nginx-default-edge-fastapi-ovon variant=query-sorted bind=query gate=0 runner_rc=0 secs=17 [ab_run_matrix] w23-query-sorted-nginx-default-edge-fastapi-ovon bind=query: sent=1239 errors=0
+w23-query-sorted-nginx-default-edge-fastapi-ovon variant=query-sorted bind=query gate=0 runner_rc=0 secs=17 [ab_run_matrix] w23-query-sorted-nginx-default-edge-fastapi-ovon bind=query: sent=1239 errors=0
+[00:21:02] Q w23-query-sorted-nginx-default-edge-fastapi-ovon rep3 w23-query-sorted-nginx-default-edge-fastapi-ovon variant=query-sorted bind=query gate=0 runner_rc=0 secs=17 [ab_run_matrix] w23-query-sorted-nginx-default-edge-fastapi-ovon bind=query: sent=1239 errors=0
+w23-query-sorted-nginx-default-edge-laravel-ovoff variant=query-sorted bind=query gate=0 runner_rc=0 secs=18 [ab_run_matrix] w23-query-sorted-nginx-default-edge-laravel-ovoff bind=query: sent=1239 errors=0
+[00:21:20] Q w23-query-sorted-nginx-default-edge-laravel-ovoff rep1 w23-query-sorted-nginx-default-edge-laravel-ovoff variant=query-sorted bind=query gate=0 runner_rc=0 secs=18 [ab_run_matrix] w23-query-sorted-nginx-default-edge-laravel-ovoff bind=query: sent=1239 errors=0
+w23-query-sorted-nginx-default-edge-laravel-ovoff variant=query-sorted bind=query gate=0 runner_rc=0 secs=19 [ab_run_matrix] w23-query-sorted-nginx-default-edge-laravel-ovoff bind=query: sent=1239 errors=0
+[00:21:39] Q w23-query-sorted-nginx-default-edge-laravel-ovoff rep2 w23-query-sorted-nginx-default-edge-laravel-ovoff variant=query-sorted bind=query gate=0 runner_rc=0 secs=19 [ab_run_matrix] w23-query-sorted-nginx-default-edge-laravel-ovoff bind=query: sent=1239 errors=0
+w23-query-sorted-nginx-default-edge-laravel-ovoff variant=query-sorted bind=query gate=0 runner_rc=0 secs=18 [ab_run_matrix] w23-query-sorted-nginx-default-edge-laravel-ovoff bind=query: sent=1239 errors=0
+[00:21:57] Q w23-query-sorted-nginx-default-edge-laravel-ovoff rep3 w23-query-sorted-nginx-default-edge-laravel-ovoff variant=query-sorted bind=query gate=0 runner_rc=0 secs=18 [ab_run_matrix] w23-query-sorted-nginx-default-edge-laravel-ovoff bind=query: sent=1239 errors=0
+w23-query-sorted-nginx-default-edge-laravel-ovon variant=query-sorted bind=query gate=0 runner_rc=0 secs=20 [ab_run_matrix] w23-query-sorted-nginx-default-edge-laravel-ovon bind=query: sent=1239 errors=0
+[00:22:17] Q w23-query-sorted-nginx-default-edge-laravel-ovon rep1 w23-query-sorted-nginx-default-edge-laravel-ovon variant=query-sorted bind=query gate=0 runner_rc=0 secs=20 [ab_run_matrix] w23-query-sorted-nginx-default-edge-laravel-ovon bind=query: sent=1239 errors=0
+w23-query-sorted-nginx-default-edge-laravel-ovon variant=query-sorted bind=query gate=0 runner_rc=0 secs=18 [ab_run_matrix] w23-query-sorted-nginx-default-edge-laravel-ovon bind=query: sent=1239 errors=0
+[00:22:35] Q w23-query-sorted-nginx-default-edge-laravel-ovon rep2 w23-query-sorted-nginx-default-edge-laravel-ovon variant=query-sorted bind=query gate=0 runner_rc=0 secs=18 [ab_run_matrix] w23-query-sorted-nginx-default-edge-laravel-ovon bind=query: sent=1239 errors=0
+w23-query-sorted-nginx-default-edge-laravel-ovon variant=query-sorted bind=query gate=0 runner_rc=0 secs=19 [ab_run_matrix] w23-query-sorted-nginx-default-edge-laravel-ovon bind=query: sent=1239 errors=0
+[00:22:54] Q w23-query-sorted-nginx-default-edge-laravel-ovon rep3 w23-query-sorted-nginx-default-edge-laravel-ovon variant=query-sorted bind=query gate=0 runner_rc=0 secs=19 [ab_run_matrix] w23-query-sorted-nginx-default-edge-laravel-ovon bind=query: sent=1239 errors=0
+w23-query-sorted-nginx-default-edge-rails-ovoff variant=query-sorted bind=query gate=0 runner_rc=0 secs=18 [ab_run_matrix] w23-query-sorted-nginx-default-edge-rails-ovoff bind=query: sent=1239 errors=0
+[00:23:12] Q w23-query-sorted-nginx-default-edge-rails-ovoff rep1 w23-query-sorted-nginx-default-edge-rails-ovoff variant=query-sorted bind=query gate=0 runner_rc=0 secs=18 [ab_run_matrix] w23-query-sorted-nginx-default-edge-rails-ovoff bind=query: sent=1239 errors=0
+w23-query-sorted-nginx-default-edge-rails-ovoff variant=query-sorted bind=query gate=0 runner_rc=0 secs=17 [ab_run_matrix] w23-query-sorted-nginx-default-edge-rails-ovoff bind=query: sent=1239 errors=0
+[00:23:29] Q w23-query-sorted-nginx-default-edge-rails-ovoff rep2 w23-query-sorted-nginx-default-edge-rails-ovoff variant=query-sorted bind=query gate=0 runner_rc=0 secs=17 [ab_run_matrix] w23-query-sorted-nginx-default-edge-rails-ovoff bind=query: sent=1239 errors=0
+w23-query-sorted-nginx-default-edge-rails-ovoff variant=query-sorted bind=query gate=0 runner_rc=0 secs=17 [ab_run_matrix] w23-query-sorted-nginx-default-edge-rails-ovoff bind=query: sent=1239 errors=0
+[00:23:46] Q w23-query-sorted-nginx-default-edge-rails-ovoff rep3 w23-query-sorted-nginx-default-edge-rails-ovoff variant=query-sorted bind=query gate=0 runner_rc=0 secs=17 [ab_run_matrix] w23-query-sorted-nginx-default-edge-rails-ovoff bind=query: sent=1239 errors=0
+w23-query-sorted-nginx-default-edge-rails-ovon variant=query-sorted bind=query gate=0 runner_rc=0 secs=17 [ab_run_matrix] w23-query-sorted-nginx-default-edge-rails-ovon bind=query: sent=1239 errors=0
+[00:24:03] Q w23-query-sorted-nginx-default-edge-rails-ovon rep1 w23-query-sorted-nginx-default-edge-rails-ovon variant=query-sorted bind=query gate=0 runner_rc=0 secs=17 [ab_run_matrix] w23-query-sorted-nginx-default-edge-rails-ovon bind=query: sent=1239 errors=0
+w23-query-sorted-nginx-default-edge-rails-ovon variant=query-sorted bind=query gate=0 runner_rc=0 secs=16 [ab_run_matrix] w23-query-sorted-nginx-default-edge-rails-ovon bind=query: sent=1239 errors=0
+[00:24:19] Q w23-query-sorted-nginx-default-edge-rails-ovon rep2 w23-query-sorted-nginx-default-edge-rails-ovon variant=query-sorted bind=query gate=0 runner_rc=0 secs=16 [ab_run_matrix] w23-query-sorted-nginx-default-edge-rails-ovon bind=query: sent=1239 errors=0
+w23-query-sorted-nginx-default-edge-rails-ovon variant=query-sorted bind=query gate=0 runner_rc=0 secs=19 [ab_run_matrix] w23-query-sorted-nginx-default-edge-rails-ovon bind=query: sent=1239 errors=0
+[00:24:38] Q w23-query-sorted-nginx-default-edge-rails-ovon rep3 w23-query-sorted-nginx-default-edge-rails-ovon variant=query-sorted bind=query gate=0 runner_rc=0 secs=19 [ab_run_matrix] w23-query-sorted-nginx-default-edge-rails-ovon bind=query: sent=1239 errors=0
+w23-query-sorted-nginx-default-edge-spring-ovoff variant=query-sorted bind=query gate=0 runner_rc=0 secs=20 [ab_run_matrix] w23-query-sorted-nginx-default-edge-spring-ovoff bind=query: sent=1239 errors=0
+[00:24:58] Q w23-query-sorted-nginx-default-edge-spring-ovoff rep1 w23-query-sorted-nginx-default-edge-spring-ovoff variant=query-sorted bind=query gate=0 runner_rc=0 secs=20 [ab_run_matrix] w23-query-sorted-nginx-default-edge-spring-ovoff bind=query: sent=1239 errors=0
+w23-query-sorted-nginx-default-edge-spring-ovoff variant=query-sorted bind=query gate=0 runner_rc=0 secs=22 [ab_run_matrix] w23-query-sorted-nginx-default-edge-spring-ovoff bind=query: sent=1239 errors=0
+[00:25:20] Q w23-query-sorted-nginx-default-edge-spring-ovoff rep2 w23-query-sorted-nginx-default-edge-spring-ovoff variant=query-sorted bind=query gate=0 runner_rc=0 secs=22 [ab_run_matrix] w23-query-sorted-nginx-default-edge-spring-ovoff bind=query: sent=1239 errors=0
+w23-query-sorted-nginx-default-edge-spring-ovoff variant=query-sorted bind=query gate=0 runner_rc=0 secs=17 [ab_run_matrix] w23-query-sorted-nginx-default-edge-spring-ovoff bind=query: sent=1239 errors=0
+[00:25:37] Q w23-query-sorted-nginx-default-edge-spring-ovoff rep3 w23-query-sorted-nginx-default-edge-spring-ovoff variant=query-sorted bind=query gate=0 runner_rc=0 secs=17 [ab_run_matrix] w23-query-sorted-nginx-default-edge-spring-ovoff bind=query: sent=1239 errors=0
+w23-query-sorted-nginx-default-edge-spring-ovon variant=query-sorted bind=query gate=0 runner_rc=0 secs=17 [ab_run_matrix] w23-query-sorted-nginx-default-edge-spring-ovon bind=query: sent=1239 errors=0
+[00:25:54] Q w23-query-sorted-nginx-default-edge-spring-ovon rep1 w23-query-sorted-nginx-default-edge-spring-ovon variant=query-sorted bind=query gate=0 runner_rc=0 secs=17 [ab_run_matrix] w23-query-sorted-nginx-default-edge-spring-ovon bind=query: sent=1239 errors=0
+w23-query-sorted-nginx-default-edge-spring-ovon variant=query-sorted bind=query gate=0 runner_rc=0 secs=18 [ab_run_matrix] w23-query-sorted-nginx-default-edge-spring-ovon bind=query: sent=1239 errors=0
+[00:26:12] Q w23-query-sorted-nginx-default-edge-spring-ovon rep2 w23-query-sorted-nginx-default-edge-spring-ovon variant=query-sorted bind=query gate=0 runner_rc=0 secs=18 [ab_run_matrix] w23-query-sorted-nginx-default-edge-spring-ovon bind=query: sent=1239 errors=0
+w23-query-sorted-nginx-default-edge-spring-ovon variant=query-sorted bind=query gate=0 runner_rc=0 secs=18 [ab_run_matrix] w23-query-sorted-nginx-default-edge-spring-ovon bind=query: sent=1239 errors=0
+[00:26:30] Q w23-query-sorted-nginx-default-edge-spring-ovon rep3 w23-query-sorted-nginx-default-edge-spring-ovon variant=query-sorted bind=query gate=0 runner_rc=0 secs=18 [ab_run_matrix] w23-query-sorted-nginx-default-edge-spring-ovon bind=query: sent=1239 errors=0
+[00:26:30] PHASE Q DONE
+[00:26:30] PHASE S (swap) START
+w23-no-htm-nginx-default-edge-fastapi-ovoff variant=no-htm bind=full gate=0 runner_rc=0 secs=14 [ab_run_matrix] w23-no-htm-nginx-default-edge-fastapi-ovoff bind=full: sent=357 errors=0
+[00:26:44] S w23-no-htm-nginx-default-edge-fastapi-ovoff rep1 w23-no-htm-nginx-default-edge-fastapi-ovoff variant=no-htm bind=full gate=0 runner_rc=0 secs=14 [ab_run_matrix] w23-no-htm-nginx-default-edge-fastapi-ovoff bind=full: sent=357 errors=0
+w23-no-htm-nginx-default-edge-fastapi-ovoff variant=no-htm bind=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w23-no-htm-nginx-default-edge-fastapi-ovoff bind=full: sent=357 errors=0
+[00:26:59] S w23-no-htm-nginx-default-edge-fastapi-ovoff rep2 w23-no-htm-nginx-default-edge-fastapi-ovoff variant=no-htm bind=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w23-no-htm-nginx-default-edge-fastapi-ovoff bind=full: sent=357 errors=0
+w23-no-htm-nginx-default-edge-fastapi-ovoff variant=no-htm bind=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w23-no-htm-nginx-default-edge-fastapi-ovoff bind=full: sent=357 errors=0
+[00:27:14] S w23-no-htm-nginx-default-edge-fastapi-ovoff rep3 w23-no-htm-nginx-default-edge-fastapi-ovoff variant=no-htm bind=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w23-no-htm-nginx-default-edge-fastapi-ovoff bind=full: sent=357 errors=0
+w23-no-htm-nginx-default-edge-fastapi-ovon variant=no-htm bind=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w23-no-htm-nginx-default-edge-fastapi-ovon bind=full: sent=357 errors=0
+[00:27:29] S w23-no-htm-nginx-default-edge-fastapi-ovon rep1 w23-no-htm-nginx-default-edge-fastapi-ovon variant=no-htm bind=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w23-no-htm-nginx-default-edge-fastapi-ovon bind=full: sent=357 errors=0
+w23-no-htm-nginx-default-edge-fastapi-ovon variant=no-htm bind=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w23-no-htm-nginx-default-edge-fastapi-ovon bind=full: sent=357 errors=0
+[00:27:44] S w23-no-htm-nginx-default-edge-fastapi-ovon rep2 w23-no-htm-nginx-default-edge-fastapi-ovon variant=no-htm bind=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w23-no-htm-nginx-default-edge-fastapi-ovon bind=full: sent=357 errors=0
+w23-no-htm-nginx-default-edge-fastapi-ovon variant=no-htm bind=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w23-no-htm-nginx-default-edge-fastapi-ovon bind=full: sent=357 errors=0
+[00:27:59] S w23-no-htm-nginx-default-edge-fastapi-ovon rep3 w23-no-htm-nginx-default-edge-fastapi-ovon variant=no-htm bind=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w23-no-htm-nginx-default-edge-fastapi-ovon bind=full: sent=357 errors=0
+w23-no-htm-nginx-default-edge-laravel-ovoff variant=no-htm bind=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w23-no-htm-nginx-default-edge-laravel-ovoff bind=full: sent=357 errors=0
+[00:28:14] S w23-no-htm-nginx-default-edge-laravel-ovoff rep1 w23-no-htm-nginx-default-edge-laravel-ovoff variant=no-htm bind=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w23-no-htm-nginx-default-edge-laravel-ovoff bind=full: sent=357 errors=0
+w23-no-htm-nginx-default-edge-laravel-ovoff variant=no-htm bind=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w23-no-htm-nginx-default-edge-laravel-ovoff bind=full: sent=357 errors=0
+[00:28:29] S w23-no-htm-nginx-default-edge-laravel-ovoff rep2 w23-no-htm-nginx-default-edge-laravel-ovoff variant=no-htm bind=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w23-no-htm-nginx-default-edge-laravel-ovoff bind=full: sent=357 errors=0
+w23-no-htm-nginx-default-edge-laravel-ovoff variant=no-htm bind=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w23-no-htm-nginx-default-edge-laravel-ovoff bind=full: sent=357 errors=0
+[00:28:44] S w23-no-htm-nginx-default-edge-laravel-ovoff rep3 w23-no-htm-nginx-default-edge-laravel-ovoff variant=no-htm bind=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w23-no-htm-nginx-default-edge-laravel-ovoff bind=full: sent=357 errors=0
+w23-no-htm-nginx-default-edge-laravel-ovon variant=no-htm bind=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w23-no-htm-nginx-default-edge-laravel-ovon bind=full: sent=357 errors=0
+[00:28:59] S w23-no-htm-nginx-default-edge-laravel-ovon rep1 w23-no-htm-nginx-default-edge-laravel-ovon variant=no-htm bind=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w23-no-htm-nginx-default-edge-laravel-ovon bind=full: sent=357 errors=0
+w23-no-htm-nginx-default-edge-laravel-ovon variant=no-htm bind=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w23-no-htm-nginx-default-edge-laravel-ovon bind=full: sent=357 errors=0
+[00:29:14] S w23-no-htm-nginx-default-edge-laravel-ovon rep2 w23-no-htm-nginx-default-edge-laravel-ovon variant=no-htm bind=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w23-no-htm-nginx-default-edge-laravel-ovon bind=full: sent=357 errors=0
+w23-no-htm-nginx-default-edge-laravel-ovon variant=no-htm bind=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w23-no-htm-nginx-default-edge-laravel-ovon bind=full: sent=357 errors=0
+[00:29:29] S w23-no-htm-nginx-default-edge-laravel-ovon rep3 w23-no-htm-nginx-default-edge-laravel-ovon variant=no-htm bind=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w23-no-htm-nginx-default-edge-laravel-ovon bind=full: sent=357 errors=0
+w23-no-htm-nginx-default-edge-rails-ovoff variant=no-htm bind=full gate=0 runner_rc=0 secs=16 [ab_run_matrix] w23-no-htm-nginx-default-edge-rails-ovoff bind=full: sent=357 errors=0
+[00:29:45] S w23-no-htm-nginx-default-edge-rails-ovoff rep1 w23-no-htm-nginx-default-edge-rails-ovoff variant=no-htm bind=full gate=0 runner_rc=0 secs=16 [ab_run_matrix] w23-no-htm-nginx-default-edge-rails-ovoff bind=full: sent=357 errors=0
+w23-no-htm-nginx-default-edge-rails-ovoff variant=no-htm bind=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w23-no-htm-nginx-default-edge-rails-ovoff bind=full: sent=357 errors=0
+[00:30:00] S w23-no-htm-nginx-default-edge-rails-ovoff rep2 w23-no-htm-nginx-default-edge-rails-ovoff variant=no-htm bind=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w23-no-htm-nginx-default-edge-rails-ovoff bind=full: sent=357 errors=0
+w23-no-htm-nginx-default-edge-rails-ovoff variant=no-htm bind=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w23-no-htm-nginx-default-edge-rails-ovoff bind=full: sent=357 errors=0
+[00:30:15] S w23-no-htm-nginx-default-edge-rails-ovoff rep3 w23-no-htm-nginx-default-edge-rails-ovoff variant=no-htm bind=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w23-no-htm-nginx-default-edge-rails-ovoff bind=full: sent=357 errors=0
+w23-no-htm-nginx-default-edge-rails-ovon variant=no-htm bind=full gate=0 runner_rc=0 secs=16 [ab_run_matrix] w23-no-htm-nginx-default-edge-rails-ovon bind=full: sent=357 errors=0
+[00:30:31] S w23-no-htm-nginx-default-edge-rails-ovon rep1 w23-no-htm-nginx-default-edge-rails-ovon variant=no-htm bind=full gate=0 runner_rc=0 secs=16 [ab_run_matrix] w23-no-htm-nginx-default-edge-rails-ovon bind=full: sent=357 errors=0
+w23-no-htm-nginx-default-edge-rails-ovon variant=no-htm bind=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w23-no-htm-nginx-default-edge-rails-ovon bind=full: sent=357 errors=0
+[00:30:46] S w23-no-htm-nginx-default-edge-rails-ovon rep2 w23-no-htm-nginx-default-edge-rails-ovon variant=no-htm bind=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w23-no-htm-nginx-default-edge-rails-ovon bind=full: sent=357 errors=0
+w23-no-htm-nginx-default-edge-rails-ovon variant=no-htm bind=full gate=0 runner_rc=0 secs=16 [ab_run_matrix] w23-no-htm-nginx-default-edge-rails-ovon bind=full: sent=357 errors=0
+[00:31:02] S w23-no-htm-nginx-default-edge-rails-ovon rep3 w23-no-htm-nginx-default-edge-rails-ovon variant=no-htm bind=full gate=0 runner_rc=0 secs=16 [ab_run_matrix] w23-no-htm-nginx-default-edge-rails-ovon bind=full: sent=357 errors=0
+w23-no-htm-nginx-default-edge-spring-ovoff variant=no-htm bind=full gate=0 runner_rc=0 secs=14 [ab_run_matrix] w23-no-htm-nginx-default-edge-spring-ovoff bind=full: sent=357 errors=0
+[00:31:16] S w23-no-htm-nginx-default-edge-spring-ovoff rep1 w23-no-htm-nginx-default-edge-spring-ovoff variant=no-htm bind=full gate=0 runner_rc=0 secs=14 [ab_run_matrix] w23-no-htm-nginx-default-edge-spring-ovoff bind=full: sent=357 errors=0
+w23-no-htm-nginx-default-edge-spring-ovoff variant=no-htm bind=full gate=0 runner_rc=0 secs=14 [ab_run_matrix] w23-no-htm-nginx-default-edge-spring-ovoff bind=full: sent=357 errors=0
+[00:31:31] S w23-no-htm-nginx-default-edge-spring-ovoff rep2 w23-no-htm-nginx-default-edge-spring-ovoff variant=no-htm bind=full gate=0 runner_rc=0 secs=14 [ab_run_matrix] w23-no-htm-nginx-default-edge-spring-ovoff bind=full: sent=357 errors=0
+w23-no-htm-nginx-default-edge-spring-ovoff variant=no-htm bind=full gate=0 runner_rc=0 secs=16 [ab_run_matrix] w23-no-htm-nginx-default-edge-spring-ovoff bind=full: sent=357 errors=0
+[00:31:47] S w23-no-htm-nginx-default-edge-spring-ovoff rep3 w23-no-htm-nginx-default-edge-spring-ovoff variant=no-htm bind=full gate=0 runner_rc=0 secs=16 [ab_run_matrix] w23-no-htm-nginx-default-edge-spring-ovoff bind=full: sent=357 errors=0
+w23-no-htm-nginx-default-edge-spring-ovon variant=no-htm bind=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w23-no-htm-nginx-default-edge-spring-ovon bind=full: sent=357 errors=0
+[00:32:02] S w23-no-htm-nginx-default-edge-spring-ovon rep1 w23-no-htm-nginx-default-edge-spring-ovon variant=no-htm bind=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w23-no-htm-nginx-default-edge-spring-ovon bind=full: sent=357 errors=0
+w23-no-htm-nginx-default-edge-spring-ovon variant=no-htm bind=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w23-no-htm-nginx-default-edge-spring-ovon bind=full: sent=357 errors=0
+[00:32:17] S w23-no-htm-nginx-default-edge-spring-ovon rep2 w23-no-htm-nginx-default-edge-spring-ovon variant=no-htm bind=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w23-no-htm-nginx-default-edge-spring-ovon bind=full: sent=357 errors=0
+w23-no-htm-nginx-default-edge-spring-ovon variant=no-htm bind=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w23-no-htm-nginx-default-edge-spring-ovon bind=full: sent=357 errors=0
+[00:32:32] S w23-no-htm-nginx-default-edge-spring-ovon rep3 w23-no-htm-nginx-default-edge-spring-ovon variant=no-htm bind=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w23-no-htm-nginx-default-edge-spring-ovon bind=full: sent=357 errors=0
+w23-no-htu-nginx-default-edge-fastapi-ovoff variant=no-htu bind=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w23-no-htu-nginx-default-edge-fastapi-ovoff bind=full: sent=357 errors=0
+[00:32:47] S w23-no-htu-nginx-default-edge-fastapi-ovoff rep1 w23-no-htu-nginx-default-edge-fastapi-ovoff variant=no-htu bind=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w23-no-htu-nginx-default-edge-fastapi-ovoff bind=full: sent=357 errors=0
+w23-no-htu-nginx-default-edge-fastapi-ovoff variant=no-htu bind=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w23-no-htu-nginx-default-edge-fastapi-ovoff bind=full: sent=357 errors=0
+[00:33:02] S w23-no-htu-nginx-default-edge-fastapi-ovoff rep2 w23-no-htu-nginx-default-edge-fastapi-ovoff variant=no-htu bind=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w23-no-htu-nginx-default-edge-fastapi-ovoff bind=full: sent=357 errors=0
+w23-no-htu-nginx-default-edge-fastapi-ovoff variant=no-htu bind=full gate=0 runner_rc=0 secs=14 [ab_run_matrix] w23-no-htu-nginx-default-edge-fastapi-ovoff bind=full: sent=357 errors=0
+[00:33:16] S w23-no-htu-nginx-default-edge-fastapi-ovoff rep3 w23-no-htu-nginx-default-edge-fastapi-ovoff variant=no-htu bind=full gate=0 runner_rc=0 secs=14 [ab_run_matrix] w23-no-htu-nginx-default-edge-fastapi-ovoff bind=full: sent=357 errors=0
+w23-no-htu-nginx-default-edge-fastapi-ovon variant=no-htu bind=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w23-no-htu-nginx-default-edge-fastapi-ovon bind=full: sent=357 errors=0
+[00:33:31] S w23-no-htu-nginx-default-edge-fastapi-ovon rep1 w23-no-htu-nginx-default-edge-fastapi-ovon variant=no-htu bind=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w23-no-htu-nginx-default-edge-fastapi-ovon bind=full: sent=357 errors=0
+w23-no-htu-nginx-default-edge-fastapi-ovon variant=no-htu bind=full gate=0 runner_rc=0 secs=20 [ab_run_matrix] w23-no-htu-nginx-default-edge-fastapi-ovon bind=full: sent=357 errors=0
+[00:33:51] S w23-no-htu-nginx-default-edge-fastapi-ovon rep2 w23-no-htu-nginx-default-edge-fastapi-ovon variant=no-htu bind=full gate=0 runner_rc=0 secs=20 [ab_run_matrix] w23-no-htu-nginx-default-edge-fastapi-ovon bind=full: sent=357 errors=0
+w23-no-htu-nginx-default-edge-fastapi-ovon variant=no-htu bind=full gate=0 runner_rc=0 secs=19 [ab_run_matrix] w23-no-htu-nginx-default-edge-fastapi-ovon bind=full: sent=357 errors=0
+[00:34:10] S w23-no-htu-nginx-default-edge-fastapi-ovon rep3 w23-no-htu-nginx-default-edge-fastapi-ovon variant=no-htu bind=full gate=0 runner_rc=0 secs=19 [ab_run_matrix] w23-no-htu-nginx-default-edge-fastapi-ovon bind=full: sent=357 errors=0
+w23-no-htu-nginx-default-edge-laravel-ovoff variant=no-htu bind=full gate=0 runner_rc=0 secs=17 [ab_run_matrix] w23-no-htu-nginx-default-edge-laravel-ovoff bind=full: sent=357 errors=0
+[00:34:27] S w23-no-htu-nginx-default-edge-laravel-ovoff rep1 w23-no-htu-nginx-default-edge-laravel-ovoff variant=no-htu bind=full gate=0 runner_rc=0 secs=17 [ab_run_matrix] w23-no-htu-nginx-default-edge-laravel-ovoff bind=full: sent=357 errors=0
+w23-no-htu-nginx-default-edge-laravel-ovoff variant=no-htu bind=full gate=0 runner_rc=0 secs=18 [ab_run_matrix] w23-no-htu-nginx-default-edge-laravel-ovoff bind=full: sent=357 errors=0
+[00:34:45] S w23-no-htu-nginx-default-edge-laravel-ovoff rep2 w23-no-htu-nginx-default-edge-laravel-ovoff variant=no-htu bind=full gate=0 runner_rc=0 secs=18 [ab_run_matrix] w23-no-htu-nginx-default-edge-laravel-ovoff bind=full: sent=357 errors=0
+w23-no-htu-nginx-default-edge-laravel-ovoff variant=no-htu bind=full gate=0 runner_rc=0 secs=19 [ab_run_matrix] w23-no-htu-nginx-default-edge-laravel-ovoff bind=full: sent=357 errors=0
+[00:35:04] S w23-no-htu-nginx-default-edge-laravel-ovoff rep3 w23-no-htu-nginx-default-edge-laravel-ovoff variant=no-htu bind=full gate=0 runner_rc=0 secs=19 [ab_run_matrix] w23-no-htu-nginx-default-edge-laravel-ovoff bind=full: sent=357 errors=0
+w23-no-htu-nginx-default-edge-laravel-ovon variant=no-htu bind=full gate=0 runner_rc=0 secs=18 [ab_run_matrix] w23-no-htu-nginx-default-edge-laravel-ovon bind=full: sent=357 errors=0
+[00:35:22] S w23-no-htu-nginx-default-edge-laravel-ovon rep1 w23-no-htu-nginx-default-edge-laravel-ovon variant=no-htu bind=full gate=0 runner_rc=0 secs=18 [ab_run_matrix] w23-no-htu-nginx-default-edge-laravel-ovon bind=full: sent=357 errors=0
+w23-no-htu-nginx-default-edge-laravel-ovon variant=no-htu bind=full gate=0 runner_rc=0 secs=17 [ab_run_matrix] w23-no-htu-nginx-default-edge-laravel-ovon bind=full: sent=357 errors=0
+[00:35:39] S w23-no-htu-nginx-default-edge-laravel-ovon rep2 w23-no-htu-nginx-default-edge-laravel-ovon variant=no-htu bind=full gate=0 runner_rc=0 secs=17 [ab_run_matrix] w23-no-htu-nginx-default-edge-laravel-ovon bind=full: sent=357 errors=0
+w23-no-htu-nginx-default-edge-laravel-ovon variant=no-htu bind=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w23-no-htu-nginx-default-edge-laravel-ovon bind=full: sent=357 errors=0
+[00:35:54] S w23-no-htu-nginx-default-edge-laravel-ovon rep3 w23-no-htu-nginx-default-edge-laravel-ovon variant=no-htu bind=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w23-no-htu-nginx-default-edge-laravel-ovon bind=full: sent=357 errors=0
+w23-no-htu-nginx-default-edge-rails-ovoff variant=no-htu bind=full gate=0 runner_rc=0 secs=16 [ab_run_matrix] w23-no-htu-nginx-default-edge-rails-ovoff bind=full: sent=357 errors=0
+[00:36:10] S w23-no-htu-nginx-default-edge-rails-ovoff rep1 w23-no-htu-nginx-default-edge-rails-ovoff variant=no-htu bind=full gate=0 runner_rc=0 secs=16 [ab_run_matrix] w23-no-htu-nginx-default-edge-rails-ovoff bind=full: sent=357 errors=0
+w23-no-htu-nginx-default-edge-rails-ovoff variant=no-htu bind=full gate=0 runner_rc=0 secs=16 [ab_run_matrix] w23-no-htu-nginx-default-edge-rails-ovoff bind=full: sent=357 errors=0
+[00:36:26] S w23-no-htu-nginx-default-edge-rails-ovoff rep2 w23-no-htu-nginx-default-edge-rails-ovoff variant=no-htu bind=full gate=0 runner_rc=0 secs=16 [ab_run_matrix] w23-no-htu-nginx-default-edge-rails-ovoff bind=full: sent=357 errors=0
+w23-no-htu-nginx-default-edge-rails-ovoff variant=no-htu bind=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w23-no-htu-nginx-default-edge-rails-ovoff bind=full: sent=357 errors=0
+[00:36:41] S w23-no-htu-nginx-default-edge-rails-ovoff rep3 w23-no-htu-nginx-default-edge-rails-ovoff variant=no-htu bind=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w23-no-htu-nginx-default-edge-rails-ovoff bind=full: sent=357 errors=0
+w23-no-htu-nginx-default-edge-rails-ovon variant=no-htu bind=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w23-no-htu-nginx-default-edge-rails-ovon bind=full: sent=357 errors=0
+[00:36:56] S w23-no-htu-nginx-default-edge-rails-ovon rep1 w23-no-htu-nginx-default-edge-rails-ovon variant=no-htu bind=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w23-no-htu-nginx-default-edge-rails-ovon bind=full: sent=357 errors=0
+w23-no-htu-nginx-default-edge-rails-ovon variant=no-htu bind=full gate=0 runner_rc=0 secs=16 [ab_run_matrix] w23-no-htu-nginx-default-edge-rails-ovon bind=full: sent=357 errors=0
+[00:37:12] S w23-no-htu-nginx-default-edge-rails-ovon rep2 w23-no-htu-nginx-default-edge-rails-ovon variant=no-htu bind=full gate=0 runner_rc=0 secs=16 [ab_run_matrix] w23-no-htu-nginx-default-edge-rails-ovon bind=full: sent=357 errors=0
+w23-no-htu-nginx-default-edge-rails-ovon variant=no-htu bind=full gate=0 runner_rc=0 secs=16 [ab_run_matrix] w23-no-htu-nginx-default-edge-rails-ovon bind=full: sent=357 errors=0
+[00:37:28] S w23-no-htu-nginx-default-edge-rails-ovon rep3 w23-no-htu-nginx-default-edge-rails-ovon variant=no-htu bind=full gate=0 runner_rc=0 secs=16 [ab_run_matrix] w23-no-htu-nginx-default-edge-rails-ovon bind=full: sent=357 errors=0
+w23-no-htu-nginx-default-edge-spring-ovoff variant=no-htu bind=full gate=0 runner_rc=0 secs=18 [ab_run_matrix] w23-no-htu-nginx-default-edge-spring-ovoff bind=full: sent=357 errors=0
+[00:37:46] S w23-no-htu-nginx-default-edge-spring-ovoff rep1 w23-no-htu-nginx-default-edge-spring-ovoff variant=no-htu bind=full gate=0 runner_rc=0 secs=18 [ab_run_matrix] w23-no-htu-nginx-default-edge-spring-ovoff bind=full: sent=357 errors=0
+w23-no-htu-nginx-default-edge-spring-ovoff variant=no-htu bind=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w23-no-htu-nginx-default-edge-spring-ovoff bind=full: sent=357 errors=0
+[00:38:01] S w23-no-htu-nginx-default-edge-spring-ovoff rep2 w23-no-htu-nginx-default-edge-spring-ovoff variant=no-htu bind=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w23-no-htu-nginx-default-edge-spring-ovoff bind=full: sent=357 errors=0
+w23-no-htu-nginx-default-edge-spring-ovoff variant=no-htu bind=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w23-no-htu-nginx-default-edge-spring-ovoff bind=full: sent=357 errors=0
+[00:38:16] S w23-no-htu-nginx-default-edge-spring-ovoff rep3 w23-no-htu-nginx-default-edge-spring-ovoff variant=no-htu bind=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w23-no-htu-nginx-default-edge-spring-ovoff bind=full: sent=357 errors=0
+w23-no-htu-nginx-default-edge-spring-ovon variant=no-htu bind=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w23-no-htu-nginx-default-edge-spring-ovon bind=full: sent=357 errors=0
+[00:38:31] S w23-no-htu-nginx-default-edge-spring-ovon rep1 w23-no-htu-nginx-default-edge-spring-ovon variant=no-htu bind=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w23-no-htu-nginx-default-edge-spring-ovon bind=full: sent=357 errors=0
+w23-no-htu-nginx-default-edge-spring-ovon variant=no-htu bind=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w23-no-htu-nginx-default-edge-spring-ovon bind=full: sent=357 errors=0
+[00:38:46] S w23-no-htu-nginx-default-edge-spring-ovon rep2 w23-no-htu-nginx-default-edge-spring-ovon variant=no-htu bind=full gate=0 runner_rc=0 secs=15 [ab_run_matrix] w23-no-htu-nginx-default-edge-spring-ovon bind=full: sent=357 errors=0
+w23-no-htu-nginx-default-edge-spring-ovon variant=no-htu bind=full gate=0 runner_rc=0 secs=16 [ab_run_matrix] w23-no-htu-nginx-default-edge-spring-ovon bind=full: sent=357 errors=0
+[00:39:02] S w23-no-htu-nginx-default-edge-spring-ovon rep3 w23-no-htu-nginx-default-edge-spring-ovon variant=no-htu bind=full gate=0 runner_rc=0 secs=16 [ab_run_matrix] w23-no-htu-nginx-default-edge-spring-ovon bind=full: sent=357 errors=0
+[00:39:02] PHASE S DONE
+[00:39:02] PHASE L (legit) START
+[legit] w23-legit-haprec-digest bind=digest: 18 sent, false_reject=18
+[00:39:20] L w23-legit-haprec-digest rep1 [legit] w23-legit-haprec-digest bind=digest: 18 sent, false_reject=18
+[legit] w23-legit-haprec-digest bind=digest: 18 sent, false_reject=18
+[00:39:38] L w23-legit-haprec-digest rep2 [legit] w23-legit-haprec-digest bind=digest: 18 sent, false_reject=18
+[legit] w23-legit-haprec-digest bind=digest: 18 sent, false_reject=18
+[00:39:56] L w23-legit-haprec-digest rep3 [legit] w23-legit-haprec-digest bind=digest: 18 sent, false_reject=18
+[legit] w23-legit-haprec-full bind=full: 18 sent, false_reject=0
+[00:40:16] L w23-legit-haprec-full rep1 [legit] w23-legit-haprec-full bind=full: 18 sent, false_reject=0
+[legit] w23-legit-haprec-full bind=full: 18 sent, false_reject=0
+[00:40:33] L w23-legit-haprec-full rep2 [legit] w23-legit-haprec-full bind=full: 18 sent, false_reject=0
+[legit] w23-legit-haprec-full bind=full: 18 sent, false_reject=0
+[00:40:51] L w23-legit-haprec-full rep3 [legit] w23-legit-haprec-full bind=full: 18 sent, false_reject=0
+[legit] w23-legit-haprec-query-digest bind=query-digest: 18 sent, false_reject=18
+[00:41:09] L w23-legit-haprec-query-digest rep1 [legit] w23-legit-haprec-query-digest bind=query-digest: 18 sent, false_reject=18
+[legit] w23-legit-haprec-query-digest bind=query-digest: 18 sent, false_reject=18
+[00:41:28] L w23-legit-haprec-query-digest rep2 [legit] w23-legit-haprec-query-digest bind=query-digest: 18 sent, false_reject=18
+[legit] w23-legit-haprec-query-digest bind=query-digest: 18 sent, false_reject=18
+[00:41:46] L w23-legit-haprec-query-digest rep3 [legit] w23-legit-haprec-query-digest bind=query-digest: 18 sent, false_reject=18
+[legit] w23-legit-haprec-query-exact bind=query: 18 sent, false_reject=4
+[00:42:03] L w23-legit-haprec-query-exact rep1 [legit] w23-legit-haprec-query-exact bind=query: 18 sent, false_reject=4
+[legit] w23-legit-haprec-query-exact bind=query: 18 sent, false_reject=4
+[00:42:20] L w23-legit-haprec-query-exact rep2 [legit] w23-legit-haprec-query-exact bind=query: 18 sent, false_reject=4
+[legit] w23-legit-haprec-query-exact bind=query: 18 sent, false_reject=4
+[00:42:37] L w23-legit-haprec-query-exact rep3 [legit] w23-legit-haprec-query-exact bind=query: 18 sent, false_reject=4
+[legit] w23-legit-haprec-query-sorted bind=query: 18 sent, false_reject=0
+[00:42:54] L w23-legit-haprec-query-sorted rep1 [legit] w23-legit-haprec-query-sorted bind=query: 18 sent, false_reject=0
+[legit] w23-legit-haprec-query-sorted bind=query: 18 sent, false_reject=0
+[00:43:11] L w23-legit-haprec-query-sorted rep2 [legit] w23-legit-haprec-query-sorted bind=query: 18 sent, false_reject=0
+[legit] w23-legit-haprec-query-sorted bind=query: 18 sent, false_reject=0
+[00:43:28] L w23-legit-haprec-query-sorted rep3 [legit] w23-legit-haprec-query-sorted bind=query: 18 sent, false_reject=0
+[legit] w23-legit-haprec-query bind=query: 18 sent, false_reject=2
+[00:43:45] L w23-legit-haprec-query rep1 [legit] w23-legit-haprec-query bind=query: 18 sent, false_reject=2
+[legit] w23-legit-haprec-query bind=query: 18 sent, false_reject=2
+[00:44:02] L w23-legit-haprec-query rep2 [legit] w23-legit-haprec-query bind=query: 18 sent, false_reject=2
+[legit] w23-legit-haprec-query bind=query: 18 sent, false_reject=2

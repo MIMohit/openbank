@@ -1,0 +1,21 @@
+Loaded image: bhperf-nginx:amd64
+0.20 0.17 0.17 1/479 127802
+MemAvailable:    2691252 kB
+Loaded image: bhperf-k6:amd64
+0.96 0.34 0.23 1/500 127978
+MemAvailable:    2347908 kB
+Loaded image: bhperf-verifier:amd64
+0.93 0.37 0.24 1/498 128138
+MemAvailable:    2431960 kB
+Loaded image: bhperf-exec-fastapi:amd64-v2
+1.12 0.43 0.26 1/497 128286
+MemAvailable:    2486100 kB
+Loaded image: bhperf-exec-fastapi:amd64-def
+0.87 0.41 0.26 1/497 128403
+MemAvailable:    2456340 kB
+Loaded image: bhperf-exec-spring:amd64-v2
+0.77 0.43 0.27 1/477 128553
+MemAvailable:    2662976 kB
+Loaded image: bhperf-exec-spring:amd64-def
+1.31 0.57 0.32 1/519 128715
+MemAvailable:    2356248 kB

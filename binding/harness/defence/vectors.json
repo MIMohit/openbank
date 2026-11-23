@@ -1,5 +1,5 @@
 {
- "generator": "defence/vectors/gen_vectors.py (reference: verifier.core.view_mac, verifier.canon.canon_path, verifier.jose.thumbprint)",
+ "generator": "defence/vectors/gen_vectors.py (reference: verifier.core.view_mac, verifier.canon.canon_path, verifier.jose.thumbprint) ; W23 pathmap_* groups (to_public/encvalue/substitute) appended by experiments/gaps/pathmap.",
  "contract": "CONTRACT section 8 + section 10: X-Verified-View: v1;b64url(HMAC-SHA256(key, jti\\nUPPER(method)\\ncanon_path\\njkt)); key = UTF-8 bytes of VIEW_MAC_KEY",
  "canon_path": [
   {
@@ -141,8 +141,8 @@
    "out": "v1;Ut0yhE9_ADSePyLSXfmvsupesnx3x3o_bcp2YCvsqkQ"
   },
   {
-   "key": "été",
-   "jti": "jüti",
+   "key": "\u00e9t\u00e9",
+   "jti": "j\u00fcti",
    "method": "PUT",
    "uri": "/a%2fb",
    "jkt": "jkt",
@@ -181,7 +181,7 @@
   {
    "template": "/api/v1/accounts/{id}",
    "params": {
-    "id": "ü"
+    "id": "\u00fc"
    },
    "out": "/api/v1/accounts/%C3%BC"
   },
@@ -415,7 +415,7 @@
    "method": "GET",
    "template": "/api/v1/accounts/{id}",
    "params": {
-    "id": "ü"
+    "id": "\u00fc"
    },
    "expect": {
     "ok": true,
@@ -1022,6 +1022,140 @@
     "reason": "view_mac_no_dpop",
     "path": null
    }
+  }
+ ],
+ "pathmap_to_public": [
+  {
+   "path": "/api/v1/accounts/x",
+   "rules": [
+    [
+     "/svc/api",
+     "/api"
+    ]
+   ],
+   "out": "/svc/api/v1/accounts/x"
+  },
+  {
+   "path": "/api/v1/accounts/x",
+   "rules": [
+    [
+     "/api/latest",
+     "/api/v1"
+    ]
+   ],
+   "out": "/api/latest/accounts/x"
+  },
+  {
+   "path": "/other/x",
+   "rules": [
+    [
+     "/svc/api",
+     "/api"
+    ]
+   ],
+   "out": "/other/x"
+  },
+  {
+   "path": "/api/v1/accounts/x",
+   "rules": [
+    [
+     "/svc/api",
+     "/api"
+    ],
+    [
+     "/svc/api/v1",
+     "/api/v1"
+    ]
+   ],
+   "out": "/svc/api/v1/accounts/x"
+  },
+  {
+   "path": "/api",
+   "rules": [
+    [
+     "/svc/api",
+     "/api"
+    ]
+   ],
+   "out": "/svc/api"
+  }
+ ],
+ "pathmap_encvalue": [
+  {
+   "v": "acc-alice-1",
+   "wildcard": false,
+   "out": "acc-alice-1"
+  },
+  {
+   "v": "a/b",
+   "wildcard": false,
+   "out": "a%2Fb"
+  },
+  {
+   "v": "reports/logo.png",
+   "wildcard": true,
+   "out": "reports/logo.png"
+  },
+  {
+   "v": "acc%2Fx",
+   "wildcard": false,
+   "out": "acc%2Fx"
+  },
+  {
+   "v": "100%",
+   "wildcard": false,
+   "out": "100%25"
+  },
+  {
+   "v": "a b",
+   "wildcard": false,
+   "out": "a%20b"
+  },
+  {
+   "v": "reports/../x",
+   "wildcard": true,
+   "out": "reports/../x"
+  }
+ ],
+ "pathmap_substitute": [
+  {
+   "template": "/api/v1/accounts/{id}",
+   "params": {
+    "id": "acc-alice-1"
+   },
+   "wildcards": [],
+   "rules": [
+    [
+     "/svc/api",
+     "/api"
+    ]
+   ],
+   "out": "/svc/api/v1/accounts/acc-alice-1"
+  },
+  {
+   "template": "/api/v1/files/{path}",
+   "params": {
+    "path": "reports/logo.png"
+   },
+   "wildcards": [
+    "path"
+   ],
+   "rules": [],
+   "out": "/api/v1/files/reports/logo.png"
+  },
+  {
+   "template": "/api/v1/accounts/{id}",
+   "params": {
+    "id": "acc-alice-1"
+   },
+   "wildcards": [],
+   "rules": [
+    [
+     "/api/latest",
+     "/api/v1"
+    ]
+   ],
+   "out": "/api/latest/accounts/acc-alice-1"
   }
  ]
 }

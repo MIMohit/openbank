@@ -1,0 +1,32 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 59B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/grafana/k6:1.3.0
+#2 DONE 2.5s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 exporting to image
+#4 exporting layers done
+#4 exporting manifest sha256:a90b459a3768c46ad1013da53af24189f735d7112273c6ac3212ca8ed0e18656 done
+#4 exporting config sha256:eeb0db19cd8d263aa57346cdbc7ea18e6fcfb2ba9497746a7ae82ceefc8c9fa5 done
+#4 exporting attestation manifest sha256:73ea2bbf5d364e448ceefe050dda61d08cfd8c082c74c5fa7dc239a90dc64eb4 done
+#4 exporting manifest list sha256:10c2a6c312c2d34e99f77c262d59e1f0775c827bb8af24818bee3f81a8957038 done
+#4 naming to docker.io/library/bhperf-k6:amd64 done
+#4 ...
+
+#5 [1/1] FROM docker.io/grafana/k6:1.3.0@sha256:3ddc8b1a33a2c3d8edc6e99b6a762ae36cba08788463458f5e6a7703e14eb77d
+#5 resolve docker.io/grafana/k6:1.3.0@sha256:3ddc8b1a33a2c3d8edc6e99b6a762ae36cba08788463458f5e6a7703e14eb77d done
+#5 sha256:9824c27679d3b27c5e1cb00a73adb6f4f8d556994111c12db3c5d61a0c843df8 3.80MB / 3.80MB 0.7s done
+#5 sha256:e488bc2c549704d3cab0b914e9e0d53d5dcf9018e1a0e63d66d94c9187398f18 935B / 935B 0.7s done
+#5 sha256:14c020c6cf1fa025da1ce8b3ae22ce4839c32e241c1977ca3822c744f38f7d89 29.36MB / 31.32MB 6.0s
+#5 sha256:14c020c6cf1fa025da1ce8b3ae22ce4839c32e241c1977ca3822c744f38f7d89 31.32MB / 31.32MB 6.4s done
+#5 DONE 6.4s
+
+#4 exporting to image
+#4 DONE 6.4s

@@ -113,6 +113,61 @@ public final class ViewMac {
         return out;
     }
 
+    // ------------------------------------------------------------- D-A/D-B path map (W23)
+    private static final Pattern PCT25 = Pattern.compile("%25([0-9A-Fa-f]{2})");
+
+    /** DEFENCE_PATH_MAP file -> list of {public, internal} prefix pairs, longest internal first. */
+    public static List<String[]> loadRules(String envValue) {
+        List<String[]> out = new ArrayList<>();
+        if (envValue == null || envValue.isEmpty()) return out;
+        try {
+            JsonNode doc = JSON.readTree(new java.io.File(envValue));
+            JsonNode rules = doc.isArray() ? doc : doc.path("rules");
+            for (JsonNode r : rules) {
+                out.add(new String[]{r.path("public").asText().replaceAll("/+$", ""),
+                        r.path("internal").asText().replaceAll("/+$", "")});
+            }
+        } catch (Exception e) { return new ArrayList<>(); }
+        out.sort((x, y) -> y[1].length() - x[1].length());
+        return out;
+    }
+
+    public static String toPublic(String path, List<String[]> rules) {
+        for (String[] r : rules) {
+            String pub = r[0], intr = r[1];
+            if (!intr.isEmpty() && (path.equals(intr) || path.startsWith(intr + "/"))) return pub + path.substring(intr.length());
+        }
+        return path;
+    }
+
+    /** Wildcard values keep '/' literal (per-segment encode); %25XX collapses back to %XX. */
+    public static String encValue(String v, boolean wildcard) {
+        String enc;
+        if (wildcard) {
+            StringBuilder sb = new StringBuilder();
+            String[] segs = v.split("/", -1);
+            for (int i = 0; i < segs.length; i++) sb.append(i == 0 ? "" : "/").append(encSegment(segs[i]));
+            enc = sb.toString();
+        } else {
+            enc = encSegment(v);
+        }
+        return PCT25.matcher(enc).replaceAll("%$1");
+    }
+
+    public static String substitutePm(String template, Map<String, String> params, java.util.Set<String> wildcards) {
+        String out = normaliseTemplate(template);
+        for (Map.Entry<String, String> e : params.entrySet()) out = out.replace("{" + e.getKey() + "}", encValue(e.getValue(), wildcards.contains(e.getKey())));
+        return out;
+    }
+
+    static boolean hasDotSegment(Map<String, String> params, java.util.Set<String> wildcards) {
+        for (Map.Entry<String, String> e : params.entrySet()) {
+            String[] segs = wildcards.contains(e.getKey()) ? e.getValue().split("/", -1) : new String[]{e.getValue()};
+            for (String s : segs) if (".".equals(s) || "..".equals(s)) return true;
+        }
+        return false;
+    }
+
     // ------------------------------------------------------------------ JOSE bits
     static String b64u(byte[] b) { return Base64.getUrlEncoder().withoutPadding().encodeToString(b); }
 
@@ -169,6 +224,12 @@ public final class ViewMac {
     // ------------------------------------------------------------------ the check
     /** viewValues/dpopValues: every received value of X-Verified-View / DPoP, in order. */
     public Result check(List<String> viewValues, List<String> dpopValues, String method, String template, Map<String, String> params) {
+        return check(viewValues, dpopValues, method, template, params, null, java.util.Collections.emptySet());
+    }
+
+    /** pathmap=null: unchanged. pathmap=<rules> (W23): map to public space, wildcard-aware, per-segment dot guard. */
+    public Result check(List<String> viewValues, List<String> dpopValues, String method, String template,
+                        Map<String, String> params, List<String[]> pathmap, java.util.Set<String> wildcards) {
         if (viewValues.isEmpty()) return new Result(false, "view_mac_missing", null);
         if (viewValues.size() > 1) return new Result(false, "view_mac_multiple", null);
         String got = viewValues.get(0).replaceAll("^[ \\t]+|[ \\t]+$", "");
@@ -176,8 +237,14 @@ public final class ViewMac {
         if (dpopValues.size() != 1) return new Result(false, "view_mac_no_dpop", null);
         String[] b = dpopBinding(dpopValues.get(0));
         if (b == null) return new Result(false, "view_mac_no_dpop", null);
-        for (String v : params.values()) if (".".equals(v) || "..".equals(v)) return new Result(false, "view_param_dot_segment", null);
-        String path = canonPath(substitute(template, params));
+        String path;
+        if (pathmap == null) {
+            for (String v : params.values()) if (".".equals(v) || "..".equals(v)) return new Result(false, "view_param_dot_segment", null);
+            path = canonPath(substitute(template, params));
+        } else {
+            if (hasDotSegment(params, wildcards)) return new Result(false, "view_param_dot_segment", null);
+            path = canonPath(toPublic(substitutePm(template, params, wildcards), pathmap));
+        }
         String want = mac(key, b[0], method, path, b[1]);
         boolean ok = MessageDigest.isEqual(want.getBytes(StandardCharsets.UTF_8), got.getBytes(StandardCharsets.UTF_8));
         return new Result(ok, ok ? "ok" : "view_mac_mismatch", path);

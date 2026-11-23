@@ -1,0 +1,55 @@
+gateway-1  | [NOTICE]   (1) : Initializing new worker (8)
+gateway-1  | [NOTICE]   (1) : Loading success.
+gateway-1  | 172.24.0.5:60924 [23/Nov/2026:18:41:34.785] fe fe/<NOSRV> -1/-1/-1/-1/0 400 0 - - CR-- 1/1/0/0/0 0/0 "<BADREQ>"
+gateway-1  | 172.24.0.1:59104 [23/Nov/2026:18:41:35.109] fe fe/<NOSRV> -1/-1/-1/-1/0 400 0 - - CR-- 1/1/0/0/0 0/0 "<BADREQ>"
+gateway-1  | [NOTICE]   (1) : haproxy version is 3.2.27-24d5d8c
+gateway-1  | [NOTICE]   (1) : path to executable is /usr/local/sbin/haproxy
+gateway-1  | [WARNING]  (1) : Exiting Master process...
+gateway-1  | [WARNING]  (8) : Proxy fe stopped (cumulated conns: FE: 2, BE: 0).
+gateway-1  | [WARNING]  (8) : Proxy be_exec stopped (cumulated conns: FE: 0, BE: 0).
+gateway-1  | Proxy fe stopped (cumulated conns: FE: 2, BE: 0).
+gateway-1  | Proxy be_exec stopped (cumulated conns: FE: 0, BE: 0).
+gateway-1  | [WARNING]  (1) : Current worker (8) exited with code 0 (Exit)
+gateway-1  | [WARNING]  (1) : All workers exited. Exiting... (0)
+gateway-1  | [NOTICE]   (1) : Initializing new worker (8)
+gateway-1  | [NOTICE]   (1) : Loading success.
+gateway-1  | 172.24.0.5:60938 [23/Nov/2026:18:41:36.902] fe fe/<NOSRV> -1/-1/-1/-1/0 400 0 - - CR-- 1/1/0/0/0 0/0 "<BADREQ>"
+gateway-1  | -:- [23/Nov/2026:18:41:38.973] <HTTPCLIENT> -/- 3/0/0/2/3 401 308 - - ---- 1/0/0/0/0 0/0 {172.24.0.3} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.24.0.1:62440 [23/Nov/2026:18:41:38.973] fe fe/<NOSRV> 4/-1/-1/-1/4 401 112 - - LR-- 1/1/0/0/0 0/0 "GET /api/v1/health HTTP/1.1"
+gateway-1  | 172.24.0.5:55870 [23/Nov/2026:18:41:38.998] fe fe/<NOSRV> -1/-1/-1/-1/0 400 0 - - CR-- 1/1/0/0/0 0/0 "<BADREQ>"
+gateway-1  | -:- [23/Nov/2026:18:41:39.080] <HTTPCLIENT> -/- 2/0/0/19/19 401 327 - - ---- 1/0/0/0/0 0/0 {172.24.0.3} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.24.0.1:62444 [23/Nov/2026:18:41:39.080] fe fe/<NOSRV> 20/-1/-1/-1/20 401 112 - - LR-- 1/1/0/0/0 0/0 "POST /api/v1/accounts/acc-alice-1/actions?op=freeze HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:18:41:39.101] <HTTPCLIENT> -/- 2/0/0/0/42 401 327 - - ---- 1/0/0/0/0 0/0 {172.24.0.3} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.24.0.1:62456 [23/Nov/2026:18:41:39.101] fe fe/<NOSRV> 42/-1/-1/-1/42 401 112 - - LR-- 1/1/0/0/0 0/0 "POST /api/v1/accounts/acc-alice-1/actions?op=freeze&reason=x HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:18:41:39.146] <HTTPCLIENT> -/- 2/0/0/0/41 401 320 - - ---- 1/0/0/0/0 0/0 {172.24.0.3} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.24.0.1:62464 [23/Nov/2026:18:41:39.146] fe fe/<NOSRV> 41/-1/-1/-1/41 401 112 - - LR-- 1/1/0/0/0 0/0 "POST /api/v1/accounts/acc-alice-1/actions?reason=x&op=freeze HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:18:41:39.189] <HTTPCLIENT> -/- 2/0/0/0/41 401 327 - - ---- 1/0/0/0/0 0/0 {172.24.0.3} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.24.0.1:62478 [23/Nov/2026:18:41:39.189] fe fe/<NOSRV> 41/-1/-1/-1/41 401 112 - - LR-- 1/1/0/0/0 0/0 "GET /api/v1/accounts?owner=%7Ealice HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:18:41:39.233] <HTTPCLIENT> -/- 2/0/0/1/41 401 327 - - ---- 1/0/0/0/0 0/0 {172.24.0.3} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.24.0.1:62488 [23/Nov/2026:18:41:39.233] fe fe/<NOSRV> 42/-1/-1/-1/42 401 112 - - LR-- 1/1/0/0/0 0/0 "GET /api/v1/accounts?name=caf%c3%a9 HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:18:41:39.279] <HTTPCLIENT> -/- 2/0/0/1/42 401 327 - - ---- 1/0/0/0/0 0/0 {172.24.0.3} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.24.0.1:62490 [23/Nov/2026:18:41:39.278] fe fe/<NOSRV> 42/-1/-1/-1/42 401 112 - - LR-- 1/1/0/0/0 0/0 "GET /api/v1/accounts?name=caf%C3%A9 HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:18:41:39.324] <HTTPCLIENT> -/- 2/0/0/0/41 401 327 - - ---- 1/0/0/0/0 0/0 {172.24.0.3} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.24.0.1:62506 [23/Nov/2026:18:41:39.323] fe fe/<NOSRV> 41/-1/-1/-1/41 401 112 - - LR-- 1/1/0/0/0 0/0 "GET /api/v1/accounts?q=a%20b HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:18:41:39.366] <HTTPCLIENT> -/- 2/0/0/0/41 401 327 - - ---- 1/0/0/0/0 0/0 {172.24.0.3} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.24.0.1:62520 [23/Nov/2026:18:41:39.366] fe fe/<NOSRV> 41/-1/-1/-1/41 401 112 - - LR-- 1/1/0/0/0 0/0 "GET /api/v1/accounts?q=a+b HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:18:41:39.409] <HTTPCLIENT> -/- 2/0/0/0/40 401 327 - - ---- 1/0/0/0/0 0/0 {172.24.0.3} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.24.0.1:62526 [23/Nov/2026:18:41:39.409] fe fe/<NOSRV> 40/-1/-1/-1/40 401 112 - - LR-- 1/1/0/0/0 0/0 "GET /api/v1/accounts?filter%5Bstatus%5D=open&page=2 HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:18:41:39.451] <HTTPCLIENT> -/- 2/0/0/0/40 401 327 - - ---- 1/0/0/0/0 0/0 {172.24.0.3} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.24.0.1:62528 [23/Nov/2026:18:41:39.451] fe fe/<NOSRV> 40/-1/-1/-1/40 401 112 - - LR-- 1/1/0/0/0 0/0 "GET /api/v1/accounts?tag=b&tag=a HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:18:41:39.493] <HTTPCLIENT> -/- 2/0/0/0/44 401 327 - - ---- 1/0/0/0/0 0/0 {172.24.0.3} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.24.0.1:62532 [23/Nov/2026:18:41:39.493] fe fe/<NOSRV> 44/-1/-1/-1/44 401 112 - - LR-- 1/1/0/0/0 0/0 "GET /api/v1/accounts?verbose HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:18:41:39.540] <HTTPCLIENT> -/- 2/0/0/0/41 401 320 - - ---- 1/0/0/0/0 0/0 {172.24.0.3} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.24.0.1:62540 [23/Nov/2026:18:41:39.540] fe fe/<NOSRV> 41/-1/-1/-1/41 401 112 - - LR-- 1/1/0/0/0 0/0 "GET /api/v1/accounts?z=1&m=2&a=3&limit=10 HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:18:41:39.585] <HTTPCLIENT> -/- 2/0/0/0/41 401 327 - - ---- 1/0/0/0/0 0/0 {172.24.0.3} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.24.0.1:62548 [23/Nov/2026:18:41:39.585] fe fe/<NOSRV> 41/-1/-1/-1/41 401 112 - - LR-- 1/1/0/0/0 0/0 "POST /api/v1/graphql HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:18:41:39.630] <HTTPCLIENT> -/- 2/0/0/0/41 401 327 - - ---- 1/0/0/0/0 0/0 {172.24.0.3} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.24.0.1:62564 [23/Nov/2026:18:41:39.629] fe fe/<NOSRV> 41/-1/-1/-1/41 401 112 - - LR-- 1/1/0/0/0 0/0 "POST /api/v1/graphql HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:18:41:39.674] <HTTPCLIENT> -/- 2/0/0/1/42 401 327 - - ---- 1/0/0/0/0 0/0 {172.24.0.3} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.24.0.1:62570 [23/Nov/2026:18:41:39.674] fe fe/<NOSRV> 42/-1/-1/-1/42 401 112 - - LR-- 1/1/0/0/0 0/0 "POST /api/v1/transfers HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:18:41:39.719] <HTTPCLIENT> -/- 2/0/0/1/44 401 327 - - ---- 1/0/0/0/0 0/0 {172.24.0.3} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.24.0.1:62576 [23/Nov/2026:18:41:39.719] fe fe/<NOSRV> 45/-1/-1/-1/45 401 112 - - LR-- 1/1/0/0/0 0/0 "PUT /api/v1/accounts/acc-alice-1 HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:18:41:39.768] <HTTPCLIENT> -/- 2/0/0/1/42 401 327 - - ---- 1/0/0/0/0 0/0 {172.24.0.3} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.24.0.1:62584 [23/Nov/2026:18:41:39.768] fe fe/<NOSRV> 42/-1/-1/-1/42 401 112 - - LR-- 1/1/0/0/0 0/0 "GET /api/v1/me HTTP/1.1"
+gateway-1  | -:- [23/Nov/2026:18:41:39.815] <HTTPCLIENT> -/- 2/0/0/1/42 401 327 - - ---- 1/0/0/0/0 0/0 {172.24.0.3} "GET http://verifier:9100/authz/orig HTTP/1.1"
+gateway-1  | 172.24.0.1:62586 [23/Nov/2026:18:41:39.815] fe fe/<NOSRV> 42/-1/-1/-1/42 401 112 - - LR-- 1/1/0/0/0 0/0 "DELETE /api/v1/accounts/acc-alice-1 HTTP/1.1"

@@ -1,0 +1,434 @@
+# terms=['url', 'parser'] min_year=2023 n=0
+# terms=['confusion', 'http'] min_year=2023 n=2
+2026 | SPCA: Stream Parser Confusion Attack for Web Application Firewall Evasion in HTTP/2. | WWW | https://doi.org/10.1145/3774904.3792517
+2023 | Website-Aware Protocol Confusion Network for Emergent HTTP/3 Website Fingerprinting. | IEEE Trans. Inf. Forensics Secur. | https://doi.org/10.1109/TIFS.2023.3266173
+# terms=['confusion', 'web'] min_year=2023 n=4
+2026 | Mitigating Semantic Confusion in LLM-Integrated Web Services via Dynamic Dual-Stream Intent Matching. | ICWS | https://doi.org/10.1109/ICWS72778.2026.00153
+2026 | SPCA: Stream Parser Confusion Attack for Web Application Firewall Evasion in HTTP/2. | WWW | https://doi.org/10.1145/3774904.3792517
+2024 | LCPCWSC: a Web service classification approach based on label confusion and priori correction. | Int. J. Web Inf. Syst. | https://doi.org/10.1108/IJWIS-12-2023-0243
+2023 | Website-Aware Protocol Confusion Network for Emergent HTTP/3 Website Fingerprinting. | IEEE Trans. Inf. Forensics Secur. | https://doi.org/10.1109/TIFS.2023.3266173
+# terms=['access control', 'proxy'] min_year=2023 n=7
+2026 | Prompts Don't Protect: Architectural Enforcement via MCP Proxy for LLM Tool Access Control. | CoRR | https://doi.org/10.48550/ARXIV.2605.18414
+2026 | Zero Trust Access Control Framework for NDN-based Healthcare Systems Using Attribute-based Access Control and Proxy Re-Encryption. | KSII Trans. Internet Inf. Syst. | https://doi.org/10.3837/TIIS.2026.02.019
+2026 | Privacy-Preserving Proxy Bilateral Access Control for Secure Data Forwarding. | IEEE Trans. Dependable Secur. Comput. | https://doi.org/10.1109/TDSC.2025.3638904
+2025 | Controllable Access Control in Permissioned Blockchains via Controllable Threshold Proxy Re-Encryption. | IEEE Trans. Inf. Forensics Secur. | https://doi.org/10.1109/TIFS.2025.3601444
+2024 | Fine-Grained Access Control Proxy Re-encryption with HRA Security from Lattice. | GPC (2) | https://doi.org/10.1007/978-981-99-9896-8_12
+2024 | Designing novel proxy-based access control scheme for implantable medical devices. | Comput. Stand. Interfaces | https://doi.org/10.1016/J.CSI.2023.103754
+2023 | An Efficiently Revocable Cloud-based Access Control Using Proxy Re-encryption and Blockchain. | JCSSE | https://doi.org/10.1109/JCSSE58229.2023.10202130
+# terms=['authoriz', 'gateway'] min_year=2023 n=1
+2023 | Attribute Authorization - A Novel Enhancement to API Gateways. | ICSOC (2) | https://doi.org/10.1007/978-3-031-48424-7_20
+# terms=['canonicali'] min_year=2023 n=106
+2027 | Zero-Shot Test-Time Canonicalization Using Out-of-Distribution Scoring. | ECML PKDD (6) | https://doi.org/10.1007/978-3-032-37673-2_10
+2027 | AC2-Fuse: Syntax-Preserving Canonicalization and Cross-Model Curvature for Detecting LLM-Generated Code. | ICPR (1) | https://doi.org/10.1007/978-3-032-31335-5_22
+2027 | CanonNet: Spectral Canonicalization and Curvature-Driven Learning for Compact Local-Geometry Point-Cloud Operators. | ICPR (Workshops,2) | https://doi.org/10.1007/978-3-032-39382-1_14
+2026 | Zero-Shot Test-Time Canonicalization using Out-of-Distribution Scoring. | CoRR | https://doi.org/10.48550/ARXIV.2606.24178
+2026 | Neural Residual Correction for 3D Tooth Point Cloud Canonicalization. | J. Imaging | https://doi.org/10.3390/JIMAGING12060243
+2026 | Zero-Shot Test-Time Canonicalization using Out-of-Distribution Scoring. | QCDS | https://dblp.org/rec/conf/qcds/LindnerSSBS26
+2026 | A Meta-complexity Theoretic Approach to Indistinguishability Obfuscation and Witness Pseudo-Canonicalization. | TCC (2) | https://doi.org/10.1007/978-3-032-12293-3_6
+2026 | LexiCan: Lexicographic Canonicalization of Point Clouds for Machine Learning Applications. | CoRR | https://doi.org/10.48550/ARXIV.2610.15171
+2026 | Cross-solver conversion and canonicalized validation of 3D solid finite-element mesh data using a neutral hierarchical intermediate representation. | Comput. Aided Des. | https://doi.org/10.1016/J.CAD.2026.104153
+2026 | Memory Canonicalization: A Framework and Benchmark for Cross-Model Drift in Persistent LLM Memory. | CoRR | https://doi.org/10.48550/ARXIV.2610.05124
+2026 | UpDown-SC: Gravity-Canonicalized Dual-Envelope Scan Context for Indoor LiDAR Place Recognition. | CoRR | https://doi.org/10.48550/ARXIV.2609.29118
+2026 | GS-VLA: Plug-and-Play Viewpoint Canonicalization for Frozen VLA Policies via Gaussian Splatting. | CoRR | https://doi.org/10.48550/ARXIV.2608.19066
+2026 | CANIS: Generation-Assisted 3D Canonicalization via an Image-Semantic Bridge. | CoRR | https://doi.org/10.48550/ARXIV.2608.07256
+2026 | Canonicalization Failures as a Recurring Vulnerability Class: Representation Divergence in Cryptographic Systems and Its Avoidance. | CoRR | https://doi.org/10.48550/ARXIV.2608.06508
+2026 | From ambiguous utterances to governed reuse classes: canonicalization, quotient invariance, and conditional decidability. | CoRR | https://doi.org/10.48550/ARXIV.2607.10069
+2026 | Sensor-Layout-Agnostic Navigation via Geometric Observation Canonicalization. | CoRR | https://doi.org/10.48550/ARXIV.2610.08306
+2026 | Pose-Agnostic Robotic Functional Grasping via Observation-Action Canonicalization. | CoRR | https://doi.org/10.48550/ARXIV.2606.21148
+2026 | Canonicalized Stable-List Replay for Private Federated Continual Learning over Language-Model Embeddings. | CoRR | https://doi.org/10.48550/ARXIV.2606.00426
+2026 | Every9D-21M: Large-Scale Real-World 9D Canonicalization of Everyday Objects. | CoRR | https://doi.org/10.48550/ARXIV.2605.28270
+2026 | Weisfeiler-Leman Is Incomplete on Simple Spectrum Graphs, so Canonicalize Them. | CoRR | https://doi.org/10.48550/ARXIV.2605.23446
+2026 | SmoCap: Unified Scale-Pose Canonicalization with Proxy-Mapped Trust-Region QP. | CoRR | https://doi.org/10.48550/ARXIV.2605.20850
+2026 | Gimbal360: Differentiable Auto-Leveling for Canonicalized 360° Panoramic Image Completion. | CoRR | https://doi.org/10.48550/ARXIV.2603.23179
+2026 | PiCo: Active Manifold Canonicalization for Robust Robotic Visual Anomaly Detection. | CoRR | https://doi.org/10.48550/ARXIV.2603.23122
+2026 | Canonicalization of Batched Einstein Summations for Tuning Retrieval. | CoRR | https://doi.org/10.48550/ARXIV.2601.12220
+2026 | Rethinking Diffusion Models with Symmetries through Canonicalization with Applications to Molecular Graph Generation. | CoRR | https://doi.org/10.48550/ARXIV.2602.15022
+2026 | Canonicalizing Multimodal Contrastive Representation Learning. | CoRR | https://doi.org/10.48550/ARXIV.2602.17584
+2026 | Why Agent Caching Fails and How to Fix It: Structured Intent Canonicalization with Few-Shot Learning. | CoRR | https://doi.org/10.48550/ARXIV.2602.18922
+2026 | Semantic Caching for OLAP via LLM-Based Query Canonicalization (Extended Version). | CoRR | https://doi.org/10.48550/ARXIV.2602.19811
+2026 | CanoVerse: 3D Object Scalable Canonicalization and Dataset for Generation and Pose. | CoRR | https://doi.org/10.48550/ARXIV.2603.07144
+2026 | BiCLIP: Domain Canonicalization via Structured Geometric Transformation. | CoRR | https://doi.org/10.48550/ARXIV.2603.08942
+2026 | Causes and Canonicalization of Unreproducible Builds in Java. | IEEE Trans. Software Eng. | https://doi.org/10.1109/TSE.2025.3627891
+2026 | Caf4AVC: LLM-Enhanced Collaborative Framework for Attribute Value Canonicalization in Open KBs. | IEEE Trans. Knowl. Data Eng. | https://doi.org/10.1109/TKDE.2026.3702048
+2026 | Actively Learning Unified Embeddings for Joint Open Knowledge Base Canonicalization and Linking. | IEEE Trans. Knowl. Data Eng. | https://doi.org/10.1109/TKDE.2025.3630786
+2026 | CanoVerse: 3D Object Scalable Canonicalization and Dataset for Generation and Pose. | ECCV (3) | https://doi.org/10.1007/978-3-032-36846-1_6
+2026 | Adaptive Canonicalization with Application to Invariant Anisotropic Geometric Networks. | ICLR | https://dblp.org/rec/conf/iclr/LinL26a
+2026 | Semantic Caching for OLAP via LLM-Based Query Canonicalization. | DOLAP | https://dblp.org/rec/conf/dolap/Bindschaedler26
+2026 | SE(2) Group Canonicalizer for SAR ATR Under Partial Azimuth Angles. | IEEE Trans. Aerosp. Electron. Syst. | https://doi.org/10.1109/TAES.2026.3710461
+2026 | Image-grounded text canonicalization for robust Chinese harmful meme detection. | Signal Image Video Process. | https://doi.org/10.1007/S11760-026-05635-5
+2026 | C3PO: Canonicalization of 3D Pose from Partial Views With Generalizable Correspondence Features. | 3DV | https://doi.org/10.1109/3DV69130.2026.00062
+2026 | A Novel Retrieve-Read-Group Paradigm for Open Knowledge Base Canonicalization. | AAAI | https://doi.org/10.1609/AAAI.V40I19.38644
+2026 | Revisiting the Canonicalization for Fast and Accurate Crystal Tensor Property Prediction. | AAAI | https://doi.org/10.1609/AAAI.V40I1.37004
+2026 | FUNCanon: Learning Pose-Aware Action Primitives via Functional Object Canonicalization for Generalizable Robotic Manipulation. | ICRA | https://doi.org/10.1109/ICRA57385.2026.11696687
+2025 | Capture, Canonicalize, Splat: Zero-Shot 3D Gaussian Avatars from Unstructured Phone Images. | CoRR | https://doi.org/10.48550/ARXIV.2510.14081
+2025 | Local-Canonicalization Equivariant Graph Neural Networks for Sample-Efficient and Generalizable Swarm Robot Control. | CoRR | https://doi.org/10.48550/ARXIV.2509.14431
+2025 | FUNCanon: Learning Pose-Aware Action Primitives via Functional Object Canonicalization for Generalizable Robotic Manipulation. | CoRR | https://doi.org/10.48550/ARXIV.2509.19102
+2025 | 3DPCNet: Pose Canonicalization for Robust Viewpoint-Invariant 3D Kinematic Analysis from Monocular RGB cameras. | CoRR | https://doi.org/10.48550/ARXIV.2509.23455
+2025 | Adaptive Canonicalization with Application to Invariant Anisotropic Geometric Networks. | CoRR | https://doi.org/10.48550/ARXIV.2509.24886
+2025 | Local Scale Equivariance with Latent Deep Equilibrium Canonicalizer. | CoRR | https://doi.org/10.48550/ARXIV.2508.14187
+2025 | Test-Time Canonicalization by Foundation Models for Robust Perception. | CoRR | https://doi.org/10.48550/ARXIV.2507.10375
+2025 | Equivariance by Local Canonicalization: A Matter of Representation. | CoRR | https://doi.org/10.48550/ARXIV.2509.26499
+2025 | Robust Canonicalization through Bootstrapped Data Re-Alignment. | CoRR | https://doi.org/10.48550/ARXIV.2510.08178
+2025 | One-shot 3D Object Canonicalization based on Geometric and Semantic Consistency. | CVPR | https://doi.org/10.1109/CVPR52734.2025.01570
+2025 | Robust Point Cloud Reinforcement Learning via PCA-Based Canonicalization. | CoRR | https://doi.org/10.48550/ARXIV.2510.20974
+2025 | Symmetry-Aware Graph Metanetwork Autoencoders: Model Merging through Parameter Canonicalization. | CoRR | https://doi.org/10.48550/ARXIV.2511.12601
+2025 | Eq.Bot: Enhance Robotic Manipulation Learning via Group Equivariant Canonicalization. | CoRR | https://doi.org/10.48550/ARXIV.2511.15194
+2025 | Regularity in Canonicalized Models: A Theoretical Perspective. | AISTATS | https://dblp.org/rec/conf/aistats/TahmasebiJ25
+2025 | Deep Non-Rigid Structure-from-Motion Revisited: Canonicalization and Sequence Modeling. | AAAI | https://doi.org/10.1609/AAAI.V39I3.32272
+2025 | Interactive Humanoid: Online Full Body Human Motion Reaction Synthesis with Social Affordance Forecasting and Canonicalization. | 3DV | https://doi.org/10.1109/3DV66043.2025.00136
+2025 | Lorentz Local Canonicalization: How to Make Any Network Lorentz-Equivariant. | CoRR | https://doi.org/10.48550/ARXIV.2505.20280
+# terms=['parsing', 'inconsisten'] min_year=2023 n=0
+# terms=['differential fuzz'] min_year=2023 n=32
+2027 | Spec-as-(N+1)-Oracle Differential Fuzzing of SD-JWT Presentation Verification. | STM | https://doi.org/10.1007/978-3-032-41330-7_6
+2026 | A Differential Fuzzing-Based Evaluation of Functional Equivalence in LLM-Generated Code Refactorings. | CoRR | https://doi.org/10.48550/ARXIV.2602.15761
+2026 | Web Application Vulnerability Repair Via Context-Aware Fault Localization and Directed Differential Fuzzing. | SP | https://doi.org/10.1109/SP63933.2026.00237
+2026 | Interpreter Memory Safety via Differential Fuzzing with a CHERI on Top. | ISMM | https://doi.org/10.1145/3814942.3816133
+2026 | Testing Deep Learning Library APIs via Cross-Framework Differential Fuzzing. | CoRR | https://doi.org/10.48550/ARXIV.2608.11886
+2026 | Network-Layer Differential Fuzzing for Ethereum. | IEEE Trans. Inf. Forensics Secur. | https://doi.org/10.1109/TIFS.2025.3648565
+2026 | A Differential Fuzzing-Based Evaluation of Functional Equivalence in LLM-Generated Code Refactorings. | SIGSOFT FSE Companion | https://doi.org/10.1145/3803437.3806717
+2026 | SpecTrum: Specification-Guided Differential Fuzzing for Ethereum Consensus Clients. | CoRR | https://doi.org/10.48550/ARXIV.2608.17738
+2026 | RL-LLMfuzzer: reinforcement learning-guided dual-model differential fuzzing for compiler testing. | J. King Saud Univ. Comput. Inf. Sci. | https://doi.org/10.1007/S44443-026-01115-5
+2025 | H2Fuzz: Guided, Black-box, Differential Fuzzing for HTTP/2-to-HTTP/1 Conversion Anomalies. | RAID | https://doi.org/10.1109/RAID67961.2025.00059
+2025 | GraphFuzz: Automated Testing of Graph Algorithm Implementations with Differential Fuzzing and Lightweight Feedback. | CoRR | https://doi.org/10.48550/ARXIV.2502.15160
+2025 | Risk Estimation in Differential Fuzzing via Extreme Value Theory. | CoRR | https://doi.org/10.48550/ARXIV.2511.02927
+2025 | Email Smuggling with Differential Fuzzing of MIME Parsers. | SP (Workshops) | https://doi.org/10.1109/SPW67851.2025.00007
+2025 | DiFuzzNMT: A Differential Fuzzing Framework for Neural Machine Translation. | QRS | https://doi.org/10.1109/QRS65678.2025.00064
+2025 | Risk Estimation in Differential Fuzzing via Extreme Value Theory. | ASE | https://doi.org/10.1109/ASE63991.2025.00036
+2025 | Fork State-Aware Differential Fuzzing for Blockchain Consensus Implementations. | ICSE | https://doi.org/10.1109/ICSE55347.2025.00085
+2025 | Enhancing Differential Fuzzing of Cryptographic Libraries with Sustainable Hybrid Fuzzing and Crypto-Specific Mutation. | ICISC | https://doi.org/10.1007/978-981-96-5566-3_10
+2025 | Syntax-aware differential fuzzing of black-box network protocol implementations. |  | https://dblp.org/rec/phd/dnb/WalzSS25
+2025 | Opening Pandora's Packet: Expose IPv6 Implementations Vulnerabilities Using Differential Fuzzing. | ACNS (1) | https://doi.org/10.1007/978-3-031-95761-1_14
+2024 | Toss a Fault to BpfChecker: Revealing Implementation Flaws for eBPF runtimes with Differential Fuzzing. | CCS | https://doi.org/10.1145/3658644.3690237
+2024 | EVMFuzz: Differential fuzz testing of Ethereum virtual machine. | J. Softw. Evol. Process. | https://doi.org/10.1002/SMR.2556
+2024 | Generation-based Differential Fuzzing for Deep Learning Libraries. | ACM Trans. Softw. Eng. Methodol. | https://doi.org/10.1145/3628159
+2024 | The HTTP Garden: Discovering Parsing Vulnerabilities in HTTP/1.1 Implementations by Differential Fuzzing of Request Streams. | CoRR | https://doi.org/10.48550/ARXIV.2405.17737
+2024 | TLS-DeepDiffer: Message Tuples-Based Deep Differential Fuzzing for TLS Protocol Implementations. | SANER | https://doi.org/10.1109/SANER60148.2024.00100
+2024 | Towards differential fuzzing to reduce manual efforts to identify equivalent mutants: A preliminary study. | SBES | https://doi.org/10.5753/SBES.2024.3557
+2024 | Gudifu: Guided Differential Fuzzing for HTTP Request Parsing Discrepancies. | RAID | https://doi.org/10.1145/3678890.3678904
+2024 | Differential Fuzzing for Data Distribution Service Programs with Dynamic Configuration. | ASE | https://doi.org/10.1145/3691620.3695073
+2024 | ResolFuzz: Differential Fuzzing of DNS Resolvers. | ESORICS (2) | https://doi.org/10.1007/978-3-031-51476-0_4
+2023 | Go or No Go: Differential Fuzzing of Native and C Libraries. | SP (Workshops) | https://doi.org/10.1109/SPW59333.2023.00036
+2023 | DeepDiffer: Find Deep Learning Compiler Bugs via Priority-guided Differential Fuzzing. | QRS | https://doi.org/10.1109/QRS60937.2023.00066
+2023 | Toward the Trustworthiness of Industrial Robotics Using Differential Fuzz Testing. | IEEE Trans. Ind. Informatics | https://doi.org/10.1109/TII.2022.3211888
+2023 | 1dFuzz: Reproduce 1-Day Vulnerabilities with Directed Differential Fuzzing. | ISSTA | https://doi.org/10.1145/3597926.3598102
+# terms=['oauth'] min_year=2023 n=95
+2026 | GeoAuthor: Linking Text and Visualization for Geographic Article Authoring. | IEEE Trans. Vis. Comput. Graph. | https://doi.org/10.1109/TVCG.2026.3697212
+2026 | MAFOAuth: A multi-party automated framework for revealing protocol logic vulnerabilities in OAuth 2.0 implementations. | Comput. Electr. Eng. | https://doi.org/10.1016/J.COMPELECENG.2026.111458
+2026 | Neuroauthnet: A brainwave-based authentication framework using BCI and deep learning for privacy-preserving identity verification. | Comput. Electr. Eng. | https://doi.org/10.1016/J.COMPELECENG.2026.111133
+2026 | OAuthHub: Mitigating OAuth Data Overaccess through a Local Data Hub. | CoRR | https://doi.org/10.48550/ARXIV.2603.10056
+2026 | Messages in a Digital Bottle: A Youth-Coauthored Perspective on LLM Chatbots and Adolescent Loneliness. | CoRR | https://doi.org/10.48550/ARXIV.2604.03470
+2026 | CoAuthorAI: A Human in the Loop System For Scientific Book Writing. | CoRR | https://doi.org/10.48550/ARXIV.2604.19772
+2026 | Beyond coauthorship: semantic structure and phantom collaborators in transportation research, 1967-2025. | CoRR | https://doi.org/10.48550/ARXIV.2604.23699
+2026 | Effects of Vertex Merging & Splitting on Large Coauthorship Networks: A Counterfactual Analysis. | CoRR | https://doi.org/10.48550/ARXIV.2605.31555
+2026 | A GenApp Science Gateway for Constructing and Simulating Coarse-Grained DNA Systems with Elastic Cloud Computing and OAuth2 Authentication. | PEARC | https://doi.org/10.1145/3785462.3815818
+2026 | Federated HPC Account Provisioning Using CILogon, COmanage, and PAM-Based OAuth2 Device Flow. | PEARC | https://doi.org/10.1145/3785462.3815896
+2026 | Who Shapes the Stance? A Stases-Based Analysis of Writer-LLM Negotiation with Coauthor. | VL/HCC | https://doi.org/10.1109/VL/HCC71707.2026.11772955
+2026 | How Many Submissions May an Author Make? A Harmonic Quota for Submissions under Coauthorship. | CoRR | https://doi.org/10.48550/ARXIV.2606.10293
+2026 | Demystifying the (In)Security of Oauth-Based Account Linking in Connector Ecosystems. | SP | https://doi.org/10.1109/SP63933.2026.00128
+2026 | Submission Responsibility Matters: Role-Aware Submission Quotas under Coauthorship. | CoRR | https://doi.org/10.48550/ARXIV.2606.30285
+2026 | Mini-Programs, Mega-Problems: Unveiling OAuth-based Authentication Misuses in Mini-Programs via Dynamic Analysis. | CoRR | https://doi.org/10.48550/ARXIV.2607.08232
+2026 | Can LLMs Identify Advisor-Advisee Relationships in Coauthorship Network Based on Publication Metadata? | JCDL | https://doi.org/10.1145/3805696.3846065
+2026 | Detecting LLM-Generated Tokens in Human-LLM Coauthored Text. | CoRR | https://doi.org/10.48550/ARXIV.2607.21458
+2026 | Forecasting faculty placement from patterns in coauthorship networks. | EPJ Data Sci. | https://doi.org/10.1140/EPJDS/S13688-026-00638-1
+2026 | Remembering unequally: global and disciplinary bias in LLM reconstruction of scholarly coauthor lists. | EPJ Data Sci. | https://doi.org/10.1140/EPJDS/S13688-026-00647-0
+2026 | Post-Quantum Cryptography for Web Authentication Protocols: A Systematic Review of OAuth 2.0, OpenID Connect, and SAML Migration. | ISDFS | https://doi.org/10.1109/ISDFS69419.2026.11459000
+2026 | Edge interventions can mitigate demographic and prestige disparities in the computer science coauthorship network. | FAccT | https://doi.org/10.1145/3805689.3806762
+2026 | OAuthHub: Mitigating OAuth Data Overaccess through a Local Data Hub. | Proc. Priv. Enhancing Technol. | https://doi.org/10.56553/POPETS-2026-0098
+2026 | AudioAuth: A Dual-Watermarking Framework for Robust Audio Integrity and Source Attribution. | IEEE Trans. Biom. Behav. Identity Sci. | https://doi.org/10.1109/TBIOM.2026.3679274
+2026 | SeVoAuth: Secure Voiceprint Authentication With Hash-Based Feature Transformation. | IEEE Trans. Dependable Secur. Comput. | https://doi.org/10.1109/TDSC.2026.3671663
+2025 | Streamlining Plug-and-Charge Authorization for Electric Vehicles with OAuth2 and OIDC. | CoRR | https://doi.org/10.48550/ARXIV.2501.14397
+2025 | ETDI: Mitigating Tool Squatting and Rug Pull Attacks in Model Context Protocol (MCP) by using OAuth-Enhanced Tool Definitions and Policy-Based Access Control. | CoRR | https://doi.org/10.48550/ARXIV.2506.01333
+2025 | HACo-Det: A Study Towards Fine-Grained Machine-Generated Text Detection under Human-AI Coauthoring. | CoRR | https://doi.org/10.48550/ARXIV.2506.02959
+2025 | Edge interventions can mitigate demographic and prestige disparities in the Computer Science coauthorship network. | CoRR | https://doi.org/10.48550/ARXIV.2506.04435
+2025 | Building a robust OAuth token based API Security: A High level Overview. | CoRR | https://doi.org/10.48550/ARXIV.2507.16870
+2025 | Which Coauthor Should I Nominate in My 99 ICLR Submissions? A Mathematical Analysis of the ICLR 2026 Reciprocal Reviewer Nomination Policy. | CoRR | https://doi.org/10.48550/ARXIV.2512.17950
+2025 | Detecting Malicious Entra OAuth Apps with LLM-Based Permission Risk Scoring. | CoRR | https://doi.org/10.48550/ARXIV.2512.15781
+2025 | HACo-Det: A Study Towards Fine-Grained Machine-Generated Text Detection under Human-AI Coauthoring. | ACL (1) | https://doi.org/10.18653/V1/2025.ACL-LONG.1069
+2025 | Editorial: A tribute to Loet Leydesdorff by his coauthors and friends. | Scientometrics | https://doi.org/10.1007/S11192-025-05316-Z
+2025 | OAuth 2.0 Protected Resource Metadata. | RFC | https://doi.org/10.17487/RFC9728
+2025 | JSON Web Token (JWT) Response for OAuth Token Introspection. | RFC | https://doi.org/10.17487/RFC9701
+2025 | Best Current Practice for OAuth 2.0 Security. | RFC | https://doi.org/10.17487/RFC9700
+2025 | Output-Normalized Score (OnS) for Ranking Researchers Based on Number of Publications, Citations, Coauthors, and Author Position. | Publ. | https://doi.org/10.3390/PUBLICATIONS13010003
+2025 | How does Nobel prize awarding shift the research topics of Nobelists' coauthors and non-coauthors? | J. Informetrics | https://doi.org/10.1016/J.JOI.2024.101602
+2025 | Developing the Flexible Conformance Test Execution Platform for OAuth 2.0-based Security Profiles. | J. Inf. Process. | https://doi.org/10.2197/IPSJJIP.33.168
+2025 | Streamlining Plug-and-Charge Authorization for Electric Vehicles With OAuth 2 and OpenID Federation. | IEEE Access | https://doi.org/10.1109/ACCESS.2025.3613667
+2025 | BaroAuth: Harnessing Ear Canal Deformation for Speaking User Authentication on Earbuds. | ICDCS | https://doi.org/10.1109/ICDCS63083.2025.00020
+2025 | Enhancing WiFi Authentication: Leveraging OAuth for Secure and User-Friendly Wireless Networks. | CCWC | https://doi.org/10.1109/CCWC62904.2025.10903952
+2025 | Universal Cross-app Attacks: Exploiting and Securing OAuth 2.0 in Integration Platforms. | USENIX Security Symposium | https://dblp.org/rec/conf/uss/LuoWFLL25
+2025 | Cora, Citeseer, CoAuthorCS, Polblogs and SBM. |  | https://doi.org/10.21227/DP41-4B96
+2025 | SeVoAuth voice-online original. |  | https://doi.org/10.21227/C804-R954
+2025 | SeVoAuth voice-online original. |  | https://doi.org/10.21227/AAMK-D321
+2025 | Let stochastic parrots squawk: why academic journals should allow large language models to coauthor articles. | AI Ethics | https://doi.org/10.1007/S43681-024-00575-7
+2025 | Policy-driven contextual risk evaluation in OAuth 2.0 authentication frameworks for AI chatbot-based RPA systems. | Comput. Electr. Eng. | https://doi.org/10.1016/J.COMPELECENG.2025.110759
+2024 | Analysis of Effects on Scientific Impact Indicators Based on Coevolution of Coauthorship and Citation Networks. | Inf. | https://doi.org/10.3390/INFO15100597
+2024 | Enhancing students' online collaborative PBL learning performance in the context of coauthoring-based technologies: A case of wiki technologies. | Educ. Inf. Technol. | https://doi.org/10.1007/S10639-023-11907-1
+2024 | Enhancing identity and access management using Hyperledger Fabric and OAuth 2.0: A block-chain-based approach for security and scalability for healthcare industry. | Internet Things Cyber Phys. Syst. | https://doi.org/10.1016/J.IOTCPS.2023.07.004
+2024 | CroAuth: A Cross-domain Authentication Scheme based on Blockchain and Decentralized Identity. | CSCWD | https://doi.org/10.1109/CSCWD61410.2024.10580261
+2024 | A User-Centric Approach to API Delegations - Enforcing Privacy Policies on OAuth Delegations. | ESORICS (2) | https://doi.org/10.1007/978-3-031-51476-0_16
+2024 | PhenoAuth: A Novel PUF-Phenotype-Based Authentication Protocol for IoT Devices. | HOST | https://doi.org/10.1109/HOST55342.2024.10545387
+2024 | Is Your OAuth Middleware Vulnerable? Evaluating Open-Source Identity Providers' Security. | GLOBECOM | https://doi.org/10.1109/GLOBECOM52923.2024.10901500
+2024 | Unified singular protocol flow for OAuth ecosystem. | Int. J. Inf. Comput. Secur. | https://doi.org/10.1504/IJICS.2024.142691
+2024 | Collaboration at the phylum level: coauthorship and acknowledgment patterns in the world of the water bears (phylum Tardigrada). | Scientometrics | https://doi.org/10.1007/S11192-024-05036-W
+2024 | Coercion-resistant i-voting with short PIN and OAuth 2.0. | IACR Cryptol. ePrint Arch. | https://dblp.org/rec/journals/iacr/BitussiLMMSST24
+2024 | Coercion-resistant i-voting with short PIN and OAuth 2.0. | E-Vote-ID (GI) | https://doi.org/10.18420/E-VOTE-ID2023_04
+# terms=['proof of possession'] min_year=2023 n=2
+2024 | PoEDDP-A Fast RSA-Based Proof of Possession Accumulator of Dynamic Data on the Cloud. | IEEE Access | https://doi.org/10.1109/ACCESS.2024.3387348
+2023 | OAuth 2.0 Demonstrating Proof of Possession (DPoP). | RFC | https://doi.org/10.17487/RFC9449
+# terms=['message signature'] min_year=2023 n=1
+2024 | HTTP Message Signatures. | RFC | https://doi.org/10.17487/RFC9421
+# terms=['token binding'] min_year=2023 n=0
+# terms=['sender'] min_year=2023 n=124
+2027 | Traitor Tracing in Multi-sender Setting - (TMCFE: Traceable Multi-client Functional Encryption). | SCN | https://doi.org/10.1007/978-3-032-36264-3_12
+2027 | FilterFuzz: Accelerating IoT Web Fuzzing via Sender-Side Pre-filtering. | Inscrypt (3) | https://doi.org/10.1007/978-981-92-7678-3_21
+2026 | A Gmail-Based Phishing Detection Prototype for Nigerian Fintech Emails Using Sender Checks and BiLSTM Classification. | CoRR | https://doi.org/10.48550/ARXIV.2609.28305
+2026 | Timely Persuasion with Opposing Senders: When Does Competition Help the Receiver? | CoRR | https://doi.org/10.48550/ARXIV.2610.04468
+2026 | Relaxed Sender Anonymity for CBDC Interbank Settlement: A Zero-Knowledge Approach on Permissioned EVM. | CoRR | https://doi.org/10.48550/ARXIV.2608.28529
+2026 | Sender and Receiver Energy Consumption in a Sensor Network. | CoRR | https://doi.org/10.48550/ARXIV.2607.21095
+2026 | Multi-Sender Bayesian Persuasion with Imperfect Information. | CoRR | https://doi.org/10.48550/ARXIV.2607.08675
+2026 | Sender-Receiver Community Detection in Directed Networks via Node-Role-Constrained Edge Clustering. | CoRR | https://doi.org/10.48550/ARXIV.2606.17411
+2026 | Can you keep a secret? A new protocol for sender-side enforcement of causal message delivery. | CoRR | https://doi.org/10.48550/ARXIV.2603.14690
+2026 | Using the C++ Sender Asynchronous Programming Model in the Implementation of Efficient Epidemiological Simulations. | Concurr. Comput. Pract. Exp. | https://doi.org/10.1002/CPE.70864
+2026 | A Replication Study for Consumer Digital Twins: Pilot Sites Analysis and Experience from the SENDER Project (Horizon 2020). | Comput. | https://doi.org/10.3390/COMPUTATION14020031
+2026 | Reproducibility package for: Disagreement-Gated Receiver-Conditioned Messages Under Sender-Side Caps. |  | https://doi.org/10.5281/ZENODO.21483934
+2026 | Reproducibility package for: Disagreement-Gated Receiver-Conditioned Messages Under Sender-Side Caps. |  | https://doi.org/10.5281/ZENODO.21481880
+2026 | Reproducibility package for: Disagreement-Gated Receiver-Conditioned Messages Under Sender-Side Caps. |  | https://doi.org/10.5281/ZENODO.21481697
+2026 | Reproducibility package for: Disagreement-Gated Receiver-Conditioned Messages Under Sender-Side Caps. |  | https://doi.org/10.5281/ZENODO.21481314
+2026 | Reproducibility package for: Disagreement-Gated Receiver-Conditioned Messages Under Sender-Side Caps. |  | https://doi.org/10.5281/ZENODO.21481777
+2026 | Towards Sender Anonymity for Singleton Sets. | WISA | https://doi.org/10.1007/978-981-95-6857-4_19
+2026 | Linear Search for Capturing an Oblivious Mobile Target in the Sender/Receiver Model. | ALGOWIN | https://doi.org/10.1007/978-3-032-09120-8_11
+2026 | Sender-Receiver Games with Payment Commitments. | CoRR | https://doi.org/10.48550/ARXIV.2610.05588
+2026 | OVG NW: Kein "Public Value"-Status für Teleshoppingsender. | Comput. und Recht | https://doi.org/10.9785/CR-2026-420625
+2026 | Efficient RLWE based Chosen-Ciphertext Secure Dual-Receiver Encryption and Sender-Binding KEM in the Standard Model. | IACR Cryptol. ePrint Arch. | https://dblp.org/rec/journals/iacr/BenzB26
+2026 | Setup Protocols for Sender Anonymity. | IACR Cryptol. ePrint Arch. | https://dblp.org/rec/journals/iacr/HuangZA26
+2026 | Revisiting Security Definitions of Sender-Anamorphic Encryption. | IACR Cryptol. ePrint Arch. | https://dblp.org/rec/journals/iacr/TanishitaMM26
+2026 | On the Security of Public Key Authenticated Encryption with Keyword Search with Sender-independent Search Complexity. | IACR Cryptol. ePrint Arch. | https://dblp.org/rec/journals/iacr/YoshidaE26a
+2026 | Language Constraints in Multi-Sender Communication Games. | Int. J. Game Theory | https://doi.org/10.1007/S00182-026-00998-Y
+2026 | Heeding the Messenger: The Influence of Sender Characteristics on Security Message Compliance Intentions. | Inf. Syst. J. | https://doi.org/10.1111/ISJ.70013
+2026 | Asymmetric Learning Effects of Chief Information Officer Outside Board Appointments: Cybersecurity Implications for Sender and Receiver Firms. | Inf. Syst. Res. | https://doi.org/10.1287/ISRE.2024.1003
+2026 | Converging Better Response Dynamics in Sender-Receiver Games. | Math. Oper. Res. | https://doi.org/10.1287/MOOR.2024.0535
+2026 | MsgFilter: Proactive Anti-Harassment Sender-Anonymous Messaging System. | IEEE Trans. Inf. Forensics Secur. | https://doi.org/10.1109/TIFS.2025.3650417
+2026 | Decoupled Neural Audio Steganography for Adaptive Sender-Side Model Updates. | IEEE Trans. Inf. Forensics Secur. | https://doi.org/10.1109/TIFS.2026.3694658
+2026 | Assessing the Adoption of Email Security Measures After Google's New Sender Guidelines. | IEEE Trans. Netw. Serv. Manag. | https://doi.org/10.1109/TNSM.2026.3707567
+2026 | Triangulating trust: Delaunay-based geometric keys for sender authentication in CAN protocol. | Veh. Commun. | https://doi.org/10.1016/J.VEHCOM.2026.101069
+2026 | Sender-Efficient Identity-Based Encryption with Reduced Server Trust in the Key Curator Model. | FPS (2) | https://doi.org/10.1007/978-3-032-20026-6_1
+2026 | A Phase-Encoded Quantum One-Time Pad for Sender-Deniable Encryption. | COMSNETS | https://doi.org/10.1109/COMSNETS67989.2026.11418129
+2026 | Setup Protocols for Sender Anonymity. | CSF | https://doi.org/10.1109/CSF68417.2026.00020
+2026 | Covert Channels in Bitcoin: Concealing Senders via Transaction Behavior Mimicry. | DSPP (1) | https://doi.org/10.1007/978-981-95-3182-0_6
+2026 | Empirical Sender-Side QUIC Parameter Tuning for Low Earth Orbit Satellite Networks. | PIMRC | https://doi.org/10.1109/PIMRC69400.2026.11711861
+2026 | Efficient RLWE Based Chosen-Ciphertext Secure Dual-Receiver Encryption and Sender-Binding KEM in the Standard Model. | PKC (1) | https://doi.org/10.1007/978-3-032-26731-3_5
+2026 | Revisiting Security Definitions of Sender-Anamorphic Encryption. | PKC (4) | https://doi.org/10.1007/978-3-032-26740-5_5
+2026 | SmartPacer: Smart Paced Sender for Low-Latency and High-Efficiency Real-Time Communication. | INFOCOM | https://doi.org/10.1109/INFOCOM59046.2026.11571759
+2026 | Symphony: Enhancing RDMA Connection Scalability through Sender-Receiver Coordination. | INFOCOM | https://doi.org/10.1109/INFOCOM59046.2026.11571674
+2026 | Characterizing Reverse DNS Deployment for SPF-indicated Sender IP Addresses. | IISA | https://doi.org/10.1109/IISA71656.2026.11705522
+2026 | SRAP: Sender-side Receiver-Aware Port Selection for Deterministic Flow-to-Core Mapping in Hash-Based Flow Steering. | HPDC | https://doi.org/10.1145/3806645.3820062
+2025 | Hyper-Minrank: A Unified Hypergraph Characterization of Multi-Sender Index Coding. | CoRR | https://doi.org/10.48550/ARXIV.2512.13615
+2025 | Model Reduction of Multicellular Communication Systems via Singular Perturbation: Sender Receiver Systems. | CoRR | https://doi.org/10.48550/ARXIV.2512.11244
+2025 | Explaining the Reputational Risks of AI-Mediated Communication: Messages Labeled as AI-Assisted Are Viewed as Less Diagnostic of the Sender's Moral Character. | CoRR | https://doi.org/10.48550/ARXIV.2509.09645
+2025 | Per-sender neural network classifiers for email authorship validation. | CoRR | https://doi.org/10.48550/ARXIV.2509.00005
+2025 | Asymptotic full revelation in cheap talk with many senders. | Games Econ. Behav. | https://doi.org/10.1016/J.GEB.2024.12.005
+2025 | Linear Search for Capturing an Oblivious Mobile Target in the Sender/Receiver Model. | CoRR | https://doi.org/10.48550/ARXIV.2508.04870
+2025 | Traitor Tracing in Multi-sender Setting (sfTMCFE: Traceable Multi-client Functional Encryption). | IACR Cryptol. ePrint Arch. | https://dblp.org/rec/journals/iacr/DoMNPV25
+2025 | Effect of Sequential Output of Received Messages and Its Speed on the Inferred Emotion of the Sender in Text Chat Interactions. | HCI (3) | https://doi.org/10.1007/978-3-031-93845-0_18
+2025 | Kerblam - Anonymous Messaging System Protecting Both Senders and Recipients. | IACR Cryptol. ePrint Arch. | https://dblp.org/rec/journals/iacr/JiaDZK25
+2025 | Efficient Privacy-Preserving Data Sharing Mechanisms Against Malicious Senders in Smart Grid. | Inscrypt (1) | https://doi.org/10.1007/978-981-96-4731-6_18
+2025 | Optimizing Optical Wireless Communication Sender Alignment Using Extended Gene Density Genetic Algorithm for Minimizing SNR Fluctuation. | Int. J. Commun. Syst. | https://doi.org/10.1002/DAC.70172
+2025 | No Safety in Numbers: Traffic Analysis of Sealed-Sender Groups in Signal. | PST | https://doi.org/10.1109/PST65910.2025.11268871
+2025 | Explaining the Reputational Risks of AI-Mediated Communication: Messages Labeled as AI-Assisted Are Viewed as Less Diagnostic of the Sender's Moral Character. | AIES (Main Track II) | https://doi.org/10.1609/AIES.V8I2.36641
+2025 | Communicating Over a Classical-Quantum MAC With State Information Distributed at the Senders. | IEEE Trans. Inf. Theory | https://doi.org/10.1109/TIT.2024.3503690
+2025 | Sender-Based Approach to Reducing the Bufferbloat in Heterogeneous 5G Networks. | ITC-36 | https://doi.org/10.23919/ITC-3665175.2025.11078615
+2025 | Who Did Not Implement Email Security Measures After Google's New Email Sender Guidelines?: A Large-Scale Measurement Study. | TMA | https://doi.org/10.23919/TMA66427.2025.11097004
+# terms=['semantic gap'] min_year=2023 n=93
+2027 | Bridging Semantic Gap in Temporal Knowledge Graph Reasoning via Spatiotemporal-Aware Entity Profile Graph Embedding. | ISWC (1) | https://doi.org/10.1007/978-3-032-42015-2_2
+2027 | Bridging the Semantic Gap in Social Commerce: A Multimodal Sequential Recommendation Framework via Vision-Language Models. | FLINS-ISKE (3) | https://doi.org/10.1007/978-981-92-2487-6_17
+2027 | MemBridge: Bridging the Static-Dynamic Semantic Gap in Memory Profiling via Variable-Centric Instrumentation. | Euro-Par (1) | https://doi.org/10.1007/978-3-032-35248-4_5
+2027 | Bridging the Semantic Gap for Categorical Data Clustering via Large Language Models. | ICPR (2) | https://doi.org/10.1007/978-3-032-31583-0_14
+2027 | The Problem of Semantic Gaps in the Context of World Models and Sign-Symbolic Communication. | ICPR (Workshops,2) | https://doi.org/10.1007/978-3-032-39382-1_7
+2026 | Trust Boundary Semantic Gaps: A Multi-dimensional Analysis and Mitigation for Security-by-Design. | CoRR | https://doi.org/10.48550/ARXIV.2607.01711
+2026 | Semanti-MOP: Bridging the semantic gap in automated architecture refactoring via instability-aware Large Language Models. | Inf. Softw. Technol. | https://doi.org/10.1016/J.INFSOF.2026.108280
+2026 | How Causality Bridges the Semantic Gap. | CoRR | https://doi.org/10.48550/ARXIV.2610.02594
+2026 | Bridging Semantic Gaps in RAG through Generated Context Knowledge Fusion. | CoRR | https://doi.org/10.48550/ARXIV.2609.37171
+2026 | Bridging the Semantic Gap: A Homonym-Aware Ontology Platform for Cybersecurity Interoperability. | WWW (Companion Volume) | https://doi.org/10.1145/3774905.3795606
+2026 | Constrained Decoding Eliminates Structural Failures in Small LLMs but Reveals a Scale-Dependent Semantic Gap. | CoRR | https://doi.org/10.48550/ARXIV.2609.23742
+2026 | AutoDRI: Bridging the Semantic Gap for Automated Design Rule Integration in CP-SAT-Based Cell Synthesis under Multi-Patterning. | CoRR | https://doi.org/10.48550/ARXIV.2608.27891
+2026 | MATEE: Efficiently Bridging the Semantic Gap in TrustZone via Arm Pointer Authentication. | CoRR | https://doi.org/10.48550/ARXIV.2608.20583
+2026 | RSF-GLLM: Bridging the Semantic Gap in Multi-Hop Knowledge Graph QA via Recurrent Soft-Flow and Decoupled LLM Generation. | CoRR | https://doi.org/10.48550/ARXIV.2607.06527
+2026 | Bridging the Pose-Semantic Gap: A Cascade Framework for Text-Based Person Anomaly Search. | ACL (Findings) | https://doi.org/10.18653/V1/2026.FINDINGS-ACL.197
+2026 | Exploring the Semantic Gap in Agentic Data Systems: A Formative Study of Operationalization Failures in Analytical Workflows. | CoRR | https://doi.org/10.48550/ARXIV.2607.00828
+2026 | Closing the Social-Semantic Gap: SPSD for Edge-Based Prompt Compression in Cloud LLM Inference. | CoRR | https://doi.org/10.48550/ARXIV.2606.19364
+2026 | Bridging the Pose-Semantic Gap: A Cascade Framework for Text-Based Person Anomaly Search. | CoRR | https://doi.org/10.48550/ARXIV.2604.23282
+2026 | Bridging the Semantic Gap in Computational Color Design: A Neurocognitively Validated Framework. | IEEE Access | https://doi.org/10.1109/ACCESS.2025.3648792
+2026 | EHRAG: Bridging Semantic Gaps in Lightweight GraphRAG via Hybrid Hypergraph Construction and Retrieval. | CoRR | https://doi.org/10.48550/ARXIV.2604.17458
+2026 | Automated conversion and semantic gap filling of material layer annotations from CAD drawings to semantically rich BIM objects. | Adv. Eng. Informatics | https://doi.org/10.1016/J.AEI.2025.104199
+2026 | MNSG-Net: A Mamba-optimized U-Net for semantic gap reduction in lumbar disc herniation segmentation. | Biomed. Signal Process. Control. | https://doi.org/10.1016/J.BSPC.2025.109299
+2026 | LiquiLM: Bridging the Semantic Gap in Liquidity Flaw Audit via DCN and LLMs. | CoRR | https://doi.org/10.48550/ARXIV.2604.03860
+2026 | NED-Tree: Bridging the Semantic Gap with Nonlinear Element Decomposition Tree for LLM Nonlinear Optimization Modeling. | CoRR | https://doi.org/10.48550/ARXIV.2604.01588
+2026 | Bridging the Semantic Gap for Categorical Data Clustering via Large Language Models. | CoRR | https://doi.org/10.48550/ARXIV.2601.01162
+2026 | Bridging the Semantic Gap: Leveraging LLMs for Hierarchical Interest Evolution in Sequential Recommendation. | IJCAI/ECAI | https://doi.org/10.24963/IJCAI.2026/273
+2026 | EHRAG: Bridging Semantic Gaps in Lightweight GraphRAG via Hybrid Hypergraph Construction and Retrieval. | ACL (Findings) | https://doi.org/10.18653/V1/2026.FINDINGS-ACL.1233
+2026 | BrickQA: Bridging the Semantic Gap in Building Operations with Dynamic Graph Exploration. | BuildSys | https://doi.org/10.1145/3744256.3812570
+2026 | Silent Fallbacks and Semantic Gaps: Evaluating the Functional Soundness of LLM-Generated Linux Password Policies. | DBSec | https://doi.org/10.1007/978-3-032-33260-8_16
+2026 | Revisiting Semantic Gap in U-Shaped Networks From a Performance Oriented Perspective: Quantification, Visualization, and Optimization. | IEEE Trans. Circuits Syst. Video Technol. | https://doi.org/10.1109/TCSVT.2025.3626818
+2026 | Semantic-Guided Deep Metric Learning for Lung Nodule Retrieval: A Radiology-Aware Framework to Bridge the Semantic Gap in CBMIR. | ICAART (2) | https://doi.org/10.5220/0014328900004052
+2026 | Diffusion-based regularization for fine-grained sketch-photo retrieval under domain and semantic gaps. | Pattern Anal. Appl. | https://doi.org/10.1007/S10044-026-01710-2
+2026 | Bridging the semantic gap: Trajectory-guided domain repair for reliable planning. | Robotics Comput. Integr. Manuf. | https://doi.org/10.1016/J.RCIM.2026.103290
+2026 | Bridging the semantic gap for zero-shot object counting with language-augmented pseudo-exemplars. | Pattern Recognit. Lett. | https://doi.org/10.1016/J.PATREC.2026.07.026
+2026 | SASA: Bridging the semantic gap for node classification in text-attributed graphs using self-adversarial alignment. | Pattern Recognit. | https://doi.org/10.1016/J.PATCOG.2026.113942
+2026 | Harmonize task divergence with MUNet: Bridging semantic gaps between segmentation and classification for medical images. | Pattern Recognit. | https://doi.org/10.1016/J.PATCOG.2026.114097
+2026 | Bridging the semantic gap in text-video retrieval: A diffusion generation network for enhanced visual representation. | Pattern Recognit. | https://doi.org/10.1016/J.PATCOG.2026.113359
+2026 | Bridging the Topology-Semantic Gap: A Benchmark and Framework for Power Grid Work Ticket Generation. | SIGIR | https://doi.org/10.1145/3805712.3808412
+2026 | Identifying Semantic Gaps between Legal Case Descriptions and Logical Fact Formulas Using LLMs: Definition and Preliminary Evaluation. | SKILLED-LLMs@FLoC | https://dblp.org/rec/conf/skilled-llms/Fungwacharakorn26
+2025 | Position Paper: Programming Language Techniques for Bridging LLM Code Generation Semantic Gaps. | CoRR | https://doi.org/10.48550/ARXIV.2507.09135
+2025 | Bridging the Semantic Gaps: Improving Medical VQA Consistency with LLM-Augmented Question Sets. | CoRR | https://doi.org/10.48550/ARXIV.2504.11777
+2025 | Bridging the Semantic Gap: Contrastive Rewards for Multilingual Text-to-SQL. | CoRR | https://doi.org/10.48550/ARXIV.2510.13827
+2025 | Toward Bridging the Semantic Gap Between x86-64 Software Binaries and Abstract Languages for Formal Verification and Security. |  | https://dblp.org/rec/phd/basesearch/Roessle25
+2025 | 3D-PointZshotS: Geometry-Aware 3D Point Cloud Zero-Shot Semantic Segmentation Narrowing the Visual-Semantic Gap. | CoRR | https://doi.org/10.48550/ARXIV.2504.12442
+2025 | Contrastive Alignment with Semantic Gap-Aware Corrections in Text-Video Retrieval. | CoRR | https://doi.org/10.48550/ARXIV.2505.12499
+2025 | EchoX: Towards Mitigating Acoustic-Semantic Gap via Echo Training for Speech-to-Speech LLMs. | CoRR | https://doi.org/10.48550/ARXIV.2509.09174
+2025 | LogICL: Distilling LLM Reasoning to Bridge the Semantic Gap in Cross-Domain Log Anomaly Detection. | CoRR | https://doi.org/10.48550/ARXIV.2512.09627
+2025 | Mind the semantic gap: semantic efficiency in human computer interfaces. | Frontiers Artif. Intell. | https://doi.org/10.3389/FRAI.2025.1451865
+2025 | Fully Semantic Gap Recovery for End-to-End Image Captioning. | IEEE Trans. Circuits Syst. Video Technol. | https://doi.org/10.1109/TCSVT.2025.3558088
+2025 | MaTEE: Efficiently Bridging the Semantic Gap in TrustZone via Arm Pointer Authentication. | IEEE Trans. Dependable Secur. Comput. | https://doi.org/10.1109/TDSC.2024.3445296
+2025 | Bridging the Semantic Gap in Medical Visual Question Answering With Prompt Learning. | IEEE Trans. Medical Imaging | https://doi.org/10.1109/TMI.2025.3580561
+2025 | Bridging the Cross-Modality Semantic Gap in Visual Question Answering. | IEEE Trans. Neural Networks Learn. Syst. | https://doi.org/10.1109/TNNLS.2024.3370925
+2025 | Evaluating Entity Retrieval in Electronic Health Records: a Semantic Gap Perspective. | CoRR | https://doi.org/10.48550/ARXIV.2502.06252
+2025 | 3D-PointZshotS: Geometry-Aware 3D Point Cloud Zero-Shot Semantic Segmentation Narrowing the Visual-Semantic Gap. | AVSS | https://doi.org/10.1109/AVSS65446.2025.11149943
+2025 | Bridging Semantic Gaps in Federated Knowledge Graphs with Context-Enriched Synonym Detection. | IEEE Big Data | https://doi.org/10.1109/BIGDATA66926.2025.11401621
+2025 | LLM-Powered Data Annotation for Bridging the Semantic Gap in Air Quality Monitoring. | BuildSys | https://doi.org/10.1145/3736425.3771957
+2025 | Bridging the Semantic Gap in vGOAL for Verifiable Autonomous Decision-Making. | ICAART (1) | https://doi.org/10.5220/0013262400003890
+2025 | Bridging the Semantic Gap Between Text and Table: A Case Study on NL2SQL. | ICLR | https://dblp.org/rec/conf/iclr/LongGSYWW0025
+2025 | Bridging the Semantic Gap: Contrastive Rewards for Multilingual Text-to-SQL. | SMAP | https://doi.org/10.1109/SMAP66932.2025.00039
+# terms=['parser', 'discrepanc'] min_year=2023 n=1
+2026 | PathFault: Automated Exploit Generator for Web Services via HTTP Message Parser Discrepancies. | ICISC | https://doi.org/10.1007/978-981-95-8034-7_6
+# terms=['smuggling'] min_year=2023 n=18
+2026 | Making MLLMs Blind: Adversarial Smuggling Attacks in MLLM Content Moderation. | ACL (Findings) | https://doi.org/10.18653/V1/2026.FINDINGS-ACL.1006
+2026 | MSIF-SSTR: A "Quick smuggler" smuggling speedboat trajectory recognition method based on multi-source information fusion. | Expert Syst. Appl. | https://doi.org/10.1016/J.ESWA.2026.131525
+2026 | FineREX: Fine-Tuned NER-RE for Human Smuggling Knowledge Graphs. | CoRR | https://doi.org/10.48550/ARXIV.2606.19710
+2026 | Making MLLMs Blind: Adversarial Smuggling Attacks in MLLM Content Moderation. | CoRR | https://doi.org/10.48550/ARXIV.2604.06950
+2025 | Evaluation of Resource-Aware HTTP/3 Proxies for Smuggling Resilience in IoT Environments. | GLOBECOM | https://doi.org/10.1109/GLOBECOM59602.2025.11432217
+2025 | LINK-KG: LLM-Driven Coreference-Resolved Knowledge Graphs for Human Smuggling Networks. | ICKG | https://doi.org/10.1109/ICKG66886.2025.00043
+2025 | Email Smuggling with Differential Fuzzing of MIME Parsers. | SP (Workshops) | https://doi.org/10.1109/SPW67851.2025.00007
+2025 | Email Spoofing with SMTP Smuggling: How the Shared Email Infrastructures Magnify this Vulnerability. | USENIX Security Symposium | https://dblp.org/rec/conf/uss/Wang0YL0D025
+2025 | LINK-KG: LLM-Driven Coreference-Resolved Knowledge Graphs for Human Smuggling Networks. | CoRR | https://doi.org/10.48550/ARXIV.2510.26486
+2025 | CORE-KG: An LLM-Driven Knowledge Graph Construction Framework for Human Smuggling Networks. | CoRR | https://doi.org/10.48550/ARXIV.2506.21607
+2024 | ScriptBlock Smuggling: Uncovering Stealthy Evasion Techniques in PowerShell and .NET Environments. | J. Cybersecur. Priv. | https://doi.org/10.3390/JCP4020008
+2024 | Account of Spatio-Temporal Characteristics in Customs Anti-Smuggling Intelligence Acquisition: A Combined LSTM+CRF Model Using TF-IDF and Levenshtein. | Int. J. Data Warehous. Min. | https://doi.org/10.4018/IJDWM.364846
+2024 | HTTP/3 will not Save you from Request Smuggling: A Methodology to Detect HTTP/3 Header (mis)Validations. | NCA | https://doi.org/10.1109/NCA61908.2024.00026
+2024 | Unveiling Coyote Ads: Detecting Human Smuggling Advertisements on Social Media. | HT | https://doi.org/10.1145/3648188.3675139
+2024 | Research on Smuggling Crimes in Cross-Border E-Commerce Retail Import Mode Based on T-R Model. | CECNet | https://doi.org/10.3233/FAIA231224
+2023 | Angels against demons: Fight against smuggling in an illicit supply chain with uncertain outcomes and unknown structure. | Comput. Ind. Eng. | https://doi.org/10.1016/J.CIE.2023.109007
+2023 | HTML Smuggling: Attack and Mitigation. | SIN | https://doi.org/10.1109/SIN60469.2023.10474837
+2023 | Research on BERT-Based Text Entity Recognition Model for Customs Anti-smuggling. | INCoS | https://doi.org/10.1007/978-3-031-40971-4_25
+# terms=['cache deception'] min_year=2023 n=1
+2024 | A Methodology for Web Cache Deception Vulnerability Discovery. | CLOSER | https://doi.org/10.5220/0012692000003711
+# terms=['cache poison'] min_year=2023 n=13
+2026 | An ML-Based IDS for DNS Cache Poisoning Detection Using Convolutional Neural Networks. | IntelITSIS | https://dblp.org/rec/conf/intelitsis/StadnykTKKP26
+2026 | When Cache Poisoning Meets LLM Systems: Semantic Cache Poisoning and Its Countermeasures. | NDSS | https://dblp.org/rec/conf/ndss/WuWZZNWZ26
+2026 | From Constrictor to Serpent: Investigating the Threat of Cache Poisoning in the Python Ecosystem. | Sicherheit | https://doi.org/10.18420/SICHERHEIT2026_13
+2026 | DNS Cache Poisoning Like it's 2006. | USENIX Security Symposium | https://dblp.org/rec/conf/uss/Ben-SimhonK26
+2026 | Cross User/App Network Attacks - Hijacking TCP Connections and DNS Cache Poisoning via a Malicious User/App (Extended Version). | CoRR | https://doi.org/10.48550/ARXIV.2609.09345
+2025 | RebirthDay Attack: Reviving DNS Cache Poisoning with the Birthday Paradox. | CCS | https://doi.org/10.1145/3719027.3744832
+2025 | POPS: From History to Mitigation of DNS Cache Poisoning Attacks. | USENIX Security Symposium | https://dblp.org/rec/conf/uss/AfekBB25
+2025 | POPS: From History to Mitigation of DNS Cache Poisoning Attacks. | CoRR | https://doi.org/10.48550/ARXIV.2501.13540
+2025 | An Efficient Scheme for Preventing Cache Poisoning Attack Against DNS Forwarders Based on Redactable Signature. | Int. J. Inf. Sec. | https://doi.org/10.1007/S10207-025-01120-1
+2024 | Internet's Invisible Enemy: Detecting and Measuring Web Cache Poisoning in the Wild. | CCS | https://doi.org/10.1145/3658644.3690361
+2024 | Design of a Blockchain-Based Trust Model for Detecting Cache Poisoning Attakcs in NDN. | ICIC (10) | https://doi.org/10.1007/978-981-97-5609-4_42
+2024 | DCPsolver: Enhancing DNS Cache Poisoning Defenses with Resolver-Based SmartNICs. | NCA | https://doi.org/10.1109/NCA61908.2024.00044
+2024 | Securing the internet's backbone: A blockchain-based and incentive-driven architecture for DNS cache poisoning defense. | Comput. Networks | https://doi.org/10.1016/J.COMNET.2024.110777
+# terms=['access control', 'fuzz'] min_year=2023 n=16
+2027 | BACHunter: An Automated Fuzzing Framework for Discovering Broken Access Control Vulnerabilities in Java Web Applications. | ICIC (11) | https://doi.org/10.1007/978-981-92-3423-3_50
+2026 | Fuzzychain-edge: A novel Fuzzy logic-based adaptive Access control model for Blockchain in Edge Computing. | CoRR | https://doi.org/10.48550/ARXIV.2601.10105
+2026 | A Cloud Environment Security Access Control Scheme Based on Federated Learning and Fuzzy Logic Integration. | EAI Endorsed Trans. Scalable Inf. Syst. | https://doi.org/10.4108/EETSIS.11731
+2026 | Fuzzy Identity-Based Cloud Storage Auditing Scheme With Sensitive-Information Hiding and Access Control Functions. | IEEE Trans. Consumer Electron. | https://doi.org/10.1109/TCE.2026.3669888
+2026 | ESA: Privacy-Preserving Data Sharing Framework With Efficient Fuzzy Search and Access Control. | IEEE Trans. Knowl. Data Eng. | https://doi.org/10.1109/TKDE.2026.3682764
+2025 | BACFuzz: Exposing the Silence on Broken Access Control Vulnerabilities in Web Applications. | CoRR | https://doi.org/10.48550/ARXIV.2507.15984
+2025 | FTBAC: fuzzy trust based access control for healthcare cross-domain environment. | Soft Comput. | https://doi.org/10.1007/S00500-025-10650-8
+2025 | Fuzzy based trust model for cloud access control classification mechanism using ghost net architecture. | Wirel. Networks | https://doi.org/10.1007/S11276-024-03843-W
+2024 | Fuzzy logic-based methodology for building access control systems based on fuzzy logic. | MoDaST | https://dblp.org/rec/conf/modast/LytvynBZGHTS24
+2024 | FL-RAEO: Fuzzy Logic Guided Random Access Efficiency Optimization for Massive Access Control in Heterogeneous IoT. | WCNC | https://doi.org/10.1109/WCNC57260.2024.10571213
+2024 | Reputation Evaluation Using Fuzzy Logic for Blockchain-Based Access Control in an IoT Environment. | IEEE Access | https://doi.org/10.1109/ACCESS.2024.3426993
+2024 | Security enhancement of the access control scheme in IoMT applications based on fuzzy logic processing and lightweight encryption. | Complex Intell. Syst. | https://doi.org/10.1007/S40747-023-01149-6
+2024 | PaaS platform security enhancement using fuzzy based access control and trust based signature. | Expert Syst. J. Knowl. Eng. | https://doi.org/10.1111/EXSY.13496
+2024 | Fuzzy expert system for access control of children to the internet. | Int. J. Reason. based Intell. Syst. | https://doi.org/10.1504/IJRIS.2024.144062
+2024 | An electronic medical record access control model based on intuitionistic fuzzy trust. | Inf. Sci. | https://doi.org/10.1016/J.INS.2023.120054
+2023 | Fuzzy User Access Trust Model for Cloud Access Control. | Comput. Syst. Sci. Eng. | https://doi.org/10.32604/CSSE.2023.023378
+# terms=['authoriz', 'bypass'] min_year=2023 n=0
+# terms=['access control', 'bypass'] min_year=2023 n=2
+2026 | FragFuse: Bypassing Access Control of Large Language Model Agents via Memory-Based Query Fragmentation and Fusion. | USENIX Security Symposium | https://dblp.org/rec/conf/uss/RaoZLCNGLX26
+2026 | FragFuse: Bypassing Access Control of Large Language Model Agents via Memory-Based Query Fragmentation and Fusion. | CoRR | https://doi.org/10.48550/ARXIV.2606.15609
+# terms=['authenticat', 'bypass'] min_year=2023 n=12
+2026 | Through the Authentication Maze: Detecting Authentication Bypass Vulnerabilities in Firmware Binaries. | NDSS | https://dblp.org/rec/conf/ndss/ZhongLZZDXPLWH26
+2026 | When Customer Support Becomes an Attack Surface: How Support Workflows Act as Shadow APIs to Bypass Authentication. | IEEE Secur. Priv. | https://doi.org/10.1109/MSEC.2026.3685070
+2025 | Be Aware of What You Let Pass: Demystifying URL-based Authentication Bypass Vulnerability in Java Web Applications. | CCS | https://doi.org/10.1145/3719027.3765199
+2025 | STEK Sharing is Not Caring: Bypassing TLS Authentication in Web Servers using Session Tickets. | USENIX Security Symposium | https://dblp.org/rec/conf/uss/HebrokSCRS25
+2025 | Tautology-Based Injection to Bypassing Authentication Detection Dataset. |  | https://doi.org/10.21227/0M30-W510
+2025 | Physical-Layer Signal Injection Attacks on EV Charging Ports: Bypassing Authentication via Electrical-Level Exploits. | CoRR | https://doi.org/10.48550/ARXIV.2506.16400
+2024 | Proxy in a Haystack: Uncovering and Classifying MFA Bypass Phishing Attacks in Large-Scale Authentication Data. | CAMLIS | https://dblp.org/rec/conf/camlis/LynchS23
+2024 | JustSTART: How to Find an RSA Authentication Bypass on Xilinx UltraScale(+) with Fuzzing. | CoRR | https://doi.org/10.48550/ARXIV.2402.09845
+2024 | Recovering WPA-3 Network Password by Bypassing the Simultaneous Authentication of Equals Handshake using Social Engineering Captive Portal. | CoRR | https://doi.org/10.48550/ARXIV.2412.15381
+2024 | JustSTART: How to Find an RSA Authentication Bypass on Xilinx UltraScale(+) with Fuzzing. | IACR Trans. Cryptogr. Hardw. Embed. Syst. | https://doi.org/10.46586/TCHES.V2024.I2.426-450
+2023 | Inducing Authentication Failures to Bypass Credit Card PINs. | USENIX Security Symposium | https://dblp.org/rec/conf/uss/BasinST23
+2023 | Location-independent GNSS Relay Attacks: A Lazy Attacker's Guide to Bypassing Navigation Message Authentication. | WISEC | https://doi.org/10.1145/3558482.3590186
+# terms=['path', 'confus'] min_year=2023 n=5
+2027 | Proxy-Labeled Modeling of Confusion, Apathy, and Morale for Speech-Based Learner State Estimation. | ITS (2) | https://doi.org/10.1007/978-3-032-31660-8_8
+2025 | Regularizing CNNs Using Confusion Penalty Based Label Smoothing for Histopathology Images. | CICBA (2) | https://doi.org/10.1007/978-3-031-81339-9_22
+2024 | Regularizing CNNs using Confusion Penalty Based Label Smoothing for Histopathology Images. | CoRR | https://doi.org/10.48550/ARXIV.2403.10881
+2024 | Analyzing fricative confusions in healthy and pathological speech using modified S-transform. | Int. J. Speech Technol. | https://doi.org/10.1007/S10772-024-10139-Z
+2023 | Gender differences in cybersickness: Clarifying confusion and identifying paths forward. | VR Workshops | https://doi.org/10.1109/VRW58643.2023.00067
+# terms=['url', 'confus'] min_year=2023 n=0
+# terms=['reverse prox'] min_year=2023 n=5
+2026 | Penalizing Malicious Web Bots with an Allow List Based Reverse Proxy and Tarpit. | ACM Southeast Conference | https://doi.org/10.1145/3746467.3801539
+2026 | DirectQUIC: Transparent QUIC Reverse Proxy. | IFIP Networking | https://doi.org/10.23919/IFIPNETWORKING70592.2026.11579087
+2025 | Hard-Earned Lessons in Access Control at Scale: Enforcing Identity and Policy Across Trust Boundaries with Reverse Proxies and mTLS. | CoRR | https://doi.org/10.48550/ARXIV.2508.01863
+2025 | The SDSC Satellite Reverse Proxy Service for Launching Secure Jupyter Notebooks on High-Performance Computing Systems. | CoRR | https://doi.org/10.48550/ARXIV.2511.02116
+2024 | NAISS: A reverse proxy approach to mitigate MageCart's e-skimmers in e-commerce. | Comput. Secur. | https://doi.org/10.1016/J.COSE.2024.103797
+# terms=['middlebox', 'http'] min_year=2023 n=2
+2025 | The Developer, the RFC, and the Middlebox: An HTTP/2 Compliance Story. | IMC | https://doi.org/10.1145/3730567.3764447
+2025 | HTTP Conformance vs. Middleboxes: Identifying Where the Rules Actually Break Down. | PAM | https://doi.org/10.1007/978-3-031-85960-1_7
+# terms=['ext_authz'] min_year=2023 n=0
+# terms=['zero trust', 'proxy'] min_year=2023 n=3
+2026 | Zero Trust Access Control Framework for NDN-based Healthcare Systems Using Attribute-based Access Control and Proxy Re-Encryption. | KSII Trans. Internet Inf. Syst. | https://doi.org/10.3837/TIIS.2026.02.019
+2025 | Proxyless Zero Trust for Edge and IoT: Decoupling Control and Data Paths. | BCCA | https://doi.org/10.1109/BCCA66705.2025.11229676
+2023 | Proxy smart contracts for zero trust architecture implementation in Decentralised Oracle Networks based applications. | Comput. Commun. | https://doi.org/10.1016/J.COMCOM.2023.04.022
+# terms=['policy enforcement point'] min_year=2023 n=0
+# terms=['authorization', 'api'] min_year=2023 n=9
+2027 | FivGeeFuzz : Authorization-Aware API Fuzzing of 5G Core Service-Based Interfaces. | ACNS (3) | https://doi.org/10.1007/978-3-032-32578-5_16
+2026 | EVMAuth: Decentralized Authorization as Programmable Assets for Web3 APIs and Autonomous Agents. | ICBC | https://doi.org/10.1109/ICBC67748.2026.11575510
+2026 | AuthProbe: Specification-Driven, Multi-Identity Detection of Broken Object-Level Authorization in Recruitment API. | CoRR | https://doi.org/10.48550/ARXIV.2607.20574
+2025 | Discovering and Understanding the Security Flaws of Authentication and Authorization in IoT Cloud APIs for Smart Home. | SecureComm (1) | https://doi.org/10.1007/978-3-031-64948-6_11
+2025 | SDN-API-Sec-Fast: a performance-enhanced conflict-free blockchain-based authorization for cross-domain SDNs. | Ann. des Télécommunications | https://doi.org/10.1007/S12243-025-01133-W
+2025 | Automated broken object-level authorization attack detection in REST APIs through OpenAPI to colored petri nets transformation. | Int. J. Inf. Sec. | https://doi.org/10.1007/S10207-024-00970-5
+2024 | SDN-API-Sec: A Conflict-Free BC-Based Authorization for Cross-Domain SDNs. | CSNet | https://doi.org/10.1109/CSNET64211.2024.10851743
+2023 | Enhancing 3GPP CAPIF Authentication and Authorization Across Mobile Operators Using OpenID Connect and Single Sign-On. | ICC | https://doi.org/10.1109/ICC45041.2023.10279103
+2023 | Attribute Authorization - A Novel Enhancement to API Gateways. | ICSOC (2) | https://doi.org/10.1007/978-3-031-48424-7_20
+# terms=['rest api', 'security'] min_year=2023 n=1
+2027 | ScanREST: Security-Aware Dependency Modeling for Detecting State-Dependent REST API Vulnerabilities. | STM | https://doi.org/10.1007/978-3-032-41330-7_8
+# terms=['graphql', 'security'] min_year=2023 n=3
+2026 | A Controlled Comparative Study of MongoDB Security Under REST and GraphQL APIs With Proxy-Based Protection. | ISDFS | https://doi.org/10.1109/ISDFS69419.2026.11459046
+2025 | GraphQLer: Enhancing GraphQL Security with Context-Aware API Testing. | CoRR | https://doi.org/10.48550/ARXIV.2504.13358
+2025 | Enhancing GraphQL Security by Detecting Malicious Queries Using Large Language Models, Sentence Transformers, and Convolutional Neural Networks. | CoRR | https://doi.org/10.48550/ARXIV.2508.11711
+# terms=['http method'] min_year=2023 n=0
+# terms=['jwt'] min_year=2023 n=15
+2027 | Spec-as-(N+1)-Oracle Differential Fuzzing of SD-JWT Presentation Verification. | STM | https://doi.org/10.1007/978-3-032-41330-7_6
+2026 | Analyzing the Unlinkability of SD-JWT: A Machine Learning Perspective. | EuroS&P (Workshops) | https://doi.org/10.1109/EUROSPW72509.2026.00055
+2026 | JWT Back to the Future on the (Ab)use of JWTs in IoT Transactions. | LightSec | https://doi.org/10.1007/978-3-032-15541-2_18
+2026 | Token Time Bomb: Evaluating JWT Implementations for Vulnerability Discovery. | NDSS | https://dblp.org/rec/conf/ndss/YangWCWZDXW26
+2026 | Research on denoising of rolling bearing vibration signals based on the ISSA-VMD-JWTD method. | Digit. Signal Process. | https://doi.org/10.1016/J.DSP.2026.105912
+2026 | Account-Holding Proofs Across Multiple Authorities from JWT-Derived Evidence Using RSA-Based Synchronized Aggregate Signatures. | J. Cybersecur. Priv. | https://doi.org/10.3390/JCP6040108
+2025 | Agentic JWT: A Secure Delegation Protocol for Autonomous AI Agents. | CoRR | https://doi.org/10.48550/ARXIV.2509.13597
+2025 | JSON Web Token (JWT) Response for OAuth Token Introspection. | RFC | https://doi.org/10.17487/RFC9701
+2025 | A TOTP-based secure data storage system in the cloud environment using the JWT token approach. | Int. J. Syst. Assur. Eng. Manag. | https://doi.org/10.1007/S13198-025-02775-8
+2025 | JWTAMH: JSON Web Tokens Based Authentication Mechanism for HADOOP. | EAI Endorsed Trans. Scalable Inf. Syst. | https://doi.org/10.4108/EETSIS.5429
+2025 | APSH-JWT: an authentication protocol based on JWT with scalability and heterogeneity in edge computing. | Wirel. Networks | https://doi.org/10.1007/S11276-025-03926-2
+2024 | Comprehensive Empirical Study of Python JWT Libraries. | ANT/EDI40 | https://doi.org/10.1016/J.PROCS.2024.06.099
+2024 | Advanced Security Mechanisms in the Spring Framework: JWT, OAuth, LDAP and Keycloak. | BISEC | https://dblp.org/rec/conf/bisec/DimitrijevicZBM23
+2024 | JWTKey: Automatic Cryptographic Vulnerability Detection in JWT Applications. | ESORICS (3) | https://doi.org/10.1007/978-3-031-51479-1_14
+2023 | Enhancing JWT Authentication and Authorization in Web Applications Based on User Behavior History. | Comput. | https://doi.org/10.3390/COMPUTERS12040078
+# terms=['dpop'] min_year=2023 n=8
+2026 | MdpoPlanner: Mask-Driven Floorplan via Reinforcement Learning-Based Placement Order. | ASP-DAC | https://doi.org/10.1109/ASP-DAC66049.2026.11420532
+2026 | Research on algorithm optimization of multi-agent dynamic obstacle avoidance robots based on DLSC-CDPOP algorithm. | Neurocomputing | https://doi.org/10.1016/J.NEUCOM.2026.132738
+2026 | Dpopgcf: a fairness-driven graph convolutional collaborative filtering model with flexible negative sampling. | Int. J. Mach. Learn. Cybern. | https://doi.org/10.1007/S13042-025-02980-8
+2025 | FedPop: Federated Population-based Hyperparameter Tuning. | AAAI | https://doi.org/10.1609/AAAI.V39I15.33732
+2025 | FedPoP: Federated Learning Meets Proof of Participation. | CoRR | https://doi.org/10.48550/ARXIV.2511.08207
+2024 | Using flux theory in dynamic omics data sets to identify differentially changing signals using DPoP. | BMC Bioinform. | https://doi.org/10.1186/S12859-024-05938-9
+2023 | FedPop: Federated Population-based Hyperparameter Tuning. | CoRR | https://doi.org/10.48550/ARXIV.2308.08634
+2023 | OAuth 2.0 Demonstrating Proof of Possession (DPoP). | RFC | https://doi.org/10.17487/RFC9449

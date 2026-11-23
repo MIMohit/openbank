@@ -1,0 +1,103 @@
+2026-11-23T18:19:16Z load1=1.29 memavail_mib=2036 swap_delta_mib=0 prod_up=3/3 bhperf_running=0 ok
+2026-11-23T18:19:25Z guard start pid=128979 swap0_kib=456060 prod=once-app-loopany.49c325-e3597d once-proxy registry 
+2026-11-23T18:19:25Z load1=1.24 memavail_mib=2038 swap_delta_mib=2 prod_up=3/3 bhperf_running=0 ok
+2026-11-23T18:19:40Z load1=0.96 memavail_mib=2108 swap_delta_mib=2 prod_up=3/3 bhperf_running=0 ok
+2026-11-23T18:19:55Z load1=0.75 memavail_mib=2216 swap_delta_mib=2 prod_up=3/3 bhperf_running=0 ok
+2026-11-23T18:20:11Z load1=0.58 memavail_mib=2232 swap_delta_mib=2 prod_up=3/3 bhperf_running=0 ok
+2026-11-23T18:20:26Z load1=0.53 memavail_mib=2231 swap_delta_mib=2 prod_up=3/3 bhperf_running=0 ok
+2026-11-23T18:20:41Z load1=0.41 memavail_mib=2307 swap_delta_mib=2 prod_up=3/3 bhperf_running=0 ok
+2026-11-23T18:20:56Z load1=0.48 memavail_mib=2310 swap_delta_mib=2 prod_up=3/3 bhperf_running=0 ok
+2026-11-23T18:21:11Z load1=0.37 memavail_mib=2313 swap_delta_mib=2 prod_up=3/3 bhperf_running=0 ok
+2026-11-23T18:21:26Z load1=0.29 memavail_mib=2306 swap_delta_mib=2 prod_up=3/3 bhperf_running=0 ok
+2026-11-23T18:21:41Z load1=0.22 memavail_mib=2315 swap_delta_mib=2 prod_up=3/3 bhperf_running=0 ok
+2026-11-23T18:21:41Z load1=0.22 memavail_mib=2289 swap_delta_mib=1 prod_up=3/3 bhperf_running=2 ok
+2026-11-23T18:21:57Z load1=0.38 memavail_mib=2206 swap_delta_mib=1 prod_up=3/3 bhperf_running=4 ok
+2026-11-23T18:22:08Z load1=0.97 memavail_mib=1953 swap_delta_mib=12 prod_up=3/3 bhperf_running=3 ok
+2026-11-23T18:22:12Z load1=0.89 memavail_mib=1999 swap_delta_mib=12 prod_up=3/3 bhperf_running=4 ok
+2026-11-23T18:22:27Z load1=0.69 memavail_mib=2048 swap_delta_mib=12 prod_up=3/3 bhperf_running=1 ok
+2026-11-23T18:22:42Z load1=0.62 memavail_mib=2313 swap_delta_mib=12 prod_up=3/3 bhperf_running=0 ok
+2026-11-23T18:22:57Z load1=0.55 memavail_mib=2316 swap_delta_mib=12 prod_up=3/3 bhperf_running=0 ok
+2026-11-23T18:22:57Z load1=0.55 memavail_mib=2314 swap_delta_mib=12 prod_up=3/3 bhperf_running=0 ok
+2026-11-23T18:23:13Z load1=0.78 memavail_mib=1878 swap_delta_mib=12 prod_up=3/3 bhperf_running=4 ok
+2026-11-23T18:23:24Z load1=1.17 memavail_mib=1732 swap_delta_mib=23 prod_up=3/3 bhperf_running=3 ok
+2026-11-23T18:23:28Z load1=1.08 memavail_mib=1702 swap_delta_mib=23 prod_up=3/3 bhperf_running=4 ok
+2026-11-23T18:23:43Z load1=0.84 memavail_mib=1752 swap_delta_mib=23 prod_up=3/3 bhperf_running=4 ok
+2026-11-23T18:23:58Z load1=0.65 memavail_mib=1829 swap_delta_mib=23 prod_up=3/3 bhperf_running=4 ok
+2026-11-23T18:24:13Z load1=0.65 memavail_mib=1826 swap_delta_mib=23 prod_up=3/3 bhperf_running=4 ok
+2026-11-23T18:24:28Z load1=0.57 memavail_mib=1871 swap_delta_mib=23 prod_up=3/3 bhperf_running=3 ok
+2026-11-23T18:24:44Z load1=0.60 memavail_mib=1894 swap_delta_mib=23 prod_up=3/3 bhperf_running=3 ok
+2026-11-23T18:24:55Z load1=0.51 memavail_mib=1913 swap_delta_mib=23 prod_up=3/3 bhperf_running=3 ok
+2026-11-23T18:24:59Z load1=0.47 memavail_mib=1883 swap_delta_mib=23 prod_up=3/3 bhperf_running=4 ok
+2026-11-23T18:25:14Z load1=0.36 memavail_mib=1917 swap_delta_mib=23 prod_up=3/3 bhperf_running=4 ok
+2026-11-23T18:25:29Z load1=0.87 memavail_mib=1916 swap_delta_mib=23 prod_up=3/3 bhperf_running=4 ok
+2026-11-23T18:25:44Z load1=0.97 memavail_mib=1917 swap_delta_mib=23 prod_up=3/3 bhperf_running=4 ok
+2026-11-23T18:25:59Z load1=0.76 memavail_mib=1964 swap_delta_mib=23 prod_up=3/3 bhperf_running=3 ok
+2026-11-23T18:26:15Z load1=0.59 memavail_mib=1963 swap_delta_mib=23 prod_up=3/3 bhperf_running=3 ok
+2026-11-23T18:26:27Z load1=0.50 memavail_mib=1969 swap_delta_mib=23 prod_up=3/3 bhperf_running=3 ok
+2026-11-23T18:26:30Z load1=0.70 memavail_mib=1949 swap_delta_mib=23 prod_up=3/3 bhperf_running=4 ok
+2026-11-23T18:26:45Z load1=0.69 memavail_mib=1935 swap_delta_mib=23 prod_up=3/3 bhperf_running=4 ok
+2026-11-23T18:27:00Z load1=0.53 memavail_mib=1937 swap_delta_mib=23 prod_up=3/3 bhperf_running=4 ok
+2026-11-23T18:27:15Z load1=0.85 memavail_mib=1641 swap_delta_mib=28 prod_up=3/3 bhperf_running=4 ok
+2026-11-23T18:27:30Z load1=0.74 memavail_mib=1702 swap_delta_mib=28 prod_up=3/3 bhperf_running=3 ok
+2026-11-23T18:27:46Z load1=0.58 memavail_mib=1756 swap_delta_mib=28 prod_up=3/3 bhperf_running=3 ok
+2026-11-23T18:27:58Z load1=0.45 memavail_mib=1757 swap_delta_mib=28 prod_up=3/3 bhperf_running=3 ok
+2026-11-23T18:28:01Z load1=0.45 memavail_mib=1745 swap_delta_mib=28 prod_up=3/3 bhperf_running=4 ok
+2026-11-23T18:28:16Z load1=0.50 memavail_mib=1745 swap_delta_mib=28 prod_up=3/3 bhperf_running=4 ok
+2026-11-23T18:28:31Z load1=0.93 memavail_mib=1766 swap_delta_mib=28 prod_up=3/3 bhperf_running=4 ok
+2026-11-23T18:28:46Z load1=0.79 memavail_mib=1766 swap_delta_mib=28 prod_up=3/3 bhperf_running=4 ok
+2026-11-23T18:29:01Z load1=0.86 memavail_mib=1791 swap_delta_mib=28 prod_up=3/3 bhperf_running=3 ok
+2026-11-23T18:29:17Z load1=0.67 memavail_mib=1960 swap_delta_mib=28 prod_up=3/3 bhperf_running=3 ok
+2026-11-23T18:29:29Z load1=0.59 memavail_mib=2104 swap_delta_mib=28 prod_up=3/3 bhperf_running=3 ok
+2026-11-23T18:29:32Z load1=0.59 memavail_mib=2084 swap_delta_mib=28 prod_up=3/3 bhperf_running=4 ok
+2026-11-23T18:29:47Z load1=1.03 memavail_mib=2083 swap_delta_mib=28 prod_up=3/3 bhperf_running=4 ok
+2026-11-23T18:30:02Z load1=0.87 memavail_mib=2092 swap_delta_mib=28 prod_up=3/3 bhperf_running=4 ok
+2026-11-23T18:30:17Z load1=0.76 memavail_mib=2081 swap_delta_mib=28 prod_up=3/3 bhperf_running=4 ok
+2026-11-23T18:30:33Z load1=0.87 memavail_mib=2108 swap_delta_mib=28 prod_up=3/3 bhperf_running=3 ok
+2026-11-23T18:30:48Z load1=0.74 memavail_mib=2126 swap_delta_mib=28 prod_up=3/3 bhperf_running=3 ok
+2026-11-23T18:31:01Z load1=0.63 memavail_mib=2123 swap_delta_mib=28 prod_up=3/3 bhperf_running=3 ok
+2026-11-23T18:31:03Z load1=0.58 memavail_mib=2093 swap_delta_mib=28 prod_up=3/3 bhperf_running=4 ok
+2026-11-23T18:31:18Z load1=0.53 memavail_mib=2074 swap_delta_mib=28 prod_up=3/3 bhperf_running=4 ok
+2026-11-23T18:31:33Z load1=0.55 memavail_mib=2061 swap_delta_mib=28 prod_up=3/3 bhperf_running=4 ok
+2026-11-23T18:31:48Z load1=0.43 memavail_mib=2067 swap_delta_mib=28 prod_up=3/3 bhperf_running=4 ok
+2026-11-23T18:32:04Z load1=0.33 memavail_mib=1897 swap_delta_mib=28 prod_up=3/3 bhperf_running=3 ok
+2026-11-23T18:32:19Z load1=0.34 memavail_mib=1843 swap_delta_mib=28 prod_up=3/3 bhperf_running=3 ok
+2026-11-23T18:32:33Z load1=0.41 memavail_mib=2107 swap_delta_mib=28 prod_up=3/3 bhperf_running=3 ok
+2026-11-23T18:32:34Z load1=0.41 memavail_mib=2093 swap_delta_mib=28 prod_up=3/3 bhperf_running=4 ok
+2026-11-23T18:32:49Z load1=0.32 memavail_mib=2071 swap_delta_mib=28 prod_up=3/3 bhperf_running=4 ok
+2026-11-23T18:33:04Z load1=0.25 memavail_mib=2122 swap_delta_mib=28 prod_up=3/3 bhperf_running=4 ok
+2026-11-23T18:33:20Z load1=0.43 memavail_mib=2215 swap_delta_mib=28 prod_up=3/3 bhperf_running=4 ok
+2026-11-23T18:33:35Z load1=0.47 memavail_mib=2334 swap_delta_mib=28 prod_up=3/3 bhperf_running=4 ok
+2026-11-23T18:33:50Z load1=0.36 memavail_mib=2411 swap_delta_mib=28 prod_up=3/3 bhperf_running=3 ok
+2026-11-23T18:34:05Z load1=0.36 memavail_mib=2191 swap_delta_mib=28 prod_up=3/3 bhperf_running=3 ok
+2026-11-23T18:34:06Z load1=0.36 memavail_mib=2139 swap_delta_mib=28 prod_up=3/3 bhperf_running=3 ok
+2026-11-23T18:34:20Z load1=1.69 memavail_mib=1717 swap_delta_mib=28 prod_up=3/3 bhperf_running=4 VIOLATION: load1>1.6
+2026-11-23T18:34:20Z ABORT -> removing bhperf containers
+2026-11-23T18:34:21Z removed bhperf-k6
+2026-11-23T18:34:21Z removed bhperf-gateway
+2026-11-23T18:34:21Z removed bhperf-executor
+2026-11-23T18:34:21Z removed bhperf-verifier
+2026-11-23T18:34:36Z load1=1.38 memavail_mib=2273 swap_delta_mib=28 prod_up=3/3 bhperf_running=0 ok
+2026-11-23T18:34:52Z load1=1.07 memavail_mib=2276 swap_delta_mib=28 prod_up=3/3 bhperf_running=0 ok
+2026-11-23T18:35:07Z load1=0.83 memavail_mib=2284 swap_delta_mib=28 prod_up=3/3 bhperf_running=0 ok
+2026-11-23T18:35:22Z load1=0.72 memavail_mib=2251 swap_delta_mib=28 prod_up=3/3 bhperf_running=0 ok
+2026-11-23T18:35:37Z load1=0.58 memavail_mib=2306 swap_delta_mib=28 prod_up=3/3 bhperf_running=0 ok
+2026-11-23T18:35:52Z load1=0.45 memavail_mib=2320 swap_delta_mib=28 prod_up=3/3 bhperf_running=0 ok
+2026-11-23T18:36:07Z load1=0.35 memavail_mib=2319 swap_delta_mib=28 prod_up=3/3 bhperf_running=0 ok
+2026-11-23T18:36:22Z load1=0.41 memavail_mib=2317 swap_delta_mib=28 prod_up=3/3 bhperf_running=0 ok
+2026-11-23T18:36:38Z load1=0.32 memavail_mib=2317 swap_delta_mib=28 prod_up=3/3 bhperf_running=0 ok
+2026-11-23T18:36:53Z load1=0.25 memavail_mib=2317 swap_delta_mib=28 prod_up=3/3 bhperf_running=0 ok
+2026-11-23T18:37:00Z load1=0.31 memavail_mib=2304 swap_delta_mib=28 prod_up=3/3 bhperf_running=0 ok
+2026-11-23T18:37:08Z load1=1.32 memavail_mib=1941 swap_delta_mib=28 prod_up=3/3 bhperf_running=0 ok
+2026-11-23T18:37:08Z load1=1.32 memavail_mib=1929 swap_delta_mib=28 prod_up=3/3 bhperf_running=0 ok
+2026-11-23T18:37:23Z load1=1.17 memavail_mib=2082 swap_delta_mib=28 prod_up=3/3 bhperf_running=4 ok
+2026-11-23T18:37:35Z load1=0.99 memavail_mib=2199 swap_delta_mib=28 prod_up=3/3 bhperf_running=3 ok
+2026-11-23T18:37:38Z load1=0.91 memavail_mib=2202 swap_delta_mib=28 prod_up=3/3 bhperf_running=3 ok
+2026-11-23T18:37:53Z load1=0.79 memavail_mib=2188 swap_delta_mib=28 prod_up=3/3 bhperf_running=4 ok
+2026-11-23T18:38:09Z load1=1.61 memavail_mib=1766 swap_delta_mib=28 prod_up=3/3 bhperf_running=4 VIOLATION: load1>1.6
+2026-11-23T18:38:09Z ABORT -> removing bhperf containers
+2026-11-23T18:38:09Z removed bhperf-k6
+2026-11-23T18:38:09Z removed bhperf-gateway
+2026-11-23T18:38:09Z removed bhperf-verifier
+2026-11-23T18:38:09Z removed bhperf-executor
+2026-11-23T18:38:25Z load1=1.67 memavail_mib=1746 swap_delta_mib=28 prod_up=3/3 bhperf_running=0 VIOLATION: load1>1.6
+2026-11-23T18:38:25Z ABORT -> removing bhperf containers

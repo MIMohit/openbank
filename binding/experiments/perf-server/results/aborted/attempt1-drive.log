@@ -1,0 +1,15 @@
+== bedge-fastapi 2026-11-23T18:22:52Z
+2026-11-23T18:22:57Z bedge-fastapi up
+sanity status=200 after_tries=3
+2026-11-23T18:23:02Z bedge-fastapi warmup 20s @100
+2026-11-23T18:23:24Z bedge-fastapi run 50-r1
+2026-11-23T18:24:55Z bedge-fastapi run 50-r2
+2026-11-23T18:26:27Z bedge-fastapi run 50-r3
+2026-11-23T18:27:58Z bedge-fastapi run 50-r4
+2026-11-23T18:29:30Z bedge-fastapi run 50-r5
+2026-11-23T18:31:01Z bedge-fastapi run 100-r1
+2026-11-23T18:32:33Z bedge-fastapi run 100-r2
+2026-11-23T18:34:06Z bedge-fastapi run 100-r3
+2026-11-23T18:34:21Z bedge-fastapi ABORT during 100-r3 (run discarded)
+== bedge-fastapi rc=3 2026-11-23T18:34:28Z
+STOP: bedge-fastapi rc=3

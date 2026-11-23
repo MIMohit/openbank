@@ -4,6 +4,7 @@
 // The executor recomputes it over ITS OWN view: req.method after method-override and the matched
 // route template with req.params substituted, RFC 3986-normalised. 401 on missing/mismatch.
 const crypto = require('crypto')
+const fs = require('fs')
 
 const HEADER = 'x-verified-view'
 const UNRESERVED = /^[A-Za-z0-9\-._~]$/
@@ -58,6 +59,48 @@ function substitute (template, params) {
   return out
 }
 
+// ---- D-A/D-B public<->internal path map and wildcard-aware encoding (W23), behind DEFENCE_PATH_MAP.
+// Both the verifier-side canonical view (public) and the executor-side recomputed view are expressed
+// in PUBLIC-path space; the executor maps its matched INTERNAL route path back to the public prefix.
+function loadRules (envValue) {
+  if (!envValue) return []
+  let doc
+  try { doc = JSON.parse(fs.readFileSync(envValue, 'utf8')) } catch (e) { return [] }
+  const rules = Array.isArray(doc) ? doc : (doc.rules || [])
+  return rules
+    .map((r) => [String(r.public).replace(/\/+$/, ''), String(r.internal).replace(/\/+$/, '')])
+    .sort((a, b) => b[1].length - a[1].length) // longest internal first (greedy, unambiguous)
+}
+
+function toPublic (path, rules) {
+  for (const [pub, intr] of rules) {
+    if (intr && (path === intr || path.startsWith(intr + '/'))) return pub + path.slice(intr.length)
+  }
+  return path
+}
+
+// Wildcard (catch-all) values keep '/' literal, encoded per segment; a value already holding a
+// literal percent-encoding (Kestrel %2F) is not double-encoded (%25XX -> %XX).
+function encValue (v, wildcard) {
+  const s = String(v)
+  const enc = wildcard ? s.split('/').map(encSegment).join('/') : encSegment(s)
+  return enc.replace(/%25([0-9A-Fa-f]{2})/g, '%$1')
+}
+
+function substitutePm (template, params, wildcards) {
+  let out = template
+  for (const [k, v] of Object.entries(params)) out = out.split('{' + k + '}').join(encValue(v, wildcards.has(k)))
+  return out
+}
+
+function hasDotSegment (params, wildcards) {
+  for (const [k, v] of Object.entries(params)) {
+    const segs = wildcards.has(k) ? String(v).split('/') : [String(v)]
+    if (segs.some((s) => s === '.' || s === '..')) return true
+  }
+  return false
+}
+
 const b64u = (buf) => Buffer.from(buf).toString('base64url')
 const PLAIN = /^[\x20-\x21\x23-\x5b\x5d-\x7e]*$/ // JSON-safe without escaping
 
@@ -88,7 +131,7 @@ function mac (key, jti, method, path, jkt) {
 }
 
 /** viewValues/dpopValues: every received value of X-Verified-View / DPoP, in order. */
-function check (key, viewValues, dpopValues, method, template, params) {
+function check (key, viewValues, dpopValues, method, template, params, pathmap = null, wildcards = new Set()) {
   if (!key || !key.length) throw new Error('DEFENCE=db requires a non-empty VIEW_MAC_KEY')
   if (viewValues.length === 0) return { ok: false, reason: 'view_mac_missing', path: null }
   if (viewValues.length > 1) return { ok: false, reason: 'view_mac_multiple', path: null }
@@ -97,11 +140,20 @@ function check (key, viewValues, dpopValues, method, template, params) {
   if (dpopValues.length !== 1) return { ok: false, reason: 'view_mac_no_dpop', path: null }
   const binding = dpopBinding(dpopValues[0])
   if (!binding) return { ok: false, reason: 'view_mac_no_dpop', path: null }
-  if (Object.values(params).some((v) => String(v) === '.' || String(v) === '..')) {
+  // pathmap === null: behaviour unchanged. Otherwise W23 path-map mode (map to public, wildcard-aware).
+  if (pathmap === null) {
+    if (Object.values(params).some((v) => String(v) === '.' || String(v) === '..')) {
+      return { ok: false, reason: 'view_param_dot_segment', path: null }
+    }
+  } else if (hasDotSegment(params, wildcards)) {
     return { ok: false, reason: 'view_param_dot_segment', path: null }
   }
   let path
-  try { path = canonPath(substitute(template, params)) } catch (e) { return { ok: false, reason: 'view_unencodable', path: null } }
+  try {
+    path = pathmap === null
+      ? canonPath(substitute(template, params))
+      : canonPath(toPublic(substitutePm(template, params, wildcards), pathmap))
+  } catch (e) { return { ok: false, reason: 'view_unencodable', path: null } }
   const want = Buffer.from(mac(key, binding[0], method, path, binding[1]), 'utf8')
   const gotB = Buffer.from(got, 'utf8')
   // lengths are public (fixed by the VALUE regex); timingSafeEqual needs equal lengths
@@ -132,11 +184,14 @@ function routeTemplate (req) {
 function viewMac (key, opts = {}) {
   const keyBuf = Buffer.from(key || '', 'utf8')
   if (!keyBuf.length) throw new Error('DEFENCE=db requires a non-empty VIEW_MAC_KEY')
+  // W23: opts.pathmap (null=off, or a rules list) and opts.wildcards (Set of wildcard param names).
+  const pathmap = opts.pathmap === undefined ? null : opts.pathmap
+  const wildcards = opts.wildcards || new Set()
   return function viewMacMiddleware (req, res, next) {
     const template = routeTemplate(req)
     const r = template === null
       ? { ok: false, reason: 'view_route_unknown', path: null }
-      : check(keyBuf, rawValues(req, HEADER), rawValues(req, 'dpop'), req.method, template, Object.assign({}, req.params))
+      : check(keyBuf, rawValues(req, HEADER), rawValues(req, 'dpop'), req.method, template, Object.assign({}, req.params), pathmap, wildcards)
     req.viewMac = r
     if (r.ok) return next()
     if (opts.onDeny) return opts.onDeny(req, res, r)
@@ -145,4 +200,4 @@ function viewMac (key, opts = {}) {
   }
 }
 
-module.exports = { HEADER, canonPath, removeDotSegments, normalisePct, substitute, encSegment, thumbprint, dpopBinding, mac, check, rawValues, routeTemplate, viewMac }
+module.exports = { HEADER, canonPath, removeDotSegments, normalisePct, substitute, encSegment, thumbprint, dpopBinding, mac, check, rawValues, routeTemplate, viewMac, loadRules, toPublic, encValue, substitutePm, hasDotSegment }

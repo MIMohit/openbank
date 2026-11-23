@@ -1,0 +1,301 @@
+# terms=['path confusion'] min_year=2015 n=0
+# terms=['normaliz', 'url'] min_year=2015 n=3
+2023 | A Robust Image Watermarking Scheme Based on Image Normalization and Contourlet Transform. | IEEE Access | https://doi.org/10.1109/ACCESS.2023.3319669
+2021 | URL normalization and assessing website structures in higher education websites. | Int. J. Web Inf. Syst. | https://doi.org/10.1108/IJWIS-06-2020-0034
+2016 | Contourlet transform based subband normalization for region based medical image compression. | Intell. Decis. Technol. | https://doi.org/10.3233/IDT-160265
+# terms=['normalis', 'url'] min_year=2015 n=0
+# terms=['normaliz', 'path'] min_year=2015 n=119
+2026 | Self-supervised stain normalization empowers privacy-preserving and model generalization in digital pathology. | npj Digit. Medicine | https://doi.org/10.1038/S41746-025-02196-8
+2026 | Data for reproducing the Typhoon Saola and normalized-throughput figures in "Artificial Intelligence Pathways from Weather to Climate". |  | https://doi.org/10.5281/ZENODO.22872186
+2026 | A Proximal Approach for Stain Separation and Normalization of Whole-Slide Histopathological Images. | ISBI | https://doi.org/10.1109/ISBI61048.2026.11515525
+2026 | PPTSP: patch presence test via semantic normalization and key path extraction. | Softw. Qual. J. | https://doi.org/10.1007/S11219-026-09760-9
+2026 | Self-screening of noisy labels and hard sample color normalization in histopathology image classification with spatial-texture attention networks. | Biomed. Signal Process. Control. | https://doi.org/10.1016/J.BSPC.2025.108854
+2026 | One Model to Magnify Them All: Efficient Scale-Invariant Histopathology via Conditional Normalization and Continuous Magnification Training. | CoRR | https://doi.org/10.48550/ARXIV.2608.09403
+2026 | SOPA and SIMPA: normalized single-sample integrated multiomics pathway analysis of tumor heterogeneity in solid cancers. | Briefings Bioinform. | https://doi.org/10.1093/BIB/BBAG338
+2026 | Histopathology Image Normalization via Latent Manifold Compaction. | CoRR | https://doi.org/10.48550/ARXIV.2602.24251
+2026 | Adaptive Path Planning for Autonomous Underwater Vehicle (AUV) Based on Spatio-Temporal Graph Neural Networks and Conditional Normalizing Flow Probabilistic Reconstruction. | Algorithms | https://doi.org/10.3390/A19020147
+2025 | Limit theorems of occupation times of normalized binary contact path processes on lattices. | J. Appl. Probab. | https://doi.org/10.1017/JPR.2024.41
+2025 | Quality Assessment of Color Normalization Method by Similarity Index Metrics- A Comparative Study for Histopathology Images. | KSII Trans. Internet Inf. Syst. | https://doi.org/10.3837/TIIS.2025.05.014
+2025 | Multi-model Ensemble and Region Specific Normalization for Myocardial Pathology Segmentation with Partial Modalities. | CARE@MICCAI | https://doi.org/10.1007/978-3-031-87009-5_11
+2025 | Partition Function Zeros of Paths and Normalization Zeros of ASEPS. | Entropy | https://doi.org/10.3390/E27020183
+2025 | Learnable color space conversion and fusion for stain normalization in pathology images. | Medical Image Anal. | https://doi.org/10.1016/J.MEDIA.2024.103424
+2025 | Enhanced pre-processing technique for histopathological image stain normalization and cancer detection. | Multim. Tools Appl. | https://doi.org/10.1007/S11042-024-20216-9
+2025 | Stain normalization of pathological images using self-attention based cycleGAN with grey scale consistency loss. | Pattern Anal. Appl. | https://doi.org/10.1007/S10044-025-01540-8
+2025 | Enhancing breast cancer histopathological image classification: The impact of stain normalization on multilevel feature extraction. | Biomed. Signal Process. Control. | https://doi.org/10.1016/J.BSPC.2025.107700
+2025 | A Modified Gain Normalized Step Size Adaptive Algorithm for Improved Online Secondary Path Modelling in Active Noise Control. | ICASSP | https://doi.org/10.1109/ICASSP49660.2025.10890692
+2025 | GNSS Multipath Detection Using Normalized Early Prompt Late Area Method in Correlation Domain. | IEEE Trans. Aerosp. Electron. Syst. | https://doi.org/10.1109/TAES.2025.3611943
+2025 | Staining normalization in histopathology: Method benchmarking using multicenter dataset. | CoRR | https://doi.org/10.48550/ARXIV.2506.19106
+2025 | StainPIDR: A Pathological Image Decouplingand Reconstruction Method for Stain Normalization Based on Color Vector Quantization and Structure Restaining. | CoRR | https://doi.org/10.48550/ARXIV.2506.17879
+2025 | Multi-Path Residual Attention Backbone With Dynamic Normalization Transformer Decoder For Semantic Segmentation. | ICVISP | https://doi.org/10.1109/ICVISP68610.2025.11451679
+2025 | Normalized Laplacian Diffusion for Robust Cancer Pathway Extension and Critical Gene Identification from Limited Data. | Comput. | https://doi.org/10.3390/COMPUTATION13110266
+2025 | ADNP-15: An Open-Source Histopathological Dataset for Neuritic Plaque Segmentation in Human Brain Whole Slide Images with Frequency Domain Image Enhancement for Stain Normalization. | CoRR | https://doi.org/10.48550/ARXIV.2505.05041
+2024 | Generalized Visual Path Following on Jetbot Using Normalization with Reinforcement Learning. | ARSO | https://doi.org/10.1109/ARSO60199.2024.10557750
+2024 | Fast and Unified Path Gradient Estimators for Normalizing Flows. | CoRR | https://doi.org/10.48550/ARXIV.2403.15881
+2024 | Stain normalization methods for histopathology image analysis: A comprehensive review and experimental comparison. | Inf. Fusion | https://doi.org/10.1016/J.INFFUS.2023.101997
+2024 | Palette-based colour normalization for histopathology images. | IET Image Process. | https://doi.org/10.1049/IPR2.13257
+2024 | Generative models for color normalization in digital pathology and dermatology: Advancing the learning paradigm. | Expert Syst. Appl. | https://doi.org/10.1016/J.ESWA.2023.123105
+2024 | CT-3DFlow : Leveraging 3D Normalizing Flows for Unsupervised Detection of Pathological Pulmonary CT scans. | CoRR | https://doi.org/10.48550/ARXIV.2403.18514
+2024 | Hidden Synergy: L1 Weight Normalization and 1-Path-Norm Regularization. | CoRR | https://doi.org/10.48550/ARXIV.2404.19112
+2024 | Wavelet Knowledge Distillation for Efficient Stain Normalization in Digital Histopathology. | SIU | https://doi.org/10.1109/SIU61531.2024.10601039
+2024 | StainSWIN: Vision transformer-based stain normalization for histopathology image analysis. | Eng. Appl. Artif. Intell. | https://doi.org/10.1016/J.ENGAPPAI.2024.108136
+2024 | Optimizing Vision Transformers for Histopathology: Pretraining and Normalization in Breast Cancer Classification. | J. Imaging | https://doi.org/10.3390/JIMAGING10050108
+2024 | Online Neural Path Guiding with Normalized Anisotropic Spherical Gaussians. | ACM Trans. Graph. | https://doi.org/10.1145/3649310
+2024 | Multi-domain stain normalization for digital pathology: A cycle-consistent adversarial network for whole slide images. | Medical Image Anal. | https://doi.org/10.1016/J.MEDIA.2024.103149
+2024 | A New Diabetic Retinopathy Classification Approach Based on Normalizer Free Network. | CBMS | https://doi.org/10.1109/CBMS61543.2024.00035
+2024 | Fast and unified path gradient estimators for normalizing flows. | ICLR | https://dblp.org/rec/conf/iclr/VaitlWRK24
+2023 | Role of stain normalization in computational pathology: use case in metastatic tissue classification. | Digital and Computational Pathology | https://doi.org/10.1117/12.2654094
+# terms=['parsing discrepanc'] min_year=2015 n=3
+2025 | WAFFLED: Exploiting Parsing Discrepancies to Bypass Web Application Firewalls. | ACSAC | https://doi.org/10.1109/ACSAC67867.2025.00062
+2025 | WAFFLED: Exploiting Parsing Discrepancies to Bypass Web Application Firewalls. | CoRR | https://doi.org/10.48550/ARXIV.2503.10846
+2024 | Gudifu: Guided Differential Fuzzing for HTTP Request Parsing Discrepancies. | RAID | https://doi.org/10.1145/3678890.3678904
+# terms=['parsing differen'] min_year=2015 n=1
+2024 | Parse Me, Baby, One More Time: Bypassing HTML Sanitizer via Parsing Differentials. | SP | https://doi.org/10.1109/SP54263.2024.00177
+# terms=['semantic gap', 'http'] min_year=2015 n=2
+2022 | HDiff: A Semi-automatic Framework for Discovering Semantic Gap Attack in HTTP Implementations. | DSN | https://doi.org/10.1109/DSN53405.2022.00014
+2021 | Less is Often More: Header Whitelisting as Semantic Gap Mitigation in HTTP-Based Software Systems. | SEC | https://doi.org/10.1007/978-3-030-78120-0_22
+# terms=['request smuggling'] min_year=2015 n=3
+2024 | HTTP/3 will not Save you from Request Smuggling: A Methodology to Detect HTTP/3 Header (mis)Validations. | NCA | https://doi.org/10.1109/NCA61908.2024.00026
+2021 | T-Reqs: HTTP Request Smuggling with Differential Fuzzing. | CCS | https://doi.org/10.1145/3460120.3485384
+2021 | Attacking Websites Using HTTP Request Smuggling: Empirical Testing of Servers and Proxies. | EDOC | https://doi.org/10.1109/EDOC52215.2021.00028
+# terms=['desync'] min_year=2015 n=200
+2027 | When Heterogeneous Modalities Synchronize: Mitigating Desynchronization Attacks in Multimodal Online Federated Learning. | ICCSA (Workshops 3) | https://doi.org/10.1007/978-3-032-30521-3_23
+2026 | Opossum Attack: Application Layer Desynchronization using Opportunistic TLS. | USENIX Security Symposium | https://dblp.org/rec/conf/uss/MergetEMKHBSS26
+2026 | Authenticated Contradictions from Desynchronized Provenance and Watermarking. | CoRR | https://doi.org/10.48550/ARXIV.2603.02378
+2026 | URAP Under Desynchronization Attack: Analysis and a Lightweight Defense Strategy. | ICACS | https://doi.org/10.1109/ICACS69208.2026.11433126
+2026 | An IPsec Tunnel Recovery Protocol to Overcome QKD Key Desynchronization. | DSN-S | https://doi.org/10.1109/DSN-S70715.2026.00033
+2026 | Losing the Beat: Understanding and Mitigating Desynchronization Risks in Container Isolation. | NDSS | https://dblp.org/rec/conf/ndss/LiXLWJL26
+2026 | Preventing Desynchronization in Digital Twins Through Bidirectional Age of Incorrect Information. | ICC Workshops | https://doi.org/10.1109/ICCWORKSHOPS63917.2026.11586484
+2026 | Brain-heart decoupling in somatic depression: Desynchronization between salience network neuropsychological connectivity and heart rate variability. | NeuroImage | https://doi.org/10.1016/J.NEUROIMAGE.2026.122331
+2026 | Emergence of Supercritical Hopf Bifurcations in Coupled Oscillator Ensembles and How Desynchronization Can Facilitate Energy-Optimal Phase Resetting. | SIAM J. Appl. Dyn. Syst. | https://doi.org/10.1137/24M171098X
+2026 | Low-Overhead Power Side-Channel Resistant AES Accelerator for RISC-V via Stall-Induced Trace Desynchronization and Activity Equalization. | IEEE Trans. Circuits Syst. II Express Briefs | https://doi.org/10.1109/TCSII.2026.3720299
+2026 | Desynchronization-Resistant Anonymous Authentication Protocol for RFID Systems Utilizing Physically Unclonable Functions. | IEEE Internet Things J. | https://doi.org/10.1109/JIOT.2025.3645565
+2026 | One-to-Many Authentication and Key Agreement Scheme With Desynchronization Resilience and Forward Secrecy for Multi-Device IoT. | IEEE Trans. Inf. Forensics Secur. | https://doi.org/10.1109/TIFS.2026.3734711
+2026 | DES-LOC: Desynced Low Communication Adaptive Optimizers for Foundation Models. | ICLR | https://dblp.org/rec/conf/iclr/IacobSSGHJKASQL26
+2026 | When Agents See Differently: Exposing UI Desynchronization Threats in Mobile Agents. | CoRR | https://doi.org/10.48550/ARXIV.2609.16732
+2026 | Explainable Side-Channel Analysis under Masking and Desynchronization. | ITC-Asia | https://doi.org/10.1109/ITC-ASIA71864.2026.11710876
+2026 | Robust White-Box Watermarking via Matrix Multiplication Against Desynchronization Attacks. | IH&MMSec | https://doi.org/10.1145/3785353.3815076
+2026 | Lightweight anonymous authentication and key agreement protocol resistant to desynchronization attacks. | Cybersecur. | https://doi.org/10.1186/S42400-025-00536-5
+2025 | Alpha and beta desynchronization during consolidation of newly learned words. | NeuroImage | https://doi.org/10.1016/J.NEUROIMAGE.2025.121410
+2025 | Sensor Fusion Desynchronization Attacks (Artifact). | Dagstuhl Artifacts Ser. | https://doi.org/10.4230/DARTS.11.1.1
+2025 | The causal role of beta band desynchronization: Individualized high-definition transcranial alternating current stimulation improves bimanual motor control. | NeuroImage | https://doi.org/10.1016/J.NEUROIMAGE.2025.121222
+2025 | As apparent as real: alpha and beta bands desynchronization unveils apparent motion perception dynamics. | NeuroImage | https://doi.org/10.1016/J.NEUROIMAGE.2025.121504
+2025 | Cortical responses to tactile imagery: a high-density EEG study of the μ-rhythm event-related desynchronization and somatosensory evoked potentials. | NeuroImage | https://doi.org/10.1016/J.NEUROIMAGE.2025.121440
+2025 | Application of Nonlinerar Oscillator Desynchronization Phenomena to Collision Avoidance in LoRa and its Experimental Evaluation. | ICAIIC | https://doi.org/10.1109/ICAIIC64266.2025.10920830
+2025 | GradeSync: A Tool for Automating Incomplete Processing to Support Mastery Learning. | SIGCSE (2) | https://doi.org/10.1145/3641555.3705192
+2025 | Perception-Action Integration Is Linked to Posterior Alpha/Beta Desynchronization. | J. Cogn. Neurosci. | https://doi.org/10.1162/JOCN.A.52
+2025 | DeSync: Proactive Congestion Control via Random Delay Offsets for Large-Scale ML Training. | IWQoS | https://doi.org/10.1109/IWQOS65803.2025.11143372
+2025 | Opossum Attack: Application Layer Desynchronization using Opportunistic TLS. | IACR Cryptol. ePrint Arch. | https://dblp.org/rec/journals/iacr/MergetEMKHBSS25
+2025 | CodeSync: Synchronizing Large Language Models with Dynamic Code Evolution at Scale. | ICML | https://dblp.org/rec/conf/icml/WangCCYQ00S0C25
+2025 | An Asynchronous RISC-V Processor Utilizing a Chisel-Based Desynchronization Flow. | ISCAS | https://doi.org/10.1109/ISCAS56072.2025.11043907
+2025 | Event-related desynchronization detection and electroencephalography motor imagery classification using vision transformer. | Intell. Data Anal. | https://doi.org/10.1177/1088467X251324336
+2025 | Quantifying Circadian Desynchrony in ICU Patients and Its Association with Delirium. | CoRR | https://doi.org/10.48550/ARXIV.2503.08732
+2025 | Dual-View Desynchronization Hypergraph Learning for Dynamic Hyperedge Prediction. | IEEE Trans. Knowl. Data Eng. | https://doi.org/10.1109/TKDE.2024.3509024
+2025 | CODESYNC: Synchronizing Large Language Models with Dynamic Code Evolution at Scale. | CoRR | https://doi.org/10.48550/ARXIV.2502.16645
+2025 | RapDAD: A Low Latency Desynchronization Approach for 6TiSCH-Based Asset Tracking Networks. | IEEE Trans. Ind. Informatics | https://doi.org/10.1109/TII.2025.3584452
+2025 | Sensor Fusion Desynchronization Attacks. | ECRTS | https://doi.org/10.4230/LIPICS.ECRTS.2025.6
+2025 | SyncGuard: Robust Audio Watermarking Capable of Countering Desynchronization Attacks. | ECAI | https://doi.org/10.3233/FAIA250937
+2025 | Trial-Level Time-frequency EEG Desynchronization as a Neural Marker of Pain. | CoRR | https://doi.org/10.48550/ARXIV.2509.10552
+2025 | The Silent Danger in HTTP: Identifying HTTP Desync Vulnerabilities with Gray-box Testing. | USENIX Security Symposium | https://dblp.org/rec/conf/uss/Mu0Z0DF25
+2025 | SyncGuard: Robust Audio Watermarking Capable of Countering Desynchronization Attacks. | CoRR | https://doi.org/10.48550/ARXIV.2508.17121
+# terms=['reverse proxy'] min_year=2015 n=9
+2026 | Penalizing Malicious Web Bots with an Allow List Based Reverse Proxy and Tarpit. | ACM Southeast Conference | https://doi.org/10.1145/3746467.3801539
+2026 | DirectQUIC: Transparent QUIC Reverse Proxy. | IFIP Networking | https://doi.org/10.23919/IFIPNETWORKING70592.2026.11579087
+2025 | The SDSC Satellite Reverse Proxy Service for Launching Secure Jupyter Notebooks on High-Performance Computing Systems. | CoRR | https://doi.org/10.48550/ARXIV.2511.02116
+2024 | NAISS: A reverse proxy approach to mitigate MageCart's e-skimmers in e-commerce. | Comput. Secur. | https://doi.org/10.1016/J.COSE.2024.103797
+2022 | MLProxy: SLA-Aware Reverse Proxy for Machine Learning Inference Serving on Serverless Computing Platforms. | CoRR | https://doi.org/10.48550/ARXIV.2202.11243
+2020 | Dynamic reverse proxy chain generation for networks in data centers. | APNOMS | https://doi.org/10.23919/APNOMS50412.2020.9237006
+2020 | Research and Implementation of Dual-stack Web Service Architecture Based on Intelligent DNS and Reverse Proxy Technology. | ICAIT | https://doi.org/10.1109/ICAIT51223.2020.9315501
+2020 | Improving Security of Web-Based Application Using ModSecurity and Reverse Proxy in Web Application Firewall. | IWBIS | https://doi.org/10.1109/IWBIS50925.2020.9255601
+2018 | Cloxy: A Context-aware Deception-as-a-Service Reverse Proxy for Web Services. | MTD@CCS | https://doi.org/10.1145/3268966.3268973
+# terms=['api gateway'] min_year=2015 n=29
+2026 | From Draft to Standard: An Expert-Validated Catalog of API Gateway Software Metrics. | e Informatica Softw. Eng. J. | https://doi.org/10.37190/E-INF260106
+2026 | Large Language Models as a Stress Test for Enterprise API Gateways. | ICDCS (Workshops) | https://doi.org/10.1109/ICDCSW72724.2026.00028
+2026 | OpenBinding: An Extensible, Plug-and-Play API Gateway for Cross-Engine QACO Solving. | ICWS | https://doi.org/10.1109/ICWS72778.2026.00110
+2026 | Optimizing API Gateway Placement in Multi-Cloud Kubernetes. | CoRR | https://doi.org/10.48550/ARXIV.2608.26573
+2026 | Inter-platform Interoperability for Zero Defects Platforms - API Gateway. | I-ESA Workshops | https://dblp.org/rec/conf/iesa/DorchainSM24
+2026 | Behavioral Consistency and Transparency Analysis on Large Language Model API Gateways. | CoRR | https://doi.org/10.48550/ARXIV.2604.21083
+2026 | VILLASnode API Gateway demonstrated for FMU and OpenDSS Co-Simulation of IEEE13bus System. | OSMSES | https://doi.org/10.1109/OSMSES69376.2026.11457197
+2026 | Rate-limit security in production API gateways: A systematic measurement study with formal analysis of fixed-window boundary exploitation. | Comput. Secur. | https://doi.org/10.1016/J.COSE.2026.105087
+2025 | Validation of inter-parameter dependencies in API gateways. | Comput. Stand. Interfaces | https://doi.org/10.1016/J.CSI.2025.104010
+2025 | Secure and Governed API Gateway Architectures for Multi-Cluster Cloud Environments. | CoRR | https://doi.org/10.48550/ARXIV.2512.23774
+2024 | Technological diversity of quantum computing providers: a comparative study and a proposal for API Gateway integration. | Softw. Qual. J. | https://doi.org/10.1007/S11219-023-09633-5
+2024 | Implementing a PHP API Gateway Based on Microservices Architecture. | COMPSAC | https://doi.org/10.1109/COMPSAC61105.2024.00247
+2024 | SLA-Wizard - Automated Configuration of RESTful API Gateways Based on SLAs. | ICSOC Workshops | https://doi.org/10.1007/978-981-97-0989-2_25
+2024 | A Lightweight Ontology for Enterprise Architecture Mining of API Gateway Logs. | IEEE Access | https://doi.org/10.1109/ACCESS.2024.3456119
+2023 | Securing An Agri - Food Marketplace: An Implementation of a Robust Security Layer with API Gateway Integration. | CoDIT | https://doi.org/10.1109/CODIT58514.2023.10284379
+2023 | AGE: Automatic Performance Evaluation of API Gateways. | ISCC | https://doi.org/10.1109/ISCC58397.2023.10218286
+2023 | Attribute Authorization - A Novel Enhancement to API Gateways. | ICSOC (2) | https://doi.org/10.1007/978-3-031-48424-7_20
+2022 | Technological diversity of quantum computing providers: a comparative study and a proposal for API Gateway integration - Laboratory Package. |  | https://doi.org/10.5281/ZENODO.10708042
+2022 | Latency measurements API gateway. |  | https://doi.org/10.21227/PGP3-BA43
+2022 | Quantum Software as a Service Through a Quantum API Gateway. | IEEE Internet Comput. | https://doi.org/10.1109/MIC.2021.3132688
+2021 | Automation of Enterprise Architecture Discovery based on Event Mining from API Gateway logs: State of the Art. | CBI (2) | https://doi.org/10.1109/CBI52690.2021.10062
+2020 | An API gateway design strategy optimized for persistence and coupling. | Adv. Eng. Softw. | https://doi.org/10.1016/J.ADVENGSOFT.2020.102878
+2020 | Building a Fintech Ecosystem: Design and Development of a Fintech API Gateway. | ISNCC | https://doi.org/10.1109/ISNCC49221.2020.9297273
+2020 | An Implementation of ECHONET Lite Web API Gateway for DER Management. | GCCE | https://doi.org/10.1109/GCCE50665.2020.9291755
+2019 | Anomaly Detection in High-Performance API Gateways. | HPCS | https://doi.org/10.1109/HPCS48598.2019.9188100
+2019 | Microservice Security Agent Based On API Gateway in Edge Computing. | Sensors | https://doi.org/10.3390/S19224905
+2019 | Software Versioning with Microservices through the API Gateway Design Pattern. | ACIT | https://doi.org/10.1109/ACITT.2019.8779952
+2018 | How to build a secure API gateway. | Netw. Secur. | https://doi.org/10.1016/S1353-4858(18)30056-4
+2016 | Circuit Breakers, Discovery, and API Gateways in Microservices. | CoRR | https://doi.org/10.48550/ARXIV.1609.05830
+# terms=['access control bypass'] min_year=2015 n=0
+# terms=['authorization bypass'] min_year=2015 n=0
+# terms=['url pars'] min_year=2015 n=2
+2022 | Equivocal URLs: Understanding the Fragmented Space of URL Parser Implementations. | ESORICS (3) | https://doi.org/10.1007/978-3-031-17143-7_9
+2022 | yoU aRe a Liar: //A Unified Framework for Cross-Testing URL Parsers. | SP (Workshops) | https://doi.org/10.1109/SPW54247.2022.9833883
+# terms=['uri pars'] min_year=2015 n=1
+2021 | A URI parsing technique and algorithm for anti-pattern detection in RESTful Web services. | Int. J. Web Inf. Syst. | https://doi.org/10.1108/IJWIS-08-2020-0052
+# terms=['proof-of-possession', 'token'] min_year=2015 n=2
+2020 | Proof-of-Possession Key Semantics for CBOR Web Tokens (CWTs). | RFC | https://doi.org/10.17487/RFC8747
+2016 | Proof-of-Possession Key Semantics for JSON Web Tokens (JWTs). | RFC | https://doi.org/10.17487/RFC7800
+# terms=['dpop'] min_year=2015 n=22
+2026 | MdpoPlanner: Mask-Driven Floorplan via Reinforcement Learning-Based Placement Order. | ASP-DAC | https://doi.org/10.1109/ASP-DAC66049.2026.11420532
+2026 | Dpopgcf: a fairness-driven graph convolutional collaborative filtering model with flexible negative sampling. | Int. J. Mach. Learn. Cybern. | https://doi.org/10.1007/S13042-025-02980-8
+2026 | Research on algorithm optimization of multi-agent dynamic obstacle avoidance robots based on DLSC-CDPOP algorithm. | Neurocomputing | https://doi.org/10.1016/J.NEUCOM.2026.132738
+2025 | FedPop: Federated Population-based Hyperparameter Tuning. | AAAI | https://doi.org/10.1609/AAAI.V39I15.33732
+2025 | FedPoP: Federated Learning Meets Proof of Participation. | CoRR | https://doi.org/10.48550/ARXIV.2511.08207
+2024 | Using flux theory in dynamic omics data sets to identify differentially changing signals using DPoP. | BMC Bioinform. | https://doi.org/10.1186/S12859-024-05938-9
+2023 | OAuth 2.0 Demonstrating Proof of Possession (DPoP). | RFC | https://doi.org/10.17487/RFC9449
+2023 | FedPop: Federated Population-based Hyperparameter Tuning. | CoRR | https://doi.org/10.48550/ARXIV.2308.08634
+2022 | FedPop: A Bayesian Approach for Personalised Federated Learning. | NeurIPS | https://dblp.org/rec/conf/nips/KotelevskiiVDM22
+2022 | FedPop: A Bayesian Approach for Personalised Federated Learning. | CoRR | https://doi.org/10.48550/ARXIV.2206.03611
+2020 | LDpop: an interactive online tool to calculate and visualize geographic LD patterns. | BMC Bioinform. | https://doi.org/10.1186/S12859-020-3340-1
+2020 | RMB-DPOP: Refining MB-DPOP by Reducing Redundant Inferences. | CoRR | https://doi.org/10.48550/ARXIV.2002.10641
+2020 | An Improved Correction Method of Nighttime Light Data Based on EVI and WorldPop Data. | Remote. Sens. | https://doi.org/10.3390/RS12233988
+2020 | RMB-DPOP: Refining MB-DPOP by Reducing Redundant Inference. | AAMAS | https://dblp.org/rec/conf/atal/ChenZDCL20
+2019 | AsymDPOP: Complete Inference for Asymmetric Distributed Constraint Optimization Problems. | CoRR | https://doi.org/10.48550/ARXIV.1905.11828
+2019 | AsymDPOP: Complete Inference for Asymmetric Distributed Constraint Optimization Problems. | IJCAI | https://doi.org/10.24963/IJCAI.2019/32
+2019 | Bayesian-DPOP for Continuous Distributed Constraint Optimization Problems. | AAMAS | https://dblp.org/rec/conf/atal/FransmanSDTS19
+2018 | Mitigating eavesdropping by using fuzzy based MDPOP-Q learning approach and multilevel Stackelberg game theoretic approach in wireless CRN. | Cogn. Syst. Res. | https://doi.org/10.1016/J.COGSYS.2018.09.021
+2018 | CrowdPop: Leveraging Multi-Source Crowd-Contributed Data for App Evolutionary Pattern Analysis and Popularity Prediction. | Internetware | https://doi.org/10.1145/3275219.3275235
+2018 | Worldpop - Fusion of Earth and Big Data for Intraurban Population Mapping. | IGARSS | https://doi.org/10.1109/IGARSS.2018.8518181
+2017 | An improved DPOP algorithm based on breadth first search pseudo-tree for distributed constraint optimization. | Appl. Intell. | https://doi.org/10.1007/S10489-017-0905-4
+2015 | On Better Estimating and Normalizing the Relationship between Clinical Parameters: Comparing Respiratory Modulations in the Photoplethysmogram and Blood Pressure Signal (DPOP versus PPV). | Comput. Math. Methods Medicine | https://doi.org/10.1155/2015/576340
+# terms=['sender-constrain'] min_year=2015 n=0
+# terms=['web cache deception'] min_year=2015 n=4
+2024 | A Methodology for Web Cache Deception Vulnerability Discovery. | CLOSER | https://doi.org/10.5220/0012692000003711
+2022 | Web Cache Deception Escalates! | USENIX Security Symposium | https://dblp.org/rec/conf/uss/MirheidariGOKC22
+2020 | Cached and Confused: Web Cache Deception in the Wild. | USENIX Security Symposium | https://dblp.org/rec/conf/uss/MirheidariAOCK020
+2019 | Cached and Confused: Web Cache Deception in the Wild. | CoRR | https://doi.org/10.48550/ARXIV.1912.10190
+# terms=['differential', 'http'] min_year=2015 n=4
+2025 | H2Fuzz: Guided, Black-box, Differential Fuzzing for HTTP/2-to-HTTP/1 Conversion Anomalies. | RAID | https://doi.org/10.1109/RAID67961.2025.00059
+2024 | Gudifu: Guided Differential Fuzzing for HTTP Request Parsing Discrepancies. | RAID | https://doi.org/10.1145/3678890.3678904
+2024 | The HTTP Garden: Discovering Parsing Vulnerabilities in HTTP/1.1 Implementations by Differential Fuzzing of Request Streams. | CoRR | https://doi.org/10.48550/ARXIV.2405.17737
+2021 | T-Reqs: HTTP Request Smuggling with Differential Fuzzing. | CCS | https://doi.org/10.1145/3460120.3485384
+# terms=['inconsisten', 'http'] min_year=2015 n=5
+2020 | Exploring HTTPS security inconsistencies: A cross-regional perspective. | Comput. Secur. | https://doi.org/10.1016/J.COSE.2020.101975
+2020 | Exploring HTTPS Security Inconsistencies: A Cross-Regional Perspective. | CoRR | https://doi.org/10.48550/ARXIV.2010.10170
+2020 | Exploring HTTPS Security Inconsistencies: A Cross-Regional Perspective. | IACR Cryptol. ePrint Arch. | https://dblp.org/rec/journals/iacr/AlashwaliSM20
+2018 | Uncovering HTTP Header Inconsistencies and the Impact on Desktop/Mobile Websites. | WWW | https://doi.org/10.1145/3178876.3186091
+2017 | Identifying malware with HTTP content type inconsistency via header-payload comparison. | IPCCC | https://doi.org/10.1109/PCCC.2017.8280450
+# terms=['http', 'discrepanc'] min_year=2015 n=3
+2026 | PathFault: Automated Exploit Generator for Web Services via HTTP Message Parser Discrepancies. | ICISC | https://doi.org/10.1007/978-981-95-8034-7_6
+2025 | HTTP Request Synchronization Defeats Discrepancy Attacks. | CoRR | https://doi.org/10.48550/ARXIV.2510.09952
+2024 | Gudifu: Guided Differential Fuzzing for HTTP Request Parsing Discrepancies. | RAID | https://doi.org/10.1145/3678890.3678904
+# terms=['access control', 'web', 'differen'] min_year=2015 n=0
+# terms=['path traversal'] min_year=2015 n=16
+2026 | V-Align: Visual Forced Alignment via Phoneme to Video Optimal Path Traversal. | INTERSPEECH | https://doi.org/10.21437/INTERSPEECH.2026-560
+2026 | An efficient flow path traversal algorithm for watershed delineation from raster digital elevation models for multicore architectures. | Environ. Model. Softw. | https://doi.org/10.1016/J.ENVSOFT.2025.106743
+2025 | Eradicating the Unseen: Detecting, Exploiting, and Remediating a Path Traversal Vulnerability across GitHub. | AsiaCCS | https://doi.org/10.1145/3708821.3736220
+2025 | PTFix: Rule-Based and LLM Techniques for Java Path Traversal Vulnerability. | DSPP (1) | https://doi.org/10.1007/978-981-97-8540-7_17
+2025 | A Novel Steganographic Framework Using Spiral Path Traversal and Data Compression Techniques. | ICECET | https://doi.org/10.1109/ICECET63943.2025.11472601
+2025 | Eradicating the Unseen: Detecting, Exploiting, and Remediating a Path Traversal Vulnerability across GitHub. | CoRR | https://doi.org/10.48550/ARXIV.2505.20186
+2024 | Well-Separated Multiagent Path Traversal. | CCCG | https://dblp.org/rec/conf/cccg/DilmanEPS24
+2024 | Eigenpath Traversal by Poisson-Distributed Phase Randomisation. | TQC | https://doi.org/10.4230/LIPICS.TQC.2024.7
+2024 | Eigenpath traversal by Poisson-distributed phase randomisation. | CoRR | https://doi.org/10.48550/ARXIV.2406.03972
+2022 | Garden Path Traversal in GPT-2. | BlackboxNLP@EMNLP | https://doi.org/10.18653/V1/2022.BLACKBOXNLP-1.25
+2022 | Garden-Path Traversal within GPT-2. | CoRR | https://doi.org/10.48550/ARXIV.2205.12302
+2022 | Mining Simple Path Traversal Patterns in Knowledge Graph. | J. Web Eng. | https://doi.org/10.13052/JWE1540-9589.2128
+2020 | On the usability of transport protocols other than TCP: A home gateway and internet path traversal study. | Comput. Networks | https://doi.org/10.1016/J.COMNET.2020.107211
+2020 | An Inverse Olympic Medal Tally Transformation for Optimal Lane-level Road Network Path Traversal. | CoRR | https://doi.org/10.48550/ARXIV.2003.02302
+2020 | Deterministic linear-hexagonal path traversal scheme for localization in wireless sensor networks. | Wirel. Networks | https://doi.org/10.1007/S11276-020-02404-1
+2017 | I/O-Efficient Path Traversal in Succinct Planar Graphs. | Algorithmica | https://doi.org/10.1007/S00453-015-0086-7
+# terms=['service mesh'] min_year=2015 n=118
+2026 | Opportunities and challenges of service mesh in Multi-access Edge Computing. | Comput. Networks | https://doi.org/10.1016/J.COMNET.2026.112208
+2026 | Service Mesh: The Rise of Event-Driven Asynchronous Mesh in Cloud Continuum. | IT Prof. | https://doi.org/10.1109/MITP.2025.3605101
+2026 | Uncertainty-Aware Hierarchical Graph Transformers for Adaptive Resource Optimization in Service Meshes. | CNML | https://doi.org/10.1109/CNML68938.2026.11452354
+2026 | Don't Mind the Mesh: An Empirical Study of Istio's Service Mesh Security in GitHub. | SANER Companion | https://doi.org/10.1109/SANER-C67878.2026.00037
+2026 | Meshlib: In-Process Policy Enforcement for Sidecar-less Service Meshes. | CoRR | https://doi.org/10.48550/ARXIV.2608.13107
+2026 | HybridMesh: A Hardware-software Hybrid Approach for Accelerating Service Mesh Ingress. | NSDI | https://dblp.org/rec/conf/nsdi/YouNSPS26
+2026 | Kernel-Anchored Zero-Trust: A Sidecar-less Service Mesh for Low-Latency Financial Edge Applications. | CLOUD | https://doi.org/10.1109/CLOUD72782.2026.00063
+2026 | Container-Specific Service Mesh-Based System for Mitigating Lateral Movement Attacks. | IEEE Trans. Cloud Comput. | https://doi.org/10.1109/TCC.2026.3657486
+2026 | Enabling Network Policy Enforcement in Service Meshes. | NOMS | https://doi.org/10.1109/NOMS69089.2026.11668236
+2026 | Coordinating Traffic at Group Granularity for Tail Latency Control in Service Meshes. | ICDCS | https://doi.org/10.1109/2575-8411.2026.00132
+2026 | Energy-Aware Service Mesh Deployment and Online Request Routing in Edge: A Hierarchical Deep Reinforcement Learning Approach. | IEEE Trans. Mob. Comput. | https://doi.org/10.1109/TMC.2026.3674203
+2026 | Symmetric Orchestration Under Service Mesh Paradigm: Empowering Massive Online Applications in Edge Clouds. | IEEE Trans. Mob. Comput. | https://doi.org/10.1109/TMC.2025.3624628
+2026 | Enabling Fast and Stable Service Mesh Communication via Piggyback Layer-7 Traffic Control on Programmable Switches. | INFOCOM | https://doi.org/10.1109/INFOCOM59046.2026.11571443
+2026 | Deployment and management of automotive service meshes using TOSCA. | Clust. Comput. | https://doi.org/10.1007/S10586-026-06523-W
+2026 | Finding Service Mesh Bugs with Service Flow-Aware End-to-End Testing. | ACM Trans. Comput. Syst. | https://doi.org/10.1145/3814612
+2025 | NAS: A Novel Network-Aware Kubernetes Scheduling Framework Using eBPF Service Mesh. | ICC | https://doi.org/10.1109/ICC52391.2025.11161235
+2025 | HardMesh: Enabling High-performance Service Mesh Ingress Processing with SmartNICs. | SIGCOMM | https://doi.org/10.1145/3718958.3750471
+2025 | UAV-Mesh: A Graph-Based Decentralized Service Mesh Framework for UAV Swarms. | ICWS | https://doi.org/10.1109/ICWS67624.2025.00075
+2025 | Improving the Security of Service Mesh in Kubernetes. | ICPADS | https://doi.org/10.1109/ICPADS67057.2025.11322999
+2025 | An Adaptive Bidirectional Traffic Shaping Mechanism for Service Mesh. | SIGCOMM (Posters and Demos) | https://doi.org/10.1145/3744969.3748424
+2025 | MeshTest: End-to-End Testing for Service Mesh Traffic Management. | NSDI | https://dblp.org/rec/conf/nsdi/ZhengQL025
+2025 | Large-Scale Service Mesh Orchestration With Probabilistic Routing in Cloud Data Centers. | IEEE Trans. Serv. Comput. | https://doi.org/10.1109/TSC.2025.3526373
+2025 | Performance Comparison of Service Mesh Frameworks: The MTLS Test Case. | NOMS | https://doi.org/10.1109/NOMS57970.2025.11073712
+2025 | Collaborative Orchestration with Probabilistic Routing for Dynamic Service Mesh in Clouds. | INFOCOM | https://doi.org/10.1109/INFOCOM55648.2025.11044542
+2025 | A Decentralized Microservice Scheduling Approach Using Service Mesh in Cloud-Edge Systems. | JCC | https://doi.org/10.1109/JCC67032.2025.00012
+2025 | eSeMeshA: eBPF-Based Service Mesh Acceleration for Cloud-Native Infrastructures. | NetSoft | https://doi.org/10.1109/NETSOFT64993.2025.11080556
+2025 | PiCoP: Service Mesh for Sharing Microservices in Multiple Environments Using Protocol-Independent Context Propagation. | IEEE Trans. Cloud Comput. | https://doi.org/10.1109/TCC.2025.3531954
+2025 | Towards a Lightweight Sidecar-based Service Mesh for Serverless. | SoCC | https://doi.org/10.1145/3772052.3772210
+2025 | Mazu: A Zero Trust Architecture for Service Mesh Control Planes. | EuroSec | https://doi.org/10.1145/3722041.3723100
+2025 | 5G-STREAM: Service Mesh Tailored for Reliable, Efficient and Authorized Microservices in the Cloud. | DSN | https://doi.org/10.1109/DSN64029.2025.00025
+2025 | Copper and Wire: Bridging Expressiveness and Performance for Service Mesh Policies. | ASPLOS (1) | https://doi.org/10.1145/3669940.3707257
+2025 | Critical Limitations of the Least Outstanding Request Load Balancing Policy in Service Meshes for Large-Scale Microservice Applications. | IEEE Trans. Netw. Serv. Manag. | https://doi.org/10.1109/TNSM.2025.3593870
+2025 | Lightweight Service Mesh for Intrusion Detection using KD-CNN in Cloud-Native Environments. | CCSW | https://doi.org/10.1145/3733812.3765535
+2025 | Idempotency in Service Mesh: For Resiliency of Fog-Native Applications in Multi-Domain Edge-to-Cloud Ecosystems. | CLOSER | https://doi.org/10.5220/0013293900003950
+2025 | Enabling Network Policy Enforcement in Service Meshes. | CoRR | https://doi.org/10.48550/ARXIV.2510.04516
+2025 | A Decentralized Microservice Scheduling Approach Using Service Mesh in Cloud-Edge Systems. | CoRR | https://doi.org/10.48550/ARXIV.2510.11189
+2024 | Network shortcut in data plane of service mesh with eBPF. | J. Netw. Comput. Appl. | https://doi.org/10.1016/J.JNCA.2023.103805
+2024 | CARISMA: CAR-Integrated Service Mesh Architecture. | CoRR | https://doi.org/10.48550/ARXIV.2403.04378
+2024 | Evaluating the Performance of Sidecar-based and Sidecarless Cloud-native Service Mesh Solutions. | ANTS | https://doi.org/10.1109/ANTS63515.2024.10897788
+# terms=['broken access control'] min_year=2015 n=16
+2027 | BACHunter: An Automated Fuzzing Framework for Discovering Broken Access Control Vulnerabilities in Java Web Applications. | ICIC (11) | https://doi.org/10.1007/978-981-92-3423-3_50
+2026 | Broken Access Control Risks in Open Source Javascript Projects: A Security Analysis. | SANER Companion | https://doi.org/10.1109/SANER-C67878.2026.00036
+2026 | BACHunter: Detecting Broken Access Control Vulnerabilities in Intelligent Connected Vehicles. | SP | https://doi.org/10.1109/SP63933.2026.00152
+2026 | ABSENTIA: Detecting Broken Access Control Vulnerabilities in Web Applications. | CoRR | https://doi.org/10.48550/ARXIV.2610.00977
+2026 | Mutation based improvement of security test case quality for broken access control. | J. Inf. Secur. | https://doi.org/10.1186/S13635-026-00226-W
+2026 | Taint Analysis for Graph APIs Focusing on Broken Access Control. | Log. Methods Comput. Sci. | https://doi.org/10.46298/LMCS-22(1:18)2026
+2026 | Beacon: Detecting Broken Access Control Vulnerabilities in DBMSs via System Catalog Consistency Validation. | Proc. ACM Program. Lang. | https://doi.org/10.1145/3798232
+2025 | Broken Access Control Detection Focused on Privilege Escalation Prevention Using a Llama 3 LLM-Based Assistant. | ISSSR | https://doi.org/10.1109/ISSSR65654.2025.00074
+2025 | JAuthGuard: Automatic Detection for Broken Access Control in Java Web APIs. | SMC | https://doi.org/10.1109/SMC58881.2025.11343625
+2025 | 403 Forbidden? Ethically Evaluating Broken Access Control in the Wild. | SP | https://doi.org/10.1109/SP61157.2025.00252
+2025 | Taint Analysis for Graph APIs Focusing on Broken Access Control. | CoRR | https://doi.org/10.48550/ARXIV.2501.08947
+2025 | BACFuzz: Exposing the Silence on Broken Access Control Vulnerabilities in Web Applications. | CoRR | https://doi.org/10.48550/ARXIV.2507.15984
+2025 | BacAlarm: Mining and Simulating Composite API Traffic to Prevent Broken Access Control Violations. | CoRR | https://doi.org/10.48550/ARXIV.2512.19997
+2025 | Techniques for discovering broken access control vulnerabilities constructed upon abnormal behaviours. | Int. J. Secur. Networks | https://doi.org/10.1504/IJSN.2025.148977
+2024 | Taint Analysis for Graph APIs Focusing on Broken Access Control. | ICGT | https://doi.org/10.1007/978-3-031-64285-2_10
+2024 | Detection and Analysis of Broken Access Control Vulnerabilities in App-Cloud Interaction in IoT. | IEEE Internet Things J. | https://doi.org/10.1109/JIOT.2024.3400858
+# terms=['authorization', 'microservice'] min_year=2015 n=18
+2026 | Automated Generation of Microservice Authorization Tests Using Large Language Models. | SOSE | https://doi.org/10.1109/SOSE71128.2026.00014
+2026 | Risk-based Authorization in Safety Critical Microservice Architectures. | ITASEC/SERICS | https://dblp.org/rec/conf/itasec/SiriguBA26
+2026 | Externalized and Decentralized Authorization of Microservices. | ICSOC Workshops (1) | https://doi.org/10.1007/978-981-96-7238-7_15
+2025 | SIARE-Artefactos: Automating Authorization Management for Microservices in Government Management Systems. | CLEI | https://doi.org/10.1109/CLEI67442.2025.11420508
+2025 | Policy-Driven Authorization in Microservice-Based Applications. |  | https://dblp.org/rec/phd/dnb/Sanger25
+2025 | Formal Methods for Verifying Authorization Policy in Microservice Systems. | SOSE | https://doi.org/10.1109/SOSE67019.2025.00033
+2025 | SPARQL-parser: Query Rewriting for Authorization in the semantic.works Microservice Framework. | SEMANTiCS (Posters, Demos, Workshops & Tutorials) | https://dblp.org/rec/conf/i-semantics/NiesV25
+2025 | Microservices Access Authorization Management in Public Management Systems: An Automation Proposal. | CIbSE | https://doi.org/10.5753/CIBSE.2025.35335
+2024 | Fine-Grained Authorization in Microservice Architecture: A Decentralized Approach. | SAC | https://doi.org/10.1145/3605098.3636121
+2023 | Implementation of a new authorization system from monolithic solution to microservice architecture. | CoRR | https://doi.org/10.48550/ARXIV.2307.05994
+2023 | User Authorization in Microservice-Based Applications. | Softw. | https://doi.org/10.3390/SOFTWARE2030019
+2022 | Authentication and Authorization in Microservice-Based Applications. | GI-Jahrestagung | https://doi.org/10.18420/INF2022_19
+2021 | ThunQ: A Distributed and Deep Authorization Middleware for Early and Lazy Policy Enforcement in Microservice Applications. | ICSOC | https://doi.org/10.1007/978-3-030-91431-8_13
+2020 | Research on Unified Authentication and Authorization in Microservice Architecture. | ICCT | https://doi.org/10.1109/ICCT50939.2020.9295931
+2020 | Authentication and authorization in microservice-based systems: survey of architecture patterns. | CoRR | https://doi.org/10.48550/ARXIV.2009.02114
+2019 | Towards Automated Inter-Service Authorization for Microservice Applications. | SIGCOMM Posters and Demos | https://doi.org/10.1145/3342280.3342288
+2018 | Authentication and authorization orchestrator for microservice-based software architectures. | MIPRO | https://doi.org/10.23919/MIPRO.2018.8400214
+2017 | Access Control with Delegated Authorization Policy Evaluation for Data-Driven Microservice Workflows. | Future Internet | https://doi.org/10.3390/FI9040058
+# terms=['web application firewall', 'bypass'] min_year=2015 n=5
+2026 | BWAFSQLi: Bypassing Web Application Firewall with Adversarial SQL Injections. | ACM Trans. Softw. Eng. Methodol. | https://doi.org/10.1145/3788286
+2025 | WAFFLED: Exploiting Parsing Discrepancies to Bypass Web Application Firewalls. | ACSAC | https://doi.org/10.1109/ACSAC67867.2025.00062
+2025 | WAFFLED: Exploiting Parsing Discrepancies to Bypass Web Application Firewalls. | CoRR | https://doi.org/10.48550/ARXIV.2503.10846
+2024 | Adversary Simulation of Structured Query Language (SQL) Injection Attack Using Genetic Algorithm for Web Application Firewalls (WAF) Bypass. | IntelliSys (2) | https://doi.org/10.1007/978-3-031-47724-9_43
+2022 | Bypassing Web Application Firewalls Using Deep Reinforcement Learning. | ISC Int. J. Inf. Secur. | https://doi.org/10.22042/ISECURE.2022.323140.744
+# terms=['waf', 'bypass'] min_year=2015 n=4
+2026 | BWAFSQLi: Bypassing Web Application Firewall with Adversarial SQL Injections. | ACM Trans. Softw. Eng. Methodol. | https://doi.org/10.1145/3788286
+2025 | WAFFLED: Exploiting Parsing Discrepancies to Bypass Web Application Firewalls. | ACSAC | https://doi.org/10.1109/ACSAC67867.2025.00062
+2025 | WAFFLED: Exploiting Parsing Discrepancies to Bypass Web Application Firewalls. | CoRR | https://doi.org/10.48550/ARXIV.2503.10846
+2024 | Adversary Simulation of Structured Query Language (SQL) Injection Attack Using Genetic Algorithm for Web Application Firewalls (WAF) Bypass. | IntelliSys (2) | https://doi.org/10.1007/978-3-031-47724-9_43
+# terms=['method override'] min_year=2015 n=0
+# terms=['graphql', 'authoriz'] min_year=2015 n=0
+# terms=['request', 'interpretation'] min_year=2015 n=0

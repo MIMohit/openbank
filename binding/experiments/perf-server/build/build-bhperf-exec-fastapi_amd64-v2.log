@@ -1,0 +1,137 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 687B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.12.16-slim-trixie
+#2 DONE 0.7s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [internal] load build context
+#4 transferring context: 12.75kB done
+#4 DONE 0.0s
+
+#5 [1/6] FROM docker.io/library/python:3.12.16-slim-trixie@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b
+#5 resolve docker.io/library/python:3.12.16-slim-trixie@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b done
+#5 sha256:05e0eee5572e9c9f50408a2132590133b830a668a1cf2ff2b150f19c57707e2b 0B / 248B 0.2s
+#5 sha256:05e0eee5572e9c9f50408a2132590133b830a668a1cf2ff2b150f19c57707e2b 248B / 248B 0.3s done
+#5 sha256:68bced9e0afa4479df17c3646e27c7c7e9ce9ba70c0e6c73b6826487b89037d9 0B / 1.29MB 0.2s
+#5 sha256:2dc99d2d0a39fce31e37615eb4c932e16dcc4c2b0ce9993714280081b5dbe085 0B / 12.12MB 0.2s
+#5 sha256:37fb86c2a767b88d500c6872195f88078f64765fe0d2f9cc375cc2efbd4c0a41 0B / 29.86MB 0.2s
+#5 sha256:68bced9e0afa4479df17c3646e27c7c7e9ce9ba70c0e6c73b6826487b89037d9 1.29MB / 1.29MB 0.5s done
+#5 sha256:2dc99d2d0a39fce31e37615eb4c932e16dcc4c2b0ce9993714280081b5dbe085 1.05MB / 12.12MB 0.8s
+#5 sha256:2dc99d2d0a39fce31e37615eb4c932e16dcc4c2b0ce9993714280081b5dbe085 2.10MB / 12.12MB 0.9s
+#5 sha256:2dc99d2d0a39fce31e37615eb4c932e16dcc4c2b0ce9993714280081b5dbe085 3.15MB / 12.12MB 1.2s
+#5 sha256:2dc99d2d0a39fce31e37615eb4c932e16dcc4c2b0ce9993714280081b5dbe085 4.19MB / 12.12MB 1.4s
+#5 sha256:2dc99d2d0a39fce31e37615eb4c932e16dcc4c2b0ce9993714280081b5dbe085 5.24MB / 12.12MB 1.5s
+#5 sha256:2dc99d2d0a39fce31e37615eb4c932e16dcc4c2b0ce9993714280081b5dbe085 6.29MB / 12.12MB 1.8s
+#5 sha256:37fb86c2a767b88d500c6872195f88078f64765fe0d2f9cc375cc2efbd4c0a41 2.10MB / 29.86MB 1.7s
+#5 sha256:2dc99d2d0a39fce31e37615eb4c932e16dcc4c2b0ce9993714280081b5dbe085 7.34MB / 12.12MB 2.0s
+#5 sha256:2dc99d2d0a39fce31e37615eb4c932e16dcc4c2b0ce9993714280081b5dbe085 8.39MB / 12.12MB 2.3s
+#5 sha256:2dc99d2d0a39fce31e37615eb4c932e16dcc4c2b0ce9993714280081b5dbe085 9.44MB / 12.12MB 2.6s
+#5 sha256:2dc99d2d0a39fce31e37615eb4c932e16dcc4c2b0ce9993714280081b5dbe085 10.49MB / 12.12MB 2.7s
+#5 sha256:2dc99d2d0a39fce31e37615eb4c932e16dcc4c2b0ce9993714280081b5dbe085 11.53MB / 12.12MB 3.0s
+#5 sha256:2dc99d2d0a39fce31e37615eb4c932e16dcc4c2b0ce9993714280081b5dbe085 12.12MB / 12.12MB 3.0s done
+#5 sha256:37fb86c2a767b88d500c6872195f88078f64765fe0d2f9cc375cc2efbd4c0a41 4.19MB / 29.86MB 3.2s
+#5 sha256:37fb86c2a767b88d500c6872195f88078f64765fe0d2f9cc375cc2efbd4c0a41 6.29MB / 29.86MB 3.6s
+#5 sha256:37fb86c2a767b88d500c6872195f88078f64765fe0d2f9cc375cc2efbd4c0a41 9.44MB / 29.86MB 3.9s
+#5 sha256:37fb86c2a767b88d500c6872195f88078f64765fe0d2f9cc375cc2efbd4c0a41 12.58MB / 29.86MB 4.4s
+#5 sha256:37fb86c2a767b88d500c6872195f88078f64765fe0d2f9cc375cc2efbd4c0a41 14.68MB / 29.86MB 4.8s
+#5 sha256:37fb86c2a767b88d500c6872195f88078f64765fe0d2f9cc375cc2efbd4c0a41 16.78MB / 29.86MB 5.1s
+#5 sha256:37fb86c2a767b88d500c6872195f88078f64765fe0d2f9cc375cc2efbd4c0a41 18.87MB / 29.86MB 5.4s
+#5 sha256:37fb86c2a767b88d500c6872195f88078f64765fe0d2f9cc375cc2efbd4c0a41 20.97MB / 29.86MB 5.9s
+#5 sha256:37fb86c2a767b88d500c6872195f88078f64765fe0d2f9cc375cc2efbd4c0a41 23.07MB / 29.86MB 6.2s
+#5 sha256:37fb86c2a767b88d500c6872195f88078f64765fe0d2f9cc375cc2efbd4c0a41 25.17MB / 29.86MB 6.5s
+#5 sha256:37fb86c2a767b88d500c6872195f88078f64765fe0d2f9cc375cc2efbd4c0a41 27.26MB / 29.86MB 6.8s
+#5 sha256:37fb86c2a767b88d500c6872195f88078f64765fe0d2f9cc375cc2efbd4c0a41 29.86MB / 29.86MB 7.2s done
+#5 extracting sha256:37fb86c2a767b88d500c6872195f88078f64765fe0d2f9cc375cc2efbd4c0a41
+#5 extracting sha256:37fb86c2a767b88d500c6872195f88078f64765fe0d2f9cc375cc2efbd4c0a41 0.3s done
+#5 DONE 7.6s
+
+#5 [1/6] FROM docker.io/library/python:3.12.16-slim-trixie@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b
+#5 extracting sha256:68bced9e0afa4479df17c3646e27c7c7e9ce9ba70c0e6c73b6826487b89037d9 0.0s done
+#5 extracting sha256:2dc99d2d0a39fce31e37615eb4c932e16dcc4c2b0ce9993714280081b5dbe085 0.1s done
+#5 DONE 7.7s
+
+#5 [1/6] FROM docker.io/library/python:3.12.16-slim-trixie@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b
+#5 extracting sha256:05e0eee5572e9c9f50408a2132590133b830a668a1cf2ff2b150f19c57707e2b done
+#5 DONE 7.7s
+
+#6 [2/6] WORKDIR /app
+#6 DONE 0.1s
+
+#7 [3/6] COPY requirements.txt .
+#7 DONE 0.0s
+
+#8 [4/6] RUN pip install --no-cache-dir -r requirements.txt
+#8 1.299 Collecting fastapi==0.165.0 (from -r requirements.txt (line 1))
+#8 1.354   Downloading fastapi-0.165.0-py3-none-any.whl.metadata (27 kB)
+#8 1.411 Collecting starlette==1.10.0 (from -r requirements.txt (line 2))
+#8 1.426   Downloading starlette-1.10.0-py3-none-any.whl.metadata (6.6 kB)
+#8 1.465 Collecting uvicorn==0.54.0 (from -r requirements.txt (line 3))
+#8 1.477   Downloading uvicorn-0.54.0-py3-none-any.whl.metadata (6.6 kB)
+#8 1.515 Collecting anyio>=4.1.0 (from fastapi==0.165.0->-r requirements.txt (line 1))
+#8 1.530   Downloading anyio-4.16.0-py3-none-any.whl.metadata (4.7 kB)
+#8 1.646 Collecting pydantic>=2.9.0 (from fastapi==0.165.0->-r requirements.txt (line 1))
+#8 1.660   Downloading pydantic-2.14.4-py3-none-any.whl.metadata (143 kB)
+#8 1.715 Collecting typing-extensions>=4.8.0 (from fastapi==0.165.0->-r requirements.txt (line 1))
+#8 1.735   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+#8 1.756 Collecting typing-inspection>=0.4.2 (from fastapi==0.165.0->-r requirements.txt (line 1))
+#8 1.775   Downloading typing_inspection-0.4.5-py3-none-any.whl.metadata (2.6 kB)
+#8 1.795 Collecting annotated-doc>=0.0.2 (from fastapi==0.165.0->-r requirements.txt (line 1))
+#8 1.810   Downloading annotated_doc-0.0.7-py3-none-any.whl.metadata (6.4 kB)
+#8 1.838 Collecting opentelemetry-api>=1.44.0 (from fastapi==0.165.0->-r requirements.txt (line 1))
+#8 1.854   Downloading opentelemetry_api-1.45.2-py3-none-any.whl.metadata (1.4 kB)
+#8 1.893 Collecting click>=7.0 (from uvicorn==0.54.0->-r requirements.txt (line 3))
+#8 1.912   Downloading click-8.5.1-py3-none-any.whl.metadata (2.6 kB)
+#8 1.936 Collecting h11>=0.8 (from uvicorn==0.54.0->-r requirements.txt (line 3))
+#8 1.955   Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+#8 1.984 Collecting idna>=2.8 (from anyio>=4.1.0->fastapi==0.165.0->-r requirements.txt (line 1))
+#8 2.007   Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+#8 2.030 Collecting annotated-types>=0.6.0 (from pydantic>=2.9.0->fastapi==0.165.0->-r requirements.txt (line 1))
+#8 2.045   Downloading annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+#8 2.610 Collecting pydantic-core==2.50.5 (from pydantic>=2.9.0->fastapi==0.165.0->-r requirements.txt (line 1))
+#8 2.629   Downloading pydantic_core-2.50.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (6.6 kB)
+#8 2.650 Downloading fastapi-0.165.0-py3-none-any.whl (159 kB)
+#8 2.682 Downloading starlette-1.10.0-py3-none-any.whl (80 kB)
+#8 2.709 Downloading uvicorn-0.54.0-py3-none-any.whl (87 kB)
+#8 2.729 Downloading annotated_doc-0.0.7-py3-none-any.whl (5.3 kB)
+#8 2.743 Downloading anyio-4.16.0-py3-none-any.whl (134 kB)
+#8 2.775 Downloading click-8.5.1-py3-none-any.whl (126 kB)
+#8 2.801 Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+#8 2.818 Downloading opentelemetry_api-1.45.2-py3-none-any.whl (60 kB)
+#8 2.839 Downloading pydantic-2.14.4-py3-none-any.whl (494 kB)
+#8 2.926 Downloading pydantic_core-2.50.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (2.3 MB)
+#8 3.242    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.3/2.3 MB 7.1 MB/s eta 0:00:00
+#8 3.262 Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+#8 3.284 Downloading typing_inspection-0.4.5-py3-none-any.whl (14 kB)
+#8 3.307 Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+#8 3.324 Downloading idna-3.20-py3-none-any.whl (69 kB)
+#8 3.385 Installing collected packages: typing-extensions, idna, h11, click, annotated-types, annotated-doc, uvicorn, typing-inspection, pydantic-core, opentelemetry-api, anyio, starlette, pydantic, fastapi
+#8 3.929 Successfully installed annotated-doc-0.0.7 annotated-types-0.8.0 anyio-4.16.0 click-8.5.1 fastapi-0.165.0 h11-0.16.0 idna-3.20 opentelemetry-api-1.45.2 pydantic-2.14.4 pydantic-core-2.50.5 starlette-1.10.0 typing-extensions-4.16.0 typing-inspection-0.4.5 uvicorn-0.54.0
+#8 3.930 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+#8 4.048 
+#8 4.048 [notice] A new release of pip is available: 25.0.1 -> 26.3
+#8 4.048 [notice] To update, run: pip install --upgrade pip
+#8 DONE 4.1s
+
+#9 [5/6] COPY app.py .
+#9 DONE 0.0s
+
+#10 [6/6] RUN mkdir -p /logs
+#10 DONE 0.2s
+
+#11 exporting to image
+#11 exporting layers
+#11 exporting layers 0.3s done
+#11 exporting manifest sha256:a4b93c80565be539cf8285090f79854363f4c69cb259c2c83d0f8b8102eff70e
+#11 exporting manifest sha256:a4b93c80565be539cf8285090f79854363f4c69cb259c2c83d0f8b8102eff70e done
+#11 exporting config sha256:744c1483937fcad4f95e8387cf8aca50838f24b670061067c149a4dda4c11a35 done
+#11 exporting attestation manifest sha256:7baa9c873bcb2f32b3d72acd34172a6d730944212147568772ead9174b1fab21 done
+#11 exporting manifest list sha256:f853e9d2fbd6873fdbf907a6dce099447304f03a2dda1bf7238326307bb1625e done
+#11 naming to docker.io/library/bhperf-exec-fastapi:amd64-v2 done
+#11 DONE 0.4s

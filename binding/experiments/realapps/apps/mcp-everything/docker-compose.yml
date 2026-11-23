@@ -1,0 +1,33 @@
+name: w22-mcp
+services:
+  app:
+    image: w22-mcp-everything:latest
+    container_name: w22-mcp-app
+    mem_limit: 512m
+    environment:
+      HOST: "0.0.0.0"
+      PORT: "3001"
+  verifier:
+    image: bh-verifier:latest
+    container_name: w22-mcp-verifier
+    mem_limit: 256m
+    environment:
+      HTU_CANON: "rfc3986"
+      JTI_CACHE: "on"
+      IAT_WINDOW: "60"
+      VIEW_MAC: "off"
+      AS_PUB_JWK: "/keys/as_pub.jwk"
+      LOG_PATH: "/logs/verifier.jsonl"
+    volumes:
+      - /Users/mimohit/openbank/binding/harness/keys:/keys:ro
+      - ./logs:/logs
+  gateway:
+    image: nginx:1.30.7-alpine
+    container_name: w22-mcp-gw
+    mem_limit: 256m
+    depends_on: [app, verifier]
+    ports:
+      - "127.0.0.1:18110:8000"
+    volumes:
+      - ./gw/nginx.conf:/etc/nginx/nginx.conf:ro
+    command: ["nginx","-g","daemon off;"]

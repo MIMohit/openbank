@@ -1,0 +1,3 @@
+bhperf-gateway usage_usec 6950126 user_usec 1690287 system_usec 5259838 nice_usec 0 core_sched.force_idle_usec 0 nr_periods 2027 nr_throttled 2 throttled_usec 68958 nr_bursts 0 burst_usec 0  mem_current=3444736 mem_peak=7892992
+bhperf-verifier usage_usec 39945425 user_usec 34979855 system_usec 4965569 nice_usec 0 core_sched.force_idle_usec 0 nr_periods 2262 nr_throttled 785 throttled_usec 70602199 nr_bursts 0 burst_usec 0  mem_current=31502336 mem_peak=45187072
+bhperf-executor usage_usec 22600169 user_usec 19274950 system_usec 3325219 nice_usec 0 core_sched.force_idle_usec 0 nr_periods 2381 nr_throttled 34 throttled_usec 2219672 nr_bursts 0 burst_usec 0  mem_current=40951808 mem_peak=41451520

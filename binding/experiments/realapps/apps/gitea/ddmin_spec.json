@@ -1,0 +1,9 @@
+{"port":18101,"verifier_log":"/Users/mimohit/openbank/binding/experiments/realapps/apps/gitea/logs/verifier.jsonl","gateway_container":"w22-gitea-pdp-gw","app_container":"w22-gitea-app","settle":0.4,
+ "probes":[
+  {"label":"baseline-deny","base_htm":"GET","base_path":"/api/v1/repos/bob/public-b","target":"/api/v1/repos/bob/public-b","notes":"literal deny prefix /api/v1/repos/bob/ matches -> DENY"},
+  {"label":"dslash-1-before-bob","base_htm":"GET","base_path":"/api/v1/repos//bob/public-b","target":"/api/v1/repos//bob/public-b","notes":"minimal: ONE slash inserted before bob"},
+  {"label":"dslash-2-before-bob","base_htm":"GET","base_path":"/api/v1/repos///bob/public-b","target":"/api/v1/repos///bob/public-b"},
+  {"label":"case-one-char-B","base_htm":"GET","base_path":"/api/v1/repos/Bob/public-b","target":"/api/v1/repos/Bob/public-b","notes":"minimal: one char uppercased"},
+  {"label":"case-one-char-mid","base_htm":"GET","base_path":"/api/v1/repos/boB/public-b","target":"/api/v1/repos/boB/public-b","notes":"minimal: a single non-leading char"},
+  {"label":"revert-lowercase-nodslash","base_htm":"GET","base_path":"/api/v1/repos/bob/public-b","target":"/api/v1/repos/bob/public-b","notes":"control: revert both deltas -> DENY again"}
+ ]}

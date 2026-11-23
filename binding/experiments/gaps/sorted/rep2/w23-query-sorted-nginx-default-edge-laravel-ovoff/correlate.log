@@ -1,0 +1,1 @@
+oracle[w23-query-sorted-nginx-default-edge-laravel-ovoff] {'topology': 'w23-query-sorted-nginx-default-edge-laravel-ovoff', 'cases': 1239, 'accepted': 771, 'hits_raw': 22, 'hits_confirmed': 0, 'S1': 14, 'S2': 8, 'S3': 0, 'signatures': 14, 'max_res_hat': 3, 'b0': 0, 'propagation': 153, 'uncorrelated': 3}

@@ -1,0 +1,13 @@
+{"port":18101,"verifier_log":"/Users/mimohit/openbank/binding/experiments/realapps/apps/gitea/logs/verifier.jsonl","gateway_container":"w22-gitea-pdp-gw","app_container":"w22-gitea-app","settle":0.5,
+ "probes":[
+  {"label":"ctl-own-alice","base_htm":"GET","base_path":"/api/v1/repos/alice/demo","target":"/api/v1/repos/alice/demo"},
+  {"label":"ctl-bob-direct","base_htm":"GET","base_path":"/api/v1/repos/bob/public-b","target":"/api/v1/repos/bob/public-b"},
+  {"label":"dslash-after-v1","base_htm":"GET","base_path":"/api/v1//repos/bob/public-b","target":"/api/v1//repos/bob/public-b"},
+  {"label":"dslash-leading","base_htm":"GET","base_path":"//api/v1/repos/bob/public-b","target":"//api/v1/repos/bob/public-b"},
+  {"label":"dslash-in-repos","base_htm":"GET","base_path":"/api/v1/repos//bob/public-b","target":"/api/v1/repos//bob/public-b"},
+  {"label":"case-owner-Bob","base_htm":"GET","base_path":"/api/v1/repos/Bob/public-b","target":"/api/v1/repos/Bob/public-b"},
+  {"label":"case-owner-BOB","base_htm":"GET","base_path":"/api/v1/repos/BOB/public-b","target":"/api/v1/repos/BOB/public-b"},
+  {"label":"dotseg-alice-to-bob","base_htm":"GET","base_path":"/api/v1/repos/alice/demo/../../bob/public-b","target":"/api/v1/repos/alice/demo/../../bob/public-b"},
+  {"label":"encslash-owner","base_htm":"GET","base_path":"/api/v1/repos/bob%2fpublic-b","target":"/api/v1/repos/bob%2fpublic-b"},
+  {"label":"trail-dot","base_htm":"GET","base_path":"/api/v1/repos/bob/public-b/.","target":"/api/v1/repos/bob/public-b/."}
+ ]}

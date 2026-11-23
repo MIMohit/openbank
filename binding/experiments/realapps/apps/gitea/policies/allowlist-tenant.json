@@ -1,0 +1,10 @@
+{
+  "_doc": "Per-tenant edge allow-list, default DENY. alice's gateway credential may only reach alice's namespace. Reads like an OPA 'allow if path startswith'. Keys on the raw X-Original-URI.",
+  "default": "deny",
+  "normalize": "off",
+  "rules": [
+    {"id": "allow-alice-repos", "style": "prefix", "pattern": "/api/v1/repos/alice/", "effect": "allow", "note": "alice repos + subpaths"},
+    {"id": "allow-alice-user", "style": "prefix", "pattern": "/api/v1/users/alice", "effect": "allow", "note": "alice user"},
+    {"id": "allow-version", "style": "exact", "pattern": "/api/v1/version", "effect": "allow", "note": "harmless"}
+  ]
+}

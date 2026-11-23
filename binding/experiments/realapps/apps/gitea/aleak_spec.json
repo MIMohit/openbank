@@ -1,0 +1,17 @@
+{"port":18100,"verifier_log":"/Users/mimohit/openbank/binding/experiments/realapps/apps/gitea/logs/verifier.jsonl","gateway_container":"w22-gitea-gw","app_container":"w22-gitea-app","settle":0.5,
+ "probes":[
+  {"label":"ctl-getRepo","base_htm":"GET","base_path":"/api/v1/repos/alice/demo","target":"/api/v1/repos/alice/demo"},
+  {"label":"ctl-issues","base_htm":"GET","base_path":"/api/v1/repos/alice/demo/issues","target":"/api/v1/repos/alice/demo/issues"},
+  {"label":"ctl-contents","base_htm":"GET","base_path":"/api/v1/repos/alice/demo/contents/README.md","target":"/api/v1/repos/alice/demo/contents/README.md"},
+  {"label":"ctl-branches","base_htm":"GET","base_path":"/api/v1/repos/alice/demo/branches","target":"/api/v1/repos/alice/demo/branches"},
+  {"label":"ctl-commits","base_htm":"GET","base_path":"/api/v1/repos/alice/demo/commits","target":"/api/v1/repos/alice/demo/commits"},
+  {"label":"ctl-tags","base_htm":"GET","base_path":"/api/v1/repos/alice/demo/tags","target":"/api/v1/repos/alice/demo/tags"},
+
+  {"label":"frag-plain","base_htm":"GET","base_path":"/api/v1/repos/alice/demo","target":"/api/v1/repos/alice/demo#frag","notes":"suffix on repo id; does gitea tolerate demo# ?"},
+  {"label":"frag-issues","base_htm":"GET","base_path":"/api/v1/repos/alice/demo","target":"/api/v1/repos/alice/demo#/issues","notes":"op change getRepo->listIssues?"},
+  {"label":"frag-contents","base_htm":"GET","base_path":"/api/v1/repos/alice/demo","target":"/api/v1/repos/alice/demo#/contents/README.md"},
+  {"label":"frag-branches","base_htm":"GET","base_path":"/api/v1/repos/alice/demo","target":"/api/v1/repos/alice/demo#/branches"},
+  {"label":"frag-commits","base_htm":"GET","base_path":"/api/v1/repos/alice/demo","target":"/api/v1/repos/alice/demo#/commits"},
+  {"label":"frag-tags","base_htm":"GET","base_path":"/api/v1/repos/alice/demo","target":"/api/v1/repos/alice/demo#/tags"},
+  {"label":"frag-crossrepo","base_htm":"GET","base_path":"/api/v1/repos/alice/demo","target":"/api/v1/repos/alice/demo#/../bob/public-b"}
+ ]}

@@ -1,0 +1,17 @@
+topology,cases,accepted,hits_raw,hits_confirmed,S1,S2,S3,signatures,max_res_hat,b0,propagation,uncorrelated
+w23-no-htm-nginx-default-edge-fastapi-ovoff,357,97,24,0,12,12,0,8,4,0,0,2
+w23-no-htm-nginx-default-edge-fastapi-ovon,357,97,24,0,12,12,0,8,4,0,0,2
+w23-no-htm-nginx-default-edge-laravel-ovoff,357,97,24,0,12,12,0,8,4,0,0,2
+w23-no-htm-nginx-default-edge-laravel-ovon,357,97,24,0,12,12,0,8,4,0,0,2
+w23-no-htm-nginx-default-edge-rails-ovoff,357,97,24,0,12,12,0,8,4,0,0,2
+w23-no-htm-nginx-default-edge-rails-ovon,357,97,24,0,12,12,0,8,4,0,0,2
+w23-no-htm-nginx-default-edge-spring-ovoff,357,97,24,0,12,12,0,8,4,0,0,2
+w23-no-htm-nginx-default-edge-spring-ovon,357,97,24,0,12,12,0,8,4,0,0,2
+w23-no-htu-nginx-default-edge-fastapi-ovoff,357,107,90,0,20,54,16,16,9,0,0,2
+w23-no-htu-nginx-default-edge-fastapi-ovon,357,107,90,0,20,54,16,16,9,0,0,2
+w23-no-htu-nginx-default-edge-laravel-ovoff,357,107,90,0,20,54,16,16,9,0,0,2
+w23-no-htu-nginx-default-edge-laravel-ovon,357,107,90,0,20,54,16,16,9,0,0,2
+w23-no-htu-nginx-default-edge-rails-ovoff,357,107,90,0,20,54,16,16,9,0,0,2
+w23-no-htu-nginx-default-edge-rails-ovon,357,107,90,0,20,54,16,16,9,0,0,2
+w23-no-htu-nginx-default-edge-spring-ovoff,357,107,90,0,20,54,16,16,9,0,0,2
+w23-no-htu-nginx-default-edge-spring-ovon,357,107,90,0,20,54,16,16,9,0,0,2

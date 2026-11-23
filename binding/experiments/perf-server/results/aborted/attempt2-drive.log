@@ -1,0 +1,10 @@
+== bedge-fastapi 2026-11-23T18:37:03Z
+2026-11-23T18:37:08Z bedge-fastapi up
+sanity status=200 after_tries=3
+2026-11-23T18:37:13Z bedge-fastapi warmup 20s @100
+2026-11-23T18:37:50Z bedge-fastapi run 50-r1
+tr: tr-error-read-error: No such device
+cat: /sys/fs/cgroup/system.slice/docker-eb1e444a08f3c92b040d57eb3f14f3fb36aef760d5f6a1d2f9ead24c0550b9b5.scope/memory.current: No such file or directory
+2026-11-23T18:38:09Z bedge-fastapi ABORT during 50-r1 (run discarded)
+== bedge-fastapi rc=3 2026-11-23T18:38:15Z
+STOP: bedge-fastapi rc=3

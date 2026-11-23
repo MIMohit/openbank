@@ -1,0 +1,61 @@
+key	kind	target	status	title_or_crossref_title
+tsai2018breaking	url	https://i.blackhat.com/us-18/Wed-August-8/us-18-Orange-Tsai-Breaking-Parser-Logic-Take-Your-Path-Normalization-Off-And-Pop-0days-Out-2.pdf	200	pdf/no-title
+tsai2024confusion	url	https://i.blackhat.com/BH-US-24/Presentations/US24-Orange-Confusion-Attacks-Exploiting-Hidden-Semantic-Thursday.pdf	200	pdf/no-title
+tsai2024confusionblog	url	https://devco.re/blog/2024/08/09/confusion-attacks-exploiting-hidden-semantic-ambiguity-in-apache-http-server-en/	200	Confusion Attacks: Exploiting Hidden Semantic Ambiguity in Apache HTTP Server! | DEVCORE
+tsai2021proxyshell	url	https://www.thezdi.com/blog/2021/8/17/from-pwn2own-2021-a-new-attack-surface-on-microsoft-exchange-proxyshell	200	Zero Day Initiative — From Pwn2Own 2021: A New Attack Surface on Microsoft Exchange - ProxyShell!
+doyhenard2024gotta	url	https://portswigger.net/research/gotta-cache-em-all	200	Gotta cache 'em all: bending the rules of web cache exploitation | PortSwigger Research
+doyhenard2024gottapdf	url	https://portswigger.net/kb/papers/kapvrid/gotta-cache-em-all.pdf	200	pdf/no-title
+kettle2025http1	url	https://i.blackhat.com/BH-USA-25/Presentations/US-25-Kettle-HTTP1-Must-Die-The-Desync-Endgame-wp.pdf	200	pdf/no-title
+xvnpw2021kong	url	https://xvnpw.github.io/posts/path_traversal_in_authorization_context_in_kong_and_f5_nginx/	200	Path traversal in authorization context in Kong and F5 NGINX - xvnpw personal blog
+xvnpw2021apisix	url	https://xvnpw.github.io/posts/cve_2021_43557_apache_apisix_path_traversal_in_request_uri_variable/	200	CVE-2021-43557: Apache APISIX: Path traversal in request_uri variable - xvnpw personal blog
+xvnpw2021traefik	url	https://xvnpw.github.io/posts/path_traversal_in_authorization_context_in_traefik_and_haproxy/	200	Path traversal in authorization context in Traefik and HAProxy - xvnpw personal blog
+xvnpw2021emissary	url	https://xvnpw.github.io/posts/path_traversal_in_authorization_context_in_emissary/	200	Path traversal in authorization context in Emissary - xvnpw personal blog
+xvnpw2021tips	url	https://xvnpw.github.io/posts/bug_bounty_tips_for_nginx_request_uri_path_traversal_bypass/	200	Bug bounty tips for nginx $request_uri path traversal bypass - xvnpw personal blog
+xvnpw2021hunting	url	https://xvnpw.github.io/posts/hunting_for_buggy_authentication_authorization_services_on_github/	200	Hunting for buggy authentication/authorization services on github - xvnpw personal blog
+xvnpw2022ingress	url	https://xvnpw.github.io/posts/external_authentication_bypass_in_ingress_nginx/	200	External Authentication bypass in ingress-nginx - xvnpw personal blog
+tiurin2018reverse	url	https://speakerdeck.com/greendog/reverse-proxies-and-inconsistency	200	Reverse proxies & Inconsistency by GreenDog - Speaker Deck
+acunetix_tomcat	url	https://www.acunetix.com/vulnerabilities/web/tomcat-path-traversal-via-reverse-proxy-mapping/	200	Tomcat path traversal via reverse proxy mapping - Vulnerabilities - Acunetix
+assetnote2025panos	url	https://slcyber.io/blog/nginx-apache-path-confusion-to-auth-bypass-in-pan-os	200	CVE-2025-0108: PAN-OS Auth Bypass via Nginx/Apache Path Confusion
+rogers_proxypass	url	https://joshua.hu/proxy-pass-nginx-decoding-normalizing-url-path-dangerous	200	proxy_pass: nginx's Dangerous URL Normalization of Paths | Joshua Rogers' Scribbles
+istio2021_008	url	https://istio.io/latest/news/security/istio-security-2021-008/	200	Istio / ISTIO-SECURITY-2021-008
+istio2026_006	url	https://istio.io/latest/news/security/istio-security-2026-006/	200	Istio / ISTIO-SECURITY-2026-006
+envoy2021_29492	url	https://nvd.nist.gov/vuln/detail/CVE-2021-29492	200	NVD - Home
+envoy2026_73551	url	https://osv.dev/vulnerability/CVE-2026-73551	200	OSV - Open Source Vulnerabilities
+envoy_vrp_double	url	https://groups.google.com/g/envoy-security-announce/c/9eSF1kGUpSk	200	
+traefik2026_40912	url	https://advisories.gitlab.com/golang/github.com/traefik/traefik/v3/CVE-2026-40912/	200	Traefik has an StripPrefixRegex Middleware Authorization Bypass via Path/RawPath Desync | Legacy GitLab Advisory Databas
+traefik2026_88009	url	https://advisories.gitlab.com/golang/github.com/traefik/traefik/v2/CVE-2026-88009/	200	Traefik: Rootless HTTP/1 request-target routes as "/" but is forwarded verbatim, bypassing path-scoped routing, middlewa
+traefik2026_48020	url	https://advisories.gitlab.com/golang/github.com/traefik/traefik/v3/CVE-2026-48020/	200	Traefik has a StripPrefix Route-Level Auth Bypass via Path Normalization | Legacy GitLab Advisory Database
+traefik2025_66490	url	https://advisories.gitlab.com/golang/github.com/traefik/traefik/v3/CVE-2025-66490/	200	Path Normalization Bypass in Traefik Router + Middleware Rules | Legacy GitLab Advisory Database
+apisix2021_43557	url	https://apisix.apache.org/blog/2021/11/23/cve-2021-43557/	200	Apache APISIX Path traversal in request_uri variable(CVE-2021-43557) | Apache APISIX
+apisix2026_94269	url	https://www.openwall.com/lists/oss-security/2026/10/01/7	200	oss-security - CVE-2026-94269: Apache APISIX: Servlet-style normalization creates a route/upstream authorization mismatc
+apisix2026_124680	url	https://www.openwall.com/lists/oss-security/2026/11/13/7	200	oss-security - CVE-2026-124680: Apache APISIX: Route-level authentication bypass via path normalization mismatch between
+apisix_pr14035	url	https://github.com/apache/apisix/pull/14035	200	fix(router): forward the matched path when nginx normalizes the request uri by shreemaan-abhishek · Pull Request #14035 
+corgea2026apisix	url	https://corgea.com/research/cve-2026-124680-124679-124666-124716-124723-124726-124719-apache-apisix-3-20-0-auth-bypass-november-2026	200	Apache APISIX 3.20.0 fixes seven gateway auth bypasses: path normalization (`CVE-2026-124680`), spoofed identity headers
+kong2021_27306	url	https://nvd.nist.gov/vuln/detail/CVE-2021-27306	200	NVD - Home
+kong2026_105986	url	https://developer.konghq.com/support/security/security-advisory-cve-2026-105986/	200	Security Advisory: CVE-2026-105986 | Kong Docs
+spring2016_5007	url	https://spring.io/security/cve-2016-5007	200	
+spring2023_34034	url	https://spring.io/security/cve-2023-34034	200	
+heimdall2026_42274	url	https://advisories.gitlab.com/golang/github.com/dadrus/heimdall/CVE-2026-42274/	200	Heimdall has an authorization bypass via path normalization mismatch | Legacy GitLab Advisory Database
+oathkeeper2026_33494	url	https://advisories.gitlab.com/golang/github.com/ory/oathkeeper/CVE-2026-33494/	200	Ory Oathkeeper has a path traversal authorization bypass | Legacy GitLab Advisory Database
+nextjs2025_29927	url	https://nvd.nist.gov/vuln/detail/CVE-2025-29927	200	NVD - Home
+oauth2proxy2025_64484	url	https://nvd.nist.gov/vuln/detail/CVE-2025-64484	200	NVD - Home
+middie2026_2880	url	https://cvereports.com/reports/CVE-2026-2880	200	CVE-2026-2880: Authorization Bypass via URL Canonicalization Drift in @fastify/middie | CVEReports
+quarkus2026_39852	url	https://nvd.nist.gov/vuln/detail/cve-2026-39852	200	NVD - Home
+uabscan_pdf	url	https://yuanxzhang.github.io/paper/uabscan-ccs25.pdf	200	pdf/no-title
+zhang2025uabscan	doi	10.1145/3719027.3765199	200	Be Aware of What You Let Pass: Demystifying URL-based Authentication Bypass Vulnerability in Java Web Applicat | Proceedings of the 2025 ACM SIGSAC Conference on Computer an | 2025
+sadeghi2026nginxbuster	doi	10.1145/3830454.3846523	200	Breaking the Gate: Detecting Invisible Authentication Slip-Through in NGINX Reverse Proxy | Proceedings of the 2026 ACM SIGSAC Conference on Computer an | 2026
+hosseyni2026audience	doi	10.1109/SP63933.2026.00116	200	Audience Injection Attacks: A New Class of Attacks on Web-Based Authorization and Authentication Standards | 2026 IEEE Symposium on Security and Privacy (SP) | 2026
+elhajj2025forbidden	doi	10.1109/SP61157.2025.00252	200	403 Forbidden? Ethically Evaluating Broken Access Control in the Wild | 2025 IEEE Symposium on Security and Privacy (SP) | 2025
+ajmani2022liar	doi	10.1109/SPW54247.2022.9833883	200	yoU aRe a Liar://A Unified Framework for Cross-Testing URL Parsers | 2022 IEEE Security and Privacy Workshops (SPW) | 2022
+ali2023antipatterns	doi	10.1109/SPW59333.2023.00016	200	A Survey of Parser Differential Anti-Patterns | 2023 IEEE Security and Privacy Workshops (SPW) | 2023
+klein2024parseme	doi	10.1109/SP54263.2024.00177	200	Parse Me, Baby, One More Time: Bypassing HTML Sanitizer via Parsing Differentials | 2024 IEEE Symposium on Security and Privacy (SP) | 2024
+choi2026spca	doi	10.1145/3774904.3792517	200	SPCA: Stream Parser Confusion Attack for Web Application Firewall Evasion in HTTP/2 | Proceedings of the ACM Web Conference 2026 | 2026
+kim2025pathfault	doi	10.1007/978-981-95-8034-7_6	200	PathFault: Automated Exploit Generator for Web Services via HTTP Message Parser Discrepancies | Lecture Notes in Computer Science | 2026
+benhabbour2025pam	doi	10.1007/978-3-031-85960-1_7	200	HTTP Conformance vs. Middleboxes: Identifying Where the Rules Actually Break Down | Lecture Notes in Computer Science | 2025
+mirheidari2022escalates	url	https://www.usenix.org/conference/usenixsecurity22/presentation/mirheidari	200	Web Cache Deception Escalates! | USENIX
+h3act2026	url	https://www.usenix.org/conference/usenixsecurity26/technical-sessions	200	USENIX Security '26 Technical Sessions | USENIX
+golinelli2026acsac	url	https://www.acsac.org/2026/program/papers/	200	Accepted Papers - IEEE Annual Computer Security Applications Conference (ACSAC)
+gallo2026beyond	url	https://arxiv.org/abs/2611.07159	200	[2611.07159] Beyond Proof of Possession: A Relational Theory of Authority
+ccs26_accepted	url	https://www.sigsac.org/ccs/CCS2026/program/accepted-papers.html	200	ACM CCS 2026
+sp26_accepted	url	https://sp2026.ieee-security.org/accepted-papers.html	200	IEEE Symposium on Security and Privacy 2026
+signed_http_request	url	https://datatracker.ietf.org/doc/draft-ietf-oauth-signed-http-request/03/	200	(checked separately)

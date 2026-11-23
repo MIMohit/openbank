@@ -1,0 +1,24 @@
+# W21 probe: log nginx-native ngx.var.request_uri / ngx.var.uri in rewrite phase
+routes:
+  - {
+      "id": "api",
+      "uri": "/api/*",
+      "upstream": { "type": "roundrobin", "pass_host": "pass", "nodes": { "executor:8080": 1 } },
+      "plugins": {
+        "serverless-pre-function": {
+          "phase": "rewrite",
+          "functions": [
+            "return function(conf, ctx) ngx.log(ngx.ERR, \"W21PROBE request_uri=[\", ngx.var.request_uri, \"] uri=[\", ngx.var.uri, \"] request=[\", ngx.var.request, \"]\") end"
+          ]
+        },
+        "forward-auth": {
+          "uri": "http://verifier:9100/authz/fwd",
+          "request_method": "GET",
+          "request_headers": ["Authorization", "DPoP"],
+          "upstream_headers": ["X-Verified-Sub", "X-Verified-Jkt"],
+          "client_headers": ["WWW-Authenticate"],
+          "timeout": 3000
+        }
+      }
+    }
+#END

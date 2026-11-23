@@ -1,0 +1,10 @@
+[
+ {"label":"base-tools-list","intended":"base","sev":"S3","body":{"jsonrpc":"2.0","id":10,"method":"tools/list"}},
+ {"label":"attack-call-echo","intended":"attack","sev":"S2","body":{"jsonrpc":"2.0","id":11,"method":"tools/call","params":{"name":"echo","arguments":{"message":"pwn"}}}},
+ {"label":"attack-call-get-env","intended":"attack","sev":"S1","body":{"jsonrpc":"2.0","id":12,"method":"tools/call","params":{"name":"get-env","arguments":{}}}},
+ {"label":"attack-call-get-sum","intended":"attack","sev":"S2","body":{"jsonrpc":"2.0","id":13,"method":"tools/call","params":{"name":"get-sum","arguments":{"a":2,"b":3}}}},
+ {"label":"attack-call-longrun","intended":"attack","sev":"S1","body":{"jsonrpc":"2.0","id":14,"method":"tools/call","params":{"name":"trigger-long-running-operation","arguments":{"duration":1,"steps":1}}}},
+ {"label":"attack-resources-read","intended":"attack","sev":"S2","body":{"jsonrpc":"2.0","id":15,"method":"resources/read","params":{"uri":"demo://resource/static/document/architecture.md"}}},
+ {"label":"attack-prompts-get","intended":"attack","sev":"S2","body":{"jsonrpc":"2.0","id":16,"method":"prompts/get","params":{"name":"simple-prompt","arguments":{}}}},
+ {"label":"attack-resources-list","intended":"attack","sev":"S3","body":{"jsonrpc":"2.0","id":17,"method":"resources/list"}}
+]

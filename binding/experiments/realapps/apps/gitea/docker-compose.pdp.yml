@@ -1,0 +1,45 @@
+name: w22-gitea-pdp
+services:
+  app:
+    image: gitea/gitea:1.22.6
+    container_name: w22-gitea-app
+    mem_limit: 768m
+    environment:
+      GITEA__security__INSTALL_LOCK: "true"
+      GITEA__server__DOMAIN: "api.bench.test"
+      GITEA__server__ROOT_URL: "http://api.bench.test/"
+      GITEA__service__REQUIRE_SIGNIN_VIEW: "false"
+    volumes:
+      - w22-gitea-data:/data
+  verifier:
+    image: bh-verifier:latest
+    container_name: w22-gitea-pdp-verifier
+    entrypoint: ["python3", "/pdp/server.py"]
+    mem_limit: 256m
+    environment:
+      HTU_CANON: "rfc3986"
+      JTI_CACHE: "on"
+      IAT_WINDOW: "60"
+      AS_PUB_JWK: "/keys/as_pub.jwk"
+      LOG_PATH: "/logs/verifier.jsonl"
+      PDP_LOG_PATH: "/logs/pdp.jsonl"
+      POLICY_FILE: "${POLICY_FILE:-/policies/blocklist-regex.json}"
+      POLICY_NAME: "${POLICY_NAME:-blocklist-regex}"
+    volumes:
+      - /Users/mimohit/openbank/binding/harness/keys:/keys:ro
+      - ./logs:/logs
+      - /Users/mimohit/openbank/binding/experiments/realapps/pdp:/pdp:ro
+      - ./policies:/policies:ro
+  gateway:
+    image: nginx:1.30.7-alpine
+    container_name: w22-gitea-pdp-gw
+    mem_limit: 256m
+    depends_on: [app, verifier]
+    ports:
+      - "127.0.0.1:18101:8000"
+    volumes:
+      - ./gw/nginx.conf:/etc/nginx/nginx.conf:ro
+    command: ["nginx", "-g", "daemon off;"]
+volumes:
+  w22-gitea-data:
+    name: w22-gitea-data

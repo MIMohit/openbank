@@ -1,0 +1,9 @@
+topology,cases,accepted,hits_raw,hits_confirmed,S1,S2,S3,signatures,max_res_hat,b0,propagation,uncorrelated
+w23-query-sorted-nginx-default-edge-fastapi-ovoff,1239,771,22,0,14,8,0,14,3,0,153,3
+w23-query-sorted-nginx-default-edge-fastapi-ovon,1239,771,34,0,20,14,0,18,6,0,153,2
+w23-query-sorted-nginx-default-edge-laravel-ovoff,1239,771,22,0,14,8,0,14,3,0,153,3
+w23-query-sorted-nginx-default-edge-laravel-ovon,1239,771,24,0,18,6,0,16,5,0,153,3
+w23-query-sorted-nginx-default-edge-rails-ovoff,1239,771,11,0,3,8,0,11,3,0,153,3
+w23-query-sorted-nginx-default-edge-rails-ovon,1239,771,13,0,7,6,0,13,4,0,153,3
+w23-query-sorted-nginx-default-edge-spring-ovoff,1239,748,11,0,3,8,0,11,3,0,153,3
+w23-query-sorted-nginx-default-edge-spring-ovon,1239,748,10,0,5,5,0,10,3,0,153,3

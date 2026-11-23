@@ -30,6 +30,63 @@ _URI = re.compile(r"^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\?([^#]*))?(#(.*))?$",
 _VALUE = re.compile(r"^v1;[A-Za-z0-9_-]{43}$")
 # Same encoder as the executors' VERIFY_MODE=origin-routed (D-A): unreserved + sub-delims + ':' '@'
 SEGMENT_SAFE = "-._~!$&'()*+,;=:@"
+_PCT25 = re.compile(r"%25([0-9A-Fa-f]{2})")
+
+
+# ------------------------------------------------------- D-A/D-B public<->internal path map (W23)
+# Behind DEFENCE_PATH_MAP (a JSON file). Both the verifier-side canonical view (the proof htu /
+# X-Verified-View, already in public space) and the executor-side recomputed view are expressed in
+# PUBLIC-path space: the executor maps the INTERNAL route path it matched back to the public prefix
+# the client used before the gateway rewrote it. Default (no map) leaves behaviour unchanged.
+def load_rules(env_value):
+    """Read DEFENCE_PATH_MAP (path to JSON: {"rules":[{"public":..,"internal":..}]} or a bare list).
+    Returns a list of (public, internal) prefix pairs, longest internal first (greedy, unambiguous)."""
+    if not env_value:
+        return []
+    with open(env_value, encoding="utf-8") as f:
+        doc = json.load(f)
+    rules = doc.get("rules", []) if isinstance(doc, dict) else doc
+    pairs = [(r["public"].rstrip("/"), r["internal"].rstrip("/")) for r in rules]
+    return sorted(pairs, key=lambda p: len(p[1]), reverse=True)
+
+
+def to_public(path, rules):
+    """Map an internal routed path to the public prefix (first matching rule, at a segment boundary)."""
+    for pub, intr in rules:
+        if intr and (path == intr or path.startswith(intr + "/")):
+            return pub + path[len(intr):]
+    return path
+
+
+def _encode_value(v, wildcard=False):
+    """Percent-encode a path-parameter value. Wildcard (catch-all) values keep '/' literal and are
+    encoded per segment, so a multi-segment value reconstructs the real public path instead of
+    collapsing to one escaped segment. A value that already holds a literal percent-encoding (e.g.
+    Kestrel keeps %2F encoded in a route value) is not double-encoded: %25XX collapses back to %XX,
+    matching the verifier, which keeps %2F literal and never decodes it."""
+    s = str(v)
+    if wildcard:
+        enc = "/".join(quote(p, safe=SEGMENT_SAFE) for p in s.split("/"))
+    else:
+        enc = quote(s, safe=SEGMENT_SAFE)
+    return _PCT25.sub(r"%\1", enc)
+
+
+def substitute_pm(template, params, wildcards=frozenset()):
+    """Wildcard-aware substitute used in path-map mode (W23)."""
+    out = template
+    for k, v in params.items():
+        out = out.replace("{" + k + "}", _encode_value(v, wildcard=(k in wildcards)))
+    return out
+
+
+def has_dot_segment(params, wildcards=frozenset()):
+    """True if any (sub)segment of any param value is '.' or '..' (per-segment for wildcards)."""
+    for k, v in params.items():
+        segs = str(v).split("/") if k in wildcards else [str(v)]
+        if any(s in (".", "..") for s in segs):
+            return True
+    return False
 
 
 # ----------------------------------------------------------------------------- canonicalisation
@@ -138,8 +195,13 @@ class Result:
 
 
 def check(key: bytes, view_values: list[str], dpop_values: list[str], method: str,
-          template: str, params: dict) -> Result:
-    """view_values/dpop_values: every value received for X-Verified-View / DPoP, in order."""
+          template: str, params: dict, pathmap=None, wildcards=frozenset()) -> Result:
+    """view_values/dpop_values: every value received for X-Verified-View / DPoP, in order.
+
+    pathmap=None (default): behaviour unchanged (no public<->internal map, whole-value encoding,
+    param==.|.. guard). pathmap=<list of (public,internal) rules> (possibly empty) turns on W23
+    path-map mode: the matched INTERNAL route path is mapped to public space, wildcard params keep
+    '/' literal, and the dot-segment guard is per-segment."""
     if not key:
         raise ValueError("DEFENCE=db requires a non-empty VIEW_MAC_KEY")
     if len(view_values) == 0:
@@ -154,9 +216,14 @@ def check(key: bytes, view_values: list[str], dpop_values: list[str], method: st
     binding = dpop_binding(dpop_values[0])
     if binding is None:
         return Result(False, "view_mac_no_dpop")
-    if any(str(v) in (".", "..") for v in params.values()):
-        return Result(False, "view_param_dot_segment")
-    path = canon_path(substitute(template, params))
+    if pathmap is None:
+        if any(str(v) in (".", "..") for v in params.values()):
+            return Result(False, "view_param_dot_segment")
+        path = canon_path(substitute(template, params))
+    else:
+        if has_dot_segment(params, wildcards):
+            return Result(False, "view_param_dot_segment")
+        path = canon_path(to_public(substitute_pm(template, params, wildcards), pathmap))
     want = mac(key, binding[0], method, path, binding[1])
     if not hmac.compare_digest(want.encode(), got.encode()):
         return Result(False, "view_mac_mismatch", path)
@@ -175,10 +242,23 @@ def route_template(scope: dict) -> str | None:
     return mount_prefix + fmt
 
 
-def fastapi_dependency(key: bytes):
+def wildcards_from_scope(scope: dict) -> frozenset:
+    """Names of path parameters bound by a Starlette PathConvertor (catch-all `{p:path}`), whose
+    values may legitimately span '/'. Empty when the route has none or cannot be introspected."""
+    route = scope.get("route")
+    convs = getattr(route, "param_convertors", None)
+    if not isinstance(convs, dict):
+        return frozenset()
+    return frozenset(k for k, c in convs.items() if type(c).__name__ == "PathConvertor")
+
+
+def fastapi_dependency(key: bytes, pathmap=None, wildcards=None):
     """FastAPI dependency: `Depends(fastapi_dependency(key))` on a router/app. It runs after
     routing (so scope['route'] and path_params are set) and after any ASGI method-override
-    middleware (which rewrites scope['method'])."""
+    middleware (which rewrites scope['method']).
+
+    pathmap: None (off), or a list of (public,internal) rules (W23 path-map mode). wildcards: a
+    fixed set of wildcard param names; None means detect them per request from the matched route."""
     if not key:
         raise ValueError("DEFENCE=db requires a non-empty VIEW_MAC_KEY")
     from fastapi import HTTPException, Request
@@ -187,8 +267,10 @@ def fastapi_dependency(key: bytes):
         scope = request.scope
         template = route_template(scope)
         headers = [(k.decode("latin-1").lower(), v.decode("latin-1")) for k, v in scope["headers"]]
+        wc = (wildcards if wildcards is not None else wildcards_from_scope(scope)) if pathmap is not None else frozenset()
         res = check(key, [v for k, v in headers if k == HEADER], [v for k, v in headers if k == "dpop"],
-                    scope["method"], template or "", dict(request.path_params)) if template else \
+                    scope["method"], template or "", dict(request.path_params),
+                    pathmap=pathmap, wildcards=wc) if template else \
             Result(False, "view_route_unknown")
         scope.setdefault("state", {})["viewmac"] = res
         if not res.ok:

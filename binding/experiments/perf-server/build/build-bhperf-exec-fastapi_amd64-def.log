@@ -1,0 +1,48 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 894B done
+#1 WARN: SecretsUsedInArgOrEnv: Do not use ARG or ENV instructions for sensitive data (ENV "VIEW_MAC_KEY") (line 17)
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.12.16-slim-trixie
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/6] FROM docker.io/library/python:3.12.16-slim-trixie@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b
+#4 resolve docker.io/library/python:3.12.16-slim-trixie@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b 0.0s done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 21.64kB done
+#5 DONE 0.0s
+
+#6 [2/6] WORKDIR /app
+#6 CACHED
+
+#7 [3/6] COPY requirements.txt .
+#7 CACHED
+
+#8 [4/6] RUN pip install --no-cache-dir -r requirements.txt
+#8 CACHED
+
+#9 [5/6] COPY app.py viewmac.py ./
+#9 DONE 0.0s
+
+#10 [6/6] RUN mkdir -p /logs
+#10 DONE 0.1s
+
+#11 exporting to image
+#11 exporting layers 0.1s done
+#11 exporting manifest sha256:f248e371ab2f010e5c592eb23dc18765b1c244da2769c59ae7bdeea8929d01cd done
+#11 exporting config sha256:82f3632d887709df4fec0e653315779cb1d574194f294bd79ed4a2ca8df31aa5 done
+#11 exporting attestation manifest sha256:54b4820277c1dd202afdfe9c2169b4fdfb7c4658a4f525ce4dc4299bd658ae5a done
+#11 exporting manifest list sha256:f5ed23d204508b1928fbd5c38aaa243fd6a871a4f45e580758284ecb7e23e8db done
+#11 naming to docker.io/library/bhperf-exec-fastapi:amd64-def done
+#11 DONE 0.1s
+
+ [33m1 warning found (use docker --debug to expand):
+[0m - SecretsUsedInArgOrEnv: Do not use ARG or ENV instructions for sensitive data (ENV "VIEW_MAC_KEY") (line 17)

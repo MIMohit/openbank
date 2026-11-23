@@ -1,0 +1,1 @@
+[legit] w23-legit-haprec-full bind=full: 18 sent, false_reject=0

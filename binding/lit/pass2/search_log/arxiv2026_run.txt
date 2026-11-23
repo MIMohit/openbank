@@ -1,0 +1,100 @@
+# all:DPoP n_2026=1
+2026-06-10 2606.12505v1 | Boosting Direct Preference Optimization with Penalization | cs.LG,cs.AI
+# all:"proof-of-possession" n_2026=6
+2026-11-04 2611.07159v1 | Beyond Proof of Possession: A Relational Theory of Authority | cs.CR,cs.DC
+2026-09-22 2609.26654v1 | Proof-of-Retention: A Framework for Auditable Cross-Organization Data Sharing | cs.DB
+2026-07-18 2607.16559v1 | Auditable Session Admission for Cross-Silo Federated Learning | cs.CR
+2026-07-09 2607.08906v2 | Proof-of-Continuity: A Temporal Model for Authority Propagation in Distributed Systems and AI Agents | cs.CR,cs.DC
+2026-04-12 2604.10473v1 | AI Identification: An Integrated Framework for Sustainable Governance in Digital Enterprises | cs.CR
+2026-03-18 2603.17331v1 | Federated Computing as Code (FCaC): Sovereignty-aware Systems by Design | cs.CR
+# all:"sender-constrained" n_2026=6
+2026-11-12 2611.17091v1 | Optimal Single-History Tokenization Disambiguation for Provably Secure Linguistic Steganography | cs.CL,cs.CR
+2026-10-16 2610.22899v2 | Provable Authority: A Protocol for Verifiable Authority Resolution and Control Across Human, Organizational, and Agentic Transactions | cs.CR,cs.MA
+2026-10-05 2610.05840v1 | Compromise Is Not Consequence: Evaluating Task-Scoped Authorization in LLM Agents with Paired Replay | cs.CR
+2026-09-02 2609.02690v1 | ACLE-MCP: Attested Capability Leases for Execution-Time Trust in Remote LLM Tool Use | cs.CR
+2026-08-04 2608.04115v1 | NEBULA: A Language - Independent Specification for Opaque Rotating Refresh Tokens | cs.CR
+2026-04-27 2604.24920v4 | SUDP: Secret-Use Delegation Protocol for Agentic Systems | cs.CR,cs.AI
+# all:"parser differential" n_2026=1
+2026-06-09 2606.10649v1 | Layer Order Semantics for Automata-Based Cybersecurity | cs.CR,cs.FL
+# all:"parsing differential" n_2026=1
+2026-10-28 2610.38182v1 | HyperIntent: Tracking Intent Shifts for Efficient Reasoning on Dynamic Textual Graphs | cs.GR
+# abs:"path normalization" n_2026=3
+2026-10-01 2610.01391v3 | Conditional Fluctuations of Mean-Field Systems with Stable Common Noise | math.PR
+2026-08-26 2608.25275v1 | PhaseShift: Topology-Aware Data Harmonization and Model Consolidation Across Signalized Intersections | cs.AI,cs.RO
+2026-05-24 2605.25077v2 | WorldCraft: From Camera Navigation to Object Manipulation in Interactive Video World Models | cs.CV
+# abs:"URL normalization" n_2026=0
+# cat:cs.CR AND abs:"API gateway" n_2026=4
+2026-06-02 2606.04104v1 | Proof-Carrying Agent Actions: Model-Agnostic Runtime Governance for Heterogeneous Agent Systems | cs.SE,cs.AI,cs.CR
+2026-05-28 2605.30613v1 | CacheProbe: Auditing Prompt Cache Isolation in Gateway APIs | cs.CR,cs.LG
+2026-05-18 2605.17955v1 | Operationalising Post Quantum TLS Automated Configuration Profiling and Hybrid PQC Deployment in Financial Infrastructure | cs.CR
+2026-04-22 2604.21083v1 | Behavioral Consistency and Transparency Analysis on Large Language Model API Gateways | cs.CR,cs.AI,cs.NI
+# cat:cs.CR AND abs:"reverse proxy" n_2026=2
+2026-11-06 2611.10157v1 | BACGUARD: Fact-Grounded Runtime Mitigation of Broken Access Control | cs.CR
+2026-05-18 2605.17955v1 | Operationalising Post Quantum TLS Automated Configuration Profiling and Hybrid PQC Deployment in Financial Infrastructure | cs.CR
+# cat:cs.CR AND abs:"request smuggling" n_2026=0
+# cat:cs.CR AND abs:"access control" AND abs:"parsing" n_2026=2
+2026-06-24 2606.25332v1 | Decoupling Reconnaissance and Exploitation: Measuring the Capability Boundaries of LLM-Based Web Penetration Testing | cs.CR,cs.AI
+2026-06-20 2606.21900v2 | Continuous Behavioral Authentication via Multi-Expert BERT Log Analysis for Secure Data Sharing | cs.CR,cs.LG
+# cat:cs.CR AND abs:"authorization" AND abs:"gateway" n_2026=31
+2026-11-03 2611.05632v1 | Assurance-Conditioned Continuous Authorization for Autonomous AI Agents | cs.AI,cs.CR
+2026-11-02 2611.02407v1 | Networked Synthetic Social Engineering on the Web | cs.CR,cs.AI,cs.CY
+2026-10-29 2610.39807v1 | InferD: A Honeypot Framework for AI Inference Infrastructure | cs.CR,cs.AI
+2026-10-24 2610.33862v1 | Securing Edge & Physical AI: Post-Quantum IoT Blockchain for Mission-Critical Cyber-Physical Agents | cs.CR,cs.ET,cs.RO
+2026-10-11 2610.15991v1 | Revocation Is Not Complete at Receipt: An Executable Outcome Contract for Distributed Agent-Tool Gateways | cs.AI,cs.CR
+2026-10-10 2610.14810v1 | KedgeFlow: A Programmable Control Plane for Enterprise AI Agents | cs.DC,cs.CR,cs.LG
+2026-09-29 2610.00349v1 | Fault-Tolerant Budget Conservation in Distributed Multi-Agent Delegation | cs.AI,cs.CR,cs.DC
+2026-09-11 2609.12580v1 | MicroHasTEE: Bare-Metal Haskell for Type-Level Peripheral Ownership on Armv8-M | cs.CR,cs.GT
+2026-09-11 2609.12488v1 | Access Control as Verified Parse Constraints | cs.CR
+2026-08-30 2608.30083v1 | Zero-Knowledge Predicate Proofs Between AI Agents: A Measured, Cross-Protocol Gateway and the Source-Integrity Gap | cs.CR,cs.MA
+2026-08-28 2608.28502v2 | Instruction Self-Arbitration Is Not a Trust Boundary: Configuration-Dependent Tool Calls and External Enforcement in LLM Agents | cs.CR
+2026-08-11 2608.10760v1 | A Gateway Architecture for Enterprise MCP Authentication: Unifying Heterogeneous Auth, Identity Delegation, and the User / Non-User Persona Problem | cs.CR,cs.AI
+2026-07-29 2607.27267v1 | FAVA: Formal Authorization for Verified Agents with Evidence-Backed Permission Graphs | cs.CR,cs.AI
+2026-07-15 2607.13369v1 | xChk: Bring Your Own Identity -- Heterogeneous Assurance with Verifier-Determined Sufficiency | cs.CR,cs.CY
+2026-07-13 2607.11466v2 | Prezta: Provable Remote Execution of Zero-Trust Authorization using SNARKs | cs.CR
+2026-07-06 2607.05518v1 | aiAuthZ: Off-Host, Identity-Bound Authorization for AI Agents | cs.CR,cs.AI
+2026-06-27 2606.29073v2 | From Tool Connection to Execution Control: Benchmarking Security Invariants in MCP-Style Agent Runtimes | cs.CR,cs.AI
+2026-06-24 2606.26211v1 | Data Facts: A Metadata Schema for Structured Data Exchange in the NANDini Multi-Agent Ecosystem | cs.CR
+2026-06-21 2606.22560v2 | Evidence-Bound Gateway-Path Provenance for Third-Party LLM Inference | cs.CR
+2026-06-20 2606.21845v1 | HOWLR: A Client-Driven Approach to BGP Hijack Detection | cs.NI,cs.CR
+2026-06-19 2606.21129v1 | AgenticOS: An Intent-Oriented Secure Operating System Architecture for Autonomous AI Agents | cs.CR,cs.OS
+2026-06-08 2606.09692v1 | Observability for Delegated Execution in Agentic AI Systems | cs.CR,cs.AI
+2026-06-08 2606.09549v3 | SecureClaw: Clawing Back Control of LLM Agents | cs.CR,cs.AI
+2026-06-02 2606.04104v1 | Proof-Carrying Agent Actions: Model-Agnostic Runtime Governance for Heterogeneous Agent Systems | cs.SE,cs.AI,cs.CR
+2026-05-05 2605.04280v1 | Revocation-Ready CP-ABE Key Management for Blockchain-Based IoT Data Sharing | cs.CR,cs.DC
+2026-04-28 2604.25555v1 | From CRUD to Autonomous Agents: Formal Validation and Zero-Trust Security for Semantic Gateways in AI-Native Enterprise Systems | cs.CR,cs.AI
+2026-04-26 2607.05397v1 | Proof of Execution: Runtime Verification for Governed AI Agent Actions | cs.CR,cs.AI
+2026-02-22 2602.20196v1 | OpenPort Protocol: A Security Governance Specification for AI Agent Tool Access | cs.CR,cs.AI
+2026-02-10 2602.09433v1 | Autonomous Action Runtime Management(AARM):A System Specification for Securing AI-Driven Actions at Runtime | cs.CR,cs.AI
+2026-01-23 2601.16751v1 | "What I Sign Is Not What I See": Towards Explainable and Trustworthy Cryptocurrency Wallet Signatures | cs.HC,cs.CR
+2026-01-21 2601.14982v1 | Interoperable Architecture for Digital Identity Delegation for AI Agents with Blockchain Integration | cs.CR,cs.AI,cs.CY
+# cat:cs.CR AND abs:"method override" n_2026=0
+# cat:cs.CR AND abs:"HTTP message signatures" n_2026=0
+# cat:cs.CR AND abs:"discrepanc" AND abs:HTTP n_2026=0
+# cat:cs.CR AND abs:"broken access control" n_2026=7
+2026-11-20 2611.27270v1 | Suspected Until Inspected: Neuro-Symbolic Detection of Broken Access Control in Server-Side Web Applications | cs.CR
+2026-11-06 2611.10157v1 | BACGUARD: Fact-Grounded Runtime Mitigation of Broken Access Control | cs.CR
+2026-10-25 2610.34290v1 | Repairing Broken Access Control in Web Applications with LLMs: An Empirical Benchmark Study | cs.CR,cs.AI,cs.SE
+2026-10-01 2610.00977v1 | ABSENTIA: Detecting Broken Access Control Vulnerabilities in Web Applications | cs.CR,cs.SE
+2026-06-29 2606.30373v1 | Your Space is My Zone: Demystifying the Security Risks of AI-Powered Applications on Pre-Trained Model Hubs | cs.CR
+2026-06-22 2606.23130v4 | Understanding the (In)Security of Vibe-Coded Applications | cs.CR,cs.SE
+2026-05-07 2605.06760v1 | Language Models Can Autonomously Hack and Self-Replicate | cs.CR
+# cat:cs.CR AND abs:"path confusion" n_2026=0
+# cat:cs.CR AND abs:normalization AND abs:bypass n_2026=18
+2026-11-10 2611.13578v1 | POEM: Output-Relative Block-Sparse Attention for Long-Context Prefilling | cs.CR,cs.CL
+2026-11-10 2611.13577v1 | TERM: Target-Free Jailbreak Defense via Entropy-Guided Residual Modulation | cs.CR,cs.CL
+2026-10-19 2610.26174v1 | PhantomTac: Hijacking Robotic Tactile Systems with Deploy-and-forget Tags | cs.CR,cs.RO
+2026-09-18 2609.22573v1 | Zero-Trust Authorization and Discovery for Enterprise MCP | cs.CR,cs.AI
+2026-09-09 2609.10631v1 | From Cycle Space to Cycle Manifold: Limits and Achievability of Blind False Data Injection Attacks | cs.CR,cs.LG
+2026-07-22 2607.19894v1 | Defense Against LLM Backdoors using Critical Neuron Isolation Pruning | cs.CR,cs.AI
+2026-07-05 2607.04511v1 | Mean Time to Remediate Is Not a Fielding Model: A Cadence Audit for Enterprise Vulnerability Management | cs.CR,math.DS
+2026-06-26 2606.28153v2 | Robust Harmful Features Under Jailbreak Attacks: Mechanistic Evidence from Attention Head Specialization in Large Language Models | cs.CR,cs.AI
+2026-06-21 2606.22310v1 | Learning to Evade: Adaptive Attacks on Audio Watermarking | cs.SD,cs.CR
+2026-06-16 2606.18198v1 | Seeing Is Not Screening: Multimodal Hidden Instruction Attacks on Agent Skill Scanners | cs.CR,cs.CV
+2026-06-10 2606.12703v1 | SMSR: Certified Defence Against Runtime Memory Poisoning in Persistent LLM Agent Systems | cs.CR,cs.AI,cs.LG
+2026-05-13 2605.12927v1 | ThermalTap: Passive Application Fingerprinting in VR Headsets via Thermal Side Channels | cs.CR,cs.CV,cs.HC
+2026-05-12 2605.22842v1 | The Misattribution Gap: When Memory Poisoning Looks Like Model Failure in Agentic AI Systems | cs.CR,cs.AI,cs.LG
+2026-05-11 2605.11034v1 | MambaNetBurst: Direct Byte-level Network Traffic Classification without Tokenization or Pretraining | cs.CR,cs.AI,cs.LG
+2026-04-03 2604.03081v1 | Supply-Chain Poisoning Attacks Against LLM Coding Agent Skill Ecosystems | cs.CR,cs.AI,cs.CL
+2026-02-10 2602.10162v1 | Limits of Residual-Based Detection for Physically Consistent False Data Injection | cs.CR,eess.SY
+2026-01-29 2601.22308v2 | Stealthy Poisoning Attacks Bypass Defenses in Regression Settings | cs.LG,cs.AI,cs.CR
+2026-01-09 2601.05466v1 | Jailbreaking Large Language Models through Iterative Tool-Disguised Attacks via Reinforcement Learning | cs.CR,cs.AI

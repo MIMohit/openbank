@@ -1,0 +1,9 @@
+{
+  "_doc": "Operator blocks a specific sensitive namespace by literal lowercase prefix (very common: 'block /api/v1/repos/bob'). Case-sensitive. Keys on the raw X-Original-URI.",
+  "default": "allow",
+  "normalize": "off",
+  "rules": [
+    {"id": "deny-admin", "style": "regex", "pattern": "^/api/v1/admin(/|$)", "effect": "deny", "note": "admin API"},
+    {"id": "deny-bob-ns", "style": "prefix", "pattern": "/api/v1/repos/bob/", "effect": "deny", "note": "literal lowercase namespace block"}
+  ]
+}

@@ -1,0 +1,17 @@
+id: w17-perf-bedge-spring
+gateway: nginx
+profile: default
+placement: edge
+framework: spring
+executor_image: bh-exec-spring:v2
+override: 'off'
+verifier:
+  image: bh-verifier:latest
+  canon: rfc3986
+  view_mac: 'off'
+  view_mac_key: bh-test-view-mac-key
+  jti_cache: 'off'
+  iat_window: 86400
+host_port: 29001
+gateway_image: nginx:1.30.7-alpine
+verify_mode: 'off'

@@ -88,6 +88,58 @@ public sealed class ViewMac
         return outp;
     }
 
+    // --------------------------------------------------- D-A/D-B path map (W23)
+    static readonly Regex Pct25 = new("%25([0-9A-Fa-f]{2})", RegexOptions.CultureInvariant);
+
+    /// DEFENCE_PATH_MAP file -> list of (public, internal) prefix pairs, longest internal first.
+    public static List<(string Public, string Internal)> LoadRules(string? envValue)
+    {
+        var outp = new List<(string, string)>();
+        if (string.IsNullOrEmpty(envValue)) return outp;
+        try
+        {
+            var doc = JsonNode.Parse(File.ReadAllText(envValue));
+            var rules = doc as JsonArray ?? doc?["rules"] as JsonArray;
+            if (rules is null) return outp;
+            foreach (var r in rules)
+                outp.Add((((string?)r?["public"] ?? "").TrimEnd('/'), ((string?)r?["internal"] ?? "").TrimEnd('/')));
+        }
+        catch { return new List<(string, string)>(); }
+        outp.Sort((x, y) => y.Item2.Length - x.Item2.Length);
+        return outp;
+    }
+
+    public static string ToPublic(string path, List<(string Public, string Internal)> rules)
+    {
+        foreach (var (pub, intr) in rules)
+            if (intr.Length > 0 && (path == intr || path.StartsWith(intr + "/", StringComparison.Ordinal))) return pub + path[intr.Length..];
+        return path;
+    }
+
+    /// Wildcard values keep '/' literal (per-segment encode); %25XX collapses back to %XX.
+    public static string EncValue(string v, bool wildcard)
+    {
+        var enc = wildcard ? string.Join("/", v.Split('/').Select(EncSegment)) : EncSegment(v);
+        return Pct25.Replace(enc, "%$1");
+    }
+
+    public static string SubstitutePm(string template, IReadOnlyDictionary<string, string> p, ISet<string> wildcards)
+    {
+        var outp = template;
+        foreach (var kv in p) outp = outp.Replace("{" + kv.Key + "}", EncValue(kv.Value, wildcards.Contains(kv.Key)));
+        return outp;
+    }
+
+    static bool HasDotSegment(IReadOnlyDictionary<string, string> p, ISet<string> wildcards)
+    {
+        foreach (var kv in p)
+        {
+            var segs = wildcards.Contains(kv.Key) ? kv.Value.Split('/') : new[] { kv.Value };
+            if (segs.Any(s => s == "." || s == "..")) return true;
+        }
+        return false;
+    }
+
     static string B64u(byte[] b) => Convert.ToBase64String(b).TrimEnd('=').Replace('+', '-').Replace('/', '_');
 
     static byte[] B64uDecode(string s)
@@ -142,6 +194,12 @@ public sealed class ViewMac
     /// viewValues/dpopValues: every received value of X-Verified-View / DPoP, in order.
     public ViewMacResult Check(IReadOnlyList<string> viewValues, IReadOnlyList<string> dpopValues, string method,
                                string template, IReadOnlyDictionary<string, string> p)
+        => Check(viewValues, dpopValues, method, template, p, null, new HashSet<string>());
+
+    /// pathmap=null: unchanged. pathmap=&lt;rules&gt; (W23): map to public space, wildcard-aware, per-segment dot guard.
+    public ViewMacResult Check(IReadOnlyList<string> viewValues, IReadOnlyList<string> dpopValues, string method,
+                               string template, IReadOnlyDictionary<string, string> p,
+                               List<(string Public, string Internal)>? pathmap, ISet<string> wildcards)
     {
         if (viewValues.Count == 0) return new(false, "view_mac_missing", null);
         if (viewValues.Count > 1) return new(false, "view_mac_multiple", null);
@@ -150,8 +208,17 @@ public sealed class ViewMac
         if (dpopValues.Count != 1) return new(false, "view_mac_no_dpop", null);
         var b = DpopBinding(dpopValues[0]);
         if (b is null) return new(false, "view_mac_no_dpop", null);
-        if (p.Values.Any(v => v == "." || v == "..")) return new(false, "view_param_dot_segment", null);
-        var path = CanonPath(Substitute(template, p));
+        string path;
+        if (pathmap is null)
+        {
+            if (p.Values.Any(v => v == "." || v == "..")) return new(false, "view_param_dot_segment", null);
+            path = CanonPath(Substitute(template, p));
+        }
+        else
+        {
+            if (HasDotSegment(p, wildcards)) return new(false, "view_param_dot_segment", null);
+            path = CanonPath(ToPublic(SubstitutePm(template, p, wildcards), pathmap));
+        }
         var want = Mac(_key, b.Value.Jti, method, path, b.Value.Jkt);
         var ok = CryptographicOperations.FixedTimeEquals(Encoding.UTF8.GetBytes(want), Encoding.UTF8.GetBytes(got));
         return new(ok, ok ? "ok" : "view_mac_mismatch", path);

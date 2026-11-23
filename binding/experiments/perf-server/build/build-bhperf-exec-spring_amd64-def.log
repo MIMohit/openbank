@@ -1,0 +1,72 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 872B done
+#1 DONE 0.0s
+
+#2 resolve image config for docker-image://docker.io/docker/dockerfile:1
+#2 DONE 0.9s
+
+#3 docker-image://docker.io/docker/dockerfile:1@sha256:572cebbc2b15e6f84c077742952674889cb63cd5e9b80abdffcbe587b6f19183
+#3 resolve docker.io/docker/dockerfile:1@sha256:572cebbc2b15e6f84c077742952674889cb63cd5e9b80abdffcbe587b6f19183 done
+#3 CACHED
+
+#4 [internal] load metadata for docker.io/library/maven:3.10.0-eclipse-temurin-21
+#4 ...
+
+#5 [internal] load metadata for docker.io/library/eclipse-temurin:21.0.13_9-jre-noble
+#5 DONE 0.8s
+
+#4 [internal] load metadata for docker.io/library/maven:3.10.0-eclipse-temurin-21
+#4 DONE 0.8s
+
+#6 [internal] load .dockerignore
+#6 transferring context: 95B done
+#6 DONE 0.0s
+
+#7 [stage-1 1/3] FROM docker.io/library/eclipse-temurin:21.0.13_9-jre-noble@sha256:b4f9d2a0bc273417cf5219b7b832bbf0493ed500b7b57d5001d9f83374659060
+#7 resolve docker.io/library/eclipse-temurin:21.0.13_9-jre-noble@sha256:b4f9d2a0bc273417cf5219b7b832bbf0493ed500b7b57d5001d9f83374659060 done
+#7 DONE 0.0s
+
+#8 [build 1/6] FROM docker.io/library/maven:3.10.0-eclipse-temurin-21@sha256:3e18d95a0a49d18aa5b075e5ee3c30a98078c382850467dcd4caa49bb7dc4038
+#8 resolve docker.io/library/maven:3.10.0-eclipse-temurin-21@sha256:3e18d95a0a49d18aa5b075e5ee3c30a98078c382850467dcd4caa49bb7dc4038 done
+#8 DONE 0.0s
+
+#9 [internal] load build context
+#9 transferring context: 25.33kB done
+#9 DONE 0.0s
+
+#10 [build 2/6] WORKDIR /src
+#10 CACHED
+
+#11 [build 3/6] COPY pom.xml .
+#11 CACHED
+
+#12 [build 4/6] RUN mvn -q -B dependency:go-offline
+#12 CACHED
+
+#13 [build 5/6] COPY src ./src
+#13 DONE 0.0s
+
+#14 [build 6/6] RUN mvn -q -B -DskipTests package && java -version 2>&1 | head -1 > /src/target/java-version.txt
+#14 DONE 10.3s
+
+#15 [stage-1 2/3] WORKDIR /app
+#15 CACHED
+
+#16 [stage-1 3/3] COPY --from=build /src/target/app.jar /app/app.jar
+#16 DONE 0.0s
+
+#17 exporting to image
+#17 exporting layers
+#17 exporting layers 0.3s done
+#17 exporting manifest sha256:353623f0629a0eab02ea952bd8c917d3daa2c6b6870c4743f43387246ee5a800
+#17 exporting manifest sha256:353623f0629a0eab02ea952bd8c917d3daa2c6b6870c4743f43387246ee5a800 done
+#17 exporting config sha256:0d7b47870c34e226751caf732573d8370b94fabb69f819c75d0b8fd749dab819 done
+#17 exporting attestation manifest sha256:8f647321ac16ee9d826b23be59bd42f9d1efc8c9326d75d0ba64acde5291e9c5 done
+#17 exporting manifest list sha256:a4b2fb80382e66f29a6895205f47db0ed2d9d99bd573ce60350f190839f2bf1d done
+#17 naming to docker.io/library/bhperf-exec-spring:amd64-def done
+#17 DONE 0.4s
+
+ [33m1 warning found (use docker --debug to expand):
+[0m - SecretsUsedInArgOrEnv: Do not use ARG or ENV instructions for sensitive data (ENV "VIEW_MAC_KEY") (line 21)
