@@ -204,3 +204,17 @@ Each worker runs at most ONE topology at a time. The machine is a 16 GB Mac and 
 | W23 rerun gaps, cross-gateway FRR, defence path-map fix | `binding/experiments/gaps/`; `binding/harness/defence/` (changes behind env flags only; new images tagged `:pathmap`, never overwrite existing tags) |
 | W24 server performance re-run (remote host, strict safety rules in its spec) | `binding/experiments/perf-server/` |
 Paper writing is out of scope for this wave: no worker edits `binding/paper/`.
+
+## 13. Final paper wave (coordinator)
+Honest reframe per binding/lit/pass2/NOVELTY_UPDATE.md governs ALL claims. The paper is a MEASUREMENT + DEFENCE paper, NOT a "new attacks" paper, and NOT a SoK (no "SoK:" title prefix). Defensible novelty = (i) binding-soundness property+oracle for PoP proofs; (ii) measurement that known G1/G2 mechanisms become operation substitution under a valid leaked proof on current releases; (iii) A1 claim ablation (answers the 2026 IETF htm/htu proposal); (iv) D-B view-MAC defence. Retract APISIX-as-new (deliberate CVE-2026-124680 post-fix behaviour, PR #14035). Recast E4 as reproduction of known patterns (xvnpw 2021, UABScan CCS'25), cite NginxBuster CCS'26 as concurrent.
+Agreed figure files in binding/paper/figs/ (W26 produces the matplotlib PDFs; W25 \includegraphics them; W25 owns the 2 TikZ schematics in-tex):
+- fig_hits_heatmap.pdf (gateway x framework, G1 and G2 panels)
+- fig_resolution.pdf (binding-resolution distribution res_hat 1..4)
+- fig_class.pdf (hits by class/primitive family across campaigns)
+- fig_ablation_a1.pdf (A1: residual reachable ops vs binding claims: full, -htm, -htu, -ath, +query, +digest)
+- fig_defence.pdf (E7 residual hits per defence B-edge/B-origin/B-strict/D-A/D-B/D-C + FRR with 95% CI)
+- fig_latency.pdf (p50/p95/p99 at 100 req/s per config, or latency CDF; mark >=500 req/s as saturation, exclude)
+| Worker | Owns |
+|---|---|
+| W25 lead writer | binding/paper/*.tex, main.tex, numbers.tex, extra.bib, appendix/*, README |
+| W26 figures | binding/paper/figs/ ONLY (matplotlib PDFs + FIGURES.md); must NOT edit any .tex |
